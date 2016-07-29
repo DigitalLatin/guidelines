@@ -193,22 +193,20 @@
             </div>
             <div xml:id="front-matter">
                <head>Front Matter</head>
-               <p>The <gi>front</gi> contains numbered divisions and subdivisions (e.g.,
-                     <gi>div1</gi>, <gi>div2</gi>) corresponding to the preface, bibliography, and
-                  conspectus for the edition.</p>
+               <p>The <gi>front</gi> contains divisions and subdivisions (using <gi>div</gi>)
+                  corresponding to the preface, bibliography, and conspectus for the edition.</p>
                <p>The <hi rend="bold">preface</hi> lays out (in prose, using <gi>p</gi>) the
                   argument for the edition. It also describes the textual tradition and the major
                   sources for it, which is why it is recommended to compile the bibliography first,
                   to take advantage of the ability to link to individual entries in the
-                  bibliography. For example, prefaces traditionally contain a description in prose
-                  of the manuscripts consulted in establishing the text of the edition. The preface
-                  of an LDLT can include prose descriptions of manuscripts, but it should also link
-                  to structured (i.e., machine-readable) data for the manuscript in the edition's
-                  bibliography.</p>
+                  bibliography, so that users will be able to have the information available as they
+                  read.</p>
                <p>The elements available in all TEI documents are available for use in the preface.
                   For example, an editor might want to make a table comparing the readings of
                   manuscript families. In that case, the editor would use <gi>table</gi> and its
-                  related elements.</p>
+                  related elements (see the TEI guidelines for <ref
+                     target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-table.html"
+                     ><gi>table</gi></ref> for more information).</p>
             </div>
             <div xml:id="bibliography">
                <head>Bibliography</head>
@@ -216,8 +214,8 @@
                <!-- Issue: One <forename> for first and middle names? Or separate <forename> for each? -->
                <!-- Issue: Nicknames. Should they be in parentheses with <surname>, or should they be in <addname> by themselves? -->
                <p>The bibliography presents opportunities for leveraging the digital nature of an
-                  LDLT edition. Because every item in the bibliography is encoded as structured data
-                  (contained in <gi>msDesc</gi> or <gi>biblStruct</gi>), the bibliography itself can
+                  LDLT edition. For this reason, every item in the bibliography is encoded as structured data
+                  (contained in <gi>msDesc</gi> or <gi>biblStruct</gi>), so that the bibliography itself can
                   become a useful tool for finding and using resources, especially those that are
                   available online.</p>
                <p>The bibliography is all the more useful as a tool if it is created and made
@@ -226,7 +224,7 @@
                   interface for compiling and managing a bibliography, Zotero can also export
                   bibliographies in a TEI XML format that requires little to no modification for
                   inclusion in an LDLT edition. Users can copy and paste Zotero information directly
-                  into an LDLT edition file. For these reasons, it is highly recommended that all
+                  into an LDLT edition file. It is highly recommended that all
                   LDLT editions have a corresponding Zotero repository for their bibliography.</p>
                <p>Unfortunately, Zotero does not currently provide a format for describing and
                   cataloging manuscripts, so that information must be entered manually. For that
@@ -239,17 +237,17 @@
                      <head>Structure of the Bibliography for an LDLT Edition</head>
                      <item>Manuscripts (<att>xml:id</att>="bibliography-manuscripts")</item>
                      <item>Editions<list>
-                           <item>Early Editions
-                              (<att>xml:id</att>="bibliography-editions-witnesses"</item>
-                           <item>Modern Editions
-                              (<att>xml:id</att>="bibliography-editions-sources")</item>
-                        </list>
+                        <item>Early Editions
+                           (<att>xml:id</att>="bibliography-editions-witnesses"</item>
+                        <item>Modern Editions
+                           (<att>xml:id</att>="bibliography-editions-sources")</item>
+                     </list>
                      </item>
                      <item>Secondary Sources
                         (<att>xml:id</att>="bibliography-secondary-sources")</item>
                   </list>
                   <p>Additionally, there should be a list of the names of individual scholars
-                        (<att>xml:id</att>="bibliography-scholars") referred to by name in the
+                     (<att>xml:id</att>="bibliography-scholars") referred to by name in the
                      apparatus, if they are not listed elsewhere in the bibliography (e.g., as the
                      editor of an edition or author of an article). It is common, for example, to
                      refer to a scholar whose unpublished notes appear in a commentary or who has
