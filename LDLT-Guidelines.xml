@@ -261,14 +261,14 @@
                         rend="italic">sigla</emph>, stand for a manuscript, and the last name of a
                      scholar serves as a shorthand reference to an edition, commentary, or other
                      work of scholarship. Centuries of publication have demontrated that sigla and
-                     other symbols and abbreviations are efficient, effective, and economic ways of
+                     other symbols and abbreviations are efficient, effective, and economical ways of
                      conveying complex information in critical editions. But they are also examples
                      of visually encoded information that is available only to human readers. In
                      other words, a human might see <hi rend="bold">N²</hi> and correctly interpret
-                     it within a perticular edition as meaning "text written by the second person in
+                     it within a particular edition as meaning "text written by the second person in
                      a succession of people who wrote in the manuscript known as codex Neapolitanus
-                     V A 8." But a machine will interpret the same information as simply the letter
-                     N with a superscript numeral 2 next to it.</p>
+                     V A 8." In contrast, a machine will interpret the same information as simply the letter
+                     "N" with a superscript numeral 2 next to it.</p>
                   <p>To make an LDLT text readable by both humans and machines, there must be a
                      system of reference that leverages both the traditional approach that has
                      served textual criticism so well for so long and new ways of making information
@@ -279,21 +279,20 @@
                      which has <ref target="https://www.w3.org/TR/xml-id/">strict rules</ref> that
                      do not allow for the traditional conventions used in critical editions. For the
                      former, the TEI standard has <att>n</att>, which allows for all of the usual
-                     conventions. In same instances, the two attributes might be identical. For
+                     conventions. In some instances, the two attributes might be identical. For
                      example, if a manuscript is known by the siglum <hi rend="bold">V</hi>, it is
                      possible to identify it to machines as <att>xml:id</att>="V" and to humans as
-                        <att>n</att>="V". But if an editor must refer to a number of manuscripts
-                     from the same collection designated as <hi rend="bold">V</hi>, the usual
-                     practice in a printed critical edition is to use the letter V to stand for the
-                     collection with subscript numerals distinguishing the different manuscripts. In
-                     an LDLT edition, the second one in the series would have <att>xml:id</att> of
-                     "V2", but the <att>n</att> would be V₂. Humans can read and understand both
-                     easily, but machines need a simpler method of identifying something.</p>
-                  <p><hi rend="bold">Every entry, regardless of type, in the bibliography of an LDLT
+                        <att>n</att>="V". But if an editor must refer to different hands that wrote in the same manuscript, the usual
+                     practice in a printed critical edition is to use sequential superscript numerals for the different hands. In
+                     an LDLT edition, the second in the series of hands would have <att>xml:id</att> of
+                     "Vh2", but the value of <att>n</att> would be "V²". Humans can read and understand both
+                     easily, but the XML specification only allows one of them.</p>
+                  <p>In short, <hi rend="bold">every entry, regardless of type, in the bibliography of an LDLT
                         edition must have values for both <att>xml:id</att> and <att>n</att>.</hi>
                      Otherwise, the edition will not be able to make full use of the digital format.
                      Morever, if an entry lacks <att>n</att>, it will not be available for the print
                      version of the edition.</p>
+                  <p>The following sections explain how the different types of materials should be encoded.</p>
                </div>
                <div xml:id="bibliography-ms-description">
                   <head>Manuscripts</head>
@@ -333,7 +332,7 @@
                   <p><gi>msDesc</gi> (manuscript description) groups the elements that compose the
                      description of the manuscript:</p>
                   <list>
-                     <head>Required Elements in the Manuscript Description</head>
+                     <head>Required Elements in the Manuscript Description (<gi>msDesc</gi></head>
                      <item><gi>msIdentifier</gi> (manuscript identifier) groups information about
                         the location and inventory number of the manuscript.</item>
                      <item><gi>settlement</gi> contains the name of the place (e.g., city) where the
