@@ -206,7 +206,7 @@
                   manuscript families. In that case, the editor would use <gi>table</gi> and its
                   related elements (see the TEI guidelines for <ref
                      target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-table.html"
-                     ><gi>table</gi></ref> for more information).</p>
+                        ><gi>table</gi></ref> for more information).</p>
             </div>
             <div xml:id="bibliography">
                <head>Bibliography</head>
@@ -214,18 +214,18 @@
                <!-- Issue: One <forename> for first and middle names? Or separate <forename> for each? -->
                <!-- Issue: Nicknames. Should they be in parentheses with <surname>, or should they be in <addname> by themselves? -->
                <p>The bibliography presents opportunities for leveraging the digital nature of an
-                  LDLT edition. For this reason, every item in the bibliography is encoded as structured data
-                  (contained in <gi>msDesc</gi> or <gi>biblStruct</gi>), so that the bibliography itself can
-                  become a useful tool for finding and using resources, especially those that are
-                  available online.</p>
+                  LDLT edition. For this reason, every item in the bibliography is encoded as
+                  structured data (contained in <gi>msDesc</gi> or <gi>biblStruct</gi>), so that the
+                  bibliography itself can become a useful tool for finding and using resources,
+                  especially those that are available online.</p>
                <p>The bibliography is all the more useful as a tool if it is created and made
                   available via <ref target="http://www.zotero.org">Zotero</ref>, an open, online
                   resource for building and managing bibliographies. In addition to providing an
                   interface for compiling and managing a bibliography, Zotero can also export
                   bibliographies in a TEI XML format that requires little to no modification for
                   inclusion in an LDLT edition. Users can copy and paste Zotero information directly
-                  into an LDLT edition file. It is highly recommended that all
-                  LDLT editions have a corresponding Zotero repository for their bibliography.</p>
+                  into an LDLT edition file. It is highly recommended that all LDLT editions have a
+                  corresponding Zotero repository for their bibliography.</p>
                <p>Unfortunately, Zotero does not currently provide a format for describing and
                   cataloging manuscripts, so that information must be entered manually. For that
                   reason, and for the sake of completeness, the following sections provide
@@ -237,17 +237,17 @@
                      <head>Structure of the Bibliography for an LDLT Edition</head>
                      <item>Manuscripts (<att>xml:id</att>="bibliography-manuscripts")</item>
                      <item>Editions<list>
-                        <item>Early Editions
-                           (<att>xml:id</att>="bibliography-editions-witnesses"</item>
-                        <item>Modern Editions
-                           (<att>xml:id</att>="bibliography-editions-sources")</item>
-                     </list>
+                           <item>Early Editions
+                              (<att>xml:id</att>="bibliography-editions-witnesses"</item>
+                           <item>Modern Editions
+                              (<att>xml:id</att>="bibliography-editions-sources")</item>
+                        </list>
                      </item>
                      <item>Secondary Sources
                         (<att>xml:id</att>="bibliography-secondary-sources")</item>
                   </list>
                   <p>Additionally, there should be a list of the names of individual scholars
-                     (<att>xml:id</att>="bibliography-scholars") referred to by name in the
+                        (<att>xml:id</att>="bibliography-scholars") referred to by name in the
                      apparatus, if they are not listed elsewhere in the bibliography (e.g., as the
                      editor of an edition or author of an article). It is common, for example, to
                      refer to a scholar whose unpublished notes appear in a commentary or who has
@@ -261,14 +261,15 @@
                         rend="italic">sigla</emph>, stand for a manuscript, and the last name of a
                      scholar serves as a shorthand reference to an edition, commentary, or other
                      work of scholarship. Centuries of publication have demontrated that sigla and
-                     other symbols and abbreviations are efficient, effective, and economical ways of
-                     conveying complex information in critical editions. But they are also examples
-                     of visually encoded information that is available only to human readers. In
-                     other words, a human might see <hi rend="bold">N²</hi> and correctly interpret
-                     it within a particular edition as meaning "text written by the second person in
-                     a succession of people who wrote in the manuscript known as codex Neapolitanus
-                     V A 8." In contrast, a machine will interpret the same information as simply the letter
-                     "N" with a superscript numeral 2 next to it.</p>
+                     other symbols and abbreviations are efficient, effective, and economical ways
+                     of conveying complex information in critical editions. But they are also
+                     examples of visually encoded information that is available only to human
+                     readers. In other words, a human might see <hi rend="bold">N²</hi> and
+                     correctly interpret it within a particular edition as meaning "text written by
+                     the second person in a succession of people who wrote in the manuscript known
+                     as codex Neapolitanus V A 8." In contrast, a machine will interpret the same
+                     information as simply the letter "N" with a superscript numeral 2 next to
+                     it.</p>
                   <p>To make an LDLT text readable by both humans and machines, there must be a
                      system of reference that leverages both the traditional approach that has
                      served textual criticism so well for so long and new ways of making information
@@ -282,17 +283,19 @@
                      conventions. In some instances, the two attributes might be identical. For
                      example, if a manuscript is known by the siglum <hi rend="bold">V</hi>, it is
                      possible to identify it to machines as <att>xml:id</att>="V" and to humans as
-                        <att>n</att>="V". But if an editor must refer to different hands that wrote in the same manuscript, the usual
-                     practice in a printed critical edition is to use sequential superscript numerals for the different hands. In
-                     an LDLT edition, the second in the series of hands would have <att>xml:id</att> of
-                     "Vh2", but the value of <att>n</att> would be "V²". Humans can read and understand both
-                     easily, but the XML specification only allows one of them.</p>
-                  <p>In short, <hi rend="bold">every entry, regardless of type, in the bibliography of an LDLT
-                        edition must have values for both <att>xml:id</att> and <att>n</att>.</hi>
-                     Otherwise, the edition will not be able to make full use of the digital format.
-                     Morever, if an entry lacks <att>n</att>, it will not be available for the print
-                     version of the edition.</p>
-                  <p>The following sections explain how the different types of materials should be encoded.</p>
+                        <att>n</att>="V". But if an editor must refer to different hands that wrote
+                     in the same manuscript, the usual practice in a printed critical edition is to
+                     use sequential superscript numerals for the different hands. In an LDLT
+                     edition, the second in the series of hands would have <att>xml:id</att> of
+                     "Vh2", but the value of <att>n</att> would be "V²". Humans can read and
+                     understand both easily, but the XML specification only allows one of them.</p>
+                  <p>In short, <hi rend="bold">every entry, regardless of type, in the bibliography
+                        of an LDLT edition must have values for both <att>xml:id</att> and
+                           <att>n</att>.</hi> Otherwise, the edition will not be able to make full
+                     use of the digital format. Morever, if an entry lacks <att>n</att>, it will not
+                     be available for the print version of the edition.</p>
+                  <p>The following sections explain how the different types of materials should be
+                     encoded.</p>
                </div>
                <div xml:id="bibliography-ms-description">
                   <head>Manuscripts</head>
@@ -328,11 +331,13 @@
                      the name used to refer to the manuscript in the edition (e.g., Codex
                      Neapolitanus V A 8). Its <att>xml:id</att> is the unique machine-readable
                      identifier to be used when referring to the manuscript's data (e.g., in the
-                        <att>wit</att> of a <gi>rdg</gi> in the apparatus criticus).</p>
+                        <att>wit</att> of a <gi>rdg</gi> in the apparatus criticus). It
+                        s<att>n</att> is the human-readable siglum that should be displayed on
+                     screen or printed.</p>
                   <p><gi>msDesc</gi> (manuscript description) groups the elements that compose the
                      description of the manuscript:</p>
                   <list>
-                     <head>Required Elements in the Manuscript Description (<gi>msDesc</gi></head>
+                     <head>Required Elements in the Manuscript Description (<gi>msDesc</gi>)</head>
                      <item><gi>msIdentifier</gi> (manuscript identifier) groups information about
                         the location and inventory number of the manuscript.</item>
                      <item><gi>settlement</gi> contains the name of the place (e.g., city) where the
@@ -357,19 +362,15 @@
                      <item><gi>handDesc</gi> (hand description) groups information about the
                         distinct hands that wrote in the manuscript. Use <att>hands</att> with the
                         value of the number of hands detectable in the manuscript.</item>
-                     <item><gi>handNote</gi> is a self-closing element with attributes to
-                        distinguish one hand from another. Each <gi>handNote</gi> has an
-                           <att>xml:id</att> with a unique identifier (based on the
-                           <att>xml:id</att> of the manuscript), an <att>n</att> with a
-                        human-readable version of the value of the hand's <att>xml:id</att>,
-                           <att>scope</att> with value "major" or "minor" to indicate the extent of
-                        the hand's contribution, and, if necessary, <att>corresp</att> with the
-                        value of the <att>xml:id</att> for any discussion of the hand's contribution
-                        in the preface or elsewhere in the addition. Note that the first hand should
-                        also have <att>sameAs</att> with the value of the manuscript's
-                           <att>xml:id</att>, so that references to both <hi rend="bold">N</hi> and
-                           <hi rend="bold">N¹</hi> will point to the same entity, that is, the
-                        original copyist.</item>
+                     <item><gi>handNote</gi> is an empty element with attributes to distinguish one
+                        hand from another. Each <gi>handNote</gi> has an <att>xml:id</att> with a
+                        unique identifier (based on the <att>xml:id</att> of the manuscript), an
+                           <att>n</att> with a human-readable version of the value of the hand's
+                           <att>xml:id</att>, <att>scope</att> with value "major" or "minor" to
+                        indicate the extent of the hand's contribution, and, if necessary,
+                           <att>corresp</att> with the value of the <att>xml:id</att> for any
+                        discussion of the hand's contribution in the preface or elsewhere in the
+                        addition.</item>
                      <item><gi>history</gi> groups information about the date of the
                         manuscript.</item>
                      <item><gi>origin</gi> encloses <gi>origDate</gi>, which contains the Roman
@@ -395,7 +396,7 @@
                                     <supportDesc material="parch"/>
                                  </objectDesc>
                                  <handDesc hands="3">
-                                    <handNote xml:id="N1" n="N¹" sameAs="#N" scope="major"
+                                    <handNote xml:id="N1" n="N¹" scope="major"
                                        corresp="#Ndesc-manusprima"/>
                                     <handNote xml:id="N2" n="N²" scope="major"
                                        corresp="#Ndesc-manusaltera"/>
@@ -421,7 +422,7 @@
                                     <supportDesc material="paper"/>
                                  </objectDesc>
                                  <handDesc hands="2">
-                                    <handNote xml:id="G1" n="G¹" sameAs="#G"/>
+                                    <handNote xml:id="G1" n="G¹"/>
                                     <handNote xml:id="G2" n="G²"/>
                                  </handDesc>
                               </physDesc>
@@ -436,13 +437,14 @@
                         </witness>
                      </listWit>
                   </egXML>
-                  <p>Note that <gi>note</gi> may be used to specify the portion of the century in
-                     which a manuscript was written, if known.</p>
+                  <p><gi>note</gi> may be used to specify the portion of the century in which a
+                     manuscript was written, if known.</p>
                   <p>If it is important to distinguish among families of manuscripts, separate
                         <gi>listWit</gi> containers (each with an identifying <gi>head</gi>) should
                      be used. In cases of multiple <gi>listWit</gi> containers, each
                         <gi>listWit</gi> should have a unique <att>xml:id</att> to use when
                      referring to the family itself or a consensus of readings in that family.</p>
+                  <!-- Insert example -->
                </div>
                <div xml:id="bibliography-sources">
                   <head>Other Sources</head>
@@ -471,16 +473,11 @@
                            edition</p>
                         <p><gi>pubPlace</gi> (place of publication) contains the name of the place
                            where the edition was published, as it appears on the title page (e.g.,
-                           Lipsiae instead of Leipzig). If the place is unknown, <gi>pubPlace</gi>
-                           should be self-closing (e.g., &lt;pubPlace/&gt;).</p>
-                        <!-- Value if self-closing: "s.l." (sine loco) -->
+                           Lipsiae instead of Leipzig). If the place is unknown, the value should be "s.l." (<foreign xml:lang="la">sine loco</foreign>).</p>
                         <p><gi>publisher</gi> contains the name of the publisher, as it appears on
-                           the title page. If the publisher's name is unknown, <gi>publisher</gi>
-                           should be self-closing (e.g., &lt;publisher/&gt;).</p>
-                        <!-- Value if self-closing: "s.n." (sine nomine) -->
+                           the title page. If the publisher's name is unknown, the value should be "s.n." (<foreign xml:lang="la">sine nomine</foreign>)</p>
                         <p><gi>date</gi> contains the date in Arabic numerals (e.g., 1504, not
-                           MDIV). If the date is unknown, <gi>date</gi> should be self-closing
-                           (e.g., &lt;date/&gt;).</p>
+                           MDIV). If the date is unknown, the value should be "s.d." (<foreign xml:lang="la">sine die</foreign>).</p>
                         <!-- Value if self-closing: "s.d." (sine die). -->
                         <p><gi>note</gi> with <att>type</att>="url" contains the URL for an online
                            copy of the edition, if available.</p>
@@ -508,6 +505,7 @@
                            <specDesc key="name"/>
                            <specDesc key="forename"/>
                            <specDesc key="surname"/>
+                           <specDesc key="addname"/>
                         </specList>
                      </p>
                      <p><gi>biblStruct</gi> (structured bibliographic citation) is the top-level
@@ -519,7 +517,7 @@
                      <p><gi>monogr</gi> (monographic level) contains bibliographic elements
                         describing an edition.</p>
                      <p><gi>title</gi> with <att>level</att>="m" (monographic) contains the full
-                        title of the edition.</p>
+                        title of the edition.</p><!-- Necessary? Titles can be pretty long and tedious. -->
                      <p><gi>editor</gi> contains information identifying the editor of the edition.
                         If the edition has more than one editor, use one <gi>editor</gi> for each
                         editor.</p>
@@ -528,9 +526,9 @@
                      <p><gi>forename</gi> contains the first and middle names, or initials, of an
                         editor in cases where that information is known.</p>
                      <p><gi>surname</gi> contains the last name of an editor, in cases where that
-                        information is known. If the editor is known by a nickname or a Latin name,
-                        that information is enclosed in parentheses and quotation marks:
-                        ("Ascensius").</p>
+                        information is known.</p>
+                     <p><gi>addname</gi> (additional name) contains a nickname or a Latin name by which an editor might be known
+                        (e.g., "Ascensius").</p>
                      <p>Publication information is handled according to the guidelines in the <ref
                            target="#bibliography-pub">section above on publication</ref>.</p>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -760,7 +758,8 @@
                         </specList>
                      </p>
                      <p><gi>list</gi> with <att>xml:id</att>="bibliography-scholars" groups the
-                        information identifying the scholars.</p><!-- Use listPerson instead of just list? -->
+                        information identifying the scholars.</p>
+                     <!-- Use listPerson instead of just list? -->
                      <p><gi>item</gi> with <att>xml:id</att> and <att>n</att> as <ref
                            target="#bibliography-sigla">described above</ref>.</p>
                      <p><gi>persName</gi> (personal name) groups the information about the scholar's
@@ -995,14 +994,14 @@
                   </p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <supplied reason="omitted">abc</supplied>
+                     <supplied reason="omitted">abc</supplied>
                   </egXML>
                </div>
                <div xml:id="undetermined-loss"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharunknown.html">
                   <head>Undetermined Amount Of Text Lost</head>
-                  <p>Text has been lost from one or more witnesses. (Cf. Epidoc
-                     guidelines, "Lost Characters, Quantity Unknown" <ptr
+                  <p>Text has been lost from one or more witnesses. (Cf. Epidoc guidelines, "Lost
+                     Characters, Quantity Unknown" <ptr
                         target="http://www.stoa.org/epidoc/gl/latest/trans-lostcharunknown.html"
                      />)</p>
                   <p>
@@ -1050,7 +1049,8 @@
                      <gap reason="lost" quantity="3" unit="character"/>
                   </egXML>
                </div>
-               <div xml:id="lost-lines-known" corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostlineknown.html">
+               <div xml:id="lost-lines-known"
+                  corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostlineknown.html">
                   <head>Known Number of Lines Lost</head>
                   <p>A known quantity of lines has been lost, or is conjectured to have been lost
                      from the text of all witnesses. (Cf. Epidoc guidelines, "Lost Lines, Quantity
@@ -1078,7 +1078,8 @@
                   </egXML>
                   <!-- How is this handled differently in prose and verse texts? -->
                </div>
-               <div xml:id="lost-lines-unknown" corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostlineunknown.html">
+               <div xml:id="lost-lines-unknown"
+                  corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostlineunknown.html">
                   <head>Unknown Number of Lines Lost</head>
                   <p>An unknown quantity of lines has been lost, or is conjectured to have been lost
                      from the text of all witnesses. (Cf. Epidoc guidelines, "Lost Lines, Quantity
@@ -1092,9 +1093,10 @@
                   </p>
                   <p><gi>gap</gi> signifies that text is missing.</p>
                   <p><att>reason</att> with value "lost" indicates that the text has been lost.</p>
-                  <p><att>extent</att> with value "unknown" indicates that nothing more is known about the amount of text that has been lost.</p>
+                  <p><att>extent</att> with value "unknown" indicates that nothing more is known
+                     about the amount of text that has been lost.</p>
                   <p><att>unit</att> with value "line" indicates the unit measured in
-                     <att>extent</att>.</p>
+                        <att>extent</att>.</p>
                   <p>
                      <quote>- - - - - -</quote>
                   </p>
@@ -1106,7 +1108,10 @@
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-superfluous.html">
                   <!-- NEED TO EXPLAIN THAT THIS IS WEST'S SUGGESTION AND WE'RE FOLLOWING IT -->
                   <head>Editorial Deletion</head>
-                  <p>Text suspected by the editor to be superfluous, but retained in the main text to indicate its traditional attribution to the author. (Cf. Epidoc guidelines, "Superfluous Text" <ptr target="http://www.stoa.org/epidoc/gl/latest/trans-superfluous.html"/>)</p>
+                  <p>Text suspected by the editor to be superfluous, but retained in the main text
+                     to indicate its traditional attribution to the author. (Cf. Epidoc guidelines,
+                     "Superfluous Text" <ptr
+                        target="http://www.stoa.org/epidoc/gl/latest/trans-superfluous.html"/>)</p>
                   <p>
                      <specList>
                         <specDesc key="surplus"/>
@@ -1126,7 +1131,9 @@
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html">
                   <!-- Doesn't really correspond to http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html, but it's close. -->
                   <head>Crux</head>
-                  <p>Text deemed by the editor to be irredeemably corrupt. (Cf. Epidoc guidelines, "Ambiguous Characters" <ptr target="http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html"/>)</p>
+                  <p>Text deemed by the editor to be irredeemably corrupt. (Cf. Epidoc guidelines,
+                     "Ambiguous Characters" <ptr
+                        target="http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html"/>)</p>
                   <p>
                      <specList>
                         <specDesc key="unclear"/>
@@ -1139,7 +1146,8 @@
                   </p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <sic>lorem ipsum</sic><!-- How to indicate that this is an editor's determination? -->
+                     <sic>lorem
+                     ipsum</sic><!-- How to indicate that this is an editor's determination? -->
                   </egXML>
                </div>
             </div>
