@@ -826,8 +826,83 @@
                the main text of a critical edition.</p>
             <div xml:id="edition-text-prose">
                <head>Prose</head>
-               <p><!-- Need help here with reference scheme for prose texts.-->
+               <p>The aim of this section is to provide guidance for marking up the structure of
+                  prose texts, using the generic model of book, chapter, and paragraph for the main
+                  components of a work.</p>
+               <p>
+                  <specList>
+                     <specDesc key="div"/>
+                     <specDesc key="milestone"/>
+                     <specDesc key="p"/>
+                     <specDesc key="seg"/>
+                  </specList>
                </p>
+               <p><gi>div</gi> (division) marks first-order (e.g., book) and second-order (e.g.,
+                  chapter) sections of the prose text. <att>type</att> and <att>subtype</att> should
+                  be used to describe the parts of the text; <att>n</att> must be used with second-order divisions to indicate
+                  their order in the sequence of the work:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <div type="edition">
+                     <div type="textpart" subtype="book" n="1"> </div>
+                  </div>
+               </egXML>
+               <p>For an LDLT edition, the top-level <gi>div</gi> has the <att>type</att> "edition";
+                  this division contains the entire text of the edition. The next <gi>div</gi> will
+                  normally have the <att>type</att> "textpart" with <att>subtype</att> "book" and
+                     <att>n</att> "1" to indicate that this is the first book. If a different
+                  division scheme is required, editors should consult the DLL staff.</p>
+               <p><gi>milestone</gi> can be used to mark the sections of a canonical edition, if the
+                  current edition uses a different scheme.</p>
+               <p><gi>p</gi> (paragraph) contains the text of a chapter or other basic section in a
+                  prose work. <att>n</att> must be used to reflect the numbering scheme of the
+                  edition.</p>
+               <p><gi>seg</gi> (segment) contains a segment of a paragraph (e.g., a sentence or a
+                  more general "section"). If <gi>seg</gi> is used, <att>n</att> must be used to
+                  reflect the numbering scheme of the edition.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <div type="edition">
+                     <div type="textpart" subtype="book" n="1">
+                        <p n="1">
+                           <seg n="1">Gallia est omnis divisa in partes tres, quarum unam incolunt
+                              Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra
+                              Galli appellantur.</seg>
+                           <seg n="2">Hi omnes lingua, institutis, legibus inter se differunt.
+                              Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana
+                              dividit.</seg>
+                           <seg n="3">Horum omnium fortissimi sunt Belgae, propterea quod a cultu
+                              atque humanitate provinciae longissime absunt, minimeque ad eos
+                              mercatores saepe commeant atque ea quae ad effeminandos animos
+                              pertinent important, proximique sunt Germanis, qui trans Rhenum
+                              incolunt, quibuscum continenter bellum gerunt.</seg>
+                           <seg n="4">Qua de causa Helvetii quoque reliquos Gallos virtute
+                              praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum
+                              aut suis finibus eos prohibent aut ipsi in eorum finibus bellum
+                              gerunt.</seg>
+                           <seg n="5">Eorum una, pars, quam Gallos obtinere dictum est, initium
+                              capit a flumine Rhodano, continetur Garumna flumine, Oceano, finibus
+                              Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum,
+                              vergit ad septentriones.</seg>
+                           <seg n="6">Belgae ab extremis Galliae finibus oriuntur, pertinent ad
+                              inferiorem partem fluminis Rheni, spectant in septentrionem et
+                              orientem solem.</seg>
+                           <seg n="7">Aquitania a Garumna flumine ad Pyrenaeos montes et eam partem
+                              Oceani quae est ad Hispaniam pertinet; spectat inter occasum solis et
+                              septentriones.</seg>
+                        </p>
+                     </div>
+                  </div>
+               </egXML>
+               <p>In a traditional critical edition, numbers are printed in the margin and/or in the
+                  text itself. It is often unclear whether the numbers are meant to mark syntactic
+                  units, reflect the numbering of pages or sections in a canonical edition, or
+                  something else. When the numbers are printed in the text, it can be unclear</p>
+               <p>Note that the TEI Guidelines define the paragraph as <quote
+                     source="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COPA">the
+                     fundamental organizational unit for all prose texts</quote>. The unique
+                  characteristics of some texts may require a different approach. In those cases,
+                  editors should work with DLL staff to identify the best way to encode the text in
+                  question.</p>
             </div>
             <div xml:id="edition-text-poetry">
                <head>Verse</head>
@@ -840,8 +915,7 @@
                   LDLT does not provide functionality for that level of detail.</p>
                <p>
                   <specList>
-                     <specDesc key="div1"/>
-                     <specDesc key="div2"/>
+                     <specDesc key="div"/>
                      <specDesc key="lg"/>
                      <specDesc key="l"/>
                   </specList>
