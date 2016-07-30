@@ -473,11 +473,14 @@
                            edition</p>
                         <p><gi>pubPlace</gi> (place of publication) contains the name of the place
                            where the edition was published, as it appears on the title page (e.g.,
-                           Lipsiae instead of Leipzig). If the place is unknown, the value should be "s.l." (<foreign xml:lang="la">sine loco</foreign>).</p>
+                           Lipsiae instead of Leipzig). If the place is unknown, the value should be
+                           "s.l." (<foreign xml:lang="la">sine loco</foreign>).</p>
                         <p><gi>publisher</gi> contains the name of the publisher, as it appears on
-                           the title page. If the publisher's name is unknown, the value should be "s.n." (<foreign xml:lang="la">sine nomine</foreign>)</p>
+                           the title page. If the publisher's name is unknown, the value should be
+                           "s.n." (<foreign xml:lang="la">sine nomine</foreign>)</p>
                         <p><gi>date</gi> contains the date in Arabic numerals (e.g., 1504, not
-                           MDIV). If the date is unknown, the value should be "s.d." (<foreign xml:lang="la">sine die</foreign>).</p>
+                           MDIV). If the date is unknown, the value should be "s.d." (<foreign
+                              xml:lang="la">sine die</foreign>).</p>
                         <!-- Value if self-closing: "s.d." (sine die). -->
                         <p><gi>note</gi> with <att>type</att>="url" contains the URL for an online
                            copy of the edition, if available.</p>
@@ -517,7 +520,8 @@
                      <p><gi>monogr</gi> (monographic level) contains bibliographic elements
                         describing an edition.</p>
                      <p><gi>title</gi> with <att>level</att>="m" (monographic) contains the full
-                        title of the edition.</p><!-- Necessary? Titles can be pretty long and tedious. -->
+                        title of the edition.</p>
+                     <!-- Necessary? Titles can be pretty long and tedious. -->
                      <p><gi>editor</gi> contains information identifying the editor of the edition.
                         If the edition has more than one editor, use one <gi>editor</gi> for each
                         editor.</p>
@@ -527,8 +531,8 @@
                         editor in cases where that information is known.</p>
                      <p><gi>surname</gi> contains the last name of an editor, in cases where that
                         information is known.</p>
-                     <p><gi>addname</gi> (additional name) contains a nickname or a Latin name by which an editor might be known
-                        (e.g., "Ascensius").</p>
+                     <p><gi>addname</gi> (additional name) contains a nickname or a Latin name by
+                        which an editor might be known (e.g., "Ascensius").</p>
                      <p>Publication information is handled according to the guidelines in the <ref
                            target="#bibliography-pub">section above on publication</ref>.</p>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -748,50 +752,55 @@
                         remarks, if they are available.</p>
                      <p>
                         <specList>
-                           <specDesc key="list"/>
-                           <specDesc key="item"/>
+                           <specDesc key="listPerson"/>
+                           <specDesc key="person"/>
                            <specDesc key="persName"/>
                            <specDesc key="forename"/>
                            <specDesc key="surname"/>
+                           <specDesc key="addname"/>
                            <specDesc key="ref"/>
                            <specDesc key="note"/>
                         </specList>
                      </p>
-                     <p><gi>list</gi> with <att>xml:id</att>="bibliography-scholars" groups the
-                        information identifying the scholars.</p>
+                     <p><gi>listPerson</gi> with <att>xml:id</att>="bibliography-scholars" groups
+                        the information identifying the scholars.</p>
                      <!-- Use listPerson instead of just list? -->
-                     <p><gi>item</gi> with <att>xml:id</att> and <att>n</att> as <ref
+                     <p><gi>person</gi> with <att>xml:id</att> and <att>n</att> as <ref
                            target="#bibliography-sigla">described above</ref>.</p>
                      <p><gi>persName</gi> (personal name) groups the information about the scholar's
                         name. Note that it is helpful, but not required, to use <att>ref</att> with
                         the <ref target="https://viaf.org">Virtual International Authorify File
                            (VIAF)</ref> permalink for that person.</p>
                      <p><gi>forename</gi> contains the scholar's first and middle names (middle name
-                        optional), or initials, of the scholar.</p>
-                     <p><gi>surname</gi> contains the scholar's last name. If the scholars is known
-                        by a nickname or shortened name (e.g., Wilamowitz), that information is
-                        enclosed in parentheses and quotation marks.</p>
+                        optional), or initials, of the scholar. A separate <gi>forename</gi> should
+                        be used for the first and middle names.</p>
+                     <p><gi>surname</gi> contains the scholar's last name.</p>
+                     <p><gi>addname</gi> (additional name) contains an additional or alternate name
+                        by which a scholar is known.</p>
                      <p><gi>ref</gi> (reference) contains a reference to the entry in the
                         bibliography that has citations of the scholar. <att>target</att> with the
                         xml:id of the entry will cause the reference to point to that entry.</p>
                      <p><gi>note</gi> contains further information about the nature of the citation
                         (e.g., "personal correspondence with editor").</p>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <item xml:id="CSchenkl" n="C. Schenkl">
-                           <persName ref="http://viaf.org/viaf/12523146">
-                              <forename>Karl</forename>
-                              <surname>Schenkl</surname>
-                           </persName>
-                           <ref target="#Schenkl">H. Schenkl</ref>
-                           <note>Unpublished opinions cited in Schenkl's editions.</note>
-                        </item>
-                        <item xml:id="Scriverius" n="Scriver.">
-                           <persName ref="https://viaf.org/viaf/121894458/">
-                              <forename>Pieter</forename>
-                              <surname>Schrijver ("Scriverius")</surname>
-                           </persName>
-                           <ref target="#Burm.">Burman 1731</ref>
-                        </item>
+                        <listPerson xml:id="bibliography-scholars">
+                           <person xml:id="CSchenkl" n="C. Schenkl">
+                              <persName ref="http://viaf.org/viaf/12523146">
+                                 <forename>Karl</forename>
+                                 <surname>Schenkl</surname>
+                              </persName>
+                              <ref target="#Schenkl">H. Schenkl</ref>
+                              <note>Unpublished opinions cited in Schenkl's editions.</note>
+                           </person>
+                           <person xml:id="Scriverius" n="Scriver.">
+                              <persName ref="https://viaf.org/viaf/121894458/">
+                                 <forename>Pieter</forename>
+                                 <surname>Schrijver</surname>
+                                 <addname>Scriverius</addname>
+                              </persName>
+                              <ref target="#Burm.">Burman 1731</ref>
+                           </person>
+                        </listPerson>
                      </egXML>
                   </div>
                </div>
@@ -801,14 +810,14 @@
             <head>Edition Text</head>
             <p>The edition text corresponds to the text printed "above the line" of the critical
                apparatus in a traditional edition. It is composed of "accepted readings," that is,
-               text judged by the editor to be authoritative.</p>
+               text judged by the editor to be authentic, accurate, or authoritative.</p>
             <p>There may be more than one authoritative version of a text, depending on the text and
                depending on the approach adopted by the editor. Authors sometimes edit and revise
                their work over time. Scribes often record the version of the text that makes sense
                in their context. Scholars and other readers offer conjectures for problematic
-               passages. But an editor must make decisions about the text and edition presents to
-               readers. The results of those decisions are on display in the official edition
-               text.</p>
+               passages. But an editor must make decisions about the text an edition presents to
+               readers. Combined, those decision constitute the editor's argument about the text,
+               and they are on display in the official edition text in its initial state.</p>
             <p>Since the online version of an LDLT allows readers to swap readings from the critical
                apparatus into the main text, it is possible to encounter many versions of the text
                in one viewing of it, but the official edition text is the starting point for those
