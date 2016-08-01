@@ -211,8 +211,6 @@
             <div xml:id="bibliography">
                <head>Bibliography</head>
                <!-- Issue: Should a consensus siglum be an xml:id on a <listBibl> containing the items, or a separate siglum listed elsewhere? -->
-               <!-- Issue: One <forename> for first and middle names? Or separate <forename> for each? -->
-               <!-- Issue: Nicknames. Should they be in parentheses with <surname>, or should they be in <addname> by themselves? -->
                <p>The bibliography presents opportunities for leveraging the digital nature of an
                   LDLT edition. For this reason, every item in the bibliography is encoded as
                   structured data (contained in <gi>msDesc</gi> or <gi>biblStruct</gi>), so that the
@@ -268,27 +266,100 @@
                      correctly interpret it within a particular edition as meaning "text written by
                      the second person in a succession of people who wrote in the manuscript known
                      as codex Neapolitanus V A 8." In contrast, a machine will interpret the same
-                     information as simply the letter "N" with a superscript numeral 2 next to
-                     it.</p>
-                  <p>To make an LDLT text readable by both humans and machines, there must be a
-                     system of reference that leverages both the traditional approach that has
-                     served textual criticism so well for so long and new ways of making information
-                     available to machines for processing and sophisticated analysis. To accomplish
-                     that goal, each item in the bibliography of an LDLT edition must have two
-                     unique identifiers: one for humans and one for machines.</p>
-                  <p>For the latter, the XML specification has the <att>xml:id</att> attribute,
-                     which has <ref target="https://www.w3.org/TR/xml-id/">strict rules</ref> that
-                     do not allow for the traditional conventions used in critical editions. For the
-                     former, the TEI standard has <att>n</att>, which allows for all of the usual
-                     conventions. In some instances, the two attributes might be identical. For
-                     example, if a manuscript is known by the siglum <hi rend="bold">V</hi>, it is
-                     possible to identify it to machines as <att>xml:id</att>="V" and to humans as
-                        <att>n</att>="V". But if an editor must refer to different hands that wrote
-                     in the same manuscript, the usual practice in a printed critical edition is to
-                     use sequential superscript numerals for the different hands. In an LDLT
-                     edition, the second in the series of hands would have <att>xml:id</att> of
-                     "Vh2", but the value of <att>n</att> would be "V²". Humans can read and
-                     understand both easily, but the XML specification only allows one of them.</p>
+                     information as simply the letter "N" with a superscript numeral 2 next to it.
+                     Indeed, a less experienced human reader might reach the same conclusion as the
+                     machine.</p>
+                  
+                  <!-- Start here -->
+                  
+                  <p>To make an LDLT text readable by both humans and machines, the reference system
+                     must leverage both the traditional approach that has served textual criticism
+                     so well for so long and new ways of making information available to machines
+                     (e.g., for processing and analysis). For manuscripts and other witnesses, <ref
+                        target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCSCWL"
+                        >Section 12.1.4.2 of the TEI Guidelines</ref> ("Critical Apparatus: Witness
+                     Information in the Source") recommends recording a witness' siglum in
+                        <att>xml:id</att>. Unfortunately, the <ref
+                        target="https://www.w3.org/TR/xml-id/">strict rules of the XML specification
+                        for <att>xml:id</att></ref> do not allow for the traditional system of
+                     combining letters with superscript and/or subscript numerals to indicate
+                     manuscript hands, collections of manuscripts, and other information, so the
+                     LDLT must also use the TEI attribute <att>n</att> is much more flexible. For
+                     this reason, the LDLT uses two attributes, <att>xml:id</att> and <att>n</att>
+                     for all items in the bibliography, to make sigla available to machines and
+                     humans, respectively.</p>
+                  <p>The values of <att>xml:id</att> and <att>n</att> should be similar, if not
+                     identical, to each other, and they should be meaningful. Editors should follow
+                     the conventions in previous editions of the same text, changing a siglum only
+                     if it is important to the edition's argument to do so. If the text has never
+                     been edited, the editor should choose sigla according to the principles
+                     outlined by <ref target="#West">West</ref> (74–75). In brief, use sigla that
+                     have mnemonic value (e.g., "V" for "Vaticanus" or "P" for "Parisinus").</p>
+                  <p>Because the needs of editors will vary from edition to edition, the LDLT does
+                     not have strict rules for representing manuscript hands or similar information.
+                     Rather, we offer these suggestions:</p>
+                  <table>
+                     <row role="label">
+                        <cell role="data">Information</cell>
+                        <cell role="data">Example Value of <att>xml:id</att></cell>
+                        <cell role="data">Example Value of <att>n</att></cell>
+                     </row>
+                     <row role="data">
+                        <cell role="data">A single manuscript</cell>
+                        <cell role="data">V</cell>
+                        <cell role="data">V</cell>
+                     </row>
+                     <row role="data">
+                        <cell role="data">Manuscript Hands</cell>
+                        <cell role="data">Vh1, Vh2</cell>
+                        <cell role="data">V¹, V²</cell>
+                     </row>
+                     <row role="data">
+                        <cell role="data">Multiple manuscripts from one collection</cell>
+                        <cell role="data">Vms1, Vms2</cell>
+                        <cell role="data">V₁, V₂</cell>
+                     </row>
+                     <row role="data">
+                        <cell role="data">Something for "rec"</cell>
+                        <cell role="data">Vrec</cell>
+                        <cell role="data"><!-- What to do with unicode superscript? --></cell>
+                     </row>
+                     <row role="data">
+                        <cell role="data">Fragments of ancient copies</cell>
+                        <cell role="data">Π1, Π2</cell>
+                        <cell role="data">Π¹, Π²</cell>
+                     </row>
+                     <row role="data">
+                        <cell role="data">Consensus of manuscripts</cell>
+                        <cell role="data">ω</cell>
+                        <cell role="data">ω</cell>
+                     </row>
+                     <row role="data">
+                        <cell role="data">One or more late manuscripts</cell>
+                        <cell role="data">ς</cell>
+                        <cell role="data">ς</cell>
+                     </row>
+                     <row role="data">
+                        <cell role="data">Scholia</cell>
+                        <cell role="data">Σ</cell>
+                        <cell role="data">Σ</cell>
+                     </row>
+                     <row role="data">
+                        <cell role="data">Scholia in a certain manuscript</cell>
+                        <cell role="data">Σa, Σb</cell>
+                        <cell role="data">Σª, Σᵇ</cell>
+                     </row>
+                     <row role="data">
+                        <cell role="data">Multiple editions</cell>
+                        <cell role="data">Schenkl1, Schenkl2</cell>
+                        <cell role="data">Schenkl¹, Schenkl²</cell>
+                     </row>
+                     <row role="data">
+                        <cell role="data">Multiple books or articles by the same scholar</cell>
+                        <cell role="data">Burm1731, Burm1759</cell>
+                        <cell role="data">Burm. 1731, Burm. 1759</cell>
+                     </row>
+                  </table>
                   <p>In short, <hi rend="bold">every entry, regardless of type, in the bibliography
                         of an LDLT edition must have values for both <att>xml:id</att> and
                            <att>n</att>.</hi> Otherwise, the edition will not be able to make full
@@ -381,7 +452,6 @@
                   </list>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <listWit>
-                        <head>First family</head>
                         <witness xml:id="N" n="N">Codex Neapolitanus V A 8 <msDesc>
                               <msIdentifier>
                                  <settlement>Naples</settlement>
@@ -439,12 +509,25 @@
                   </egXML>
                   <p><gi>note</gi> may be used to specify the portion of the century in which a
                      manuscript was written, if known.</p>
-                  <p>If it is important to distinguish among families of manuscripts, separate
-                        <gi>listWit</gi> containers (each with an identifying <gi>head</gi>) should
-                     be used. In cases of multiple <gi>listWit</gi> containers, each
-                        <gi>listWit</gi> should have a unique <att>xml:id</att> to use when
-                     referring to the family itself or a consensus of readings in that family.</p>
-                  <!-- Insert example -->
+                  <p><gi>listWit</gi> may be used to group manuscripts belonging to a particular
+                     family of manuscripts. If it is desirable to use a siglum to refer to the
+                     consensus of manuscripts in that family, <gi>listWit</gi> must have
+                        <att>xml:id</att> and <att>n</att> with values corresponding to that
+                     siglum.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <listWit xml:id="V" n="V">
+                        <head>Family V</head>
+                        <witness xml:id="a" n="a">
+                           <!-- Identifying information about manuscript a -->
+                        </witness>
+                        <witness xml:id="b" n="b">
+                           <!-- Identifying information about manuscript b -->
+                        </witness>
+                        <witness xml:id="c" n="c">
+                           <!-- Identifying information about manuscript a -->
+                        </witness>
+                     </listWit>
+                  </egXML>
                </div>
                <div xml:id="bibliography-sources">
                   <head>Other Sources</head>
@@ -839,8 +922,8 @@
                </p>
                <p><gi>div</gi> (division) marks first-order (e.g., book) and second-order (e.g.,
                   chapter) sections of the prose text. <att>type</att> and <att>subtype</att> should
-                  be used to describe the parts of the text; <att>n</att> must be used with second-order divisions to indicate
-                  their order in the sequence of the work:</p>
+                  be used to describe the parts of the text; <att>n</att> must be used with
+                  second-order divisions to indicate their order in the sequence of the work:</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <div type="edition">
