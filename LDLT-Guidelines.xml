@@ -254,47 +254,56 @@
                </div>
                <div xml:id="bibliography-sigla">
                   <head>Human- and Machine-Readable Sigla, Symbols, and Abbreviations</head>
-                  <p>Printed editions have long used a system of shorthand references for
-                     manuscripts and other materials in the bibliography. Single letters, or <emph
-                        rend="italic">sigla</emph>, stand for a manuscript, and the last name of a
-                     scholar serves as a shorthand reference to an edition, commentary, or other
-                     work of scholarship. Centuries of publication have demontrated that sigla and
-                     other symbols and abbreviations are efficient, effective, and economical ways
-                     of conveying complex information in critical editions. But they are also
-                     examples of visually encoded information that is available only to human
-                     readers. In other words, a human might see <hi rend="bold">N²</hi> and
-                     correctly interpret it within a particular edition as meaning "text written by
-                     the second person in a succession of people who wrote in the manuscript known
-                     as codex Neapolitanus V A 8." In contrast, a machine will interpret the same
-                     information as simply the letter "N" with a superscript numeral 2 next to it.
-                     Indeed, a less experienced human reader might reach the same conclusion as the
-                     machine.</p>
-                  
-                  <!-- Start here -->
-                  
-                  <p>To make an LDLT text readable by both humans and machines, the reference system
-                     must leverage both the traditional approach that has served textual criticism
-                     so well for so long and new ways of making information available to machines
-                     (e.g., for processing and analysis). For manuscripts and other witnesses, <ref
-                        target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCSCWL"
-                        >Section 12.1.4.2 of the TEI Guidelines</ref> ("Critical Apparatus: Witness
-                     Information in the Source") recommends recording a witness' siglum in
-                        <att>xml:id</att>. Unfortunately, the <ref
-                        target="https://www.w3.org/TR/xml-id/">strict rules of the XML specification
-                        for <att>xml:id</att></ref> do not allow for the traditional system of
-                     combining letters with superscript and/or subscript numerals to indicate
-                     manuscript hands, collections of manuscripts, and other information, so the
-                     LDLT must also use the TEI attribute <att>n</att> is much more flexible. For
-                     this reason, the LDLT uses two attributes, <att>xml:id</att> and <att>n</att>
-                     for all items in the bibliography, to make sigla available to machines and
-                     humans, respectively.</p>
-                  <p>The values of <att>xml:id</att> and <att>n</att> should be similar, if not
-                     identical, to each other, and they should be meaningful. Editors should follow
-                     the conventions in previous editions of the same text, changing a siglum only
-                     if it is important to the edition's argument to do so. If the text has never
-                     been edited, the editor should choose sigla according to the principles
-                     outlined by <ref target="#West">West</ref> (74–75). In brief, use sigla that
-                     have mnemonic value (e.g., "V" for "Vaticanus" or "P" for "Parisinus").</p>
+                  <p>Printed editions have long used a system of references for manuscripts and
+                     other materials in the bibliography. For example, single letters, or <emph
+                        rend="italic">sigla</emph>, stand for manuscripts, and the last names of
+                     scholars stand for editions, commentaries, or other works of scholarship.
+                     Centuries of use have demontrated that this system of sigla and other symbols
+                     and abbreviations is an efficient, effective, and economical way of presenting
+                     the complex information contained in critical editions. Although its
+                     development was motivated by the constraints of the printed page, its virtues
+                     for representing data commend it for other media, too. But just as the printed
+                     page has limits, so too does the digital file, so the traditional system
+                     requires an update.</p>
+                  <p>The main reason for the update is to make the information available to machines
+                     for processing and analysis. Given some guidance and experience, people can
+                     learn how to navigate the system of letters, numbers, symbols, and other
+                     typographical conventions for referring to the sources of a crticial edition.
+                     If one edition uses superscript numerals to indicate the hands that wrote in a
+                     manuscript, but another uses superscript numerals to signify the number of a
+                     manuscript in a collection, a human reader can accommodate the different
+                     meanings without much effort. In contrast, machines need clear instructions and
+                     a reliable set of rules for reading a digital file. A human might see <hi
+                        rend="bold">N²</hi> and correctly interpret it within a particular edition
+                     as meaning "text written by the second person in a succession of people who
+                     wrote in the manuscript known as codex Neapolitanus V A 8." Without explicit
+                     instructions, a machine will interpret the same information as simply the
+                     letter "N" with a superscript numeral 2 next to it. Indeed, a less experienced
+                     human reader might reach the same conclusion as the machine.</p>
+                  <p>Since the audience for LDLT editions includes an entirely new class of reader
+                     (i.e., machines), it stands to reason that the reference system should be
+                     adapted to accommodate the needs of the expanded readership. For this reason,
+                     LDLT editions encode sigla and other aspects of the traditional reference
+                     system in two ways: a machine-readable version (using <att>xml:id</att>) and a
+                     human-readable version (using <gi>label</gi> and special instructions for
+                     rendering typographical conventions such as superscript and subscript
+                     notation). In some cases, the values for both will be the same. Unfortunately,
+                     the <ref target="https://www.w3.org/TR/xml-id/">strict rules of the XML
+                        specification for <att>xml:id</att></ref> do not allow for the traditional
+                     system of combining letters with superscript and/or subscript numerals to
+                     indicate manuscript hands, collections of manuscripts, and other information,
+                     so some variation is likely. 
+                     
+                     <!-- Start here -->
+                     
+                     Nevertheless, the values of <att>xml:id</att> and
+                        <att>n</att> should be similar, if not identical, to each other, and they
+                     should be meaningful. Editors should follow the conventions in previous
+                     editions of the same text, changing a siglum only if it is important to the
+                     edition's argument to do so. If the text has never been edited, the editor
+                     should choose sigla according to the principles outlined by <ref target="#West"
+                        >West</ref> (74–75). In brief, use sigla that have mnemonic value (e.g., "V"
+                     for "Vaticanus" or "P" for "Parisinus").</p>
                   <p>Because the needs of editors will vary from edition to edition, the LDLT does
                      not have strict rules for representing manuscript hands or similar information.
                      Rather, we offer these suggestions:</p>
