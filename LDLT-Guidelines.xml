@@ -264,46 +264,39 @@
                      development was motivated by the constraints of the printed page, its virtues
                      for representing data commend it for other media, too. But just as the printed
                      page has limits, so too does the digital file, so the traditional system
-                     requires an update.</p>
-                  <p>The main reason for the update is to make the information available to machines
-                     for processing and analysis. Given some guidance and experience, people can
-                     learn how to navigate the system of letters, numbers, symbols, and other
-                     typographical conventions for referring to the sources of a crticial edition.
-                     If one edition uses superscript numerals to indicate the hands that wrote in a
-                     manuscript, but another uses superscript numerals to signify the number of a
-                     manuscript in a collection, a human reader can accommodate the different
-                     meanings without much effort. In contrast, machines need clear instructions and
-                     a reliable set of rules for reading a digital file. A human might see <hi
-                        rend="bold">N²</hi> and correctly interpret it within a particular edition
-                     as meaning "text written by the second person in a succession of people who
-                     wrote in the manuscript known as codex Neapolitanus V A 8." Without explicit
-                     instructions, a machine will interpret the same information as simply the
-                     letter "N" with a superscript numeral 2 next to it. Indeed, a less experienced
-                     human reader might reach the same conclusion as the machine.</p>
+                     requires an update to make it available in a digital context.</p>
+                  <p>Given some guidance and experience, people can learn how to navigate the system
+                     of letters, numbers, symbols, and other typographical conventions for referring
+                     to the sources of a crticial edition. If one edition uses superscript numerals
+                     to indicate the hands that wrote in a manuscript, but another uses superscript
+                     numerals to signify the number of a manuscript in a collection, a human reader
+                     can adjust to the difference in meaning without much effort. In contrast,
+                     machines need clear instructions and a reliable set of rules for reading a
+                     digital file. A human might see <hi rend="bold">N²</hi> and correctly interpret
+                     it within a particular edition as meaning "text written by the second person in
+                     a succession of people who wrote in the manuscript known as codex Neapolitanus
+                     V A 8." Without explicit instructions, a machine will interpret the same
+                     information as simply the letter "N" with a superscript numeral 2 next to it.
+                     Indeed, a less experienced human reader might reach the same conclusion as the
+                     machine.</p>
                   <p>Since the audience for LDLT editions includes an entirely new class of reader
                      (i.e., machines), it stands to reason that the reference system should be
                      adapted to accommodate the needs of the expanded readership. For this reason,
                      LDLT editions encode sigla and other aspects of the traditional reference
                      system in two ways: a machine-readable version (using <att>xml:id</att>) and a
-                     human-readable version (using <gi>label</gi> and special instructions for
+                     human-readable version (using <gi>label</gi>, with special instructions for
                      rendering typographical conventions such as superscript and subscript
-                     notation). In some cases, the values for both will be the same. Unfortunately,
-                     the <ref target="https://www.w3.org/TR/xml-id/">strict rules of the XML
-                        specification for <att>xml:id</att></ref> do not allow for the traditional
-                     system of combining letters with superscript and/or subscript numerals to
-                     indicate manuscript hands, collections of manuscripts, and other information,
-                     so some variation is likely. 
-                     
-                     <!-- Start here -->
-                     
-                     Nevertheless, the values of <att>xml:id</att> and
-                        <att>n</att> should be similar, if not identical, to each other, and they
-                     should be meaningful. Editors should follow the conventions in previous
-                     editions of the same text, changing a siglum only if it is important to the
-                     edition's argument to do so. If the text has never been edited, the editor
-                     should choose sigla according to the principles outlined by <ref target="#West"
-                        >West</ref> (74–75). In brief, use sigla that have mnemonic value (e.g., "V"
-                     for "Vaticanus" or "P" for "Parisinus").</p>
+                     notation). In some cases, the values for both will be the same, but the <ref
+                        target="https://www.w3.org/TR/xml-id/">strict rules of the XML specification
+                        for <att>xml:id</att></ref> do not allow for the traditional system of
+                     combining letters with superscript and/or subscript numerals. Nevertheless, the
+                     values of <att>xml:id</att> and <gi>label</gi> should be similar, if not
+                     identical, to each other, and they should be meaningful. Editors should follow
+                     the conventions in previous editions of the same text, changing a siglum only
+                     if it is important to the edition's argument to do so. If the text has never
+                     been edited, the editor should choose sigla according to the principles
+                     outlined by <ref target="#West">West</ref> (74–75). In brief, use sigla that
+                     have mnemonic value (e.g., "V" for "Vaticanus" or "P" for "Parisinus").</p>
                   <p>Because the needs of editors will vary from edition to edition, the LDLT does
                      not have strict rules for representing manuscript hands or similar information.
                      Rather, we offer these suggestions:</p>
@@ -311,32 +304,32 @@
                      <row role="label">
                         <cell role="data">Information</cell>
                         <cell role="data">Example Value of <att>xml:id</att></cell>
-                        <cell role="data">Example Value of <att>n</att></cell>
+                        <cell role="data">Example Value of <gi>label</gi></cell>
                      </row>
                      <row role="data">
                         <cell role="data">A single manuscript</cell>
-                        <cell role="data">V</cell>
+                        <cell role="data">"V"</cell>
                         <cell role="data">V</cell>
                      </row>
                      <row role="data">
                         <cell role="data">Manuscript Hands</cell>
                         <cell role="data">Vh1, Vh2</cell>
-                        <cell role="data">V¹, V²</cell>
+                        <cell role="data">V<hi rend="super">1</hi>, V<hi rend="super">2</hi></cell>
                      </row>
                      <row role="data">
                         <cell role="data">Multiple manuscripts from one collection</cell>
                         <cell role="data">Vms1, Vms2</cell>
-                        <cell role="data">V₁, V₂</cell>
+                        <cell role="data">V<hi rend="sub">1</hi>, V<hi rend="sub">2</hi></cell>
                      </row>
                      <row role="data">
-                        <cell role="data">Something for "rec"</cell>
+                        <cell role="data">One of many indistinguishable hands</cell>
                         <cell role="data">Vrec</cell>
-                        <cell role="data"><!-- What to do with unicode superscript? --></cell>
+                        <cell role="data">V<hi rend="super">rec</hi></cell>
                      </row>
                      <row role="data">
                         <cell role="data">Fragments of ancient copies</cell>
                         <cell role="data">Π1, Π2</cell>
-                        <cell role="data">Π¹, Π²</cell>
+                        <cell role="data">Π<hi rend="super">1</hi>, Π<hi rend="super">1</hi></cell>
                      </row>
                      <row role="data">
                         <cell role="data">Consensus of manuscripts</cell>
@@ -356,12 +349,13 @@
                      <row role="data">
                         <cell role="data">Scholia in a certain manuscript</cell>
                         <cell role="data">Σa, Σb</cell>
-                        <cell role="data">Σª, Σᵇ</cell>
+                        <cell role="data">Σ<hi rend="super">a</hi>, Σ<hi rend="super">b</hi></cell>
                      </row>
                      <row role="data">
                         <cell role="data">Multiple editions</cell>
                         <cell role="data">Schenkl1, Schenkl2</cell>
-                        <cell role="data">Schenkl¹, Schenkl²</cell>
+                        <cell role="data">Schenkl<hi rend="super">1</hi>, Schenkl<hi rend="super"
+                              >2</hi></cell>
                      </row>
                      <row role="data">
                         <cell role="data">Multiple books or articles by the same scholar</cell>
@@ -371,20 +365,32 @@
                   </table>
                   <p>In short, <hi rend="bold">every entry, regardless of type, in the bibliography
                         of an LDLT edition must have values for both <att>xml:id</att> and
-                           <att>n</att>.</hi> Otherwise, the edition will not be able to make full
-                     use of the digital format. Morever, if an entry lacks <att>n</att>, it will not
-                     be available for the print version of the edition.</p>
-                  <p>The following sections explain how the different types of materials should be
-                     encoded.</p>
+                           <gi>label</gi>.</hi> Otherwise, the edition will not be able to make full
+                     use of the digital format. Morever, if an entry lacks a <gi>label</gi>, it will
+                     not be available for a print version of the edition, should one be
+                     produced.</p>
                </div>
                <div xml:id="bibliography-ms-description">
                   <head>Manuscripts</head>
-                  <p>Manuscript description is a discipline unto itself, with an entire module in
-                     the TEI guidelines devoted to it (<ref
+                  <p>The description of manuscripts is a discipline unto itself, with
+                     long-established conventions for capturing all of the details about not only a
+                     manuscript's contents, but also its dimensions, provenance, material, and other
+                     physical details. It is customary for critical editions to provide a brief prose description
+                     of the major manuscripts used for establishing the text, usually enough to
+                     identify where the manuscript may be found for consultation, but sometimes
+                     including information about its provenance and other details relevant to the
+                     edition (e.g., manuscript hands).</p>
+                  <p>The prose format for describing manuscripts is a predictable and efficient way of conveying this information to human readers, but it is not particulary useful for making the information available to machines for processing. That is why the TEI guidelines have an entire
+                     module for making manuscript descriptions available as structured data for
+                     machine-readability (<ref
                         target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html">10
-                        Manuscript Description</ref>). Since fully describing every manuscript
+                        Manuscript Description</ref>).</p> 
+                  
+                  <!-- Start here -->
+                  
+                  <p>Since fully describing every manuscript
                      consulted for an edition could be prohibitive, these guidelines set forth the
-                     minimum required for the LDLT.</p>
+                     minimum requirements for the LDLT.</p>
                   <p>
                      <specList>
                         <specDesc key="listWit"/>
@@ -411,8 +417,8 @@
                      the name used to refer to the manuscript in the edition (e.g., Codex
                      Neapolitanus V A 8). Its <att>xml:id</att> is the unique machine-readable
                      identifier to be used when referring to the manuscript's data (e.g., in the
-                        <att>wit</att> of a <gi>rdg</gi> in the apparatus criticus). It
-                        s<att>n</att> is the human-readable siglum that should be displayed on
+                        <att>wit</att> of a <gi>rdg</gi> in the apparatus criticus).</p>
+                  <p><gi>label</gi> contains the human-readable siglum that should be displayed on
                      screen or printed.</p>
                   <p><gi>msDesc</gi> (manuscript description) groups the elements that compose the
                      description of the manuscript:</p>
@@ -442,15 +448,11 @@
                      <item><gi>handDesc</gi> (hand description) groups information about the
                         distinct hands that wrote in the manuscript. Use <att>hands</att> with the
                         value of the number of hands detectable in the manuscript.</item>
-                     <item><gi>handNote</gi> is an empty element with attributes to distinguish one
-                        hand from another. Each <gi>handNote</gi> has an <att>xml:id</att> with a
-                        unique identifier (based on the <att>xml:id</att> of the manuscript), an
-                           <att>n</att> with a human-readable version of the value of the hand's
-                           <att>xml:id</att>, <att>scope</att> with value "major" or "minor" to
-                        indicate the extent of the hand's contribution, and, if necessary,
-                           <att>corresp</att> with the value of the <att>xml:id</att> for any
-                        discussion of the hand's contribution in the preface or elsewhere in the
-                        addition.</item>
+                     <item><gi>handNote</gi> contains information about a hand that wrote in the
+                        manuscript. Each <gi>handNote</gi> has an <att>xml:id</att> with a unique
+                        identifier (based on the <att>xml:id</att> of the manuscript) and a
+                           <gi>label</gi> with a human-readable version of the value of the hand's
+                           <att>xml:id</att>.</item>
                      <item><gi>history</gi> groups information about the date of the
                         manuscript.</item>
                      <item><gi>origin</gi> encloses <gi>origDate</gi>, which contains the Roman
@@ -461,7 +463,8 @@
                   </list>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <listWit>
-                        <witness xml:id="N" n="N">Codex Neapolitanus V A 8 <msDesc>
+                        <witness xml:id="N">Codex Neapolitanus V A 8 <label>N</label>
+                           <msDesc>
                               <msIdentifier>
                                  <settlement>Naples</settlement>
                                  <repository>Biblioteca Nazionale di Napoli</repository>
@@ -475,12 +478,16 @@
                                     <supportDesc material="parch"/>
                                  </objectDesc>
                                  <handDesc hands="3">
-                                    <handNote xml:id="N1" n="N¹" scope="major"
-                                       corresp="#Ndesc-manusprima"/>
-                                    <handNote xml:id="N2" n="N²" scope="major"
-                                       corresp="#Ndesc-manusaltera"/>
-                                    <handNote xml:id="N3" n="N³" scope="minor"
-                                       corresp="#Ndesc-manustertia"/>
+                                    <handNote xml:id="N1"><label>N<hi rend="super">1</hi></label>:
+                                       corrections or attempted corrections made by the original
+                                       copyist</handNote>
+                                    <handNote xml:id="N2"><label>N<hi rend="super">2</hi>:
+                                          corrections or attempted corrections made by a later hand
+                                          not easily distinguishable from the
+                                       first.</label></handNote>
+                                    <handNote xml:id="N3"><label>N<hi rend="super">3</hi></label>:
+                                       corrections or attempted corrections made in a few places by
+                                       a third hand</handNote>
                                  </handDesc>
                               </physDesc>
                               <history>
@@ -490,7 +497,8 @@
                               </history>
                            </msDesc>
                         </witness>
-                        <witness xml:id="G" n="G">Codex Gaddianus pl. 90, 12 inf. <msDesc>
+                        <witness xml:id="G">Codex Gaddianus pl. 90, 12 inf. <label>G</label>
+                           <msDesc>
                               <msIdentifier>
                                  <settlement>Florence</settlement>
                                  <repository>Biblioteca Medicea Laurenziana</repository>
@@ -501,8 +509,12 @@
                                     <supportDesc material="paper"/>
                                  </objectDesc>
                                  <handDesc hands="2">
-                                    <handNote xml:id="G1" n="G¹"/>
-                                    <handNote xml:id="G2" n="G²"/>
+                                    <handNote xml:id="G1"><label>G<hi rend="super">1</hi>:
+                                          corrections or attempted corrections made by the original
+                                          copyist.</label></handNote>
+                                    <handNote xml:id="G2"><label>G<hi rend="super">2</hi>:
+                                          corrections or attempted corrections made by a later
+                                          hand.</label></handNote>
                                  </handDesc>
                               </physDesc>
                               <history>
@@ -521,18 +533,17 @@
                   <p><gi>listWit</gi> may be used to group manuscripts belonging to a particular
                      family of manuscripts. If it is desirable to use a siglum to refer to the
                      consensus of manuscripts in that family, <gi>listWit</gi> must have
-                        <att>xml:id</att> and <att>n</att> with values corresponding to that
+                        <att>xml:id</att> and <gi>label</gi> with values corresponding to that
                      siglum.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <listWit xml:id="V" n="V">
-                        <head>Family V</head>
-                        <witness xml:id="a" n="a">
+                     <listWit xml:id="V" n="V">Family <label>V</label>
+                        <witness xml:id="a"><label>a</label>
                            <!-- Identifying information about manuscript a -->
                         </witness>
-                        <witness xml:id="b" n="b">
+                        <witness xml:id="b"><label>b</label>
                            <!-- Identifying information about manuscript b -->
                         </witness>
-                        <witness xml:id="c" n="c">
+                        <witness xml:id="c"><label>c</label>
                            <!-- Identifying information about manuscript a -->
                         </witness>
                      </listWit>
