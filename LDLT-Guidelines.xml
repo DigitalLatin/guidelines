@@ -844,7 +844,8 @@
                      <p><gi>name</gi> contains the value "Anonymous" in cases where the name of the
                         editor is not known.</p>
                      <p><gi>forename</gi> contains the first and middle names, or initials, of an
-                        editor in cases where that information is known.</p>
+                        editor in cases where that information is known. A separate
+                           <gi>forename</gi> should be used for the first and middle names.</p>
                      <p><gi>surname</gi> contains the last name of an editor, in cases where that
                         information is known.</p>
                      <p><gi>addname</gi> (additional name) contains a nickname or a Latin name by
@@ -956,7 +957,8 @@
                         author is not known.</p>
                      <p><gi>forename</gi> contains the first and middle names (middle name
                         optional), or initials, of an author in cases where that information is
-                        known.</p>
+                        known. A separate <gi>forename</gi> should be used for the first and middle
+                        names.</p>
                      <p><gi>surname</gi> contains the last name of an author, in cases where that
                         information is known.</p>
                      <p><gi>addname</gi> (additional name) contains a nickname or Latin form of a
@@ -1040,7 +1042,8 @@
                            than one author, use one <gi>author</gi> element for each author.</item>
                         <item><gi>forename</gi> contains the first and middle names (middle name
                            optional), or initials, of an author in cases where that information is
-                           known.</item>
+                           known. A separate <gi>forename</gi> should be used for the first and
+                           middle names.</item>
                         <item><gi>surname</gi> contains the last name of an author, in cases where
                            that information is known.</item>
                      </list>
@@ -1077,7 +1080,8 @@
                            <analytic>
                               <title level="a">Some Suggestions on Calpurnius Siculus</title>
                               <author>
-                                 <forename>John Percival</forename>
+                                 <forename>John</forename>
+                                 <forename>Percival</forename>
                                  <surname>Postgate</surname>
                               </author>
                            </analytic>
@@ -1142,15 +1146,16 @@
                      <head>List of Scholars</head>
                      <p>Occasionally it is necessary to refer to a scholar whose unpublished work
                         has been quoted or paraphrased elsewhere. For example, editors often cite
-                        Nicolaas Heinsius' unpublished conjectures, found in books in his own
-                        library. But "Heins." does not help a reader find more information. That is
-                        why the bibliography of an LDLT edition includes a list of scholars
-                        mentioned by name in the edition, with information about where to find their
-                        remarks, if they are available.</p>
+                        Heinsius' unpublished conjectures, found in books in his own library. But
+                        "Heins." does not help a reader find more information, which is why the
+                        bibliography of an LDLT edition includes a list of scholars mentioned by
+                        name in the edition, with information about where to find their remarks, if
+                        they are available.</p>
                      <p>
                         <specList>
                            <specDesc key="listPerson"/>
                            <specDesc key="person"/>
+                           <specDesc key="label"/>
                            <specDesc key="persName"/>
                            <specDesc key="forename"/>
                            <specDesc key="surname"/>
@@ -1161,48 +1166,65 @@
                      </p>
                      <p><gi>listPerson</gi> with <att>xml:id</att>="bibliography-scholars" groups
                         the information identifying the scholars.</p>
-                     <!-- Use listPerson instead of just list? -->
-                     <p><gi>person</gi> with <att>xml:id</att> and <att>n</att> as <ref
-                           target="#bibliography-sigla">described above</ref>.</p>
+                     <p><gi>person</gi> with <att>xml:id</att> as <ref target="#bibliography-sigla"
+                           >described above</ref>.</p>
+                     <p><gi>label</gi> contains the name or abbreviated name used to refer to the
+                        person in the edition (e.g., Heins.).</p>
                      <p><gi>persName</gi> (personal name) groups the information about the scholar's
-                        name. Note that it is helpful, but not required, to use <att>ref</att> with
-                        the <ref target="https://viaf.org">Virtual International Authorify File
-                           (VIAF)</ref> permalink for that person.</p>
+                        name. For identification purposes, it is helpful, but not required, to use
+                           <att>ref</att> with the <ref target="https://viaf.org">Virtual
+                           International Authorify File (VIAF)</ref> permalink for that person.</p>
                      <p><gi>forename</gi> contains the scholar's first and middle names (middle name
                         optional), or initials, of the scholar. A separate <gi>forename</gi> should
                         be used for the first and middle names.</p>
                      <p><gi>surname</gi> contains the scholar's last name.</p>
                      <p><gi>addname</gi> (additional name) contains an additional or alternate name
-                        by which a scholar is known.</p>
-                     <p><gi>ref</gi> (reference) contains a reference to the entry in the
-                        bibliography that has citations of the scholar. <att>target</att> with the
-                        xml:id of the entry will cause the reference to point to that entry.</p>
+                        by which a scholar is known. If a scholars is commonly known by a Latinized
+                        form of his or her name, that name should be inserted in
+                        <gi>addname</gi>.</p>
                      <p><gi>note</gi> contains further information about the nature of the citation
-                        (e.g., "personal correspondence with editor").</p>
+                        (e.g., "personal correspondence with editor"), with <gi>ref</gi> (reference) containing a reference to the entry in the
+                        bibliography that has citations of the scholar. <att>target</att> with the
+                        xml:id of that entry will point the reader to that entry.</p>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <listPerson xml:id="bibliography-scholars">
-                           <person xml:id="CSchenkl" n="C. Schenkl">
+                           <person xml:id="CSchenkl">
+                              <label>C. Schenkl</label>
                               <persName ref="http://viaf.org/viaf/12523146">
                                  <forename>Karl</forename>
+                                 <forename>("Carolus")</forename>
                                  <surname>Schenkl</surname>
                               </persName>
-                              <ref target="#Schenkl">H. Schenkl</ref>
-                              <note>Unpublished opinions cited in Schenkl's editions.</note>
+                              <note>in <ref target="#Schenkl">H. Schenkl</ref>'s editions</note>
                            </person>
-                           <person xml:id="Scriverius" n="Scriver.">
+                           <person xml:id="Scriverius">
+                              <label>Scriverius</label>
                               <persName ref="https://viaf.org/viaf/121894458/">
                                  <forename>Pieter</forename>
                                  <surname>Schrijver</surname>
                                  <addname>Scriverius</addname>
                               </persName>
-                              <ref target="#Burm.">Burman 1731</ref>
+                              <note>in <ref target="#Burm1731">Burm. 1731</ref></note>
                            </person>
                         </listPerson>
                      </egXML>
+                     <p>These references will be rendered on a display and in print as follows:</p>
+                     <list>
+                        <head>Scholars Cited in this Edition</head>
+                        <item>C. Schenkl = Karl ("Carolus") Schenkl (in <ref target="#Schenkl">H. Schenkl</ref>'s editions)</item>
+                        <item>Scriverius = Pieter Schrijver (in <ref target="#Burm1731">Burm. 1731</ref>)</item>
+                     </list>
                   </div>
+                  <!-- End of section on list of scholars -->
                </div>
+               <!-- End of section on sources -->
             </div>
+            <!-- End of section on bibliography -->
          </div>
+         <!-- End of section on LDLT edition structure -->
+         
+         <!-- Begin section on edition text -->
+         
          <div xml:id="edition-text">
             <head>Edition Text</head>
             <p>The edition text corresponds to the text printed "above the line" of the critical
