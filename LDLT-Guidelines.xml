@@ -40,9 +40,9 @@
                The nature of the text and the editor's judgment will determine the contents of an
                edition. The purpose of this section is to define the parts of an LDLT edition and
                provide guidelines for representing them in XML.</p>
-            <p>These guidelines are based on the standard set by the Text Encoding Initiative (TEI),
-               with modification and customization to accommodate the special characteristics of
-               Latin texts.</p>
+            <p>These guidelines are based on the standard established by the Text Encoding
+               Initiative (TEI), with modification and customization to accommodate the special
+               characteristics of Latin texts.</p>
             <div xml:id="general-structure">
                <p>The following is an example of the general overall structure of an XML file for an
                   LDLT edition:</p>
@@ -222,21 +222,14 @@
                <!-- Issue: Should a consensus siglum be an xml:id on a <listBibl> containing the items, or a separate siglum listed elsewhere? -->
                <p>The bibliography presents opportunities for leveraging the digital nature of an
                   LDLT edition. For this reason, every item in the bibliography is encoded as
-                  structured data (contained in <gi>msDesc</gi> or <gi>biblStruct</gi>), so that the
+                  structured data (contained in <gi>witness</gi> or <gi>bibl</gi>), so that the
                   bibliography itself can become a useful tool for finding and using resources,
                   especially those that are available online.</p>
                <p>The bibliography is all the more useful as a tool if it is created and made
                   available via <ref target="http://www.zotero.org">Zotero</ref>, an open, online
-                  resource for building and managing bibliographies. In addition to providing an
-                  interface for compiling and managing a bibliography, Zotero can also export
-                  bibliographies in a TEI XML format that requires little to no modification for
-                  inclusion in an LDLT edition. Users can copy and paste Zotero information directly
-                  into an LDLT edition file. It is highly recommended that all LDLT editions have a
-                  corresponding Zotero repository for their bibliography.</p>
-               <p>Unfortunately, Zotero does not currently provide a format for describing and
-                  cataloging manuscripts, so that information must be entered manually. For that
-                  reason, and for the sake of completeness, the following sections provide
-                  information for encoding items in the bibliography, with examples.</p>
+                  resource for building and managing bibliographies. It is highly recommended, but
+                  not required, that all LDLT editions have a corresponding Zotero repository for
+                  their bibliography.</p>
 
                <!-- Bibliography: structure -->
 
@@ -278,8 +271,8 @@
                      the complex information contained in critical editions. Although its
                      development was motivated by the constraints of the printed page, its virtues
                      for representing data commend it for other media, too. But just as the printed
-                     page has limits, so too does the digital file, so the traditional system
-                     requires an update to make it available in a digital context.</p>
+                     page has limits, so too does the digital file, which means that the traditional
+                     system requires an update to make it available in a digital context.</p>
                   <p>Given some guidance and experience, people can learn how to navigate the system
                      of letters, numbers, symbols, and other typographical conventions for referring
                      to the sources of a crticial edition. If one edition uses superscript numerals
@@ -287,25 +280,25 @@
                      numerals to signify the number of a manuscript in a collection, a human reader
                      can adjust to the difference in meaning without much effort. In contrast,
                      machines need clear instructions and a reliable set of rules for reading a
-                     digital file. A human might see <hi rend="bold">N²</hi> and correctly interpret
-                     it within a particular edition as meaning "text written by the second person in
-                     a succession of people who wrote in the manuscript known as codex Neapolitanus
-                     V A 8." Without explicit instructions, a machine will interpret the same
-                     information as simply the letter "N" with a superscript numeral 2 next to it.
-                     Indeed, a less experienced human reader might reach the same conclusion as the
-                     machine.</p>
+                     digital file. For example, a human might see <hi rend="bold">N²</hi> and
+                     correctly interpret it within a particular edition as meaning "text written by
+                     the second in a succession of people who wrote in the manuscript known as codex
+                     Neapolitanus V A 8." Without explicit instructions, a machine will interpret
+                     the same information as simply the letter "N" with a superscript numeral 2 next
+                     to it. Indeed, a less experienced human reader might reach the same conclusion
+                     as the machine.</p>
                   <p>Since the audience for LDLT editions includes an entirely new class of reader
                      (i.e., machines), it stands to reason that the reference system should be
                      adapted to accommodate the needs of the expanded readership. For this reason,
                      LDLT editions encode sigla and other aspects of the traditional reference
                      system in two ways: a machine-readable version (using <att>xml:id</att>) and a
-                     human-readable version (using <gi>label</gi>, with special instructions for
+                     human-readable version (using <gi>abbr</gi>, with special instructions for
                      rendering typographical conventions such as superscript and subscript
                      notation). In some cases, the values for both will be the same, but the <ref
                         target="https://www.w3.org/TR/xml-id/">strict rules of the XML specification
                         for <att>xml:id</att></ref> do not allow for the traditional system of
                      combining letters with superscript and/or subscript numerals. Nevertheless, the
-                     values of <att>xml:id</att> and <gi>label</gi> should be similar, if not
+                     values of <att>xml:id</att> and <gi>abbr</gi> should be similar, if not
                      identical, to each other, and they should be meaningful. Editors should follow
                      the conventions in previous editions of the same text, changing a siglum only
                      if it is important to the edition's argument to do so. If the text has never
@@ -319,7 +312,7 @@
                      <row role="label">
                         <cell role="data">Information</cell>
                         <cell role="data">Example Value of <att>xml:id</att></cell>
-                        <cell role="data">Example Value of <gi>label</gi></cell>
+                        <cell role="data">Example Value of <gi>abbr</gi></cell>
                      </row>
                      <row role="data">
                         <cell role="data">A single manuscript</cell>
@@ -381,15 +374,20 @@
                   <p>In short, <hi rend="bold">every entry, regardless of type, in the bibliography
                         of an LDLT edition must have values for both <att>xml:id</att> and
                            <gi>label</gi>.</hi> Otherwise, the edition will not be able to make full
-                     use of the digital format. Morever, if an entry lacks a <gi>label</gi>, it will
+                     use of the digital format. Morever, if an entry lacks an <gi>abbr</gi>, it will
                      not be available for a print version of the edition, should one be
-                     produced.</p>
+                     required.</p>
                </div>
 
                <!-- Bibliography: MS Description -->
 
                <div xml:id="bibliography-ms-description">
                   <head>Manuscripts</head>
+                  
+                  
+                  <!-- Insert a section on the barest of bare minimums: <witness xml:id="N"><abbr type="siglum">N</abbr>: Codex Neapolitanus V A 8 -->
+                  
+                  
                   <p>The description of manuscripts is a discipline unto itself, with
                      long-established conventions for capturing all of the details about not only a
                      manuscript's contents, but also its dimensions, provenance, material, and other
@@ -404,20 +402,15 @@
                      guidelines have an entire module for making manuscript descriptions available
                      as structured data for machine-readability (<ref
                         target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html">10
-                        Manuscript Description</ref>). But just as editors often eschew the finer
-                     points of manuscript description in prose, so too is it acceptable to omit many
-                     of the elements of the TEI's module.</p>
-                  <p>LDLT editions must include both structured data and prose descriptions of
-                     manuscripts referred to in the apparatus criticus or elsewhere. It is possible
-                     to combine the two types of description. Guidelines for structured data, prose,
-                     and a combination of the two appear below. Above all, the point is to make the
-                     information available to both human and machine readers, so it is up to
-                     individual editors to decide which method is most appropriate.</p>
-                  <p>Whatever the method, editors should use their best judgment regarding the
-                     amount of information that will be relevant to those seeking to understand the
-                     place of a manuscript in the tradition. The following guidelines present the
-                     minimum requirements for both prose and structured data descriptions of
-                     manuscripts used in LDLT editions.</p>
+                        Manuscript Description</ref>). The following guidelines are a customization
+                     of that module for LDLT editions.</p>
+                  <p>These guidelines establish a minimum requirement for describing a manuscript
+                     for an LDLT edition so that the information can be processed and displayed as
+                     expected. They also include instructions for encoding a finer degree of detail.
+                     Above all, the point is to make the information available to both human and
+                     machine readers, so it is up to individual editors to use their best judgment
+                     regarding the amount of information that will be relevant to those seeking to
+                     understand the place of a manuscript in the tradition.</p>
 
                   <!-- Bibliography: MS Description: TEI -->
 
@@ -434,36 +427,37 @@
                         <specList>
                            <specDesc key="listWit"/>
                            <specDesc key="witness"/>
+                           <specDesc key="abbr"/>
                            <specDesc key="msDesc"/>
                            <specDesc key="msIdentifier"/>
                            <specDesc key="settlement"/>
-                           <specDesc key="institution"/>
                            <specDesc key="repository"/>
                            <specDesc key="idno"/>
                            <specDesc key="altIdentifier"/>
+                           <specDesc key="msContents"/>
                            <specDesc key="physDesc"/>
                            <specDesc key="objectDesc"/>
-                           <specDesc key="supportDesc"/>
                            <specDesc key="handDesc"/>
                            <specDesc key="handNote"/>
                            <specDesc key="history"/>
                            <specDesc key="origin"/>
+                           <specDesc key="provenance"/>
                         </specList>
                      </p>
                      <p><gi>listWit</gi> (list of witnesses) contains the descriptions of manuscript
                         witnesses for the edition. Separate <gi>listWit</gi> elements may be used to
                         distinguish families of manuscripts. If it is desirable to use a siglum to
                         refer to the consensus of manuscripts in that family, <gi>listWit</gi> must
-                        have <att>xml:id</att> and <gi>label</gi> with values corresponding to that
+                        have <att>xml:id</att> and <gi>abbr</gi> with values corresponding to that
                         siglum.</p>
-                     <p><gi>witness</gi> (witness) groups the information about a single manuscript,
-                        including the name used to refer to the manuscript in the edition (e.g.,
-                        Codex Neapolitanus V A 8). Its <att>xml:id</att> is the unique
-                        machine-readable identifier to be used when referring to the manuscript's
-                        data (e.g., in the <att>wit</att> of a <gi>rdg</gi> in the apparatus
-                        criticus).</p>
-                     <p><gi>label</gi> contains the human-readable siglum that should be displayed
-                        on screen or printed.</p>
+                     <p><gi>witness</gi> groups the information about a single manuscript, including
+                        the name used to refer to the manuscript in the edition (e.g., Codex
+                        Neapolitanus V A 8). Its <att>xml:id</att> is the unique machine-readable
+                        identifier to be used when referring to the manuscript's data (e.g., in the
+                           <att>wit</att> of a <gi>rdg</gi> in the apparatus criticus).</p>
+                     <p><gi>abbr</gi> (abbreviation) with <att>type</att>="siglum" contains the
+                        human-readable siglum that should be displayed on screen or printed Any
+                        superscript or subscript characters should be encoded using <gi>hi</gi>.</p>
                      <p><gi>msDesc</gi> (manuscript description) groups the elements that compose
                         the description of the manuscript:</p>
                      <list>
@@ -472,123 +466,198 @@
                            the location and inventory number of the manuscript.</item>
                         <item><gi>settlement</gi> contains the common English name of the place
                            (e.g., Florence, not Firenze) where the manuscript is located.</item>
-                        <item><gi>institution</gi> contains the name of the institution that houses
-                           the manuscript. Use the original name of the institution (e.g.,
-                           Biblioteca Ambrosiana), not an English translation.</item>
-                        <item><gi>repository</gi> contains the name of the collection to which the
-                           manuscript belongs. Use the original name or common abbreviation of the
-                           repository (e.g., Acquisti e Doni or Acq. e Doni).</item>
+                        <item><gi>repository</gi> contains the name of the library or other
+                           institution that houses the manuscript. Use the original name of the
+                           institution (e.g., Biblioteca Ambrosiana), not an English
+                           translation.</item>
                         <item><gi>idno</gi> (identifier) contains the catalog or inventory
-                           information for the manuscript.</item>
+                           information for the manuscript, including the name of the collection
+                           (e.g., Ottobonianus 1466). The point is to give enough information for a
+                           reader to be able to request more information about it.</item>
                         <item><gi>altIdentifier</gi> (alternative identifier) contains other
                            information (i.e., in addition to the <gi>idno</gi>) used to identify the
-                           manuscript.</item>
+                           manuscript. For example, the manuscript may have been recataloged, but
+                           its old number is still used.</item>
+                        <item><gi>msContents</gi> (manuscript contents) contains a prose description
+                           (using <gi>p</gi>) of the manuscript's contents, including incipits and
+                           explicits. Encode each work with <gi>bibl</gi> with <gi>author</gi> and
+                              <gi>title</gi></item>
                         <item><gi>phsyDesc</gi> (physical description) groups information about the
                            manuscript.</item>
-                        <item><gi>objectDesc</gi> (object description) contains <gi>supportDesc</gi>
-                           (support description). It may have <att>form</att> to identify whether
-                           the manuscript is a codex, a set of unbound leaves, or other form.</item>
-                        <item><gi>supportDesc</gi> (support description) is an empty element that
-                           identifies (in <att>material</att>) the material upon which the
-                           manuscript's text is written (e.g., "parchment").</item>
+                        <item><gi>objectDesc</gi> (object description) contains a prose description
+                           (using <gi>p</gi>) of the manuscript's physical characteristics (e.g.,
+                           material(s), size, pagination, lines per page, etc.). It is up to the
+                           editor to decide how to present this information, but it is recommended
+                           to adopt a pattern and use it consistently (e.g., "Parchment: 261 X 160
+                           mm.: 116 leaves: 38 verses per page"). Note that the TEI module for
+                           manuscript description has tags for these details. Editors may use them,
+                           but they will not affect the display or functionality of the LDLT
+                           edition.</item>
                         <item><gi>handDesc</gi> (hand description) groups information about the
                            distinct hands that wrote in the manuscript. Use <att>hands</att> with
                            the value of the number of hands detectable in the manuscript.</item>
-                        <item><gi>handNote</gi> contains information about a hand that wrote in the
-                           manuscript. Each <gi>handNote</gi> has an <att>xml:id</att> with a unique
-                           identifier (based on the <att>xml:id</att> of the manuscript) and a
-                              <gi>label</gi> with a human-readable version of the value of the
-                           hand's <att>xml:id</att> (<ref target="#bibliography-sigla">see above for
-                              more on sigla</ref>).</item>
+                        <item><gi>handNote</gi> contains a prose description (using <gi>p</gi>) of a
+                           hand that wrote in the manuscript. Each <gi>handNote</gi> has an
+                              <att>xml:id</att> with a unique identifier (based on the
+                              <att>xml:id</att> of the manuscript) and an <gi>abbr</gi> with a
+                           human-readable version of the value of the hand's <att>xml:id</att> (<ref
+                              target="#bibliography-sigla">see above for more on
+                           sigla</ref>).</item>
                         <item><gi>history</gi> groups information about the date of the
                            manuscript.</item>
-                        <item><gi>origin</gi> encloses <gi>origDate</gi>, which contains the roman
-                           numeral for the century in which the manuscript was written, or the
-                           arabic numeral for the year, if known. If century is used, include
-                              <att>notBefore</att> and <att>notAfter</att> with appropriate values.
-                           If year is used, it should be enclosed by <gi>date</gi>.</item>
+                        <item><gi>origin</gi> contains a prose description (using <gi>p</gi>) of the
+                           manuscript's date. Enclose the date with <gi>origDate</gi> with
+                              <att>notAfter</att> and <att>notBefore</att>.</item>
+                        <item><gi>provenance</gi> contains a prose description (using <gi>p</gi>) of
+                           the manuscript's provenance, if available.</item>
                      </list>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <listWit>
-                           <witness xml:id="N">Codex Neapolitanus V A 8 <label>N</label>
-                              <msDesc>
+                           <witness xml:id="N"><abbr type="siglum">N</abbr> = Codex Neapolitanus V A
+                              8 <msDesc>
                                  <msIdentifier>
                                     <settlement>Naples</settlement>
                                     <repository>Biblioteca Nazionale di Napoli</repository>
-                                    <idno>V.A.8</idno>
+                                    <idno>V A 8</idno>
                                     <altIdentifier>
                                        <idno>380</idno>
                                     </altIdentifier>
                                  </msIdentifier>
+                                 <msContents>
+                                    <p>1–36ʳ contain Cato's <bibl><title>De
+                                          Agricultura</title></bibl>; 20–101ʳ, Varro's
+                                             <bibl><title>De Re Rustica</title></bibl>; 101ʳ–115ᵛ,
+                                       the <bibl><title>Bucolica</title></bibl> of Calpurnius and
+                                       Nemesianus. The individual poems lack titles, but they are
+                                       separated from each other by brief spaces. The following
+                                       subscription appears at the end of the whole work: <quote
+                                          xml:lang="la">Aureliani Nemesiani Cartag&#773;
+                                          bucol&#8217; explicit: Deo gratias amen</quote>. Finally,
+                                       another more recent hand, as <ref target="#Bursian"
+                                          >Bursian</ref> and <ref target="#Schenkl">Schenkl</ref>
+                                       recognized, wrote <quote xml:lang="la">Calpurnii
+                                          eclogae</quote> and <quote xml:lang="la">Nemesiani
+                                          eclogae</quote>. The remaining leaves are blank.</p>
+                                 </msContents>
                                  <physDesc>
-                                    <objectDesc form="codex">
-                                       <supportDesc material="parch"/>
+                                    <objectDesc>
+                                       <p>Parchment: 261 X 160 mm.: 116 leaves: 38 verses per
+                                          page.</p>
+                                       <p>With respect to correcting hands, two in particular stand
+                                          out.</p>
                                     </objectDesc>
                                     <handDesc hands="3">
-                                       <handNote xml:id="N1"><label>N<hi rend="super"
-                                          >1</hi></label>: corrections or attempted corrections made
-                                          by the original copyist</handNote>
-                                       <handNote xml:id="N2"><label>N<hi rend="super">2</hi>:
-                                             corrections or attempted corrections made by a later
-                                             hand not easily distinguishable from the
-                                          first.</label></handNote>
-                                       <handNote xml:id="N3"><label>N<hi rend="super"
-                                          >3</hi></label>: corrections or attempted corrections made
-                                          in a few places by a third hand</handNote>
+                                       <handNote xml:id="N1"><abbr>N<hi rend="superscript"
+                                             >1</hi></abbr> belongs to the original copyist. See
+                                             <ref target="Ndesc-firsthand">above</ref> for a
+                                          detailed description of this hand's activity.</handNote>
+                                       <handNote xml:id="N2"><abbr>N<hi rend="superscript">2</hi></abbr>:
+                                             The manuscript was corrected again around the same
+                                             time, but here and there the second hand cannot easily
+                                             be distinguished from the first.</handNote>
+                                       <handNote xml:id="N3"><abbr>N<hi rend="superscript"
+                                             >3</hi></abbr>: a third hand's emendations can be
+                                          discerned in only a few places.</handNote>
                                     </handDesc>
                                  </physDesc>
                                  <history>
                                     <origin>
-                                       <origDate notAfter="1500" notBefore="1400">XV</origDate>
+                                       <p>The manuscript was written at about the beginning of the
+                                             <origDate notAfter="1500" notBefore="1400">fifteenth
+                                             century</origDate></p>
                                     </origin>
+                                    <provenance>
+                                       <p>We know nothing about the origin and provenance of this
+                                          manuscript except what is understood from the following
+                                          passages written on the last leaf: <quote xml:lang="la"
+                                             >Joannes Antonius Perillus patric. neap. ac iuvenis
+                                             apprime litteratus Jacobum Perillum hoc libro donavit
+                                             MDCVII, Klis Juniis</quote> ("Joannes Antonius
+                                          Perillus, a nobleman of Naples and most learned gentleman,
+                                          gave this book to Jacob Perillus in 1667 on the first of
+                                          June"), and a little below, <quote xml:lang="la">Antonii
+                                             Seripandi ex Jacobi Perilli amici opt. munere</quote>
+                                          ("This book belongs to Antonius Seripandus, received as a
+                                          gift from his best friend Jacob Perillus"). Later it was
+                                          brought to the library of San Giovanni a Carbonara, and
+                                          from there it came to the greatest library in Naples,
+                                          formerly known as the <orgName xml:id="preface-borbonica"
+                                             >Reale biblioteca borbonica</orgName>
+                                          <note target="#preface-borbonica" resp="#sjh">now the
+                                                <orgName ref="http://www.bnnonline.it">Biblioteca
+                                                nazionale Vittorio Emanuele III</orgName></note>.
+                                       </p>
+                                    </provenance>
                                  </history>
                               </msDesc>
                            </witness>
-                           <witness xml:id="G">Codex Gaddianus pl. 90, 12 inf. <label>G</label>
-                              <msDesc>
+                           <witness xml:id="G"><abbr type="siglum">G</abbr> = Codex Gaddianus pl.
+                              90, 12 inf. <msDesc>
                                  <msIdentifier>
                                     <settlement>Florence</settlement>
                                     <repository>Biblioteca Medicea Laurenziana</repository>
                                     <idno>plut. 90, 12 inf.</idno>
                                  </msIdentifier>
+                                 <msContents>
+                                    <p>It contains the twelve eclogues of Francesco Petrarch (ff.
+                                       1–44), the <bibl><title>Culex</title></bibl> of Vergilius
+                                       Maro, the <bibl><title>Dirae</title></bibl> of Vergilius Maro
+                                       (ff. 52–55), and Calpurnius and Nemesianus (ff. 55–74). A
+                                       very brief, unattributed eclogue follows with the
+                                       interlocutors Daphnis, Tityrus, Mopsus, and Meliboeus.</p>
+                                 </msContents>
                                  <physDesc>
-                                    <objectDesc form="codex">
-                                       <supportDesc material="paper"/>
+                                    <objectDesc>
+                                       <p>Paper: 294 X 225 mm.: 74 leaves. Individual pages
+                                          generally have 29 verses, but some vary, with the shorter
+                                          ones having 26 and the longer ones haveing 32 verses.</p>
+                                       <p>The following inscription has been added to the eclogues
+                                          of Calpurnius: <quote xml:lang="la">Egloge Calfurnii ad
+                                             nemesianum cartaginiensem.</quote> (<quote>The Eclogues
+                                             of Calfurnius to Nemesianus of Carthage</quote>).
+                                          Nemesianus follows Calpurnius with the following title
+                                          prefixed: <quote xml:lang="la">Aureliani nemesiani
+                                             cartaginiensis egloghe incipiunt</quote> (<quote>Here
+                                             begin the eclogues of Aurelianus Nemesianus of
+                                             Carthage</quote>). At the end of each eclogue there
+                                          appears an <hi rend="italic">explicit</hi> with the number
+                                          of each eclogue, but Calpurnius' sixth eclogue lacks a
+                                          subscription, and the following is written at the end of
+                                          the seventh: <quote xml:lang="la">explicit sexta egloga
+                                             Calphurnii</quote> (<quote>Here ends the sixth eclogue
+                                             of Calphurnius</quote>). This is explained by the fact
+                                          that the seventh eclogue follows the sixth without any
+                                          break, with the result that only six eclogues are
+                                          attributed to Calpurnius in this manuscript. But in the
+                                          margin, where the sixth eclogue ought to end, the copyist
+                                          has added the following: <quote xml:lang="la">aliqui
+                                             volunt dicere quod ista sit alia et diversa egloga ubi
+                                             incipit "lentus," aliqui dicunt quod est una
+                                             etc.</quote> (<quote>Some wish to say that the eclogue
+                                             that begins <hi rend="italic">lentus</hi> is a
+                                             completely different eclogue; others say that it is the
+                                             same, etc.</quote>)</p>
                                     </objectDesc>
                                     <handDesc hands="2">
-                                       <handNote xml:id="G1"><label>G<hi rend="super">1</hi>:
-                                             corrections or attempted corrections made by the
-                                             original copyist.</label></handNote>
-                                       <handNote xml:id="G2"><label>G<hi rend="super">2</hi>:
-                                             corrections or attempted corrections made by a later
-                                             hand.</label></handNote>
+                                       <handNote xml:id="G1"><abbr type="siglum">G<hi
+                                                rend="superscript">1</hi></abbr>: The copyist
+                                          himself added almost all of the corrections either by
+                                          removing scribal errors in the verses or adding variant
+                                          readings to the margin. See <ref target="Gdesc-hand"
+                                             >above</ref> for a more detailed description of this
+                                          hand's activity.</handNote>
+                                       <handNote xml:id="G2"><abbr type="siglum">G<hi
+                                                rend="superscript">2</hi></abbr>: Some corrections
+                                          seem to have been made by another hand.</handNote>
                                     </handDesc>
                                  </physDesc>
                                  <history>
                                     <origin>
-                                       <origDate notAfter="1500" notBefore="1400" xml:id="witGdate"
-                                          >XV</origDate>
-                                       <note target="#witGdate">saec. XV ineunte scriptus</note>
+                                       <p>Written at the <origDate notAfter="1500" notBefore="1400"
+                                             >beginning of the fifteenth century</origDate>.</p>
                                     </origin>
                                  </history>
                               </msDesc>
-                           </witness>
-                        </listWit>
-                     </egXML>
-                     <p><gi>note</gi> may be used to specify the portion of the century in which a
-                        manuscript was written, if known.</p>
-                     <p>Example of <gi>listWit</gi> used to group a family of manuscripts
-                        together:</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <listWit xml:id="V" n="V">Family <label>V</label>
-                           <witness xml:id="a"><label>a</label>
-                              <!-- Identifying information about manuscript a -->
-                           </witness>
-                           <witness xml:id="b"><label>b</label>
-                              <!-- Identifying information about manuscript b -->
-                           </witness>
-                           <witness xml:id="c"><label>c</label>
-                              <!-- Identifying information about manuscript c -->
                            </witness>
                         </listWit>
                      </egXML>
@@ -1183,9 +1252,10 @@
                         form of his or her name, that name should be inserted in
                         <gi>addname</gi>.</p>
                      <p><gi>note</gi> contains further information about the nature of the citation
-                        (e.g., "personal correspondence with editor"), with <gi>ref</gi> (reference) containing a reference to the entry in the
-                        bibliography that has citations of the scholar. <att>target</att> with the
-                        xml:id of that entry will point the reader to that entry.</p>
+                        (e.g., "personal correspondence with editor"), with <gi>ref</gi> (reference)
+                        containing a reference to the entry in the bibliography that has citations
+                        of the scholar. <att>target</att> with the xml:id of that entry will point
+                        the reader to that entry.</p>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <listPerson xml:id="bibliography-scholars">
                            <person xml:id="CSchenkl">
@@ -1211,8 +1281,10 @@
                      <p>These references will be rendered on a display and in print as follows:</p>
                      <list>
                         <head>Scholars Cited in this Edition</head>
-                        <item>C. Schenkl = Karl ("Carolus") Schenkl (in <ref target="#Schenkl">H. Schenkl</ref>'s editions)</item>
-                        <item>Scriverius = Pieter Schrijver (in <ref target="#Burm1731">Burm. 1731</ref>)</item>
+                        <item>C. Schenkl = Karl ("Carolus") Schenkl (in <ref target="#Schenkl">H.
+                              Schenkl</ref>'s editions)</item>
+                        <item>Scriverius = Pieter Schrijver (in <ref target="#Burm1731">Burm.
+                              1731</ref>)</item>
                      </list>
                   </div>
                   <!-- End of section on list of scholars -->
@@ -1222,9 +1294,9 @@
             <!-- End of section on bibliography -->
          </div>
          <!-- End of section on LDLT edition structure -->
-         
+
          <!-- Begin section on edition text -->
-         
+
          <div xml:id="edition-text">
             <head>Edition Text</head>
             <p>The edition text corresponds to the text printed "above the line" of the critical
