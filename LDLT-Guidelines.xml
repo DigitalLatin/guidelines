@@ -383,11 +383,11 @@
 
                <div xml:id="bibliography-ms-description">
                   <head>Manuscripts</head>
-                  
-                  
+
+
                   <!-- Insert a section on the barest of bare minimums: <witness xml:id="N"><abbr type="siglum">N</abbr>: Codex Neapolitanus V A 8 -->
-                  
-                  
+
+
                   <p>The description of manuscripts is a discipline unto itself, with
                      long-established conventions for capturing all of the details about not only a
                      manuscript's contents, but also its dimensions, provenance, material, and other
@@ -421,8 +421,8 @@
                            >module for manuscript description</ref> offers a model for presenting
                         nearly every imaginable detail about a manuscript as structured data.
                         Editors may wish to use more of the features of the module than are
-                        described here, but the following are essential for making use of the
-                        functionality of the LDLT viewer.</p>
+                        described here, but the following support the functionality of the LDLT
+                        viewer.</p>
                      <p>
                         <specList>
                            <specDesc key="listWit"/>
@@ -511,6 +511,26 @@
                         <item><gi>provenance</gi> contains a prose description (using <gi>p</gi>) of
                            the manuscript's provenance, if available.</item>
                      </list>
+
+                     <p>The absolute minimum required for LDLT editions can be met with
+                           <gi>listWit</gi>, <gi>witness</gi>, and <gi>abbr</gi>:</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <listWit>
+                           <witness xml:id="N"><abbr type="siglum">N</abbr> = Codex Neapolitanus V A
+                              8, saec. XV</witness>
+                           <witness xml:id="G"><abbr type="siglum">G</abbr> = Codex Gaddianus pl.
+                              90, 12 inf., saec. XV</witness>
+                        </listWit>
+                     </egXML>
+
+                     <p>That example provides enough human- and machine-readable information to
+                        identify the manuscripts in the apparatus criticus, but it leaves much to be
+                        desired by anyone hoping to learn more about the manuscripts, or even locate
+                        them for private study.</p>
+
+                     <p>The following uses all of the elements listed above to provide rich human-
+                        and machine-readable information about the same manuscripts:</p>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <listWit>
                            <witness xml:id="N"><abbr type="siglum">N</abbr> = Codex Neapolitanus V A
@@ -528,33 +548,34 @@
                                           Agricultura</title></bibl>; 20–101ʳ, Varro's
                                              <bibl><title>De Re Rustica</title></bibl>; 101ʳ–115ᵛ,
                                        the <bibl><title>Bucolica</title></bibl> of Calpurnius and
-                                       Nemesianus. The individual poems lack titles, but they are
-                                       separated from each other by brief spaces. The following
-                                       subscription appears at the end of the whole work: <quote
-                                          xml:lang="la">Aureliani Nemesiani Cartag&#773;
-                                          bucol&#8217; explicit: Deo gratias amen</quote>. Finally,
-                                       another more recent hand, as <ref target="#Bursian"
-                                          >Bursian</ref> and <ref target="#Schenkl">Schenkl</ref>
-                                       recognized, wrote <quote xml:lang="la">Calpurnii
-                                          eclogae</quote> and <quote xml:lang="la">Nemesiani
-                                          eclogae</quote>. The remaining leaves are blank.</p>
+                                       Nemesianus.</p>
+                                    <p>The individual poems lack titles, but they are separated from
+                                       each other by brief spaces. The following subscription
+                                       appears at the end of the whole work: <quote xml:lang="la"
+                                          >Aureliani Nemesiani Cartag&#773; bucol&#8217; explicit:
+                                          Deo gratias amen</quote>. Finally, another more recent
+                                       hand, as <ref target="#Bursian">Bursian</ref> and <ref
+                                          target="#Schenkl">Schenkl</ref> recognized, wrote <quote
+                                          xml:lang="la">Calpurnii eclogae</quote> and <quote
+                                          xml:lang="la">Nemesiani eclogae</quote>. The remaining
+                                       leaves are blank.</p>
                                  </msContents>
                                  <physDesc>
                                     <objectDesc>
                                        <p>Parchment: 261 X 160 mm.: 116 leaves: 38 verses per
                                           page.</p>
                                        <p>With respect to correcting hands, two in particular stand
-                                          out.</p>
+                                          out:</p>
                                     </objectDesc>
                                     <handDesc hands="3">
                                        <handNote xml:id="N1"><abbr>N<hi rend="superscript"
                                              >1</hi></abbr> belongs to the original copyist. See
                                              <ref target="Ndesc-firsthand">above</ref> for a
                                           detailed description of this hand's activity.</handNote>
-                                       <handNote xml:id="N2"><abbr>N<hi rend="superscript">2</hi></abbr>:
-                                             The manuscript was corrected again around the same
-                                             time, but here and there the second hand cannot easily
-                                             be distinguished from the first.</handNote>
+                                       <handNote xml:id="N2"><abbr>N<hi rend="superscript"
+                                             >2</hi></abbr>: The manuscript was corrected again
+                                          around the same time, but here and there the second hand
+                                          cannot easily be distinguished from the first.</handNote>
                                        <handNote xml:id="N3"><abbr>N<hi rend="superscript"
                                              >3</hi></abbr>: a third hand's emendations can be
                                           discerned in only a few places.</handNote>
@@ -564,7 +585,7 @@
                                     <origin>
                                        <p>The manuscript was written at about the beginning of the
                                              <origDate notAfter="1500" notBefore="1400">fifteenth
-                                             century</origDate></p>
+                                             century</origDate>.</p>
                                     </origin>
                                     <provenance>
                                        <p>We know nothing about the origin and provenance of this
@@ -581,12 +602,10 @@
                                           gift from his best friend Jacob Perillus"). Later it was
                                           brought to the library of San Giovanni a Carbonara, and
                                           from there it came to the greatest library in Naples,
-                                          formerly known as the <orgName xml:id="preface-borbonica"
-                                             >Reale biblioteca borbonica</orgName>
-                                          <note target="#preface-borbonica" resp="#sjh">now the
-                                                <orgName ref="http://www.bnnonline.it">Biblioteca
-                                                nazionale Vittorio Emanuele III</orgName></note>.
-                                       </p>
+                                          formerly known as the <orgName>Reale biblioteca
+                                             borbonica</orgName>, (now the <orgName
+                                             ref="http://www.bnnonline.it">Biblioteca nazionale
+                                             Vittorio Emanuele III</orgName>).</p>
                                     </provenance>
                                  </history>
                               </msDesc>
@@ -605,38 +624,38 @@
                                        (ff. 52–55), and Calpurnius and Nemesianus (ff. 55–74). A
                                        very brief, unattributed eclogue follows with the
                                        interlocutors Daphnis, Tityrus, Mopsus, and Meliboeus.</p>
+                                    <p>The following inscription has been added to the eclogues
+                                       of Calpurnius: <quote xml:lang="la">Egloge Calfurnii ad
+                                          nemesianum cartaginiensem.</quote> (<quote>The Eclogues
+                                             of Calfurnius to Nemesianus of Carthage</quote>).
+                                       Nemesianus follows Calpurnius with the following title
+                                       prefixed: <quote xml:lang="la">Aureliani nemesiani
+                                          cartaginiensis egloghe incipiunt</quote> (<quote>Here
+                                             begin the eclogues of Aurelianus Nemesianus of
+                                             Carthage</quote>). At the end of each eclogue there
+                                       appears an <hi rend="italic">explicit</hi> with the number
+                                       of each eclogue, but Calpurnius' sixth eclogue lacks a
+                                       subscription, and the following is written at the end of
+                                       the seventh: <quote xml:lang="la">explicit sexta egloga
+                                          Calphurnii</quote> (<quote>Here ends the sixth eclogue
+                                             of Calphurnius</quote>). This is explained by the fact
+                                       that the seventh eclogue follows the sixth without any
+                                       break, with the result that only six eclogues are
+                                       attributed to Calpurnius in this manuscript. But in the
+                                       margin, where the sixth eclogue ought to end, the copyist
+                                       has added the following: <quote xml:lang="la">aliqui
+                                          volunt dicere quod ista sit alia et diversa egloga ubi
+                                          incipit "lentus," aliqui dicunt quod est una
+                                          etc.</quote> (<quote>Some wish to say that the eclogue
+                                             that begins <hi rend="italic">lentus</hi> is a
+                                             completely different eclogue; others say that it is the
+                                             same, etc.</quote>).</p>
                                  </msContents>
                                  <physDesc>
                                     <objectDesc>
                                        <p>Paper: 294 X 225 mm.: 74 leaves. Individual pages
                                           generally have 29 verses, but some vary, with the shorter
                                           ones having 26 and the longer ones haveing 32 verses.</p>
-                                       <p>The following inscription has been added to the eclogues
-                                          of Calpurnius: <quote xml:lang="la">Egloge Calfurnii ad
-                                             nemesianum cartaginiensem.</quote> (<quote>The Eclogues
-                                             of Calfurnius to Nemesianus of Carthage</quote>).
-                                          Nemesianus follows Calpurnius with the following title
-                                          prefixed: <quote xml:lang="la">Aureliani nemesiani
-                                             cartaginiensis egloghe incipiunt</quote> (<quote>Here
-                                             begin the eclogues of Aurelianus Nemesianus of
-                                             Carthage</quote>). At the end of each eclogue there
-                                          appears an <hi rend="italic">explicit</hi> with the number
-                                          of each eclogue, but Calpurnius' sixth eclogue lacks a
-                                          subscription, and the following is written at the end of
-                                          the seventh: <quote xml:lang="la">explicit sexta egloga
-                                             Calphurnii</quote> (<quote>Here ends the sixth eclogue
-                                             of Calphurnius</quote>). This is explained by the fact
-                                          that the seventh eclogue follows the sixth without any
-                                          break, with the result that only six eclogues are
-                                          attributed to Calpurnius in this manuscript. But in the
-                                          margin, where the sixth eclogue ought to end, the copyist
-                                          has added the following: <quote xml:lang="la">aliqui
-                                             volunt dicere quod ista sit alia et diversa egloga ubi
-                                             incipit "lentus," aliqui dicunt quod est una
-                                             etc.</quote> (<quote>Some wish to say that the eclogue
-                                             that begins <hi rend="italic">lentus</hi> is a
-                                             completely different eclogue; others say that it is the
-                                             same, etc.</quote>)</p>
                                     </objectDesc>
                                     <handDesc hands="2">
                                        <handNote xml:id="G1"><abbr type="siglum">G<hi
@@ -661,170 +680,13 @@
                            </witness>
                         </listWit>
                      </egXML>
-                  </div>
+                  </div><!-- End of section on manuscript description -->
 
-                  <!-- Bibliography: MS Description: Prose -->
-
-                  <div xml:id="bibliography-ms-description-prose">
-                     <head>Prose Description</head>
-                     <p>In general, nothing prohibits editors of a LDLT edition from describing
-                        every last detail of the manuscripts they have used to establish the text,
-                        but if the manuscript has been fully described to the editor's satisfaction
-                        elsewhere, that work should be cited instead. What to describe depends to a
-                        great degree on the nature of the text, the relevance of the information,
-                        and the needs of the edition's readership. At the very least, the prose
-                        description of a manuscript must include sufficient information for finding
-                        the physical object. It must also include the siglum used to identify it in
-                        the present edition, and a discussion of any deviation from previous
-                        editions in this regard. A date, whether general or specific, is also
-                        required. If images of the manuscript are available on the internet, the URL
-                        and date of access should be included.</p>
-                     <list>
-                        <head>Required Elements of a Prose Description of a Manuscript</head>
-                        <item>Siglum</item>
-                        <item>Settlement (i.e., city or town)</item>
-                        <item>Institution (i.e., library or museum), with the name of the collection
-                           within the institution, if available</item>
-                        <item>Identification number</item>
-                        <item>Date (general or specific)</item>
-                        <item>URL (if available) and date of access</item>
-                     </list>
-                     <p>In keeping with established practice, commonly used English names of towns
-                        should be used (e.g., Florence, not Firenze), but the original name should
-                        be used for institutions and repositories (e.g., Biblioteca Apostolica
-                        Vaticana, Ottobonianus). Commonly used abbreviations may be used, especially
-                        in cases of well known collections or libraries.</p>
-                     <p>Prose descriptions of manuscripts should be in a section of the preface.
-                        Each description should be in its own paragraph.</p>
-                     <p>
-                        <specList>
-                           <specDesc key="p"/>
-                           <specDesc key="ref"/>
-                           <specDesc key="hi"/>
-                           <specDesc key="quote"/>
-                           <specDesc key="bibl"/>
-                           <specDesc key="title"/>
-                        </specList>
-                     </p>
-                     <p><gi>p</gi> (paragraph) contains the prose description of one manuscript. It
-                        should have <att>corresp</att> pointing to the <att>xml:id</att> of the
-                        structured data description of the manuscript in the bibliography.</p>
-                     <p><gi>ref</gi> (reference) defines a reference to the URL of digital images of
-                        the manuscript or to the structured data version of the manuscript
-                        description in the bibliography of the edition (e.g., for references to the
-                        manuscript hands).</p>
-                     <p><gi>hi</gi> (highlighted) with <att>rend</att>="bold" distinguishes the
-                        manuscript's siglum from the rest of the text.</p>
-                     <p><gi>quote</gi> contains any text that is repeated from another source. If in
-                        Latin, <att>xml:lang</att>="la" should be used.</p>
-                     <p><gi>bibl</gi> (bibliographic citation) contains information about works
-                        contained in the manuscript.</p>
-                     <p><gi>title</gi> within <gi>bibl</gi> contains the title of a work contained
-                        in the manuscript.</p>
-
-                     <p>Example of the minimum required prose description:</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <p corresp="#P"><hi rend="bold">P</hi>: Vatican City, BAV, Pal. lat. 1643.
-                           XV. URL: <ref target="http://digi.vatlib.it/view/MSS_Pal.lat.1643"
-                              >http://digi.vatlib.it/view/MSS_Pal.lat.1643</ref> (accessed
-                           2016-08-04).</p>
-                     </egXML>
-                     <p>Example of a fuller manuscript description, with discussion of manuscript
-                        hands:</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <p corresp="#N"><hi rend="bold">N</hi>: Naples, Biblioteca Nazionale di
-                           Napoli, V.A.8, formerly 380, parchment, 261 X 160 mm. It was written at
-                           about the beginning of the fifteenth century. It consists of 116 leaves,
-                           of which 1–36ʳ contain Cato's <bibl><title>De Agricultura</title></bibl>;
-                           20–101ʳ, Varro's <bibl><title>De Re Rustica</title></bibl>; 101ʳ–115ᵛ,
-                           the <bibl><title>Bucolica</title></bibl> of Calpurnius and Nemesianus.
-                           The remaining leaves are blank. Each page has thirty-eight verses. With
-                           respect to correcting hands, two in particular stand out. The <ref
-                              target="#Nh1">first</ref> belongs to the original copyist. The
-                           manuscript was corrected again around the same time, but here and there
-                           the <ref target="#Nh2">second hand</ref> cannot easily be distinguished
-                           from the first. A <ref target="#Nh3">third hand's</ref> emendations can
-                           be discerned in only a few places. The individual poems lack titles, but
-                           they are separated from each other by brief spaces. The following
-                           subscription appears at the end of the whole work: <quote xml:lang="la"
-                              >Aureliani Nemesiani Cartag&#773; bucol&#8217; explicit: Deo gratias
-                              amen</quote>. Finally, another more recent hand, as <ref
-                              target="#Bursian">Bursian</ref> and <ref target="#Schenkl"
-                              >Schenkl</ref> recognized, wrote <quote xml:lang="la">Calpurnii
-                              eclogae</quote> and <quote xml:lang="la">Nemesiani
-                           eclogae</quote>.</p>
-                     </egXML>
-                     <p>For more information on manuscript description, including bibliography and
-                        examples, see <bibl><author>Raymond Clemens</author> and <author>Timothy
-                              Graham</author>, <title>Introduction to Manuscript Studies</title>
-                           (Ithaca, Cornell University Press), 2007</bibl>.</p>
-                  </div>
-
-                  <!-- Bibliography: MS Description: Combined TEI and Prose -->
-
-                  <div xml:id="bibliography-ms-description-combined">
-                     <head>Combined Structured Data and Prose Description</head>
-                     <p>To avoid duplication of effort, it is possible to include the prose version
-                        in the structured data version of the manuscript description. In this
-                        option, the TEI's <ref
-                           target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html"
-                           >module for manuscript description</ref> will determine the pattern and
-                        structure of the description, and certain information will be encoded
-                        according to the module's guidelines.</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <witness xml:id="N"><label>N</label>
-                           <msDesc>
-                              <msIdentifier>
-                                 <settlement>Naples</settlement>
-                                 <repository>Biblioteca Nazionale di Napoli</repository>
-                                 <idno>V.A.8</idno>
-                                 <altIdentifier>
-                                    <idno>380</idno>
-                                 </altIdentifier>
-                              </msIdentifier>
-                              <msContents>
-                                 <p>1–36ʳ contain Cato's <bibl><title>De Agricultura</title></bibl>;
-                                    20–101ʳ, Varro's <bibl><title>De Re Rustica</title></bibl>;
-                                    101ʳ–115ᵛ, the <bibl><title>Bucolica</title></bibl> of
-                                    Calpurnius and Nemesianus. The individual poems lack titles, but
-                                    they are separated from each other by brief spaces. The
-                                    following subscription appears at the end of the whole work:
-                                       <quote xml:lang="la">Aureliani Nemesiani Cartag&#773;
-                                       bucol&#8217; explicit: Deo gratias amen</quote>. Finally,
-                                    another more recent hand, as <ref target="#Bursian"
-                                       >Bursian</ref> and <ref target="#Schenkl">Schenkl</ref>
-                                    recognized, wrote <quote xml:lang="la">Calpurnii eclogae</quote>
-                                    and <quote xml:lang="la">Nemesiani eclogae</quote>. The
-                                    remaining leaves are blank.</p>
-                              </msContents>
-                              <physDesc>
-                                 <p>
-                                    <material>Parchment</material>: 261 X 160 mm.: 116 leaves: 38
-                                    verses per page.</p>
-                                 <handDesc hands="3">
-                                    <p>With respect to correcting hands, two in particular stand
-                                       out.</p>
-                                    <handNote xml:id="N1"><label>N<hi rend="super">1</hi></label>
-                                       belongs to the original copyist.</handNote>
-                                    <handNote xml:id="N2"><label>N<hi rend="super">2</hi>: The
-                                          manuscript was corrected again around the same time, but
-                                          here and there the second hand cannot easily be
-                                          distinguished from the first.</label></handNote>
-                                    <handNote xml:id="N3"><label>N<hi rend="super">3</hi></label>: a
-                                       third hand's emendations can be discerned in only a few
-                                       places.</handNote>
-                                 </handDesc>
-                              </physDesc>
-                              <history>
-                                 <origin>
-                                    <origDate notAfter="1500" notBefore="1400">XV</origDate>
-                                 </origin>
-                              </history>
-                           </msDesc>
-                        </witness>
-                     </egXML>
-                  </div>
                </div>
+
+
+<!-- Start here -->
+
 
                <!-- Bibliography: Sources -->
 
