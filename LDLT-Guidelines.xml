@@ -225,11 +225,11 @@
                   structured data (contained in <gi>witness</gi> or <gi>bibl</gi>), so that the
                   bibliography itself can become a useful tool for finding and using resources,
                   especially those that are available online.</p>
-               <p>The bibliography is all the more useful as a tool if it is created and made
-                  available via <ref target="http://www.zotero.org">Zotero</ref>, an open, online
-                  resource for building and managing bibliographies. It is highly recommended, but
-                  not required, that all LDLT editions have a corresponding Zotero repository for
-                  their bibliography.</p>
+               <p xml:id="zotero">The bibliography is all the more useful as a tool if it is created
+                  and made available via <ref target="http://www.zotero.org">Zotero</ref>, an open,
+                  online resource for building and managing bibliographies. It is highly
+                  recommended, but not required, that all LDLT editions have a corresponding Zotero
+                  repository for their bibliography.</p>
 
                <!-- Bibliography: structure -->
 
@@ -383,11 +383,6 @@
 
                <div xml:id="bibliography-ms-description">
                   <head>Manuscripts</head>
-
-
-                  <!-- Insert a section on the barest of bare minimums: <witness xml:id="N"><abbr type="siglum">N</abbr>: Codex Neapolitanus V A 8 -->
-
-
                   <p>The description of manuscripts is a discipline unto itself, with
                      long-established conventions for capturing all of the details about not only a
                      manuscript's contents, but also its dimensions, provenance, material, and other
@@ -624,32 +619,30 @@
                                        (ff. 52–55), and Calpurnius and Nemesianus (ff. 55–74). A
                                        very brief, unattributed eclogue follows with the
                                        interlocutors Daphnis, Tityrus, Mopsus, and Meliboeus.</p>
-                                    <p>The following inscription has been added to the eclogues
-                                       of Calpurnius: <quote xml:lang="la">Egloge Calfurnii ad
-                                          nemesianum cartaginiensem.</quote> (<quote>The Eclogues
-                                             of Calfurnius to Nemesianus of Carthage</quote>).
-                                       Nemesianus follows Calpurnius with the following title
-                                       prefixed: <quote xml:lang="la">Aureliani nemesiani
-                                          cartaginiensis egloghe incipiunt</quote> (<quote>Here
-                                             begin the eclogues of Aurelianus Nemesianus of
-                                             Carthage</quote>). At the end of each eclogue there
-                                       appears an <hi rend="italic">explicit</hi> with the number
-                                       of each eclogue, but Calpurnius' sixth eclogue lacks a
-                                       subscription, and the following is written at the end of
-                                       the seventh: <quote xml:lang="la">explicit sexta egloga
-                                          Calphurnii</quote> (<quote>Here ends the sixth eclogue
-                                             of Calphurnius</quote>). This is explained by the fact
-                                       that the seventh eclogue follows the sixth without any
-                                       break, with the result that only six eclogues are
-                                       attributed to Calpurnius in this manuscript. But in the
-                                       margin, where the sixth eclogue ought to end, the copyist
-                                       has added the following: <quote xml:lang="la">aliqui
-                                          volunt dicere quod ista sit alia et diversa egloga ubi
-                                          incipit "lentus," aliqui dicunt quod est una
-                                          etc.</quote> (<quote>Some wish to say that the eclogue
-                                             that begins <hi rend="italic">lentus</hi> is a
-                                             completely different eclogue; others say that it is the
-                                             same, etc.</quote>).</p>
+                                    <p>The following inscription has been added to the eclogues of
+                                       Calpurnius: <quote xml:lang="la">Egloge Calfurnii ad
+                                          nemesianum cartaginiensem.</quote> (<quote>The Eclogues of
+                                          Calfurnius to Nemesianus of Carthage</quote>). Nemesianus
+                                       follows Calpurnius with the following title prefixed: <quote
+                                          xml:lang="la">Aureliani nemesiani cartaginiensis egloghe
+                                          incipiunt</quote> (<quote>Here begin the eclogues of
+                                          Aurelianus Nemesianus of Carthage</quote>). At the end of
+                                       each eclogue there appears an <hi rend="italic">explicit</hi>
+                                       with the number of each eclogue, but Calpurnius' sixth
+                                       eclogue lacks a subscription, and the following is written at
+                                       the end of the seventh: <quote xml:lang="la">explicit sexta
+                                          egloga Calphurnii</quote> (<quote>Here ends the sixth
+                                          eclogue of Calphurnius</quote>). This is explained by the
+                                       fact that the seventh eclogue follows the sixth without any
+                                       break, with the result that only six eclogues are attributed
+                                       to Calpurnius in this manuscript. But in the margin, where
+                                       the sixth eclogue ought to end, the copyist has added the
+                                       following: <quote xml:lang="la">aliqui volunt dicere quod
+                                          ista sit alia et diversa egloga ubi incipit "lentus,"
+                                          aliqui dicunt quod est una etc.</quote> (<quote>Some wish
+                                          to say that the eclogue that begins <hi rend="italic"
+                                             >lentus</hi> is a completely different eclogue; others
+                                          say that it is the same, etc.</quote>).</p>
                                  </msContents>
                                  <physDesc>
                                     <objectDesc>
@@ -680,177 +673,438 @@
                            </witness>
                         </listWit>
                      </egXML>
-                  </div><!-- End of section on manuscript description -->
-
+                  </div>
+                  <!-- End of section on structured data manuscript description -->
                </div>
-
-
-<!-- Start here -->
-
+               <!-- End of section on manuscript description in general -->
 
                <!-- Bibliography: Sources -->
 
                <div xml:id="bibliography-sources">
                   <head>Other Sources</head>
-                  <div xml:id="bibliography-common-elements">
-                     <head>Common Elements for All Entries</head>
-                     <p>All entries for items other than manuscripts will have certain common
-                        elements.</p>
-                     <p>Entries should be contained in <gi>biblStruct</gi> with <att>xml:id</att>
-                        and <gi>label</gi> as <ref target="#bibliography-sigla">described
-                           above</ref>. Entries should also be classified with <att>type</att> and
-                        encoded according to the guidelines and examples below.</p>
-                     <p>Publication information for all types of entries should be handled with
-                        these elements:</p>
-                     <p><specList>
-                           <specDesc key="imprint"/>
-                           <specDesc key="pubPlace"/>
-                           <specDesc key="publisher"/>
-                           <specDesc key="date"/>
-                        </specList></p>
-                     <p><gi>imprint</gi> groups information pertaining to the publication of the
-                        edition</p>
-                     <p><gi>pubPlace</gi> (place of publication) contains the name of the place
-                        where the edition was published, as it appears on the title page (e.g.,
-                        Lipsiae instead of Leipzig). If the place is unknown, the value should be
-                        "s.l." (<foreign xml:lang="la">sine loco</foreign>).</p>
-                     <p><gi>publisher</gi> contains the name of the publisher, as it appears on the
-                        title page. If the publisher's name is unknown, the value should be "s.n."
-                           (<foreign xml:lang="la">sine nomine</foreign>)</p>
-                     <p><gi>date</gi> contains the date in arabic numerals (e.g., 1504, not MDIV or
-                        CIↃIↃIV). If the date is unknown, the value should be "s.d." (<foreign
-                           xml:lang="la">sine die</foreign>).</p>
-                     <p><gi>note</gi> with <att>type</att>="url" contains the URL for an online copy
-                        of the edition, if available.</p>
+                  <p>The bibliography for early editions, modern editions, commentaries,
+                     translations, articles, notes, and other materials cited in the edition should
+                     be formatted according to latest edition of <bibl><title>The Chicago Manual of
+                           Style</title></bibl>. As noted <ref target="#zotero">elsewhere in these
+                        guidelines</ref>, it is recommended that editors use <ref
+                        target="https://www.zotero.org/">Zotero</ref> to manage the bibliography for
+                     LDLT editions, not least because Zotero can export the bibliography in Chicago
+                     style.</p>
+                  <p>Items should be categorized and listed in groups for ease of reference. For
+                     example, previous editions should be listed separately from commentaries and
+                     articles. Depending on the nature of the material, it may be useful to
+                     subdivide previous editions into early and modern editions.</p>
+                  <p>In keeping with the goal of human- and machine-readability, individual items in
+                     the bibliography should also be encoded in XML. To meet the minimum requirement
+                     for LDLT editions, individual items in the bibliography should be enclosed with
+                        <gi>bibl</gi> and they should have human- and machine-readable abbreviations
+                     (sigla), using <gi>abbr</gi> and <att>xml:id</att> respectively. See the <ref
+                        target="bibliography-sigla">section on sigla</ref> for more information.</p>
 
-                  </div>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <listBibl>
+                        <head>Previous Editions</head>
+                        <bibl xml:id="Barth1613"><abbr type="siglum">Barth 1613</abbr> = Barthius,
+                           Casparus. Venatici et Bucolici Poetae Latini: Gratius, Nemesianus,
+                           Calpurnius. Hanoviae: In Bibliopolio Willieriano, 1613.</bibl>
+                        <bibl xml:id="Ulit."><abbr type="siglum">Ulit.</abbr> = Ulitius, Ianus.
+                           Venatio Novantiqua. Leidae: Ex Officina Elzeveriana, 1645.</bibl>
+                     </listBibl>
+                  </egXML>
+
+                  <p>For maximum functionality and readability, it is strongly recommended to encode
+                     a greater degree of bibliographical detail. The following sections demonstrate
+                     the recommended encoding.</p>
+
 
                   <!-- Bibliography: editions -->
 
                   <div xml:id="bibliography-editions">
                      <head>Editions</head>
-                     <p>Previous editions must be classified in one of two categories: early
-                        editions based on a single manuscript and modern critical editions based on
-                        more than one source. This will have ramifications for how the editions are
-                        handled in the apparatus criticus (see below, <ref
+                     <p>To make the most of the functionality supported by the LDLT, and to remain
+                        true to the data model, previous editions should be classified in one of two
+                        categories: early editions based on a single manuscript, and modern critical
+                        editions based on more than one source. This will have ramifications for how
+                        the editions are handled in the apparatus criticus (see below, <ref
                            target="apparatus-criticus-patterns">Apparatus Criticus</ref>). This
                         distinction should be preserved in the bibliography with the use of two
-                           <gi>listBibl</gi> lists, with <att>type</att> "witness" and "source",
-                        respectively. Editors may provide a <gi>head</gi> for each of the two lists
-                        (e.g., "Ancient Editions" and "Modern Editions"), if they so desire. The
-                        structure of the individual entries should be the same in both lists.</p>
-                     <p>The individual entries in each <gi>listBibl</gi> should have
-                        <att>type</att>="book".</p>
-                     <p>
-                        <specList>
-                           <specDesc key="biblStruct"/>
-                           <specDesc key="label"/>
-                           <specDesc key="monogr"/>
-                           <specDesc key="editor"/>
-                           <specDesc key="name"/>
-                           <specDesc key="forename"/>
-                           <specDesc key="surname"/>
-                           <specDesc key="addname"/>
-                           <specDesc key="note"/>
-                        </specList>
-                     </p>
-                     <p><gi>biblStruct</gi> (structured bibliographic citation) is the top-level
-                        element for each edition. It should have <att>type</att> of "book". The
-                        values for <att>xml:id</att> and <gi>label</gi> should be based on the
-                        surname of the editor (e.g., Burm1731 and Burm. 1731, respectively for an
-                        edition by Burman pubished in 1731). Additionally, if the bibliography has
-                        been generated by Zotero, each entry should have <att>corresp</att> with the
-                        URL for the entry in the online Zotero bibliography.</p>
-                     <p><gi>monogr</gi> (monographic level) groups bibliographic elements describing
-                        an edition.</p>
-                     <p><gi>title</gi> contains a form of the title of the edition. Because of the
-                        great variation in titles for editions, ranging from none at all to heavily
-                        ornamented, and because it can be assumed that the editions listed in this
-                        section contain the work in question, <gi>title</gi> may be shortened or
-                        abbreviated at the discretion of the editor.</p>
-                     <p><gi>editor</gi> contains information identifying the editor of the edition,
-                        with <att>xml:id</att> if the editor will be mentioned by name in the
-                        apparatus criticus or elsewhere in the edition. If the edition has more than
-                        one editor, use one <gi>editor</gi> element for each editor.</p>
-                     <p><gi>name</gi> contains the value "Anonymous" in cases where the name of the
-                        editor is not known.</p>
-                     <p><gi>forename</gi> contains the first and middle names, or initials, of an
-                        editor in cases where that information is known. A separate
-                           <gi>forename</gi> should be used for the first and middle names.</p>
-                     <p><gi>surname</gi> contains the last name of an editor, in cases where that
-                        information is known.</p>
-                     <p><gi>addname</gi> (additional name) contains a nickname or a Latin name by
-                        which an editor might be known (e.g., "Ascensius").</p>
-                     <p>Publication information is handled according to the guidelines in the <ref
-                           target="#bibliography-pub">section above on publication</ref>.</p>
-                     <p>If there is a digital copy of the work available, use two <gi>note</gi>
-                        elements: one with <att>type</att>="accessed" to indicate the date when the
-                        resource was retrieved, and one with <att>type</att>="url" and
-                           <att>target</att> with the value of the URL to provide the address where
-                        the resource was found.</p>
+                        different kinds of lists: <gi>listWit</gi> for early editions, and
+                           <gi>listBibl</gi> for modern editions. In both types of list, the items
+                        should be presented in chronological order.</p>
 
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <biblStruct type="book" xml:id="s"
-                           corresp="http://zotero.org/groups/542622/items/TXA4M9HA">
-                           <label>s</label>
-                           <monogr>
-                              <title level="m">Buccolica, cum adnotatione Ascensiana, jam
-                                 diligentius recognita</title>
-                              <editor xml:id="Ascensius">
-                                 <forename>Josse</forename>
-                                 <surname>Badius</surname>
-                                 <addname>Ascensius</addname>
-                              </editor>
-                              <imprint>
-                                 <pubPlace>Parrhisiis in vico Maturinorum et regione domus
-                                    Cluniacensis</pubPlace>
-                                 <publisher>a M. Durando Gerlerio</publisher>
-                                 <date>1503</date>
-                                 <note type="accessed">2016-05-26T16:32:29Z</note>
-                                 <note type="url"
-                                    >http://gallica.bnf.fr/ark:/12148/bpt6k841539v</note>
-                              </imprint>
-                           </monogr>
-                        </biblStruct>
-                        <biblStruct type="book" xml:id="Burm1731"
-                           corresp="http://zotero.org/groups/542622/items/HZKUF8VA">
-                           <label>Burm. 1731</label>
-                           <monogr>
-                              <title>Poetae Latini Minores …</title>
-                              <editor xml:id="Burman">
-                                 <forename>Pieter</forename>
-                                 <surname>Burman</surname>
-                              </editor>
-                              <imprint>
-                                 <pubPlace>Leidae</pubPlace>
-                                 <publisher>Conrad Wishoff et Daniel Goedval</publisher>
-                                 <date>1731</date>
-                                 <note type="accessed">2016-05-26T16:32:29Z</note>
-                                 <note type="url"
-                                    >https://books.google.com/books?id=uKZAAAAAcAAJ&amp;pg=PP9#v=onepage&amp;q&amp;f=false</note>
-                              </imprint>
-                           </monogr>
-                        </biblStruct>
-                     </egXML>
+                     <div xml:id="bibliography-editions-early">
+                        <head>Early Editions</head>
+                        <p>Since it is often the case that an early edition is a witness to a single
+                           manuscript that might otherwise be lost, they are encoded in the
+                           bibliography with <gi>witness</gi>. They must be grouped in
+                              <gi>listWit</gi>.</p>
 
-                     <p>These will be rendered on screen and in print as follows:</p>
-                     <p><hi rend="bold">s</hi> = Josse Badius ("Ascensius"). <hi rend="italic"
-                           >Buccolica, cum adnotatione Ascensiana, jam diligentius recognita</hi>.
-                        Parrhisiis in vico Maturinorum et regione domus Cluniacensis: a M. Durando
-                        Gerlerio. 1503. URL: <ref
-                           target="http://gallica.bnf.fr/ark:/12148/bpt6k841539v"
-                           >http://gallica.bnf.fr/ark:/12148/bpt6k841539v</ref> (accessed
-                        2016-05-26T16:32:29Z).</p>
-                     <p><hi rend="bold">Burm. 1731</hi> = Pieter Burman. <title>Poetae Latini
-                           Minores …</title>. Leidae: Conrad Wishoff et Daniel Goedval. 1731. URL:
-                           <ref
-                           target="https://books.google.com/books?id=uKZAAAAAcAAJ&amp;pg=PP9#v=onepage&amp;q&amp;f=false"
-                           >https://books.google.com/books?id=uKZAAAAAcAAJ&amp;pg=PP9#v=onepage&amp;q&amp;f=false</ref>
-                        (accessed 2016-05-26T16:32:29Z).</p>
-                     <p/>
+                        <p>
+                           <specList>
+                              <specDesc key="listWit"/>
+                              <specDesc key="witness"/>
+                              <specDesc key="abbr"/>
+                              <specDesc key="bibl"/>
+                              <specDesc key="editor"/>
+                              <specDesc key="title"/>
+                              <specDesc key="pubPlace"/>
+                              <specDesc key="publisher"/>
+                              <specDesc key="date"/>
+                              <specDesc key="ptr"/>
+                           </specList>
+                        </p>
+
+                        <p><gi>listWit</gi> (list of witnesses) contains bibliographical records for
+                           early editions.</p>
+                        <p><gi>witness</gi> groups the information about an individual edition.
+                              <att>xml:id</att> provides the machine-readable abbreviation for the
+                           edition.</p>
+                        <p><gi>abbr</gi> (abbreviation) contains the human-readable abbreviation for
+                           the record, i.e., how the edition is referred to in the apparatus
+                           criticus.</p>
+                        <p><gi>bibl</gi> (bibliographic citation) contains the following
+                           bibliographical information about the edition:</p>
+                        <list>
+                           <item><gi>editor</gi> contains the name of the editor in the form "Last
+                              name, First name," if known. If the name is in Latin, it should not be
+                              translated. If the name is not known, <gi>editor</gi> contains the
+                              word "Anonymous."</item>
+                           <item><gi>title</gi> contains either the name by which the edition is
+                              commonly known (e.g., editio Romana, editio Aldina) and/or the actual
+                              title of the edition.</item>
+                           <item><gi>pubPlace</gi> (place of publication) contains the name of the
+                              place where the edition was published, as it appears on the title page
+                              (e.g., Lipsiae instead of Leipzig). If the place is unknown, the value
+                              should be "s.l." (<foreign xml:lang="la">sine loco</foreign>). If the
+                              place is known, but not explicitly printed in the edition, put the
+                              place name in square brackets.</item>
+                           <item><gi>publisher</gi> contains the name of the publisher, as it
+                              appears on the title page. If the publisher's name is unknown, the
+                              value should be "s.n." (<foreign xml:lang="la">sine nomine</foreign>).
+                              If the publisher is known, but not explicitly printed in the edition,
+                              put the publisher's name in square brackets.</item>
+                           <item><gi>date</gi> contains the date in arabic numerals (e.g., 1504, not
+                              MDIV or CIↃIↃIV). If the date is unknown, the value should be "s.d."
+                                 (<foreign xml:lang="la">sine die</foreign>). If the date is known,
+                              but not explicitly printed in the edition, put the date in square
+                              brackets.</item>
+                           <item><gi>ptr</gi> (pointer) has <att>target</att> with the URL of a
+                              digital copy of the edition, if one exists.</item>
+                        </list>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <listWit xml:id="early-editions">
+                              <head>Early Editions</head>
+                              <witness xml:id="r">
+                                 <abbr type="siglum">r</abbr> =
+                                       <bibl><editor><name>Anonymous</name></editor>. <title>editio
+                                       Romana</title>. <pubPlace>[Romae]</pubPlace>:
+                                       <publisher>Schweynheim et Pannartz</publisher>,
+                                       <date>1471</date></bibl>.</witness>
+                              <witness xml:id="e"><abbr type="siglum">e</abbr> =
+                                          <bibl><editor><name>Anonymous</name>.
+                                       </editor><title>editio Veneta</title>.
+                                       <pubPlace>[Venetiis]</pubPlace>: <publisher>Ausonius et
+                                       Giradinus</publisher>, <date>1472</date></bibl>.</witness>
+                              <witness xml:id="u"><abbr type="siglum">u</abbr> =
+                                       <bibl><editor>Anonymous</editor>. <title>editio Ang.
+                                       Ugoleti</title>. <pubPlace>Parmae</pubPlace>:
+                                       <publisher>Angelus Ugoletus</publisher>,
+                                    <date>1492</date></bibl>.</witness>
+                              <witness xml:id="c"><abbr type="siglum">c</abbr> =
+                                       <bibl><editor>Anonymous</editor>. <title>editio Coloniensis
+                                       (Buccolica canori poetae Titi Calphurnii Siculi undecim
+                                       Aeglogis iucunditer decantata)</title>.
+                                       <pubPlace>Coloniae</pubPlace>: <publisher>[Henricus
+                                       Quintell]</publisher>, <date>1505(?)</date></bibl>. URL: <ptr
+                                    target="http://digitale.bibliothek.uni-halle.de/vd16/content/titleinfo/1000626"
+                                 />.</witness>
+                              <witness xml:id="Nordh."><abbr type="siglum">Nordh.</abbr> =
+                                    <bibl><editor/>. <title>ed. Nordheimensis</title>.
+                                       <pubPlace>[Nordheim]</pubPlace>: <publisher>s.n.</publisher>,
+                                       <date>s.d.</date></bibl>.</witness>
+                              <witness xml:id="s"><abbr type="siglum">s</abbr> = <bibl><title>editio
+                                       Ascensiana</title> = <editor>Badius, Josse
+                                       (“Ascensius”)</editor>. <title>Buccolica, cum adnotatione
+                                       Ascensiana</title>. <pubPlace>Parhisiis, in vico
+                                       Maturinorum</pubPlace>: <publisher>a Durando
+                                       Gerlerio</publisher>, <date>1503</date></bibl>. URL: <ptr
+                                    target="http://gallica.bnf.fr/ark:/12148/bpt6k841539v"
+                                 />.</witness>
+                              <witness xml:id="b"><abbr type="siglum">b</abbr> = <bibl><title>editio
+                                       Bononiensis</title> = <editor>Guidalottus Bononiensis,
+                                       Diomedes</editor>. <title>Calpurnii et Nemesiani Poetarum
+                                       Buccolicum Carmen</title>. <pubPlace>Bononiae</pubPlace>:
+                                       <publisher>per Caligulam Bazalerium</publisher>,
+                                       <date>1504</date></bibl>. URL: <ptr
+                                    target="https://books.google.com/books?id=B1RrV7ciP6gC&amp;pg=PT3#v=onepage&amp;q&amp;f=false"
+                                 />.</witness>
+                           </listWit>
+                        </egXML>
+                     </div>
+                     <!-- End of section on early editions -->
+
+
+                     <div xml:id="bibliography-editions-modern">
+                        <head>Modern Editions</head>
+                        <p>The bibliography for modern editions follows the same pattern as that for
+                           early editions, except <gi>listBibl</gi> is used instead of
+                              <gi>listWit</gi>.</p>
+
+                        <p>
+                           <specList>
+                              <specDesc key="listBibl"/>
+                              <specDesc key="bibl"/>
+                              <specDesc key="abbr"/>
+                              <specDesc key="editor"/>
+                              <specDesc key="title"/>
+                              <specDesc key="pubPlace"/>
+                              <specDesc key="publisher"/>
+                              <specDesc key="date"/>
+                              <specDesc key="ptr"/>
+                           </specList>
+                        </p>
+
+                        <p><gi>listBibl</gi> (citation lists) contains bibliographical records for
+                           modern editions.</p>
+                        <p><gi>bibl</gi> (bibliographic citation) has <att>xml:id</att> with the
+                           machine-readable abbreviation for the edition. It contains the following
+                           bibliographical information about the edition:</p>
+                        <list>
+                           <item><gi>abbr</gi> (abbreviation) contains the human-readable
+                              abbreviation for the record, i.e., how the edition is referred to in
+                              the apparatus criticus.</item>
+                           <item><gi>editor</gi> contains the name of the editor in the form "Last
+                              name, First name," if known. If the name is in Latin, it should not be
+                              translated. If the name is not known, <gi>editor</gi> contains the
+                              word "Anonymous."</item>
+                           <item><gi>title</gi> contains either the name by which the edition is
+                              commonly known (e.g., editio Romana, editio Aldina) and/or the actual
+                              title of the edition.</item>
+                           <item><gi>pubPlace</gi> (place of publication) contains the name of the
+                              place where the edition was published, as it appears on the title page
+                              (e.g., Lipsiae instead of Leipzig). If the place is unknown, the value
+                              should be "s.l." (<foreign xml:lang="la">sine loco</foreign>). If the
+                              place is known, but not explicitly printed in the edition, put the
+                              place name in square brackets.</item>
+                           <item><gi>publisher</gi> contains the name of the publisher, as it
+                              appears on the title page. If the publisher's name is unknown, the
+                              value should be "s.n." (<foreign xml:lang="la">sine nomine</foreign>).
+                              If the publisher is known, but not explicitly printed in the edition,
+                              put the publisher's name in square brackets.</item>
+                           <item><gi>date</gi> contains the date in arabic numerals (e.g., 1504, not
+                              MDIV or CIↃIↃIV). If the date is unknown, the value should be "s.d."
+                                 (<foreign xml:lang="la">sine die</foreign>). If the date is known,
+                              but not explicitly printed in the edition, put the date in square
+                              brackets.</item>
+                           <item><gi>ptr</gi> (pointer) has <att>target</att> with the URL of a
+                              digital copy of the edition, if one exists.</item>
+                        </list>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <listBibl xml:id="modern-editions">
+                              <head>Modern Editions</head>
+                              <bibl xml:id="n"><abbr type="siglum">n</abbr> = <editor>Brassicanus,
+                                    Johannes Alexander</editor>. <title>editio Brassicani</title>.
+                                    <pubPlace>Argentorati (Strasbourg)</pubPlace>:
+                                    <publisher>Iohannis Knoblochus</publisher>, <date>1519</date>.
+                                 URL: <ptr
+                                    target="https://books.google.com/books?id=n8JSAAAAcAAJ&amp;pg=PA1#v=onepage&amp;q&amp;f=false"
+                                 />.</bibl>
+                              <bibl xml:id="Vienn."><abbr type="siglum">Vienn.</abbr> =
+                                    <editor>Anonymous</editor>. <title>ed. Viennensis</title>.
+                                    <pubPlace>s.l.</pubPlace>, <date>s.d.</date></bibl>
+                              <bibl xml:id="g"><abbr type="siglum">g</abbr> = <editor>Logus,
+                                    Georgius</editor>. <title>editio Augustana</title>.
+                                    <pubPlace>Augustae Vindelicorum</pubPlace>: <publisher>in
+                                    officina Henrici Steyner</publisher>), <date>1534</date>. URL:
+                                    <ptr
+                                    target="http://daten.digitale-sammlungen.de/~db/0003/bsb00038602/images/"
+                                 /></bibl>
+                              <bibl xml:id="Tig."><abbr type="siglum">Tig.</abbr> =
+                                    <editor>Anonymous</editor>. <title>editio Tigurina</title>
+                                 <pubPlace>Tiguri</pubPlace>: <pubPlace>apud Christophorum
+                                    Froschouerum</pubPlace>, <date>1537</date>. URL: <ptr
+                                    target="http://reader.digitale-sammlungen.de/resolve/display/bsb11088503.html"
+                                 />.</bibl>
+                              <bibl xml:id="Gryph."><abbr type="siglum">Gryph.</abbr> =
+                                    <editor>Anonymous</editor>. <title>editio Gryph.</title>
+                                 <pubPlace>Lugduni</pubPlace>: <publisher>apud Seb.
+                                    Gyrphium</publisher>, <date>1537</date>. URL: <ptr
+                                    target="https://books.google.com/books?id=JpJXAAAAcAAJ&amp;pg=PA1#v=onepage&amp;q&amp;f=false"
+                                 />.</bibl>
+                              <bibl xml:id="o"><abbr type="siglum">o</abbr> =
+                                    <editor>Anonymous</editor>. <title>ed. Oporiniana</title>
+                                 <pubPlace>Basileae</pubPlace>: <publisher>Johannes
+                                    Oporinus</publisher>, <date>1546</date>.URL: <ptr
+                                    target="https://books.google.com/books?id=cKqCwvkRiTgC&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
+                                 /></bibl>
+                              <bibl xml:id="p"><abbr type="siglum">p</abbr> = <title>ed.
+                                    Pithoeana</title> = <editor>Pithoeus, Petrus</editor>.
+                                    <title>Epigrammata et poematia vetera</title>.
+                                    <pubPlace>Parisiis</pubPlace>: <publisher>Dionysius
+                                    Duvallius</publisher>, <date>1590</date>. URL: <ptr
+                                    target="https://books.google.com/books?id=F_E6AAAAcAAJ&amp;pg=PR6#v=onepage&amp;q&amp;f=false"
+                                 /></bibl>
+                              <bibl xml:id="edAurel"><abbr type="siglum">Aurel.</abbr> =
+                                    <editor>Anonymous</editor>. <title>Corpus omnium veterum
+                                    poetarum latinorum (Volumen Secundum)</title>.
+                                    <pubPlace>Aureliae Allobrogum</pubPlace>: <publisher>Samuel
+                                    Crispinus</publisher>, <date>1611</date>. URL: <ptr
+                                    target="https://books.google.com/books?id=Q-EPAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
+                                 /></bibl>
+                              <bibl xml:id="Barth1613"><abbr type="siglum">Barth 1613</abbr> =
+                                    <title>ed. Barthii</title> = <editor>Barthius,
+                                 Casparus</editor>. <title>Venatici et Bucolici Poetae Latini:
+                                    Gratius, Nemesianus, Calpurnius</title>.
+                                    <pubPlace>Hanoviae</pubPlace>: <publisher>In Bibliopolio
+                                    Willieriano</publisher>, <date>1613</date>. URL: <ptr
+                                    target="https://books.google.com/books?id=SEVXAAAAcAAJ&amp;pg=PP7#v=onepage&amp;q&amp;f=false"
+                                 /></bibl>
+                              <bibl xml:id="Ulit."><abbr type="siglum">Ulit.</abbr> = <title>ed.
+                                    Ulitii</title> = <editor>Ulitius, Ianus</editor>. <title>Venatio
+                                    Novantiqua</title>. <pubPlace>Leidae</pubPlace>: <publisher>Ex
+                                    Officina Elzeveriana</publisher>, <date>1645</date>. URL: <ptr
+                                    target="https://books.google.com/books?id=Yb09AAAAcAAJ&amp;pg=PR4#v=onepage&amp;q&amp;f=false"
+                                 /></bibl>
+                              <bibl xml:id="h"><abbr type="siglum">h</abbr> = ed. Haverkampi et
+                                 Brucii = <editor>Anonymous</editor>. <title>Poetae Latini Rei
+                                    Venaticae Scriptores et Bucolici Antiqui</title>.
+                                    <pubPlace>Lugduni Batavorum et Hagae Comitum</pubPlace>: apud
+                                 Johannem Arnoldum Langerak, P. Gosse, et J. Neaulme; Rutg.
+                                 Christoph. Alberts, J. Vander Kloot, <date>1728</date>. URL: <ptr
+                                    target="https://books.google.com/books?id=nJVAAAAAcAAJ&amp;pg=PP9#v=onepage&amp;q&amp;f=false"
+                                 /></bibl>
+                              <bibl xml:id="Burm1731"><abbr type="siglum">Burm. 1731</abbr> =
+                                    <title>editio Burmanni</title> = <editor>Burmannus, Petrus
+                                    (Pieter Burman)</editor>. <title>Poetae Latini Minores, Tom.
+                                    I</title>. <pubPlace>Leidae</pubPlace>: <publisher>apud Conradum
+                                    Wishoff et Danielem Goedval</publisher>, <date>1731</date>. URL:
+                                    <ptr
+                                    target="https://books.google.com/books?id=uKZAAAAAcAAJ&amp;pg=PP9#v=onepage&amp;q&amp;f=false"
+                                 /></bibl>
+                              <bibl xml:id="t"><abbr type="siglum">t</abbr> = <title>ed.
+                                    Mitaviensis</title> = <editor>Anonymous</editor>. <title>M.
+                                    Aurelii Olympii Nemesiani Eclogae IV et T. Calpurnii Siculi
+                                    Eclogae VII ad Nemesianum Carthaginiensem, cum notis selectis
+                                    Titii, Martelli, Ulitii, et Petri Burmanni integris.</title>
+                                 <pubPlace>Mitaviae</pubPlace>: <publisher>apud Jacob. Frider.
+                                    Hinzium</publisher>, <date>1774</date>. URL: <ptr
+                                    target="https://books.google.com/books?id=eNUpAAAAYAAJ&amp;pg=PP11#v=onepage&amp;q&amp;f=false"
+                                 />.</bibl>
+                              <bibl xml:id="Wernsd."><abbr type="siglum">Wernsd.</abbr> = <title>ed.
+                                    Wernsdorfii</title> = <editor>Wernsdorf, Iohannes
+                                    Christianus.</editor>
+                                 <title>Poetae Latini Minores, Tomus Primus</title>.
+                                    <pubPlace>Altenburgi</pubPlace>: <pubPlace>ex officina
+                                    Richteria</pubPlace>, <date>1780</date>. URL: <ptr
+                                    target="https://books.google.com/books?id=A8w9AAAAcAAJ&amp;pg=PR1#v=onepage&amp;q&amp;f=false"
+                                 /></bibl>
+                              <bibl xml:id="Beck"><abbr type="siglum">Beck</abbr> = <editor>Beck,
+                                    Christian Daniel</editor>. <title>T. Calpurnii Siculi Eclogae
+                                    XI</title>. <pubPlace>Lipsiae</pubPlace>: <publisher>in libraria
+                                    Weidmannia</publisher>, <date>1803</date>. URL: <ptr
+                                    target="https://books.google.com/books?id=w6QBAAAAYAAJ&amp;pg=PR2#v=onepage&amp;q&amp;f=false"
+                                 /></bibl>
+                              <bibl xml:id="Glaeser"><abbr type="siglum">Glaeser</abbr> =
+                                    <editor>Glaeser, C. E.</editor>
+                                 <title>T. Calpurnii Siculi Eclogae</title>.
+                                    <pubPlace>Gottingae</pubPlace>: <publisher>sumptibus
+                                    Dieterichianis</publisher>, <date>1842</date>. URL: <ptr
+                                    target="https://books.google.com/books?id=4sdEAAAAIAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
+                                 /></bibl>
+                              <bibl xml:id="Baehr."><abbr type="siglum">Baehr.</abbr> = ed.
+                                 Baehrensii = <editor>Baehrens, Aemilius</editor>. <title>Poetae
+                                    Latini Minores, Volumen III</title>.
+                                    <pubPlace>Lipsiae</pubPlace>: <publisher>in aedibus B. G.
+                                    Teubneri</publisher>, 1881. URL: <ptr
+                                    target="https://books.google.com/books?id=CjUOAAAAYAAJ&amp;pg=PA1#v=onepage&amp;q&amp;f=false"
+                                 /></bibl>
+                              <listBibl xml:id="Schenkl">
+                                 <head>utriusque edition. Schenkl. consensus</head>
+                                 <bibl xml:id="Schenkl1"><abbr type="siglum">Schenkl<hi rend="super"
+                                          >1</hi></abbr> = <editor>Schenkl, Henricus</editor>.
+                                       <title>Calpurnii et Nemesiani Bucolica</title>.
+                                       <pubPlace>Lipsiae</pubPlace>: sumptus fecit G. Freytag,
+                                       <date>1885</date>. URL <ptr
+                                       target="https://books.google.com/books?id=kuVGAQAAIAAJ&amp;pg=PR1#v=onepage&amp;q&amp;f=false"
+                                    /></bibl>
+                                 <bibl xml:id="Schenkl2"><abbr type="siglum">Schenkl<hi rend="super"
+                                          >2</hi></abbr> = <editor>Schenkl, Henricus</editor>.
+                                       <title>T. Calpurni Siculi Bucolica</title> in <ref
+                                       target="Postgate1905">Postgate 1905</ref>: 197–205. URL: <ptr
+                                       target="https://books.google.com/books?id=_DMOAAAAYAAJ&amp;pg=RA1-PA194#v=onepage&amp;q&amp;f=false"
+                                    /></bibl>
+                              </listBibl>
+                              <bibl xml:id="Keene"><abbr type="siglum">Keene</abbr> = <editor>Keene,
+                                    Charles Haines</editor>. <title>The Eclogues of Calpurnius
+                                    Siculus and M. Aurelius Olympius Nemesianus</title>.
+                                    <pubPlace>London</pubPlace>: <publisher>Bell</publisher>, 1887.
+                                 URL: <ptr
+                                    target="https://archive.org/details/ecloguesofcalpur00calpuoft"
+                                 /></bibl>
+                              <bibl xml:id="Giarratano"><abbr type="siglum">Giarratano</abbr> =
+                                    <editor>Giarratano, Caesar</editor>. <title>Calpurnii et
+                                    Nemesiani Bucolica</title>. <pubPlace>Neapoli</pubPlace>: apud
+                                 Detken et Rocholl, <date>1910</date>.</bibl>
+                           </listBibl>
+                        </egXML>
+
+                        <p>If it is necessary to group two or more editions together (e.g., first
+                           and second editions), use a nested <gi>listBibl</gi> for the group:</p>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <listBibl>
+                              <head>Modern Editions</head>
+                              <listBibl xml:id="i">
+                                 <head><abbr type="siglum">i</abbr> = utriusque ed. Florent.
+                                    consensus</head>
+                                 <bibl xml:id="i1"><abbr type="siglum">i<hi rend="super"
+                                       >1</hi></abbr> = <editor>Anonymous</editor>. <title>editio
+                                       Florentina prior</title>. <pubPlace>Florentiae</pubPlace>:
+                                       <publisher>Philippi de Giunta</publisher>, <date>1504</date>.
+                                    URL: <ptr
+                                       target="https://books.google.com/books?id=LVJmAAAAcAAJ&amp;pg=PP7#v=onepage&amp;q&amp;f=false"
+                                    /></bibl>
+                                 <bibl xml:id="i2"><abbr type="siglum">i<hi rend="super"
+                                       >2</hi></abbr> = <editor>Anonymous</editor>. <title>editio
+                                       Florentina posterior</title> = Titius, Robertus. <title>M.
+                                       Aurelii Olympii Nemesiani Carthaginiensis, T. Calphurnii
+                                       Siculi Bucolica</title>. <pubPlace>Florentiae</pubPlace>:
+                                       <publisher>apud Philippum Iunctam</publisher>,
+                                       <date>1590</date>. URL: <ptr
+                                       target="https://books.google.com/books?id=9SEvnoZgKe4C&amp;pg=PR1#v=onepage&amp;q&amp;f=false"
+                                    /></bibl>
+                              </listBibl>
+                              <listBibl xml:id="l">
+                                 <head><abbr type="siglum">l</abbr> = utriusque ed. Ald.
+                                    consensus</head>
+                                 <bibl xml:id="l1"><abbr type="siglum">l<hi rend="super"
+                                       >1</hi></abbr> = <editor>Anonymous</editor>. <title>editio
+                                       Aldina prior</title>. <pubPlace>Venetiis</pubPlace>:
+                                       <publisher>in aedibus Aldi, et Andreae Soceri</publisher>
+                                    <date>1518</date>. URL: <ptr
+                                       target="http://gateway.proquest.com/openurl?url_ver=Z39.88-2004&amp;res_dat=xri:eurobo:&amp;rft_dat=xri:eurobo:rec:ita-bnc-ald-00000030-001"
+                                    /></bibl>
+                                 <bibl xml:id="l2"><abbr type="siglum">l<hi rend="super"
+                                       >2</hi></abbr> = <editor>Anonymous</editor>. <title>editio
+                                       Aldina posterior</title>. <pubPlace>Venetiis</pubPlace>:
+                                       <publisher>in aedibus heredum Aldi Manutii, et Andreae
+                                       Soceri</publisher>, <date>1519</date>. URL: <ptr
+                                       target="https://books.google.com/books?id=EYg6AAAAcAAJ&amp;pg=PA1#v=onepage&amp;q&amp;f=false"
+                                    /></bibl>
+                              </listBibl>
+                           </listBibl>
+                        </egXML>
+                     </div>
+                     <!-- End of section on modern editions -->
                   </div>
+                  <!-- End of section on editions in general -->
 
                   <!-- Bibliography: Books -->
+                  
+                  
+                  <!-- Start Here -->
 
                   <div xml:id="books">
                      <head>Books Other than Editions</head>
@@ -1150,10 +1404,14 @@
                      </list>
                   </div>
                   <!-- End of section on list of scholars -->
+
+
+
                </div>
                <!-- End of section on sources -->
             </div>
             <!-- End of section on bibliography -->
+
          </div>
          <!-- End of section on LDLT edition structure -->
 
