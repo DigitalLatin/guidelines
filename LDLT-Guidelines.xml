@@ -1511,7 +1511,7 @@
                   should be used to number the poems. <att>met</att> with the name of the meter may
                   also be used, if the editor wishes to identify the meter. If a different division
                   scheme is required, editors should consult the DLL staff.</p>
-               
+
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <div type="edition">
                      <div type="textpart" subtype="book">
@@ -1523,7 +1523,8 @@
                </egXML>
 
                <p><gi>lg</gi> (line group) groups one or more verse lines that form a stanza or a
-                  couplet; <att>type</att> may be used to identify the grouping (e.g., "stanza" or "couplet").</p>
+                  couplet; <att>type</att> may be used to identify the grouping (e.g., "stanza" or
+                  "couplet").</p>
                <p><gi>l</gi> (line) contains the text of a single line of verse, with <att>n</att>
                   and the number of the line.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -1538,8 +1539,9 @@
                      </div>
                   </div>
                </egXML>
-            </div><!-- End of section on verse -->
-            
+            </div>
+            <!-- End of section on verse -->
+
             <div xml:id="dialogue">
                <head>Dialogue</head>
                <p>Texts that feature interlocutors (e.g., drama, dialogue) should be encoded using
@@ -1556,7 +1558,7 @@
                <p><gi>speaker</gi> contains a human-readable label identifying the person or
                   character speaking the text.</p>
                <p>These features can be used in verse and prose texts:</p>
-               
+
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <sp who="Corydon">
                      <speaker>C.</speaker>
@@ -1569,7 +1571,7 @@
                      <l n="7">torrida cur solo defendimus ora galero?</l>
                   </sp>
                </egXML>
-               
+
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <sp who="Laelius">
                      <speaker>Laelius</speaker>
@@ -1585,11 +1587,72 @@
                   </sp>
                </egXML>
             </div>
-            
+
             <div xml:id="people">
                <head>People</head>
+               <p>It can be useful to encode names of people mentioned in the text of an edition,
+                  whether to facilitate the creation of an index or to support digital search
+                  functionality. It is up to the editor to decide which names, if any, should be
+                  encoded. If names are to be encoded, the following guidelines should be
+                  observed.</p>
+
+               <p>
+                  <specDesc key="listPerson"/>
+                  <specDesc key="person"/>
+                  <specDesc key="persName"/>
+               </p>
+
+               <p><gi>listPerson</gi> (list of persons) contains a list of names of people mentioned
+                  in the text. This list must be maintained by the editor as names are encoded in
+                  the edition.</p>
+               <p><gi>person</gi> contains the nominative form of the name of a person mentioned in
+                  the text. It must also have <att>xml:id</att> with a machine-readable version of
+                  the name to serve as a reference point for instances of the name in the text.</p>
+               <p><gi>persName</gi> contains the name of a person, regardless of case.</p>
+               <p><gi>note</gi> contains further identifying information about the person (e.g.,
+                  dates, the ID number in a reference work or prosopography), if the name is not
+                  enough to make the distinction.</p>
+
+               <p>Since names may appear in different cases in the text, it is vital to have a
+                  reference list of names in the nominative form. While working on a text, editors
+                  should consider which names, if any, should appear in an index and establish a
+                  working list of names in the nominative case. At this stage, it is worthwhile to
+                  start an XML document for names, using <gi>listPerson</gi>, <gi>person</gi>, and
+                     <gi>persName</gi> as described above:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <listPerson>
+                     <person xml:id="Absyrtus">
+                        <persName>Absyrtus</persName>
+                        <note>Medeae frater</note>
+                     </person>
+                     <person xml:id="Accius">
+                        <persName>Accius</persName>
+                        <note>Poeta</note>
+                     </person>
+                     <person xml:id="Actaeon">
+                        <persName>Actaeon</persName>
+                     </person>
+                  </listPerson>
+               </egXML>
+
+               <p>Where names of people in the reference list appear in the edition text, they should be
+                  encoded with <gi>persName</gi> and <att>ref</att> pointing to the
+                     <att>xml:id</att> of the person.</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <l n="6">constat ab <persName ref="#Absyrtus">Absyrti</persName> caede fuisse
+                     loco.</l>
+               </egXML>
                
+               <p>It also is possible to encode indirect references to people:</p>
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <l n="9">conscia percussit meritorum pectora <persName ref="#Medea">Colchis</persName></l>
+               </egXML>
             </div>
+
+
             <div xml:id="places">
                <head>Places</head>
             </div>
