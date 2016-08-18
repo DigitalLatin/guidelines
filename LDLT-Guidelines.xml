@@ -1645,7 +1645,7 @@
                      loco.</l>
                </egXML>
                
-               <p>It also is possible to encode indirect references to people:</p>
+               <p>It is also possible to encode indirect references to people:</p>
                
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <l n="9">conscia percussit meritorum pectora <persName ref="#Medea">Colchis</persName></l>
