@@ -695,11 +695,12 @@
                      articles. Depending on the nature of the material, it may be useful to
                      subdivide previous editions into early and modern editions.</p>
                   <p>In keeping with the goal of human- and machine-readability, individual items in
-                     the bibliography should also be encoded in XML. To meet the minimum requirement
-                     for LDLT editions, individual items in the bibliography should be enclosed with
-                        <gi>bibl</gi> and they should have human- and machine-readable abbreviations
-                     (sigla), using <gi>abbr</gi> and <att>xml:id</att> respectively. See the <ref
-                        target="bibliography-sigla">section on sigla</ref> for more information.</p>
+                     the bibliography should also be encoded in XML. To meet the <hi rend="bold"
+                        >minimum requirement</hi> for LDLT editions, individual items in the
+                     bibliography should be enclosed with <gi>bibl</gi> and they should have human-
+                     and machine-readable abbreviations (sigla), using <gi>abbr</gi> and
+                        <att>xml:id</att> respectively. See the <ref target="bibliography-sigla"
+                        >section on sigla</ref> for more information.</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <listBibl>
@@ -712,21 +713,32 @@
                      </listBibl>
                   </egXML>
 
-                  <p>For maximum functionality and readability, it is strongly recommended to encode
-                     a greater degree of bibliographical detail. The following sections demonstrate
-                     the recommended encoding.</p>
+                  <p>For maximum functionality, it is strongly recommended to encode a greater
+                     degree of bibliographical detail, using the following:</p>
+                  <list>
+                     <item><gi>editor</gi> or <gi>author</gi></item>
+                     <item><gi>title</gi></item>
+                     <item><gi>pubPlace</gi> (place of publication)</item>
+                     <item><gi>publisher</gi></item>
+                     <item><gi>date</gi></item>
+                     <item><gi>ptr</gi> (pointer, for the URL of a digital copy, if
+                        available)</item>
+                  </list>
+
+                  <p>The following sections demonstrate the recommended encoding for common types of
+                     records in a bibliography.</p>
 
 
                   <!-- Bibliography: editions -->
 
                   <div xml:id="bibliography-editions">
                      <head>Editions</head>
-                     <p>To make the most of the functionality supported by the LDLT, and to remain
-                        true to the data model, previous editions should be classified in one of two
+                     <p>To make the most of the functionality supported by the LDLT and to remain
+                        true to its data model, previous editions should be classified in one of two
                         categories: early editions based on a single manuscript, and modern critical
-                        editions based on more than one source. This will have ramifications for how
+                        editions based on more than one source. This will have consequences for how
                         the editions are handled in the apparatus criticus (see below, <ref
-                           target="apparatus-criticus-patterns">Apparatus Criticus</ref>). This
+                           target="apparatus-criticus-patterns">Apparatus Criticus</ref>). The
                         distinction should be preserved in the bibliography with the use of two
                         different kinds of lists: <gi>listWit</gi> for early editions, and
                            <gi>listBibl</gi> for modern editions. In both types of list, the items
@@ -736,8 +748,9 @@
                         <head>Early Editions</head>
                         <p>Since it is often the case that an early edition is a witness to a single
                            manuscript that might otherwise be lost, they are encoded in the
-                           bibliography with <gi>witness</gi>. They must be grouped in
-                              <gi>listWit</gi>.</p>
+                           bibliography with <gi>witness</gi>. Accordingly, they must be grouped in
+                              <gi>listWit</gi>. Since they are also printed books, they also require
+                           the use of <gi>bibl</gi> and its related elements.</p>
 
                         <p>
                            <specList>
@@ -1117,7 +1130,6 @@
                            etc., should be encoded with the following tags:</p>
                         <p>
                            <specList>
-                              <specDesc key="listBibl"/>
                               <specDesc key="bibl"/>
                               <specDesc key="abbr"/>
                               <specDesc key="author"/>
@@ -1130,8 +1142,6 @@
                            </specList>
                         </p>
 
-                        <p><gi>listBibl</gi> (citation lists) contains bibliographical records for
-                           individual books.</p>
                         <p><gi>bibl</gi> (bibliographic citation) has <att>xml:id</att> with the
                            machine-readable abbreviation for the book. It contains the following
                            bibliographical information about the book:</p>
@@ -1167,161 +1177,104 @@
                         </list>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <listBibl>
-                              <bibl xml:id="Haupt1854"><abbr type="siglum">Haupt 1854</abbr>.
-                                    <author>Haupt, Moriz</author>. <title>De Carminibus Bucolicis
-                                    Calpurnii et Nemesiani</title>. <pubPlace>Berolini</pubPlace>:
-                                    <publisher>Typis Academicis</publisher>, <date>1854</date>. URL:
-                                    <ptr
-                                    target="https://books.google.com/books?id=8SwUAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
-                                 />.</bibl>
-                           </listBibl>
+                           <bibl xml:id="Haupt1854"><abbr type="siglum">Haupt 1854</abbr>.
+                                 <author>Haupt, Moriz</author>. <title>De Carminibus Bucolicis
+                                 Calpurnii et Nemesiani</title>. <pubPlace>Berolini</pubPlace>:
+                                 <publisher>Typis Academicis</publisher>, <date>1854</date>. URL:
+                                 <ptr
+                                 target="https://books.google.com/books?id=8SwUAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
+                              />.</bibl>
                         </egXML>
                         <p>This will be rendered as follows: <hi rend="bold">Haupt 1854</hi> =
                            Haupt, Moriz. <hi rend="italics">De Carminibus Bucolicis Calpurnii et
                               Nemesiani</hi>. Berolini: Typis Academics, 1854. URL:
                            https://books.google.com/books?id=8SwUAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false</p>
-                     </div><!-- End of sub-section on books --> 
+                     </div>
+                     <!-- End of sub-section on books -->
                   </div>
-                  
-                  <!-- Start here -->
 
                   <!-- Bibliography: Articles -->
 
                   <div xml:id="bibliography-articles">
                      <head>Articles</head>
-                     <p>Bibliographic details for articles published in journals should be encoded
-                        using the following elements and attributes:</p>
+                     <p>As with other items in the bibliography, articles in journals and
+                        periodicals should be formatted according to the latest edition of
+                              <bibl><title>The Chicago Manual of Style</title></bibl>. The minimum
+                        required encoding for articles is as follows:</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <bibl xml:id="Lucas"><abbr type="siglum">Lucas</abbr> = Lucas, Hans. "Zu
+                           Calpurnius." Wiener Studien 22 (1901): 139–40. URL:
+                           https://books.google.com/books?id=gbmMVZEcoGMC&amp;pg=PA139#v=onepage&amp;q&amp;f=false.</bibl>
+                     </egXML>
+
+                     <p>However, it is strongly recommended to encode more details.</p>
+
                      <p>
                         <specList>
-                           <specDesc key="biblStruct"/>
-                           <specDesc key="label"/>
-                           <specDesc key="analytic"/>
-                           <specDesc key="title"/>
+                           <specDesc key="bibl"/>
+                           <specDesc key="abbr"/>
                            <specDesc key="author"/>
-                           <specDesc key="forename"/>
-                           <specDesc key="surname"/>
-                           <specDesc key="monogr"/>
-                           <specDesc key="imprint"/>
+                           <specDesc key="title"/>
                            <specDesc key="date"/>
-                           <specDesc key="note"/>
+                           <specDesc key="ptr"/>
+
                         </specList>
                      </p>
-                     <p><gi>biblStruct</gi> (structured bibliographic citation) is the top-level
-                        element for each article. It should have <att>type</att> of "journalArticle"
-                        (note case). The values for <att>xml:id</att> and <gi>label</gi> should be
-                        based on the surname of the author. Additionally, if the bibliography has
-                        been generated by Zotero, each entry should have <att>corresp</att> with the
-                        URL for the entry in the online Zotero bibliography.</p>
-                     <p><gi>analytic</gi> (analytic level) groups items relating to an article
-                        published within a journal volume.</p>
+                     <p><gi>bibl</gi> (bibliographic citation) has <att>xml:id</att> with the
+                        machine-readable abbreviation for the book. It contains the following
+                        bibliographical information about the book:</p>
                      <list>
-                        <head>Items Contained By <gi>analytic</gi></head>
+                        <item><gi>abbr</gi> (abbreviation) contains the human-readable abbreviation
+                           for the record, i.e., how the book is referred to in the apparatus
+                           criticus.</item>
+                        <item><gi>author</gi> contains the name of the author in the form "Last
+                           name, First name."</item>
                         <item><gi>title</gi> with <att>level</att>="a" contains the title of the
-                           article.</item>
-                        <item><gi>author</gi> contains information identifying the author of the
-                           book, with <att>xml:id</att> if the author will be mentioned by name in
-                           the apparatus criticus or elsewhere in the edition.. If the book has more
-                           than one author, use one <gi>author</gi> element for each author.</item>
-                        <item><gi>forename</gi> contains the first and middle names (middle name
-                           optional), or initials, of an author in cases where that information is
-                           known. A separate <gi>forename</gi> should be used for the first and
-                           middle names.</item>
-                        <item><gi>surname</gi> contains the last name of an author, in cases where
-                           that information is known.</item>
-                     </list>
-                     <p><gi>monogr</gi> (monographic level) groups bibliographic elements describing
-                        the journal.</p>
-                     <list>
-                        <head>Items Contained by <gi>mongr</gi></head>
+                           article. Quotation marks for the title should be outside of
+                              <gi>title</gi> (e.g., "&lt;title&gt;Article Title&lt;/title&gt;", not
+                           &lt;title&gt;"Article Title"&lt;/title&gt;).</item>
                         <item><gi>title</gi> with <att>level</att>="j" contains the title of the
-                           journal.</item>
-                        <item><gi>imprint</gi> groups several <gi>biblScope</gi> elements defining
-                           publication information. All numbers should be arabic numerals.</item>
+                           journal or periodical.</item>
                         <item><gi>biblScope</gi> (scope of bibliographic reference) is used with
                               <att>unit</att> to indicate details of publication: <list>
                               <item><att>unit</att>="volume" contains the volume number of the
                                  journal in which the article has been published</item>
-                              <item><att>unit</att>="issue" contains the number of the issue within
-                                 the volume</item>
                               <item><att>unit</att>="page" contains the inclusive pages where the
                                  article may be found</item>
                            </list>
                         </item>
                         <item><gi>date</gi> contains the year of publication</item>
-                        <item><p>If there is a digital copy of the work available, use two
-                                 <gi>note</gi> elements: one with <att>type</att>="accessed" to
-                              indicate the date when the resource was retrieved, and one with
-                                 <att>type</att>="url" and <att>target</att> with the value of the
-                              URL to provide the address where the resource was found.</p></item>
+                        <item><gi>ptr</gi> with <att>target</att> provide the URL of a digital copy
+                           of the article, if available.</item>
                      </list>
 
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <biblStruct type="journalArticle" xml:id="Postgate"
-                           corresp="http://zotero.org/groups/542622/items/T9VQVNDS">
-                           <label>Postgate</label>
-                           <analytic>
-                              <title level="a">Some Suggestions on Calpurnius Siculus</title>
-                              <author>
-                                 <forename>John</forename>
-                                 <forename>Percival</forename>
-                                 <surname>Postgate</surname>
-                              </author>
-                           </analytic>
-                           <monogr>
-                              <title level="j">The Classical Review</title>
-                              <imprint>
-                                 <biblScope unit="volume">15</biblScope>
-                                 <biblScope unit="issue">4</biblScope>
-                                 <biblScope unit="page">213-214</biblScope>
-                                 <date>1901</date>
-                                 <note type="accessed">2016-05-26T16:32:29Z</note>
-                                 <note type="url">http://www.jstor.org/stable/694806</note>
-                              </imprint>
-                           </monogr>
-                        </biblStruct>
-                     </egXML>
-                     <p>Note that a review of an edition or other work should be handled in the same
-                        way as a journal article, with the exception of the <gi>title</gi> in
-                           <gi>analytic</gi>, which should begin with the words "Review of" followed
-                        by the title of the work being reviewed.</p>
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <biblStruct type="journalArticle" xml:id="Mueller"
-                           corresp="http://zotero.org/groups/542622/items/WJIX5IQM">
-                           <label>L. Mueller</label>
-                           <analytic>
-                              <title level="a">"Calpurnii et Nemesiani Bucolica recensuit Henricus
-                                 Schenkl, Lipsiae, G. Freytag, Pragae, F. Tempsky, 1885"</title>
-                              <author>
-                                 <forename>Lucian</forename>
-                                 <surname>Müller</surname>
-                              </author>
-                           </analytic>
-                           <monogr>
-                              <title level="j">Berliner philologische Wochenschrift</title>
-                              <imprint>
-                                 <biblScope unit="volume">5</biblScope>
-                                 <biblScope unit="page">1065-1073</biblScope>
-                                 <date>1885</date>
-                                 <note type="accessed">2016-05-26T16:32:29Z</note>
-                                 <note type="url"
-                                    >http://hdl.handle.net/2027/uiug.30112023962282</note>
-                              </imprint>
-                           </monogr>
-                        </biblStruct>
+                        <bibl xml:id="Lucas"><abbr type="siglum">Lucas</abbr> = <author>Lucas,
+                              Hans</author>. "<title level="a">Zu Calpurnius</title>." <title
+                              level="j">Wiener Studien</title>
+                           <biblScope unit="volume">22</biblScope> (<date>1901</date>): <biblScope
+                              unit="page">139–40</biblScope>. URL: <ptr
+                              target="https://books.google.com/books?id=gbmMVZEcoGMC&amp;pg=PA139#v=onepage&amp;q&amp;f=false"
+                           />.</bibl>
                      </egXML>
 
-                     <p>The two examples will be rendered on screen or in print as follows:</p>
-                     <p><hi rend="bold">Postgate</hi> = Postgate, John Percival, "Some Suggestions
-                        on Calpurnius Siculus." <hi rend="italic">The Classical Review</hi> 15.4
-                        (1901): 213–214. URL: http://www.jstor.org/stable/694806, accessed
-                        2016-05-26T16:32:29Z.</p>
-                     <p><hi rend="bold">L. Mueller</hi> = Müller, Lucian, "Calpurnii et Nemesiani
-                        Bucolica recensuit Henricus Schenkl, Lipsiae, G. Freytag, Pragae, F.
-                        Tempsky, 1885." <hi rend="italic">Berliner philologische Wochenschrift</hi>
-                        5 (1885): 1065–1073. URL: http://hdl.handle.net/2027/uiug.30112023962282,
-                        accessed accessed 2016-05-26T16:32:29Z.</p>
+                     <p>Note that a review of an edition or other work should be handled in the same
+                        way as a journal article, with the exception that the title should begin
+                        with the words "Review of" followed by the title of the work being
+                        reviewed.</p>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <bibl xml:id="Jacoby"><abbr type="siglum">Jacoby</abbr> = <author>Jacoby,
+                              Karl</author>. <title level="a">Review of 'Calpurnii et Nemesiani
+                              Bucolica recensuit Henricus Schenkl, Lipsiae, G. Freytag, Pragae, F.
+                              Tempsky, 1885'</title>. <title level="j">Wochenschrift für klassiche
+                              Philologie</title>
+                           <biblScope unit="volume">3</biblScope> (<date>1886</date>): <biblScope
+                              unit="page">1287–94</biblScope>. URL: <ptr
+                              target="https://books.google.de/books?id=q5blAAAAMAAJ&amp;hl=de&amp;pg=RA7-PA41#v=onepage&amp;q&amp;f=false"
+                           />.</bibl>
+                     </egXML>
                   </div>
+                  <!-- End of section on articles -->
 
                   <!-- Bibliography: List of Scholars -->
 
@@ -1332,13 +1285,13 @@
                         Heinsius' unpublished conjectures, found in books in his own library. But
                         "Heins." does not help a reader find more information, which is why the
                         bibliography of an LDLT edition includes a list of scholars mentioned by
-                        name in the edition, with information about where to find their remarks, if
-                        they are available.</p>
+                        name in the edition, with information about where to find more information,
+                        if they are available.</p>
                      <p>
                         <specList>
                            <specDesc key="listPerson"/>
                            <specDesc key="person"/>
-                           <specDesc key="label"/>
+                           <specDesc key="abbr"/>
                            <specDesc key="persName"/>
                            <specDesc key="forename"/>
                            <specDesc key="surname"/>
@@ -1350,68 +1303,49 @@
                      <p><gi>listPerson</gi> with <att>xml:id</att>="bibliography-scholars" groups
                         the information identifying the scholars.</p>
                      <p><gi>person</gi> with <att>xml:id</att> as <ref target="#bibliography-sigla"
-                           >described above</ref>.</p>
-                     <p><gi>label</gi> contains the name or abbreviated name used to refer to the
-                        person in the edition (e.g., Heins.).</p>
-                     <p><gi>persName</gi> (personal name) groups the information about the scholar's
-                        name. For identification purposes, it is helpful, but not required, to use
-                           <att>ref</att> with the <ref target="https://viaf.org">Virtual
-                           International Authorify File (VIAF)</ref> permalink for that person.</p>
-                     <p><gi>forename</gi> contains the scholar's first and middle names (middle name
-                        optional), or initials, of the scholar. A separate <gi>forename</gi> should
-                        be used for the first and middle names.</p>
-                     <p><gi>surname</gi> contains the scholar's last name.</p>
-                     <p><gi>addname</gi> (additional name) contains an additional or alternate name
-                        by which a scholar is known. If a scholars is commonly known by a Latinized
-                        form of his or her name, that name should be inserted in
-                        <gi>addname</gi>.</p>
+                           >described above</ref> groups information about an individual.</p>
+                     <p><gi>persName</gi> (personal name) groups the information about an
+                        individuals's name. For identification purposes, it is helpful, but not
+                        required, to use <att>ref</att> with the <ref target="https://viaf.org"
+                           >Virtual International Authorify File (VIAF)</ref> permalink for that
+                        person. The following information is contained by <gi>persName</gi></p>
+                     <list>
+                        <item><gi>abbr</gi> contains the name or abbreviated name used to refer to
+                           the person in the edition (e.g., Heins.).</item>
+                        <item><gi>forename</gi> contains the scholar's first and middle names
+                           (middle name optional), or initials, of the scholar. A separate
+                              <gi>forename</gi> should be used for the first and middle
+                           names.</item>
+                        <item><gi>surname</gi> contains the scholar's last name.</item>
+                        <item><gi>addname</gi> (additional name) contains an additional or alternate
+                           name by which a scholar is known. If a scholars is commonly known by a
+                           Latinized form of his or her name, that name should be inserted in
+                              <gi>addname</gi>.</item>
+                     </list>
                      <p><gi>note</gi> contains further information about the nature of the citation
                         (e.g., "personal correspondence with editor"), with <gi>ref</gi> (reference)
                         containing a reference to the entry in the bibliography that has citations
                         of the scholar. <att>target</att> with the xml:id of that entry will point
                         the reader to that entry.</p>
+                     
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <listPerson xml:id="bibliography-scholars">
-                           <person xml:id="CSchenkl">
-                              <label>C. Schenkl</label>
-                              <persName ref="http://viaf.org/viaf/12523146">
-                                 <forename>Karl</forename>
-                                 <forename>("Carolus")</forename>
-                                 <surname>Schenkl</surname>
-                              </persName>
-                              <note>in <ref target="#Schenkl">H. Schenkl</ref>'s editions</note>
-                           </person>
-                           <person xml:id="Scriverius">
-                              <label>Scriverius</label>
-                              <persName ref="https://viaf.org/viaf/121894458/">
-                                 <forename>Pieter</forename>
-                                 <surname>Schrijver</surname>
-                                 <addname>Scriverius</addname>
-                              </persName>
-                              <note>in <ref target="#Burm1731">Burm. 1731</ref></note>
-                           </person>
-                        </listPerson>
+                        <person xml:id="Heins.">
+                           <persName ref="http://viaf.org/viaf/24651364">
+                              <abbr>Heins.</abbr> = <forename>Nicolaus</forename>
+                              <surname>Heinsius</surname>
+                           </persName>
+                           <note>Cited in <ref target="#Burm1731">Burman 1731</ref>.</note>
+                        </person>
                      </egXML>
                      <p>These references will be rendered on a display and in print as follows:</p>
                      <list>
                         <head>Scholars Cited in this Edition</head>
-                        <item>C. Schenkl = Karl ("Carolus") Schenkl (in <ref target="#Schenkl">H.
-                              Schenkl</ref>'s editions)</item>
-                        <item>Scriverius = Pieter Schrijver (in <ref target="#Burm1731">Burm.
-                              1731</ref>)</item>
+                        <item><hi rend="bold">Heins.</hi> = Nicolaus Heinsius. Cited in <ref target="#Burm1731">Burman 1731</ref>.</item>
                      </list>
-                  </div>
-                  <!-- End of section on list of scholars -->
-
-
-
-               </div>
-               <!-- End of section on sources -->
-            </div>
-            <!-- End of section on bibliography -->
-
-         </div>
-         <!-- End of section on LDLT edition structure -->
+                  </div><!-- End of section on list of scholars -->
+               </div><!-- End of section on sources -->
+            </div><!-- End of section on bibliography -->
+         </div><!-- End of section on LDLT edition structure -->
 
          <!-- Begin section on edition text -->
 
