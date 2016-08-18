@@ -1356,9 +1356,9 @@
 
          <div xml:id="edition-text">
             <head>Edition Text</head>
-            <p>The edition text corresponds to the text printed "above the line" of the critical
-               apparatus in a traditional edition. It is composed of "accepted readings," that is,
-               text judged by the editor to be authentic, accurate, or authoritative.</p>
+            <p>The edition text corresponds to the text printed "above the line" of the apparatus in
+               a traditional edition. It is composed of "accepted readings," that is, text judged by
+               the editor to be authentic, accurate, or authoritative.</p>
             <p>There may be more than one authoritative version of a text, depending on the text and
                depending on the approach adopted by the editor. Authors sometimes edit and revise
                their work over time. Scribes often record the version of the text that makes sense
@@ -1366,10 +1366,11 @@
                passages. But an editor must make decisions about the text an edition presents to
                readers. Combined, those decision constitute the editor's argument about the text,
                and they are on display in the official edition text in its initial state.</p>
-            <p>Since the online version of an LDLT allows readers to swap readings from the critical
-               apparatus into the main text, it is possible to encounter many versions of the text
-               in one viewing of it, but the official edition text is the starting point for those
-               interactions.</p>
+            <p>"Initial state" is an important phrase. Since the online version of an LDLT allows
+               readers to swap readings from the critical apparatus into the main text, it is
+               possible to encounter many versions of the text in one viewing of it, but the
+               official edition text in its default initial state (i.e., what you see when you open
+               the edition for the first time) is the starting point for those interactions.</p>
             <p>This section establishes guidelines for encoding the information typically found in
                the main text of a critical edition.</p>
             <div xml:id="edition-text-prose">
@@ -1377,6 +1378,14 @@
                <p>The aim of this section is to provide guidance for marking up the structure of
                   prose texts, using the generic model of book, chapter, and paragraph for the main
                   components of a work.</p>
+               <p>In a traditional critical edition, numbers are printed in the margin and/or in the
+                  text itself. It is often unclear whether the numbers are meant to mark syntactic
+                  units, reflect the numbering of pages or sections in a canonical edition, or
+                  something else entirely. An advantage to semantically encoding the reference
+                  scheme is that it makes the scheme's significance explicit. For that reason, a
+                  human- and machine-readable reference scheme is essential for an LDLT edition.
+                  Moreover, if the structure is not encoded according to these guidelines, search
+                  and browse functionality will not be supported.</p>
                <p>
                   <specList>
                      <specDesc key="div"/>
@@ -1385,29 +1394,36 @@
                      <specDesc key="seg"/>
                   </specList>
                </p>
-               <p><gi>div</gi> (division) marks first-order (e.g., book) and second-order (e.g.,
-                  chapter) sections of the prose text. <att>type</att> and <att>subtype</att> should
-                  be used to describe the parts of the text; <att>n</att> must be used with
-                  second-order divisions to indicate their order in the sequence of the work:</p>
+
+               <p>For an LDLT edition of a prose text, the top-level <gi>div</gi> has the
+                     <att>type</att> "edition"; this division contains the entire text of the
+                  edition. The next <gi>div</gi> will normally have the <att>type</att> "textpart"
+                  with <att>subtype</att> "book" and <att>n</att> to indicate the number of the
+                  book. If a different division scheme is required, editors should consult the DLL
+                  staff.</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <div type="edition">
-                     <div type="textpart" subtype="book" n="1"> </div>
+                     <div type="textpart" subtype="book" n="1">
+                        <!-- Text goes here. -->
+                     </div>
                   </div>
                </egXML>
-               <p>For an LDLT edition, the top-level <gi>div</gi> has the <att>type</att> "edition";
-                  this division contains the entire text of the edition. The next <gi>div</gi> will
-                  normally have the <att>type</att> "textpart" with <att>subtype</att> "book" and
-                     <att>n</att> "1" to indicate that this is the first book. If a different
-                  division scheme is required, editors should consult the DLL staff.</p>
-               <p><gi>milestone</gi> can be used to mark the sections of a canonical edition, if the
+
+               <p><gi>milestone</gi> may be used to mark the sections of a canonical edition, if the
                   current edition uses a different scheme.</p>
                <p><gi>p</gi> (paragraph) contains the text of a chapter or other basic section in a
                   prose work. <att>n</att> must be used to reflect the numbering scheme of the
-                  edition.</p>
+                  edition. Note that the TEI Guidelines define the paragraph as <quote
+                     source="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COPA">the
+                     fundamental organizational unit for all prose texts</quote>. The unique
+                  characteristics of some texts may require a different approach. In those cases,
+                  editors should work with DLL staff to identify the best way to encode the text in
+                  question.</p>
                <p><gi>seg</gi> (segment) contains a segment of a paragraph (e.g., a sentence or a
                   more general "section"). If <gi>seg</gi> is used, <att>n</att> must be used to
                   reflect the numbering scheme of the edition.</p>
+
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <div type="edition">
                      <div type="textpart" subtype="book" n="1">
@@ -1441,17 +1457,34 @@
                      </div>
                   </div>
                </egXML>
-               <p>In a traditional critical edition, numbers are printed in the margin and/or in the
-                  text itself. It is often unclear whether the numbers are meant to mark syntactic
-                  units, reflect the numbering of pages or sections in a canonical edition, or
-                  something else. When the numbers are printed in the text, it can be unclear</p>
-               <p>Note that the TEI Guidelines define the paragraph as <quote
-                     source="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COPA">the
-                     fundamental organizational unit for all prose texts</quote>. The unique
-                  characteristics of some texts may require a different approach. In those cases,
-                  editors should work with DLL staff to identify the best way to encode the text in
-                  question.</p>
+
+               <p>That text will be rendered as follows:</p>
+               <p>Liber I</p>
+
+               <p><hi rend="bold">1</hi>
+                  <hi rend="superscript">1</hi>Gallia est omnis divisa in partes tres, quarum unam
+                  incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli
+                  appellantur. <hi rend="superscript">2</hi>Hi omnes lingua, institutis, legibus
+                  inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et
+                  Sequana dividit. <hi rend="superscript">3</hi>Horum omnium fortissimi sunt Belgae,
+                  propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad
+                  eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent
+                  important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum
+                  continenter bellum gerunt. <hi rend="superscript">4</hi>Qua de causa Helvetii
+                  quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum
+                  Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus
+                  bellum gerunt. <hi rend="superscript">5</hi>Eorum una, pars, quam Gallos obtinere
+                  dictum est, initium capit a flumine Rhodano, continetur Garumna flumine, Oceano,
+                  finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad
+                  septentriones. <hi rend="superscript">6</hi>Belgae ab extremis Galliae finibus
+                  oriuntur, pertinent ad inferiorem partem fluminis Rheni, spectant in septentrionem
+                  et orientem solem. <hi rend="superscript">7</hi>Aquitania a Garumna flumine ad
+                  Pyrenaeos montes et eam partem Oceani quae est ad Hispaniam pertinet; spectat
+                  inter occasum solis et septentriones.</p>
+
             </div>
+            <!-- End of section on prose -->
+
             <div xml:id="edition-text-poetry">
                <head>Verse</head>
                <p>The <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/VE.html"
@@ -1468,15 +1501,29 @@
                      <specDesc key="l"/>
                   </specList>
                </p>
-               <p><gi>div1</gi> (level-1 text division) groups the parts of a book of verse, with
-                     <att>type</att>="book" and <att>n</att> with the number of the book.</p>
-               <p><gi>div2</gi> (level-2 text division) groups the parts of a single poem (e.g.,
-                  stanzas or lines), with <att>type</att>="poem", <att>n</att> with the number of
-                  the poem in the book, and <att>met</att> with the name of the meter.</p>
-               <!-- Should we require usage of terms from a standard reference work? -->
+
+               <p>For an LDLT edition of a verse text, the top-level <gi>div</gi> has the
+                     <att>type</att> "edition"; this division contains the entire text of the
+                  edition. The next <gi>div</gi> will normally have the <att>type</att> "textpart"
+                  with <att>subtype</att> "book" and <att>n</att> to indicate the number of the
+                  book. <gi>div</gi> with <att>type</att>="poem" contains the parts of a single poem
+                  (e.g., stanzas or lines). If there is more than one poem in a book, <att>n</att>
+                  should be used to number the poems. <att>met</att> with the name of the meter may
+                  also be used, if the editor wishes to identify the meter. If a different division
+                  scheme is required, editors should consult the DLL staff.</p>
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <div type="edition">
+                     <div type="textpart" subtype="book">
+                        <div type="poem" n="1" met="First Asclepiadean">
+                           <!-- Text of poem goes here -->
+                        </div>
+                     </div>
+                  </div>
+               </egXML>
+
                <p><gi>lg</gi> (line group) groups one or more verse lines that form a stanza or a
-                  couplet, with <att>type</att> and "stanza" or "couplet".</p>
-               <!-- Other values?-->
+                  couplet; <att>type</att> may be used to identify the grouping (e.g., "stanza" or "couplet").</p>
                <p><gi>l</gi> (line) contains the text of a single line of verse, with <att>n</att>
                   and the number of the line.</p>
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -1491,7 +1538,8 @@
                      </div>
                   </div>
                </egXML>
-            </div>
+            </div><!-- End of section on verse -->
+            
             <div xml:id="dialogue">
                <head>Dialogue</head>
                <p>Texts that feature interlocutors (e.g., drama, dialogue) should be encoded using
@@ -1508,6 +1556,7 @@
                <p><gi>speaker</gi> contains a human-readable label identifying the person or
                   character speaking the text.</p>
                <p>These features can be used in verse and prose texts:</p>
+               
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <sp who="Corydon">
                      <speaker>C.</speaker>
@@ -1520,6 +1569,7 @@
                      <l n="7">torrida cur solo defendimus ora galero?</l>
                   </sp>
                </egXML>
+               
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <sp who="Laelius">
                      <speaker>Laelius</speaker>
@@ -1535,8 +1585,10 @@
                   </sp>
                </egXML>
             </div>
+            
             <div xml:id="people">
                <head>People</head>
+               
             </div>
             <div xml:id="places">
                <head>Places</head>
