@@ -1327,7 +1327,7 @@
                         containing a reference to the entry in the bibliography that has citations
                         of the scholar. <att>target</att> with the xml:id of that entry will point
                         the reader to that entry.</p>
-                     
+
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <person xml:id="Heins.">
                            <persName ref="http://viaf.org/viaf/24651364">
@@ -1340,12 +1340,17 @@
                      <p>These references will be rendered on a display and in print as follows:</p>
                      <list>
                         <head>Scholars Cited in this Edition</head>
-                        <item><hi rend="bold">Heins.</hi> = Nicolaus Heinsius. Cited in <ref target="#Burm1731">Burman 1731</ref>.</item>
+                        <item><hi rend="bold">Heins.</hi> = Nicolaus Heinsius. Cited in <ref
+                              target="#Burm1731">Burman 1731</ref>.</item>
                      </list>
-                  </div><!-- End of section on list of scholars -->
-               </div><!-- End of section on sources -->
-            </div><!-- End of section on bibliography -->
-         </div><!-- End of section on LDLT edition structure -->
+                  </div>
+                  <!-- End of section on list of scholars -->
+               </div>
+               <!-- End of section on sources -->
+            </div>
+            <!-- End of section on bibliography -->
+         </div>
+         <!-- End of section on LDLT edition structure -->
 
          <!-- Begin section on edition text -->
 
