@@ -1636,37 +1636,111 @@
                   </listPerson>
                </egXML>
 
-               <p>Where names of people in the reference list appear in the edition text, they should be
-                  encoded with <gi>persName</gi> and <att>ref</att> pointing to the
+               <p>Where names of people in the reference list appear in the edition text, they
+                  should be encoded with <gi>persName</gi> and <att>ref</att> pointing to the
                      <att>xml:id</att> of the person.</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <l n="6">constat ab <persName ref="#Absyrtus">Absyrti</persName> caede fuisse
                      loco.</l>
                </egXML>
-               
+
                <p>It is also possible to encode indirect references to people:</p>
-               
+
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <l n="9">conscia percussit meritorum pectora <persName ref="#Medea">Colchis</persName></l>
+                  <l n="9">conscia percussit meritorum pectora <persName ref="#Medea"
+                        >Colchis</persName></l>
                </egXML>
             </div>
 
 
             <div xml:id="places">
                <head>Places</head>
-            </div>
-            <div xml:id="edition-text-reference-scheme">
-               <head>Reference Scheme</head>
+               <p>Place names, and the names of those who inhabit the places, can be encoded in LDLT
+                  editions to facilitate creation of an index or to assist readers in identifying
+                  the places mentioned in the text. If it is desirable to encode this information,
+                  the following guidelines should be followed.</p>
 
+               <p>
+                  <specList>
+                     <specDesc key="placeName"/>
+                     <specDesc key="orgName"/>
+                  </specList>
+               </p>
+
+               <p><gi>placeName</gi> contains the name of a place, with <att>ref</att> and the
+                  canonical Uniform Resource Identifier (URI) for it at <ref
+                     target="http://pleiades.stoa.org">Pleiades</ref>.</p>
+               <p><gi>orgName</gi> (organization name) contains the name of the inhabitants of a
+                  place, with <att>ref</att> and the canonical Uniform Resource Identifier (URI) for
+                  the place at <ref target="http://pleiades.stoa.org">Pleiades</ref>.</p>
+
+               <p>The following is an extreme example, but it demonstrates what might be encoded and
+                  how.</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p><placeName ref="http://pleiades.stoa.org/places/993">Gallia</placeName> est
+                     omnis divisa in partes tres, quarum unam incolunt <orgName
+                        ref="http://pleiades.stoa.org/places/79326">Belgae</orgName>, aliam <orgName
+                        ref="http://pleiades.stoa.org/places/246175">Aquitani</orgName>, tertiam qui
+                     ipsorum lingua <orgName ref="http://pleiades.stoa.org/places/993"
+                        >Celtae</orgName>, nostra <orgName ref="http://pleiades.stoa.org/places/993"
+                        >Galli</orgName> appellantur. Hi omnes lingua, institutis, legibus inter se
+                     differunt. <orgName ref="http://pleiades.stoa.org/places/993">Gallos</orgName>
+                     ab <orgName ref="http://pleiades.stoa.org/places/246175">Aquitanis</orgName>
+                     <placeName ref="http://pleiades.stoa.org/places/138369">Garumna</placeName>
+                     flumen, a <orgName ref="http://pleiades.stoa.org/places/79326">Belgis</orgName>
+                     <placeName ref="http://pleiades.stoa.org/places/109147">Matrona</placeName> et
+                        <placeName ref="http://pleiades.stoa.org/places/109341">Sequana</placeName>
+                     dividit. Horum omnium fortissimi sunt <orgName
+                        ref="http://pleiades.stoa.org/places/79326">Belgae</orgName>, propterea quod
+                     a cultu atque humanitate provinciae longissime absunt, minimeque ad eos
+                     mercatores saepe commeant atque ea quae ad effeminandos animos pertinent
+                     important, proximique sunt <orgName ref="http://pleiades.stoa.org/places/20468"
+                        >Germanis</orgName>, qui trans <placeName
+                        ref="http://pleiades.stoa.org/places/393483">Rhenum</placeName> incolunt,
+                     quibuscum continenter bellum gerunt. Qua de causa <orgName
+                        ref="http://pleiades.stoa.org/places/177534">Helvetii</orgName> quoque
+                     reliquos <orgName ref="http://pleiades.stoa.org/places/993">Gallos</orgName>
+                     virtute praecedunt, quod fere cotidianis proeliis cum <orgName
+                        ref="http://pleiades.stoa.org/places/20468">Germanis</orgName> contendunt,
+                     cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.
+                     Eorum una, pars, quam <orgName ref="http://pleiades.stoa.org/places/993"
+                        >Gallos</orgName> obtinere dictum est, initium capit a flumine <placeName
+                        ref="http://pleiades.stoa.org/places/148168">Rhodano</placeName>, continetur
+                        <placeName ref="http://pleiades.stoa.org/places/138369">Garumna</placeName>
+                     flumine, <placeName ref="http://pleiades.stoa.org/places/845"
+                        >Oceano</placeName>, finibus <orgName
+                        ref="http://pleiades.stoa.org/places/79326">Belgarum</orgName>, attingit
+                     etiam ab <orgName ref="http://pleiades.stoa.org/places/167922"
+                        >Sequanis</orgName> et <orgName ref="http://pleiades.stoa.org/places/177534"
+                        >Helvetiis</orgName> flumen <placeName
+                        ref="http://pleiades.stoa.org/places/393483">Rhenum</placeName>, vergit ad
+                     septentriones. <orgName ref="http://pleiades.stoa.org/places/79326"
+                        >Belgae</orgName> ab extremis <placeName
+                        ref="http://pleiades.stoa.org/places/993">Galliae</placeName> finibus
+                     oriuntur, pertinent ad inferiorem partem fluminis <placeName
+                        ref="http://pleiades.stoa.org/places/393483">Rheni</placeName>, spectant in
+                     septentrionem et orientem solem. <placeName
+                        ref="http://pleiades.stoa.org/places/981505">Aquitania</placeName> a
+                        <placeName ref="http://pleiades.stoa.org/places/138369">Garumna</placeName>
+                     flumine ad <placeName ref="http://pleiades.stoa.org/places/246582">Pyrenaeos
+                        montes</placeName> et eam partem <placeName
+                        ref="http://pleiades.stoa.org/places/845">Oceani</placeName> quae est ad
+                        <placeName ref="http://pleiades.stoa.org/places/1027">Hispaniam</placeName>
+                     pertinet; spectat inter occasum solis et septentriones.</p>
+               </egXML>
             </div>
+
             <div xml:id="edition-text-symbols">
                <head>Symbols Commonly Used in the Text of a Critical Edition</head>
-               <!-- Sam: do something about telling people who want to do diplomatic stuff to go look at EpiDoc -->
-               <p>The symbols in this section have been gleaned from <bibl><author>Martin
-                        West</author>, <title>Textual Criticism and Editorial Technique</title>
-                        (<pubPlace>Stuttgart</pubPlace>, 1973), <biblScope unit="page"
-                        >80–81</biblScope></bibl>.</p>
+               <p>The symbols in this section have been gleaned from <bibl xml:id="West"
+                        ><author>Martin West</author>, <title>Textual Criticism and Editorial
+                        Technique</title> (<pubPlace>Stuttgart</pubPlace>, 1973), <biblScope
+                        unit="page">80–81</biblScope></bibl>. Many of the symbols will be useful
+                  only for diplomatic transcriptions of documentary sources, but they are included
+                  here in an attempt to be comprehensive. Editors who need to use other special
+                  symbols should consult with LDLT staff.</p>
                <p>For the sake of uniformity, this section follows closely <bibl><author>Tom
                         Elliott</author>, <author>Gabriel Bodard</author>, <author>Elli
                         Mylonas</author>, <author>Simona Stoyanova</author>, <author>Charlotte
@@ -1675,11 +1749,11 @@
                         XML (Version 8)</title>. Available: <ref
                         target="http://www.stoa.org/epidoc/gl/latest"
                         >http://www.stoa.org/epidoc/gl/latest</ref></bibl>.</p>
-               <!-- How should I cite individual sections? By author in the "Responsibility" section of the Epidoc guidelines? -->
+
                <div xml:id="abbreviation-expansion"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-abbrevfully.html">
                   <head>Abbreviation Fully Expanded</head>
-                  <p>The LDLT follows the Epidoc guidelines for encoding fully expanded
+                  <p>( ) = The LDLT follows the Epidoc guidelines for encoding fully expanded
                      abbreviations <ptr
                         target="http://www.stoa.org/epidoc/gl/latest/trans-abbrevfully.html"/>:</p>
                   <p>
@@ -1717,14 +1791,16 @@
                         <ex>ratia</ex>
                      </expan>
                   </egXML>
-                  <!-- Need discussion of values for @cert on <expan>. Note that different sections in Epidoc guidelines for abbreviations are based on value of @cert  -->
+
                </div>
-               <div xml:id="add-conjecture"
+               <!-- End section "Abbreviation Fully Expanded" -->
+
+               <div xml:id="add-emendation"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-restored.html">
                   <head>Text added by emendation</head>
-                  <p>An editor supplies text believed to be missing from the original source. (Cf.
-                     Epidoc guidelines "Editorial Restoration: Characters Lost But Restored By
-                     Modern Editor" <ptr
+                  <p>&lt; &gt; = An editor supplies text believed to be missing from the original
+                     source. (Cf. Epidoc guidelines "Editorial Restoration: Characters Lost But
+                     Restored By Modern Editor" <ptr
                         target="http://www.stoa.org/epidoc/gl/latest/trans-restored.html"/>) </p>
                   <p>
                      <specList>
@@ -1743,11 +1819,13 @@
                      <supplied reason="omitted">abc</supplied>
                   </egXML>
                </div>
+               <!-- End section "Text added by emendation -->
+
                <div xml:id="undetermined-loss"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharunknown.html">
                   <head>Undetermined Amount Of Text Lost</head>
-                  <p>Text has been lost from one or more witnesses. (Cf. Epidoc guidelines, "Lost
-                     Characters, Quantity Unknown" <ptr
+                  <p>[ ] = Text has been lost from one or more witnesses. (Cf. Epidoc guidelines,
+                     "Lost Characters, Quantity Unknown" <ptr
                         target="http://www.stoa.org/epidoc/gl/latest/trans-lostcharunknown.html"
                      />)</p>
                   <p>
@@ -1770,11 +1848,15 @@
                      <gap reason="lost" extent="unknown" unit="character"/>
                   </egXML>
                </div>
+               <!-- End section "Undetermined Amount of Text Lost" -->
+
+
                <div xml:id="known-loss"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html">
                   <head>Known Amount Of Text Lost</head>
-                  <p>The editor or transcriber knows from context and/or observation how much text
-                     has been lost. (Cf. Epidoc guidelines, "Lost Characters, Quantity Known" <ptr
+                  <p>[ . . . ] = The editor or transcriber knows from context and/or observation how
+                     much text has been lost. (Cf. Epidoc guidelines, "Lost Characters, Quantity
+                     Known" <ptr
                         target="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html"
                      />)</p>
                   <p>
@@ -1789,18 +1871,20 @@
                   <p>
                      <quote>[ ... ]</quote>
                   </p>
-                  <p>Note that each dot represents a missing character.</p>
+                  <p>Each dot represents a missing character.</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <gap reason="lost" quantity="3" unit="character"/>
                   </egXML>
                </div>
+               <!-- End section "Known amount of text lost" -->
+
                <div xml:id="lost-lines-known"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostlineknown.html">
                   <head>Known Number of Lines Lost</head>
-                  <p>A known quantity of lines has been lost, or is conjectured to have been lost
-                     from the text of all witnesses. (Cf. Epidoc guidelines, "Lost Lines, Quantity
-                     Known" <ptr
+                  <p>[------] = A known quantity of lines has been lost, or is conjectured to have
+                     been lost from the text of all witnesses. (Cf. Epidoc guidelines, "Lost Lines,
+                     Quantity Known" <ptr
                         target="http://www.stoa.org/epidoc/gl/latest/trans-lostlineknown.html"
                      />)</p>
                   <p>
@@ -1822,14 +1906,15 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <gap reason="lost" quantity="3" unit="line"/>
                   </egXML>
-                  <!-- How is this handled differently in prose and verse texts? -->
                </div>
+               <!-- End section "Known Number of Lines Lost" -->
+
                <div xml:id="lost-lines-unknown"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostlineunknown.html">
                   <head>Unknown Number of Lines Lost</head>
-                  <p>An unknown quantity of lines has been lost, or is conjectured to have been lost
-                     from the text of all witnesses. (Cf. Epidoc guidelines, "Lost Lines, Quantity
-                     Unknown" <ptr
+                  <p>- - - - - - = An unknown quantity of lines has been lost, or is conjectured to
+                     have been lost from the text of all witnesses. (Cf. Epidoc guidelines, "Lost
+                     Lines, Quantity Unknown" <ptr
                         target="http://www.stoa.org/epidoc/gl/latest/trans-lostlineunknown.html"
                      />)</p>
                   <p>
@@ -1850,14 +1935,21 @@
                      <gap reason="lost" extent="unknown" unit="line"/>
                   </egXML>
                </div>
+               <!-- End section "Unknown Number of Lines Lost" -->
+
                <div xml:id="editorial-deletion"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-superfluous.html">
-                  <!-- NEED TO EXPLAIN THAT THIS IS WEST'S SUGGESTION AND WE'RE FOLLOWING IT -->
                   <head>Editorial Deletion</head>
-                  <p>Text suspected by the editor to be superfluous, but retained in the main text
-                     to indicate its traditional attribution to the author. (Cf. Epidoc guidelines,
-                     "Superfluous Text" <ptr
+                  <p>{ } = Text suspected by the editor to be superfluous, but retained in the main
+                     text to indicate its traditional attribution to the author. (Cf. Epidoc
+                     guidelines, "Superfluous Text" <ptr
                         target="http://www.stoa.org/epidoc/gl/latest/trans-superfluous.html"/>)</p>
+                  <p>Square brackets have been used to indicate editorial deletions in the past,
+                     but, as <ref target="#West">West</ref> argues (p. 80), this is apt to cause
+                     confusion, since they have a different meaning for papyrologists and
+                     epigraphists (see "<ref target="#undetermined-loss">Undetermined Amount Of Text
+                        Lost</ref>" in these guidelines). Accordingly, LDLT editions follow West's
+                     suggestion to use braces to indicate editorial deletions.</p>
                   <p>
                      <specList>
                         <specDesc key="surplus"/>
@@ -1873,13 +1965,12 @@
                      <surplus reason="interpolation">lorem ipsum</surplus>
                   </egXML>
                </div>
+               <!-- End of section "Editorial Deletion" -->
+
                <div xml:id="crux"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html">
-                  <!-- Doesn't really correspond to http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html, but it's close. -->
                   <head>Crux</head>
-                  <p>Text deemed by the editor to be irredeemably corrupt. (Cf. Epidoc guidelines,
-                     "Ambiguous Characters" <ptr
-                        target="http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html"/>)</p>
+                  <p>† † = Text deemed by the editor to be irredeemably corrupt.</p>
                   <p>
                      <specList>
                         <specDesc key="unclear"/>
@@ -1888,16 +1979,21 @@
                   <p><gi>unclear</gi> indicates that the text is readable but not
                      understandable.</p>
                   <p>
-                     <quote>†lorem ipsum†</quote>
+                     <quote> … subiectisque eas rotis funibus iumentisque †obiectis† derectis
+                        plateis in quamcumque erat uisum partem mouebant</quote>
                   </p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <sic>lorem
-                     ipsum</sic><!-- How to indicate that this is an editor's determination? -->
+                     <p> … subiectisque eas rotis funibus iumentisque <unclear>obiectis</unclear>
+                        derectis plateis in quamcumque erat uisum partem mouebant</p>
                   </egXML>
                </div>
+               <!-- End of section "Crux" -->
             </div>
+            <!-- End section on symbols in the main text. -->
          </div>
+         <!-- End section on edition text. -->
+
          <div xml:id="apparatus-criticus-patterns">
             <head>Apparatus Criticus</head>
             <p>This section provides models for handling the different kinds of data that occur in
