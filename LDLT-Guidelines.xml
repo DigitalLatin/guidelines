@@ -1900,12 +1900,12 @@
                   <p>
                      <quote>[------]</quote>
                   </p>
-                  <p>Note that the brackets and the dashes represent one missing line. The number in
-                        <att>quantity</att> will determine the number of instances of that group of
-                     characters, one per line.</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <gap reason="lost" quantity="3" unit="line"/>
                   </egXML>
+                  <p>Note that the brackets and the dashes represent one missing line. The number in
+                        <att>quantity</att> will determine the number of instances of that group of
+                     characters, one per line.</p>
                </div>
                <!-- End section "Known Number of Lines Lost" -->
 
@@ -1993,6 +1993,66 @@
             <!-- End section on symbols in the main text. -->
          </div>
          <!-- End section on edition text. -->
+
+         <div xml:id="apparatus-fontium">
+            <head>Apparatus Fontium</head>
+            <p>In texts with many direct and indirect references to other sources, it may be
+               desirable to include an apparatus fontium to alert readers to the sources. All of the
+               elements of the citation will be incorporated into the main edition text, but they
+               will not effect the display of the text itself. Bibliographic information about the
+               source of the quotation or reference will be displayed or printed separately.</p>
+
+            <p>
+               <specList>
+                  <specDesc key="cit"/>
+                  <specDesc key="quote"/>
+                  <specDesc key="ref"/>
+                  <specDesc key="bibl"/>
+               </specList>
+            </p>
+
+            <p><gi>cit</gi> (cited quotation) contains a quotation (in <gi>quote</gi>) from another
+               source or a reference (in <gi>ref</gi>) to another source, together with
+               bibliographical information about the source (in <gi>bibl</gi>.</p>
+            <p><gi>quote</gi> (quotation) contains a phrase or passage attributable to some agency
+               external to the text.</p>
+            <p><gi>ref</gi> (reference) contains a reference to a phrase or passage attributable to
+               some agency external to the text.</p>
+            <p><gi>bibl</gi> (bibliographic citation) contains the information required to retrieve
+               the source of the quotation or reference.</p>
+
+            <p>Example of a quotation to be cited in the apparatus fontium:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <p>Item aliud verbum culpaverunt:<cit><quote><l>per tunicam squalentem auro latus haurit
+                        apertum</l></quote><bibl
+                        ref="http://data.perseus.org/citations/urn:cts:latinLit:phi0690.phi002.perseus-lat1:3.1-3.48"
+                        >Verg. <title>G.</title> 3.4</bibl></cit></p>
+            </egXML>
+
+            <p>Example of a reference to be cited in the apparatus fontium:</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <p>Probatio minoris per <cit><ref>Boethium De Trinitate</ref><bibl>Boethius <title>De
+                           Trin.</title> c. 4 (ed. R. Peiper 159; PL 64, 1353C)</bibl></cit>: dicit
+                  quod septem praedicamenta non dicunt absolutas res, sed tantum respectus.</p>
+            </egXML>
+            
+            <p>In the edition text, this would be rendered as "Probatio minoris per Boethium De Trinitate: dicit
+               quod septem praedicamenta non dicunt absolutas res, sed tantum respectus." The apparatus fontium would include the following entry: "Boethius <hi rend="italic">De Trin.</hi> c. 4 (ed. R. Peiper 159; PL 64, 1353C).</p>
+
+            <p>If it is desirable to provide the text of the reference, it may be inserted after
+                  <gi>bibl</gi>:</p>
+
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <p>Probatio minoris per <cit><ref>Boethium De Trinitate</ref><bibl>Boethius <title>De
+                           Trin.</title> c. 4 (ed. R. Peiper 159; PL 64, 1353C)</bibl>: <quote>Iamne
+                        patet quae sit differentia praedicationum? Quod aliae quidem quasi rem
+                        monstrant, aliae vero quasi circumstantias rei; quodque illa quae ita
+                        praedicantur, ut esse aliquid rem ostendant, illa vero ut non esse, sed
+                        potius extrinsecus aliquid quodam modo adfigant?</quote></cit>: dicit quod
+                  septem praedicamenta non dicunt absolutas res, sed tantum respectus.</p>
+            </egXML>
+
+         </div>
 
          <div xml:id="apparatus-criticus-patterns">
             <head>Apparatus Criticus</head>
