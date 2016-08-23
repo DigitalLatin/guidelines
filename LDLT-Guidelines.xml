@@ -1357,8 +1357,8 @@
          <div xml:id="edition-text">
             <head>Edition Text</head>
             <p>The edition text corresponds to the text printed "above the line" of the apparatus in
-               a traditional edition. It is composed of "accepted readings," that is, text judged by
-               the editor to be authentic, accurate, or authoritative.</p>
+               a traditional edition. It is composed of lemmata, that is, text judged by the editor
+               to be authentic, accurate, and/or authoritative.</p>
             <p>There may be more than one authoritative version of a text, depending on the text and
                depending on the approach adopted by the editor. Authors sometimes edit and revise
                their work over time. Scribes often record the version of the text that makes sense
@@ -2059,7 +2059,9 @@
          <div xml:id="apparatus-criticus">
             <head>Apparatus Criticus</head>
             <p>This section provides models for handling the different kinds of entries that occur
-               in an apparatus criticus.</p>
+               in an apparatus criticus. It uses the terminology, elements, and attributes of the
+                  <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html">TEI's
+                  module for the critical apparatus</ref>.</p>
 
             <p>Owing to the many abbreviations, symbols, and typographical conventions of
                traditional printed editions, the apparatus criticus can be both a model of
@@ -2077,11 +2079,57 @@
 
             <div xml:id="apparatus-criticus-terms">
                <head>Concepts and Definitions</head>
-               <p>Just as the <ref target="#edition-text">edition text</ref> is composed of
-                  "accepted readings," the apparatus criticus contains other readings judged by the
-                  editor to be useful for readers to consider in forming their own ideas about the
-                  text.</p>
-               <p>The word "reading"</p>
+               <p>Just as the <ref target="#edition-text">edition text</ref> is composed of lemmata,
+                  the apparatus criticus contains readings judged by the editor to be useful for
+                  establishing the text. They are "variants" insofar as they vary from what the
+                  editor has judged to be the lemmata. It is possible for a lemma or a reading to be
+                  the absence of text.</p>
+
+               <p>In the printed form of a critical edition, variant readings are sequestered from
+                  the edition text and displayed at the bottom of the page. This arrangement can
+                  lead to false impressions about the certainty and reliability of the edition text.
+                  In digital representations of an edition encoded according to these guidelines,
+                  readings may be swapped into or out of the edition text, but the editor's
+                  determination about what is the lemma and what is a variant remains encoded to
+                  preserve the argument the edition makes about the text. In this way, it is
+                  possible for readers to experience many versions of a text in addition to the
+                  edition's reference state. Of course, the variety of readings depends on what the
+                  editor decides to encode, but it is expected that those decisions will be
+                  explained in the preface.</p>
+
+               <p>Another complication of the traditional printed form of a critical edition is that
+                  entries in the critical apparatus usually consist only of variant readings; the
+                  lemma from which they vary must be inferred. This can lead to confusion and
+                  frustration, particularly in readers not used to navigating a critical edition. In
+                  the TEI's model for the critical apparatus, each entry includes the lemma and the
+                  variants. It is up to the publisher to decide how to display or print the
+                  apparatus, but at least the relationship between the lemma and the variant
+                  readings is explicitly encoded.</p>
+
+               <p>To support functionality such as filtering out readings from modern editions,
+                  lemmata and readings have two possible origins: witnesses and sources. A <hi
+                     rend="bold">witness</hi> may be a manuscript (including the individual hands
+                  that wrote in it) or an early printed edition (e.g., editio princeps) that may
+                  preserve the readings of a single manuscript. A <hi rend="bold">source</hi> is any
+                  modern critical edition, commentary, article, review, or other item (e.g.,
+                  personal correspondence) in which an argument about the text has been
+                  advanced.</p>
+
+               <p>As in traditional printed editions, the order in which certain information is
+                  presented has meaning in LDLT editions, though the order's meaning is not
+                  explicitly encoded:</p>
+               <list>
+                  <item>Sigla are presented in the chronological order of the witnesses and sources
+                     for which they stand.</item>
+                  <item>Witnesses are presented before sources.</item>
+                  <item>Readings are presented in descending order of the editor's confidence in
+                     them.</item>
+               </list>
+               <!-- Need notes from West here. -->
+
+               <p>Finally, the apparatus criticus may contain brief comments to clarify a point or
+                  to explain more about a reading. Extended discussions should be reserved for the
+                  textual commentary, if one is included.</p>
 
             </div>
 
@@ -2100,17 +2148,18 @@
                   single entry in the apparatus criticus, although it and its contents may be nested
                   inside of another <gi>app</gi>.</p>
                <p xml:id="lem"><gi>lem</gi> (lemma) contains a reading judged by the editor to be
-                  what the author wrote, or as close as possible to it. This type of reading
-                  constitutes the text of the initial state (i.e., when first opened) of the main
-                  portion of an LDLT edition.</p>
+                  authentic, or as close as possible to it. This type of reading constitutes the
+                  text of the initial state (i.e., when first opened) of the main portion of an LDLT
+                  edition. A lemma may be an absence of text, if the editor has reason to doubt the
+                  authenticity of the extant readings.</p>
                <p xml:id="rdg"><gi>rdg</gi> (reading) contains some text (or absence of text)
                   witnessed by a manuscript or found in an early printed edition where it is not
                   expressly proposed, but judged by the editor to be unsatisfactory or corrupt for
                   linguistic and/or stylistic reasons. This text is initially in the apparatus
                   criticus, but it may be swapped with the lemma in the LDLT viewer.</p>
-               <p xml:id="wit-att"><att>wit</att> (witness) includes any manuscript(s) or early
-                  printed edition(s) (esp. without an apparatus or commentary; i.e., <foreign
-                     xml:lang="la">editiones vetustiores</foreign>).</p>
+               <p xml:id="wit-att"><att>wit</att> (witness) includes any manuscript(s) (or
+                  manuscript hands) or early printed edition(s) (esp. without an apparatus or
+                  commentary; i.e., <foreign xml:lang="la">editiones vetustiores</foreign>).</p>
                <p xml:id="source"><att>source</att> (source) includes any printed edition(s) or
                   other scholarly work(s) (e.g., article, textual note, commentary) addressing an
                   aspect of the text.</p>
@@ -2124,9 +2173,12 @@
                      (<gi>rdg</gi>).</p>
                <p xml:id="note"><gi>note</gi> (note) contains editorial comments, bibliographical
                   references, or other information pertaining to the apparatus entry.</p>
-               <div>
-                  <p>Need discussion about the order in which information is presented.</p>
-               </div>
+
+               <p>The patterns displayed below are designed to handle the various kinds of
+                  information conveyed in a typical apparatus criticus, including readings <foreign
+                     xml:lang="la">ante correctionem</foreign> and <foreign xml:lang="la">in
+                     rasura</foreign>, among other paleographical and editorial details.</p>
+
                <div xml:id="basic-app-entry">
                   <head>Basic reporting of a variant reading</head>
                   <p>A <ref target="#wit">witness</ref> or <ref target="#source">source</ref> has a
@@ -2138,17 +2190,10 @@
                   <p>
                      <quote>18 larem <hi rend="bold">A</hi></quote>
                   </p>
-                  <p>Since the lemma is not typically printed in an apparatus criticus (unless there
-                     is a chance for confusion), it is up to the reader to recognize that <quote
-                        xml:lang="la">larem</quote> is a variant for <quote xml:lang="la"
-                        >lorem</quote>.</p>
-                  <p>In this model, an <gi>app</gi> contains both the lemma and the variant reading,
-                     reducing the need for guesswork, at least when looking at the XML code.</p>
-                  <p>The patterns displayed below are designed to handle the various kinds of
-                     information conveyed in a typical apparatus criticus, including readings
-                        <foreign xml:lang="la">ante correctionem</foreign> and <foreign
-                        xml:lang="la">in rasura</foreign>, among other paleographical and editorial
-                     details.</p>
+
+                  <p>In LDLT editions, the lemma is encoded alongside the reading, reducing the
+                     possibility for confusion:</p>
+
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <p>
                         <app>
@@ -2156,6 +2201,13 @@
                            <rdg wit="#A">larem</rdg>
                         </app> ipsum dolor sit amet </p>
                   </egXML>
+
+                  <p>Depending on the presentation format of the edition, this entry can be
+                     displayed in the traditional fashion, with the reading sequestered from the
+                     lemma, or it can be displayed in such a way as to enable the reading to be
+                     swapped with the lemma. Other displays are also possible, but not supported by
+                     the LDLT.</p>
+
                   <p>If an editor deems it important to indicate that a <gi>rdg</gi> also appears in
                      a <ref target="source"><att>source</att></ref>, the same pattern applies, but
                         <att>source</att> is added after <att>wit</att>:</p>
