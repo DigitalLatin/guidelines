@@ -2092,39 +2092,54 @@
                <head>Concepts and Definitions</head>
                <p>In the context of a critical edition, “reading” is the generic term for any unit
                   of information that has meaning in constituting the text of the edition. A
-                  critical edition contains two types of readings: a lemma and at least one variant
-                  reading.</p>
+                  critical edition contains two types of reading: lemma and variant.</p>
 
                <p xml:id="lemma">A <hi rend="bold">lemma</hi> is a word or phrase (or the absence
                   thereof) judged by the editor to be authentic, accurate, and/or authoritative. It
                   may be attested by documentary sources (e.g., a manuscript, an early edition) or
-                  it may be an emendation. An <hi rend="bold">emendation</hi> is a reading expressly
-                  proposed by some person (possibly the editor) through the application of critical
-                  judgment and accepted by the editor into the main text of an edition. Lemmata
-                  constitute the text printed in the main portion of a critical edition.</p>
+                  it may be an emendation. Lemmata constitute the text printed in the main portion
+                  of a critical edition.</p>
 
                <p xml:id="variant">A <hi rend="bold">variant reading</hi> is some a word or phrase
                   (or absence thereof) judged by the editor to be unsatisfactory for linguistic
                   and/or stylistic reasons, but of interest in establishing the text. These readings
                   are "variants" insofar as they vary from what the editor has judged to be the
                   lemmata. A variant reading may be attested by a manuscript or it may be a
-                  conjecture or a correction.</p>
+                  conjecture or a correction. Variant readings constitute the text printed in the
+                  apparatus criticus.</p>
+
+               <p>An <hi rend="bold">emendation</hi> is a reading expressly proposed by some person
+                  (possibly the editor) through the application of critical judgment and accepted by
+                  the editor into the main text of an edition.</p>
 
                <p xml:id="conjecture">A <hi rend="bold">conjecture</hi> is a reading proposed by
                   some person (ancient or modern) and determined by an editor to be worthy of
                   consideration in establishing the text, but not to be printed in the main text of
-                  the edition. Variant readings constitute the text printed in the apparatus
-                  criticus.</p>
+                  the edition.</p>
 
                <p xml:id="correction"><hi rend="bold">Correction</hi> requires more explanation,
-                  since its usage in this context has more to do with the motivation than the
-                  result. Strictly speaking, correction should apply to any instance of a variant in
-                  a manuscript being altered by the copyist or some later person to match the lemma,
+                  since its usage in this context has more to do with motivation than result.
+                  Strictly speaking, correction should apply to any instance of a variant in a
+                  manuscript being altered by the copyist or some later person to match the lemma,
                   which is the "correct" reading, at least for the purposes of a critical edition.
-                  If a variant reading is altered to something other than the lemma, it would seem
-                  to be more accurate to call it a mutation than a correction. But the motivation
-                  behind the alteration is usually to correct a reading perceived to be incorrect, which is why editors  </p>
-
+                  If a variant reading is altered to something other than the lemma of the critical
+                  edition, it might seem more accurate to call it a mutation than a correction. But
+                  "correct" is subjective. From the perspective of the editor of a critical edition,
+                  the "correct" reading is what appears in the main edition text, but opinions can
+                  differ from editor to editor about what the "correct" reading is. Similarly,
+                  copyists and other users of manuscripts have their own idea of what the "correct"
+                  reading is. The original copyist might notice a slip of the pen in his own work
+                  and correct it. A later hand might correct a mistake missed by the copyist.
+                  Another reader comparing two manuscripts might "correct" one of them based on the
+                  other's reading. In all of these cases, the motivation is to correct what is
+                  perceived to be incorrect. For all of these reasons, "correction" is used in these
+                  guidelines to refer to an attempt to alter existing text so that it conforms to
+                  some perceived standard, whether or not that standard matches the editor's view of
+                  what the correct reading might be. Conjectures should also be considered
+                  "corrections," as is clear from the fact that when a conjecture is accepted, it is
+                  called an "emendation."</p>
+               
+               <!-- Move this below to the section where we talk about encoding the apparatus entry 
                <p>In traditional printed editions, the lemma may appear in the apparatus criticus
                   for the purpose of disambiguation (e.g., if there are two instances of the word in
                   the same line or if the degree of variance makes it difficult to infer the lemma),
@@ -2147,6 +2162,7 @@
                   edition's reference state (i.e., its default setting). The variety of readings
                   depends on what the editor decides to encode, and it is expected that those
                   decisions will be explained in the preface.</p>
+                  -->
 
                <p>To support functionality such as filtering out certains kinds of readings, lemmata
                   and readings are categorized according to their origin in a "witness" or a
@@ -2164,6 +2180,7 @@
                   order in which certain information is presented has meaning in LDLT editions,
                   though the order's meaning is not explicitly encoded. Editors should follow the
                   recommendations of West (87–88) on the issue of order. In brief:</p>
+               
                <list>
                   <item>Readings are presented in the following order of precedence: direct
                      manuscript tradition, indirect tradition, conjectures (in descending order of
@@ -2176,12 +2193,14 @@
                   regard to usage of <att>wit</att> and <att>source</att>, on which see below.</p>
 
                <p>Finally, the apparatus criticus may contain brief comments to clarify a point or
-                  to explain more about a reading. Extended discussions should be reserved for the
+                  to explain more about a reading (e.g., <!-- Start here -->. Extended discussions should be reserved for the
                   textual commentary, if one is included.</p>
 
             </div>
 
-            <div>
+            <div xml:id="app-crit-specs">
+               <head>Encoding Specifications for the Apparatus Criticus</head>
+               
                <p>
                   <specList>
                      <specDesc key="app"/>
@@ -2208,7 +2227,7 @@
                <p xml:id="wit-att"><att>wit</att> (witness) includes any manuscript(s) (or
                   manuscript hands) or early printed edition(s) (esp. without an apparatus or
                   commentary; i.e., <foreign xml:lang="la">editiones vetustiores</foreign>).</p>
-               <p xml:id="source"><att>source</att> (source) includes any printed edition(s) or
+               <p xml:id="source-att"><att>source</att> (source) includes any printed edition(s) or
                   other scholarly work(s) (e.g., article, textual note, commentary) addressing an
                   aspect of the text.</p>
                <!-- This section might be deleted, in light of the proposal from Jeff Witt for handling types of entries in the apparatus. 
