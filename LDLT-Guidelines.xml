@@ -273,6 +273,7 @@
                      for representing data commend it for other media, too. But just as the printed
                      page has limits, so too does the digital file, which means that the traditional
                      system requires an update to make it available in a digital context.</p>
+
                   <p>Given some guidance and experience, people can learn how to navigate the system
                      of letters, numbers, symbols, and other typographical conventions for referring
                      to the sources of a crticial edition. If one edition uses superscript numerals
@@ -287,6 +288,7 @@
                      the same information as simply the letter "N" with a superscript numeral 2 next
                      to it. Indeed, a less experienced human reader might reach the same conclusion
                      as the machine.</p>
+
                   <p>Since the audience for LDLT editions includes an entirely new class of reader
                      (i.e., machines), it stands to reason that the reference system should be
                      adapted to accommodate the needs of the expanded readership. For this reason,
@@ -305,6 +307,7 @@
                      been edited, the editor should choose sigla according to the principles
                      outlined by <ref target="#West">West</ref> (74–75). In brief, use sigla that
                      have mnemonic value (e.g., "V" for "Vaticanus" or "P" for "Parisinus").</p>
+
                   <p>Because the needs of editors will vary from edition to edition, the LDLT does
                      not have strict rules for representing manuscript hands or similar information.
                      Rather, we offer these suggestions:</p>
@@ -2090,117 +2093,146 @@
 
             <div xml:id="apparatus-criticus-terms">
                <head>Concepts and Definitions</head>
-               <p>In the context of a critical edition, “reading” is the generic term for any unit
-                  of information that has meaning in constituting the text of the edition. A
-                  critical edition contains two types of reading: lemma and variant.</p>
+               <p>The apparatus criticus is where editors assemble the variant readings from
+                  witnesses and sources that they believe to be important for establishing the text,
+                  occasionally with brief comments, bibliographical citations, and palaeographical
+                  details. This section explains what the following terms mean in these guidelines:<list>
+                     <item>reading</item>
+                     <item>emendation</item>
+                     <item>conjecture</item>
+                     <item>witness</item>
+                     <item>hand</item>
+                     <item>source</item>
+                     <item>order</item>
+                  </list></p>
 
-               <p xml:id="lemma">A <hi rend="bold">lemma</hi> is a word or phrase (or the absence
-                  thereof) judged by the editor to be authentic, accurate, and/or authoritative. It
-                  may be attested by documentary sources (e.g., a manuscript, an early edition) or
-                  it may be an emendation. Lemmata constitute the text printed in the main portion
-                  of a critical edition.</p>
+               <div xml:id="reading">
+                  <head>Readings</head>
 
-               <p xml:id="variant">A <hi rend="bold">variant reading</hi> is some a word or phrase
-                  (or absence thereof) judged by the editor to be unsatisfactory for linguistic
-                  and/or stylistic reasons, but of interest in establishing the text. These readings
-                  are "variants" insofar as they vary from what the editor has judged to be the
-                  lemmata. A variant reading may be attested by a manuscript or it may be a
-                  conjecture or a correction. Variant readings constitute the text printed in the
-                  apparatus criticus.</p>
+                  <p>In the context of a critical edition, "reading" is the generic term for any
+                     unit of information that has meaning in constituting the text of the edition. A
+                     critical edition contains two types of reading: lemma and variant.</p>
 
-               <p>An <hi rend="bold">emendation</hi> is a reading expressly proposed by some person
-                  (possibly the editor) through the application of critical judgment and accepted by
-                  the editor into the main text of an edition.</p>
+                  <p xml:id="lemma">A <hi rend="bold">lemma</hi> is a word or phrase (or the absence
+                     thereof) judged by the editor to be authentic, accurate, and/or authoritative.
+                     It may be attested by documentary sources (e.g., a manuscript, an early
+                     edition) or it may be an emendation. Lemmata constitute the text printed in the
+                     main portion of a critical edition.</p>
 
-               <p xml:id="conjecture">A <hi rend="bold">conjecture</hi> is a reading proposed by
-                  some person (ancient or modern) and determined by an editor to be worthy of
-                  consideration in establishing the text, but not to be printed in the main text of
-                  the edition.</p>
+                  <p xml:id="variant">A <hi rend="bold">variant reading</hi> is some a word or
+                     phrase (or absence thereof) judged by the editor to be unsatisfactory for
+                     linguistic and/or stylistic reasons, but of interest in establishing the text.
+                     These readings are "variants" insofar as they vary from what the editor has
+                     judged to be the lemmata. A variant reading may be attested by a manuscript or
+                     it may be a conjecture or a correction. Variant readings constitute the text
+                     printed in the apparatus criticus.</p>
 
-               <p xml:id="correction"><hi rend="bold">Correction</hi> requires more explanation,
-                  since its usage in this context has more to do with motivation than result.
-                  Strictly speaking, correction should apply to any instance of a variant in a
-                  manuscript being altered by the copyist or some later person to match the lemma,
-                  which is the "correct" reading, at least for the purposes of a critical edition.
-                  If a variant reading is altered to something other than the lemma of the critical
-                  edition, it might seem more accurate to call it a mutation than a correction. But
-                  "correct" is subjective. From the perspective of the editor of a critical edition,
-                  the "correct" reading is what appears in the main edition text, but opinions can
-                  differ from editor to editor about what the "correct" reading is. Similarly,
-                  copyists and other users of manuscripts have their own idea of what the "correct"
-                  reading is. The original copyist might notice a slip of the pen in his own work
-                  and correct it. A later hand might correct a mistake missed by the copyist.
-                  Another reader comparing two manuscripts might "correct" one of them based on the
-                  other's reading. In all of these cases, the motivation is to correct what is
-                  perceived to be incorrect. For all of these reasons, "correction" is used in these
-                  guidelines to refer to an attempt to alter existing text so that it conforms to
-                  some perceived standard, whether or not that standard matches the editor's view of
-                  what the correct reading might be. Conjectures should also be considered
-                  "corrections," as is clear from the fact that when a conjecture is accepted, it is
-                  called an "emendation."</p>
-               
-               <!-- Move this below to the section where we talk about encoding the apparatus entry 
-               <p>In traditional printed editions, the lemma may appear in the apparatus criticus
-                  for the purpose of disambiguation (e.g., if there are two instances of the word in
-                  the same line or if the degree of variance makes it difficult to infer the lemma),
-                  but more often the lemma must be inferred. This can lead to confusion and
-                  frustration, particularly in readers not used to navigating a critical edition.
-                  Moreover, variant readings are sequestered from the edition text and displayed at
-                  the bottom of the page, an arrangement that can lead to false impressions about
-                  the certainty and reliability of the edition text.</p>
+                  <p>An <hi rend="bold">emendation</hi> is a reading expressly proposed by some
+                     person (possibly the editor) through the application of critical judgment and
+                     accepted by the editor into the main text of an edition.</p>
 
-               <p>In the <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html"
-                     >TEI's model for the critical apparatus</ref>, which is the basis for these
-                  guidelines, each entry includes the lemma and its variants. How that information
-                  is displayed or printed is a separate issue, but at least the relationship between
-                  the lemma and the variant readings is explicitly encoded. In digital
-                  representations of an edition encoded according to the guidelines presented here,
-                  readings may be swapped into or out of the edition text, but the editor's
-                  determination about what is the lemma and what is a variant remains encoded to
-                  preserve the argument the edition makes about the text. In this way, it is
-                  possible for readers to experience many versions of a text in addition to the
-                  edition's reference state (i.e., its default setting). The variety of readings
-                  depends on what the editor decides to encode, and it is expected that those
-                  decisions will be explained in the preface.</p>
-                  -->
+                  <p xml:id="conjecture">A <hi rend="bold">conjecture</hi> is a reading proposed by
+                     some person (ancient or modern) and determined by an editor to be worthy of
+                     consideration in establishing the text, but not to be printed in the main text
+                     of the edition.</p>
 
-               <p>To support functionality such as filtering out certains kinds of readings, lemmata
-                  and readings are categorized according to their origin in a "witness" or a
-                  "source."</p>
+                  <p xml:id="correction"><hi rend="bold">Correction</hi> requires more explanation,
+                     since its usage in this context has more to do with motivation than result.
+                     Strictly speaking, correction should apply to any instance of a variant in a
+                     manuscript being altered by the copyist or some later person to match the
+                     lemma, which is the "correct" reading, at least for the purposes of a critical
+                     edition. If a variant reading is altered to something other than the lemma of
+                     the critical edition, it might seem more accurate to call it a mutation than a
+                     correction. But "correct" is subjective. From the perspective of the editor of
+                     a critical edition, the "correct" reading is what appears in the main edition
+                     text, but opinions can differ from editor to editor about what the "correct"
+                     reading is. Similarly, copyists and other users of manuscripts have their own
+                     idea of what the "correct" reading is. The original copyist might notice a slip
+                     of the pen in his own work and correct it. A later hand might correct a mistake
+                     missed by the copyist. Another reader comparing two manuscripts might "correct"
+                     one of them based on the other's reading. In all of these cases, the motivation
+                     is to correct what is perceived to be incorrect. For all of these reasons,
+                     "correction" is used in these guidelines to refer to an attempt to alter
+                     existing text so that it conforms to some perceived standard, whether or not
+                     that standard matches the editor's view of what the correct reading might be.
+                     Conjectures should also be considered "corrections," as is clear from the fact
+                     that when a conjecture is accepted, it is called an "emendation."</p>
 
-               <p xml:id="witness">A <hi rend="bold">witness</hi> may be a manuscript (including the
-                  individual hands that wrote in it) or an early printed edition (e.g., editio
-                  princeps) that may preserve the readings of a single manuscript.</p>
+                  <p>The next two sections discuss where readings are found, in witnesses and
+                     sources.</p>
+               </div>
+               <!-- End of section on readings -->
 
-               <p xml:id="source">A <hi rend="bold">source</hi> may be any modern critical edition,
-                  commentary, article, review, or other item (e.g., personal correspondence) in
-                  which an argument about the text has been advanced.</p>
+               <div xml:id="witness">
+                  <head>Witnesses</head>
+                  <p>A <hi rend="bold">witness</hi> may be a manuscript (more properly, the
+                     individual hands that wrote in it—see below) or an early printed edition (e.g.,
+                     editio princeps) that may preserve the readings of a single manuscript.</p>
 
-               <p xml:id="order"><hi rend="bold">Order</hi>: As in traditional printed editions, the
-                  order in which certain information is presented has meaning in LDLT editions,
-                  though the order's meaning is not explicitly encoded. Editors should follow the
-                  recommendations of West (87–88) on the issue of order. In brief:</p>
-               
-               <list>
-                  <item>Readings are presented in the following order of precedence: direct
-                     manuscript tradition, indirect tradition, conjectures (in descending order of
-                     merit, as determined by the editor).</item>
-                  <item>Manuscripts should be given a regular order for citation, though editors may
-                     deviate from the practice for the sake of clarity.</item>
-               </list>
+                  <p xml:id="hands">The physical object referred to as a manuscript is not itself a
+                     witness. Rather, it preserves a record of the activities of the copyist(s),
+                     rubricator(s), corrector(s), and/or other annotator(s) who wrote on its pages,
+                     each of whom might be a witness to a different exemplar. At the very least,
+                     they represent different perceptions of the same exemplar. By synechdoche,
+                     those people are referred to as "hands," and they are represented by
+                     superscript numerals appended to a manuscript's siglum. A change in number,
+                     however, does not necessarily indicate a change in person. For example, the
+                     copyist and corrector might be one and the same person, but it can be important
+                     to distinguish them, since they represent different views of the text.
+                     Unfortunately, confusion arises from the practice of assigning numbers only to
+                     hands subsequent to the original copyist. That is, the siglum by itself (i.e.,
+                     without a superscript numeral) is understood to represent the hand of the
+                     original copyist, and every subsequent hand is numbered in descending order
+                     from "1". Strictly speaking, the original copyist is "hand zero," but adding a
+                     superscript zero to every siglum would be redundant, since it can be inferred
+                     from the absence of a numeral that the original copyist is meant.</p>
+                  <p>In sum, for the purposes of these guidelines, manuscript hands are witnesses,
+                     and the following scheme should be used to indicate them:<list>
+                        <item>siglum without a superscript number (= "hand zero"): the original
+                           copyist.</item>
+                        <item>siglum with superscript 1 (= "hand one"): a hand that wrote in the
+                           manuscript after the original copyist wrote the text, even if it belongs
+                           to the original copyist.</item>
+                        <item>siglum with superscript 2 (="hand two"): a hand that wrote at the same
+                           time or later than hand one.</item>
+                        <item>etc.</item>
+                     </list></p>
+                  <!-- Write something about manicules, to explain that they are not what we're talking about here -->
+               </div>
+               <!-- End of section on witnesses -->
 
-               <p>Order is also an important aspect of the encoding guidelines, especially with
-                  regard to usage of <att>wit</att> and <att>source</att>, on which see below.</p>
+               <div xml:id="source">
+                  <head>Source</head>
+                  <p>A <hi rend="bold">source</hi> may be any modern critical edition, commentary,
+                     article, review, or other item (e.g., personal correspondence) in which an
+                     argument about the text has been advanced.</p>
+               </div>
+               <!-- End of section on sources -->
 
-               <p>Finally, the apparatus criticus may contain brief comments to clarify a point or
-                  to explain more about a reading (e.g., <!-- Start here -->. Extended discussions should be reserved for the
-                  textual commentary, if one is included.</p>
+               <div xml:id="order">
+                  <head>Order</head>
+                  <p><hi rend="bold">Order</hi>: As in traditional printed editions, the order in
+                     which certain information is presented has meaning in LDLT editions, though the
+                     order's meaning is not itself explicitly encoded. Editors should follow the
+                     recommendations of West (87–88) on the issue of order. In brief:</p>
 
+                  <list>
+                     <item>Readings are presented in the following order of precedence: direct
+                        manuscript tradition, indirect tradition, conjectures (in descending order
+                        of merit, as determined by the editor).</item>
+                     <item>Manuscripts should be given a regular order for citation, though editors
+                        may deviate from the practice for the sake of clarity.</item>
+                  </list>
+               </div>
+               <!-- End of section on order -->
             </div>
+            <!-- End of section apparatus-criticus-terms -->
 
             <div xml:id="app-crit-specs">
                <head>Encoding Specifications for the Apparatus Criticus</head>
-               
+               <p>To put the concepts discussed above into practice, the following attributes and
+                  elements are required:</p>
+
                <p>
                   <specList>
                      <specDesc key="app"/>
@@ -2241,17 +2273,148 @@
                <p xml:id="note"><gi>note</gi> (note) contains editorial comments, bibliographical
                   references, or other information pertaining to the apparatus entry.</p>
 
+               <p>In traditional printed editions, the lemma may appear in the apparatus criticus
+                  for the purpose of disambiguation (e.g., if there are two instances of the word in
+                  the same line or if the degree of variance makes it difficult to infer the lemma),
+                  but more often the lemma must be inferred. This can lead to confusion and
+                  frustration, particularly in readers not used to navigating a critical edition.
+                  Moreover, variant readings are sequestered from the edition text and displayed at
+                  the bottom of the page, an arrangement that can lead to false impressions about
+                  the certainty and reliability of the edition text.</p>
+
+               <p>In the <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html"
+                     >TEI's model for the critical apparatus</ref>, which is the basis for these
+                  guidelines, each entry includes the lemma and its variants. How that information
+                  is displayed or printed is a separate issue, but at least the relationship between
+                  the lemma and the variant readings is explicitly encoded. In digital
+                  representations of an edition encoded according to the guidelines presented here,
+                  readings may be swapped into or out of the edition text, but the editor's
+                  determination about what is the lemma and what is a variant remains encoded to
+                  preserve the argument the edition makes about the text. In this way, it is
+                  possible for readers to experience many versions of a text in addition to the
+                  edition's reference state (i.e., its default setting). The variety of readings
+                  depends on what the editor decides to encode, and it is expected that those
+                  decisions will be explained in the preface.</p>
+
                <p>The patterns displayed below are designed to handle the various kinds of
                   information conveyed in a typical apparatus criticus, including readings <foreign
                      xml:lang="la">ante correctionem</foreign> and <foreign xml:lang="la">in
-                     rasura</foreign>, among other paleographical and editorial details. They have
-                  been adapted from the LombardPress' <ref
-                     target="https://github.com/lombardpress/lombardpress-schema/blob/develop/docs/1.0/critical/index.md#apparatus-criticus"
-                     >Critical Transcription Guidelines</ref>, which were developed by Jeffrey C.
-                  Witt, Michael Stenskjær Christensen, and Nicolas Vaughan in affiliation with the
-                  Digital Latin Library.</p>
+                     rasura</foreign>, among other paleographical and editorial details. They were
+                  developed through a joint effort of the Digital Latin Library project and
+                  LombardPress. Contributors: Samuel J. Huskey, Hugh Cayless, Tom Elliott, Jeffrey
+                  C. Witt, Michael Stenskjær Christensen, and Nicolas Vaughan.</p>
 
-               <div xml:id="app-crit-categories"> </div>
+               <div xml:id="basic-app-entry">
+                  <head>Basic Reporting of a Variant Reading</head>
+                  <p>The most basic type of apparatus entry reports only a variant reading, without
+                     editorial comment or a description of palaeographical details.</p>
+
+                  <p>At Calp. 1.2 (<foreign xml:lang="la">quamvis et madidis incumbant praela
+                        racemis</foreign>), the manuscript <hi rend="bold">P</hi> has <foreign
+                        xml:lang="la">praeda</foreign> where the lemma is <foreign xml:lang="la"
+                        >praela</foreign>. In a traditional apparatus criticus, this would be
+                     printed as follows:</p>
+
+                  <p>2 praeda <hi rend="bold">P</hi></p>
+
+                  <p>The following pattern demonstrates how to encode the entry in XML:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l n="2">quamvis et madidis incumbant <app>
+                           <lem>praela</lem>
+                           <rdg wit="#P">praeda</rdg>
+                        </app> racemis</l>
+                  </egXML>
+
+                  <p><gi>app</gi> begins the apparatus entry, followed by <gi>lem</gi>, which
+                     contains the lemma for the entry. The lemma may be a single word or phrase or
+                     the omission of a word or prhase (see below for encoding omissions). The
+                     variant reading follows, contained in <gi>rdg</gi>. The attribute
+                        <att>wit</att> lists the witness for the variant. The hash or pound sign (#)
+                     indicates that the witness has been described elsewhere in the edition, making
+                     it possible to retrieve that information through a link to it, if desired.</p>
+
+                  <p>This encoding can be rendered in the traditional manner, or it can be used in
+                     an interactive apparatus to swap the variant with the lemma in the main edition
+                     text.</p>
+
+                  <p>The lemma <foreign xml:lang="la">quamvis</foreign> in the same line
+                     demonstrates how to indicate that a variant has more than one witness:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l n="2"><app><lem>quamvis</lem><rdg wit="#f #g #r #t">quatinus</rdg></app> et
+                        madidis incumbant <app>
+                           <lem>praela</lem>
+                           <rdg wit="#P">praeda</rdg>
+                        </app> racemis</l>
+                  </egXML>
+
+                  <p>The witnesses are listed here in chronological order, but an editor may wish to
+                     use a different ordering principle. The order should be described and explained
+                     in the preface.</p>
+
+                  <p>If it is desirable to indicate that a variant appears in both a manuscript and
+                     a modern edition or other source, the same pattern applies, with the addition
+                     of <att>source</att>:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>sequor</lem>
+                        <rdg wit="#N" source="#Glaeser">sequar</rdg>
+                     </app>
+                  </egXML>
+
+                  <p>Note that <att>source</att> always follows <att>wit</att>, unless there are no
+                     witnesses to report.</p>
+               </div>
+               <div xml:id="additions">
+                  <head>Additions</head>
+                  <p>A witness adds text (e.g., in the margin) that an editor deems worthy of
+                     notice.</p>
+                  <p>
+                     <specList>
+                        <specDesc key="add"/>
+                     </specList>
+                  </p>
+                  <p><gi>add</gi> (addition) contains text that has been added.</p>
+                  <p><att>place</att> indicates the placed where the text has been added. Possible
+                     values: <list>
+                        <item><hi rend="bold">above</hi>: above the line (<hi rend="italic"
+                              >suprascr. = superscriptum/a</hi>)</item>
+                        <item><hi rend="bold">below</hi>: below the line (<hi rend="italic">subscr.
+                              = subscriptum/a</hi>)</item>
+                        <item><hi rend="bold">bottom</hi>: bottom of the page (<hi rend="italic">ad
+                              fin. = ad finem</hi></item>
+                        <item><hi rend="bold">inline</hi>: within the body of the original text (<hi
+                              rend="italic">in textu</hi>)</item>
+                        <item><hi rend="bold">inRas</hi>: in the space where text has been erased.
+                              (<hi rend="italic">in ras. = in rasura</hi>)</item>
+                        <!-- Note that this is in addition to TEI spec. -->
+                        <item><hi rend="bold">margin</hi>: right, left, or both (<hi rend="italic"
+                              >in mg. = in margine</hi>)</item>
+                        <item><hi rend="bold">top</hi>: at the top of the page (<hi rend="italic">ad
+                              init. = ad initium</hi></item>
+                     </list>
+                  </p>
+                  <p><att>hand</att> indicates the manuscript hand that added the text. See the
+                     section on manuscript hands for more information about encoding that
+                     information.</p>
+                  <!-- To be added -->
+                  <p>For example, the copyist of manuscript <hi rend="bold">N</hi> has the <ref
+                        target="#lem">lemma</ref>, but a second hand has added a variant reading in
+                     the margin.</p>
+                  <p>
+                     <quote>89 certare] certate <hi rend="bold">G</hi>
+                        <hi rend="italic">in mg.</hi></quote>
+                  </p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>certare</lem>
+                        <rdg wit="#G" xml:id="rdg89certate"><add hand="#G1" place="margin"
+                              >certate</add></rdg>
+                     </app>
+                  </egXML>
+               </div>
             </div>
          </div>
       </body>
