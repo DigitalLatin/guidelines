@@ -2174,15 +2174,17 @@
                      rubricator(s), corrector(s), and/or other annotator(s) who wrote on its pages,
                      each of whom might be a witness to a different exemplar. At the very least,
                      they represent different perceptions of the same exemplar. By synechdoche,
-                     those people are referred to as "hands," and they are represented by
-                     superscript numerals appended to a manuscript's siglum. A change in number,
-                     however, does not necessarily indicate a change in person. For example, the
-                     copyist and corrector might be one and the same person, but it can be important
-                     to distinguish them, since they represent different views of the text.
-                     Unfortunately, confusion arises from the practice of assigning numbers only to
-                     hands subsequent to the original copyist. That is, the siglum by itself (i.e.,
-                     without a superscript numeral) is understood to represent the hand of the
-                     original copyist, and every subsequent hand is numbered in descending order
+                     those people are referred to as "hands." These hands are not to be confused
+                     with the drawings of hands, known as manicules, that sometimes appear in the
+                     margins of manuscripts to point out passages of interest. The manuscript's
+                     hands are represented by superscript numerals appended to its siglum. A change
+                     in number, however, does not necessarily indicate a change of person. For
+                     example, the copyist and corrector might be one and the same person, but it can
+                     be important to distinguish them, since they represent different views of the
+                     text. Unfortunately, confusion arises from the practice of assigning numbers
+                     only to hands subsequent to the original copyist. That is, the siglum by itself
+                     (i.e., without a superscript numeral) is understood to represent the hand of
+                     the original copyist, and every subsequent hand is numbered in descending order
                      from "1". Strictly speaking, the original copyist is "hand zero," but adding a
                      superscript zero to every siglum would be redundant, since it can be inferred
                      from the absence of a numeral that the original copyist is meant.</p>
@@ -2303,19 +2305,70 @@
                   developed through a joint effort of the Digital Latin Library project and
                   LombardPress. Contributors: Samuel J. Huskey, Hugh Cayless, Tom Elliott, Jeffrey
                   C. Witt, Michael Stenskjær Christensen, and Nicolas Vaughan.</p>
+            </div>
+            <!-- End of section on apparatus specs -->
 
-               <div xml:id="basic-app-entry">
-                  <head>Basic Reporting of a Variant Reading</head>
-                  <p>The most basic type of apparatus entry reports only a variant reading, without
-                     editorial comment or a description of palaeographical details.</p>
+            <div xml:id="basic-app-entry">
+               <head>Basic Reporting of a Variant Reading</head>
+               <p>The most basic type of apparatus entry reports only a variant reading, without
+                  editorial comment or a description of palaeographical details. The pattern is as
+                  follows:</p>
 
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem><!-- text of lemma goes here --></lem>
+                     <rdg wit="#siglum"><!-- text of variant reading goes here --></rdg>
+                  </app>
+               </egXML>
+
+               <p>In other words, <gi>app</gi> begins the apparatus entry, followed by <gi>lem</gi>,
+                  which contains the lemma for the entry. The lemma may be a single word or phrase
+                  or the omission of a word or phrase. The variant reading follows, contained in
+                     <gi>rdg</gi>. The attribute <att>wit</att> lists the witness for the variant.
+                  The hash or pound sign (#) before the siglum for the witness indicates that the
+                  witness has been described elsewhere in the edition, making it possible to
+                  retrieve that information through a link to it, if desired.</p>
+
+               <p>If there is more than one witness for a reading, the sigla should be values for
+                     <att>wit</att> separated by spaces.</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem><!-- text of lemma goes here --></lem>
+                     <rdg wit="#A #B #C"><!-- text of reading goes here --></rdg>
+                  </app>
+               </egXML>
+
+               <p>If there is more than one variant reading to be reported, new <gi>rdg</gi>
+                  elements should be added for each one.</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem><!-- text of lemma goes here --></lem>
+                     <rdg wit="#A #B #C"><!-- text of reading goes here --></rdg>
+                     <rdg wit="#D #E #F"><!-- text of reading goes here --></rdg>
+                  </app>
+               </egXML>
+
+               <p>If it is desirable to indicate that a variant appears in both a manuscript and a
+                  modern edition or other source, the same pattern applies, with the addition of
+                     <att>source</att>.</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem><!-- text of lemma goes here --></lem>
+                     <rdg wit="#A #B #C" source="#Vettel #Grosjean"
+                        ><!-- text of reading goes here --></rdg>
+                  </app>
+               </egXML>
+
+               <div xml:id="basic-entry-examples">
+                  <head>Examples of basic apparatus criticus entries</head>
                   <p>At Calp. 1.2 (<foreign xml:lang="la">quamvis et madidis incumbant praela
                         racemis</foreign>), the manuscript <hi rend="bold">P</hi> has <foreign
                         xml:lang="la">praeda</foreign> where the lemma is <foreign xml:lang="la"
                         >praela</foreign>. In a traditional apparatus criticus, this would be
-                     printed as follows:</p>
-
-                  <p>2 praeda <hi rend="bold">P</hi></p>
+                     printed as follows: 2 praeda <hi rend="bold">P</hi>.</p>
 
                   <p>The following pattern demonstrates how to encode the entry in XML:</p>
 
@@ -2326,14 +2379,6 @@
                         </app> racemis</l>
                   </egXML>
 
-                  <p><gi>app</gi> begins the apparatus entry, followed by <gi>lem</gi>, which
-                     contains the lemma for the entry. The lemma may be a single word or phrase or
-                     the omission of a word or prhase (see below for encoding omissions). The
-                     variant reading follows, contained in <gi>rdg</gi>. The attribute
-                        <att>wit</att> lists the witness for the variant. The hash or pound sign (#)
-                     indicates that the witness has been described elsewhere in the edition, making
-                     it possible to retrieve that information through a link to it, if desired.</p>
-
                   <p>This encoding can be rendered in the traditional manner, or it can be used in
                      an interactive apparatus to swap the variant with the lemma in the main edition
                      text.</p>
@@ -2342,20 +2387,18 @@
                      demonstrates how to indicate that a variant has more than one witness:</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <l n="2"><app><lem>quamvis</lem><rdg wit="#f #g #r #t">quatinus</rdg></app> et
-                        madidis incumbant <app>
-                           <lem>praela</lem>
-                           <rdg wit="#P">praeda</rdg>
-                        </app> racemis</l>
+                     <l n="2"><app>
+                           <lem>quamvis</lem>
+                           <rdg wit="#f #g #r #t">quatinus</rdg>
+                        </app> et madidis incumbant praela racemis</l>
                   </egXML>
 
                   <p>The witnesses are listed here in chronological order, but an editor may wish to
                      use a different ordering principle. The order should be described and explained
                      in the preface.</p>
 
-                  <p>If it is desirable to indicate that a variant appears in both a manuscript and
-                     a modern edition or other source, the same pattern applies, with the addition
-                     of <att>source</att>:</p>
+                  <p>The following example demonstrates how to encode a reading supported by a
+                     witness and a source.</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app>
@@ -2363,60 +2406,64 @@
                         <rdg wit="#N" source="#Glaeser">sequar</rdg>
                      </app>
                   </egXML>
-
-                  <p>Note that <att>source</att> always follows <att>wit</att>, unless there are no
-                     witnesses to report.</p>
                </div>
-               <div xml:id="additions">
-                  <head>Additions</head>
-                  <p>A witness adds text (e.g., in the margin) that an editor deems worthy of
-                     notice.</p>
-                  <p>
-                     <specList>
-                        <specDesc key="add"/>
-                     </specList>
-                  </p>
-                  <p><gi>add</gi> (addition) contains text that has been added.</p>
-                  <p><att>place</att> indicates the placed where the text has been added. Possible
-                     values: <list>
-                        <item><hi rend="bold">above</hi>: above the line (<hi rend="italic"
-                              >suprascr. = superscriptum/a</hi>)</item>
-                        <item><hi rend="bold">below</hi>: below the line (<hi rend="italic">subscr.
-                              = subscriptum/a</hi>)</item>
-                        <item><hi rend="bold">bottom</hi>: bottom of the page (<hi rend="italic">ad
-                              fin. = ad finem</hi></item>
-                        <item><hi rend="bold">inline</hi>: within the body of the original text (<hi
-                              rend="italic">in textu</hi>)</item>
-                        <item><hi rend="bold">inRas</hi>: in the space where text has been erased.
-                              (<hi rend="italic">in ras. = in rasura</hi>)</item>
-                        <!-- Note that this is in addition to TEI spec. -->
-                        <item><hi rend="bold">margin</hi>: right, left, or both (<hi rend="italic"
-                              >in mg. = in margine</hi>)</item>
-                        <item><hi rend="bold">top</hi>: at the top of the page (<hi rend="italic">ad
-                              init. = ad initium</hi></item>
-                     </list>
-                  </p>
-                  <p><att>hand</att> indicates the manuscript hand that added the text. See the
-                     section on manuscript hands for more information about encoding that
-                     information.</p>
-                  <!-- To be added -->
-                  <p>For example, the copyist of manuscript <hi rend="bold">N</hi> has the <ref
-                        target="#lem">lemma</ref>, but a second hand has added a variant reading in
-                     the margin.</p>
-                  <p>
-                     <quote>89 certare] certate <hi rend="bold">G</hi>
-                        <hi rend="italic">in mg.</hi></quote>
-                  </p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem>certare</lem>
-                        <rdg wit="#G" xml:id="rdg89certate"><add hand="#G1" place="margin"
-                              >certate</add></rdg>
-                     </app>
-                  </egXML>
-               </div>
+               <!-- End section basic-entry-examples -->
             </div>
+            <!-- End of section on basic apparatus entries -->
+
+            <!-- Need a section on correction here, with an introduction explaining why palaeographical details about where and how the correction is made should be considered "metadata" and placed in a witDetail. -->
+            <div xml:id="additions">
+               <head>Additions</head>
+               <p>This section explains how to encode addition of text to a witness (e.g., in the
+                  margin) that an editor deems worthy of notice.</p>
+               <p>
+                  <specList>
+                     <specDesc key="add"/>
+                  </specList>
+               </p>
+               <p><gi>add</gi> (addition) contains text that has been added.</p>
+               <p><att>place</att> indicates the placed where the text has been added. Possible
+                  values: <list>
+                     <item><hi rend="bold">above</hi>: above the line (<hi rend="italic">suprascr. =
+                           superscriptum/a</hi>)</item>
+                     <item><hi rend="bold">below</hi>: below the line (<hi rend="italic">subscr. =
+                           subscriptum/a</hi>)</item>
+                     <item><hi rend="bold">bottom</hi>: bottom of the page (<hi rend="italic">ad
+                           fin. = ad finem</hi></item>
+                     <item><hi rend="bold">inline</hi>: within the body of the original text (<hi
+                           rend="italic">in textu</hi>)</item>
+                     <item><hi rend="bold">inRas</hi>: in the space where text has been erased. (<hi
+                           rend="italic">in ras. = in rasura</hi>)</item>
+                     <!-- Note that this is in addition to TEI spec. -->
+                     <item><hi rend="bold">margin</hi>: right, left, or both (<hi rend="italic">in
+                           mg. = in margine</hi>)</item>
+                     <item><hi rend="bold">top</hi>: at the top of the page (<hi rend="italic">ad
+                           init. = ad initium</hi></item>
+                  </list>
+               </p>
+
+               <p>For example, the copyist of manuscript <hi rend="bold">G</hi> has the <ref
+                     target="#lem">lemma</ref>, but a second hand has added a variant reading in the
+                  margin.</p>
+               <p>
+                  <quote>89 certare] certate <hi rend="bold">G<hi rend="superscript">1</hi></hi>
+                     <hi rend="italic">in mg.</hi></quote>
+               </p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem>certare</lem>
+                     <rdg wit="#G1"><add place="margin">certate</add></rdg>
+                  </app>
+               </egXML>
+
+            </div>
+            <!-- End of section on additions -->
+
+
+
          </div>
+         <!-- End of section on the apparatus criticus -->
       </body>
    </text>
 </TEI>
