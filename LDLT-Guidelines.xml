@@ -2188,8 +2188,17 @@
                      from "1". Strictly speaking, the original copyist is "hand zero," but adding a
                      superscript zero to every siglum would be redundant, since it can be inferred
                      from the absence of a numeral that the original copyist is meant.</p>
+
+                  <p>In some cases, it is not necessary, possible, or desirable to make such a sharp
+                     distinction between hands. It may be sufficient instead to refer to hands other
+                     than the original copyist with the general <foreign xml:lang="la">manus
+                        recentior</foreign>, or <hi rend="italic">m.r.</hi> ("a later hand").
+                     However the editor decides to represent the activities of a manuscript's hands
+                     and the relationships between them, an explanation should be provided in the
+                     preface.</p>
+
                   <p>In sum, for the purposes of these guidelines, manuscript hands are witnesses,
-                     and the following scheme should be used to indicate them:<list>
+                     and the following scheme should be used to indicate them: <list>
                         <item>siglum without a superscript number (= "hand zero"): the original
                            copyist.</item>
                         <item>siglum with superscript 1 (= "hand one"): a hand that wrote in the
@@ -2198,8 +2207,9 @@
                         <item>siglum with superscript 2 (="hand two"): a hand that wrote at the same
                            time or later than hand one.</item>
                         <item>etc.</item>
-                     </list></p>
-                  <!-- Write something about manicules, to explain that they are not what we're talking about here -->
+                     </list>
+                  </p>
+
                </div>
                <!-- End of section on witnesses -->
 
@@ -2414,14 +2424,19 @@
             <!-- Need a section on correction here, with an introduction explaining why palaeographical details about where and how the correction is made should be considered "metadata" and placed in a witDetail. -->
             <div xml:id="additions">
                <head>Additions</head>
-               <p>This section explains how to encode addition of text to a witness (e.g., in the
-                  margin) that an editor deems worthy of notice.</p>
+               <p>This section explains how to encode addition of text to a witness, exclusive of
+                  corrections, which are handled in a later section. For example, someone may have
+                  annotated the manuscript with a variant reading in the margin or as an interlinear
+                  gloss, but the original reading has not been altered in any way.</p>
+
                <p>
                   <specList>
                      <specDesc key="add"/>
                   </specList>
                </p>
+
                <p><gi>add</gi> (addition) contains text that has been added.</p>
+
                <p><att>place</att> indicates the placed where the text has been added. Possible
                   values: <list>
                      <item><hi rend="bold">above</hi>: above the line (<hi rend="italic">suprascr. =
@@ -2434,7 +2449,6 @@
                            rend="italic">in textu</hi>)</item>
                      <item><hi rend="bold">inRas</hi>: in the space where text has been erased. (<hi
                            rend="italic">in ras. = in rasura</hi>)</item>
-                     <!-- Note that this is in addition to TEI spec. -->
                      <item><hi rend="bold">margin</hi>: right, left, or both (<hi rend="italic">in
                            mg. = in margine</hi>)</item>
                      <item><hi rend="bold">top</hi>: at the top of the page (<hi rend="italic">ad
@@ -2442,9 +2456,10 @@
                   </list>
                </p>
 
-               <p>For example, the copyist of manuscript <hi rend="bold">G</hi> has the <ref
-                     target="#lem">lemma</ref>, but a second hand has added a variant reading in the
-                  margin.</p>
+               <p>Example: The copyist of manuscript <hi rend="bold">G</hi> has the <ref
+                     target="#lem">lemma</ref>
+                  <foreign xml:lang="la">certare</foreign>, but a later hand has added the variant
+                  reading <foreign xml:lang="la">certate</foreign> in the margin.</p>
                <p>
                   <quote>89 certare] certate <hi rend="bold">G<hi rend="superscript">1</hi></hi>
                      <hi rend="italic">in mg.</hi></quote>
@@ -2460,7 +2475,46 @@
             </div>
             <!-- End of section on additions -->
 
+            <div xml:id="omission">
+               <head>Omission</head>
+               <p>This section explains how to encode omission of text from a witness.</p>
 
+               <p>For example, the witness known as "P" has omitted the word <foreign xml:lang="la"
+                     >pecus</foreign> from the following text: <foreign xml:lang="la">securo custode
+                     pecus nocturnaque pastor</foreign>. The traditional apparatus criticus
+                  indicates the omission as follows:</p>
+               
+               <p> pecus <hi rend="italic">om.</hi>
+                  <hi rend="bold">P</hi>
+               </p>
+               
+               <p>In these guidelines, the omission is represented by a so-called "self-closing" <gi>rdg</gi> (&lt;rdg/&gt;):</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <l>securo custode <app>
+                        <lem>pecus</lem>
+                        <rdg wit="#P"/>
+                     </app> nocturnaque pastor</l>
+               </egXML>
+               
+               <p>The same model applies to the omission of an entire line of verse, but in that
+                  case <gi>app</gi> has <att>type</att>="lineOmission" and <gi>lem</gi> contains
+                  the entire line, with the omission marked by a self-closing <gi>rdg</gi>:</p>
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app type="lineOmission">
+                     <lem>
+                        <l n="3">et spument rauco ferventia musta susurro.</l>
+                     </lem>
+                     <rdg wit="#n #h"/>
+                  </app>
+               </egXML>
+               
+               <p>This will be displayed in the apparatus criticus as <quote><hi rend="italic">vers.
+                        om.</hi>
+                     <hi rend="bold">nh</hi></quote></p>
+               
+            </div><!-- End of section on omission -->
+            
 
          </div>
          <!-- End of section on the apparatus criticus -->
