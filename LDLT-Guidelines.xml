@@ -2534,6 +2534,11 @@
 
                <div xml:id="correction-basic-patterns">
                   <head>Basic Patterns for Corrections</head>
+                  
+                  
+                  <!-- Reconsider this whole thing in light of the notion that it isn't the process that you're trying to capture, it's the result. We need to be able to show that N has one reading a.c., and N1 has another reading p.c. The reading post correction may or may not be the lemma. -->
+                  
+                  
                   <p>The basic pattern for encoding a correction involves using <gi>rdgGrp</gi>
                      (reading group) to contain the original and corrected readings and
                         <att>varSeq</att> (variant sequence) to indicate the order in which the
@@ -2591,19 +2596,14 @@
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app>
-                        <lem xml:id="lem-2.80-munerat">munerat</lem>
-                        <rdg wit="#N #λ #μ #δ" xml:id="rdg-2.80-numerat">numerat</rdg>
+                        <lem xml:id="lem-1.20-lemma"><!-- text of lemma goes here --></lem>
+                        <rdg wit="#A #B #C #D" xml:id="rdg-2.80-reading"><!-- text of reading goes here --></rdg>
                         <rdgGrp>
-                           <rdg wit="#G" varSeq="1" copyOf="#rdg-2.80-numerat"/>
-                           <rdg wit="#G1" varSeq="2" copyOf="#lem-2.80-munerat"/>
+                           <rdg wit="#E" varSeq="1" copyOf="#rdg-2.80-reading"/>
+                           <rdg wit="#E1" varSeq="2" copyOf="#lem-2.80-lemma"/>
                         </rdgGrp>
                      </app>
                   </egXML>
-
-                  <p>The example above would be rendered as follows: numerat <hi rend="bold"
-                        >Nλμδ</hi>
-                     <hi rend="bold">G</hi> (corr. <hi rend="bold">G<hi rend="superscript"
-                        >1</hi></hi>)</p>
                </div>
                <!-- End of section on basic patterns for corrections -->
 
@@ -2682,7 +2682,9 @@
                   </egXML>
                </div>
                <!-- End of section on correction with detail -->
-            </div>
+            </div><!-- End of section on correction -->
+            
+            <!-- Add sections on conjecture, emendation, lacuna -->
 
          </div>
          <!-- End of section on the apparatus criticus -->
