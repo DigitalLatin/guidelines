@@ -2658,14 +2658,51 @@
                      Possible values:<list>
                         <item>ante-corr: the original reading, i.e., before correction (<foreign
                               xml:lang="la">ante correctionem</foreign> or a.c.)</item>
-                        <item>post-corr: the altered reading, i.e., after correction (<foreign xml:lang="la">post correctionem</foreign> or p.c.)</item>
+                        <item>post-corr: the altered reading, i.e., after correction (<foreign
+                              xml:lang="la">post correctionem</foreign> or p.c.)</item>
                      </list></p>
-               </div><!-- End of section on correction basics. -->
-               
-               <div xml:id="correction-ante-corr">
-                  
                </div>
-               <!-- End of section on correction -->
+               <!-- End of section on correction basics. -->
+
+               <div xml:id="correction-ante-corr">
+                  <head>Correction: Before Correction</head>
+
+                  <p>If a reading has been corrected so that it matches what is printed in the main
+                     text of the edition, or if it is otherwise obvious what the result of the
+                     correction is, it is not necessary to report the corrected form. In the
+                     following example, it can be inferred that the variant has been corrected to
+                        <foreign xml:lang="la">referre</foreign>: referre] referte <hi rend="bold"
+                        >E</hi> (a.c.). This would be encoded as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>referre</lem>
+                        <rdg wit="#E" xml:id="rdg-referte">referte</rdg>
+                        <witdetail wit="#E" target="#rdg-referte" type="ante-corr"/>
+                     </app>
+                  </egXML>
+
+                  <p>The <gi>witDetail</gi> is empty (i.e., "self-closing") because the abbreviation
+                     "a.c." can be inserted automatically during processing. If it is desirable to
+                     note how the correction was made, that information can be inserted as a value
+                     for <gi>witDetail</gi> in one of two ways.</p>
+
+                  <p>The correction may be described in prose:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <witDetail wit="#E" target="#rdg-referte" type="ante-corr">t <hi rend="italic"
+                           >exp.</hi>, r <hi rend="italic">add. s.l.</hi></witDetail>
+                  </egXML>
+
+                  <p>The correction may be semantically encoded:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <witDetail wit="#E" target="#rdg-referte" type="ante-corr">refer<subst><del
+                              rend="expunction">t</del><add place="above"
+                        >r</add></subst>e</witDetail>
+                  </egXML>
+               </div>
+               <!-- End of section on ante-corr -->
             </div>
             <!-- Add sections on conjecture, emendation, lacuna -->
 
