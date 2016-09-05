@@ -2532,8 +2532,86 @@
                   to communicate the nature of a correction, but also the functionality they want
                   their edition to support. The subsections below include discussions intended to
                   help editors make those determinations.</p>
+               <div xml:id="correction-as-metadata">
+                  <head>Correction as Metadata</head>
 
-               
+                  <p>Editors have devised creative ways of reporting corrections. The simplest
+                     method is to report readings and annotate them with <foreign xml:lang="la">ante
+                        correctionem</foreign>, <foreign xml:lang="la">post correctionem</foreign>,
+                     or something similar. Another method is to add abbreviations for those phrases
+                     as superscript notations on manuscript sigla (e.g., B<hi rend="superscript"
+                        >ac</hi>, B<hi rend="superscript">pc</hi>). Sometimes it is necessary to
+                     provide more detail about the method of correction, in which cases editors will
+                     either describe the correction (e.g., t <hi rend="italic">exp.</hi>, r <hi
+                        rend="italic">add. s.l.</hi>) or they will try to represent it
+                     typographically (e.g., referṭ<hi rend="superscript">r</hi>e). Some rely on
+                     superscript notation for all of these details (e.g., P<hi rend="superscript"
+                        >csl</hi> = P <foreign xml:lang="la">correctio supra lineam</foreign>).</p>
+
+                  <p>The different methods have advantages and disadvantages, but they all
+                     effectively demonstrate that correction is a complex subject. Even the word
+                     "correction" is problematic, since it can refer to the result of a process or
+                     the process itself. If correction is to be represented faithfully in a digital
+                     critical edition, we must analyze the information it conveys.</p>
+
+                  <p>Aside from judgments about correctness, "correction" necessarily involves at
+                     least four kinds of information: <list>
+                        <item>an original reading</item>
+                        <item>an altered form of the original reading</item>
+                        <item>an agent or agents (i.e., the correcting hand or hands)</item>
+                        <item>a method or methods of correction (i.e., deletion, addition above the
+                           line, etc.)</item>
+                     </list> Since the primary mission of an apparatus criticus is to report variant
+                     readings, it is useful to think of the original reading and the altered form of
+                     the original reading as the data and the information about agency and method as
+                     metadata, or data about the data. But "original form" and "altered form" can be
+                     analyzed further into states (original and altered), leaving two readings as
+                     the data, with the following metadata:<list>
+                        <item>state (original, altered)</item>
+                        <item>correspondence (showing that the two readings are related to each
+                           other through correction)</item>
+                        <item>agent or agents</item>
+                        <item>method or methods of correction</item>
+                     </list></p>
+
+                  <p>Not all of these metadata items will be required in every instance. The
+                     original reading, for example, will obviously not have an agent (beyond the
+                     witness to the reading) or a method of correction, but it will have a state
+                     (original). It might have a correspondence to show that it is related to its
+                     altered form, if one is provided, but it is not always necessary to report the
+                     altered form For example, if the altered form is the lemma in the main text of
+                     the edition, it is sufficient to report the original form with a note that it
+                     was corrected (the inference being that it was corrected to the "correct" form
+                     of the lemma if no other form is reported). Similarly, it may not be necessary
+                     to report the method of correction.</p>
+
+                  <p>With regard to reporting the method of correction, the LDLT supports two
+                     approaches, prose description and typographical depiction. The former simply
+                     requires a succinct description of the correction (e.g., t <hi rend="italic"
+                        >add. in textu</hi>) The latter requires semantic markup of the correction,
+                     using techniques described elsewhere in these guidelines:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>vocas</lem>
+                        <rdg wit="#E" xml:id="rdg-voca">voca</rdg>
+                        <rdg wit="#E1" xml:id="rdg-vocat">vocat</rdg>
+                        <witDetail wit="#E1" target="#rdg-vocat" type="correction"
+                           corresp="#rdg-voca"><add place="inline">t</add></witDetail></app>
+                  </egXML>
+
+                  <p>Editors should declare in the preface which method(s) they have adopted so that
+                     users will know to what extent the data about corrections is structured.</p>
+
+                  <p>Classifying information related to correction as metadata supports a variety of
+                     functions. In addition to preserving the ability to swap readings in an out of
+                     the text described elsewhere in these guidelines, it will allow querying of
+                     information specific to certain witnesses, listing of all apparatus entries
+                     involving correction, filtering of variants with corrected forms, and more. The
+                     following sections demonstrate how correction information should be encoded to
+                     take advantage of this functionality.</p>
+               </div>
+
             </div>
             <!-- End of section on correction -->
 
