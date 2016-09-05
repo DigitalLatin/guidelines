@@ -2525,165 +2525,18 @@
                   original copyist or some other hand to alter a witness' reading, whether or not
                   the result matches the lemma of the current edition.</p>
 
-               <p>Although the TEI Guidelines provide methods for encoding the individual details of
-                  a correction (e.g., specifying that a single letter has been deleted or added),
-                  that level of detail is more appropriate for a diplomatic transcription of a
-                  witness. The apparatus criticus should record the result of the correction. If it
-                  is desirable to note how the correction was made, a description can be added in a
-                  note (see details below).</p>
+               <p>Since the amount of detail to report is a matter for editors to decide, this
+                  section describes a range of options for encoding corrections. All are acceptable
+                  and will be supported by the LDLT's viewer application. When determining the
+                  method to use, editors should bear in mind not only the amount of detail necessary
+                  to communicate the nature of a correction, but also the functionality they want
+                  their edition to support. The subsections below include discussions intended to
+                  help editors make those determinations.</p>
 
-               <div xml:id="correction-basic-patterns">
-                  <head>Basic Patterns for Corrections</head>
-                  
-                  
-                  <!-- Reconsider this whole thing in light of the notion that it isn't the process that you're trying to capture, it's the result. We need to be able to show that N has one reading a.c., and N1 has another reading p.c. The reading post correction may or may not be the lemma. -->
-                  
-                  
-                  <p>The basic pattern for encoding a correction involves using <gi>rdgGrp</gi>
-                     (reading group) to contain the original and corrected readings and
-                        <att>varSeq</att> (variant sequence) to indicate the order in which the
-                     readings were written:</p>
+               
+            </div>
+            <!-- End of section on correction -->
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem><!--text of lemma goes here --></lem>
-                        <rdgGrp>
-                           <rdg wit="#A" varSeq="1"><!-- original reading goes here --></rdg>
-                           <rdg wit="#A1" varSeq="2"><!-- corrected reading goes here --></rdg>
-                        </rdgGrp>
-                     </app>
-                  </egXML>
-
-                  <p>If the correction supplied text that has been omitted, the pattern is the same,
-                     but a self-closing <gi>rdg</gi> indicates the omission:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem><!--text of lemma goes here --></lem>
-                        <rdgGrp>
-                           <rdg wit="#A" varSeq="1"/><!-- omission -->
-                           <rdg wit="#A1" varSeq="2"><!-- corrected reading goes here --></rdg>
-                        </rdgGrp>
-                     </app>
-                  </egXML>
-
-                  <p>If the correction matches the lemma, <gi>lem</gi> has an <att>xml:id</att> and
-                     the corrected reading has <att>copyOf</att> pointing to the lemma:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem xml:id="lem-1.10-lemma"><!--text of lemma goes here --></lem>
-                        <rdgGrp>
-                           <rdg wit="#A" varSeq="1"><!-- original reading goes here --></rdg>
-                           <rdg wit="#A1" varSeq="2" copyOf="#lem-1.10-lemma"/>
-                        </rdgGrp>
-                     </app>
-                  </egXML>
-
-                  <p><att>copyOf</att> requires some explanation. It is used for two reasons.
-                     Practically speaking, it limits the potential for typographical error. If a
-                     mistake is made in entering the corrected reading, the apparatus will not be
-                     accurate. Using <att>copyOf</att> insures that the lemma and the corrected
-                     reading will be identical. Conceptually speaking, <att>copyOf</att> supports
-                     the argument of the main edition text that the lemma is the authoritative
-                     reading. In other words, it is a correction in the literal sense of the word,
-                     since the change reflects what the edition asserts to be the correct
-                     reading.</p>
-
-                  <p><att>copyOf</att> can also be used to indicate that a reading matches another
-                     one. This is useful in cases where a variant reading is present in multiple
-                     witnesses, but corrected only in one of them, as in the following example:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem xml:id="lem-1.20-lemma"><!-- text of lemma goes here --></lem>
-                        <rdg wit="#A #B #C #D" xml:id="rdg-2.80-reading"><!-- text of reading goes here --></rdg>
-                        <rdgGrp>
-                           <rdg wit="#E" varSeq="1" copyOf="#rdg-2.80-reading"/>
-                           <rdg wit="#E1" varSeq="2" copyOf="#lem-2.80-lemma"/>
-                        </rdgGrp>
-                     </app>
-                  </egXML>
-               </div>
-               <!-- End of section on basic patterns for corrections -->
-
-               <div xml:id="values-for-rdgGrp">
-                  <head>Values for <gi>rdgGrp</gi></head>
-                  <p>Depending on the purpose of the entry, <gi>rdgGrp</gi> will have one of the
-                     following values:</p>
-                  <list>
-                     <item><hi rend="bold">ante-corr</hi>: the purpose is to show what the reading
-                        was before it was corrected (<foreign xml:lang="la">ante
-                           correctionem</foreign>). The assumption is that the corrected text
-                        matches the lemma. This type of correction will be displayed as follows:
-                        lorem <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi rend="superscript"
-                              >1</hi></hi>)</item>
-                     <item><hi rend="bold">post-corr</hi>: the purpose is to show what the reading
-                        is after correction (<foreign xml:lang="la">post correctionem</foreign>).
-                        The assumption is that the text before correction matched the lemma.</item><!-- Need example here -->
-                     <item><hi rend="bold">ante-post-corr</hi>: the purpose is to show what the
-                        readings are before and after the correction. This is necessary if the
-                        reading before and after the correction does not match the lemma.</item><!-- Need example here -->
-                  </list>
-                  <p>This will insure that the entry is properly processed and displayed as
-                     expected. </p>
-               </div>
-
-               <div xml:id="correction-without-detail">
-                  <head>Correction Without Detail</head>
-
-                  <p>nundum <hi rend="bold">G</hi> (<hi rend="italic">corr</hi>. <hi rend="bold"
-                        >G1</hi>)</p>
-
-                  <p>When it is not necessary to indicate how a correction was made, or if the
-                     method of correction can be inferred from the context, the following pattern
-                     should be used to report a reading before correction (<foreign xml:lang="la"
-                        >ante correctionem</foreign>, or <hi rend="italics">a.c.</hi>):</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem xml:id="lem-1.1-nondum">nondum</lem>
-                        <rdgGrp type="ante-corr">
-                           <rdg wit="#G" varSeq="1">nundum</rdg>
-                           <rdg wit="#G1" varSeq="2" copyOf="#lem-1.1-nondum"/>
-                        </rdgGrp>
-                     </app>
-                  </egXML>
-
-               </div>
-               <!-- End of section on correction without detail -->
-
-               <div xml:id="correction-with-detail">
-                  <head>Correction With Detail</head>
-
-                  <p>If it is desirable to note how a correction was made, <gi>witDetail</gi> should
-                     be used. The contents of <gi>witDetail</gi> will be displayed in
-                     parentheses.</p>
-
-                  <p>For example, if the lemma is <foreign xml:lang="la">propius</foreign> and
-                     witness <hi rend="bold">N</hi> has <foreign xml:lang="la">proprius</foreign>,
-                     but a later hand has deleted the second letter "r," it might be important to
-                     make a note of that change. In a traditional apparatus, that might be handled
-                     as follows: proprius N (r <hi rend="italic">alt. exp.</hi>
-                     <hi rend="bold">N<hi rend="superscript">1</hi></hi>).</p>
-
-                  <p>The following example shows how to encode this information:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem xml:id="lem-1.24-propius">propius</lem>
-                        <rdgGrp type="ante-corr">
-                           <rdg wit="#N" varSeq="1" xml:id="rdg-1.24-proprius">proprius</rdg>
-                           <rdg wit="#N1" varSeq="2" copyOf="lem-1.24-propius"/>
-                        </rdgGrp>
-                        <witDetail wit="#N" target="#rdg-1.24-proprius">(<hi rend="italic">r</hi>
-                           alt. exp. N<hi rend="superscript">1</hi>)</witDetail>
-                     </app>
-                  </egXML>
-               </div>
-               <!-- End of section on correction with detail -->
-            </div><!-- End of section on correction -->
-            
             <!-- Add sections on conjecture, emendation, lacuna -->
 
          </div>
