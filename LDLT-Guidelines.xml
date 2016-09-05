@@ -2519,6 +2519,7 @@
 
             <div xml:id="corrections">
                <head>Corrections</head>
+
                <p>Correction has been discussed at length in the section "<ref
                      target="apparatus-criticus-terms">Concepts and Definitions</ref>." In short,
                   for the purposes of these guidelines, "correction" describes any attempt by the
@@ -2579,7 +2580,7 @@
                      witness to the reading) or a method of correction, but it will have a state
                      (original). It might have a correspondence to show that it is related to its
                      altered form, if one is provided, but it is not always necessary to report the
-                     altered form For example, if the altered form is the lemma in the main text of
+                     altered form. For example, if the altered form is the lemma in the main text of
                      the edition, it is sufficient to report the original form with a note that it
                      was corrected (the inference being that it was corrected to the "correct" form
                      of the lemma if no other form is reported). Similarly, it may not be necessary
@@ -2588,8 +2589,20 @@
                   <p>With regard to reporting the method of correction, the LDLT supports two
                      approaches, prose description and typographical depiction. The former simply
                      requires a succinct description of the correction (e.g., t <hi rend="italic"
-                        >add. in textu</hi>) The latter requires semantic markup of the correction,
-                     using techniques described elsewhere in these guidelines:</p>
+                        >add. s.l.</hi>).</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>vocas</lem>
+                        <rdg wit="#E" xml:id="rdg-voca">voca</rdg>
+                        <rdg wit="#E1" xml:id="rdg-vocat">vocat</rdg>
+                        <witDetail wit="#E" target="#rdg-voca" type="ante-corr" corresp="#rdg-vocat"/>
+                        <witDetail wit="#E1" target="#rdg-vocat" type="correction"
+                           corresp="#rdg-voca">t <hi rend="italic">add. s.l.</hi></witDetail></app>
+                  </egXML>
+
+                  <p>The latter requires the correction to be encoded using techniques described
+                     elsewhere in these guidelines:</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app>
@@ -2597,7 +2610,7 @@
                         <rdg wit="#E" xml:id="rdg-voca">voca</rdg>
                         <rdg wit="#E1" xml:id="rdg-vocat">vocat</rdg>
                         <witDetail wit="#E1" target="#rdg-vocat" type="correction"
-                           corresp="#rdg-voca"><add place="inline">t</add></witDetail></app>
+                           corresp="#rdg-voca">voca<add place="above">t</add></witDetail></app>
                   </egXML>
 
                   <p>Editors should declare in the preface which method(s) they have adopted so that
@@ -2607,14 +2620,53 @@
                      functions. In addition to preserving the ability to swap readings in an out of
                      the text described elsewhere in these guidelines, it will allow querying of
                      information specific to certain witnesses, listing of all apparatus entries
-                     involving correction, filtering of variants with corrected forms, and more. The
-                     following sections demonstrate how correction information should be encoded to
-                     take advantage of this functionality.</p>
+                     involving correction, filtering of variants with corrected forms, and more.</p>
+
+                  <p>The following sections demonstrate how correction information should be encoded
+                     to take advantage of this functionality.</p>
                </div>
+               <!-- End of section on correction as metadata -->
 
+               <div xml:id="correction-basics">
+                  <head>Correction: Basics</head>
+
+                  <p>Readings before and after correction are reported as any other readings, i.e.,
+                     with <gi>rdg</gi> inside of <gi>app</gi>. The details of the correction are
+                     contained in <gi>witDetail</gi>, with the use of several attributes to
+                     determine how the information is processed.</p>
+
+                  <p>
+                     <specList>
+                        <specDesc key="witDetail"/>
+                        <specDesc key="wit"/>
+                        <specDesc key="target"/>
+                        <specDesc key="corresp"/>
+                        <specDesc key="type"/>
+                     </specList>
+                  </p>
+
+                  <p><gi>witDetail</gi> (witness detail) may be empty or it may contain a prose
+                     description or a semantically encoded representation of a correction.</p>
+                  <p><att>wit</att> (witness) has as its value the machine-readable siglum of the
+                     witness that has the correction.</p>
+                  <p><att>target</att> has as its value the <att>xml:id</att> of the reading in
+                     question.</p>
+                  <p><att>corresp</att> (corresponds) has as its value the <att>xml:id</att> of the
+                     related reading (i.e., the original reading corresponds to the corrected
+                     reading).</p>
+                  <p><att>type</att> has one of the following values to classify the correction.
+                     Possible values:<list>
+                        <item>ante-corr: the original reading, i.e., before correction (<foreign
+                              xml:lang="la">ante correctionem</foreign> or a.c.)</item>
+                        <item>post-corr: the altered reading, i.e., after correction (<foreign xml:lang="la">post correctionem</foreign> or p.c.)</item>
+                     </list></p>
+               </div><!-- End of section on correction basics. -->
+               
+               <div xml:id="correction-ante-corr">
+                  
+               </div>
+               <!-- End of section on correction -->
             </div>
-            <!-- End of section on correction -->
-
             <!-- Add sections on conjecture, emendation, lacuna -->
 
          </div>
