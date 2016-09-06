@@ -2129,38 +2129,33 @@
                      it may be a conjecture or a correction. Variant readings constitute the text
                      printed in the apparatus criticus.</p>
 
-                  <p>An <hi rend="bold">emendation</hi> is a reading expressly proposed by some
-                     person (possibly the editor) through the application of critical judgment and
-                     accepted by the editor into the main text of an edition.</p>
+                  <p xml:id="emendation">An <hi rend="bold">emendation</hi> is a reading that is not
+                     supported by documentary evidence, but is expressly proposed by some person
+                     (possibly the editor) and accepted by the editor into the main text of an
+                     edition.</p>
 
-                  <p xml:id="conjecture">A <hi rend="bold">conjecture</hi> is a reading proposed by
-                     some person (ancient or modern) and determined by an editor to be worthy of
-                     consideration in establishing the text, but not to be printed in the main text
-                     of the edition.</p>
+                  <p xml:id="conjecture">A <hi rend="bold">conjecture</hi> is a reading that is not
+                     supported by known documentary evidence, but is proposed by some person and
+                     determined by an editor to be worthy of consideration in establishing the text,
+                     but not to be printed in the main text of the edition.</p>
 
-                  <p xml:id="correction"><hi rend="bold">Correction</hi> requires more explanation,
-                     since its usage in this context has more to do with motivation than result.
-                     Strictly speaking, correction should apply to any instance of a variant in a
-                     manuscript being altered by the copyist or some later person to match the
-                     lemma, which is the "correct" reading, at least for the purposes of a critical
-                     edition. If a variant reading is altered to something other than the lemma of
-                     the critical edition, it might seem more accurate to call it a mutation than a
-                     correction. But "correct" is subjective. From the perspective of the editor of
-                     a critical edition, the "correct" reading is what appears in the main edition
-                     text, but opinions can differ from editor to editor about what the "correct"
-                     reading is. Similarly, copyists and other users of manuscripts have their own
-                     idea of what the "correct" reading is. The original copyist might notice a slip
-                     of the pen in his own work and correct it. A later hand might correct a mistake
-                     missed by the copyist. Another reader comparing two manuscripts might "correct"
-                     one of them based on the other's reading. In all of these cases, the motivation
-                     is to correct what is perceived to be incorrect. For all of these reasons,
+                  <p xml:id="correction"><hi rend="bold">Correction</hi> describes any attempt by
+                     the original copyist or some other hand to alter a witness' reading, whether or
+                     not the result matches the lemma of the current edition. Whether or not the
+                     result of a correction is "correct" is a matter of perspective. Opinions can
+                     differ from editor to editor about what the "correct" reading is, which is why
+                     having more than one critical edition of a text is not redundant. Similarly,
+                     copyists and other users of manuscripts have their own idea of what the
+                     "correct" reading is. The original copyist might notice a slip of the pen in
+                     his own work and correct it. A later hand might correct a mistake missed by the
+                     copyist. Another reader comparing two manuscripts might "correct" one of them
+                     based on the other's reading. In all of these cases, the motivation is to
+                     correct what is perceived to be incorrect. For all of these reasons,
                      "correction" is used in these guidelines to refer to an attempt to alter
                      existing text so that it conforms to some perceived standard, whether or not
-                     that standard matches the editor's view of what the correct reading might be.
-                     Conjectures should also be considered "corrections," as is clear from the fact
-                     that when a conjecture is accepted, it is called an "emendation."</p>
+                     that standard matches the editor's view of what the correct reading might be. </p>
 
-                  <p>The next two sections discuss where readings are found, in witnesses and
+                  <p>The next two sections discuss where readings are found, i.e., in witnesses and
                      sources.</p>
                </div>
                <!-- End of section on readings -->
@@ -2514,9 +2509,13 @@
                <p>This will be displayed in the apparatus criticus as <quote><hi rend="italic">vers.
                         om.</hi>
                      <hi rend="bold">nh</hi></quote></p>
-
             </div>
             <!-- End of section on omission -->
+            
+            <div xml:id="lacunae">
+               <head>Lacunae</head>
+               
+            </div><!-- End of section on lacuna -->
 
             <div xml:id="corrections">
                <head>Corrections</head>
@@ -2736,9 +2735,77 @@
                         type="correction-altered"><add place="inRas">rt</add></witDetail>
                   </egXML>
                </div>
-
-
+               <!-- End of section on ante-post correction. -->
             </div>
+            <!-- End of section on correction -->
+            
+            <div xml:id="conjecture-and-emendation">
+               <head>Conjecture and Emendation</head>
+
+               <p>As explained in the section <ref target="#apparatus-criticus-terms">Concepts and
+                     Definitions</ref>, conjectures are readings that are not supported by
+                  documentary evidence, but are instead proposed by someone and considered by the
+                  editor to be worthy of inclusion in a critical edition. A conjecture is called an
+                  emendation if it is adopted as the official reading of a particular criticial
+                  edition's main text. In other words, for the purposes of these guidelines, an
+                  emendation is a successful conjecture. But above all, conjectures and emendations
+                  are readings, and they are encoded as such in LDLT editions.</p>
+
+               <p>Traditionally, conjectures and emendations have been annotated in various ways in
+                  critical editions (e.g., <foreign xml:lang="la">ci.</foreign> or <foreign
+                     xml:lang="la">conj.</foreign> for <foreign xml:lang="la">coniecit</foreign>,
+                     <foreign xml:lang="la">em.</foreign> or <foreign xml:lang="la">emend.</foreign>
+                  for <foreign xml:lang="la">emendavit</foreign>, among others). They should be
+                  annotated in digital editions, too, both to facilitate their identification, and
+                  to enable features such as filtering and searching for them. The annotation is
+                  accomplished with <att>type</att>.</p>
+
+               <p>Since an emendation is a conjecture that has been adopted for the main text of the
+                  edition, only <gi>lem</gi> can have <att>type</att> with value "emendation." It
+                  could be inferred that a lemma with <att>source</att> only is an emendation, but
+                  in the interest of being explicit, an emendation should be annotated accordingly.
+                  Conversely, only <gi>rdg</gi> may have <att>type</att> with value "conjecture." It
+                  could be inferred that a reading with <att>source</att> only is a conjecture, but
+                  it is best to be explicit in the identification.</p>
+
+               <p>The following example demonstrates how to encode both an emendation and a
+                  conjecture.</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem source="#Haupt1854" type="emendation" xml:id="lem-plenumque"
+                        >plenumque</lem>
+                     <rdg wit="#ω" source="#edd.">primumque</rdg>
+                     <rdg source="#Baehr." type="conjecture">rivumque</rdg>
+                     <rdg source="#CSchenkl" type="conjecture">pronumque</rdg>
+                     <note target="#lem-plenumque">prob. <ref taret="#Keene">Keene</ref> et <ref
+                           target="#Schenkl">Schenkl</ref></note>
+                  </app>
+               </egXML>
+
+               <p>This encoding will produce the following output: plenumque] <hi rend="italic"
+                     >conj</hi>. Haupt (<hi rend="italic">prob</hi>. Keene <hi rend="italic">et</hi>
+                  Schenkl), primumque <hi rend="bold">ω</hi>
+                  <hi rend="italic">edd</hi>., rivumque Baehr., pronumque C. Schenkl.</p>
+
+               <p>If someone has proposed multiple conjectures, they should be contained in
+                     <gi>rdgGrp</gi> with <att>type</att> and value "conjecture."</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem>pallenti</lem>
+                     <rdgGrp type="conjecture">
+                        <rdg source="#Heins.">ridenti</rdg>
+                        <rdg source="#Heins.">varianti</rdg>
+                        <rdg source="#Heins.">vernanti</rdg>
+                        <rdg source="#Heins.">roranti</rdg>
+                     </rdgGrp>
+                  </app>
+               </egXML>
+               
+               <p>This would be displayed as pallenti] ridenti <hi rend="italic">vel</hi> varianti <hi rend="italic">vel</hi> vernanti <hi rend="italic">vel</hi> roranti <hi rend="italic">conj</hi>. Heins.</p>
+            </div><!-- End of section on conjecture and emendation -->
+
             <!-- Add sections on conjecture, emendation, lacuna -->
 
          </div>
