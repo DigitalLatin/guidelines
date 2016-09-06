@@ -2418,104 +2418,148 @@
             </div>
             <!-- End of section on basic apparatus entries -->
 
-            <div xml:id="additions">
-               <head>Additions</head>
-               <p>This section explains how to encode addition of text to a witness, exclusive of
-                  corrections, which are handled in a later section. For example, someone may have
-                  annotated the manuscript with a variant reading in the margin or as an interlinear
-                  gloss, but the original reading has not been altered in any way.</p>
+            <div xml:id="addition-deletions-omissions">
+               <head>Additions, Deletions, and Omissions</head>
 
-               <p>
-                  <specList>
-                     <specDesc key="add"/>
-                  </specList>
-               </p>
+               <p>The following sections provide guidelines for representing additions, deletions,
+                  and omissions in particular witnesses, as opposed to the tradition as a whole (for
+                  which see the section "<ref target="#edition-text-symbols">Symbols Commonly Used
+                     in the Text of a Critical Edition</ref>"). In most cases, additions, deletions,
+                  and omissions will be encoded in combination with each other as part of a
+                  correction, but since it is possible that they would be encountered by themselves
+                  (e.g., addition of a reading in the margin), it seems best to treat them
+                  individually here.</p>
 
-               <p><gi>add</gi> (addition) contains text that has been added.</p>
+               <p>There are two methods of encoding additions and deletions: prose description and
+                  semantic markup. Both are demonstrated in each of the following sections.</p>
 
-               <p><att>place</att> indicates the placed where the text has been added. Possible
-                  values: <list>
-                     <item><hi rend="bold">above</hi>: above the line (<hi rend="italic">suprascr. =
-                           superscriptum/a</hi>)</item>
-                     <item><hi rend="bold">below</hi>: below the line (<hi rend="italic">subscr. =
-                           subscriptum/a</hi>)</item>
-                     <item><hi rend="bold">bottom</hi>: bottom of the page (<hi rend="italic">ad
-                           fin. = ad finem</hi></item>
-                     <item><hi rend="bold">inline</hi>: within the body of the original text (<hi
-                           rend="italic">in textu</hi>)</item>
-                     <item><hi rend="bold">inRas</hi>: in the space where text has been erased. (<hi
-                           rend="italic">in ras. = in rasura</hi>)</item>
-                     <item><hi rend="bold">margin</hi>: right, left, or both (<hi rend="italic">in
-                           mg. = in margine</hi>)</item>
-                     <item><hi rend="bold">top</hi>: at the top of the page (<hi rend="italic">ad
-                           init. = ad initium</hi></item>
-                  </list>
-               </p>
+               <div xml:id="additions">
+                  <head>Additions</head>
 
-               <p>Example: The copyist of manuscript <hi rend="bold">G</hi> has the <ref
-                     target="#lem">lemma</ref>
-                  <foreign xml:lang="la">certare</foreign>, but a later hand has added the variant
-                  reading <foreign xml:lang="la">certate</foreign> in the margin.</p>
-               <p>
-                  <quote>89 certare] certate <hi rend="bold">G<hi rend="superscript">1</hi></hi>
-                     <hi rend="italic">in mg.</hi></quote>
-               </p>
 
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <app>
-                     <lem>certare</lem>
-                     <rdg wit="#G1"><add place="margin">certate</add></rdg>
-                  </app>
-               </egXML>
 
-            </div>
-            <!-- End of section on additions -->
+                  <p>
+                     <specList>
+                        <specDesc key="add"/>
+                        <specDesc key="witDetail"/>
+                     </specList>
+                  </p>
 
-            <div xml:id="omission">
-               <head>Omission</head>
-               <p>This section explains how to encode omission of text from a witness.</p>
+                  <p><gi>add</gi> (addition) contains text that has been added.</p>
 
-               <p>For example, the witness known as "P" has omitted the word <foreign xml:lang="la"
-                     >pecus</foreign> from the following text: <foreign xml:lang="la">securo custode
-                     pecus nocturnaque pastor</foreign>. The traditional apparatus criticus
-                  indicates the omission as follows:</p>
+                  <p><att>place</att> indicates the placed where the text has been added. Possible
+                     values: <list>
+                        <item><hi rend="bold">above</hi>: above the line (<hi rend="italic"
+                              >suprascr. = superscriptum/a</hi>)</item>
+                        <item><hi rend="bold">below</hi>: below the line (<hi rend="italic">subscr.
+                              = subscriptum/a</hi>)</item>
+                        <item><hi rend="bold">bottom</hi>: bottom of the page (<hi rend="italic">ad
+                              fin. = ad finem</hi></item>
+                        <item><hi rend="bold">inline</hi>: within the body of the original text (<hi
+                              rend="italic">in textu</hi>)</item>
+                        <item><hi rend="bold">inRas</hi>: in the space where text has been erased.
+                              (<hi rend="italic">in ras. = in rasura</hi>)</item>
+                        <item><hi rend="bold">margin</hi>: right, left, or both (<hi rend="italic"
+                              >in mg. = in margine</hi>)</item>
+                        <item><hi rend="bold">top</hi>: at the top of the page (<hi rend="italic">ad
+                              init. = ad initium</hi></item>
+                     </list>
+                  </p>
 
-               <p> pecus <hi rend="italic">om.</hi>
-                  <hi rend="bold">P</hi>
-               </p>
+                  <p><gi>witDetail</gi> (witness detail) contains a prose description of the
+                     addition.</p>
 
-               <p>In these guidelines, the omission is represented by a so-called "self-closing"
-                     <gi>rdg</gi> (&lt;rdg/&gt;):</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <l>securo custode <app>
-                        <lem>pecus</lem>
-                        <rdg wit="#P"/>
-                     </app> nocturnaque pastor</l>
-               </egXML>
+                  <p>Example: The copyist of manuscript <hi rend="bold">G</hi> has the <ref
+                        target="#lem">lemma</ref>
+                     <foreign xml:lang="la">certare</foreign>, but a later hand has added the
+                     variant reading <foreign xml:lang="la">certate</foreign> in the margin.</p>
+                  <p>
+                     <quote>89 certare] certate <hi rend="bold">G<hi rend="superscript">1</hi></hi>
+                        <hi rend="italic">in mg.</hi></quote>
+                  </p>
 
-               <p>The same model applies to the omission of an entire line of verse, but in that
-                  case <gi>app</gi> has <att>type</att>="lineOmission" and <gi>lem</gi> contains the
-                  entire line, with the omission marked by a self-closing <gi>rdg</gi>:</p>
+                  <p>The prose description method uses <gi>witDetail</gi> to describe the
+                     addition:</p>
 
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <app type="lineOmission">
-                     <lem>
-                        <l n="3">et spument rauco ferventia musta susurro.</l>
-                     </lem>
-                     <rdg wit="#n #h"/>
-                  </app>
-               </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>certare</lem>
+                        <rdg wit="#G1" xml:id="rdg-certate">certate</rdg>
+                        <witDetail wit="#G1" target="#rdg-certate">(add. in mg.)</witDetail>
+                     </app>
+                  </egXML>
 
-               <p>This will be displayed in the apparatus criticus as <quote><hi rend="italic">vers.
-                        om.</hi>
-                     <hi rend="bold">nh</hi></quote></p>
+                  <p>The semantic markup method uses <gi>add</gi> to encode the addition:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>certare</lem>
+                        <rdg wit="#G1"><add place="margin">certate</add></rdg>
+                     </app>
+                  </egXML>
+
+                  <p>The same information is presented in both cases, but the semantic markup
+                     version would support querying and filtering on readings added in the margin
+                     (or elsewhere).</p>
+
+               </div>
+               <!-- End of section on additions -->
+
+               <div xml:id="deletions">
+                  <head>Deletions</head>
+
+                  <p>Normally, deletions are part of a correction.</p>
+                  
+                  <!-- START HERE -->
+               </div>
+
+               <div xml:id="omission">
+                  <head>Omission</head>
+                  <p>This section explains how to encode omission of text from a witness.</p>
+
+                  <p>For example, the witness known as "P" has omitted the word <foreign
+                        xml:lang="la">pecus</foreign> from the following text: <foreign
+                        xml:lang="la">securo custode pecus nocturnaque pastor</foreign>. The
+                     traditional apparatus criticus indicates the omission as follows:</p>
+
+                  <p> pecus <hi rend="italic">om.</hi>
+                     <hi rend="bold">P</hi>
+                  </p>
+
+                  <p>In these guidelines, the omission is represented by a so-called "self-closing"
+                        <gi>rdg</gi> (&lt;rdg/&gt;):</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l>securo custode <app>
+                           <lem>pecus</lem>
+                           <rdg wit="#P"/>
+                        </app> nocturnaque pastor</l>
+                  </egXML>
+
+                  <p>The same model applies to the omission of an entire line of verse, but in that
+                     case <gi>app</gi> has <att>type</att>="lineOmission" and <gi>lem</gi> contains
+                     the entire line, with the omission marked by a self-closing <gi>rdg</gi>:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app type="lineOmission">
+                        <lem>
+                           <l n="3">et spument rauco ferventia musta susurro.</l>
+                        </lem>
+                        <rdg wit="#n #h"/>
+                     </app>
+                  </egXML>
+
+                  <p>This will be displayed in the apparatus criticus as <quote><hi rend="italic"
+                           >vers. om.</hi>
+                        <hi rend="bold">nh</hi></quote></p>
+               </div>
             </div>
             <!-- End of section on omission -->
-            
+
             <div xml:id="lacunae">
                <head>Lacunae</head>
-               
-            </div><!-- End of section on lacuna -->
+
+            </div>
+            <!-- End of section on lacuna -->
 
             <div xml:id="corrections">
                <head>Corrections</head>
@@ -2738,7 +2782,7 @@
                <!-- End of section on ante-post correction. -->
             </div>
             <!-- End of section on correction -->
-            
+
             <div xml:id="conjecture-and-emendation">
                <head>Conjecture and Emendation</head>
 
@@ -2802,9 +2846,12 @@
                      </rdgGrp>
                   </app>
                </egXML>
-               
-               <p>This would be displayed as pallenti] ridenti <hi rend="italic">vel</hi> varianti <hi rend="italic">vel</hi> vernanti <hi rend="italic">vel</hi> roranti <hi rend="italic">conj</hi>. Heins.</p>
-            </div><!-- End of section on conjecture and emendation -->
+
+               <p>This would be displayed as pallenti] ridenti <hi rend="italic">vel</hi> varianti
+                     <hi rend="italic">vel</hi> vernanti <hi rend="italic">vel</hi> roranti <hi
+                     rend="italic">conj</hi>. Heins.</p>
+            </div>
+            <!-- End of section on conjecture and emendation -->
 
             <!-- Add sections on conjecture, emendation, lacuna -->
 
