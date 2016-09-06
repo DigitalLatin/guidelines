@@ -1857,6 +1857,8 @@
                <div xml:id="known-loss"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html">
                   <head>Known Amount Of Text Lost</head>
+
+                  <!-- Need something about using <del> here to indicate how the text was lost? -->
                   <p>[ . . . ] = The editor or transcriber knows from context and/or observation how
                      much text has been lost. (Cf. Epidoc guidelines, "Lost Characters, Quantity
                      Known" <ptr
@@ -2421,7 +2423,6 @@
             </div>
             <!-- End of section on basic apparatus entries -->
 
-            <!-- Need a section on correction here, with an introduction explaining why palaeographical details about where and how the correction is made should be considered "metadata" and placed in a witDetail. -->
             <div xml:id="additions">
                <head>Additions</head>
                <p>This section explains how to encode addition of text to a witness, exclusive of
@@ -2656,53 +2657,87 @@
                      reading).</p>
                   <p><att>type</att> has one of the following values to classify the correction.
                      Possible values:<list>
-                        <item>ante-corr: the original reading, i.e., before correction (<foreign
-                              xml:lang="la">ante correctionem</foreign> or a.c.)</item>
-                        <item>post-corr: the altered reading, i.e., after correction (<foreign
-                              xml:lang="la">post correctionem</foreign> or p.c.)</item>
+                        <item>correction-original: the original reading, i.e., before correction
+                              (<foreign xml:lang="la">ante correctionem</foreign> or a.c.)</item>
+                        <item>correction-altered: the altered reading, i.e., after correction
+                              (<foreign xml:lang="la">post correctionem</foreign> or p.c.)</item>
                      </list></p>
                </div>
                <!-- End of section on correction basics. -->
 
                <div xml:id="correction-ante-corr">
-                  <head>Correction: Before Correction</head>
+                  <head>Simple Correction</head>
 
-                  <p>If a reading has been corrected so that it matches what is printed in the main
-                     text of the edition, or if it is otherwise obvious what the result of the
-                     correction is, it is not necessary to report the corrected form. In the
-                     following example, it can be inferred that the variant has been corrected to
-                        <foreign xml:lang="la">referre</foreign>: referre] referte <hi rend="bold"
-                        >E</hi> (a.c.). This would be encoded as follows:</p>
+                  <p>Example: referre] referte <hi rend="bold">E</hi> (a.c.)</p>
+
+                  <p>If there is only one variant reading with one witness, and that reading has
+                     been corrected so that it matches what is printed in the main text of the
+                     edition, or if it is otherwise obvious what the result of the correction is, it
+                     is not necessary to report the corrected form, since that can be inferred from
+                     the absence of a different corrected form. This would be encoded as
+                     follows:</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app>
-                        <lem>referre</lem>
+                        <lem xml:id="lem-referre">referre</lem>
                         <rdg wit="#E" xml:id="rdg-referte">referte</rdg>
-                        <witdetail wit="#E" target="#rdg-referte" type="ante-corr"/>
+                        <witdetail wit="#E" target="#rdg-referte" corresp="#lem-referre"
+                           type="ante-corr"/>
                      </app>
                   </egXML>
 
-                  <p>The <gi>witDetail</gi> is empty (i.e., "self-closing") because the abbreviation
-                     "a.c." can be inserted automatically during processing. If it is desirable to
-                     note how the correction was made, that information can be inserted as a value
-                     for <gi>witDetail</gi> in one of two ways.</p>
+                  <p><att>corresp</att> points to the <gi>lem</gi> to indicate that the corrected
+                     form matches the lemma. The <gi>witDetail</gi> is empty (i.e., "self-closing")
+                     because the abbreviation "a.c." can be inserted automatically during
+                     processing.</p>
 
-                  <p>The correction may be described in prose:</p>
+                  <p>If it is desirable to note how the correction was made, that information can be
+                     inserted as a value for <gi>witDetail</gi>. See the section "Describing
+                     Corrections" for more information.</p>
+               </div>
+               <!-- End of section on simple correction -->
+
+               <div xml:id="correction-ante-post">
+                  <head>Correction: Readings Before and After Correction</head>
+
+                  <p>Example: cortice <hi rend="bold">N<hi rend="superscript">2</hi></hi> (<hi
+                        rend="italic">p.c.</hi>, rt <hi rend="italic">add. in ras.</hi>) <hi
+                        rend="bold">P V</hi>, co[..]ice <hi rend="bold">N</hi> (<hi rend="italic"
+                        >a.c.</hi>), codice <hi rend="bold">G A</hi></p>
+
+                  <p>In this example, witness <hi rend="bold">N</hi> originally had <hi
+                        rend="italic">co</hi> and <hi rend="italic">ice</hi> with an erasure of two
+                     characters between them. A correcting hand has inserted the letters "r" and "t"
+                     in the erasure. The corrected form (<hi rend="italic">cortice</hi>) matches the
+                     reading in witnesses <hi rend="bold">P</hi> and <hi rend="bold">V</hi>. Another
+                     reading is present in witnesses <hi rend="bold">G</hi> and <hi rend="bold"
+                        >A</hi>. It is important to report both the original and the corrected
+                     readings in witness <hi rend="bold">N</hi> so that there is no ambiguity.</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <witDetail wit="#E" target="#rdg-referte" type="ante-corr">t <hi rend="italic"
-                           >exp.</hi>, r <hi rend="italic">add. s.l.</hi></witDetail>
+                     <app>
+                        <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
+                        <rdg wit="#N" xml:id="rdg-coice">co<del rend="erasure"><gap reason="lost"
+                                 quantity="2" unit="character"/></del>ice</rdg>
+                        <rdg wit="#G #A">codice</rdg>
+                        <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice"
+                           type="correction-original"/>
+                        <witDetail wit="#N2" target="lem-cortice" corresp="#rdg-coice"
+                           type="correction-altered">rt <hi rend="italic">add in
+                           ras.</hi></witDetail>
+                     </app>
                   </egXML>
 
-                  <p>The correction may be semantically encoded:</p>
+                  <p>If the editor wishes to encode the correction itself, the second
+                        <gi>witDetail</gi> would be as follows:</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <witDetail wit="#E" target="#rdg-referte" type="ante-corr">refer<subst><del
-                              rend="expunction">t</del><add place="above"
-                        >r</add></subst>e</witDetail>
+                     <witDetail wit="#N2" target="lem-cortice" corresp="#rdg-coice"
+                        type="correction-altered"><add place="inRas">rt</add></witDetail>
                   </egXML>
                </div>
-               <!-- End of section on ante-corr -->
+
+
             </div>
             <!-- Add sections on conjecture, emendation, lacuna -->
 
