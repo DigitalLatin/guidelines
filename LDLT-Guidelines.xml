@@ -2563,19 +2563,20 @@
                               rend="exp">ad</del></witDetail>
                      </app>
                   </egXML>
-                  
+
                   <p>The output of this encoding would be amotae] adamote <hi rend="bold">G</hi>
                      (a.c.), amote <hi rend="bold">G<hi rend="superscript">1</hi></hi> (ad <hi
                         rend="italic">exp</hi>.)</p>
 
                   <p>The same information is presented in both cases, but the semantic markup
-                     version would support querying and filtering on deletions and methods of deletion.</p>
-
+                     version would support querying and filtering on deletions and methods of
+                     deletion.</p>
 
                </div>
 
                <div xml:id="omission">
                   <head>Omission</head>
+
                   <p>This section explains how to encode omission of text from a witness.</p>
 
                   <p>For example, the witness known as "P" has omitted the word <foreign
@@ -2587,8 +2588,8 @@
                      <hi rend="bold">P</hi>
                   </p>
 
-                  <p>In these guidelines, the omission is represented by a so-called "self-closing"
-                        <gi>rdg</gi> (&lt;rdg/&gt;):</p>
+                  <p>In these guidelines, omission is represented by a so-called "self-closing" or
+                     empty <gi>rdg</gi> (&lt;rdg/&gt;):</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <l>securo custode <app>
                            <lem>pecus</lem>
@@ -2597,11 +2598,11 @@
                   </egXML>
 
                   <p>The same model applies to the omission of an entire line of verse, but in that
-                     case <gi>app</gi> has <att>type</att>="lineOmission" and <gi>lem</gi> contains
+                     case <gi>app</gi> has <att>type</att>="line-omission" and <gi>lem</gi> contains
                      the entire line, with the omission marked by a self-closing <gi>rdg</gi>:</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app type="lineOmission">
+                     <app type="line-omission">
                         <lem>
                            <l n="3">et spument rauco ferventia musta susurro.</l>
                         </lem>
@@ -2611,14 +2612,54 @@
 
                   <p>This will be displayed in the apparatus criticus as <quote><hi rend="italic"
                            >vers. om.</hi>
-                        <hi rend="bold">nh</hi></quote></p>
+                        <hi rend="bold">n h</hi></quote></p>
                </div>
             </div>
             <!-- End of section on omission -->
 
             <div xml:id="lacunae">
                <head>Lacunae</head>
-
+               
+               <p>A <ref target="#wit">witness</ref> is missing a portion of the text.</p>
+               
+               <p>
+                  <specList>
+                     <specDesc key="lacunaStart"/>
+                     <specDesc key="lacunaEnd"/>
+                  </specList>
+               </p>
+               <p><gi>lacunaStart</gi> is a self-closing tag with <att>wit</att> indicating where in
+                  a witness the lacuna begins.</p>
+               <p><gi>lacunaEnd</gi> is a self-closing tag with <att>wit</att> indicating where in a
+                  witness the lacuna ends.</p>
+               <p>For example, witness <hi rend="bold">N</hi> has a lacuna that begins after the
+                  word <foreign xml:lang="la">metus</foreign> and ends before the word <foreign
+                     xml:lang="la">arcu</foreign> in the following passage: <quote>Mauris ut mauris
+                     et metus pharetra dictum et risus. Suspendisse ut maximus diam. Suspendisse
+                     luctus diam non libero pellentesque, et aliquam ex congue. Suspendisse vitae
+                     lacinia urna, nec egestas arcu. Quisque eget.</quote></p>
+               
+               <p>A traditional apparatus criticus might have the following to indicate the
+                  lacuna:</p>
+               <p>
+                  <quote>pharetra … arcu <hi rend="italic">deest</hi>
+                     <hi rend="bold">N</hi></quote>
+               </p>
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p>Mauris ut mauris et metus <app>
+                        <lem>pharetra</lem>
+                        <rdg wit="#N"><lacunaStart/></rdg>
+                     </app> dictum et risus. Suspendisse ut maximus diam. Suspendisse luctus diam
+                     non libero pellentesque, et aliquam ex congue. Suspendisse vitae lacinia urna,
+                     nec <app>
+                        <lem>egestas</lem>
+                        <rdg wit="#N"><lacunaEnd/></rdg>
+                     </app> arcu. Quisque eget.</p>
+               </egXML>
+               
+               <!-- Add some more description of how this would be displayed, etc. -->
+               
             </div>
             <!-- End of section on lacuna -->
 
