@@ -1744,6 +1744,12 @@
                   only for diplomatic transcriptions of documentary sources, but they are included
                   here in an attempt to be comprehensive. Editors who need to use other special
                   symbols should consult with LDLT staff.</p>
+
+               <p>If reference will be made in the criticial apparatus to the usage of these
+                  symbols, the encoding for the symbols and their contents should be treated
+                  according to the rules in the section "<ref target="apparatus-criticus">Apparatus
+                     Criticus</ref>."</p>
+
                <p>For the sake of uniformity, this section follows closely <bibl><author>Tom
                         Elliott</author>, <author>Gabriel Bodard</author>, <author>Elli
                         Mylonas</author>, <author>Simona Stoyanova</author>, <author>Charlotte
@@ -1755,10 +1761,9 @@
 
                <div xml:id="abbreviation-expansion"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-abbrevfully.html">
-                  <head>Abbreviation Fully Expanded</head>
-                  <p>( ) = The LDLT follows the Epidoc guidelines for encoding fully expanded
-                     abbreviations <ptr
-                        target="http://www.stoa.org/epidoc/gl/latest/trans-abbrevfully.html"/>:</p>
+                  <head>Expansion of Abbreviation</head>
+                  <p>( ) = And editor expands an abbreviation as an aid to reading or to remove
+                     ambiguity.</p>
                   <p>
                      <specList>
                         <specDesc key="expan"/>
@@ -1772,14 +1777,16 @@
                   <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an
                      editor or transcriber when expanding an abbreviation.</p>
                   <p>
-                     <quote>a(bc)</quote>
+                     <quote>M(arcus) Cicero S(alutem) D(ixit) L(ucio) Lucceio Q(uinti)
+                        F(ilio)</quote>
                   </p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <expan>
-                        <abbr>a</abbr>
-                        <ex>bc</ex>
-                     </expan>
+                     <p><expan><abbr>M</abbr><ex>arcus</ex></expan> Cicero
+                              <expan><abbr>S</abbr><ex>alutem</ex><abbr>D</abbr><ex>ixit</ex></expan>
+                        <expan><abbr>L</abbr><ex>ucio</ex></expan> Lucceio
+                              <expan><abbr>Q</abbr><ex>uinti</ex></expan>
+                        <expan><abbr>F</abbr><ex>ilio</ex></expan></p>
                   </egXML>
 
                   <p>Multiple &lt;abbr&gt; elements within a single &lt;expan&gt; compose a single
@@ -1805,22 +1812,10 @@
                      source. (Cf. Epidoc guidelines "Editorial Restoration: Characters Lost But
                      Restored By Modern Editor" <ptr
                         target="http://www.stoa.org/epidoc/gl/latest/trans-restored.html"/>) </p>
-                  <p>
-                     <specList>
-                        <specDesc key="supplied"/>
-                     </specList>
-                  </p>
-                  <p><gi>supplied</gi> signifies text believed by the transcriber or editor to be
-                     missing.</p>
-                  <p><att>reason</att> indicates that text has been omitted, but supplied by
-                     emendation.</p>
-                  <p>
-                     <quote>&lt;abc&gt;</quote>
-                  </p>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <supplied reason="omitted">abc</supplied>
-                  </egXML>
+                  <p>Note that the notation for emendation will be inserted automatically as a
+                     result of the encoding for emendation, as explained in the section "<ref
+                        target="conjecture-and-emendation">Conjecture and Emendation</ref>".</p>
                </div>
                <!-- End section "Text added by emendation -->
 
@@ -2278,7 +2273,8 @@
                   of witnesses.</p>
                <p xml:id="witDetail"><gi>witDetail</gi> (witness detail) contains information about
                   a particular witness (<att>wit</att>) to a lemma (<gi>lem</gi>) or reading
-                     (<gi>rdg</gi>).</p>
+                     (<gi>rdg</gi>). <gi>witDetail</gi> is especially important for reporting <ref
+                     target="correction">corrections</ref>.</p>
                <p xml:id="note"><gi>note</gi> (note) contains editorial comments, bibliographical
                   references, or other information pertaining to the apparatus entry.</p>
 
@@ -2428,7 +2424,7 @@
                   and omissions will be encoded in combination with each other as part of a
                   correction, but since it is possible that they would be encountered by themselves
                   (e.g., addition of a reading in the margin), it seems best to treat them
-                  individually here.</p>
+                  collectively here.</p>
 
                <p>There are two methods of encoding additions and deletions: prose description and
                   semantic markup. Both are demonstrated in each of the following sections.</p>
@@ -2436,8 +2432,9 @@
                <div xml:id="additions">
                   <head>Additions</head>
 
-
-
+                  <p>The following guidelines demonstrate how to produce a notation that text has
+                     been added to a witness, along with information about the place where the text
+                     was added.</p>
                   <p>
                      <specList>
                         <specDesc key="add"/>
@@ -2508,9 +2505,73 @@
                <div xml:id="deletions">
                   <head>Deletions</head>
 
-                  <p>Normally, deletions are part of a correction.</p>
+                  <p>The following guidelines demonstrate how to produce a notation about the
+                     deletion of text from a witness and the method of deletion (if known).</p>
+
+                  <p>
+                     <specList>
+                        <specDesc key="del"/>
+                        <specDesc key="witDetail"/>
+                     </specList>
+                  </p>
+
+                  <p><gi>del</gi> (deletion) contains text that has been deleted.</p>
+                  <p><att>rend</att> (rendition) indicates the method of deletion. Use of
+                        <att>rend</att> is optional. Without it, the generic notation <hi
+                        rend="italic">del.</hi> for <foreign xml:lang="la">delevit</foreign> or
+                        <foreign xml:lang="la">delevi</foreign> will be inserted. Otherwise,
+                        <att>rend</att> with one of the following values will generate a more
+                     specific notation:<list>
+                        <item><hi rend="bold">erasure</hi>: text has been erased or scraped off of
+                           the page, but it is possible to detect what was deleted (<hi
+                              rend="italic">ante ras.</hi>).</item>
+                        <item>expunction: dots have been written under a word to indicate that it
+                           should be deleted (<hi rend="italic">exp.</hi>, q̣ụẹṃ).</item>
+                     </list></p>
+                  <p><gi>witDetail</gi> (witness detail) contains a prose description of the
+                     deletion.</p>
+
+                  <p>The following examples represent deletion as part of a correction.</p>
+
+                  <p>The prose description method uses <gi>witDetail</gi> to describe the
+                     deletion:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>amotae</lem>
+                        <rdg wit="#G" xml:id="rdg-adamote">adamote</rdg>
+                        <rdg wit="#G1" xml:id="rdg-amote">amote</rdg>
+                        <witDetail wit="#G" target="#rdg-adamote" type="correction-original"/>
+                        <witDetail wit="#G1" target="#rdg-amote" type="correction-altered">(ad <hi
+                              rend="italic">exp.</hi>)</witDetail>
+                     </app>
+                  </egXML>
+
+                  <p>The output of this encoding would be amotae] adamote <hi rend="bold">G</hi>
+                     (a.c.), amote <hi rend="bold">G<hi rend="superscript">1</hi></hi> (ad <hi
+                        rend="italic">exp</hi>.)</p>
+
+                  <p>The semantic markup method uses <gi>del</gi> to encode the deletion:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>amotae</lem>
+                        <rdg wit="#G" xml:id="rdg-adamote">adamote</rdg>
+                        <rdg wit="#G1" xml:id="rdg-amote">amote</rdg>
+                        <witDetail wit="#G" target="#rdg-adamote" type="correction-original"/>
+                        <witDetail wit="#G1" target="#rdg-amote" type="correction-altered"><del
+                              rend="exp">ad</del></witDetail>
+                     </app>
+                  </egXML>
                   
-                  <!-- START HERE -->
+                  <p>The output of this encoding would be amotae] adamote <hi rend="bold">G</hi>
+                     (a.c.), amote <hi rend="bold">G<hi rend="superscript">1</hi></hi> (ad <hi
+                        rend="italic">exp</hi>.)</p>
+
+                  <p>The same information is presented in both cases, but the semantic markup
+                     version would support querying and filtering on deletions and methods of deletion.</p>
+
+
                </div>
 
                <div xml:id="omission">
@@ -2808,9 +2869,11 @@
                   edition, only <gi>lem</gi> can have <att>type</att> with value "emendation." It
                   could be inferred that a lemma with <att>source</att> only is an emendation, but
                   in the interest of being explicit, an emendation should be annotated accordingly.
-                  Conversely, only <gi>rdg</gi> may have <att>type</att> with value "conjecture." It
-                  could be inferred that a reading with <att>source</att> only is a conjecture, but
-                  it is best to be explicit in the identification.</p>
+                  This also ensures that the lemma will be displayed or printed with the appropriate
+                  symbols around it (i.e., &lt; &gt;) in the main text of the edition. Conversely,
+                  only <gi>rdg</gi> may have <att>type</att> with value "conjecture." It could be
+                  inferred that a reading with <att>source</att> only is a conjecture, but it is
+                  best to be explicit in the identification.</p>
 
                <p>The following example demonstrates how to encode both an emendation and a
                   conjecture.</p>
@@ -2827,9 +2890,10 @@
                   </app>
                </egXML>
 
-               <p>This encoding will produce the following output: plenumque] <hi rend="italic"
-                     >conj</hi>. Haupt (<hi rend="italic">prob</hi>. Keene <hi rend="italic">et</hi>
-                  Schenkl), primumque <hi rend="bold">ω</hi>
+               <p>This encoding will produce "&lt;plenumque&gt;" in the main text of the edition the
+                  following in the apparatus criticus: plenumque] <hi rend="italic">conj</hi>. Haupt
+                     (<hi rend="italic">prob</hi>. Keene <hi rend="italic">et</hi> Schenkl),
+                  primumque <hi rend="bold">ω</hi>
                   <hi rend="italic">edd</hi>., rivumque Baehr., pronumque C. Schenkl.</p>
 
                <p>If someone has proposed multiple conjectures, they should be contained in
@@ -2847,9 +2911,9 @@
                   </app>
                </egXML>
 
-               <p>This would be displayed as pallenti] ridenti <hi rend="italic">vel</hi> varianti
-                     <hi rend="italic">vel</hi> vernanti <hi rend="italic">vel</hi> roranti <hi
-                     rend="italic">conj</hi>. Heins.</p>
+               <p>This would be displayed in the apparatus criticus as pallenti] ridenti <hi
+                     rend="italic">vel</hi> varianti <hi rend="italic">vel</hi> vernanti <hi
+                     rend="italic">vel</hi> roranti <hi rend="italic">conj</hi>. Heins.</p>
             </div>
             <!-- End of section on conjecture and emendation -->
 
