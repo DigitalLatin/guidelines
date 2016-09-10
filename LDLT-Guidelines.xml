@@ -1801,8 +1801,7 @@
                         ><author>Martin West</author>, <title>Textual Criticism and Editorial
                         Technique</title> (<pubPlace>Stuttgart</pubPlace>, 1973), <biblScope
                         unit="page">80–81</biblScope></bibl>. Many of the symbols will be useful
-                  only for diplomatic transcriptions of documentary sources, but they are included
-                  here in an attempt to be comprehensive. Editors who need to use other special
+                  only for diplomatic transcriptions of documentary sources, but since some texts depend on only one or two witnesses, it is important to represent characteristics such as lacunae and various other kinds of omissions and additions. Editors who need to use other special
                   symbols should consult with LDLT staff.</p>
 
                <p>If reference will be made in the criticial apparatus to the usage of these
@@ -1883,26 +1882,27 @@
                <div xml:id="edition-text-symbols-lacunae">
                   <head>Lacunae</head>
 
-                  <p>Traditionally, lacunae or other gaps that affect the text in general, not just
-                     one manuscript among many, are represented typographically with a combination
-                     of brackets and other symbols. The following sections indicate how to encode
-                     those gaps to produce not only the appropriate typographical representation,
-                     but also data that can be processed and searched.</p>
+                  <p>Traditionally, lacunae or other gaps are represented typographically within the
+                     text (e.g., [ ], ***, &lt;***&gt;) and/or noted in the apparatus criticus. The
+                     following sections indicate how to encode those gaps to produce not only the
+                     appropriate typographical representation, but also data that can be processed
+                     and searched.</p>
 
                   <p>In most cases, lacunae should be acknowledged and annotated in the apparatus
                      criticus, so the following guidelines should be used in combination with the
                         <ref target="#apparatus-criticus">general guidelines for encoding entries in
                         the apparatus criticus</ref>.</p>
 
-                  <p>To indicate a lacuna in just one manuscript among many, see the section "<ref
-                        xml:id="app-crit-lacuna-witness">Lacuna in a Witness</ref>."</p>
+                  <!-- Revise? -->
+                  <p>To draw attention to a lacuna in just one manuscript among many, see the
+                     section "<ref xml:id="app-crit-lacuna-witness">Lacuna in a Witness</ref>."</p>
 
                   <div xml:id="edition-text-symbols-undetermined-loss"
                      corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharunknown.html">
                      <head>Undetermined Amount Of Text Lost</head>
 
-                     <p>[ ] = Text has been lost from one or more witnesses. (Cf. Epidoc guidelines,
-                        "Lost Characters, Quantity Unknown" <ptr
+                     <p>[ ] = An unknown amount of text has been lost from one or more witnesses.
+                        (Cf. Epidoc guidelines, "Lost Characters, Quantity Unknown" <ptr
                            target="http://www.stoa.org/epidoc/gl/latest/trans-lostcharunknown.html"
                         />)</p>
 
@@ -1931,9 +1931,9 @@
                   <!-- End section "Undetermined Amount of Text Lost" -->
 
 
-                  <div xml:id="edition-text-symbols-known-loss"
+                  <div xml:id="edition-text-symbols-known-loss-characters"
                      corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html">
-                     <head>Known Amount Of Text Lost</head>
+                     <head>Known Amount Of Characters Lost</head>
 
                      <p>[ . . . ] = The editor or transcriber knows from context and/or observation
                         how much text has been lost. (Cf. Epidoc guidelines, "Lost Characters,
@@ -1950,7 +1950,7 @@
                      <p><gi>gap</gi> signifies text missing.</p>
                      <p><att>reason</att> with value "lost" indicates that the text has been
                         lost.</p>
-                     <p><att>quantity</att> indicates the amount of text has been lost.</p>
+                     <p><att>quantity</att> indicates the number of characters lost.</p>
                      <p><att>unit</att> indicates the unit measured in <att>quantity</att>.</p>
 
                      <p>
@@ -1967,11 +1967,11 @@
 
                   <div xml:id="edition-text-symbols-lost-lines-known"
                      corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostlineknown.html">
-                     <head>Known Number of Lines Lost</head>
+                     <head>Known Number of Lines of Verse Lost</head>
 
-                     <p>[------] = A known quantity of lines has been lost, or is conjectured to
-                        have been lost from the text of all witnesses. (Cf. Epidoc guidelines, "Lost
-                        Lines, Quantity Known" <ptr
+                     <p>[-----] = A known quantity of lines of verse has been lost, or is
+                        conjectured to have been lost from the text of one or more witnesses. (Cf.
+                        Epidoc guidelines, "Lost Lines, Quantity Known" <ptr
                            target="http://www.stoa.org/epidoc/gl/latest/trans-lostlineknown.html"
                         />)</p>
 
@@ -2833,27 +2833,17 @@
                <p><gi>lacunaEnd</gi> is a self-closing tag with <att>wit</att> indicating where the
                   lacuna ends in a witness.</p>
 
-               <p>For example, witness <hi rend="bold">N</hi> has a lacuna that begins after the
-                  word <foreign xml:lang="la">metus</foreign> and ends before the word <foreign
-                     xml:lang="la">arcu</foreign> in the following passage: <quote/></p>
+               <p>For example, witness <hi rend="bold">M</hi> has a lacuna from the beginning of the
+                  first book of Julius Caesar's <bibl><title>de bello Gallico</title></bibl> to
+                  section 1.33.3.</p>
 
-               <p>A traditional apparatus criticus might have the following to indicate the
-                  lacuna:</p>
-               <p>
-                  <quote>pharetra … arcu <hi rend="italic">deest</hi>
-                     <hi rend="bold">N</hi></quote>
-               </p>
+               <p>Cynthia Damon notes the lacuna in her OCT edition as follows: <quote>1.1.1–1.33.3
+                        <hi rend="italic">M deest, vice eius m citatur</hi>.</quote></p>
+
+               <p>In an LDLT edition, that same information would be encoded as follows:</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <p>Mauris ut mauris et metus <app>
-                        <lem>pharetra</lem>
-                        <rdg wit="#N"><lacunaStart/></rdg>
-                     </app> dictum et risus. Suspendisse ut maximus diam. Suspendisse luctus diam
-                     non libero pellentesque, et aliquam ex congue. Suspendisse vitae lacinia urna,
-                     nec <app>
-                        <lem>egestas</lem>
-                        <rdg wit="#N"><lacunaEnd/></rdg>
-                     </app> arcu. Quisque eget.</p>
+                  <p/>
                </egXML>
 
                <!-- Add some more description of how this would be displayed, etc. -->
@@ -3169,7 +3159,9 @@
 
                <p>It is up to the editor to decide how extensively to apply these analytical tags,
                   if at all. If analytical tags are used, the preface should make clear which ones
-                  are used and why they are used.</p>
+                  are used and why they are used. For example, an editor may wish only to tag
+                  orthographical variants so that users can filter them in or out of the text as
+                  they please.</p>
 
                <p>
                   <specList>
@@ -3221,6 +3213,7 @@
                </egXML>
             </div>
             <!-- End of section on analytical tagging. -->
+            <!-- Need section on bibliography on apparatus -->
          </div>
          <!-- End of section on the apparatus criticus -->
       </body>
