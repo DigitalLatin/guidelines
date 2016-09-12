@@ -1612,6 +1612,8 @@
             </div>
             <!-- End of section on verse -->
 
+            <!-- Insert overarching div on quotation, to include sections on quoted speech and quoted passages, in addition to the section on Dialogue -->
+
             <div xml:id="edition-text-dialogue">
                <head>Dialogue</head>
 
@@ -1794,15 +1796,104 @@
             </div>
             <!-- End of section on places -->
 
+            <div xml:id="edition-text-symbols-abbreviation-expansion"
+               corresp="http://www.stoa.org/epidoc/gl/latest/trans-abbrevfully.html">
+               <head>Expansion of Abbreviation</head>
+
+               <p>( ) = And editor expands an abbreviation as an aid to reading or to remove
+                  ambiguity.</p>
+               <p>
+                  <specList>
+                     <specDesc key="expan"/>
+                     <specDesc key="abbr"/>
+                     <specDesc key="ex"/>
+                  </specList>
+               </p>
+               <p><gi>expan</gi> (expansion) contains the full expansion of an abbreviation.</p>
+               <p><gi>abbr</gi> (abbreviation) contains the abbreviated part, i.e. the letters
+                  actually on the page.</p>
+               <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an
+                  editor or transcriber when expanding an abbreviation.</p>
+               <p>
+                  <quote>M(arcus) Cicero S(alutem) D(ixit) L(ucio) Lucceio Q(uinti) F(ilio)</quote>
+               </p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p><expan><abbr>M</abbr><ex>arcus</ex></expan> Cicero
+                           <expan><abbr>S</abbr><ex>alutem</ex><abbr>D</abbr><ex>ixit</ex></expan>
+                     <expan><abbr>L</abbr><ex>ucio</ex></expan> Lucceio
+                           <expan><abbr>Q</abbr><ex>uinti</ex></expan>
+                     <expan><abbr>F</abbr><ex>ilio</ex></expan></p>
+               </egXML>
+
+               <p>Multiple &lt;abbr&gt; elements within a single &lt;expan&gt; compose a single
+                  abbreviation between them. For example, e.g. is one abbreviation for the phrase
+                  "exempli gratia."</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <expan>
+                     <abbr>e</abbr>
+                     <ex>xempli</ex>
+                     <abbr>g</abbr>
+                     <ex>ratia</ex>
+                  </expan>
+               </egXML>
+
+            </div>
+            <!-- End section "Abbreviation Fully Expanded" -->
+
             <div xml:id="edition-text-symbols">
                <head>Symbols Commonly Used in the Text of a Critical Edition</head>
 
-               <p>The symbols in this section have been gleaned from <bibl xml:id="West"
-                        ><author>Martin West</author>, <title>Textual Criticism and Editorial
-                        Technique</title> (<pubPlace>Stuttgart</pubPlace>, 1973), <biblScope
-                        unit="page">80–81</biblScope></bibl>. Many of the symbols will be useful
-                  only for diplomatic transcriptions of documentary sources, but since some texts depend on only one or two witnesses, it is important to represent characteristics such as lacunae and various other kinds of omissions and additions. Editors who need to use other special
-                  symbols should consult with LDLT staff.</p>
+               <p>Over time, certain typographical conventions have become standard for representing
+                  lacunae, omissions, gaps, editorial deletions, and other information. These
+                  guidelines observe the standard as described by <bibl xml:id="West"><author>Martin
+                        West</author> in <title>Textual Criticism and Editorial Technique</title>
+                        (<pubPlace>Stuttgart</pubPlace>, 1973), <biblScope unit="page"
+                        >80–81</biblScope></bibl>, but they call for semantically encoding them
+                  instead of simply inserting the various punctuation marks and other symbols that
+                  represent complex information. The encoding will still produce the standard
+                  symbols, but the information they represent will be explicit in form readable by
+                  humans and machines, which means that it will also be available for processing,
+                  querying, and analyzing with digital tools.</p>
+
+               <p>Since most of the standard symbols have some corresponding annotation in the
+                  critical apparatus, their encoding is described in the section "<ref
+                     target="apparatus-criticus">Apparatus Criticus</ref>."</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                <p>If reference will be made in the criticial apparatus to the usage of these
                   symbols, the encoding for the symbols and their contents should be treated
@@ -1818,296 +1909,17 @@
                         target="http://www.stoa.org/epidoc/gl/latest"
                         >http://www.stoa.org/epidoc/gl/latest</ref></bibl>.</p>
 
-               <div xml:id="edition-text-symbols-abbreviation-expansion"
-                  corresp="http://www.stoa.org/epidoc/gl/latest/trans-abbrevfully.html">
-                  <head>Expansion of Abbreviation</head>
-                  <p>( ) = And editor expands an abbreviation as an aid to reading or to remove
-                     ambiguity.</p>
-                  <p>
-                     <specList>
-                        <specDesc key="expan"/>
-                        <specDesc key="abbr"/>
-                        <specDesc key="ex"/>
-                     </specList>
-                  </p>
-                  <p><gi>expan</gi> (expansion) contains the full expansion of an abbreviation.</p>
-                  <p><gi>abbr</gi> (abbreviation) contains the abbreviated part, i.e. the letters
-                     actually on the page.</p>
-                  <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an
-                     editor or transcriber when expanding an abbreviation.</p>
-                  <p>
-                     <quote>M(arcus) Cicero S(alutem) D(ixit) L(ucio) Lucceio Q(uinti)
-                        F(ilio)</quote>
-                  </p>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <p><expan><abbr>M</abbr><ex>arcus</ex></expan> Cicero
-                              <expan><abbr>S</abbr><ex>alutem</ex><abbr>D</abbr><ex>ixit</ex></expan>
-                        <expan><abbr>L</abbr><ex>ucio</ex></expan> Lucceio
-                              <expan><abbr>Q</abbr><ex>uinti</ex></expan>
-                        <expan><abbr>F</abbr><ex>ilio</ex></expan></p>
-                  </egXML>
 
-                  <p>Multiple &lt;abbr&gt; elements within a single &lt;expan&gt; compose a single
-                     abbreviation between them. For example, e.g. is one abbreviation for the phrase
-                     "exempli gratia."</p>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <expan>
-                        <abbr>e</abbr>
-                        <ex>xempli</ex>
-                        <abbr>g</abbr>
-                        <ex>ratia</ex>
-                     </expan>
-                  </egXML>
-
-               </div>
-               <!-- End section "Abbreviation Fully Expanded" -->
-
-               <div xml:id="edition-text-symbols-emendation"
-                  corresp="http://www.stoa.org/epidoc/gl/latest/trans-restored.html">
-                  <head>Text added by emendation</head>
-                  <p>&lt; &gt; = An editor supplies text believed to be missing from the original
-                     source. (Cf. Epidoc guidelines "Editorial Restoration: Characters Lost But
-                     Restored By Modern Editor" <ptr
-                        target="http://www.stoa.org/epidoc/gl/latest/trans-restored.html"/>) </p>
-
-                  <p>Note that the notation for emendation (&lt; &gt;) will be inserted
-                     automatically by the encoding for emendation, as explained in the section "<ref
-                        target="#apparatus-criticus-conjecture-and-emendation">Conjecture and
-                        Emendation</ref>".</p>
-               </div>
                <!-- End section "Text added by emendation -->
 
-               <div xml:id="edition-text-symbols-lacunae">
-                  <head>Lacunae</head>
-
-                  <p>Traditionally, lacunae or other gaps are represented typographically within the
-                     text (e.g., [ ], ***, &lt;***&gt;) and/or noted in the apparatus criticus. The
-                     following sections indicate how to encode those gaps to produce not only the
-                     appropriate typographical representation, but also data that can be processed
-                     and searched.</p>
-
-                  <p>In most cases, lacunae should be acknowledged and annotated in the apparatus
-                     criticus, so the following guidelines should be used in combination with the
-                        <ref target="#apparatus-criticus">general guidelines for encoding entries in
-                        the apparatus criticus</ref>.</p>
-
-                  <!-- Revise? -->
-                  <p>To draw attention to a lacuna in just one manuscript among many, see the
-                     section "<ref xml:id="app-crit-lacuna-witness">Lacuna in a Witness</ref>."</p>
-
-                  <div xml:id="edition-text-symbols-undetermined-loss"
-                     corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharunknown.html">
-                     <head>Undetermined Amount Of Text Lost</head>
-
-                     <p>[ ] = An unknown amount of text has been lost from one or more witnesses.
-                        (Cf. Epidoc guidelines, "Lost Characters, Quantity Unknown" <ptr
-                           target="http://www.stoa.org/epidoc/gl/latest/trans-lostcharunknown.html"
-                        />)</p>
-
-                     <p>
-                        <specList>
-                           <specDesc key="gap"/>
-                        </specList>
-                     </p>
-
-                     <p><gi>gap</gi> signifies text missing because of damage.</p>
-                     <p><att>reason</att> with value "lost" indicates that the text has been
-                        lost.</p>
-                     <p><att>extent</att> with value "unknown" indicates that an undetermined amount
-                        of text has been lost.</p>
-                     <p><att>unit</att> with value "characters" indicates that an unspecified number
-                        of characters (whether single characters or words or larger groups of text)
-                        have been lost.</p>
-                     <p>
-                        <quote>[ ]</quote>
-                     </p>
-
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <gap reason="lost" extent="unknown" unit="character"/>
-                     </egXML>
-                  </div>
-                  <!-- End section "Undetermined Amount of Text Lost" -->
 
 
-                  <div xml:id="edition-text-symbols-known-loss-characters"
-                     corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html">
-                     <head>Known Amount Of Characters Lost</head>
 
-                     <p>[ . . . ] = The editor or transcriber knows from context and/or observation
-                        how much text has been lost. (Cf. Epidoc guidelines, "Lost Characters,
-                        Quantity Known" <ptr
-                           target="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html"
-                        />)</p>
-
-                     <p>
-                        <specList>
-                           <specDesc key="gap"/>
-                        </specList>
-                     </p>
-
-                     <p><gi>gap</gi> signifies text missing.</p>
-                     <p><att>reason</att> with value "lost" indicates that the text has been
-                        lost.</p>
-                     <p><att>quantity</att> indicates the number of characters lost.</p>
-                     <p><att>unit</att> indicates the unit measured in <att>quantity</att>.</p>
-
-                     <p>
-                        <quote>[ ... ]</quote>
-                     </p>
-
-                     <p>Each underdot represents a missing character.</p>
-
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <gap reason="lost" quantity="3" unit="character"/>
-                     </egXML>
-                  </div>
-                  <!-- End section "Known amount of text lost" -->
-
-                  <div xml:id="edition-text-symbols-lost-lines-known"
-                     corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostlineknown.html">
-                     <head>Known Number of Lines of Verse Lost</head>
-
-                     <p>[-----] = A known quantity of lines of verse has been lost, or is
-                        conjectured to have been lost from the text of one or more witnesses. (Cf.
-                        Epidoc guidelines, "Lost Lines, Quantity Known" <ptr
-                           target="http://www.stoa.org/epidoc/gl/latest/trans-lostlineknown.html"
-                        />)</p>
-
-                     <p>
-                        <specList>
-                           <specDesc key="gap"/>
-                        </specList>
-                     </p>
-
-                     <p><gi>gap</gi> signifies that text is missing.</p>
-                     <p><att>reason</att> with value "lost" indicates that the text has been
-                        lost.</p>
-                     <p><att>quantity</att> indicates the number of lines missing.</p>
-                     <p><att>unit</att> with value "line" indicates the unit measured in
-                           <att>quantity</att>.</p>
-
-                     <p>
-                        <quote>[------]</quote>
-                     </p>
-
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <gap reason="lost" quantity="3" unit="line"/>
-                     </egXML>
-
-                     <p>Note that the brackets and the dashes represent one missing line. The number
-                        in <att>quantity</att> will determine the number of instances of that group
-                        of characters, one per line.</p>
-                  </div>
-                  <!-- End section "Known Number of Lines Lost" -->
-
-                  <div xml:id="edition-text-symbols-lost-lines-unknown"
-                     corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostlineunknown.html">
-                     <head>Unknown Number of Lines Lost</head>
-
-                     <p>- - - - - - = An unknown quantity of lines has been lost, or is conjectured
-                        to have been lost from the text of all witnesses. (Cf. Epidoc guidelines,
-                        "Lost Lines, Quantity Unknown" <ptr
-                           target="http://www.stoa.org/epidoc/gl/latest/trans-lostlineunknown.html"
-                        />)</p>
-
-                     <p>
-                        <specList>
-                           <specDesc key="gap"/>
-                        </specList>
-                     </p>
-
-                     <p><gi>gap</gi> signifies that text is missing.</p>
-                     <p><att>reason</att> with value "lost" indicates that the text has been
-                        lost.</p>
-                     <p><att>extent</att> with value "unknown" indicates that nothing more is known
-                        about the amount of text that has been lost.</p>
-                     <p><att>unit</att> with value "line" indicates the unit measured in
-                           <att>extent</att>.</p>
-
-                     <p>
-                        <quote>- - - - - -</quote>
-                     </p>
-
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <gap reason="lost" extent="unknown" unit="line"/>
-                     </egXML>
-                  </div>
-                  <!-- End section "Unknown Number of Lines Lost" -->
-               </div>
-               <!-- End of section on lacunae -->
-
-
-               <div xml:id="edition-text-symbols-editorial-deletion"
-                  corresp="http://www.stoa.org/epidoc/gl/latest/trans-superfluous.html">
-                  <head>Editorial Deletion</head>
-
-                  <p>{ } = Text suspected by the editor to be superfluous, but retained in the main
-                     text to indicate its traditional attribution to the author. (Cf. Epidoc
-                     guidelines, "Superfluous Text" <ptr
-                        target="http://www.stoa.org/epidoc/gl/latest/trans-superfluous.html"/>)</p>
-
-                  <p>Square brackets have been used to indicate editorial deletions in the past,
-                     but, as <ref target="#West">West</ref> argues (p. 80), this is apt to cause
-                     confusion, since they have a different meaning for papyrologists and
-                     epigraphists (see "<ref target="#edition-text-symbols-undetermined-loss"
-                        >Undetermined Amount Of Text Lost</ref>" in these guidelines). Accordingly,
-                     LDLT editions follow West's suggestion to use braces to indicate editorial
-                     deletions.</p>
-
-                  <p>
-                     <specList>
-                        <specDesc key="surplus"/>
-                     </specList>
-                  </p>
-
-                  <p><gi>surplus</gi> signifies text identified by the editor as added by someone
-                     other than the original author.</p>
-
-                  <p>
-                     <quote>{lorem ipsum}</quote>
-                  </p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <surplus reason="interpolation">lorem ipsum</surplus>
-                  </egXML>
-
-                  <p>To generate a note about the interpolation, its encoding should be combined
-                     with the encoding for an entry in the apparatus criticus. See the section on
-                     the "<ref target="#apparatus-criticus">Apparatus Criticus</ref>" for more
-                     information.</p>
-               </div>
                <!-- End of section "Editorial Deletion" -->
 
-               <div xml:id="edition-text-symbols-crux"
-                  corresp="http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html">
-                  <head>Crux</head>
-                  <p>† † = Text deemed by the editor to be irredeemably corrupt.</p>
-                  <p>
-                     <specList>
-                        <specDesc key="sic"/>
-                     </specList>
-                  </p>
-                  <p><gi>sic</gi> indicates that the text is readable but not understandable. In
-                     this usage it is not paired with its customary partner <gi>corr</gi> because
-                     the nature of a crux is that it cannot be corrected.</p>
-                  <p>
-                     <quote> … subiectisque eas rotis funibus iumentisque †obiectis† derectis
-                        plateis in quamcumque erat uisum partem mouebant</quote>
-                  </p>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <p> … subiectisque eas rotis funibus iumentisque <sic>obiectis</sic> derectis
-                        plateis in quamcumque erat uisum partem mouebant</p>
-                  </egXML>
-
-                  <p>To generate a note about the crux, its encoding should be combined with the
-                     encoding for an entry in the apparatus criticus. See the section on the "<ref
-                        target="#apparatus-criticus">Apparatus Criticus</ref>" for more
-                     information.</p>
-               </div>
-               <!-- End of section "Crux" -->
             </div>
             <!-- End section on symbols in the main text. -->
          </div>
@@ -2610,34 +2422,283 @@
                </div>
                <!-- End of section on the use of catch-all references -->
             </div>
-            <!-- End of section on basic apparatus entries -->
+            <!-- End of section on basic apparatus entry -->
 
-            <div xml:id="apparatus-criticus-addition-deletions-omissions">
-               <head>Additions, Deletions, and Omissions</head>
+            <div xml:id="apparatus-criticus-symbols-gaps-lacunae-omissions">
+               <head>Lacunae and Omissions</head>
 
-               <p>The following sections provide guidelines for representing additions, deletions,
-                  and omissions in particular witnesses, as opposed to the tradition as a whole (for
-                  which see the section "<ref target="#edition-text-symbols">Symbols Commonly Used
-                     in the Text of a Critical Edition</ref>").</p>
+               <p>Traditionally, lacunae and omissions are represented typographically within the
+                  text (e.g., [ ], ***, &lt;***&gt;) and/or noted in the apparatus criticus. The
+                  following sections indicate how to encode those gaps to produce not only the
+                  appropriate typographical representation in the main text of the edition, but also
+                  annotations in the apparatus. Encoding this information will also turn it into
+                  data that can be processed and searched.</p>
 
-               <p>In most cases, additions, deletions, and omissions will be encoded in combination
-                  with each other as part of a correction, but since it is possible that they would
-                  be encountered by themselves (e.g., addition of a reading in the margin), it seems
-                  best to treat them collectively here.</p>
+               <div xml:id="apparatus-criticus-lacuna-physical-loss">
+                  <head>Lacuna (Physical Loss)</head>
 
-               <p>There are two methods of encoding additions and deletions: prose description and
-                  semantic markup. Both are demonstrated in each of the following sections.</p>
+                  <p>*** = An unknown amount of text has been lost from one or more witnesses
+                     because of damage.</p>
 
-               <div xml:id="apparatus-criticus-additions">
-                  <head>Additions</head>
 
-                  <p>The following guidelines demonstrate how to produce a notation that text has
-                     been added to a witness, along with information about the place where the text
-                     was added.</p>
+                  <p>For example, sections 1.1–1.33.3 of Julius Caesar's <bibl><title>de Bello
+                           Civili</title></bibl> are missing from manuscript <hi rend="bold">M</hi>.
+                     Cynthia Damon's OCT edition has the following in the main text: ***Litteris.
+                     The critical apparatus has <quote>1.1.1–1.33.3 <hi rend="italic">M deest, vice
+                           eius m citatur</hi></quote>.</p>
+
+                  <p>In an LDLT edition, that should be encoded as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem wit="#M" xml:id="M-lacuna-1.1"><lacunaStart/></lem>
+                        <witDetail wit="#M" target="#M-lacuna-1.1">1.1.1–1.33.3 M deest, vice eius m
+                           citatur.</witDetail>
+                     </app>Litteris </egXML>
+
+                  <p>At 1.33.3, the apparatus criticus has: <quote>-duum <hi rend="italic">hinc
+                           adest M</hi></quote>. In an LDLT edition, that should be encoded as
+                     follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>Sic tri<app>
+                           <lem>duum</lem>
+                           <rdg wit="#M" xml:id="rdg-1.33.3-lacunaEnd"><lacunaEnd/></rdg>
+                           <witDetail wit="#M" target="#rdg-1.33.3-lacunaEnd">hinc adest
+                              M</witDetail>
+                        </app> disputationibus …</p>
+                  </egXML>
+
+               </div>
+
+               <div xml:id="apparatus-criticus-lacuna-conjecture">
+                  <head>Lacuna Conjectured, No Text Supplied</head>
+
+                  <p>&lt;***&gt; = A lacuna has been conjectured on the grounds of style, context,
+                     or some other reason. No text has been supplied in its place.</p>
+
+                  <p>
+                     <specList>
+                        <specDesc key="gap"/>
+                     </specList>
+                  </p>
+
+                  <p><gi>gap</gi> signifies that text is missing.</p>
+                  <p><att>reason</att> with value "lost" indicates that the text has been lost.</p>
+
+                  <p>If the conjectured lacuna has been accepted by the editor of the edition,
+                        <gi>lem</gi> with <att>type</att>="emendation" should contain <gi>gap</gi>.
+                     If the conjectured lacuna is only noted in the apparatus criticus, then
+                        <gi>rdg</gi> with <att>type</att>="conjecture" should contain <gi>gap</gi>.
+                     For more on encoding conjecture and emendation see the section "<ref
+                        target="#apparatus-criticus-conjecture-and-emendation">Conjecture and
+                        Emendation</ref>".</p>
+
+                  <p>For example, at the conclusion of section 3.8.4 of Julius Caesar's
+                           <bibl><title>de Bello Civili</title></bibl>, Cynthia Damon's OCT edition
+                     has the following in the main text: si in Caesaris complexum uenire posset ***.
+                     The apparatus criticus has the following annotation: <hi rend="italics">lacunam
+                        statuit Vascosanus</hi>.</p>
+
+                  <p>In an LDLT edition, that should be encoded as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>si in Caesaris complexum uenire posset <app>
+                           <lem source="#Vascosanus" type="emendation"><gap reason="lost"/></lem>
+                        </app></p>
+                  </egXML>
+
+                  <p>The same encoding should be used to indicated the conjectured lacuna of a
+                     number of lines of verse. For example, <bibl xml:id="Verdière"><author>Raoul
+                           Verdière</author></bibl> argues that nine verses have been omitted by the
+                     copyist of the archetype of all manuscripts of Calpurnius Siculus' eclogues. He
+                     prints nine lines of equally spaced dots in the text, and he writes in the
+                     apparatus criticus, <quote>u. 1–9 <hi rend="italics">librarii incuria cecidisse
+                           puto</hi>.</quote></p>
+
+                  <p>If the editor of an LDLT edition of Calpurnius accepts this argument,
+                     Verdière's conjecture would be encoded as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app type="line-omission">
+                        <lem source="#Verdière" xml:id="lem-1.1-9">
+                           <l n="1"><gap reason="lost"/></l>
+                           <l n="2"><gap reason="lost"/></l>
+                           <l n="3"><gap reason="lost"/></l>
+                           <l n="4"><gap reason="lost"/></l>
+                           <l n="5"><gap reason="lost"/></l>
+                           <l n="6"><gap reason="lost"/></l>
+                           <l n="7"><gap reason="lost"/></l>
+                           <l n="8"><gap reason="lost"/></l>
+                           <l n="9"><gap reason="lost"/></l>
+                        </lem>
+                        <note target="#lem-1.1-9">u. 1–9 librarii incuria cecidisse putavit
+                           Verdière</note>
+                     </app>
+                  </egXML>
+
+                  <p>In the digital or print version, nine lines of &lt; *** &gt; would be printed
+                     at the beginning of the text, and the numbering of the lines that follow would
+                     begin with 10. The apparatus criticus would have the entry <quote>u. 1–9
+                        librarii incuria cecidisse putavit Verdière</quote>.</p>
+               </div>
+               <!-- End section "Lacuna Conjectured, No Text Supplied" -->
+
+
+               <div xml:id="edition-text-symbols-known-loss-characters"
+                  corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html">
+                  <head>Known Amount Of Characters Lost</head>
+
+                  <p>[ . . . ] = The editor knows from context and/or observation how many
+                     characters have been lost.</p>
+
+                  <p>
+                     <specList>
+                        <specDesc key="gap"/>
+                     </specList>
+                  </p>
+
+                  <p><gi>gap</gi> signifies text missing.</p>
+                  <p><att>reason</att> with value "lost" indicates that the text has been lost.</p>
+                  <p><att>quantity</att> indicates the number of characters lost.</p>
+                  <p><att>unit</att> with value "characters" indicates the unit measured in
+                        <att>quantity</att>.</p>
+
+                  <p>
+                     <quote>[ ... ]</quote>
+                  </p>
+
+                  <p>Each dot represents a missing character.</p>
+
+                  <p>For example, in the apparatus criticus to Calp. 4.4, <bibl xml:id="Giarratano"
+                           ><author>Giarratano</author></bibl> has the following with reference to
+                     lemma <foreign xml:lang="la">spiritus amnis</foreign>: <quote>sp&#099;&#773; N
+                        (deinde lac. 6 litt.)</quote>.</p>
+
+                  <p>In an LDLT edition, that would be encoded as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l n="4">ripa levatque diem vicini <app>
+                           <lem>spiritus amnis</lem>
+                           <rdg wit="#N">sp&#099;&#773; <gap reason="lost" quantity="6"
+                                 unit="characters"/></rdg>
+                        </app>? </l>
+                  </egXML>
+
+                  <p>That encoding would produce the following entry in the apparatus: <quote>spc̅
+                        [......]</quote>. If it is desirable to supplement that with a note, the
+                        <gi>rdg</gi> should be given an <att>xml:id</att> and the note should be
+                     inserted in a <gi>witDetail</gi> pointing to it:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l n="4">ripa levatque diem vicini <app>
+                           <lem>spiritus amnis</lem>
+                           <rdg wit="#N" xml:id="rdg-4.4-spiritus-amnis">spc̅ <gap reason="lost"
+                                 quantity="6" unit="characters"/></rdg>
+                           <witDetail wit="#N" target="#rdg-4.4-spiritus-amnis">lac. 6
+                              litt.</witDetail>
+                        </app>? </l>
+                  </egXML>
+               </div>
+               <!-- End section "Known amount of text lost" -->
+
+               <div xml:id="apparatus-criticus-omission">
+                  <head>Omission</head>
+
+                  <p>This section explains how to encode omission of text from a witness. Omission
+                     is different from a lacuna because omission may be the result of something
+                     other than physical damage to a witness. Omission can occur when a copyist
+                     accidentally skips a word, a line, or a whole section.</p>
+
+                  <p>For example, the witness known as "P" has omitted the word <foreign
+                        xml:lang="la">pecus</foreign> from the following text: <foreign
+                        xml:lang="la">securo custode pecus nocturnaque pastor</foreign>. The
+                     traditional apparatus criticus indicates the omission as follows: pecus <hi
+                        rend="italic">om.</hi>
+                     <hi rend="bold">P</hi></p>
+
+                  <p>In these guidelines, omission is represented by a so-called "self-closing" or
+                     empty <gi>rdg</gi> (&lt;rdg/&gt;):</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l>securo custode <app>
+                           <lem>pecus</lem>
+                           <rdg wit="#P"/>
+                        </app> nocturnaque pastor</l>
+                  </egXML>
+
+                  <p>The same model applies to the omission of an entire line of verse by a witness
+                     or witnesses, but in that case <gi>app</gi> has <att>type</att>="line-omission"
+                     and <gi>lem</gi> contains the entire line, with the omission marked by a
+                     self-closing <gi>rdg</gi>:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app type="line-omission">
+                        <lem>
+                           <l n="3">et spument rauco ferventia musta susurro.</l>
+                        </lem>
+                        <rdg wit="#n #h"/>
+                     </app>
+                  </egXML>
+
+                  <p>This will be displayed in the apparatus criticus as <quote><hi rend="italic"
+                           >vers. om.</hi>
+                        <hi rend="bold">n h</hi></quote></p>
+               </div>
+               <!-- End of section on omission -->
+            </div>
+            <!-- End of section on lacunae and omission -->
+
+            <div xml:id="apparatus-criticus-addition">
+               <head>Addition</head>
+
+               <p>The following guidelines demonstrate how to indicate that text has been added to a
+                  witness. There are two methods for encoding additions: prose description and
+                  semantic markup. Both are described in this section. The same information is
+                  presented in both cases, but the semantic markup version would support querying
+                  and filtering on readings added in the margin (or elsewhere).</p>
+
+               <div xml:id="apparatus-criticus-addition-prose">
+                  <head>Addition: Prose Description</head>
+
+                  <p>
+                     <specList>
+                        <specDesc key="witDetail"/>
+                     </specList>
+                  </p>
+
+                  <p><gi>witDetail</gi> (witness detail) contains a prose description of the
+                     addition.</p>
+
+                  <p>For example, the copyist of manuscript <hi rend="bold">G</hi> has the <ref
+                        target="#lem">lemma</ref>
+                     <foreign xml:lang="la">certare</foreign>, but a later hand has added the
+                     variant reading <foreign xml:lang="la">certate</foreign> in the margin.</p>
+                  <p>
+                     <quote>89 certare] certate <hi rend="bold">G<hi rend="superscript">1</hi></hi>
+                        <hi rend="italic">in mg.</hi></quote>
+                  </p>
+
+                  <p>The prose description method uses <gi>witDetail</gi> to describe the
+                     addition:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>certare</lem>
+                        <rdg wit="#G1" xml:id="rdg-certate">certate</rdg>
+                        <witDetail wit="#G1" target="#rdg-certate">(add. in mg.)</witDetail>
+                     </app>
+                  </egXML>
+               </div>
+               <!-- End of section on addition: prose description -->
+
+               <div xml:id="apparatus-criticus-addition-semantic">
+                  <head>Addition: Semantic Markup</head>
+
+                  <p>The semantic markup method uses <gi>add</gi> to encode the addition:</p>
+
                   <p>
                      <specList>
                         <specDesc key="add"/>
-                        <specDesc key="witDetail"/>
                      </specList>
                   </p>
 
@@ -2662,75 +2723,47 @@
                      </list>
                   </p>
 
-                  <p><gi>witDetail</gi> (witness detail) contains a prose description of the
-                     addition.</p>
-
-                  <p>Example: The copyist of manuscript <hi rend="bold">G</hi> has the <ref
-                        target="#lem">lemma</ref>
-                     <foreign xml:lang="la">certare</foreign>, but a later hand has added the
-                     variant reading <foreign xml:lang="la">certate</foreign> in the margin.</p>
-                  <p>
-                     <quote>89 certare] certate <hi rend="bold">G<hi rend="superscript">1</hi></hi>
-                        <hi rend="italic">in mg.</hi></quote>
-                  </p>
-
-                  <p>The prose description method uses <gi>witDetail</gi> to describe the
-                     addition:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem>certare</lem>
-                        <rdg wit="#G1" xml:id="rdg-certate">certate</rdg>
-                        <witDetail wit="#G1" target="#rdg-certate">(add. in mg.)</witDetail>
-                     </app>
-                  </egXML>
-
-                  <p>The semantic markup method uses <gi>add</gi> to encode the addition:</p>
-
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app>
                         <lem>certare</lem>
                         <rdg wit="#G1"><add place="margin">certate</add></rdg>
                      </app>
                   </egXML>
-
-                  <p>The same information is presented in both cases, but the semantic markup
-                     version would support querying and filtering on readings added in the margin
-                     (or elsewhere).</p>
-
                </div>
-               <!-- End of section on additions -->
+               <!-- End of section on addition: semantic markup -->
+            </div>
+            <!-- End of section on additions -->
 
-               <div xml:id="apparatus-criticus-deletions">
-                  <head>Deletions</head>
+            <div xml:id="apparatus-criticus-deletions">
+               <head>Deletions</head>
 
-                  <p>The following guidelines demonstrate how to produce a notation about the
-                     deletion of text from a witness and the method of deletion (if known).</p>
+               <p>The following guidelines demonstrate how to produce a notation about the deletion
+                  of text from a witness and the method of deletion (if known).</p>
+
+               <p>For deletions made by the editor of the current edition or a previous editor, see
+                  the section "Editorial Deletions."</p>
+
+               <p>Deletion almost always occurs as part of a correction. In that case, this section
+                  should be used in combination with the guidelines in the section "<ref
+                     target="#apparatus-criticus-correction">Correction</ref>". The examples in this
+                  section represent deletion as part of a correction.</p>
+
+               <p>There are two methods for encoding deletions: prose description and semantic
+                  markup. Both are described in this section. The same information is presented in
+                  both cases, but the semantic markup version would support querying and filtering
+                  on deleted readings and the method of deletion.</p>
+
+               <div xml:id="apparatus-criticus-deletion-prose">
+                  <head>Deletion: Prose Description</head>
 
                   <p>
                      <specList>
-                        <specDesc key="del"/>
                         <specDesc key="witDetail"/>
                      </specList>
                   </p>
 
-                  <p><gi>del</gi> (deletion) contains text that has been deleted.</p>
-                  <p><att>rend</att> (rendition) indicates the method of deletion. Use of
-                        <att>rend</att> is optional. Without it, the generic notation <hi
-                        rend="italic">del.</hi> for <foreign xml:lang="la">delevit</foreign> or
-                        <foreign xml:lang="la">delevi</foreign> will be inserted. Otherwise,
-                        <att>rend</att> with one of the following values will generate a more
-                     specific notation:<list>
-                        <item><hi rend="bold">erasure</hi>: text has been erased or scraped off of
-                           the page, but it is possible to detect what was deleted (<hi
-                              rend="italic">ante ras.</hi>).</item>
-                        <item>expunction: dots have been written under a word to indicate that it
-                           should be deleted (<hi rend="italic">exp.</hi>).</item>
-                     </list></p>
                   <p><gi>witDetail</gi> (witness detail) contains a prose description of the
                      deletion.</p>
-
-                  <p>The following examples represent deletion as part of a correction.</p>
 
                   <p>The prose description method uses <gi>witDetail</gi> to describe the
                      deletion:</p>
@@ -2749,8 +2782,33 @@
                   <p>The output of this encoding would be amotae] adamote <hi rend="bold">G</hi>
                      (a.c.), amote <hi rend="bold">G<hi rend="superscript">1</hi></hi> (ad <hi
                         rend="italic">exp</hi>.)</p>
+               </div>
+               <!-- End of section on deletion: prose description -->
+
+               <div xml:id="apparatus-criticus-deletion-semantic">
+                  <head>Deletion: Semantic Markup</head>
 
                   <p>The semantic markup method uses <gi>del</gi> to encode the deletion:</p>
+
+                  <p>
+                     <specList>
+                        <specDesc key="del"/>
+                     </specList>
+                  </p>
+
+                  <p><gi>del</gi> (deletion) contains text that has been deleted.</p>
+                  <p><att>rend</att> (rendition) indicates the method of deletion. Use of
+                        <att>rend</att> is optional. Without it, the generic notation <hi
+                        rend="italic">del.</hi> for <foreign xml:lang="la">delevit</foreign> or
+                        <foreign xml:lang="la">delevi</foreign> will be inserted. Otherwise,
+                        <att>rend</att> with one of the following values will generate a more
+                     specific notation:<list>
+                        <item><hi rend="bold">erasure</hi>: text has been erased or scraped off of
+                           the page, but it is possible to detect what was deleted (<hi
+                              rend="italic">ante ras.</hi>).</item>
+                        <item>expunction: dots have been written under a word to indicate that it
+                           should be deleted (<hi rend="italic">exp.</hi>).</item>
+                     </list></p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app>
@@ -2766,100 +2824,44 @@
                   <p>The output of this encoding would be amotae] adamote <hi rend="bold">G</hi>
                      (a.c.), amote <hi rend="bold">G<hi rend="superscript">1</hi></hi> (ad <hi
                         rend="italic">exp</hi>.)</p>
-
-                  <p>The same information is presented in both cases, but the semantic markup
-                     version would support querying and filtering on deletions and methods of
-                     deletion.</p>
-
                </div>
+               <!-- End of section on deletion: semantic markup -->
+               <div xml:id="apparatus-criticus-deletion-editorial">
+                  <head>Editorial Deletion</head>
 
-               <div xml:id="apparatus-criticus-omission">
-                  <head>Omission</head>
+                  <p>{ } = Text suspected by the editor to be superfluous, but retained in the main
+                     text to indicate its traditional attribution to the author.</p>
 
-                  <p>This section explains how to encode omission of text from a witness.</p>
+                  <p>Square brackets have been used to indicate editorial deletions in the past,
+                     but, as <ref target="#West">West</ref> argues (p. 80), this is apt to cause
+                     confusion, since they have a different meaning for papyrologists and
+                     epigraphists (see "Undetermined Amount Of Text Lost" in these guidelines).
+                     Accordingly, LDLT editions follow West's suggestion to use braces to indicate
+                     editorial deletions.</p>
 
-                  <p>For example, the witness known as "P" has omitted the word <foreign
-                        xml:lang="la">pecus</foreign> from the following text: <foreign
-                        xml:lang="la">securo custode pecus nocturnaque pastor</foreign>. The
-                     traditional apparatus criticus indicates the omission as follows:</p>
-
-                  <p>pecus <hi rend="italic">om.</hi>
-                     <hi rend="bold">P</hi>
+                  <p>
+                     <specList>
+                        <specDesc key="surplus"/>
+                     </specList>
                   </p>
 
-                  <p>In these guidelines, omission is represented by a so-called "self-closing" or
-                     empty <gi>rdg</gi> (&lt;rdg/&gt;):</p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <l>securo custode <app>
-                           <lem>pecus</lem>
-                           <rdg wit="#P"/>
-                        </app> nocturnaque pastor</l>
-                  </egXML>
+                  <p><gi>surplus</gi> signifies text identified by the editor as added by someone
+                     other than the original author.</p>
 
-                  <p>The same model applies to the omission of an entire line of verse, but in that
-                     case <gi>app</gi> has <att>type</att>="line-omission" and <gi>lem</gi> contains
-                     the entire line, with the omission marked by a self-closing <gi>rdg</gi>:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app type="line-omission">
-                        <lem>
-                           <l n="3">et spument rauco ferventia musta susurro.</l>
-                        </lem>
-                        <rdg wit="#n #h"/>
-                     </app>
-                  </egXML>
-
-                  <p>This will be displayed in the apparatus criticus as <quote><hi rend="italic"
-                           >vers. om.</hi>
-                        <hi rend="bold">n h</hi></quote></p>
+                  
                </div>
             </div>
-            <!-- End of section on omission -->
-
-            <div xml:id="apparatus-criticus-witness-lacunae">
-               <head>Lacunae</head>
-
-               <p>A <ref target="#wit">witness</ref> is missing a portion of the text.</p>
-
-               <p>
-                  <specList>
-                     <specDesc key="lacunaStart"/>
-                     <specDesc key="lacunaEnd"/>
-                  </specList>
-               </p>
-
-               <p><gi>lacunaStart</gi> is an empty ("self-closing") element with <att>wit</att>
-                  indicating where the lacuna begins in a particular witness.</p>
-               <p><gi>lacunaEnd</gi> is a self-closing tag with <att>wit</att> indicating where the
-                  lacuna ends in a witness.</p>
-
-               <p>For example, witness <hi rend="bold">M</hi> has a lacuna from the beginning of the
-                  first book of Julius Caesar's <bibl><title>de bello Gallico</title></bibl> to
-                  section 1.33.3.</p>
-
-               <p>Cynthia Damon notes the lacuna in her OCT edition as follows: <quote>1.1.1–1.33.3
-                        <hi rend="italic">M deest, vice eius m citatur</hi>.</quote></p>
-
-               <p>In an LDLT edition, that same information would be encoded as follows:</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <p/>
-               </egXML>
-
-               <!-- Add some more description of how this would be displayed, etc. -->
-
-            </div>
-            <!-- End of section on lacuna -->
+            <!-- End of section on deletion -->
 
             <div xml:id="apparatus-criticus-correction">
                <head>Corrections</head>
 
-               <p>Correction has been discussed at length in the section "<ref
+               <p>Correction has been discussed in the section "<ref
                      target="#apparatus-criticus-concepts-definitions">Concepts and
                      Definitions</ref>." In short, for the purposes of these guidelines,
                   "correction" describes any attempt by the original copyist or some other hand to
-                  alter a witness' reading, whether or not the result matches the lemma of the
-                  current edition.</p>
+                  alter a witness' reading, whether or not the result matches what is in the main
+                  edition text.</p>
 
                <p>Since the amount of detail to report is a matter for editors to decide, this
                   section describes a range of options for encoding corrections. All are acceptable
@@ -2868,6 +2870,10 @@
                   to communicate the nature of a correction, but also the functionality they want
                   their edition to support. The subsections below include discussions intended to
                   help editors make those determinations.</p>
+
+               <p>Before reading the encoding guidelines for corrections, it may be helpful to read
+                  the section "<ref target="#apparatus-criticus-correction-as-metadata">Correction
+                     as Metadata</ref>" to understand the concepts behind the guidelines.</p>
 
                <div xml:id="apparatus-criticus-correction-as-metadata">
                   <head>Correction as Metadata</head>
@@ -2885,11 +2891,11 @@
                      superscript notation for all of these details (e.g., P<hi rend="superscript"
                         >csl</hi> = P <foreign xml:lang="la">correctio supra lineam</foreign>).</p>
 
-                  <p>The different methods have advantages and disadvantages, but they all
-                     effectively demonstrate that correction is a complex subject. Even the word
-                     "correction" is problematic, since it can refer to the result of a process or
-                     the process itself. If correction is to be represented faithfully in a digital
-                     critical edition, we must analyze the information it conveys.</p>
+                  <p>The different methods have advantages and disadvantages. Each one effectively
+                     demonstrates that correction is a complex subject. Even the word "correction"
+                     is problematic, since it can refer to the result of a process or the process
+                     itself. If correction is to be represented faithfully in a digital critical
+                     edition, we must analyze the information it conveys.</p>
 
                   <p>Aside from judgments about correctness, "correction" necessarily involves at
                      least four kinds of information: <list>
@@ -2898,12 +2904,14 @@
                         <item>an agent or agents (i.e., the correcting hand or hands)</item>
                         <item>a method or methods of correction (i.e., deletion, addition above the
                            line, etc.)</item>
-                     </list> Since the primary mission of an apparatus criticus is to report variant
+                     </list></p>
+
+                  <p>Since the primary mission of an apparatus criticus is to report variant
                      readings, it is useful to think of the original reading and the altered form of
                      the original reading as the data and the information about agency and method as
-                     metadata, or data about the data. But "original form" and "altered form" can be
-                     analyzed further into states (original and altered), leaving two readings as
-                     the data, with the following metadata:<list>
+                     metadata, or data about the data. In fact, "original form" and "altered form"
+                     can be analyzed further into states (original and altered), leaving two
+                     readings as the data, with the following metadata:<list>
                         <item>state (original, altered)</item>
                         <item>correspondence (showing that the two readings are related to each
                            other through correction)</item>
@@ -2911,8 +2919,8 @@
                         <item>method or methods of correction</item>
                      </list></p>
 
-                  <p>Not all of these metadata items will be required in every instance. The
-                     original reading, for example, will obviously not have an agent (beyond the
+                  <p>Not all of these metadata items will be reported in every instance. The
+                     original reading, for example, obviously does not have an agent (beyond the
                      witness to the reading) or a method of correction, but it will have a state
                      (original). It might have a correspondence to show that it is related to its
                      altered form, if one is provided, but it is not always necessary to report the
@@ -2923,9 +2931,9 @@
                      to report the method of correction.</p>
 
                   <p>With regard to reporting the method of correction, the LDLT supports two
-                     approaches, prose description and typographical depiction. The former simply
-                     requires a succinct description of the correction (e.g., t <hi rend="italic"
-                        >add. s.l.</hi>).</p>
+                     approaches, prose description and semantic markup. The prose description method
+                     simply requires a succinct description of the correction (e.g., t <hi
+                        rend="italic">add. s.l.</hi>).</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app>
@@ -2937,8 +2945,12 @@
                            corresp="#rdg-voca">t <hi rend="italic">add. s.l.</hi></witDetail></app>
                   </egXML>
 
-                  <p>The latter requires the correction to be encoded using techniques described
-                     elsewhere in these guidelines:</p>
+                  <p>This encoding will produce the following entry in the apparatus criticus:
+                     vocas] voca E (ante. corr.) : vocat E<hi rend="superscript">1</hi> (<hi
+                        rend="italics">corr</hi>., t <hi rend="italics">add. s.l.</hi>)</p>
+
+                  <p>The semantic markup method requires the correction to be encoded using
+                     techniques described elsewhere in these guidelines:</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app>
@@ -2946,24 +2958,26 @@
                         <rdg wit="#E" xml:id="rdg-voca">voca</rdg>
                         <rdg wit="#E1" xml:id="rdg-vocat">vocat</rdg>
                         <witDetail wit="#E1" target="#rdg-vocat" type="correction"
-                           corresp="#rdg-voca">voca<add place="above">t</add></witDetail></app>
+                           corresp="#rdg-voca"><add place="above">t</add></witDetail></app>
                   </egXML>
+
+                  <p>This encoding will produce the following entry in the apparatus criticus:
+                     vocas] voca E (ante corr.) : vocat E<hi rend="superscript">1</hi> (<hi
+                        rend="italics">corr</hi>., t <hi rend="italics">add. s.l.</hi>).</p>
 
                   <p>Editors should declare in the preface which method(s) they have adopted so that
                      users will know to what extent the data about corrections is structured.</p>
 
-                  <p>Classifying information related to correction as metadata supports a variety of
-                     functions. In addition to preserving the ability to swap readings in an out of
-                     the text described elsewhere in these guidelines, it will allow querying of
+                  <p>Representing information related to correction as metadata supports a variety
+                     of functions. In addition to preserving the ability to swap readings in an out
+                     of the text described elsewhere in these guidelines, it will allow querying of
                      information specific to certain witnesses, listing of all apparatus entries
                      involving correction, filtering of variants with corrected forms, and more.</p>
 
-                  <p>The following sections demonstrate how correction information should be encoded
-                     to take advantage of this functionality.</p>
                </div>
                <!-- End of section on correction as metadata -->
 
-               <div xml:id="apparatus-criticus-correction-basics">
+               <div xml:id="apparatus-criticus-correction-specs">
                   <head>Correction: Basics</head>
 
                   <p>Readings before and after correction are reported as any other readings, i.e.,
@@ -2998,7 +3012,7 @@
                               (<foreign xml:lang="la">post correctionem</foreign> or p.c.)</item>
                      </list></p>
                </div>
-               <!-- End of section on correction basics. -->
+               <!-- End of section on correction specs. -->
 
                <div xml:id="apparatus-criticus-correction-ante-corr">
                   <head>Simple Correction</head>
@@ -3027,8 +3041,7 @@
                      processing.</p>
 
                   <p>If it is desirable to note how the correction was made, that information can be
-                     inserted as a value for <gi>witDetail</gi>. See the section "Describing
-                     Corrections" for more information.</p>
+                     inserted as a value for <gi>witDetail</gi>.</p>
                </div>
                <!-- End of section on simple correction -->
 
@@ -3078,6 +3091,9 @@
             <div xml:id="apparatus-criticus-conjecture-and-emendation">
                <head>Conjecture and Emendation</head>
 
+               <p>&lt; &gt; = A conjecture has been adopted by the editor for the main edition
+                  text.</p>
+
                <p>As explained in the section <ref target="#apparatus-criticus-concepts-definitions"
                      >Concepts and Definitions</ref>, conjectures are readings that are not
                   supported by documentary evidence, but are instead proposed by someone and
@@ -3103,10 +3119,14 @@
                   in the interest of being explicit, an emendation should be annotated accordingly.
                   Using <att>type</att> with the value of "emendation" will also ensure that the
                   lemma will be displayed or printed with the appropriate symbols around it (i.e.,
-                  &lt; &gt;) in the main text of the edition (cf. . Conversely, only <gi>rdg</gi>
-                  may have <att>type</att> with value "conjecture." It could be inferred that a
-                  reading with <att>source</att> only is a conjecture, but it is best to be explicit
-                  in the identification.</p>
+                  &lt; &gt;) in the main text of the edition.</p>
+
+               <p>Conversely, only <gi>rdg</gi> may have <att>type</att> with value "conjecture." It
+                  could be inferred that a reading with <att>source</att> only is a conjecture, but
+                  it is best to be explicit in the identification if for no other reason than
+                  ensuring that the conjecture will be displayed with the appropriate symbols around
+                  it (i.e., &lt; &gt;) if it is swapped into the main text in the LDLT text
+                  viewer.</p>
 
                <p>The following example demonstrates how to encode both an emendation and a
                   conjecture.</p>
@@ -3124,12 +3144,13 @@
                </egXML>
 
                <p>This encoding will produce "&lt;plenumque&gt;" in the main text of the edition the
-                  following in the apparatus criticus: plenumque] <hi rend="italic">conj</hi>. Haupt
+                  following in the apparatus criticus: plenumque] <hi rend="italic">em</hi>. Haupt
                      (<hi rend="italic">prob</hi>. Keene <hi rend="italic">et</hi> Schenkl),
                   primumque <hi rend="bold">ω</hi>
-                  <hi rend="italic">edd</hi>., rivumque Baehr., pronumque C. Schenkl.</p>
+                  <hi rend="italic">edd</hi>., rivumque <hi rend="italics">ci.</hi> Baehr.,
+                  pronumque <hi rend="italics">ci</hi>. C. Schenkl.</p>
 
-               <p>If someone has proposed multiple conjectures, they should be contained in
+               <p>Multiple conjectures proposed by a single person should be contained in
                      <gi>rdgGrp</gi> with <att>type</att> and value "conjecture."</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -3146,9 +3167,80 @@
 
                <p>This would be displayed in the apparatus criticus as pallenti] ridenti <hi
                      rend="italic">vel</hi> varianti <hi rend="italic">vel</hi> vernanti <hi
-                     rend="italic">vel</hi> roranti <hi rend="italic">conj</hi>. Heins.</p>
+                     rend="italic">vel</hi> roranti <hi rend="italic">ci</hi>. Heins.</p>
+               <div xml:id="apparatus-criticus-conjecture-and-emendation-partial">
+                  <head>Letters Added by Conjecture</head>
+
+                  <p>If it is necessary to represent letters added by conjecture in a <gi>rdg</gi>
+                     within an apparatus entry, <gi>add</gi> with <att>type</att>="conjecture"
+                     should be used.</p>
+
+
+
+               </div>
             </div>
             <!-- End of section on conjecture and emendation -->
+
+            <div xml:id="apparatus-criticus-crux"
+               corresp="http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html">
+               <head>Crux</head>
+               <p>† † = Text deemed by the editor to be irredeemably corrupt.</p>
+               <p>
+                  <specList>
+                     <specDesc key="sic"/>
+                  </specList>
+               </p>
+               <p><gi>sic</gi> indicates that the text is readable but not understandable. In this
+                  usage it is not paired with its customary partner <gi>corr</gi> because the nature
+                  of a crux is that it cannot be corrected.</p>
+
+               <p>For example, at section 2.4.12 of Macrobius'
+                     <bibl><title>Saturnalia</title></bibl>, Robert Kaster marks two words in the
+                  text of his OCT edition with <foreign xml:lang="la">cruces</foreign>:<quote
+                     rend="blockquote">… "vale mel gentium †meculle†, ebur ex Etruria, lasar
+                     Arretinum, adamas Supernas, Tiberinum margaritum, Cilniorum smargde, iaspi
+                     figulorum, berulle Porsenae, carbunculum †habeas†, ἵνα συντέμω πάντα, ᾶλλαγμα
+                     moecharum."</quote></p>
+
+               <p>In the apparatus criticus for the first one, Kaster has the following:
+                     <quote>meculle <hi rend="italics">Nβ</hi>(melcule <hi rend="italics">DP<hi
+                           rend="superscript">2</hi>G</hi>, <hi rend="italics">n.l. P<hi
+                           rend="superscript">1</hi></hi>): Medulliae <hi rend="italics">Turnebus
+                        1604, 584</hi>.</quote> The second one is simpler: <quote>habeas] Hadriae
+                        <hi rend="italics">Jahn</hi></quote>.</p>
+
+               <p>The following example demonstrates how these <foreign xml:lang="la"
+                     >cruces</foreign> would be encoded in an LDLT edition:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p><quote>vale mel gentium <app>
+                           <lem>
+                              <sic>meculle</sic>
+                           </lem>
+                           <rdg wit="#N #β" xml:id="rdg-meculle">meculle</rdg>
+                           <note target="#rdg-meculle">melcule <ref target="#D">D</ref>
+                              <ref target="#P2">P<hi rend="superscript">2</hi></ref>
+                              <ref target="#G">G</ref>, n.l. <ref target="#P1">P<hi
+                                    rend="superscript">1</hi></ref>
+                           </note>
+                           <rdg source="#Turnebus" xml:id="rdg-Medulliae">Medulliae</rdg>
+                           <note target="#rdg-Medulliae">584</note>
+                        </app>, ebur ex Etruria, lasar Arretinum, adamas Supernas, Tiberinum
+                        margaritum, Cilniorum smaragde, iaspi figulorum, berulle Porsenae,
+                        carbunculum <app>
+                           <lem><sic>habeas</sic></lem>
+                           <rdg source="#Jahn">Hadriae</rdg>
+                        </app>, ἵνα συντέμω πάντα, ἄλλαγμα moecharum.</quote></p>
+               </egXML>
+
+               <p>The use of <gi>sic</gi> would cause the symbol † to be placed on both ends of each
+                  crux. The rest of the information would be handled in the normal manner for
+                  readings in the apparatus criticus.</p>
+            </div>
+
+
+            <!-- End of section "Crux" -->
+
             <div xml:id="apparatus-criticus-analysis">
                <head>Tagging Readings for Analysis</head>
 
@@ -3213,9 +3305,104 @@
                </egXML>
             </div>
             <!-- End of section on analytical tagging. -->
+
+            <div xml:id="apparatus-criticus-editorial-notes">
+               <head>Editorial Notes</head>
+
+               <p>These guidelines cover most of the kinds of information commonly found in a
+                  critical apparatus, but not all of them, since it would be impossible to
+                  anticipate everything any editor of a text would ever need to encode.</p>
+
+               <p>If a certain kind of annotation or comment is needed, but a method for encoding it
+                  is not described in these guidelines, <gi>witDetail</gi> or <gi>note</gi> may be
+                  used <foreign xml:lang="la">ad hoc</foreign>, depending on whether the subject is
+                  a single witness (<gi>witDetail</gi>) or something of a more general nature
+                     (<gi>note</gi>).</p>
+
+               <p>These guidelines may also be extended as the community of users discovers and
+                  proposes additional encoding patterns to the staff of the LDLT.</p>
+            </div>
             <!-- Need section on bibliography on apparatus -->
          </div>
          <!-- End of section on the apparatus criticus -->
+
+         <div xml:id="textual-commentary">
+            <head>Commentary</head>
+
+            <p>Traditionally, extended commentary on textual matters has been published apart from
+               the critical edition (e.g., as a monograph or in textual notes published in
+               periodicals). Editors of LDLT editions are encouraged to include longer notes on
+               textual matters in a section enclosed in <gi>div</gi> with
+               <att>xml:id</att>="textual-commentary".</p>
+
+            <p>This section demonstrates how to do encode longer notes.</p>
+
+            <p>
+               <specList>
+                  <specDesc key="note"/>
+               </specList>
+            </p>
+            <p><gi>anchor</gi> is an empty element placed at the point in the main text that is the
+               subject of an extended note. It must have <att>xml:id</att> so that the note can
+               point to it. It must also have <att>corresp</att> pointing to the <att>xml:id</att>
+               of the note in the commentary so that a link can be inserted directly to the
+               note.</p>
+            <p><gi>note</gi> with <att>type</att>="commentary" and <att>target</att> pointing to the
+                  <att>xml:id</att> of the <gi>anchor</gi> contains the text of the note, which is
+               written in prose using <gi>p</gi>.</p>
+
+            <p>For example, after Calp. 4.96, Giarratano prints five unnumbered lines of dots to
+               indicate that he believes a stanza is missing. At 4.97, he includes in his apparatus
+               criticus an extended discussion about his rearrangement of several sets of lines. In
+               an LDLT edition, it is preferable to put that sort of discussion in the textual
+               commentary. The following example demonstrates how it would be encoded in an LDLT
+               edition:</p>
+
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <app type="line-omission">
+                  <lem source="#Giarratano" type="emendation" xml:id="lem-4.96-gap">
+                     <!-- Lines are not numbered so as not to interrupt the traditional numbering -->
+                     <l><gap reason="lost"/></l>
+                     <l><gap reason="lost"/></l>
+                     <l><gap reason="lost"/></l>
+                     <l><gap reason="lost"/></l>
+                     <l><gap reason="lost"/></l>
+                  </lem>
+                  <note target="#lem-4.96-gap">quinque vv. deesse puto. <anchor xml:id="gap-4.96"
+                        corresp="#comm-4.96"/></note>
+               </app>
+               <l n="97">Aspicis, ut virides audito Caesare silvae</l>
+               <!-- Edition continues until end. -->
+               <div xml:id="textual-commentary">
+                  <note type="commentary" target="lem-4.96-gap" xml:id="comm-4.96">
+                     <p>4.96: Carmen amoebaeum, quod vocatur, cum ex impari stropharum numero
+                        constare nequeat, in hac ecloga integrum non esses <ref target="#Hermann">G.
+                           Hermann</ref> (ad Bion. et Mosch. p. 46) primus sensit. <ref
+                           target="#Schenkl">Schenkl</ref> autem censuit deesse stropham quae olim
+                        opposita fuit strophae VIII itidemque comite carere III, quam ob rem in
+                        editione priore vir doctissimus III post XI transposuit lacunameque in
+                        utraque editione post F. Leo (Zeitsch. f. d. oesterr. Gymn. XXXVI p. 619)
+                        XIII post III collocavit ut v. 141 carmen amoebaeum concluderetur. Mihi
+                        quidem, cum strophae I, et II, IV et V, VI et VII, IX et X, XII et XIII
+                        invicem sibi respondeant, visum est lacunem post III constituere et XI
+                        transponere ante VIII.</p>
+                  </note>
+               </div>
+            </egXML>
+
+            <p>This encoding will produce the following in a digital or print version:<list>
+                  <item>five unnumbered lines of &lt; *** &gt;</item>
+                  <item>The following note in the apparatus criticus: quinque vv. deesse
+                     puto.</item>
+                  <item>The symbol ◊ after the note indicating further discussion is available in
+                     the textual commentary.</item>
+                  <item>A note in the textual commentary.</item>
+               </list></p>
+
+            <p>The digital version will have the additional feature of links from the apparatus to
+               the commentary and from the commentary to the apparatus.</p>
+         </div>
+         <!-- End of section on textual commentary -->
       </body>
    </text>
 </TEI>
