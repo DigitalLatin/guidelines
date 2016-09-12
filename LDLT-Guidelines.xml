@@ -2842,13 +2842,56 @@
                   <p>
                      <specList>
                         <specDesc key="surplus"/>
+                        <specDesc key="note"/>
                      </specList>
                   </p>
 
                   <p><gi>surplus</gi> signifies text identified by the editor as added by someone
                      other than the original author.</p>
+                  <p><gi>note</gi> contains information about the deletion (e.g., bibliography,
+                     comments). This allows editors to make the distinction between the usage of <hi
+                        rend="italics">secl.</hi> and <hi rend="italics">del.</hi></p>
 
-                  
+                  <p>For example, at section 29 of Suetonius' life of Claudius, Robert Kaster
+                     indicates in the text of his OCT edition that two words have been deleted by
+                     previous scholars: <quote rend="blockquote">His, ut dixi, uxoribusque addictus
+                        non principem {se} sed ministrum egit, compendio cuiusque horum uel etiam
+                        studio aut libidine honores exercitus impunitates supplicia largitus {est}
+                        et quidem insciens plerumque et ignarus.</quote></p>
+
+                  <p>The entry for the first one in the apparatus criticus has the following:
+                        <quote>se <hi rend="italics">secl. Graev. 1697, 411 (Polak 1882,
+                        12)</hi></quote>. The entry for the second one is as follows: <quote>est <hi
+                           rend="italics">del. Bent.</hi></quote>.</p>
+
+                  <p>In an LDLT edition, the deletion would be encoded in the text as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>His, ut dixi, uxoribusque addictus non principem <app>
+                           <lem xml:id="lem-29-se">
+                              <surplus>se</surplus></lem>
+                           <note target="#lem-29-se">secl. <ref target="#Graev.">Graev. 1697,
+                                 411</ref> (<ref target="#Polak">Polak 1882, 12</ref>)</note>
+                        </app> sed ministrum egit, compendio cuiusque horum uel etiam studio aut
+                        libidine honores exercitus impunitates supplicia largitus <app>
+                           <lem xml:id="#lem-29-est">
+                              <surplus>est</surplus>
+                           </lem>
+                           <note target="#lem-29-est">del. <ref target="#Bent."
+                           >Bent.</ref></note></app> et quidem insciens plerumque et ignarus.</p>
+                  </egXML>
+
+                  <p>The use of <gi>surplus</gi> will cause the braces { } to be inserted on both
+                     sides of the word(s) to be deleted. The rest of the information is handled as a
+                     normal entry in the apparatus criticus.</p>
+
+                  <p>If it is desirable to indicate in the apparatus criticus that a previous editor
+                     has proposed deleting some text, even if the deletion has not been adopted for
+                     the main text of the edition, <gi>surplus</gi> should be used inside of
+                        <gi>rdg</gi>. If the reading is swapped into the main text in the digital
+                     version, the braces { } will be displayed around the reading.</p>
+
+
                </div>
             </div>
             <!-- End of section on deletion -->
@@ -3213,7 +3256,8 @@
                      >cruces</foreign> would be encoded in an LDLT edition:</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <p><quote>vale mel gentium <app>
+                  <p>
+                     <quote>vale mel gentium <app>
                            <lem>
                               <sic>meculle</sic>
                            </lem>
@@ -3230,7 +3274,8 @@
                         carbunculum <app>
                            <lem><sic>habeas</sic></lem>
                            <rdg source="#Jahn">Hadriae</rdg>
-                        </app>, ἵνα συντέμω πάντα, ἄλλαγμα moecharum.</quote></p>
+                        </app>, ἵνα συντέμω πάντα, ἄλλαγμα moecharum.</quote>
+                  </p>
                </egXML>
 
                <p>The use of <gi>sic</gi> would cause the symbol † to be placed on both ends of each
