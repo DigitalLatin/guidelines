@@ -1846,80 +1846,30 @@
                <head>Symbols Commonly Used in the Text of a Critical Edition</head>
 
                <p>Over time, certain typographical conventions have become standard for representing
-                  lacunae, omissions, gaps, editorial deletions, and other information. These
-                  guidelines observe the standard as described by <bibl xml:id="West"><author>Martin
+                  lacunae, omissions, gaps, editorial deletions, and other information. The present guidelines
+                  observe the standard as described by <bibl xml:id="West"><author>Martin
                         West</author> in <title>Textual Criticism and Editorial Technique</title>
                         (<pubPlace>Stuttgart</pubPlace>, 1973), <biblScope unit="page"
                         >80–81</biblScope></bibl>, but they call for semantically encoding them
                   instead of simply inserting the various punctuation marks and other symbols that
                   represent complex information. The encoding will still produce the standard
-                  symbols, but the information they represent will be explicit in form readable by
-                  humans and machines, which means that it will also be available for processing,
+                  symbols, but the information they represent will be explicit and in a form readable by
+                  humans and machines. That means that it will also be available for processing,
                   querying, and analyzing with digital tools.</p>
 
                <p>Since most of the standard symbols have some corresponding annotation in the
-                  critical apparatus, their encoding is described in the section "<ref
-                     target="apparatus-criticus">Apparatus Criticus</ref>."</p>
+                  critical apparatus, their encoding is described in the following sections on the apparatus criticus:<list>
+                     <item>&lt; &gt; = <ref target="#apparatus-criticus-conjecture-and-emendation">text added by conjecture or emendation</ref></item>
+                     <item>[ *** ] = <ref target="#apparatus-criticus-lacuna-physical-loss">text lost through physical damage</ref></item>
+                     <item>&lt; *** &gt; = <ref target="#apparatus-criticus-lacuna-conjecture">conjectured lacuna</ref></item>
+                     <item>[ ... ] = <ref target="#apparatus-criticus-symbols-known-loss-characters">known amount of characters lost</ref></item>
+                     <item>{ } = <ref target="#apparatus-criticus-deletion-editorial">editorial deletion</ref></item>
+                     <item>† † = <ref target="#apparatus-criticus-crux">text deemed to be irretrievably corrupt</ref>.</item>
+                     <!-- Need something for [[ ]] ? -->
+                  </list></p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-               <p>If reference will be made in the criticial apparatus to the usage of these
-                  symbols, the encoding for the symbols and their contents should be treated
-                  according to the rules in the section "<ref target="#apparatus-criticus">Apparatus
-                     Criticus</ref>."</p>
-
-               <p>For the sake of uniformity, this section follows closely <bibl><author>Tom
-                        Elliott</author>, <author>Gabriel Bodard</author>, <author>Elli
-                        Mylonas</author>, <author>Simona Stoyanova</author>, <author>Charlotte
-                        Tupman</author>, <author>Scott Vanderbilt</author>, et al.
-                        <date>(2007-2014)</date>, <title>EpiDoc Guidelines: Ancient documents in TEI
-                        XML (Version 8)</title>. Available: <ref
-                        target="http://www.stoa.org/epidoc/gl/latest"
-                        >http://www.stoa.org/epidoc/gl/latest</ref></bibl>.</p>
-
-
-
-
-               <!-- End section "Text added by emendation -->
-
-
-
-
-               <!-- End of section "Editorial Deletion" -->
-
-
+              
             </div>
             <!-- End section on symbols in the main text. -->
          </div>
@@ -2437,7 +2387,7 @@
                <div xml:id="apparatus-criticus-lacuna-physical-loss">
                   <head>Lacuna (Physical Loss)</head>
 
-                  <p>*** = An unknown amount of text has been lost from one or more witnesses
+                  <p>[ *** ] = An unknown amount of text has been lost from one or more witnesses
                      because of damage.</p>
 
 
@@ -2468,6 +2418,8 @@
                               M</witDetail>
                         </app> disputationibus …</p>
                   </egXML>
+                  
+                  <p>Note that square brackets will surround ***.</p>
 
                </div>
 
@@ -2545,7 +2497,7 @@
                <!-- End section "Lacuna Conjectured, No Text Supplied" -->
 
 
-               <div xml:id="edition-text-symbols-known-loss-characters"
+               <div xml:id="apparatus-criticus-symbols-known-loss-characters"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html">
                   <head>Known Amount Of Characters Lost</head>
 
@@ -2817,7 +2769,7 @@
                         <rdg wit="#G1" xml:id="rdg-amote">amote</rdg>
                         <witDetail wit="#G" target="#rdg-adamote" type="correction-original"/>
                         <witDetail wit="#G1" target="#rdg-amote" type="correction-altered"><del
-                              rend="exp">ad</del></witDetail>
+                              rend="expunction">ad</del></witDetail>
                      </app>
                   </egXML>
 
@@ -2890,8 +2842,6 @@
                      the main text of the edition, <gi>surplus</gi> should be used inside of
                         <gi>rdg</gi>. If the reading is swapped into the main text in the digital
                      version, the braces { } will be displayed around the reading.</p>
-
-
                </div>
             </div>
             <!-- End of section on deletion -->
