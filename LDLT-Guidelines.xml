@@ -1614,55 +1614,110 @@
 
             <!-- Insert overarching div on quotation, to include sections on quoted speech and quoted passages, in addition to the section on Dialogue -->
 
-            <div xml:id="edition-text-dialogue">
-               <head>Dialogue</head>
+            <div xml:id="edition-text-speech">
+               <head>Speech</head>
 
-               <p>Texts that feature interlocutors (e.g., drama, dialogue) should be encoded using
-                     <gi>sp</gi> and <gi>speaker</gi>.</p>
-
-               <p>
-                  <specList>
-                     <specDesc key="sp"/>
-                     <specDesc key="speaker"/>
-                  </specList>
+               <p>This section discusses how to encode the following kinds of speech:<list>
+                     <item>direct speech</item>
+                     <item>dialogue in a play or other setting</item>
+                  </list>
                </p>
 
-               <p><gi>sp</gi> (speech) groups elements related to a person or character's
-                  speech.</p>
-               <p><att>who</att> is used with <gi>sp</gi> to identify the speaker.</p>
-               <p><gi>speaker</gi> contains a human-readable label identifying the person or
-                  character speaking the text.</p>
-               <p>These features can be used in verse and prose texts:</p>
+               <div xml:id="edition-text-speech-direct-speech">
+                  <head>Direct Speech</head>
+                  <p>Quotation of direct speech may be handled in two ways: with punctuation and
+                     with semantic encoding.</p>
 
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <sp who="Corydon">
-                     <speaker>C.</speaker>
-                     <l n="1">Nondum Solis equos declinis mitigat aestas,</l>
-                     <l n="2">quamvis et madidis incumbant prela racemis</l>
-                     <l n="3">et spument rauco ferventia musta susurro.</l>
-                     <l n="4">cernis ut ecce pater quas tradidit, Ornyte, vaccae</l>
-                     <l n="5">molle sub hirsuta latus explicuere genista?</l>
-                     <l n="6">nos quoque vicinis cur non succedimus umbris?</l>
-                     <l n="7">torrida cur solo defendimus ora galero?</l>
-                  </sp>
-               </egXML>
+                  <p>If an editor wishes to use standard punctuation to represent direct speech, the
+                     current edition of <bibl><title>The Chicago Manual of Style</title></bibl>
+                     should be a guide.</p>
 
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <sp who="Laelius">
-                     <speaker>Laelius</speaker>
-                     <p>Atqui, Cato, gratissimum nobis, ut etiam pro Scipione pollicear, feceris,
-                        si, quoniam speramus, volumus quidem certe, senes fieri, multo ante a te
-                        didicerimus quibus facillime rationibus ingravescentem aetatem ferre
-                        possimus.</p>
-                  </sp>
-                  <sp who="Cato">
-                     <speaker>Cato</speaker>
-                     <p>Faciam vero, Laeli, praesertim si utrique vestrum, ut dicis, gratum futurum
-                        est.</p>
-                  </sp>
-               </egXML>
+                  <p>The following rules apply to the semantic encoding of direct speech:</p>
+
+                  <p>
+                     <specList>
+                        <specDesc key="said"/>
+                     </specList>
+                  </p>
+
+                  <p><gi>said</gi> (speech) contains text spoken by real people or fictional
+                     characters.</p>
+                  <p><att>who</att> identifies the speaker (optional). Values for <att>who</att>
+                     should be recorded elsewhere (e.g., preface, appendix) in a <gi>list</gi> with
+                        <att>type</att>="speakers". They can also be incorporated into
+                        <gi>listPerson</gi> as described below in the section "<ref
+                        target="#edition-text-people">People</ref>."</p>
+
+                  <p>For example, Julius Caesar's famous words before crossing the Rubicon, as
+                     reported by Suetonius, should be encoded as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>tunc Caesar, <said who="#Caesar">eatur,</said> inquit, <said who="#Caesar"
+                           >quo deorum ostenta et inimicorum iniquitas uocat: iacta alea
+                           esto.</said></p>
+                  </egXML>
+
+                  <p><gi>said</gi> may be nested inside <gi>said</gi> to indication quotation within
+                     a quotation.</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples"> </egXML>
+               </div>
+
+               <div xml:id="edition-text-speech-dialogue">
+                  <head>Dialogue</head>
+
+                  <p>Texts that feature interlocutors (e.g., drama, dialogue) should be encoded
+                     using <gi>sp</gi> and <gi>speaker</gi>.</p>
+
+                  <p>
+                     <specList>
+                        <specDesc key="sp"/>
+                        <specDesc key="speaker"/>
+                     </specList>
+                  </p>
+
+                  <p><gi>sp</gi> (speech) groups elements related to a person or character's
+                     speech.</p>
+                  <p><att>who</att> is used with <gi>sp</gi> to identify the speaker.</p>
+                  <p><gi>speaker</gi> contains a human-readable label identifying the person or
+                     character speaking the text.</p>
+                  <p>These features can be used in verse and prose texts:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <sp who="Corydon">
+                        <speaker>C.</speaker>
+                        <l n="1">Nondum Solis equos declinis mitigat aestas,</l>
+                        <l n="2">quamvis et madidis incumbant prela racemis</l>
+                        <l n="3">et spument rauco ferventia musta susurro.</l>
+                        <l n="4">cernis ut ecce pater quas tradidit, Ornyte, vaccae</l>
+                        <l n="5">molle sub hirsuta latus explicuere genista?</l>
+                        <l n="6">nos quoque vicinis cur non succedimus umbris?</l>
+                        <l n="7">torrida cur solo defendimus ora galero?</l>
+                     </sp>
+                  </egXML>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <sp who="Laelius">
+                        <speaker>Laelius</speaker>
+                        <p>Atqui, Cato, gratissimum nobis, ut etiam pro Scipione pollicear, feceris,
+                           si, quoniam speramus, volumus quidem certe, senes fieri, multo ante a te
+                           didicerimus quibus facillime rationibus ingravescentem aetatem ferre
+                           possimus.</p>
+                     </sp>
+                     <sp who="Cato">
+                        <speaker>Cato</speaker>
+                        <p>Faciam vero, Laeli, praesertim si utrique vestrum, ut dicis, gratum
+                           futurum est.</p>
+                     </sp>
+                  </egXML>
+               </div>
             </div>
+            <div xml:id="edition-text-quotation">
+               <head>Quotation of Literature</head>
 
+               <p>Quotations of literature should be encoded according to the guidelines set forth
+                  in the section "<ref target="#apparatus-fontium">Apparatus Fontium</ref>."</p>
+            </div>
             <div xml:id="edition-text-people">
                <head>People</head>
 
@@ -1796,8 +1851,7 @@
             </div>
             <!-- End of section on places -->
 
-            <div xml:id="edition-text-symbols-abbreviation-expansion"
-               corresp="http://www.stoa.org/epidoc/gl/latest/trans-abbrevfully.html">
+            <div xml:id="edition-text-symbols-abbreviation-expansion">
                <head>Expansion of Abbreviation</head>
 
                <p>( ) = And editor expands an abbreviation as an aid to reading or to remove
@@ -1846,30 +1900,35 @@
                <head>Symbols Commonly Used in the Text of a Critical Edition</head>
 
                <p>Over time, certain typographical conventions have become standard for representing
-                  lacunae, omissions, gaps, editorial deletions, and other information. The present guidelines
-                  observe the standard as described by <bibl xml:id="West"><author>Martin
+                  lacunae, omissions, gaps, editorial deletions, and other information. The present
+                  guidelines observe the standard as described by <bibl xml:id="West"><author>Martin
                         West</author> in <title>Textual Criticism and Editorial Technique</title>
                         (<pubPlace>Stuttgart</pubPlace>, 1973), <biblScope unit="page"
                         >80–81</biblScope></bibl>, but they call for semantically encoding them
                   instead of simply inserting the various punctuation marks and other symbols that
                   represent complex information. The encoding will still produce the standard
-                  symbols, but the information they represent will be explicit and in a form readable by
-                  humans and machines. That means that it will also be available for processing,
-                  querying, and analyzing with digital tools.</p>
+                  symbols, but the information they represent will be explicit and in a form
+                  readable by humans and machines. That means that it will also be available for
+                  processing, querying, and analyzing with digital tools.</p>
 
                <p>Since most of the standard symbols have some corresponding annotation in the
-                  critical apparatus, their encoding is described in the following sections on the apparatus criticus:<list>
-                     <item>&lt; &gt; = <ref target="#apparatus-criticus-conjecture-and-emendation">text added by conjecture or emendation</ref></item>
-                     <item>[ *** ] = <ref target="#apparatus-criticus-lacuna-physical-loss">text lost through physical damage</ref></item>
-                     <item>&lt; *** &gt; = <ref target="#apparatus-criticus-lacuna-conjecture">conjectured lacuna</ref></item>
-                     <item>[ ... ] = <ref target="#apparatus-criticus-symbols-known-loss-characters">known amount of characters lost</ref></item>
-                     <item>{ } = <ref target="#apparatus-criticus-deletion-editorial">editorial deletion</ref></item>
-                     <item>† † = <ref target="#apparatus-criticus-crux">text deemed to be irretrievably corrupt</ref>.</item>
-                     <!-- Need something for [[ ]] ? -->
+                  critical apparatus, their encoding is described in the following sections on the
+                  apparatus criticus:<list>
+                     <item>&lt; &gt; = <ref target="#apparatus-criticus-conjecture-and-emendation"
+                           >text added by conjecture or emendation</ref></item>
+                     <item>[ *** ] = <ref target="#apparatus-criticus-lacuna-physical-loss">text
+                           lost through physical damage</ref></item>
+                     <item>&lt; *** &gt; = <ref target="#apparatus-criticus-lacuna-conjecture"
+                           >conjectured lacuna</ref></item>
+                     <item>[ ... ] = <ref target="#apparatus-criticus-symbols-known-loss-characters"
+                           >known amount of characters lost</ref></item>
+                     <item>&#10214; &#10215; = <ref target="#apparatus-criticus-deletions">deletion
+                           by a scribe in a witness</ref>.</item>
+                     <item>{ } = <ref target="#apparatus-criticus-deletion-editorial">editorial
+                           deletion</ref></item>
+                     <item>† † = <ref target="#apparatus-criticus-crux">text deemed to be
+                           irretrievably corrupt</ref>.</item>
                   </list></p>
-
-
-              
             </div>
             <!-- End section on symbols in the main text. -->
          </div>
@@ -1878,11 +1937,10 @@
          <div xml:id="apparatus-fontium">
             <head>Apparatus Fontium</head>
 
-            <p>In texts with many direct and indirect references to other sources, it may be
-               desirable to include an apparatus fontium to alert readers to the sources. All of the
-               elements of the citation will be incorporated into the main edition text, but they
-               will not effect the display of the text itself. Bibliographic information about the
-               source of the quotation or reference will be displayed or printed separately.</p>
+            <p>An apparatus fontium collects references to texts quoted, cited, or referred to
+               indirectly in the text of the edition. This section demonstrated how to encode such
+               references so that they will be displayed appropriately in the text and so that
+               bibliographical information will appear in the apparatus fontium. </p>
 
             <p>
                <specList>
@@ -1897,18 +1955,25 @@
                source or a reference (in <gi>ref</gi>) to another source, together with
                bibliographical information about the source (in <gi>bibl</gi>.</p>
             <p><gi>quote</gi> (quotation) contains a phrase or passage attributable to some agency
-               external to the text.</p>
+               external to the text. It must have <att>rend</att> with value "blockquote".</p>
             <p><gi>ref</gi> (reference) contains a reference to a phrase or passage attributable to
                some agency external to the text.</p>
             <p><gi>bibl</gi> (bibliographic citation) contains the information required to retrieve
                the source of the quotation or reference. If a digital copy of the source is
                available, a link can be provided in <att>ref</att>.</p>
 
+            <p>Any text in <gi>quote</gi> will be displayed or printed on a new line and indented.
+               For that reason, prose and text in <gi>quote</gi> should be encoded according to the
+               guidelines in the sections "<ref target="#edition-text-prose">Prose</ref>" and "<ref
+                  target="#edition-text-verse">Verse</ref>".</p>
+
+            <!-- Need examples of prose and verse texts. -->
+
             <p>Example of a quotation to be cited in the apparatus fontium:</p>
 
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <p>Item aliud verbum culpaverunt: <cit>
-                     <quote>
+                     <quote rend="blockquote">
                         <l>per tunicam squalentem auro latus haurit apertum</l>
                      </quote>
                      <bibl><author>Verg.</author>
@@ -2418,7 +2483,7 @@
                               M</witDetail>
                         </app> disputationibus …</p>
                   </egXML>
-                  
+
                   <p>Note that square brackets will surround ***.</p>
 
                </div>
@@ -2690,10 +2755,12 @@
                <head>Deletions</head>
 
                <p>The following guidelines demonstrate how to produce a notation about the deletion
-                  of text from a witness and the method of deletion (if known).</p>
+                  of text from a witness by a scribe, along with the method of deletion (if
+                  known).</p>
 
                <p>For deletions made by the editor of the current edition or a previous editor, see
-                  the section "Editorial Deletions."</p>
+                  the section "<ref target="#apparatus-criticus-deletion-editorial">Editorial
+                     Deletions</ref>."</p>
 
                <p>Deletion almost always occurs as part of a correction. In that case, this section
                   should be used in combination with the guidelines in the section "<ref
@@ -2740,7 +2807,9 @@
                <div xml:id="apparatus-criticus-deletion-semantic">
                   <head>Deletion: Semantic Markup</head>
 
-                  <p>The semantic markup method uses <gi>del</gi> to encode the deletion:</p>
+                  <p>The semantic markup method uses <gi>del</gi> to encode the deletion. Deletions
+                     encoded according to these guidelines will be displayed or printed enclosed in
+                     double brackets: &#10214; &#10215;.</p>
 
                   <p>
                      <specList>
@@ -2766,16 +2835,15 @@
                      <app>
                         <lem>amotae</lem>
                         <rdg wit="#G" xml:id="rdg-adamote">adamote</rdg>
-                        <rdg wit="#G1" xml:id="rdg-amote">amote</rdg>
+                        <rdg wit="#G1" xml:id="rdg-amote"><del rend="expunction">ad</del>amote</rdg>
                         <witDetail wit="#G" target="#rdg-adamote" type="correction-original"/>
-                        <witDetail wit="#G1" target="#rdg-amote" type="correction-altered"><del
-                              rend="expunction">ad</del></witDetail>
+                        <witDetail wit="#G1" target="#rdg-amote" type="correction-altered"/>
                      </app>
                   </egXML>
 
                   <p>The output of this encoding would be amotae] adamote <hi rend="bold">G</hi>
-                     (a.c.), amote <hi rend="bold">G<hi rend="superscript">1</hi></hi> (ad <hi
-                        rend="italic">exp</hi>.)</p>
+                     (a.c.), &#12314;ad&#12315;amote <hi rend="bold">G<hi rend="superscript"
+                        >1</hi></hi> (p.c.)</p>
                </div>
                <!-- End of section on deletion: semantic markup -->
                <div xml:id="apparatus-criticus-deletion-editorial">
@@ -3069,8 +3137,13 @@
                      </app>
                   </egXML>
 
+                  <p>That encoding would produce cortice <hi rend="bold">N<hi rend="superscript"
+                           >2</hi></hi> (<hi rend="italics">p.c.</hi>, rt <hi rend="italics">add. in
+                        ras.</hi>) <hi rend="bold">PV</hi> : co&#10214;..&#10215;ice <hi rend="bold"
+                        >N</hi> (a.c.) : codice <hi rend="bold">G A</hi>.</p>
+
                   <p>If the editor wishes to encode the correction itself, the second
-                        <gi>witDetail</gi> would be as follows:</p>
+                        <gi>witDetail</gi> should be entered as follows:</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice"
