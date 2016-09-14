@@ -1612,7 +1612,7 @@
             </div>
             <!-- End of section on verse -->
 
-            <!-- Insert overarching div on quotation, to include sections on quoted speech and quoted passages, in addition to the section on Dialogue -->
+            <!-- Insert section on text in languages other than Latin -->
 
             <div xml:id="edition-text-speech">
                <head>Speech</head>
@@ -1854,6 +1854,10 @@
             <div xml:id="edition-text-symbols-abbreviation-expansion">
                <head>Expansion of Abbreviation</head>
 
+
+<!-- Put this in the apparatus criticus section -->
+
+
                <p>( ) = And editor expands an abbreviation as an aid to reading or to remove
                   ambiguity.</p>
                <p>
@@ -1955,34 +1959,69 @@
                source or a reference (in <gi>ref</gi>) to another source, together with
                bibliographical information about the source (in <gi>bibl</gi>.</p>
             <p><gi>quote</gi> (quotation) contains a phrase or passage attributable to some agency
-               external to the text. It must have <att>rend</att> with value "blockquote".</p>
+               external to the text.</p>
             <p><gi>ref</gi> (reference) contains a reference to a phrase or passage attributable to
                some agency external to the text.</p>
             <p><gi>bibl</gi> (bibliographic citation) contains the information required to retrieve
                the source of the quotation or reference. If a digital copy of the source is
                available, a link can be provided in <att>ref</att>.</p>
 
-            <p>Any text in <gi>quote</gi> will be displayed or printed on a new line and indented.
-               For that reason, prose and text in <gi>quote</gi> should be encoded according to the
-               guidelines in the sections "<ref target="#edition-text-prose">Prose</ref>" and "<ref
-                  target="#edition-text-verse">Verse</ref>".</p>
+            <p>Any text in <gi>quote</gi> will be displayed or printed in quotation marks on the
+               same line as the rest of the text. Any text in <gi>quote</gi> with
+               <att>rend</att>="blockquote" will be displayed or printed on a new line and indented.
+               In the latter case, prose and text in <gi>quote</gi> should be encoded according to
+               the guidelines in the sections "<ref target="#edition-text-prose">Prose</ref>" and
+                  "<ref target="#edition-text-verse">Verse</ref>".</p>
 
-            <!-- Need examples of prose and verse texts. -->
-
-            <p>Example of a quotation to be cited in the apparatus fontium:</p>
+            <p><bibl><author>Macrobius'</author>
+                  <title>Saturnalia</title> 3.16.1–5 has examples of block quotations of prose and
+                  verse texts, and an inline quotation of a prose text</bibl>. Note that it is also
+               an example of <ref target="#edition-text-speech">direct speech</ref>, since the
+               entire passage is spoken by Rufius:</p>
 
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <p>Item aliud verbum culpaverunt: <cit>
-                     <quote rend="blockquote">
-                        <l>per tunicam squalentem auro latus haurit apertum</l>
-                     </quote>
-                     <bibl><author>Verg.</author>
-                        <title>G.</title> 3.4</bibl>
-                  </cit>
-               </p>
+               <said who="#Rufius">
+                  <p>Nec acipenser, quem maria prodigis nutriunt, illius saeculi delicias evasit; et
+                     ut liqueat secundo Punico bello celebre nomen huius piscis fuisse, accipite ut
+                     meminerit eius Plautus in fabula quae inscribitur Baccaria ex persona parasiti<cit>
+                        <quote rend="blockquote"><!-- Verse quotation to be displayed/printed on new line and indented -->
+                           <l>quis est mortalis tanta fortuna adfectus umquam</l>
+                           <l>qua ego nunc sum, cuius haec ventri portatur pompa?</l>
+                           <l>vel nunc, qui mihi in mari acipenser latuit antehac,</l>
+                           <l>cuius ego latus in latebras reddam meis dentibus et manibus.</l>
+                        </quote>
+                        <bibl>
+                           <author>Plautus</author>
+                           <title>Baccar.</title> 16–20</bibl>
+                     </cit>.</p>
+                  <p>et ne vilior sit testis poeta, accipite assertore Cicerone in quo honore fuerit
+                     hic piscis apud P. Scipionem Africanum illum et Numantinum, haec sunt in
+                     dialogo de fato verba Ciceronis<cit>
+                        <quote rend="blockquote"><!-- Prose quotation to be displayed/printed on new line and indented -->
+                           <p>nam cum esset apud se ad Lavernium Scipio unaque Pontius adlatus est
+                              forte Scipioni acipenser, qui admodum raro capitur, sed est piscis, ut
+                              ferunt, in primis nobilis. cum autem Scipio unum et alterum ex his qui
+                              eum salutatum venerant invitavisset pluresque etiam invitaturus
+                              videretur, in aurem Pontius, <said who="#Pontius">Scipio,</said>
+                              inquit, <said>vide quid agas, acipenser iste paucorum hominum
+                                 est.</said></p>
+                        </quote>
+                        <bibl><author>Cicero</author>
+                           <title>De Fato</title> fr. 4</bibl>
+                     </cit></p>
+                  <p>nec infitias eo temporibus Traiani hunc piscem in magno pretio non fuisse,
+                     teste Plinio Secundo, qui in Naturali historia cum de hoc pisce loqueretur sic
+                     ait: <cit><!-- Prose quotation to be displayed/printed in line -->
+                        <quote>nullo nunc in honore est, quod equidem miror, cum sit rarus
+                           inventu.</quote>
+                        <bibl><author>Plin.</author>
+                           <title>HN</title> 9.60</bibl>.</cit></p>
+               </said>
             </egXML>
 
-            <p>Example of a reference to be cited in the apparatus fontium:</p>
+            <p>In the following example, Duns Scotus has referred to a work by Boethius, but he has
+               not quoted it:</p>
+
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <p>Probatio minoris per <cit><ref>Boethium De
                            Trinitate</ref><bibl><author>Boethius</author>
@@ -1997,8 +2036,8 @@
                the following entry: "Boethius <hi rend="italic">De Trin.</hi> c. 4 (ed. R. Peiper
                159; PL 64, 1353C).</p>
 
-            <p>If it is desirable to provide the text of the reference, it may be inserted after
-                  <gi>bibl</gi>:</p>
+            <p>If it is desirable to provide the text of the reference in the apparatus fontium, it
+               may be inserted after <gi>bibl</gi>:</p>
 
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                <p>Probatio minoris per <cit><ref>Boethium De Trinitate</ref><bibl>Boethius <title>De
@@ -2009,8 +2048,6 @@
                         potius extrinsecus aliquid quodam modo adfigant?</quote></cit>: dicit quod
                   septem praedicamenta non dicunt absolutas res, sed tantum respectus.</p>
             </egXML>
-
-            <p>The text of the reference will be displayed or printed in the apparatus fontium.</p>
 
          </div>
 
@@ -2913,6 +2950,8 @@
                </div>
             </div>
             <!-- End of section on deletion -->
+            
+            <!-- Insert section on transposition -->
 
             <div xml:id="apparatus-criticus-correction">
                <head>Corrections</head>
