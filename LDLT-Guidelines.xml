@@ -1612,7 +1612,34 @@
             </div>
             <!-- End of section on verse -->
 
-            <!-- Insert section on text in languages other than Latin -->
+            <div xml:id="edition-text-foreign-languages">
+               <head>Text in Languages Other than Latin</head>
+
+               <p>If text in languages other than Latin is encoded, language becomes available as a
+                  criterion for searching and filtering.</p>
+
+               <p>
+                  <specList>
+                     <specDesc key="foreign"/>
+                  </specList>
+               </p>
+
+               <p><gi>foreign</gi> contains text in any language other than Latin.</p>
+               <p><att>xml:lang</att> identifies the language by <ref
+                     target="http://www.loc.gov/standards/iso639-2/php/English_list.php">ISO 639-2
+                     code</ref>.</p>
+
+               <p>For example, authors of Latin texts often use Greek words and phrases, as
+                  Macrobius does at <bibl><title>Saturnalia</title> 1.17.64</bibl>: <quote>Ἀπόλλωνα
+                     Διδυμαῖον vocant, quod geminam speciem sui niminis praefert ipse inluminando
+                     formandoque lunam</quote>. That should be encoded as follows:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p><foreign xml:lang="grc">Ἀπόλλωνα Διδυμαῖον</foreign> vocant, quod geminam
+                     speciem sui numinis praefert ipse inluminando formandoque lunam.</p>
+               </egXML>
+            </div>
+
 
             <div xml:id="edition-text-speech">
                <head>Speech</head>
@@ -1851,53 +1878,6 @@
             </div>
             <!-- End of section on places -->
 
-            <div xml:id="edition-text-symbols-abbreviation-expansion">
-               <head>Expansion of Abbreviation</head>
-
-
-<!-- Put this in the apparatus criticus section -->
-
-
-               <p>( ) = And editor expands an abbreviation as an aid to reading or to remove
-                  ambiguity.</p>
-               <p>
-                  <specList>
-                     <specDesc key="expan"/>
-                     <specDesc key="abbr"/>
-                     <specDesc key="ex"/>
-                  </specList>
-               </p>
-               <p><gi>expan</gi> (expansion) contains the full expansion of an abbreviation.</p>
-               <p><gi>abbr</gi> (abbreviation) contains the abbreviated part, i.e. the letters
-                  actually on the page.</p>
-               <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an
-                  editor or transcriber when expanding an abbreviation.</p>
-               <p>
-                  <quote>M(arcus) Cicero S(alutem) D(ixit) L(ucio) Lucceio Q(uinti) F(ilio)</quote>
-               </p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <p><expan><abbr>M</abbr><ex>arcus</ex></expan> Cicero
-                           <expan><abbr>S</abbr><ex>alutem</ex><abbr>D</abbr><ex>ixit</ex></expan>
-                     <expan><abbr>L</abbr><ex>ucio</ex></expan> Lucceio
-                           <expan><abbr>Q</abbr><ex>uinti</ex></expan>
-                     <expan><abbr>F</abbr><ex>ilio</ex></expan></p>
-               </egXML>
-
-               <p>Multiple &lt;abbr&gt; elements within a single &lt;expan&gt; compose a single
-                  abbreviation between them. For example, e.g. is one abbreviation for the phrase
-                  "exempli gratia."</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <expan>
-                     <abbr>e</abbr>
-                     <ex>xempli</ex>
-                     <abbr>g</abbr>
-                     <ex>ratia</ex>
-                  </expan>
-               </egXML>
-
-            </div>
             <!-- End section "Abbreviation Fully Expanded" -->
 
             <div xml:id="edition-text-symbols">
@@ -1918,6 +1898,8 @@
                <p>Since most of the standard symbols have some corresponding annotation in the
                   critical apparatus, their encoding is described in the following sections on the
                   apparatus criticus:<list>
+                     <item>( ) = <ref target="#apparatus-criticus-symbols-abbreviation-expansion"
+                           >expansion of an abbreviation</ref></item>
                      <item>&lt; &gt; = <ref target="#apparatus-criticus-conjecture-and-emendation"
                            >text added by conjecture or emendation</ref></item>
                      <item>[ *** ] = <ref target="#apparatus-criticus-lacuna-physical-loss">text
@@ -2476,6 +2458,52 @@
             </div>
             <!-- End of section on basic apparatus entry -->
 
+            <div xml:id="apparatus-criticus-symbols-abbreviation-expansion">
+               <head>Expansion of Abbreviation</head>
+
+               <p>( ) = An editor expands an abbreviation as an aid to reading or to remove
+                  ambiguity. Encoded according to the following guidelines, a digital edition would
+                  allow a user to toggle between the abbreviated and expanded forms.</p>
+
+               <p>The preface should indicate whether or not abbreviations are expanded.</p>
+               <p>
+                  <specList>
+                     <specDesc key="choice"/>
+                     <specDesc key="abbr"/>
+                     <specDesc key="ex"/>
+                  </specList>
+               </p>
+               <p><gi>expan</gi> (expansion) contains the full expansion of an abbreviation.</p>
+               <p><gi>abbr</gi> (abbreviation) contains the abbreviated part, i.e. the letters
+                  actually on the page.</p>
+               <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an
+                  editor or transcriber when expanding an abbreviation.</p>
+               <p>
+                  <quote>M(arcus) Cicero S(alutem) D(ixit) L(ucio) Lucceio Q(uinti) F(ilio)</quote>
+               </p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p><expan><abbr>M</abbr><ex>arcus</ex></expan> Cicero
+                           <expan><abbr>S</abbr><ex>alutem</ex><abbr>D</abbr><ex>ixit</ex></expan>
+                     <expan><abbr>L</abbr><ex>ucio</ex></expan> Lucceio
+                           <expan><abbr>Q</abbr><ex>uinti</ex></expan>
+                     <expan><abbr>F</abbr><ex>ilio</ex></expan></p>
+               </egXML>
+
+               <p>Multiple &lt;abbr&gt; elements within a single &lt;expan&gt; compose a single
+                  abbreviation between them. For example, e.g. is one abbreviation for the phrase
+                  "exempli gratia."</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <choice>
+                     <abbr>e</abbr>
+                     <ex>xempli</ex>
+                     <abbr>g</abbr>
+                     <ex>ratia</ex>
+                  </choice>
+               </egXML>
+
+            </div>
             <div xml:id="apparatus-criticus-symbols-gaps-lacunae-omissions">
                <head>Lacunae and Omissions</head>
 
@@ -2647,8 +2675,8 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <l n="4">ripa levatque diem vicini <app>
                            <lem>spiritus amnis</lem>
-                           <rdg wit="#N" xml:id="rdg-4.4-spiritus-amnis">spc̅ <gap reason="lost"
-                                 quantity="6" unit="characters"/></rdg>
+                           <rdg wit="#N" xml:id="rdg-4.4-spiritus-amnis">sp&#099;&#773; <gap
+                                 reason="lost" quantity="6" unit="characters"/></rdg>
                            <witDetail wit="#N" target="#rdg-4.4-spiritus-amnis">lac. 6
                               litt.</witDetail>
                         </app>? </l>
@@ -2950,8 +2978,82 @@
                </div>
             </div>
             <!-- End of section on deletion -->
-            
-            <!-- Insert section on transposition -->
+
+            <div xml:id="apparatus-criticus-transposition">
+               <head>Transpositions</head>
+
+               <p>Transpositions may be handled in two ways: prose description or semantic encoding.
+                  Prose description produces a note in the apparatus criticus. Semantic encoding
+                  also produces a note in the apparatus criticus, but it will also enable readers to
+                  see the transpositions in the text.</p>
+
+               <p>The following sections demonstrate the prose description and semantic encoding
+                  methods for the following examples:</p>
+
+               <p>Example 1: In Richard Tarrant's OCT of Ovid's
+                     <bibl><title>Metamorphoses</title></bibl>, the text of 1.304–305 is as
+                  follows:</p>
+
+               <l>nat lupus inter oues, fuluos uehit unda leones,</l>
+               <l>unda uehit tigres; nec uires fulminis apro</l>
+
+               <p>In the apparatus criticus, Tarrant notes the following about Bernense 363 (Bern):
+                  304–5 fuluos … tigres <hi rend="italics">om HM<hi rend="superscript">ac</hi>(N<hi
+                        rend="superscript">ac</hi></hi>; <hi rend="italics">habet Bern, sed ordine
+                     turbato</hi> (nat … oues nec uires f. apro | unda u. tigres, fuluos …
+                  leones)</p>
+
+               <p>Example 2: In the Teubner edition of Ovid's <bibl><title>Tristia</title></bibl>,
+                  J.B. Hall follows the recommendation of Wilamowitz and transposes lines 41–42 of
+                  poem 3.12 so that they follow line 36. In the apparatus criticus, Hall writes
+                        <quote><hi rend="bold">41–42</hi>
+                     <hi rend="italics">post 36 transposuit Wilamowitz.</hi></quote></p>
+
+               <div xml:id="apparatus-criticus-transposition-prose-description">
+                  <head>Transposition: Prose Description</head>
+
+                  <p>To describe this transposition in the apparatus criticus, <gi>app</gi> encloses
+                     the affected passage, and <gi>witDetail</gi> or <gi>note</gi> contains the
+                     description.</p>
+
+                  <p>Example 1 (Ov. <bibl><title>Met.</title></bibl>, 1.304–305):</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem xml:id="lem-1.304–305">
+                           <l n="304">nat lupus inter oues, fuluos uehit unda leones,</l>
+                           <l n="305">unda uehit tigres; nec uires fulminis apro</l>
+                        </lem>
+                        <rdg wit="#H #M" xml:id="#rdg-1.304–305"><l>nat lupus inter oues; nec uires
+                              fulminis apro</l></rdg>
+                        <witDetail wit="#M" target="#rdg-1.304–305" type="ante-corr"/>
+                        <witDetail wit="#N" target="#rdg-1.304–305" type="ante-corr"/>
+                        <note target="#lem-1.304–305">304–5 <hi rend="italics">habet <ref target="#Bern">Bern</ref>, sed
+                              ordine turbato</hi> (nat … oues nec uires f. apro | unda u. tigres,
+                           fuluos … leones)</note>
+                     </app>
+                  </egXML>
+
+                  <p>Example 2 (Ov. <bibl><title>Tr.</title></bibl> 3.12.36ff.)</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l n="35">ille quidem mirum ni de regione propinqua</l>
+                     <l n="36">non nisi uicinas tutus ararit aquas.</l>
+                     <app>
+                        <lem xml:id="lem-3.12.41-42">
+                           <l n="41">fas quoque ab ore freti longaeque Propontidos undis</l>
+                           <l n="42">huc aliquem certo uela dedisse Noto.</l>
+                        </lem>
+                        <note target="#lem-3.12.41-42">41–42 post 36 transposuit <ref target="#Wilamowitz">Wilamowitz</ref>.</note>
+                     </app>
+                     <l n="37">rarus ab Italia tantum mare nauita transit,</l>
+                     <l n="38">litora rarus in haec portubus orba uenit.</l>
+                  </egXML>
+               </div><!-- End of section on prose description of transpositions -->
+
+
+
+            </div>
 
             <div xml:id="apparatus-criticus-correction">
                <head>Corrections</head>
