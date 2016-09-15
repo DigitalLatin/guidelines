@@ -294,12 +294,13 @@
                   numerals to signify the number of a manuscript in a collection, a human reader can
                   adjust to the difference in meaning without much effort. In contrast, machines
                   need clear instructions and a reliable set of rules for reading a digital file.
-                  For example, a human might see <hi rend="bold">N²</hi> and correctly interpret it
-                  within a particular edition as meaning "text written by the second in a succession
-                  of people who wrote in the manuscript known as codex Neapolitanus V A 8." Without
-                  explicit instructions, a machine will interpret the same information as simply the
-                  letter "N" with a superscript numeral 2 next to it. Indeed, a less experienced
-                  human reader might reach the same conclusion as the machine.</p>
+                  For example, a human might see <hi rend="bold">N<hi rend="superscript">2</hi></hi>
+                  and correctly interpret it within a particular edition as meaning "text written by
+                  the second in a succession of people who wrote in the manuscript known as codex
+                  Neapolitanus V A 8." Without explicit instructions, a machine will interpret the
+                  same information as simply the letter "N" with a superscript numeral 2 next to it.
+                  Indeed, a less experienced human reader might reach the same conclusion as the
+                  machine.</p>
 
                <p>Since the audience for LDLT editions includes an entirely new class of reader
                   (i.e., machines), it stands to reason that the reference system should be adapted
@@ -2997,11 +2998,10 @@
                <l>nat lupus inter oues, fuluos uehit unda leones,</l>
                <l>unda uehit tigres; nec uires fulminis apro</l>
 
-               <p>In the apparatus criticus, Tarrant notes the following about Bernense 363 (Bern):
-                  304–5 fuluos … tigres <hi rend="italics">om HM<hi rend="superscript">ac</hi>(N<hi
-                        rend="superscript">ac</hi></hi>; <hi rend="italics">habet Bern, sed ordine
-                     turbato</hi> (nat … oues nec uires f. apro | unda u. tigres, fuluos …
-                  leones)</p>
+               <p>In the apparatus criticus, Tarrant notes the following: 304–5 fuluos … tigres <hi
+                     rend="italics">om HM<hi rend="superscript">ac</hi>(N<hi rend="superscript"
+                        >ac</hi></hi>; <hi rend="italics">habet Bern, sed ordine turbato</hi> (nat …
+                  oues nec uires f. apro | unda u. tigres, fuluos … leones)</p>
 
                <p>Example 2: In the Teubner edition of Ovid's <bibl><title>Tristia</title></bibl>,
                   J.B. Hall follows the recommendation of Wilamowitz and transposes lines 41–42 of
@@ -3067,17 +3067,29 @@
                      the passage. Using <att>exclude</att> accomplishes that.</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <l n="304">nat lupus inter oues, <app>
-                        <lem>fuluos uehit unda leones,</lem>
-                        <rdg wit="#H #M" xml:id="rdg-304-HM"/>
-                        <rdg xml:id="rdg-304-Bern">nec uires fulminis</rdg></app></l>
-                     <l n="305">unda uehit tigres; nec uires fulminis apro</l>
+                     <l n="304">nat lupus inter oues, 
+                        <app>
+                           <lem xml:id="lem-304-fuluos" exclude="#rdg-305-Bern">fuluos uehit unda leones,</lem>
+                           <rdg wit="#H #M" xml:id="rdg-304-HM" exclude="#lem-305-unda #rdg-305-Bern"/>
+                           <rdg wit="#Bern" xml:id="rdg-304-Bern" exclude="#lem-305-nec #rdg-305-HM">nec uires fulminis</rdg>
+                        </app>
+                     </l>
+                     <l n="305">
+                        <app>
+                           <lem xml:id="lem-305-unda">unda uehit tigres</lem>
+                           <rdg wit="#H #M" xml:id="rdg-305-HM" exclude="#lem-304-fuluos #rdg-304-Bern #rdg-305-Bern"/>
+                        </app>; 
+                        <app>
+                           <lem xml:id="lem-305-nec">nec uires fulminis apro</lem>
+                           <rdg wit="#Bern" xml:id="rdg-305-Bern" exclude="#lem-304-fuluos #rdg-304-HM #rdg-305-Bern">fuluos uehit unda leones</rdg>
+                        </app>
+                     </l>
                   </egXML>
 
-                  
+
                   <!-- Start HERE -->
-                  
-                  
+
+
                </div>
 
 
