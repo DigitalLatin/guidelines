@@ -3016,25 +3016,7 @@
                      the affected passage, and <gi>witDetail</gi> or <gi>note</gi> contains the
                      description.</p>
 
-                  <p>Example 1 (Ov. <bibl><title>Met.</title></bibl>, 1.304–305):</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem xml:id="lem-1.304–305">
-                           <l n="304">nat lupus inter oues, fuluos uehit unda leones,</l>
-                           <l n="305">unda uehit tigres; nec uires fulminis apro</l>
-                        </lem>
-                        <note target="#lem-1.304–305"> fuos … tigres <hi rend="italics">om</hi>.
-                              <ref target="#H">H</ref><ref target="#Mac">M<hi rend="superscript"
-                                 >ac</hi></ref>(<ref target="#Nac">N<hi rend="superscript"
-                              >ac</hi></ref>)</note>
-                        <note target="#lem-1.304–305">304–5 <hi rend="italics">habet <ref
-                                 target="#Bern">Bern</ref>, sed ordine turbato</hi> (nat … oues nec
-                           uires f. apro | unda u. tigres, fuluos … leones)</note>
-                     </app>
-                  </egXML>
-
-                  <p>Example 2 (Ov. <bibl><title>Tr.</title></bibl> 3.12.36ff.)</p>
+                  <p>Example 1 (Ov. <bibl><title>Tr.</title></bibl> 3.12.36ff.)</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <l n="35">ille quidem mirum ni de regione propinqua</l>
@@ -3050,51 +3032,124 @@
                      <l n="37">rarus ab Italia tantum mare nauita transit,</l>
                      <l n="38">litora rarus in haec portubus orba uenit.</l>
                   </egXML>
+
+
+                  <p>Example 2 (Ov. <bibl><title>Met.</title></bibl>, 1.304–305):</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem xml:id="lem-1.304–305">
+                           <l n="304">nat lupus inter oues, fuluos uehit unda leones,</l>
+                           <l n="305">unda uehit tigres; nec uires fulminis apro</l>
+                        </lem>
+                        <note target="#lem-1.304–305"> fuluos … tigres <hi rend="italics">om</hi>.
+                              <ref target="#H">H</ref><ref target="#Mac">M<hi rend="superscript"
+                                 >ac</hi></ref>(<ref target="#Nac">N<hi rend="superscript"
+                              >ac</hi></ref>)</note>
+                        <note target="#lem-1.304–305">304–5 <hi rend="italics">habet <ref
+                                 target="#Bern">Bern</ref>, sed ordine turbato</hi> (nat … oues nec
+                           uires f. apro | unda u. tigres, fuluos … leones)</note>
+                     </app>
+                  </egXML>
+
+
                </div>
                <!-- End of section on prose description of transpositions -->
                <div xml:id="apparatus-criticus-transposition-semantic-encoding">
                   <head>Transposition: Semantic Encoding</head>
 
-                  <p>Encoding transpositions requires assigning an <att>xml:id</att> to every
-                        <gi>lem</gi> and <gi>rdg</gi> affected by the transposition and using
-                        <att>exclude</att> to ensure that transpositions are displayed only in
-                     connection with their witnesses.</p>
-
-                  <p>Example 1 (Ov. <bibl><title>Met.</title></bibl>, 1.304–305). In this example,
-                     Bern transposes portions of the lines. Witnesses H M (and N) conflate the
-                     lines, which is another kind of transposition. The groups of witnesses must be
-                     excluded from each other so that there is no confusion about how they handled
-                     the passage. Using <att>exclude</att> accomplishes that.</p>
+                  <p>In some cases, a transposition may be semantically encoded using the basic
+                     pattern for an apparatus entry. In example 1 (Ov.
+                        <bibl><title>Tr.</title></bibl> 3.12.36ff., <ref
+                        target="#apparatus-criticus-transposition">text above</ref>), there are
+                     basically two forms of the text: with and without the transposition. Since the
+                     editor (Hall) has accepted Wilamowitz' proposed transposition, the transposed
+                     version is contained in <gi>lem</gi> and the original is contained in
+                        <gi>rdg</gi>:</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <l n="304">nat lupus inter oues, 
-                        <app>
-                           <lem xml:id="lem-304-fuluos" exclude="#rdg-305-Bern">fuluos uehit unda leones,</lem>
-                           <rdg wit="#H #M" xml:id="rdg-304-HM" exclude="#lem-305-unda #rdg-305-Bern"/>
-                           <rdg wit="#Bern" xml:id="rdg-304-Bern" exclude="#lem-305-nec #rdg-305-HM">nec uires fulminis</rdg>
+                     <l n="35">ille quidem mirum ni de regione propinqua</l>
+                     <l n="36">non nisi uicinas tutus ararit aquas.</l>
+                     <app>
+                        <lem xml:id="lem-3.12.41-42" type="emendation">
+                           <l n="41">fas quoque ab ore freti longaeque Propontidos undis</l>
+                           <l n="42">huc aliquem certo uela dedisse Noto.</l>
+                           <l n="37">rarus ab Italia tantum mare nauita transit,</l>
+                           <l n="38">litora rarus in haec portubus orba uenit.</l>
+                           <l n="39">siue tamen Graia scierit siue ille Latina</l>
+                           <l n="40">uoce loqui—certe gratior huius erit</l>
+                        </lem>
+                        <note target="#lem-3.12.41-42">41–42 post 36 transposuit <ref
+                              target="#Wilamowitz">Wilamowitz</ref>.</note>
+                        <rdg>
+                           <l n="37">rarus ab Italia tantum mare nauita transit,</l>
+                           <l n="38">litora rarus in haec portubus orba uenit.</l>
+                           <l n="39">siue tamen Graia scierit siue ille Latina</l>
+                           <l n="40">uoce loqui—certe gratior huius erit</l>
+                           <l n="41">fas quoque ab ore freti longaeque Propontidos undis</l>
+                           <l n="42">huc aliquem certo uela dedisse Noto.</l>
+                        </rdg>
+                     </app>
+                  </egXML>
+
+                  <p>This will allow users to toggle between the original and emended versions of
+                     the text.</p>
+
+                  <p>More complicated transpositions, like the one in example 2 below, require use
+                     of <att>exclude</att> to ensure that mutually exclusive readings are never
+                     displayed together. <att>exclude</att> tells the processor to prevent certain
+                     readings from being displayed in conjunction with the one for which it is an
+                     attribute.</p>
+
+                  <p>Figuring out which readings are mutually exclusive can be a challenge, as the
+                     example below demonstrates. It can be helpful to make a table or to use some
+                     other method of keeping track of the mutually exclusive readings.</p>
+
+                  <p>Example 2 (Ov. <bibl><title>Met.</title></bibl>, 1.304–305, <ref
+                        target="#apparatus-criticus-transposition">text above</ref>). In this
+                     example, the witness known as Bern transposes portions of two lines. Witnesses
+                     H M<hi rend="superscript">ac</hi> (and N<hi rend="superscript">ac</hi>)
+                     conflate the lines, which is another kind of transposition. That is, it can be
+                     assumed that they did not write the first half the line at 304 and the second
+                     half of the line at 305, but rather wrote the two halves together on the same
+                     line (i.e., nat lupus inter oues, nec uires fulminis apro).</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l n="304">nat lupus inter oues, <app>
+                           <lem xml:id="lem-304-fuluos"
+                              exclude="#rdg-305-HM1 #rdg-305-HM2 #rdg-305-Bern">fuluos uehit unda
+                              leones,</lem>
+                           <rdg wit="#H #M" xml:id="rdg-304-HM"
+                              exclude="#lem-305-unda #lem-305-nec #rdg-305-Bern">nec uires fulminis
+                              apro</rdg>
+                           <rdg wit="#Bern" xml:id="rdg-304-Bern"
+                              exclude="#lem-305-nec #rdg-305-HM1 #rdg-305-HM2">nec uires fulminis
+                              apro</rdg>
+                           <witDetail wit="#M" target="#rdg-304-HM" type="ante-corr">(N<hi
+                                 rend="superscript">ac</hi>)</witDetail>
                         </app>
                      </l>
                      <l n="305">
                         <app>
-                           <lem xml:id="lem-305-unda">unda uehit tigres</lem>
-                           <rdg wit="#H #M" xml:id="rdg-305-HM" exclude="#lem-304-fuluos #rdg-304-Bern #rdg-305-Bern"/>
-                        </app>; 
-                        <app>
-                           <lem xml:id="lem-305-nec">nec uires fulminis apro</lem>
-                           <rdg wit="#Bern" xml:id="rdg-305-Bern" exclude="#lem-304-fuluos #rdg-304-HM #rdg-305-Bern">fuluos uehit unda leones</rdg>
+                           <lem xml:id="lem-305-unda" exclude="#rdg 304-HM #rdg-305-HM2">unda uehit
+                              tigres</lem>
+                           <rdg wit="#H #M" xml:id="rdg-305-HM1"
+                              exclude="#lem-304-fuluos #rdg-304-Bern #lem-305-nec #rdg-305-Bern"/>
+                        </app>; <app>
+                           <lem xml:id="lem-305-nec" exclude="#rdg-304HM #rdg-304-Bern #rdg-305-HM1"
+                              >nec uires fulminis apro</lem>
+                           <rdg wit="#H #M" xml:id="rdg-305-HM2"
+                              exclude="#lem-304-fuluos #rdg-304-Bern #lem-305-unda"/>
+                           <rdg wit="#Bern" xml:id="rdg-305-Bern"
+                              exclude="#lem-304-fuluos #rdg-304-HM #rdg-305-HM1">fuluos uehit unda
+                              leones</rdg>
                         </app>
                      </l>
                   </egXML>
-
-
-                  <!-- Start HERE -->
-
-
                </div>
-
-
-
-            </div>
+               <!-- End of section on semantically encoded transpositions. -->
+            </div><!-- End of section on transposition. -->
+            
 
             <div xml:id="apparatus-criticus-correction">
                <head>Corrections</head>
