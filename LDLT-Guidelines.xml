@@ -3148,8 +3148,38 @@
                   </egXML>
                </div>
                <!-- End of section on semantically encoded transpositions. -->
-            </div><!-- End of section on transposition. -->
-            
+            </div>
+            <!-- End of section on transposition. -->
+
+            <div xml:id="apparatus-criticus-connected-readings">
+               <head>Connected Readings</head>
+
+               <p>In some cases, it may be necessary to show that a witness or a source has variants
+                  in separate places that are related to each other. For example, the text of Calp.
+                  6.68 is as follows: <quote><foreign xml:lang="la">imminet exesa veluti testudine
+                        concha.</foreign></quote>. Heinsius proposes <foreign xml:lang="la">exesae -
+                     conchae</foreign>. That means that whenever <foreign xml:lang="la"
+                     >exesa</foreign> is displayed, <foreign xml:lang="la">concha</foreign> must
+                  also be displayed, and whenever one of Heinsius' conjectures is displayed, the
+                  other one must accompany it.</p>
+
+               <p>As with line transpositions, <att>exclude</att> is used to prevent mutually
+                  exclusive readings from being displayed together. Calp. 6.68 should be encoded as
+                  follows:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <l>imminet <app>
+                        <lem xml:id="lem-6.68-exesa" exclude="#rdg-6.68-conchae">exesa</lem>
+                        <rdg source="#Heinsius" xml:id="rdg-6.68-exesae" exclude="#lem-6.68-concha"
+                           >exesae</rdg>
+                     </app> veluti testudine <app>
+                        <lem xml:id="lem-6.68-concha" exclude="#rdg-6.68-exesae">concha</lem>
+                        <rdg xml:id="rdg-6.68-conchae" exclude="#lem-6.68-exesa">conchae</rdg>
+                     </app>
+                  </l>
+               </egXML>
+
+            </div>
 
             <div xml:id="apparatus-criticus-correction">
                <head>Corrections</head>
