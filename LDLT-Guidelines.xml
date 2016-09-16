@@ -732,6 +732,47 @@
                   </egXML>
                </div>
                <!-- End of section on structured data manuscript description -->
+               <div xml:id="bibliography-manuscripts-families-archetypes">
+                  <head>Manuscript Families and Archetypes</head>
+
+                  <p>An <att>xml:id</att> may be assigned to <gi>listWit</gi> if it is necessary to
+                     refer to a manuscript family or an archetype with a siglum.</p>
+
+                  <p>The following example demonstrates how to assign a siglum to a family of
+                     manuscripts:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <listWit xml:id="V">
+                        <head>First Family</head>
+                        <witness xml:id="A">
+                           <!-- Description of manuscript A -->
+                        </witness>
+                        <witness xml:id="B">
+                           <!-- Description of manuscript B -->
+                        </witness>
+                        <!-- Et cetera -->
+                     </listWit>
+                  </egXML>
+
+                  <p>The following example demonstrates how to assign a siglum to an archetype:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <listWit>
+                        <witness xml:id="β"><!-- Description of the reconstructed witness -->
+                           <listWit>
+                              <witness xml:id="A">
+                                 <!-- Description of manuscript A -->
+                              </witness>
+                              <witness xml:id="B">
+                                 <!-- Description of manuscript B -->
+                              </witness>
+                              <!-- Et cetera -->
+                           </listWit>
+                        </witness>
+                     </listWit>
+                  </egXML>
+
+               </div>
             </div>
             <!-- End of section on manuscript description in general -->
 
@@ -1879,22 +1920,18 @@
             </div>
             <!-- End of section on places -->
 
-            <!-- End section "Abbreviation Fully Expanded" -->
-
             <div xml:id="edition-text-symbols">
                <head>Symbols Commonly Used in the Text of a Critical Edition</head>
 
                <p>Over time, certain typographical conventions have become standard for representing
                   lacunae, omissions, gaps, editorial deletions, and other information. The present
-                  guidelines observe the standard as described by <bibl xml:id="West"><author>Martin
-                        West</author> in <title>Textual Criticism and Editorial Technique</title>
-                        (<pubPlace>Stuttgart</pubPlace>, 1973), <biblScope unit="page"
-                        >80–81</biblScope></bibl>, but they call for semantically encoding them
-                  instead of simply inserting the various punctuation marks and other symbols that
-                  represent complex information. The encoding will still produce the standard
-                  symbols, but the information they represent will be explicit and in a form
-                  readable by humans and machines. That means that it will also be available for
-                  processing, querying, and analyzing with digital tools.</p>
+                  guidelines observe the standard as described by <ref target="#West">West</ref>
+                  (80–81), but they call for semantically encoding them instead of simply inserting
+                  the various punctuation marks and other symbols that represent complex
+                  information. The encoding will still produce the standard symbols, but the
+                  information they represent will be explicit and in a form readable by humans and
+                  machines. That means that it will also be available for processing, querying, and
+                  analyzing with digital tools.</p>
 
                <p>Since most of the standard symbols have some corresponding annotation in the
                   critical apparatus, their encoding is described in the following sections on the
@@ -1909,6 +1946,9 @@
                            >conjectured lacuna</ref></item>
                      <item>[ ... ] = <ref target="#apparatus-criticus-symbols-known-loss-characters"
                            >known amount of characters lost</ref></item>
+                     <item>a&#x323;b&#x323;c&#x323;d&#x323; = <ref
+                           target="#apparatus-criticus-uncertain-characters">text uncertainly
+                           restored</ref>.</item>
                      <item>&#10214; &#10215; = <ref target="#apparatus-criticus-deletions">deletion
                            by a scribe in a witness</ref>.</item>
                      <item>{ } = <ref target="#apparatus-criticus-deletion-editorial">editorial
@@ -2042,9 +2082,8 @@
                   <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html">TEI's
                   module for the critical apparatus</ref>, but it also defines terms specific to the
                encoding of LDLT editions. It is not a how-to manual for composing an apparatus
-               criticus. For that, the reader is encouraged to study the items in the bibliography
-               for this section. Rather, these guidelines present a model for semantically encoding
-               the information to be included in the apparatus criticus of a critical edition.</p>
+               criticus. Rather, these guidelines present a model for semantically encoding the
+               information to be included in the apparatus criticus of a critical edition.</p>
 
             <p>In a digital context, critical editions encoded according to these guidelines will
                have certain interactive features:<list>
@@ -2217,7 +2256,7 @@
                </div>
                <!-- End of section on order -->
             </div>
-            <!-- End of section apparatus-criticus-terms -->
+            <!-- End of section apparatus-criticus-concepts-definitions -->
 
             <div xml:id="apparatus-criticus-specs">
                <head>Encoding Specifications for the Apparatus Criticus</head>
@@ -2403,68 +2442,68 @@
                   </egXML>
                </div>
                <!-- End section basic-entry-examples -->
-
-               <div xml:id="apparatus-criticus-catch-all-references">
-                  <head>Use of Catch-all References in the Critical Apparatus</head>
-
-                  <p>If it is desirable to use a consensus reference (e.g., ω, ς) or a catch-all
-                     reference (e.g., codd., mss., cett., edd.) the references must be defined in
-                     the bibliography of the edition according to the guidelines in the section
-                        "<ref target="#bibliography-sigla-catch-all">Catch-all References</ref>."
-                     This section demonstrates how to insert catch-all references into the
-                     apparatus.</p>
-
-                  <p>If consensus or catchall references are used without any addition annotation,
-                     they may be treated like any other witness or source (i.e., as values of
-                        <att>wit</att> or <att>source</att>), provided that they have both machine-
-                     and human-readable sigla.</p>
-
-                  <p>If they are annotated (e.g., edd. ante Glaeser), they must be encoded in
-                        <gi>wit</gi> according to the guidelines below.</p>
-
-                  <p>
-                     <specList>
-                        <specDesc key="wit"/>
-                        <specDesc key="ref"/>
-                     </specList>
-                  </p>
-
-                  <p><gi>wit</gi> contains a catch-all reference to a group of manuscripts,
-                     editions, or other materials.</p>
-                  <p><gi>ref</gi> contains machine- and human-readable references to an item in the
-                     bibliography.</p>
-
-                  <p>In the following example, the editor wishes to show that the editions are
-                     divided, with one in particular (Glaeser) marking a definitive shift in
-                     preference.</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem wit="#N #P">vicit</lem>
-                        <wit><ref target="#Glaeser">Glaeser</ref> sqq.</wit>
-                        <rdg wit="#G">vīcit</rdg>
-                        <rdg wit="#d">ludit</rdg>
-                        <rdg wit="#V">lusit</rdg>
-                        <wit>edd. ante <ref target="#Glaeser">Glaeser</ref></wit>
-                        <rdg wit="#μ">visit</rdg>
-                        <rdg wit="#γ"/>
-                     </app>
-                  </egXML>
-
-                  <p>This may be displayed or printed as vicit] N P Glaeser sqq. : vīcit G : ludit d
-                     : lusit V edd. ante Glaeser : visit μ : om. γ.</p>
-
-               </div>
-               <!-- End of section on the use of catch-all references -->
             </div>
             <!-- End of section on basic apparatus entry -->
 
-            <div xml:id="apparatus-criticus-symbols-abbreviation-expansion">
+            <div xml:id="apparatus-criticus-catch-all-references">
+               <head>Use of Catch-all References in the Critical Apparatus</head>
+
+               <p>If it is desirable to use a consensus reference (e.g., ω, ς) or a catch-all
+                  reference (e.g., codd., mss., cett., edd.) the references must be defined in the
+                  bibliography of the edition according to the guidelines in the section "<ref
+                     target="#bibliography-sigla-catch-all">Catch-all References</ref>." This
+                  section demonstrates how to insert catch-all references into the apparatus.</p>
+
+               <p>If consensus or catchall references are used without any addition annotation, they
+                  may be treated like any other witness or source (i.e., as values of <att>wit</att>
+                  or <att>source</att>), provided that they have both machine- and human-readable
+                  sigla.</p>
+
+               <p>If they are annotated (e.g., edd. ante Glaeser), they must be encoded in
+                     <gi>wit</gi> according to the guidelines below.</p>
+
+               <p>
+                  <specList>
+                     <specDesc key="wit"/>
+                     <specDesc key="ref"/>
+                  </specList>
+               </p>
+
+               <p><gi>wit</gi> contains a catch-all reference to a group of manuscripts, editions,
+                  or other materials.</p>
+               <p><gi>ref</gi> contains machine- and human-readable references to an item in the
+                  bibliography.</p>
+
+               <p>In the following example, the editor wishes to show that the editions are divided,
+                  with one in particular (Glaeser) marking a definitive shift in preference.</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem wit="#N #P">vicit</lem>
+                     <wit><ref target="#Glaeser">Glaeser</ref> sqq.</wit>
+                     <rdg wit="#G">vīcit</rdg>
+                     <rdg wit="#d">ludit</rdg>
+                     <rdg wit="#V">lusit</rdg>
+                     <wit>edd. ante <ref target="#Glaeser">Glaeser</ref></wit>
+                     <rdg wit="#μ">visit</rdg>
+                     <rdg wit="#γ"/>
+                  </app>
+               </egXML>
+
+               <p>This may be displayed or printed as vicit] N P Glaeser sqq. : vīcit G : ludit d :
+                  lusit V edd. ante Glaeser : visit μ : om. γ.</p>
+
+            </div>
+            <!-- End of section on the use of catch-all references -->
+
+
+            <div xml:id="apparatus-criticus-abbreviation-expansion">
                <head>Expansion of Abbreviation</head>
 
                <p>( ) = An editor expands an abbreviation as an aid to reading or to remove
-                  ambiguity. Encoded according to the following guidelines, a digital edition would
-                  allow a user to toggle between the abbreviated and expanded forms.</p>
+                  ambiguity. Encoded according to the following guidelines, a digital edition will
+                  display the abbreviated forms by default, but a user will be able to toggle
+                  between the abbreviated and expanded forms.</p>
 
                <p>The preface should indicate whether or not abbreviations are expanded.</p>
                <p>
@@ -2626,110 +2665,143 @@
                         librarii incuria cecidisse putavit Verdière</quote>.</p>
                </div>
                <!-- End section "Lacuna Conjectured, No Text Supplied" -->
-
-
-               <div xml:id="apparatus-criticus-symbols-known-loss-characters"
-                  corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html">
-                  <head>Known Amount Of Characters Lost</head>
-
-                  <p>[ . . . ] = The editor knows from context and/or observation how many
-                     characters have been lost.</p>
-
-                  <p>
-                     <specList>
-                        <specDesc key="gap"/>
-                     </specList>
-                  </p>
-
-                  <p><gi>gap</gi> signifies text missing.</p>
-                  <p><att>reason</att> with value "lost" indicates that the text has been lost.</p>
-                  <p><att>quantity</att> indicates the number of characters lost.</p>
-                  <p><att>unit</att> with value "characters" indicates the unit measured in
-                        <att>quantity</att>.</p>
-
-                  <p>
-                     <quote>[ ... ]</quote>
-                  </p>
-
-                  <p>Each dot represents a missing character.</p>
-
-                  <p>For example, in the apparatus criticus to Calp. 4.4, <bibl xml:id="Giarratano"
-                           ><author>Giarratano</author></bibl> has the following with reference to
-                     lemma <foreign xml:lang="la">spiritus amnis</foreign>: <quote>sp&#099;&#773; N
-                        (deinde lac. 6 litt.)</quote>.</p>
-
-                  <p>In an LDLT edition, that would be encoded as follows:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <l n="4">ripa levatque diem vicini <app>
-                           <lem>spiritus amnis</lem>
-                           <rdg wit="#N">sp&#099;&#773; <gap reason="lost" quantity="6"
-                                 unit="characters"/></rdg>
-                        </app>? </l>
-                  </egXML>
-
-                  <p>That encoding would produce the following entry in the apparatus: <quote>spc̅
-                        [......]</quote>. If it is desirable to supplement that with a note, the
-                        <gi>rdg</gi> should be given an <att>xml:id</att> and the note should be
-                     inserted in a <gi>witDetail</gi> pointing to it:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <l n="4">ripa levatque diem vicini <app>
-                           <lem>spiritus amnis</lem>
-                           <rdg wit="#N" xml:id="rdg-4.4-spiritus-amnis">sp&#099;&#773; <gap
-                                 reason="lost" quantity="6" unit="characters"/></rdg>
-                           <witDetail wit="#N" target="#rdg-4.4-spiritus-amnis">lac. 6
-                              litt.</witDetail>
-                        </app>? </l>
-                  </egXML>
-               </div>
-               <!-- End section "Known amount of text lost" -->
-
-               <div xml:id="apparatus-criticus-omission">
-                  <head>Omission</head>
-
-                  <p>This section explains how to encode omission of text from a witness. Omission
-                     is different from a lacuna because omission may be the result of something
-                     other than physical damage to a witness. Omission can occur when a copyist
-                     accidentally skips a word, a line, or a whole section.</p>
-
-                  <p>For example, the witness known as "P" has omitted the word <foreign
-                        xml:lang="la">pecus</foreign> from the following text: <foreign
-                        xml:lang="la">securo custode pecus nocturnaque pastor</foreign>. The
-                     traditional apparatus criticus indicates the omission as follows: pecus <hi
-                        rend="italic">om.</hi>
-                     <hi rend="bold">P</hi></p>
-
-                  <p>In these guidelines, omission is represented by a so-called "self-closing" or
-                     empty <gi>rdg</gi> (&lt;rdg/&gt;):</p>
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <l>securo custode <app>
-                           <lem>pecus</lem>
-                           <rdg wit="#P"/>
-                        </app> nocturnaque pastor</l>
-                  </egXML>
-
-                  <p>The same model applies to the omission of an entire line of verse by a witness
-                     or witnesses, but in that case <gi>app</gi> has <att>type</att>="line-omission"
-                     and <gi>lem</gi> contains the entire line, with the omission marked by a
-                     self-closing <gi>rdg</gi>:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app type="line-omission">
-                        <lem>
-                           <l n="3">et spument rauco ferventia musta susurro.</l>
-                        </lem>
-                        <rdg wit="#n #h"/>
-                     </app>
-                  </egXML>
-
-                  <p>This will be displayed in the apparatus criticus as <quote><hi rend="italic"
-                           >vers. om.</hi>
-                        <hi rend="bold">n h</hi></quote></p>
-               </div>
-               <!-- End of section on omission -->
             </div>
-            <!-- End of section on lacunae and omission -->
+            <!-- End of section on lacunae -->
+
+            <div xml:id="apparatus-criticus-symbols-known-loss-characters"
+               corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html">
+               <head>Known Amount Of Characters Lost</head>
+
+               <p>[ . . . ] = The editor knows from context and/or observation how many characters
+                  have been lost.</p>
+
+               <p>
+                  <specList>
+                     <specDesc key="gap"/>
+                  </specList>
+               </p>
+
+               <p><gi>gap</gi> signifies text missing.</p>
+               <p><att>reason</att> with value "lost" indicates that the text has been lost.</p>
+               <p><att>quantity</att> indicates the number of characters lost.</p>
+               <p><att>unit</att> with value "characters" indicates the unit measured in
+                     <att>quantity</att>.</p>
+
+               <p>
+                  <quote>[ ... ]</quote>
+               </p>
+
+               <p>Each dot represents a missing character.</p>
+
+               <p>For example, in the apparatus criticus to Calp. 4.4, <bibl xml:id="Giarratano"
+                        ><author>Giarratano</author></bibl> has the following with reference to
+                  lemma <foreign xml:lang="la">spiritus amnis</foreign>: <quote>sp&#099;&#773; N
+                     (deinde lac. 6 litt.)</quote>.</p>
+
+               <p>In an LDLT edition, that would be encoded as follows:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <l n="4">ripa levatque diem vicini <app>
+                        <lem>spiritus amnis</lem>
+                        <rdg wit="#N">sp&#099;&#773; <gap reason="lost" quantity="6"
+                              unit="characters"/></rdg>
+                     </app>? </l>
+               </egXML>
+
+               <p>That encoding would produce the following entry in the apparatus: <quote>spc̅
+                     [......]</quote>. If it is desirable to supplement that with a note, the
+                     <gi>rdg</gi> should be given an <att>xml:id</att> and the note should be
+                  inserted in a <gi>witDetail</gi> pointing to it:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <l n="4">ripa levatque diem vicini <app>
+                        <lem>spiritus amnis</lem>
+                        <rdg wit="#N" xml:id="rdg-4.4-spiritus-amnis">sp&#099;&#773; <gap
+                              reason="lost" quantity="6" unit="characters"/></rdg>
+                        <witDetail wit="#N" target="#rdg-4.4-spiritus-amnis">lac. 6
+                           litt.</witDetail>
+                     </app>? </l>
+               </egXML>
+            </div>
+            <!-- End section "Known amount of text lost" -->
+
+            <div xml:id="apparatus-criticus-omission">
+               <head>Omission</head>
+
+               <p>This section explains how to encode omission of text from a witness. Omission is
+                  different from a lacuna because omission may be the result of something other than
+                  physical damage to a witness. Omission can occur when a copyist accidentally skips
+                  a word, a line, or a whole section.</p>
+
+               <p>For example, the witness known as "P" has omitted the word <foreign xml:lang="la"
+                     >pecus</foreign> from the following text: <foreign xml:lang="la">securo custode
+                     pecus nocturnaque pastor</foreign>. The traditional apparatus criticus
+                  indicates the omission as follows: pecus <hi rend="italic">om.</hi>
+                  <hi rend="bold">P</hi></p>
+
+               <p>In these guidelines, omission is represented by a so-called "self-closing" or
+                  empty <gi>rdg</gi> (&lt;rdg/&gt;):</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <l>securo custode <app>
+                        <lem>pecus</lem>
+                        <rdg wit="#P"/>
+                     </app> nocturnaque pastor</l>
+               </egXML>
+
+               <p>The same model applies to the omission of an entire line of verse by a witness or
+                  witnesses, but in that case <gi>app</gi> has <att>type</att>="line-omission" and
+                     <gi>lem</gi> contains the entire line, with the omission marked by a
+                  self-closing <gi>rdg</gi>:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app type="line-omission">
+                     <lem>
+                        <l n="3">et spument rauco ferventia musta susurro.</l>
+                     </lem>
+                     <rdg wit="#n #h"/>
+                  </app>
+               </egXML>
+
+               <p>This will be displayed in the apparatus criticus as <quote><hi rend="italic">vers.
+                        om.</hi>
+                     <hi rend="bold">n h</hi></quote></p>
+            </div>
+            <!-- End of section on omission -->
+
+            <div xml:id="apparatus-criticus-uncertain-characters">
+               <head>Uncertainly Deciphered Characters</head>
+
+               <p>When an edition is based on a limited number of witnesses, it may be necessary to
+                  indicate that characters are difficult to read. The accepted way to do this is
+                  with dots underneath the uncertainly deciphered characters.</p>
+
+               <p>
+                  <specList>
+                     <specDesc key="unclear"/>
+                  </specList>
+               </p>
+
+               <p><gi>unclear</gi> contains characters, words, or phrases that cannot be transcribed
+                  with certainty.</p>
+
+               <p>For example, the entry for <foreign xml:lang="la">Mensae</foreign> in Lindsay's
+                  edition of Festus (157M) has the following uncertainly deciphered text:</p>
+
+               <p><quote>a&#x323;m&#x323;e&#x323; . . . a&#x323;
+                     t&#x323;e&#x323;n&#x323;e&#x323;b&#x323;a&#x323;t&#x323;
+                     a&#x323;r&#x323;a&#x323;m&#x323; . . . . . . . . . .</quote></p>
+
+               <p>In an LDLT edition, that should be encoded as follows:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <unclear>ame</unclear>
+                  <gap reason="lost" quantity="3" unit="characters"/>
+                  <unclear>a tenebat aram</unclear>
+                  <gap reason="lost" quantity="10" unit="characters"/>
+               </egXML>
+
+            </div>
+
 
             <div xml:id="apparatus-criticus-addition">
                <head>Addition</head>
@@ -2977,6 +3049,7 @@
                         <gi>rdg</gi>. If the reading is swapped into the main text in the digital
                      version, the braces { } will be displayed around the reading.</p>
                </div>
+               <!-- End of section on editorial deletion -->
             </div>
             <!-- End of section on deletion -->
 
@@ -3657,7 +3730,6 @@
                <p>These guidelines may also be extended as the community of users discovers and
                   proposes additional encoding patterns to the staff of the LDLT.</p>
             </div>
-            <!-- Need section on bibliography on apparatus -->
          </div>
          <!-- End of section on the apparatus criticus -->
 
@@ -3738,6 +3810,21 @@
                the commentary and from the commentary to the apparatus.</p>
          </div>
          <!-- End of section on textual commentary -->
+         <div xml:id="works-cited">
+            <head>Works Cited</head>
+
+            <p>The following is a list of works cited in these guidelines.</p>
+            <div xml:id="works-cited-editions">
+               <head>Editions</head>
+
+            </div>
+            <div xml:id="works-cited-guidelines">
+               <head>Guidelines</head>
+
+            </div>
+            <div xml:id="works-cited-other"> </div>
+         </div>
+
       </body>
    </text>
 </TEI>
