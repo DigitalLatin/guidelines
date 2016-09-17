@@ -1940,8 +1940,8 @@
                      <item>( ) = <ref target="#edition-text-abbreviation-expansion">expansion of an
                            abbreviation</ref></item>
                      <item>a&#x323;b&#x323;c&#x323;d&#x323; = <ref
-                        target="#edition-text-uncertain-characters">text uncertainly
-                        restored</ref>.</item>
+                           target="#edition-text-uncertain-characters">text uncertainly
+                           restored</ref>.</item>
                      <item>&lt; &gt; = <ref target="#apparatus-criticus-conjecture-and-emendation"
                            >text added by conjecture or emendation</ref></item>
                      <item>[ *** ] = <ref target="#apparatus-criticus-lacuna-physical-loss">text
@@ -1959,7 +1959,7 @@
                   </list></p>
             </div>
             <!-- End section on symbols in the main text. -->
-            
+
             <div xml:id="edition-text-abbreviation-expansion">
                <head>Expansion of Abbreviation</head>
 
@@ -3821,13 +3821,71 @@
             <p>The following is a list of works cited in these guidelines.</p>
             <div xml:id="works-cited-editions">
                <head>Editions</head>
+               <listBibl>
+                  <bibl xml:id="bazán-scots"><editor>Bazán, C.</editor>, <editor>K. Emery</editor>,
+                        <editor>T. Noone</editor>, <editor>R. Plevano</editor>, <editor>A.
+                        Traver</editor>, eds. <title>B. Ioannis Duns Scoti Quaestiones Super
+                        Secundum et Tertium De Anima</title>. <series><title level="s">B. Ioannis
+                           Duns Scoti Opera Philosophica</title>
+                        <biblScope unit="volume">5</biblScope></series>. <pubPlace>Washington,
+                        D.C.</pubPlace>: <publisher>The Catholic University of America
+                        Press</publisher>, <date>2006</date>.</bibl>
+                  <bibl xml:id="damon-caesar"><editor>Damon, C.</editor>, ed. <title>C. Iuli
+                        Caesaris Commentariorum Libri III De Bello Civili</title>. <series><title
+                           level="s">Oxford Classical Texts</title></series>.
+                        <pubPlace>Oxford</pubPlace>: <publisher>Clarendon Press</publisher>,
+                        <date>2015</date>.</bibl>
+                  <bibl xml:id="hall-ovid"><editor>Hall, J. B.</editor>, ed. <title>Ovidius:
+                        Tristia</title>. <series><title level="s">Bibliotheca Scriptorum Graecorum
+                           et Romanorum Teubneriana</title></series>. <pubPlace>Stuttgart and
+                        Leipzig</pubPlace>: <publisher>B. G. Teubner</publisher>,
+                     <date>1995</date>.</bibl>
+                  <bibl xml:id="kaster-macrobius"><editor>Kaster, Robert A.</editor>, ed.
+                        <title>Macrobii Ambrosii Theodosii Saturnalia</title>. <series><title
+                           level="s">Oxford Classical Texts</title></series>.
+                        <pubPlace>Oxford</pubPlace>: <publisher>Clarendon Press</publisher>,
+                        <date>2011</date>.</bibl>
+                  <bibl xml:id="kaster-suetonius"><editor>———</editor>, ed. <title>C. Suetoni
+                        Tranquilli De Vita Caesarum Libros VIII et De Grammaticis et Rhetoribus
+                        Librum</title>. <series><title level="s">Oxford Classical
+                        Texts</title></series>. <pubPlace>Oxford</pubPlace>: <publisher>Clarendon
+                        Press</publisher>, <date>2016</date>.</bibl>
+                  <bibl xml:id="lindsay-festus"><editor>Lindsay, W. M.</editor>, ed. <title>Festus:
+                        De Verborum Significatu cum Pauli Epitome</title>. <series><title level="s"
+                           >Bibliotheca Scriptorum Graecorum et Romanorum
+                        Teubneriana</title></series>. <pubPlace>Stuttgart and Leipzig</pubPlace>:
+                        <publisher>B. G. Teubner</publisher>, <date>1913</date>.</bibl>
+                  <bibl xml:id="tarrant-ovid"><editor>Tarrant, R. J.</editor>, ed. <title>P. Ovidi
+                        Nasoni Metamorphoses</title>. <series><title level="s">Oxford Classical
+                           Texts</title></series>. <pubPlace>Oxford</pubPlace>: <publisher>Clarendon
+                        Press</publisher>, <date>2004</date>.</bibl>
+
+               </listBibl>
 
             </div>
             <div xml:id="works-cited-guidelines">
                <head>Guidelines</head>
+               <listBibl>
+                  <bibl><editor>TEI Consortium</editor>, eds. <title>TEI P5: Guidelines for
+                        Electronic Text Encoding and Interchange</title>. Version 3.0.0. Last
+                     updated on 29th March 2016, revision 89ba24e. <publisher>TEI
+                        Consortium</publisher>. <ref target="http://www.tei-c.org/Guidelines/P5/"
+                        >http://www.tei-c.org/Guidelines/P5/</ref> (2016-09-17).</bibl>
+                  <bibl><author>Elliott, Tom</author>, <author>Gabriel Bodard</author>, <author>Hugh
+                        Cayless</author> et al. <title>EpiDoc: Epigraphic Documents in TEI
+                        XML</title>. Online material, available: <ref target="http://epidoc.sf.net"
+                        >http://epidoc.sf.net</ref> (2016-09-17).</bibl>
+               </listBibl>
 
             </div>
-            <div xml:id="works-cited-other"> </div>
+            <div xml:id="works-cited-other">
+               <listBibl>
+                  <bibl xml:id="West"><author>West, M. L.</author>
+                     <title>Textual Criticism and Editorial Technique Applicable to Greek and Latin
+                        Texts</title>. <pubPlace>Stuttgart</pubPlace>: <publisher>B. G.
+                        Teubner</publisher>, <date>1973</date>.</bibl>
+               </listBibl>
+            </div>
          </div>
 
       </body>
