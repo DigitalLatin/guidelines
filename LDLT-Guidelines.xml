@@ -733,46 +733,105 @@
                </div>
                <!-- End of section on structured data manuscript description -->
                <div xml:id="bibliography-manuscripts-families-archetypes">
-                  <head>Manuscript Families and Archetypes</head>
+                  <head>Manuscript Families, Archetypes, and Hyparchetypes</head>
 
-                  <p>An <att>xml:id</att> may be assigned to <gi>listWit</gi> if it is necessary to
-                     refer to a manuscript family or an archetype with a siglum.</p>
+                  <p>Sigla may be assigned to families of manuscripts, archetypes, and hyparchetypes
+                     so that they may be referred to in the apparatus criticus or elsewhere. As
+                     indicated in the section on <ref target="#bibliography-sigla">human- and
+                        machine-readable sigla</ref>, each family, archetype, and hyparchetype must
+                     have both a unique <att>xml:id</att> (machine-readable siglum) and a
+                        <gi>label</gi> (human-readable siglum).</p>
 
-                  <p>The following example demonstrates how to assign a siglum to a family of
-                     manuscripts:</p>
+                  <div xml:id="bibliography-manuscripts-families">
+                     <head>Manuscript Families</head>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <listWit xml:id="V">
-                        <head>First Family</head>
-                        <witness xml:id="A">
-                           <!-- Description of manuscript A -->
-                        </witness>
-                        <witness xml:id="B">
-                           <!-- Description of manuscript B -->
-                        </witness>
-                        <!-- Et cetera -->
-                     </listWit>
-                  </egXML>
+                     <p>Since the family is not itself a physical object, but a concept (i.e., a
+                        group of related manuscripts), its siglum is assigned to <gi>listWit</gi> as
+                        the container of the individual <gi>witness</gi> elements that describe the
+                        manuscripts in the family.</p>
 
-                  <p>The following example demonstrates how to assign a siglum to an archetype:</p>
+                     <p>In the following example, <gi>listWit</gi> has the <att>xml:id</att> V for
+                        the machine-readable siglum; <gi>head</gi> contains the name of the family
+                        and the human-readable siglum in <gi>label</gi>.</p>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <listWit>
-                        <witness xml:id="β"><!-- Description of the reconstructed witness -->
-                           <listWit>
-                              <witness xml:id="A">
-                                 <!-- Description of manuscript A -->
-                              </witness>
-                              <witness xml:id="B">
-                                 <!-- Description of manuscript B -->
-                              </witness>
-                              <!-- Et cetera -->
-                           </listWit>
-                        </witness>
-                     </listWit>
-                  </egXML>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <listWit xml:id="V">
+                           <head>First Family (<label>V</label></head>
+                           <witness xml:id="A">
+                              <!-- Description of manuscript A -->
+                           </witness>
+                           <witness xml:id="B">
+                              <!-- Description of manuscript B -->
+                           </witness>
+                           <!-- Et cetera -->
+                        </listWit>
+                     </egXML>
+                  </div>
+                  <!-- End of section on manuscript families -->
 
+                  <div xml:id="bibliography-manuscripts-hyparchetypes-archetypes">
+                     <head>Archetypes and Hyparchetypes</head>
+
+                     <p>An archetype is the "lowest common ancestor of the known manuscripts." (<ref
+                           target="#West">West</ref> 32). A hyparchetype is the ancestor of a branch
+                        of a family of manuscripts. In editions of Latin texts, both archetypes and
+                        hyparchetypes are commonly represented with lower case Greek letters.</p>
+
+                     <p>For example, <ref target="#kaster-suetonius">Robert Kaster</ref> assigns the
+                        siglum ω to the archetype of the manuscripts of Suetonius' <bibl><title>De
+                              Vita Caesarum</title></bibl>. The manuscripts can be analyzed into two
+                        families that stem from two hyparchetypes, to which Kaster has assigned the
+                        sigla α and β. The two families have branches, each with their own
+                        hyparchetype (α<hi rend="subscript">1</hi> α<hi rend="subscript">2</hi> β<hi
+                           rend="subscript">1</hi> β<hi rend="subscript">2</hi>).</p>
+
+                     <p>Kaster lists the sigla as follows:<list>
+                           <item>ω archetypus codicum αβ <list>
+                                 <item>α hyparchetypus codicum α<hi rend="subscript">1</hi>Vα<hi
+                                       rend="subscript">2</hi><list>
+                                       <item>α<hi rend="subscript">1</hi> hyparchetypus codicum MG<list>
+                                             <item>M Paris. lat. 6115 s. IX<hi rend="superscript"
+                                                  >1/2</hi> (an. c. 820?)</item>
+                                             <item>G Guelf. 4573 (Gud. lat. 268), s. XI<hi
+                                                  rend="superscript">3/4</hi></item>
+                                          </list>
+                                       </item>
+                                       <item>etc.</item>
+                                    </list>
+                                 </item>
+                              </list>
+                           </item>
+                        </list>
+                     </p>
+
+                     <p>Though no longer extant, archetypes and hyparchetypes can be referred to as
+                        witnesses to readings. Therefore, they are encoded with <gi>witness</gi>.
+                        The following example demonstrates how Kaster's list should be encoded:</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <listWit>
+                           <witness xml:id="ω"><label>ω</label> = archetypus codicum αβ <listWit>
+                                 <witness xml:id="a"><label>α</label> = hyparchetypus codicum α<hi
+                                       rend="subscript">1</hi>Vα <listWit>
+                                       <witness xml:id="α1"><label>α<hi rend="subscript"
+                                             >1</hi></label> = hyparchetypus codicum MG <listWit>
+                                             <witness xml:id="M"
+                                                ><label>M</label><!-- Description of witness M -->
+                                             </witness>
+                                             <witness xml:id="G"
+                                                ><label>G</label><!-- Description of witness G --></witness>
+                                          </listWit>
+                                       </witness>
+                                    </listWit>
+                                 </witness>
+                              </listWit>
+                           </witness>
+                        </listWit>
+                     </egXML>
+                  </div>
+                  <!-- End of section on archetypes and hyparchetypes -->
                </div>
+               <!-- End of section on families, archetypes, and hyparchetypes -->
             </div>
             <!-- End of section on manuscript description in general -->
 
