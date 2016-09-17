@@ -1925,7 +1925,7 @@
 
                <p>Over time, certain typographical conventions have become standard for representing
                   lacunae, omissions, gaps, editorial deletions, and other information. The present
-                  guidelines observe the standard as described by <ref target="#West">West</ref>
+                  guidelines observe the standards as described by <ref target="#West">West</ref>
                   (80–81), but they call for semantically encoding them instead of simply inserting
                   the various punctuation marks and other symbols that represent complex
                   information. The encoding will still produce the standard symbols, but the
@@ -1933,11 +1933,15 @@
                   machines. That means that it will also be available for processing, querying, and
                   analyzing with digital tools.</p>
 
-               <p>Since most of the standard symbols have some corresponding annotation in the
-                  critical apparatus, their encoding is described in the following sections on the
-                  apparatus criticus:<list>
-                     <item>( ) = <ref target="#apparatus-criticus-symbols-abbreviation-expansion"
-                           >expansion of an abbreviation</ref></item>
+               <p>Since most of the standard symbols usually have corresponding annotation in the
+                  critical apparatus, the encoding guidelines for many of them can be found in
+                  subsections of the guidelines for encoding entries in the critical apparatus. The
+                  following list identifies the symbols and points to the guidelines for encoding them:<list>
+                     <item>( ) = <ref target="#edition-text-abbreviation-expansion">expansion of an
+                           abbreviation</ref></item>
+                     <item>a&#x323;b&#x323;c&#x323;d&#x323; = <ref
+                        target="#edition-text-uncertain-characters">text uncertainly
+                        restored</ref>.</item>
                      <item>&lt; &gt; = <ref target="#apparatus-criticus-conjecture-and-emendation"
                            >text added by conjecture or emendation</ref></item>
                      <item>[ *** ] = <ref target="#apparatus-criticus-lacuna-physical-loss">text
@@ -1946,9 +1950,6 @@
                            >conjectured lacuna</ref></item>
                      <item>[ ... ] = <ref target="#apparatus-criticus-symbols-known-loss-characters"
                            >known amount of characters lost</ref></item>
-                     <item>a&#x323;b&#x323;c&#x323;d&#x323; = <ref
-                           target="#apparatus-criticus-uncertain-characters">text uncertainly
-                           restored</ref>.</item>
                      <item>&#10214; &#10215; = <ref target="#apparatus-criticus-deletions">deletion
                            by a scribe in a witness</ref>.</item>
                      <item>{ } = <ref target="#apparatus-criticus-deletion-editorial">editorial
@@ -1958,6 +1959,90 @@
                   </list></p>
             </div>
             <!-- End section on symbols in the main text. -->
+            
+            <div xml:id="edition-text-abbreviation-expansion">
+               <head>Expansion of Abbreviation</head>
+
+               <p>( ) = An editor expands an abbreviation as an aid to reading or to remove
+                  ambiguity. Encoded according to the following guidelines, a digital edition will
+                  display the abbreviated forms by default, but a user will be able to toggle
+                  between the abbreviated and expanded forms.</p>
+
+               <p>The preface should indicate whether or not abbreviations are expanded.</p>
+               <p>
+                  <specList>
+                     <specDesc key="choice"/>
+                     <specDesc key="abbr"/>
+                     <specDesc key="ex"/>
+                  </specList>
+               </p>
+               <p><gi>expan</gi> (expansion) contains the full expansion of an abbreviation.</p>
+               <p><gi>abbr</gi> (abbreviation) contains the abbreviated part, i.e. the letters
+                  actually on the page.</p>
+               <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an
+                  editor or transcriber when expanding an abbreviation.</p>
+               <p>
+                  <quote>M(arcus) Cicero S(alutem) D(ixit) L(ucio) Lucceio Q(uinti) F(ilio)</quote>
+               </p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p><expan><abbr>M</abbr><ex>arcus</ex></expan> Cicero
+                           <expan><abbr>S</abbr><ex>alutem</ex><abbr>D</abbr><ex>ixit</ex></expan>
+                     <expan><abbr>L</abbr><ex>ucio</ex></expan> Lucceio
+                           <expan><abbr>Q</abbr><ex>uinti</ex></expan>
+                     <expan><abbr>F</abbr><ex>ilio</ex></expan></p>
+               </egXML>
+
+               <p>Multiple &lt;abbr&gt; elements within a single &lt;expan&gt; compose a single
+                  abbreviation between them. For example, e.g. is one abbreviation for the phrase
+                  "exempli gratia."</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <choice>
+                     <abbr>e</abbr>
+                     <ex>xempli</ex>
+                     <abbr>g</abbr>
+                     <ex>ratia</ex>
+                  </choice>
+               </egXML>
+            </div>
+            <!-- End section on expansion of abbreviations. -->
+
+            <div xml:id="edition-text-uncertain-characters">
+               <head>Uncertainly Deciphered Characters</head>
+
+               <p>When an edition is based on a limited number of witnesses, it may be necessary to
+                  indicate that characters are difficult to read. The accepted way to do this is
+                  with dots underneath the uncertainly deciphered characters.</p>
+
+               <p>
+                  <specList>
+                     <specDesc key="unclear"/>
+                  </specList>
+               </p>
+
+               <p><gi>unclear</gi> contains characters, words, or phrases that cannot be transcribed
+                  with certainty.</p>
+
+               <p>For example, the entry for <foreign xml:lang="la">Mensae</foreign> in Lindsay's
+                  edition of Festus (157M) has the following uncertainly deciphered text:</p>
+
+               <p><quote>a&#x323;m&#x323;e&#x323; . . . a&#x323;
+                     t&#x323;e&#x323;n&#x323;e&#x323;b&#x323;a&#x323;t&#x323;
+                     a&#x323;r&#x323;a&#x323;m&#x323; . . . . . . . . . .</quote></p>
+
+               <p>In an LDLT edition, that should be encoded as follows:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <unclear>ame</unclear>
+                  <gap reason="lost" quantity="3" unit="characters"/>
+                  <unclear>a tenebat aram</unclear>
+                  <gap reason="lost" quantity="10" unit="characters"/>
+               </egXML>
+
+            </div>
+            <!-- End section on uncertainly deciphered characters. -->
+
          </div>
          <!-- End section on edition text. -->
 
@@ -2496,54 +2581,6 @@
             </div>
             <!-- End of section on the use of catch-all references -->
 
-
-            <div xml:id="apparatus-criticus-abbreviation-expansion">
-               <head>Expansion of Abbreviation</head>
-
-               <p>( ) = An editor expands an abbreviation as an aid to reading or to remove
-                  ambiguity. Encoded according to the following guidelines, a digital edition will
-                  display the abbreviated forms by default, but a user will be able to toggle
-                  between the abbreviated and expanded forms.</p>
-
-               <p>The preface should indicate whether or not abbreviations are expanded.</p>
-               <p>
-                  <specList>
-                     <specDesc key="choice"/>
-                     <specDesc key="abbr"/>
-                     <specDesc key="ex"/>
-                  </specList>
-               </p>
-               <p><gi>expan</gi> (expansion) contains the full expansion of an abbreviation.</p>
-               <p><gi>abbr</gi> (abbreviation) contains the abbreviated part, i.e. the letters
-                  actually on the page.</p>
-               <p><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an
-                  editor or transcriber when expanding an abbreviation.</p>
-               <p>
-                  <quote>M(arcus) Cicero S(alutem) D(ixit) L(ucio) Lucceio Q(uinti) F(ilio)</quote>
-               </p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <p><expan><abbr>M</abbr><ex>arcus</ex></expan> Cicero
-                           <expan><abbr>S</abbr><ex>alutem</ex><abbr>D</abbr><ex>ixit</ex></expan>
-                     <expan><abbr>L</abbr><ex>ucio</ex></expan> Lucceio
-                           <expan><abbr>Q</abbr><ex>uinti</ex></expan>
-                     <expan><abbr>F</abbr><ex>ilio</ex></expan></p>
-               </egXML>
-
-               <p>Multiple &lt;abbr&gt; elements within a single &lt;expan&gt; compose a single
-                  abbreviation between them. For example, e.g. is one abbreviation for the phrase
-                  "exempli gratia."</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <choice>
-                     <abbr>e</abbr>
-                     <ex>xempli</ex>
-                     <abbr>g</abbr>
-                     <ex>ratia</ex>
-                  </choice>
-               </egXML>
-
-            </div>
             <div xml:id="apparatus-criticus-symbols-gaps-lacunae-omissions">
                <head>Lacunae and Omissions</head>
 
@@ -2768,39 +2805,7 @@
             </div>
             <!-- End of section on omission -->
 
-            <div xml:id="apparatus-criticus-uncertain-characters">
-               <head>Uncertainly Deciphered Characters</head>
 
-               <p>When an edition is based on a limited number of witnesses, it may be necessary to
-                  indicate that characters are difficult to read. The accepted way to do this is
-                  with dots underneath the uncertainly deciphered characters.</p>
-
-               <p>
-                  <specList>
-                     <specDesc key="unclear"/>
-                  </specList>
-               </p>
-
-               <p><gi>unclear</gi> contains characters, words, or phrases that cannot be transcribed
-                  with certainty.</p>
-
-               <p>For example, the entry for <foreign xml:lang="la">Mensae</foreign> in Lindsay's
-                  edition of Festus (157M) has the following uncertainly deciphered text:</p>
-
-               <p><quote>a&#x323;m&#x323;e&#x323; . . . a&#x323;
-                     t&#x323;e&#x323;n&#x323;e&#x323;b&#x323;a&#x323;t&#x323;
-                     a&#x323;r&#x323;a&#x323;m&#x323; . . . . . . . . . .</quote></p>
-
-               <p>In an LDLT edition, that should be encoded as follows:</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <unclear>ame</unclear>
-                  <gap reason="lost" quantity="3" unit="characters"/>
-                  <unclear>a tenebat aram</unclear>
-                  <gap reason="lost" quantity="10" unit="characters"/>
-               </egXML>
-
-            </div>
 
 
             <div xml:id="apparatus-criticus-addition">
