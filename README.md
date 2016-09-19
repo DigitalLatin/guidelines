@@ -1,1 +1,3 @@
-# guidelines
+# LDLT Guidelines
+
+The encoding guidelines in this repository are part of the [Digital Latin Library](http://digitallatin.org) project. They are for use by editors wishing to encode critical editions of Latin texts. The guidelines are licensed under the terms of [Creative Commons Attribution 4.0 International (CC BY 4.0) ([https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/))].
