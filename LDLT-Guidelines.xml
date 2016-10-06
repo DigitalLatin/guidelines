@@ -417,13 +417,6 @@
                      bibliography, catch-all abbreviations and phrases must be defined in a simple
                      list at the end of the bibliography.</p>
 
-                  <p>
-                     <specList>
-                        <specDesc key="list"/>
-                        <specDesc key="item"/>
-                     </specList>
-                  </p>
-
                   <list>
                      <item><gi>list</gi> with <att>xml:id</att> with a value of
                         "bibliography-catch-all" contains the catch-all references as items.</item>
@@ -490,27 +483,7 @@
                      imaginable detail about a manuscript as structured data. Editors may wish to
                      use more of the features of the module than are described here, but LDLT viewer
                      will display only the following:</p>
-                  <p>
-                     <specList>
-                        <specDesc key="listWit"/>
-                        <specDesc key="witness"/>
-                        <specDesc key="abbr"/>
-                        <specDesc key="msDesc"/>
-                        <specDesc key="msIdentifier"/>
-                        <specDesc key="settlement"/>
-                        <specDesc key="repository"/>
-                        <specDesc key="idno"/>
-                        <specDesc key="altIdentifier"/>
-                        <specDesc key="msContents"/>
-                        <specDesc key="physDesc"/>
-                        <specDesc key="objectDesc"/>
-                        <specDesc key="handDesc"/>
-                        <specDesc key="handNote"/>
-                        <specDesc key="history"/>
-                        <specDesc key="origin"/>
-                        <specDesc key="provenance"/>
-                     </specList>
-                  </p>
+                  
                   <list>
                      <item><gi>listWit</gi> (list of witnesses) contains the descriptions of
                         manuscript witnesses for the edition. Separate <gi>listWit</gi> elements may
@@ -620,12 +593,12 @@
                                     each other by brief spaces. The following subscription appears
                                     at the end of the whole work: <quote xml:lang="lat">Aureliani
                                        Nemesiani Cartag&#773; bucol&#8217; explicit: Deo gratias
-                                       amen</quote>. Finally, another more recent hand, as <ref
-                                       target="#Bursian">Bursian</ref> and <ref target="#Schenkl"
-                                       >Schenkl</ref> recognized, wrote <quote xml:lang="lat"
-                                       >Calpurnii eclogae</quote> and <quote xml:lang="lat"
-                                       >Nemesiani eclogae</quote>. The remaining leaves are
-                                    blank.</p>
+                                       amen</quote>. Finally, another more recent hand, as 
+                                       <ref target="#Bursian">Bursian</ref> and 
+                                       <ref target="#Schenkl">Schenkl</ref> recognized, wrote 
+                                       <quote xml:lang="lat">Calpurnii eclogae</quote> and 
+                                       <quote xml:lang="lat">Nemesiani eclogae</quote>. The remaining 
+                                       leaves are blank.</p>
                               </msContents>
                               <physDesc>
                                  <objectDesc>
@@ -929,20 +902,6 @@
                            <gi>listWit</gi>. Since they are also printed books, they also require
                         the use of <gi>bibl</gi> and its related elements.</p>
 
-                     <p>
-                        <specList>
-                           <specDesc key="listWit"/>
-                           <specDesc key="witness"/>
-                           <specDesc key="abbr"/>
-                           <specDesc key="bibl"/>
-                           <specDesc key="editor"/>
-                           <specDesc key="title"/>
-                           <specDesc key="pubPlace"/>
-                           <specDesc key="publisher"/>
-                           <specDesc key="date"/>
-                           <specDesc key="ptr"/>
-                        </specList>
-                     </p>
 
                      <list>
                         <item><gi>listWit</gi> (list of witnesses) contains bibliographical records
@@ -1010,7 +969,8 @@
                                     (Buccolica canori poetae Titi Calphurnii Siculi undecim Aeglogis
                                     iucunditer decantata)</title>. <pubPlace>Coloniae</pubPlace>:
                                     <publisher>[Henricus Quintell]</publisher>,
-                                 <date>1505(?)</date></bibl>. URL: <ptr
+                                 <date>1505(?)</date></bibl>. URL: 
+                             <ptr
                                  target="http://digitale.bibliothek.uni-halle.de/vd16/content/titleinfo/1000626"
                               />.</witness>
                            <witness xml:id="Nordh."><abbr type="siglum">Nordh.</abbr> =
@@ -1022,14 +982,16 @@
                                     (“Ascensius”)</editor>. <title>Buccolica, cum adnotatione
                                     Ascensiana</title>. <pubPlace>Parhisiis, in vico
                                     Maturinorum</pubPlace>: <publisher>a Durando
-                                    Gerlerio</publisher>, <date>1503</date></bibl>. URL: <ptr
+                                    Gerlerio</publisher>, <date>1503</date></bibl>. URL: 
+                             <ptr
                                  target="http://gallica.bnf.fr/ark:/12148/bpt6k841539v"/>.</witness>
                            <witness xml:id="b"><abbr type="siglum">b</abbr> = <bibl><title>editio
                                     Bononiensis</title> = <editor>Guidalottus Bononiensis,
                                     Diomedes</editor>. <title>Calpurnii et Nemesiani Poetarum
                                     Buccolicum Carmen</title>. <pubPlace>Bononiae</pubPlace>:
                                     <publisher>per Caligulam Bazalerium</publisher>,
-                                    <date>1504</date></bibl>. URL: <ptr
+                                    <date>1504</date></bibl>. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=B1RrV7ciP6gC&amp;pg=PT3#v=onepage&amp;q&amp;f=false"
                               />.</witness>
                         </listWit>
@@ -1045,19 +1007,7 @@
                         early editions, except <gi>listBibl</gi> is used instead of
                         <gi>listWit</gi>.</p>
 
-                     <p>
-                        <specList>
-                           <specDesc key="listBibl"/>
-                           <specDesc key="bibl"/>
-                           <specDesc key="abbr"/>
-                           <specDesc key="editor"/>
-                           <specDesc key="title"/>
-                           <specDesc key="pubPlace"/>
-                           <specDesc key="publisher"/>
-                           <specDesc key="date"/>
-                           <specDesc key="ptr"/>
-                        </specList>
-                     </p>
+                     
 
                      <list>
                         <item><gi>listBibl</gi> (citation lists) contains bibliographical records
@@ -1102,64 +1052,66 @@
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <listBibl xml:id="modern-editions">
                            <head>Modern Editions</head>
-                           <bibl xml:id="n"><abbr type="siglum">n</abbr> = <editor>Brassicanus,
-                                 Johannes Alexander</editor>. <title>editio Brassicani</title>.
-                                 <pubPlace>Argentorati (Strasbourg)</pubPlace>: <publisher>Iohannis
-                                 Knoblochus</publisher>, <date>1519</date>. URL: <ptr
-                                 target="https://books.google.com/books?id=n8JSAAAAcAAJ&amp;pg=PA1#v=onepage&amp;q&amp;f=false"
-                              />.</bibl>
-                           <bibl xml:id="Vienn."><abbr type="siglum">Vienn.</abbr> =
-                                 <editor>Anonymous</editor>. <title>ed. Viennensis</title>.
-                                 <pubPlace>s.l.</pubPlace>, <date>s.d.</date></bibl>
-                           <bibl xml:id="g"><abbr type="siglum">g</abbr> = <editor>Logus,
-                                 Georgius</editor>. <title>editio Augustana</title>.
-                                 <pubPlace>Augustae Vindelicorum</pubPlace>: <publisher>in officina
-                                 Henrici Steyner</publisher>), <date>1534</date>. URL: <ptr
+                           <bibl xml:id="n"><abbr type="siglum">n</abbr> = <editor>Brassicanus, Johannes Alexander</editor>. 
+                             <title>editio Brassicani</title>. <pubPlace>Argentorati (Strasbourg)</pubPlace>: 
+                             <publisher>Iohannis Knoblochus</publisher>, <date>1519</date>. URL: 
+                             <ptr target="https://books.google.com/books?id=n8JSAAAAcAAJ&amp;pg=PA1#v=onepage&amp;q&amp;f=false"/>.
+                           </bibl>
+                           <bibl xml:id="Vienn."><abbr type="siglum">Vienn.</abbr> = <editor>Anonymous</editor>. 
+                             <title>ed. Viennensis</title>. <pubPlace>s.l.</pubPlace>, <date>s.d.</date></bibl>
+                           <bibl xml:id="g"><abbr type="siglum">g</abbr> = <editor>Logus, Georgius</editor>. 
+                             <title>editio Augustana</title>. <pubPlace>Augustae Vindelicorum</pubPlace>: 
+                             <publisher>in officina Henrici Steyner</publisher>), <date>1534</date>. URL: 
+                             <ptr
                                  target="http://daten.digitale-sammlungen.de/~db/0003/bsb00038602/images/"
                               /></bibl>
-                           <bibl xml:id="Tig."><abbr type="siglum">Tig.</abbr> =
-                                 <editor>Anonymous</editor>. <title>editio Tigurina</title>
-                              <pubPlace>Tiguri</pubPlace>: <pubPlace>apud Christophorum
-                                 Froschouerum</pubPlace>, <date>1537</date>. URL: <ptr
+                           <bibl xml:id="Tig."><abbr type="siglum">Tig.</abbr> = <editor>Anonymous</editor>. 
+                             <title>editio Tigurina</title> <pubPlace>Tiguri</pubPlace>: 
+                             <pubPlace>apud Christophorum Froschouerum</pubPlace>, <date>1537</date>. URL: 
+                             <ptr
                                  target="http://reader.digitale-sammlungen.de/resolve/display/bsb11088503.html"
                               />.</bibl>
                            <bibl xml:id="Gryph."><abbr type="siglum">Gryph.</abbr> =
                                  <editor>Anonymous</editor>. <title>editio Gryph.</title>
                               <pubPlace>Lugduni</pubPlace>: <publisher>apud Seb.
-                                 Gyrphium</publisher>, <date>1537</date>. URL: <ptr
+                                 Gyrphium</publisher>, <date>1537</date>. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=JpJXAAAAcAAJ&amp;pg=PA1#v=onepage&amp;q&amp;f=false"
                               />.</bibl>
                            <bibl xml:id="o"><abbr type="siglum">o</abbr> =
                                  <editor>Anonymous</editor>. <title>ed. Oporiniana</title>
                               <pubPlace>Basileae</pubPlace>: <publisher>Johannes
-                                 Oporinus</publisher>, <date>1546</date>.URL: <ptr
+                                 Oporinus</publisher>, <date>1546</date>.URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=cKqCwvkRiTgC&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
                               /></bibl>
-                           <bibl xml:id="p"><abbr type="siglum">p</abbr> = <title>ed.
-                                 Pithoeana</title> = <editor>Pithoeus, Petrus</editor>.
-                                 <title>Epigrammata et poematia vetera</title>.
-                                 <pubPlace>Parisiis</pubPlace>: <publisher>Dionysius
-                                 Duvallius</publisher>, <date>1590</date>. URL: <ptr
+                           <bibl xml:id="p"><abbr type="siglum">p</abbr> = <title>ed. Pithoeana</title> = <editor>Pithoeus, Petrus</editor>. 
+                             <title>Epigrammata et poematia vetera</title>. <pubPlace>Parisiis</pubPlace>: 
+                             <publisher>Dionysius Duvallius</publisher>, <date>1590</date>. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=F_E6AAAAcAAJ&amp;pg=PR6#v=onepage&amp;q&amp;f=false"
                               /></bibl>
                            <bibl xml:id="edAurel"><abbr type="siglum">Aurel.</abbr> =
                                  <editor>Anonymous</editor>. <title>Corpus omnium veterum poetarum
                                  latinorum (Volumen Secundum)</title>. <pubPlace>Aureliae
                                  Allobrogum</pubPlace>: <publisher>Samuel Crispinus</publisher>,
-                                 <date>1611</date>. URL: <ptr
+                                 <date>1611</date>. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=Q-EPAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
                               /></bibl>
                            <bibl xml:id="Barth1613"><abbr type="siglum">Barth 1613</abbr> =
                                  <title>ed. Barthii</title> = <editor>Barthius, Casparus</editor>.
                                  <title>Venatici et Bucolici Poetae Latini: Gratius, Nemesianus,
                                  Calpurnius</title>. <pubPlace>Hanoviae</pubPlace>: <publisher>In
-                                 Bibliopolio Willieriano</publisher>, <date>1613</date>. URL: <ptr
+                                 Bibliopolio Willieriano</publisher>, <date>1613</date>. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=SEVXAAAAcAAJ&amp;pg=PP7#v=onepage&amp;q&amp;f=false"
                               /></bibl>
                            <bibl xml:id="Ulit."><abbr type="siglum">Ulit.</abbr> = <title>ed.
                                  Ulitii</title> = <editor>Ulitius, Ianus</editor>. <title>Venatio
                                  Novantiqua</title>. <pubPlace>Leidae</pubPlace>: <publisher>Ex
-                                 Officina Elzeveriana</publisher>, <date>1645</date>. URL: <ptr
+                                 Officina Elzeveriana</publisher>, <date>1645</date>. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=Yb09AAAAcAAJ&amp;pg=PR4#v=onepage&amp;q&amp;f=false"
                               /></bibl>
                            <bibl xml:id="h"><abbr type="siglum">h</abbr> = ed. Haverkampi et Brucii
@@ -1167,14 +1119,16 @@
                                  Scriptores et Bucolici Antiqui</title>. <pubPlace>Lugduni Batavorum
                                  et Hagae Comitum</pubPlace>: apud Johannem Arnoldum Langerak, P.
                               Gosse, et J. Neaulme; Rutg. Christoph. Alberts, J. Vander Kloot,
-                                 <date>1728</date>. URL: <ptr
+                                 <date>1728</date>. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=nJVAAAAAcAAJ&amp;pg=PP9#v=onepage&amp;q&amp;f=false"
                               /></bibl>
                            <bibl xml:id="Burm1731"><abbr type="siglum">Burm. 1731</abbr> =
                                  <title>editio Burmanni</title> = <editor>Burmannus, Petrus (Pieter
                                  Burman)</editor>. <title>Poetae Latini Minores, Tom. I</title>.
                                  <pubPlace>Leidae</pubPlace>: <publisher>apud Conradum Wishoff et
-                                 Danielem Goedval</publisher>, <date>1731</date>. URL: <ptr
+                                 Danielem Goedval</publisher>, <date>1731</date>. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=uKZAAAAAcAAJ&amp;pg=PP9#v=onepage&amp;q&amp;f=false"
                               /></bibl>
                            <bibl xml:id="t"><abbr type="siglum">t</abbr> = <title>ed.
@@ -1183,7 +1137,8 @@
                                  Nemesianum Carthaginiensem, cum notis selectis Titii, Martelli,
                                  Ulitii, et Petri Burmanni integris.</title>
                               <pubPlace>Mitaviae</pubPlace>: <publisher>apud Jacob. Frider.
-                                 Hinzium</publisher>, <date>1774</date>. URL: <ptr
+                                 Hinzium</publisher>, <date>1774</date>. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=eNUpAAAAYAAJ&amp;pg=PP11#v=onepage&amp;q&amp;f=false"
                               />.</bibl>
                            <bibl xml:id="Wernsd."><abbr type="siglum">Wernsd.</abbr> = <title>ed.
@@ -1191,26 +1146,30 @@
                                  Christianus.</editor>
                               <title>Poetae Latini Minores, Tomus Primus</title>.
                                  <pubPlace>Altenburgi</pubPlace>: <pubPlace>ex officina
-                                 Richteria</pubPlace>, <date>1780</date>. URL: <ptr
+                                 Richteria</pubPlace>, <date>1780</date>. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=A8w9AAAAcAAJ&amp;pg=PR1#v=onepage&amp;q&amp;f=false"
                               /></bibl>
                            <bibl xml:id="Beck"><abbr type="siglum">Beck</abbr> = <editor>Beck,
                                  Christian Daniel</editor>. <title>T. Calpurnii Siculi Eclogae
                                  XI</title>. <pubPlace>Lipsiae</pubPlace>: <publisher>in libraria
-                                 Weidmannia</publisher>, <date>1803</date>. URL: <ptr
+                                 Weidmannia</publisher>, <date>1803</date>. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=w6QBAAAAYAAJ&amp;pg=PR2#v=onepage&amp;q&amp;f=false"
                               /></bibl>
                            <bibl xml:id="Glaeser"><abbr type="siglum">Glaeser</abbr> =
                                  <editor>Glaeser, C. E.</editor>
                               <title>T. Calpurnii Siculi Eclogae</title>.
                                  <pubPlace>Gottingae</pubPlace>: <publisher>sumptibus
-                                 Dieterichianis</publisher>, <date>1842</date>. URL: <ptr
+                                 Dieterichianis</publisher>, <date>1842</date>. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=4sdEAAAAIAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
                               /></bibl>
                            <bibl xml:id="Baehr."><abbr type="siglum">Baehr.</abbr> = ed. Baehrensii
                               = <editor>Baehrens, Aemilius</editor>. <title>Poetae Latini Minores,
                                  Volumen III</title>. <pubPlace>Lipsiae</pubPlace>: <publisher>in
-                                 aedibus B. G. Teubneri</publisher>, 1881. URL: <ptr
+                                 aedibus B. G. Teubneri</publisher>, 1881. URL: 
+                             <ptr
                                  target="https://books.google.com/books?id=CjUOAAAAYAAJ&amp;pg=PA1#v=onepage&amp;q&amp;f=false"
                               /></bibl>
                            <listBibl xml:id="Schenkl">
@@ -1219,13 +1178,16 @@
                                        >1</hi></abbr> = <editor>Schenkl, Henricus</editor>.
                                     <title>Calpurnii et Nemesiani Bucolica</title>.
                                     <pubPlace>Lipsiae</pubPlace>: sumptus fecit G. Freytag,
-                                    <date>1885</date>. URL <ptr
+                                    <date>1885</date>. URL 
+                                <ptr
                                     target="https://books.google.com/books?id=kuVGAQAAIAAJ&amp;pg=PR1#v=onepage&amp;q&amp;f=false"
                                  /></bibl>
                               <bibl xml:id="Schenkl2"><abbr type="siglum">Schenkl<hi rend="super"
                                        >2</hi></abbr> = <editor>Schenkl, Henricus</editor>.
-                                    <title>T. Calpurni Siculi Bucolica</title> in <ref
-                                    target="Postgate1905">Postgate 1905</ref>: 197–205. URL: <ptr
+                                    <title>T. Calpurni Siculi Bucolica</title> in 
+                                <ref
+                                    target="Postgate1905">Postgate 1905</ref>: 197–205. URL: 
+                                <ptr
                                     target="https://books.google.com/books?id=_DMOAAAAYAAJ&amp;pg=RA1-PA194#v=onepage&amp;q&amp;f=false"
                                  /></bibl>
                            </listBibl>
@@ -1256,7 +1218,8 @@
                                  = <editor>Anonymous</editor>. <title>editio Florentina
                                     prior</title>. <pubPlace>Florentiae</pubPlace>:
                                     <publisher>Philippi de Giunta</publisher>, <date>1504</date>.
-                                 URL: <ptr
+                                 URL: 
+                                <ptr
                                     target="https://books.google.com/books?id=LVJmAAAAcAAJ&amp;pg=PP7#v=onepage&amp;q&amp;f=false"
                                  /></bibl>
                               <bibl xml:id="i2"><abbr type="siglum">i<hi rend="super">2</hi></abbr>
@@ -1264,7 +1227,8 @@
                                     posterior</title> = Titius, Robertus. <title>M. Aurelii Olympii
                                     Nemesiani Carthaginiensis, T. Calphurnii Siculi
                                  Bucolica</title>. <pubPlace>Florentiae</pubPlace>: <publisher>apud
-                                    Philippum Iunctam</publisher>, <date>1590</date>. URL: <ptr
+                                    Philippum Iunctam</publisher>, <date>1590</date>. URL: 
+                                <ptr
                                     target="https://books.google.com/books?id=9SEvnoZgKe4C&amp;pg=PR1#v=onepage&amp;q&amp;f=false"
                                  /></bibl>
                            </listBibl>
@@ -1275,14 +1239,16 @@
                                  = <editor>Anonymous</editor>. <title>editio Aldina prior</title>.
                                     <pubPlace>Venetiis</pubPlace>: <publisher>in aedibus Aldi, et
                                     Andreae Soceri</publisher>
-                                 <date>1518</date>. URL: <ptr
+                                 <date>1518</date>. URL: 
+                                <ptr
                                     target="http://gateway.proquest.com/openurl?url_ver=Z39.88-2004&amp;res_dat=xri:eurobo:&amp;rft_dat=xri:eurobo:rec:ita-bnc-ald-00000030-001"
                                  /></bibl>
                               <bibl xml:id="l2"><abbr type="siglum">l<hi rend="super">2</hi></abbr>
                                  = <editor>Anonymous</editor>. <title>editio Aldina
                                     posterior</title>. <pubPlace>Venetiis</pubPlace>: <publisher>in
                                     aedibus heredum Aldi Manutii, et Andreae Soceri</publisher>,
-                                    <date>1519</date>. URL: <ptr
+                                    <date>1519</date>. URL: 
+                                <ptr
                                     target="https://books.google.com/books?id=EYg6AAAAcAAJ&amp;pg=PA1#v=onepage&amp;q&amp;f=false"
                                  /></bibl>
                            </listBibl>
@@ -1312,19 +1278,7 @@
                      <p>The following information about books, commentaries, monographs, collections
                         of essays, etc., should be encoded:</p>
 
-                     <p>
-                        <specList>
-                           <specDesc key="bibl"/>
-                           <specDesc key="abbr"/>
-                           <specDesc key="author"/>
-                           <specDesc key="editor"/>
-                           <specDesc key="title"/>
-                           <specDesc key="pubPlace"/>
-                           <specDesc key="publisher"/>
-                           <specDesc key="date"/>
-                           <specDesc key="ptr"/>
-                        </specList>
-                     </p>
+                     
 
                      <list>
                         <item><gi>bibl</gi> (bibliographic citation) has <att>xml:id</att> with the
@@ -1369,11 +1323,13 @@
                         <bibl xml:id="Haupt1854"><abbr type="siglum">Haupt 1854</abbr>.
                               <author>Haupt, Moriz</author>. <title>De Carminibus Bucolicis
                               Calpurnii et Nemesiani</title>. <pubPlace>Berolini</pubPlace>:
-                              <publisher>Typis Academicis</publisher>, <date>1854</date>. URL: <ptr
+                              <publisher>Typis Academicis</publisher>, <date>1854</date>. URL: 
+                          <ptr
                               target="https://books.google.com/books?id=8SwUAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
                            />.</bibl>
                      </egXML>
-                     <p>This will be rendered as follows: <hi rend="bold">Haupt 1854</hi> = Haupt,
+                     <p>This will be rendered as: 
+                       <lb/><hi rend="bold">Haupt 1854</hi> = Haupt,
                         Moriz. <hi rend="italic">De Carminibus Bucolicis Calpurnii et
                         Nemesiani</hi>. Berolini: Typis Academics, 1854. URL:
                         https://books.google.com/books?id=8SwUAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false</p>
@@ -1398,17 +1354,7 @@
 
                      <p>However, it is strongly recommended to encode more details.</p>
 
-                     <p>
-                        <specList>
-                           <specDesc key="bibl"/>
-                           <specDesc key="abbr"/>
-                           <specDesc key="author"/>
-                           <specDesc key="title"/>
-                           <specDesc key="date"/>
-                           <specDesc key="ptr"/>
-
-                        </specList>
-                     </p>
+                     
 
                      <list>
                         <item><gi>bibl</gi> (bibliographic citation) has <att>xml:id</att> with the
@@ -1446,7 +1392,8 @@
                               Hans</author>. "<title level="a">Zu Calpurnius</title>." <title
                               level="j">Wiener Studien</title>
                            <biblScope unit="volume">22</biblScope> (<date>1901</date>): <biblScope
-                              unit="page">139–40</biblScope>. URL: <ptr
+                              unit="page">139–40</biblScope>. URL: 
+                          <ptr
                               target="https://books.google.com/books?id=gbmMVZEcoGMC&amp;pg=PA139#v=onepage&amp;q&amp;f=false"
                            />.</bibl>
                      </egXML>
@@ -1465,7 +1412,8 @@
                                  F. Tempsky, 1885'</title>. <title level="j">Wochenschrift für
                                  klassiche Philologie</title>
                               <biblScope unit="volume">3</biblScope> (<date>1886</date>): <biblScope
-                                 unit="page">1287–94</biblScope>. URL: <ptr
+                                 unit="page">1287–94</biblScope>. URL: 
+                             <ptr
                                  target="https://books.google.de/books?id=q5blAAAAMAAJ&amp;hl=de&amp;pg=RA7-PA41#v=onepage&amp;q&amp;f=false"
                               />.</bibl>
                         </egXML>
@@ -1486,19 +1434,7 @@
                      not help a reader find more information, which is why the bibliography of an
                      LDLT edition includes a list of scholars mentioned by name in the edition, with
                      information about where to find more information, if it is available.</p>
-                  <p>
-                     <specList>
-                        <specDesc key="listPerson"/>
-                        <specDesc key="person"/>
-                        <specDesc key="abbr"/>
-                        <specDesc key="persName"/>
-                        <specDesc key="forename"/>
-                        <specDesc key="surname"/>
-                        <specDesc key="addname"/>
-                        <specDesc key="ref"/>
-                        <specDesc key="note"/>
-                     </specList>
-                  </p>
+                  
 
                   <list>
                      <item><gi>listPerson</gi> with <att>xml:id</att>="bibliography-scholars" groups
@@ -1629,13 +1565,7 @@
                   <head>Prose: Structure of Paragraphs</head>
 
                   <p>The individual sections of a prose work should be encoded as follows:</p>
-                  <p>
-                     <specList>
-                        <specDesc key="milestone"/>
-                        <specDesc key="p"/>
-                        <specDesc key="seg"/>
-                     </specList>
-                  </p>
+                  
 
                   <list>
                      <item><gi>milestone</gi> may be used to mark the sections of a canonical
@@ -1757,13 +1687,7 @@
                <div xml:id="edition-text-verse-lines">
                   <head>Verse: Structure of a Poem</head>
 
-                  <p>
-                     <specList>
-                        <specDesc key="div"/>
-                        <specDesc key="lg"/>
-                        <specDesc key="l"/>
-                     </specList>
-                  </p>
+                  
 
                   <list>
                      <item><gi>lg</gi> (line group) groups one or more verse lines that form a
@@ -1795,11 +1719,7 @@
                <p>If text in languages other than Latin is encoded, language becomes available as a
                   criterion for searching and filtering.</p>
 
-               <p>
-                  <specList>
-                     <specDesc key="foreign"/>
-                  </specList>
-               </p>
+               
 
                <list>
                   <item><gi>foreign</gi> contains text in any language other than Latin.</item>
@@ -1840,11 +1760,7 @@
 
                   <p>The following rules apply to the semantic markup of direct speech:</p>
 
-                  <p>
-                     <specList>
-                        <specDesc key="said"/>
-                     </specList>
-                  </p>
+                  
 
                   <p><gi>said</gi> (speech) contains text spoken by real people or fictional
                      characters.</p>
@@ -1873,12 +1789,7 @@
                   <p>Texts that feature interlocutors (e.g., drama, dialogue) should be encoded
                      using <gi>sp</gi> and <gi>speaker</gi>.</p>
 
-                  <p>
-                     <specList>
-                        <specDesc key="sp"/>
-                        <specDesc key="speaker"/>
-                     </specList>
-                  </p>
+                  
 
                   <list>
                      <item><gi>sp</gi> (speech) groups elements related to a person or character's
@@ -2001,12 +1912,7 @@
                   mentioned in the text. If it is desirable to encode this information, the
                   following guidelines should be followed.</p>
 
-               <p>
-                  <specList>
-                     <specDesc key="placeName"/>
-                     <specDesc key="orgName"/>
-                  </specList>
-               </p>
+               
 
                <list>
                   <item><gi>placeName</gi> contains the name of a place, with <att>ref</att> and the
@@ -2027,38 +1933,34 @@
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <p><placeName ref="http://pleiades.stoa.org/places/993">Gallia</placeName> est
-                     omnis divisa in partes tres, quarum unam incolunt <orgName
-                        ref="http://pleiades.stoa.org/places/79326">Belgae</orgName>, aliam <orgName
-                        ref="http://pleiades.stoa.org/places/246175">Aquitani</orgName>, tertiam qui
-                     ipsorum lingua <orgName ref="http://pleiades.stoa.org/places/993"
-                        >Celtae</orgName>, nostra <orgName ref="http://pleiades.stoa.org/places/993"
-                        >Galli</orgName> appellantur. Hi omnes lingua, institutis, legibus inter se
-                     differunt. Gallos ab Aquitanis <placeName
-                        ref="http://pleiades.stoa.org/places/138369">Garumna</placeName> flumen, a
-                     Belgis <placeName ref="http://pleiades.stoa.org/places/109147"
-                        >Matrona</placeName> et <placeName
-                        ref="http://pleiades.stoa.org/places/109341">Sequana</placeName> dividit.
+                     omnis divisa in partes tres, quarum unam incolunt 
+                     <orgName ref="http://pleiades.stoa.org/places/79326">Belgae</orgName>, aliam 
+                     <orgName ref="http://pleiades.stoa.org/places/246175">Aquitani</orgName>, tertiam qui
+                     ipsorum lingua <orgName ref="http://pleiades.stoa.org/places/993">Celtae</orgName>, 
+                     nostra <orgName ref="http://pleiades.stoa.org/places/993">Galli</orgName> appellantur. 
+                     Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis 
+                     <placeName ref="http://pleiades.stoa.org/places/138369">Garumna</placeName> flumen, a
+                     Belgis <placeName ref="http://pleiades.stoa.org/places/109147">Matrona</placeName> 
+                     et <placeName ref="http://pleiades.stoa.org/places/109341">Sequana</placeName> dividit.
                      Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate
                      provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque
-                     ea quae ad effeminandos animos pertinent important, proximique sunt <orgName
-                        ref="http://pleiades.stoa.org/places/20468">Germanis</orgName>, qui trans
-                        <placeName ref="http://pleiades.stoa.org/places/393483">Rhenum</placeName>
-                     incolunt, quibuscum continenter bellum gerunt. Qua de causa <orgName
-                        ref="http://pleiades.stoa.org/places/177534">Helvetii</orgName> quoque
+                     ea quae ad effeminandos animos pertinent important, proximique sunt 
+                     <orgName ref="http://pleiades.stoa.org/places/20468">Germanis</orgName>, qui trans
+                     <placeName ref="http://pleiades.stoa.org/places/393483">Rhenum</placeName>
+                     incolunt, quibuscum continenter bellum gerunt. Qua de causa 
+                     <orgName ref="http://pleiades.stoa.org/places/177534">Helvetii</orgName> quoque
                      reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis
                      contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum
                      gerunt. Eorum una, pars, quam Gallos obtinere dictum est, initium capit a
-                     flumine <placeName ref="http://pleiades.stoa.org/places/148168"
-                        >Rhodano</placeName>, continetur Garumna flumine, <placeName
-                        ref="http://pleiades.stoa.org/places/845">Oceano</placeName>, finibus
-                     Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad
+                     flumine <placeName ref="http://pleiades.stoa.org/places/148168">Rhodano</placeName>, 
+                     continetur Garumna flumine, <placeName ref="http://pleiades.stoa.org/places/845">Oceano</placeName>, 
+                     finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad
                      septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad
                      inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem.
-                        <placeName ref="http://pleiades.stoa.org/places/981505"
-                        >Aquitania</placeName> a Garumna flumine ad <placeName
-                        ref="http://pleiades.stoa.org/places/246582">Pyrenaeos montes</placeName> et
-                     eam partem Oceani quae est ad <placeName
-                        ref="http://pleiades.stoa.org/places/1027">Hispaniam</placeName> pertinet;
+                     <placeName ref="http://pleiades.stoa.org/places/981505">Aquitania</placeName> a 
+                     Garumna flumine ad <placeName ref="http://pleiades.stoa.org/places/246582">Pyrenaeos montes</placeName> 
+                     et eam partem Oceani quae est ad 
+                     <placeName ref="http://pleiades.stoa.org/places/1027">Hispaniam</placeName> pertinet;
                      spectat inter occasum solis et septentriones.</p>
                </egXML>
             </div>
@@ -2113,13 +2015,7 @@
                   between the abbreviated and expanded forms.</p>
 
                <p>The preface should indicate whether or not abbreviations are expanded.</p>
-               <p>
-                  <specList>
-                     <specDesc key="choice"/>
-                     <specDesc key="abbr"/>
-                     <specDesc key="ex"/>
-                  </specList>
-               </p>
+               
                <list>
                   <item><gi>expan</gi> (expansion) contains the full expansion of an
                      abbreviation.</item>
@@ -2162,11 +2058,7 @@
                   indicate that characters are difficult to read. The accepted way to do this is
                   with dots underneath the uncertainly deciphered characters.</p>
 
-               <p>
-                  <specList>
-                     <specDesc key="unclear"/>
-                  </specList>
-               </p>
+               
 
                <p><gi>unclear</gi> contains characters, words, or phrases that cannot be transcribed
                   with certainty.</p>
@@ -2201,14 +2093,7 @@
                references so that they will be displayed appropriately in the text and so that
                bibliographical information about them will appear in the apparatus fontium. </p>
 
-            <p>
-               <specList>
-                  <specDesc key="cit"/>
-                  <specDesc key="quote"/>
-                  <specDesc key="ref"/>
-                  <specDesc key="bibl"/>
-               </specList>
-            </p>
+            
 
             <list>
                <item><gi>cit</gi> (cited quotation) contains a quotation (in <gi>quote</gi>) from
@@ -2510,16 +2395,7 @@
                <p>To put the concepts discussed above into practice, the following attributes and
                   elements are required:</p>
 
-               <p>
-                  <specList>
-                     <specDesc key="app"/>
-                     <specDesc key="lem"/>
-                     <specDesc key="rdg"/>
-                     <specDesc key="wit"/>
-                     <specDesc key="witDetail"/>
-                     <specDesc key="note"/>
-                  </specList>
-               </p>
+               
 
                <list>
                   <item xml:id="app"><gi>app</gi> (apparatus entry) contains the lemma and readings
@@ -2710,12 +2586,7 @@
                <p>If they are annotated (e.g., edd. ante Glaeser), they must be encoded in
                      <gi>wit</gi> according to the guidelines below.</p>
 
-               <p>
-                  <specList>
-                     <specDesc key="wit"/>
-                     <specDesc key="ref"/>
-                  </specList>
-               </p>
+               
 
                <list>
                   <item><gi>wit</gi> contains a catch-all reference to a group of manuscripts,
@@ -2802,11 +2673,7 @@
                   <p>&lt;***&gt; = A lacuna has been conjectured on the grounds of style, context,
                      or some other reason. No text has been supplied in its place.</p>
 
-                  <p>
-                     <specList>
-                        <specDesc key="gap"/>
-                     </specList>
-                  </p>
+                  
 
                   <list>
                      <item><gi>gap</gi> signifies that text is missing.</item>
@@ -2881,11 +2748,7 @@
                <p>[ . . . ] = The editor knows from context and/or observation how many characters
                   have been lost. Each dot represents a missing character.</p>
 
-               <p>
-                  <specList>
-                     <specDesc key="gap"/>
-                  </specList>
-               </p>
+               
 
                <list>
                   <item><gi>gap</gi> signifies text missing.</item>
@@ -2984,11 +2847,7 @@
                <div xml:id="apparatus-criticus-addition-prose">
                   <head>Addition: Prose Description</head>
 
-                  <p>
-                     <specList>
-                        <specDesc key="witDetail"/>
-                     </specList>
-                  </p>
+                  
 
                   <p><gi>witDetail</gi> (witness detail) contains a prose description of the
                      addition.</p>
@@ -3020,11 +2879,7 @@
 
                   <p>The semantic markup method uses <gi>add</gi> to encode the addition:</p>
 
-                  <p>
-                     <specList>
-                        <specDesc key="add"/>
-                     </specList>
-                  </p>
+                  
 
                   <list>
                      <item><gi>add</gi> (addition) contains text that has been added.</item>
@@ -3084,11 +2939,7 @@
                <div xml:id="apparatus-criticus-deletion-prose">
                   <head>Deletion: Prose Description</head>
 
-                  <p>
-                     <specList>
-                        <specDesc key="witDetail"/>
-                     </specList>
-                  </p>
+                  
 
                   <p><gi>witDetail</gi> (witness detail) contains a prose description of the
                      deletion.</p>
@@ -3120,11 +2971,7 @@
                      encoded according to these guidelines will be displayed or printed enclosed in
                      double brackets: &#10214; &#10215;.</p>
 
-                  <p>
-                     <specList>
-                        <specDesc key="del"/>
-                     </specList>
-                  </p>
+                  
 
                   <list>
                      <item><gi>del</gi> (deletion) contains text that has been deleted.</item>
@@ -3172,12 +3019,7 @@
                      Accordingly, LDLT editions follow West's suggestion to use braces to indicate
                      editorial deletions.</p>
 
-                  <p>
-                     <specList>
-                        <specDesc key="surplus"/>
-                        <specDesc key="note"/>
-                     </specList>
-                  </p>
+                  
 
                   <list>
                      <item><gi>surplus</gi> signifies text identified by the editor as added by
@@ -3532,15 +3374,7 @@
                      contained in <gi>witDetail</gi>, with the use of several attributes to
                      determine how the information is processed.</p>
 
-                  <p>
-                     <specList>
-                        <specDesc key="witDetail"/>
-                        <specDesc key="wit"/>
-                        <specDesc key="target"/>
-                        <specDesc key="corresp"/>
-                        <specDesc key="type"/>
-                     </specList>
-                  </p>
+                  
 
                   <p><gi>witDetail</gi> (witness detail) may be empty or it may contain a prose
                      description.</p>
@@ -3774,11 +3608,7 @@
                corresp="http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html">
                <head>Crux</head>
                <p>† † = Text deemed by the editor to be irredeemably corrupt.</p>
-               <p>
-                  <specList>
-                     <specDesc key="sic"/>
-                  </specList>
-               </p>
+               
                <p><gi>sic</gi> indicates that the text is readable but not understandable. In this
                   usage it is not paired with its customary partner <gi>corr</gi> because the nature
                   of a crux is that it cannot be corrected.</p>
@@ -3845,11 +3675,7 @@
                   orthographical variants so that users can filter them in or out of the text as
                   they please.</p>
 
-               <p>
-                  <specList>
-                     <specDesc key="ana"/>
-                  </specList>
-               </p>
+               
 
                <p><att>ana</att> (analysis) on <gi>rdg</gi> applies one or more of the following
                   values to a reading:<list>
@@ -3927,11 +3753,7 @@
 
             <p>This section demonstrates how to do encode longer notes.</p>
 
-            <p>
-               <specList>
-                  <specDesc key="note"/>
-               </specList>
-            </p>
+            
             <p><gi>anchor</gi> is an empty element placed at the point in the main text that is the
                subject of an extended note. It must have <att>xml:id</att> so that the note can
                point to it. It must also have <att>corresp</att> pointing to the <att>xml:id</att>

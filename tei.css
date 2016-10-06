@@ -343,7 +343,7 @@ div.eg{
     padding-left:10px;
     color:#000000;
     line-height:1.1em;
-    font-family:Inconsolata, monospace;
+    font-family:Inconsolata, "Courier New", monospace;
     font-size:11pt;
     white-space:pre;
 }
