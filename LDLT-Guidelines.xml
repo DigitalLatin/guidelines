@@ -2417,7 +2417,7 @@
                      a witness. Rather, it preserves a record of the activities of the copyist(s),
                      rubricator(s), corrector(s), and/or other annotator(s) who wrote on its pages,
                      each of whom might be a witness to a different exemplar. At the very least,
-                     they represent different perceptions of the same exemplar. By synechdoche,
+                     they represent different perceptions of the same exemplar. By synecdoche,
                      those people are referred to as "hands." (These hands are not to be confused
                      with the drawings of hands, known as manicules, that sometimes appear in the
                      margins of manuscripts to point out passages of interest.) The manuscript's
@@ -2465,7 +2465,7 @@
                   </p>
 
                   <p>Another acceptable approach is to append abbreviations such as "ac" and "pc"
-                        (<foreign xml:lang="lat">ante corrections</foreign> and <foreign
+                        (<foreign xml:lang="lat">ante correction</foreign> and <foreign
                         xml:lang="lat">post correctionem</foreign>) as superscript notations on the
                      manuscript's siglum. It all depends on what suits the editor's purposes,
                      provided that the method of distinguishing hands is explained in the
@@ -2604,36 +2604,48 @@
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <app>
                      <lem><!-- text of lemma goes here --></lem>
-                     <rdg wit="#siglum"><!-- text of variant reading goes here --></rdg>
+                     <rdg><!-- text of variant reading goes here --></rdg>
                   </app>
                </egXML>
 
                <p>In other words, <gi>app</gi> begins the apparatus entry, followed by <gi>lem</gi>,
                   which contains the lemma for the entry. The lemma may be a single word or phrase
                   or the omission of a word or phrase. The variant reading follows, contained in
-                     <gi>rdg</gi>. The attribute <att>wit</att> lists the witness(es) for the
-                  variant. The hash or pound sign (#) before the siglum for the witness indicates
+                     <gi>rdg</gi>.</p>
+               
+               <p>If there is more than one variant reading to be reported, new <gi>rdg</gi>
+                  elements should be added for each one.</p>
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem><!-- text of lemma goes here --></lem>
+                     <rdg><!-- text of reading goes here --></rdg>
+                     <rdg><!-- text of reading goes here --></rdg>
+                  </app>
+               </egXML>
+               
+               <p>The attribute <att>wit</att> contains the witness(es) for lemmata and readings:</p> 
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem wit="#A"><!-- text of lemma goes here --></lem>
+                     <rdg wit="#B"><!-- text of variant reading goes here --></rdg>
+                     <rdg wit="#C"><!-- text of variant reading goes here --></rdg>
+                  </app>
+               </egXML>
+               
+               <p>The hash or pound sign (#) before the siglum for the witness indicates
                   that the witness has been described elsewhere in the edition, making it possible
                   to retrieve that information through a link to it, if desired.</p>
 
                <p>If there is more than one witness for a reading, the sigla should be values for
-                     <att>wit</att> separated by spaces.</p>
+                     <att>wit</att>, separated by spaces.</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <app>
-                     <lem><!-- text of lemma goes here --></lem>
-                     <rdg wit="#A #B #C"><!-- text of reading goes here --></rdg>
-                  </app>
-               </egXML>
-
-               <p>If there is more than one variant reading to be reported, new <gi>rdg</gi>
-                  elements should be added for each one.</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <app>
-                     <lem><!-- text of lemma goes here --></lem>
-                     <rdg wit="#A #B #C"><!-- text of reading goes here --></rdg>
+                     <lem wit="#A #B #C"><!-- text of lemma goes here --></lem>
                      <rdg wit="#D #E #F"><!-- text of reading goes here --></rdg>
+                     <rdg wit="#G #H #I"><!-- text of reading goes here --></rdg>
                   </app>
                </egXML>
 
