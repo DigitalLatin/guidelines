@@ -2649,14 +2649,14 @@
                   </app>
                </egXML>
 
-               <p>If it is desirable to indicate that a variant appears in both a manuscript and a
+               <p>If it is desirable to indicate that a reading is found in a manuscript and a
                   modern edition or other source, the same pattern applies, with the addition of
                      <att>source</att>.</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <app>
-                     <lem><!-- text of lemma goes here --></lem>
-                     <rdg wit="#A #B #C" source="#Vettel #Grosjean"
+                     <lem wit="#A" source="#Bottas"><!-- text of lemma goes here --></lem>
+                     <rdg wit="#B #C" source="#Vettel #Grosjean"
                         ><!-- text of reading goes here --></rdg>
                   </app>
                </egXML>
