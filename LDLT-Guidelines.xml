@@ -2,7 +2,7 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -363,8 +363,8 @@
                   </row>
                   <row role="data">
                      <cell role="data">One or more late manuscripts</cell>
-                     <cell role="data">ς</cell>
-                     <cell role="data">ς</cell>
+                     <cell role="data">Ϛ</cell>
+                     <cell role="data">ϛ</cell>
                   </row>
                   <row role="data">
                      <cell role="data">Scholia</cell>
@@ -4103,6 +4103,757 @@
             <!-- End list of other works cited -->
          </div>
          <!-- End section works cited -->
+        
+        <div>
+          <head>The DLL Critical Editions Schema</head>
+          <schemaSpec ident="tei-DLL" docLang="en" prefix="tei_" start="TEI" xml:lang="en">
+
+          <!--       MODULES USED BY THE DLL SCHEMA       -->
+          <moduleRef key="core"/>
+          <moduleRef key="tei"/>
+          <moduleRef key="header" except="appInfo"/>
+          <moduleRef key="textstructure"
+            except="argument byline closer div1 div2 div3 div4 div5 div6 div7 imprimatur
+                    opener postscript salute signed titlePage titlePart trailer"/>
+          <moduleRef key="transcr" except="damageSpan restore"/>
+          <moduleRef key="verse"/>
+          <moduleRef key="analysis" except="cl span spanGrp"/>
+          <moduleRef key="certainty" except="respons"/>
+          <moduleRef key="gaiji" except="char charName unicodeName"/>
+          <moduleRef key="linking" except="alt altGrp joinGrp timeline when"/>
+          <moduleRef key="msdescription"/>
+          <moduleRef key="namesdates"
+            except="affiliation age climate education faith geoFeat langKnowledge
+                    langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
+          <moduleRef key="textcrit"/>
+          <moduleRef key="figures" except="formula"/>
+          <moduleRef key="spoken"
+            except="broadcast equipment incident kinesic pause recording recordingStmt
+                    scriptStmt shift u vocal writing"/>
+          <moduleRef key="corpus"
+            except="activity channel constitution derivation domain factuality interaction locale
+                    preparedness purpose setting textDesc"/>
+          
+          <!-- DATA SPECS -->
+          <dataSpec ident="teidata.fragId">
+            <content>
+              <dataRef name="token" restriction="#(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+            </content>
+          </dataSpec>
+          
+          <!-- CHANGED MODEL CLASSES -->
+          <classSpec type="atts" ident="att.textCritical.linking" mode="add">
+            <attList>
+              <attDef ident="require">
+                <datatype maxOccurs="unbounded">
+                  <dataRef key="teidata.pointer"/>
+                </datatype>
+              </attDef>
+            </attList>
+          </classSpec>
+          
+          <classSpec type="atts" ident="att.textCritical.global" mode="add">
+            <classes>
+              <memberOf key="att.global.rendition"/>
+              <memberOf key="att.global.linking"/>
+              <memberOf key="att.textCritical.analytic"/>
+              <memberOf key="att.global.facs"/>
+              <memberOf key="att.global.change"/>
+              <memberOf key="att.global.responsibility"/>
+            </classes>
+            <attList>
+              <attDef ident="xml:id" usage="opt">
+                <gloss versionDate="2007-07-02" xml:lang="en">identifier</gloss>
+                <gloss versionDate="2007-12-20" xml:lang="ko">확인소</gloss>
+                <gloss versionDate="2008-04-06" xml:lang="es">identificador</gloss>
+                <gloss versionDate="2008-03-30" xml:lang="fr">identifiant</gloss>
+                <gloss versionDate="2007-11-06" xml:lang="it">identificatore</gloss>
+                <desc versionDate="2005-10-10" xml:lang="en">provides a unique identifier for the element bearing the attribute.</desc>
+                <desc versionDate="2007-12-20" xml:lang="ko">속성을 포함하는 요소에 대한 고유한 확인소를 제공한다.</desc>
+                <desc versionDate="2007-05-02" xml:lang="zh-TW">提供一個獨特識別符碼，識別帶有該屬性的元素。</desc>
+                <desc versionDate="2008-04-05" xml:lang="ja">当該要素にユニークな識別子を示す．</desc>
+                <desc versionDate="2009-05-25" xml:lang="fr">fournit un identifiant unique pour l'élément qui
+                  porte l'attribut</desc>
+                <desc versionDate="2007-05-04" xml:lang="es">proporciona un identificador único para el elemento
+                  al cual se asocia el atributo.</desc>
+                <desc versionDate="2007-01-21" xml:lang="it">assegna un identificatore unico all'elemento a cui è
+                  associato l'attributo</desc>
+                <datatype><dataRef name="ID"/></datatype>
+                <remarks versionDate="2005-10-10" xml:lang="en">
+                  <p>The <att>xml:id</att> attribute may be used to specify a canonical reference for an
+                    element; see section <ptr target="#CORS"/>.</p>
+                </remarks>
+                <remarks xml:lang="fr" versionDate="2007-06-12">
+                  <p>L'attribut <att>xml:id</att> peut être employé pour indiquer une référence canonique pour
+                    un élément ; voir la section<ptr target="#CORS"/>.</p>
+                </remarks>
+                <remarks xml:lang="es" versionDate="2008-04-06">
+                  <p>El atributo <att>xml:id</att> se puede utilizar para especificar una referencia canónica
+                    para un elemento; ver la sección <ptr target="#CORS"/>.</p>
+                </remarks>
+                <remarks xml:lang="ja" versionDate="2008-04-05">
+                  <p> 当該属性<att>xml:id</att>は，属性の指示対象を示している．詳細 は<ptr target="#CORS"/>を参照のこと． </p>
+                </remarks>
+              </attDef>
+              <attDef ident="n" usage="opt">
+                <gloss versionDate="2007-07-02" xml:lang="en">number</gloss>
+                <gloss versionDate="2007-12-20" xml:lang="ko">수</gloss>
+                <gloss versionDate="2008-04-06" xml:lang="es">número</gloss>
+                <gloss versionDate="2008-03-30" xml:lang="fr">nombre</gloss>
+                <gloss versionDate="2007-11-06" xml:lang="it">numero</gloss>
+                <desc versionDate="2005-10-10" xml:lang="en">gives a number (or other label) for an element, which is not necessarily unique within
+                  the document.</desc>
+                <desc versionDate="2007-12-20" xml:lang="ko">요소의 번호(또는 다른 표지)를 제시하며, 문서 내에서 반드시 고유값일 필요는 없다.</desc>
+                <desc versionDate="2007-05-02" xml:lang="zh-TW">將元素標上一個數字 (或其他標號)，該標號在文件中未必是獨特的。</desc>
+                <desc versionDate="2008-04-05" xml:lang="ja">要素に数値やラベルを与える．これは当該文書中でユニークである必要 はない．</desc>
+                <desc versionDate="2009-05-25" xml:lang="fr">donne un nombre (ou une autre étiquette) pour un
+                  élément, qui n'est pas nécessairement unique dans le document TEI.</desc>
+                <desc versionDate="2007-05-04" xml:lang="es">proporciona un número (u otra etiqueta) a un elemento
+                  que no es necesariamente único en el documento.</desc>
+                <desc versionDate="2007-01-21" xml:lang="it">assegna un numero (o altra etichetta) a un elemento
+                  che non è necessariamente unico all'interno del documento</desc>
+                <datatype maxOccurs="1"><dataRef key="teidata.text"/></datatype>
+                <remarks versionDate="2013-12-06" xml:lang="en">
+                  <p>The value of this attribute is always understood to be a single token, even if it contains space or other punctuation characters, and need not be composed of numbers only. It is typically used to specify the numbering of chapters, sections,
+                    list items, etc.; it may also be used in the specification of a standard reference system
+                    for the text.</p>
+                </remarks>
+                <remarks xml:lang="fr" versionDate="2007-06-12">
+                  <p>L'attribut <att>n</att> peut être employé pour indiquer la numérotation de chapitres,
+                    sections, items de liste, etc. ; il peut également être employé dans les spécifications
+                    d'un système standard de référence pour le texte. </p>
+                </remarks>
+                <remarks xml:lang="es" versionDate="2008-04-06">
+                  <p>El atributo <att>n</att> se puede utilizar para especificar la enumeración de los
+                    capítulos, de las secciones, de los items de una lista, etc.; puede también ser utilizado
+                    en la especificación de un sistema de referencia estándar para el texto.</p>
+                </remarks>
+                <remarks xml:lang="ja" versionDate="2008-04-05">
+                  <p> 当該属性<att>n</att>は，章・節・リスト項目などの番号を特定する ために使われる．これは，テキストを指示する標準参照システムにお いも採用されている． </p>
+                </remarks>
+              </attDef>
+              <attDef ident="xml:lang" usage="opt">
+                <gloss versionDate="2007-07-02" xml:lang="en">language</gloss>
+                <gloss versionDate="2007-12-20" xml:lang="ko">언어</gloss>
+                <gloss versionDate="2008-04-06" xml:lang="es">lengua</gloss>
+                <gloss versionDate="2008-03-30" xml:lang="fr">langue</gloss>
+                <gloss versionDate="2007-11-06" xml:lang="it">lingua</gloss>
+                <desc versionDate="2013-01-07" xml:lang="en">indicates the language of the element content using a <soCalled>tag</soCalled> generated
+                  according to <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>.</desc>
+                <desc versionDate="2007-12-20" xml:lang="ko"><ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>에 따라 생성된
+                  <soCalled>tag</soCalled>를 사용하는 요소 내용의 언어를 나타낸다.</desc>
+                <desc versionDate="2007-05-02" xml:lang="zh-TW">使用<ref target="http://www.ietf.org/rfc/rfc3066.txt">RFC3066</ref>的代碼，指出該元素內容的使用語言</desc>
+                <desc versionDate="2008-04-05" xml:lang="ja">当該要素の内容で使用されている言語を， <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>
+                  に準拠して作られた<soCalled>タグ</soCalled>で示す．</desc>
+                <desc versionDate="2007-06-12" xml:lang="fr">indique la langue du contenu de l'élément en
+                  utilisant les codes du <ref target="http://www.ietf.org/rfc/rfc3066.txt">RFC 3066</ref>
+                </desc>
+                <desc versionDate="2007-05-04" xml:lang="es">indica la lengua del contenido del elemento
+                  utilizando los códigos extraídos de <ref target="http://www.ietf.org/rfc/rfc3066.txt">RFC
+                    3066</ref>
+                </desc>
+                <desc versionDate="2007-01-21" xml:lang="it">indica la lingua del contenuto dell'elemento
+                  utilizzando i codici tratti da <ref target="http://www.ietf.org/rfc/rfc3066.txt">RFC
+                    3066</ref>
+                </desc>
+                <datatype><dataRef key="teidata.language"/></datatype>
+                <remarks versionDate="2013-12-06" xml:lang="en">
+                  <p>The xml:lang value will be inherited from the immediately
+                    enclosing element, or from its parent, and so on up the document hierarchy.
+                    It is generally good practice to specify xml:lang at the highest
+                    appropriate level, noticing that a different default may be needed for the
+                    teiHeader from that needed for the associated resource element or elements,
+                    and that a single TEI document may contain texts in many languages.</p>
+                  <p>The authoritative list of registered language subtags is maintained by IANA and 
+                    is available at <ptr target="http://www.iana.org/assignments/language-subtag-registry"/>. 
+                    For a good general overview of the construction of language tags, see 
+                    <ptr target="http://www.w3.org/International/articles/language-tags/"/>, and for 
+                    a practical step-by-step guide, see 
+                    <ptr target="https://www.w3.org/International/questions/qa-choosing-language-tags.en.php"/>.</p>
+                  <p>The value used must conform with BCP 47. If the value is a
+                    private use code (i.e., starts with <val>x-</val> or contains
+                    <val>-x-</val>), a <gi>language</gi> element with a matching
+                    value for its <att>ident</att> attribute should be supplied in
+                    the TEI header to document this value. Such documentation may
+                    also optionally be supplied for non-private-use codes, though
+                    these must remain consistent with their
+                    <choice><abbr>IETF</abbr><expan>Internet Engineering Task
+                      Force</expan></choice> definitions.</p>
+                </remarks>
+                <remarks xml:lang="fr" versionDate="2007-06-12">
+                  <p> Si aucune valeur n'est indiquée pour <att>xml:lang</att>, la valeur de
+                    l'attribut<att>xml:lang</att> de l'élément immédiatement supérieur est héritée ; c'est
+                    pour cette raison qu'une valeur devrait toujours être attribuée à l'élément du plus haut
+                    niveau hiérarchique (<gi>TEI</gi>).</p>
+                  <p>La valeur doit être conforme au BCP 47. Si la
+                    valeur est un code d'usage privé (c'est-à-dire commence par <code>x-</code> ou contient
+                    <code>-x-</code>),  il devrait correspondre à la valeur d'un attribut <att>ident</att> d'un élément <gi>language</gi> fourni dans l'en-tête TEI du document courant.</p>
+                </remarks>
+                <remarks xml:lang="es" versionDate="2008-04-06">
+                  <p>Si no se especifica ningún valor para <att>xml:lang</att>, el valor de <att>xml:lang</att> para el elemento inmediatamente englobado, se hereda; por esta razón, un valor
+                    se debe especificar siempre en el elemento exterior (<gi>TEI</gi>).</p>
+                </remarks>
+                <remarks xml:lang="ja" versionDate="2008-04-05">
+                  <p> 当該属性<att>xml:lang</att>に値がない場合には，親要素にある属 性値を継承する．従って，一番外側の要素(すなわち<gi>TEI</gi>)の
+                    属性値は常に継承されることになる． </p>
+                </remarks>
+              </attDef>
+              
+              
+              
+              <attDef ident="xml:base" usage="opt">
+                <desc versionDate="2005-10-10" xml:lang="en">provides a base URI reference with which applications can resolve relative URI
+                  references into absolute URI references.</desc>
+                <desc versionDate="2007-12-20" xml:lang="ko">애플리케이션이 상대 URI 참조를 절대 URI 참조로 해결할 수 있게 해 주는 기본 URI
+                  참조를 제공한다.</desc>
+                <desc versionDate="2007-05-02" xml:lang="zh-TW">提供一個基礎統一資源識別符 (URI)
+                  參照，可將相對統一資源識別符參照轉變為絕對統一資源識別符參照。</desc>
+                <desc versionDate="2008-04-05" xml:lang="ja">相対URIから絶対URIを構成する際に必要なベースURIを示す．</desc>
+                <desc versionDate="2007-06-12" xml:lang="fr">donne une référence URI de base au moyen de laquelle
+                  les applications peuvent résoudre des références d'URI relatives en références d'URI
+                  absolues</desc>
+                <desc versionDate="2007-05-04" xml:lang="es">proporciona una referencia URI de base gracias a la
+                  aplicación eventual de la cual pueden analizarse tanto referencias URI relativas como
+                  referencias URI absolutas.</desc>
+                <desc versionDate="2007-01-21" xml:lang="it">assegna un riferimento URI di base grazie al quale
+                  eventuali applicazioni possono analizzare riferimenti URI relativi come riferimenti URI
+                  assoluti</desc>
+                <datatype><dataRef key="teidata.pointer"/></datatype>
+              </attDef>
+              <attDef ident="xml:space" usage="opt">
+                <desc versionDate="2010-02-10" xml:lang="en">signals an intention about how white space should be 
+                  managed by  applications.</desc>
+                <desc versionDate="2007-06-12" xml:lang="fr">signale que les applications doivent préserver
+                  l'espace blanc</desc>
+                <desc versionDate="2007-05-04" xml:lang="es">señala la voluntad de hacer que el espaciado sea preservado por cualquier aplicación.</desc>
+                <desc versionDate="2007-01-21" xml:lang="it">segnala la volontà di far sì che la spaziatura sia mantenuta da qualsivoglia applicazione.</desc>
+                <desc versionDate="2006-10-28" xml:lang="ja">空白文字類をアプリケーションがどう解釈するかを示す．</desc>
+                <datatype><dataRef key="teidata.enumerated"/></datatype>
+                <valList type="closed">
+                  <valItem ident="default">
+                    <desc versionDate="2012-09-07" xml:lang="en">signals that the application's default white-space processing modes are acceptable</desc>
+                  </valItem>
+                  <valItem ident="preserve">
+                    <desc versionDate="2012-09-07" xml:lang="en">indicates the intent that applications preserve all white space</desc>
+                  </valItem>
+                </valList>
+                <remarks versionDate="2012-09-07" xml:lang="en">
+                  <p>The <ref target="http://www.w3.org/TR/REC-xml/#sec-white-space">XML
+                    specification</ref> provides further guidance on the use of this
+                    attribute. Note that many parsers may not handle xml:space correctly.</p>
+                </remarks>
+              </attDef>
+            </attList>
+          </classSpec>
+          
+          <classSpec type="atts" ident="att.textCritical.analytic" mode="add">
+            <attList>
+              <attDef ident="ana" mode="replace">
+                <datatype maxOccurs="unbounded">
+                  <dataRef key="teidata.fragId"/>
+                </datatype>
+                <valList type="semi">
+                  <valItem ident="#lexical"/>
+                  <valItem ident="#syntactic"/>
+                  <valItem ident="#morphological"/>
+                  <valItem ident="#ordinal"/>
+                  <valItem ident="#orthographical"/>
+                  <valItem ident="#subtractive"/>
+                  <valItem ident="#additive"/>
+                </valList>
+              </attDef>
+            </attList>
+          </classSpec>
+
+          <!--        CHANGED ELEMENT SPECS        -->
+          <elementSpec ident="add" module="core" mode="change">
+            <attList>
+              <!-- constraining values of add/@place -->
+              <attDef ident="place" mode="replace">
+                <valList type="closed">
+                  <valItem ident="above"/>
+                  <valItem ident="below"/>
+                  <valItem ident="bottom"/>
+                  <valItem ident="inline"/>
+                  <valItem ident="inRas">
+                    <desc versionDate="2016-03-15" xml:lang="en">added in an erased area</desc>
+                  </valItem>
+                  <valItem ident="interlinear"/>
+                  <valItem ident="left"/>
+                  <valItem ident="margin"/>
+                  <valItem ident="mixed"/>
+                  <valItem ident="opposite"/>
+                  <valItem ident="overleaf"/>
+                  <valItem ident="overstrike"/>
+                  <valItem ident="right"/>
+                  <valItem ident="top"/>
+                  <valItem ident="unspecified"/>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+          
+          <elementSpec ident="app" module="textcrit" mode="change">
+            <classes mode="replace">
+              <memberOf key="att.textCritical.global"/>
+              <memberOf key="att.textCritical.linking"/>
+              <memberOf key="model.global.edit"/>
+            </classes>
+          </elementSpec>
+
+          <!-- constraining values of div/@type -->
+          <elementSpec ident="div" mode="change" module="textstructure">
+            <attList>
+              <attDef ident="type" mode="replace" usage="req">
+                <valList type="closed">
+                  <valItem ident="introduction">
+                    <desc versionDate="2015-11-23" xml:lang="en">to contain introductory material</desc>
+                  </valItem>
+                  <valItem ident="sources">
+                    <desc versionDate="2015-11-23" xml:lang="en">to contain documentation of source texts</desc>
+                  </valItem>
+                  <valItem ident="apparatus">
+                    <desc versionDate="2015-10-20" xml:lang="en">to contain apparatus criticus or
+                      textual notes</desc>
+                  </valItem>
+                  <valItem ident="bibliography">
+                    <desc versionDate="2015-10-20" xml:lang="en">to contain bibliographical
+                      information, previous publications, etc.</desc>
+                  </valItem>
+                  <valItem ident="commentary">
+                    <desc versionDate="2015-10-20" xml:lang="en">to contain all editorial
+                      commentary, historical/prosopographical discussion, etc.</desc>
+                  </valItem>
+                  <valItem ident="edition">
+                    <desc versionDate="2015-10-20" xml:lang="en">to contain the text of the edition
+                      itself; may include multiple text-parts</desc>
+                  </valItem>
+                  <valItem ident="section">
+                    <desc versionDate="2016-06-06" xml:lang="en">A subordinate part of the introduction
+                      or other section, but not the edition of translation.</desc>
+                  </valItem>
+                  <valItem ident="textpart">
+                    <desc versionDate="2015-10-20" xml:lang="en">used to divide a div[type=edition]
+                      into multiple parts (fragments, columns, faces, etc.)</desc>
+                  </valItem>
+                  <valItem ident="translation">
+                    <desc versionDate="2015-10-20" xml:lang="en">to contain a translation of the
+                      text into one or more modern languages</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <elementSpec ident="ex" module="transcr" mode="change">
+            <!-- testing for <ex> outside of <expan> -->
+            <constraintSpec scheme="isoschematron" ident="ex">
+              <constraint>
+                <sch:rule context="tei:ex">
+                  <sch:report test="not(ancestor::tei:expan)">ex should only appear inside
+                    expan</sch:report>
+                  <sch:report test="parent::tei:abbr">ex should not be a child of abbr</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
+
+          <elementSpec ident="expan" module="transcr" mode="change">
+            <!-- testing for <expan> with no descendant <ex> -->
+            <constraintSpec scheme="isoschematron" ident="expan">
+              <constraint>
+                <sch:rule context="tei:expan">
+                  <sch:report test="not(descendant::tei:ex)">expan should contain ex</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
+
+          <elementSpec ident="gap" module="core" mode="change">
+            <!-- testing for <gap> with both quantity/extent, no unit, or contained in supplied -->
+            <constraintSpec ident="gap" scheme="isoschematron">
+              <constraint>
+                <sch:rule context="tei:gap">
+                  <sch:report test="@quantity and @extent">gap may have @quantity (a figure) or
+                    @extent (a descriptive text value) but not both</sch:report>
+                  <sch:report test="@quantity and not(@unit)">If gap has @quantity then @unit is
+                    required</sch:report>
+                  <sch:report
+                    test="not(@reason='ellipsis') and ancestor::tei:supplied[not(@reason='undefined')]"
+                    >gap may not appear within supplied text</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <!-- constraining values of gap/@reason -->
+            <attList>
+              <attDef ident="reason" mode="replace" usage="req">
+                <valList type="closed">
+                  <valItem ident="lost">
+                    <desc versionDate="2015-10-20" xml:lang="en">Text completely lost from the
+                      surface and unrecoverable</desc>
+                  </valItem>
+                  <valItem ident="illegible">
+                    <desc versionDate="2015-10-20" xml:lang="en">Traces of text remain on the
+                      surface but cannot be interpreted</desc>
+                  </valItem>
+                  <valItem ident="omitted">
+                    <desc versionDate="2015-10-20" xml:lang="en">Text erroneously omitted from the
+                      surface by the scribe/cutter</desc>
+                  </valItem>
+                  <valItem ident="ellipsis">
+                    <desc versionDate="2015-10-20" xml:lang="en">Text omitted from the edition by
+                      the editor, for whatever reason (brevity, context, language, etc.)</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+              <!-- removing gap/@dur (not needed in EpiDoc) -->
+              <attDef ident="dur" mode="delete"/>
+            </attList>
+          </elementSpec>
+
+          <!-- suggesting but not constraining values of hi/@rend -->
+          <elementSpec ident="hi" module="core" mode="change">
+            <attList>
+              <attDef ident="rend" mode="replace" usage="req">
+                <datatype maxOccurs="5">
+                  <dataRef key="teidata.word"/>
+                </datatype>
+                <valList type="semi">
+                  <valItem ident="acute">
+                    <desc versionDate="2015-10-20" xml:lang="en">ancient acute (oxia, tonos)
+                      diacritic</desc>
+                  </valItem>
+                  <valItem ident="apex">
+                    <desc versionDate="2015-10-20" xml:lang="en">ancient apex (identical in
+                      appearance to acute), marking a long vowel</desc>
+                  </valItem>
+                  <valItem ident="asper">
+                    <desc versionDate="2015-10-20" xml:lang="en">ancient asper (rough breathing)
+                      diacritic</desc>
+                  </valItem>
+                  <valItem ident="circumflex">
+                    <desc versionDate="2015-10-20" xml:lang="en">ancient circumflex (perispomeni)
+                      diacritic</desc>
+                  </valItem>
+                  <valItem ident="diaeresis">
+                    <desc versionDate="2015-10-20" xml:lang="en">ancient diaeresis</desc>
+                  </valItem>
+                  <valItem ident="grave">
+                    <desc versionDate="2015-10-20" xml:lang="en">ancient grave (varia)
+                      diacritic</desc>
+                  </valItem>
+                  <valItem ident="intraline">
+                    <desc versionDate="2015-10-20" xml:lang="en">characters scored or struck through
+                      at the mid-line level</desc>
+                  </valItem>
+                  <valItem ident="inverted">
+                    <desc versionDate="2015-10-20" xml:lang="en">character(s) inverted or rotated
+                      with respect to the rest of the text</desc>
+                  </valItem>
+                  <valItem ident="italic">
+                    <desc versionDate="2015-10-20" xml:lang="en">italicized character(s)</desc>
+                  </valItem>
+                  <valItem ident="lenis">
+                    <desc versionDate="2015-10-20" xml:lang="en">ancient lenis (smooth breathing)
+                      diacritic</desc>
+                  </valItem>
+                  <valItem ident="ligature">
+                    <desc versionDate="2015-10-20" xml:lang="en">two (or more) letters ligatured,
+                      monogrammed, or therwise joined</desc>
+                  </valItem>
+                  <valItem ident="normal">
+                    <desc versionDate="2015-10-20" xml:lang="en">unmarked character(s)</desc>
+                  </valItem>
+                  <valItem ident="reversed">
+                    <desc versionDate="2015-10-20" xml:lang="en">characters reversed
+                      (backward-facing) with respect to the rest of the line of text</desc>
+                  </valItem>
+                  <valItem ident="small">
+                    <desc versionDate="2015-10-20" xml:lang="en">Letter(s) smaller than those around
+                      them</desc>
+                  </valItem>
+                  <valItem ident="subscript">
+                    <desc versionDate="2015-10-20" xml:lang="en">characters written lower than the
+                      surrounding text</desc>
+                  </valItem>
+                  <valItem ident="superscript">
+                    <desc versionDate="2015-10-20" xml:lang="en">characters written higher than the
+                      surrounding text</desc>
+                  </valItem>
+                  <valItem ident="supraline">
+                    <desc versionDate="2015-10-20" xml:lang="en">characters written with a
+                      supralinear line above (e.g. for abbreviation or numerals)</desc>
+                  </valItem>
+                  <valItem ident="tall">
+                    <desc versionDate="2015-10-20" xml:lang="en">Letter(s) taller than those around
+                      it, e.g. I-longa</desc>
+                  </valItem>
+                  <valItem ident="underline">
+                    <desc versionDate="2015-10-20" xml:lang="en">text written with solid line
+                      beneath</desc>
+                  </valItem>
+                  <valItem ident="stacked">
+                    <desc versionDate="2015-10-20" xml:lang="en">a character written directly above
+                      another character (as opposed to superscript)</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+          
+          <elementSpec ident="l" mode="change" module="core">
+            <constraintSpec ident="l-app" scheme="isoschematron">
+              <constraint>
+                <sch:rule context="tei:l[tei:app]">
+                  <sch:report test="tei:app and count(*) = 1 and normalize-space(string-join(text(),'')) = ''" role="warn">Consider whether the line should be inside the app.</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
+
+          <elementSpec ident="lb" mode="change" module="core">
+            <!-- offer value "no" for lb/@break -->
+            <attList>
+              <attDef ident="break" mode="replace" usage="opt">
+                <datatype>
+                  <dataRef key="teidata.enumerated"/>
+                </datatype>
+                <valList type="semi">
+                  <valItem ident="no">
+                    <desc versionDate="2015-10-20" xml:lang="en">this line-beginning should not be
+                      taken as a word-break, i.e. word would be hyphenated in a printed text</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+          
+          <elementSpec ident="lem" module="textcrit" mode="change">
+            <classes mode="change">
+              <memberOf key="att.textCritical.linking"/>
+            </classes>
+          </elementSpec>
+
+
+          <!-- suggested attribute values for origDate/@evidence -->
+          <elementSpec ident="origDate" module="msdescription" mode="change">
+            <attList>
+              <attDef ident="evidence" mode="replace" usage="opt">
+                <datatype maxOccurs="6">
+                  <dataRef key="teidata.word"/>
+                </datatype>
+                <valList type="semi">
+                  <valItem ident="lettering">
+                    <desc versionDate="2015-10-20" xml:lang="en">Text dated palaeographically</desc>
+                  </valItem>
+                  <valItem ident="nomenclature">
+                    <desc versionDate="2015-10-20" xml:lang="en">Text dated by nomenclature or
+                      onomastics</desc>
+                  </valItem>
+                  <valItem ident="prosopography">
+                    <desc versionDate="2015-10-20" xml:lang="en">Text dated by known persons named
+                      or implied within it</desc>
+                  </valItem>
+                  <valItem ident="reign">
+                    <desc versionDate="2015-10-20" xml:lang="en">Text dated by the reign of an
+                      emperor or other ruler</desc>
+                  </valItem>
+                  <valItem ident="titulature">
+                    <desc versionDate="2015-10-20" xml:lang="en">Text dated by the use of official
+                      titles</desc>
+                  </valItem>
+                  <valItem ident="internal-date">
+                    <desc versionDate="2015-10-20" xml:lang="en">Text dated by explicit internal
+                      date</desc>
+                  </valItem>
+                  <valItem ident="context">
+                    <desc versionDate="2015-10-20" xml:lang="en">Archaeological, epigraphic,
+                      iconographic or other context of the text support</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+          
+          <elementSpec ident="rdg" module="textcrit" mode="change">
+            <classes mode="replace">
+              <memberOf key="att.textCritical.global"/>
+              <memberOf key="att.textCritical"/>
+              <memberOf key="att.textCritical.linking"/>
+              <memberOf key="att.witnessed"/>
+              <memberOf key="model.rdgLike"/>
+            </classes>
+          </elementSpec>
+          
+          <elementSpec ident="rdgGrp" module="textcrit" mode="change">
+            <classes mode="replace">
+              <memberOf key="att.textCritical.global"/>
+              <memberOf key="att.textCritical"/>
+              <memberOf key="att.textCritical.linking"/>
+            </classes>
+          </elementSpec>
+          
+          <elementSpec ident="space" module="transcr" mode="change">
+            <!-- testing for <space> with both quantity/extent or no unit -->
+            <constraintSpec ident="space" scheme="isoschematron">
+              <constraint>
+                <sch:rule context="tei:space">
+                  <sch:report test="@quantity and @extent">space may have @quantity (a figure) or
+                    @extent (a descriptive text value) but not both</sch:report>
+                  <sch:report test="@quantity and not(@unit)">If space has @quantity then @unit is
+                    required</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
+
+          <elementSpec ident="supplied" module="transcr" mode="change">
+            <attList>
+              <!-- suggested attribute list for supplied/@evidence -->
+              <attDef ident="evidence" mode="replace" usage="opt">
+                <datatype maxOccurs="1">
+                  <dataRef key="teidata.word"/>
+                </datatype>
+                <valList type="semi">
+                  <valItem ident="parallel">
+                    <desc versionDate="2015-10-20" xml:lang="en">Characters supplied from a parallel
+                      version of this text, absent from this one</desc>
+                  </valItem>
+                  <valItem ident="previouseditor">
+                    <desc versionDate="2015-10-20" xml:lang="en">Characters visible to a previous
+                      editor, now lost/unclear due to damage</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+              <!-- constrained attribute list for supplied/@reason -->
+              <attDef ident="reason" mode="replace" usage="req">
+                <valList type="closed">
+                  <valItem ident="lost">
+                    <desc versionDate="2015-10-20" xml:lang="en">Restoration of text completely lost
+                      from the surface</desc>
+                  </valItem>
+                  <valItem ident="omitted">
+                    <desc versionDate="2015-10-20" xml:lang="en">Supplement of text erroneously
+                      omitted from the surface by the scribe/cutter</desc>
+                  </valItem>
+                  <valItem ident="subaudible">
+                    <desc versionDate="2015-10-20" xml:lang="en">Editorial supplement of words
+                      subaudible to the native reader</desc>
+                  </valItem>
+                  <valItem ident="explanation">
+                    <desc versionDate="2015-10-20" xml:lang="en">Editorial explanation of oblique
+                      text in original</desc>
+                  </valItem>
+                  <valItem ident="undefined">
+                    <desc versionDate="2015-10-20" xml:lang="en">Text restored (e.g. from earlier
+                      witness or alternate copy) without specification of current state of this
+                      text</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <!-- modifying <unclear> because in EpiDoc it should not contain anything but text and <g/> -->
+          <elementSpec ident="unclear" module="core" mode="change">
+            <content>
+              <macroRef key="macro.xtext"/>
+            </content>
+          </elementSpec>
+
+          <!--       CHANGING ATTRIBUTE CLASSES         -->
+
+          <!--<classSpec type="atts" ident="att.datable.custom" mode="change">
+                    <constraintSpec scheme="isoschematron" ident="datable.custom">
+                         <constraint>
+                             <sch:rule context="tei:*[contains(@datingMethod,'julian')]">
+                                 <sch:report test="@when-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
+                                     in Julian dating method @when-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
+                                 <sch:report test="@notBefore-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
+                                     in Julian dating method @notBefore-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
+                                 <sch:report test="@notAfter-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
+                                     in Julian dating method @notAfter-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
+                             </sch:rule>
+                         </constraint>
+                     </constraintSpec>
+                </classSpec>-->
+
+          <classSpec type="atts" ident="att.dimensions" mode="change">
+            <attList>
+              <attDef ident="precision" mode="replace">
+                <valList type="closed">
+                  <valItem ident="low"/>
+                  <valItem ident="medium"/>
+                  <valItem ident="high"/>
+                </valList>
+              </attDef>
+              <attDef ident="unit" mode="change">
+                <valList type="semi" mode="replace">
+                  <valItem ident="character"/>
+                  <valItem ident="line"/>
+                  <valItem ident="metre"/>
+                  <valItem ident="cm"/>
+                  <valItem ident="mm"/>
+                </valList>
+              </attDef>
+              <attDef ident="extent" mode="change">
+                <valList type="semi" mode="replace">
+                  <valItem ident="unknown"/>
+                </valList>
+              </attDef>
+            </attList>
+          </classSpec>
+          
+          <!-- Make @target on ref and ptr contain a single address. -->
+          <classSpec ident="att.pointing" type="atts" mode="change">
+            <attList>
+              <attDef ident="target" mode="change">
+                <datatype>
+                  <dataRef key="teidata.pointer"/>
+                </datatype>
+              </attDef>
+            </attList>
+          </classSpec>
+
+          <classSpec type="atts" ident="att.responsibility" mode="change">
+            <attList>
+              <attDef ident="cert" mode="replace">
+                <valList type="closed">
+                  <valItem ident="low"/>
+                  <valItem ident="high"/>
+                </valList>
+              </attDef>
+            </attList>
+          </classSpec>
+          
+          <classSpec ident="att.witnessed" type="atts" mode="change">
+            <constraintSpec ident="crited.witnessed" scheme="isoschematron">
+              <constraint>
+                <sch:rule context="tei:*[@wit]">
+                  <sch:report
+                    test="exists(for $i in tokenize(normalize-space(translate(@wit,'#','')),'\s+') return if(not(id($i))) then $i else null)"
+                    >No matching xmml:id for reference(s): <sch:value-of
+                      select="string-join(for $i in tokenize(normalize-space(translate(@wit,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
+                    />.</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </classSpec>
+          
+          <classSpec ident="att.source" type="atts" mode="change">
+            <constraintSpec ident="crited.source" scheme="isoschematron">
+              <constraint>
+                <sch:rule context="tei:*[@source]">
+                  <sch:report
+                    test="exists(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null)"
+                    >No matching xmml:id for reference(s): <sch:value-of
+                      select="string-join(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
+                    />.</sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </classSpec>
+        </schemaSpec></div>
       </body>
    </text>
 </TEI>
