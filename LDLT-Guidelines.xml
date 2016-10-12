@@ -2367,15 +2367,21 @@
                      variant readings are displayed or printed in the apparatus criticus. In digital
                      versions, variants can be swapped into the edition text.</p>
 
-                  <p xml:id="emendation">An <hi rend="bold">emendation</hi> is a reading not
-                     supported by documentary evidence, but expressly proposed by some person
-                     (possibly the editor) and accepted by the editor into the main text of an
+                  <p xml:id="emendation">An <hi rend="bold">emendation</hi> is a reading expressly
+                     proposed by some person and accepted by the editor into the main text of an
                      edition.</p>
 
-                  <p xml:id="conjecture">A <hi rend="bold">conjecture</hi> is a reading not
-                     supported by known documentary evidence, but proposed by some person and
-                     determined by an editor to be worthy of consideration for establishing the
-                     text, but not to be printed in the main text of the edition.</p>
+                  <p xml:id="conjecture">A <hi rend="bold">conjecture</hi> is a reading expressly
+                     proposed by some person and determined by an editor to be worthy of
+                     consideration for establishing the text, but not to be printed in the main text
+                     of the edition.</p>
+
+                  <p>This distinction between "emendation” and "conjecture" supports the goal of
+                     these guidelines to draw attention to editions as arguments. The terms are used
+                     subjectively, with regard to a particular edition. Readers of that edition may
+                     agree or disagree about whether a particular reading emends the text, but the
+                     editor's argument is that that reading does emend the text, therefore it is
+                     called an emendation.</p>
 
                   <p xml:id="correction"><hi rend="bold">Correction</hi> describes any attempt by
                      the original copyist or some other hand to alter a witness' reading, regardless
@@ -3380,7 +3386,7 @@
                            <rdg wit="#Bern" xml:id="rdg-304-Bern"
                               exclude="#lem-305-nec #rdg-305-HM1 #rdg-305-HM2">nec uires fulminis
                               apro</rdg>
-                           <witDetail wit="#M" target="#rdg-304-HM" type="ante-corr">(N<hi
+                           <witDetail wit="#M" target="#rdg-304-HM" type="correction-original">(N<hi
                                  rend="superscript">ac</hi>)</witDetail>
                         </app>
                      </l>
@@ -3595,9 +3601,9 @@
                            <lem>vocas</lem>
                            <rdg wit="#E" xml:id="rdg-voca">voca</rdg>
                            <rdg wit="#E1" xml:id="rdg-vocat">vocat</rdg>
-                           <witDetail wit="#E" target="#rdg-voca" type="ante-corr"
+                           <witDetail wit="#E" target="#rdg-voca" type="correction-original"
                               corresp="#rdg-vocat"/>
-                           <witDetail wit="#E1" target="#rdg-vocat" type="correction"
+                           <witDetail wit="#E1" target="#rdg-vocat" type="correction-altered"
                               corresp="#rdg-voca">t <hi rend="italic">add. in
                            textu</hi></witDetail></app>
                      </egXML>
@@ -4081,7 +4087,8 @@
                   <title>Textual Criticism and Editorial Technique Applicable to Greek and Latin
                      Texts</title>. <pubPlace>Stuttgart</pubPlace>: <publisher>B. G.
                      Teubner</publisher>, <date>1973</date>.</bibl>
-            </listBibl><!-- End list of other works cited -->
+            </listBibl>
+            <!-- End list of other works cited -->
          </div>
          <!-- End section works cited -->
       </body>
