@@ -2774,8 +2774,8 @@
                   annotations in the apparatus. Encoding this information will also turn it into
                   data that can be processed and searched.</p>
 
-               <div xml:id="apparatus-criticus-lacuna-physical-loss">
-                  <head>Lacuna (Physical Loss)</head>
+               <div xml:id="apparatus-criticus-lacuna-actual-loss">
+                  <head>Lacuna (Actual Loss)</head>
 
                   <p>[ *** ] = An unknown amount of text has been lost from one or more witnesses
                      because of damage.</p>
@@ -3504,7 +3504,7 @@
                      edition depends on careful analysis of the information included in a
                      correction.</p>
 
-                  <p>Aside from judgments about correctness, "correction" may involve at least four
+                  <p>Aside from judgments about correctness, "correction" may involve at least five
                      kinds of information: <list>
                         <item>a reading.</item>
                         <item>the state of the reading: original or altered.</item>
@@ -3515,8 +3515,7 @@
                            reading.</item>
                      </list></p>
 
-                  <p>Since the primary mission of an apparatus criticus is to report variant
-                     readings, it is useful to think of the reading as the data and the information
+                  <p>In the context of a digital edition, it is useful to think of readings as the data and the information about
                      state, agency, method, and relationship as metadata, or data about the
                      data.</p>
 
@@ -3791,7 +3790,7 @@
             <div xml:id="apparatus-criticus-crux"
                corresp="http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html">
                <head>Crux</head>
-               <p>† † = Text deemed by the editor to be irredeemably corrupt.</p>
+               <p>† † = Text deemed by the editor to be readable but not understandable, with not satisfactory alternatives.</p>
                <p>
                   <specList>
                      <specDesc key="sic"/>
@@ -3807,7 +3806,7 @@
                      xml:lang="lat">cruces</foreign>:<quote rend="blockquote">… "vale mel gentium
                      †meculle†, ebur ex Etruria, lasar Arretinum, adamas Supernas, Tiberinum
                      margaritum, Cilniorum smargde, iaspi figulorum, berulle Porsenae, carbunculum
-                     †habeas†, ἵνα συντέμω πάντα, ᾶλλαγμα moecharum."</quote></p>
+                     †habeas†, ἵνα συντέμω πάντα, ἄλλαγμα moecharum."</quote></p>
 
                <p>In the apparatus criticus for the first crux, Kaster has the following:
                      <quote>meculle <hi rend="italic">Nβ</hi>(melcule <hi rend="italic">DP<hi
