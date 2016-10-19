@@ -2089,8 +2089,8 @@
                            restored</ref>.</item>
                      <item>&lt; &gt; = <ref target="#apparatus-criticus-conjecture-and-emendation"
                            >text added by conjecture or emendation</ref></item>
-                     <item>[ *** ] = <ref target="#apparatus-criticus-lacuna-physical-loss">text
-                           lost through physical damage</ref></item>
+                     <item>*** = <ref target="#edition-text-lacuna">lacuna in the textual tradition
+                           as a whole.</ref></item>
                      <item>&lt; *** &gt; = <ref target="#apparatus-criticus-lacuna-conjecture"
                            >conjectured lacuna</ref></item>
                      <item>[ ... ] = <ref target="#apparatus-criticus-symbols-known-loss-characters"
@@ -2189,10 +2189,57 @@
             </div>
             <!-- End section on uncertainly deciphered characters. -->
 
+            <div xml:id="edition-text-lacuna">
+               <head>Lacuna</head>
+
+               <p> *** = An unknown amount of text has been lost from the entire textual tradition,
+                  whether because of physical loss or human error (e.g., <foreign xml:lang="fr">saut
+                     du même au même</foreign>).</p>
+
+               <p>
+                  <specList>
+                     <specDesc key="gap"/>
+                  </specList>
+               </p>
+
+               <list>
+                  <item><gi>gap</gi> signifies that text is missing.</item>
+                  <item><att>reason</att> with value "lacuna" indicates that the text has been lost
+                     from the entire tradition, not just one witness or family of witnesses.</item>
+               </list>
+
+               <p>For example, an undetermined amount of text is missing from all witnesses at the
+                  beginning of Julius Caesar's <bibl><title>de Bello Civili</title></bibl>. <ref
+                     target="#damon-caesar">Cynthia Damon's OCT</ref> edition has the following in
+                  the main text: ***Litteris.</p>
+
+               <p><gi>gap</gi> with <att>reason</att>="lost" is inserted into the main text to
+                  indicate the lacuna:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <!-- Example here -->
+               </egXML>
+
+               <p>If it is desirable to insert a comment on the lacuna in the apparatus criticus,
+                     <gi>note</gi> should be used as explained in the section <ref
+                     target="#apparatus-criticus-editorial-notes">Editorial Notes</ref>.</p>
+
+               <p>These guidelines also have provisions for cases where an editor suspects a lacuna
+                  in the text, but lacks physical evidence of damage to support the claim. See the
+                  section "<ref target="#apparatus-criticus-conjectured-lacuna">Conjectured
+                     Lacuna</ref>" for more information.</p>
+
+               <p>If a single witness or family of witnesses has a gap in coverage of the text, but
+                  the rest of the tradition preserves the text, the symbol for a lacuna should not
+                  be used, but the gap in the witness(es) should be noted in the apparatus criticus.
+                  See the section "<ref target="#apparatus-criticus-gaps">Gap in Witnesses</ref>"
+                  for encoding instructions.</p>
+            </div>
+            <!-- End of section on lacuna -->
          </div>
          <!-- End section on edition text. -->
 
-         <div xml:id="apparatus-fontium">
+         <div xml:id="apparatus-fontium-testium">
             <head>Apparatus Fontium et Testium</head>
 
             <p>An apparatus fontium collects references to texts quoted or cited in the text of the
@@ -2764,134 +2811,135 @@
             </div>
             <!-- End of section on the use of catch-all references -->
 
-            <div xml:id="apparatus-criticus-symbols-gaps-lacunae-omissions">
-               <head>Lacunae and Omissions</head>
+            <div xml:id="apparatus-criticus-gaps">
+               <head>Gaps in Witnesses</head>
 
-               <p>Traditionally, lacunae and omissions are represented typographically within the
-                  text (e.g., [ ], ***, &lt;***&gt;) and/or noted in the apparatus criticus. The
-                  following sections indicate how to encode those gaps to produce not only the
-                  appropriate typographical representation in the main text of the edition, but also
-                  annotations in the apparatus. Encoding this information will also turn it into
-                  data that can be processed and searched.</p>
+               <p>If a witness or family of witnesses has a gap in coverage of the text, for
+                  whatever reason, the gap should be noted in the apparatus criticus using
+                     <gi>lacunaStart</gi> and <gi>lacunaEnd</gi>.</p>
 
-               <div xml:id="apparatus-criticus-lacuna-actual-loss">
-                  <head>Lacuna (Actual Loss)</head>
+               <p>The use of the term "lacuna" here is likely to cause confusion. The TEI Guidelines
+                  use the term "lacuna" in the elements <gi>lacunaStart</gi> and <gi>lacunaEnd</gi>,
+                  which are used here to indicate a gap in a witness or group of witnesses. If the
+                  gap occurs in the entire tradition, the guidelines in the section "<ref
+                     target="#edition-text-lacuna">Lacuna</ref>" should be followed.</p>
 
-                  <p>[ *** ] = An unknown amount of text has been lost from one or more witnesses
-                     because of damage.</p>
+               <p>Sections 1.1–1.33.3 of Julius Caesar's <bibl><title>de Bello
+                        Civili</title></bibl> are missing from manuscript <hi rend="bold">M</hi>.
+                     <ref target="#damon-caesar">Cynthia Damon's OCT</ref> edition has the following
+                  in the critical apparatus: 1.1.1–1.33.3 <hi rend="italic">M deest, vice eius m
+                     citatur</hi>.</p>
 
+               <p>In an LDLT edition, that should be encoded as follows:</p>
 
-                  <p>For example, sections 1.1–1.33.3 of Julius Caesar's <bibl><title>de Bello
-                           Civili</title></bibl> are missing from manuscript <hi rend="bold">M</hi>.
-                        <ref target="#damon-caesar">Cynthia Damon's OCT</ref> edition has the
-                     following in the main text: ***Litteris. The critical apparatus has
-                        <quote>1.1.1–1.33.3 <hi rend="italic">M deest, vice eius m
-                        citatur</hi></quote>.</p>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem>Litteris</lem>
+                     <rdg wit="#M" xml:id="M-lacuna-1.1"><lacunaStart/></rdg>
+                     <witDetail wit="#M" target="#M-lacuna-1.1">1.1.1–1.33.3 M deest, vice eius m
+                        citatur.</witDetail>
+                  </app>
+               </egXML>
 
-                  <p>In an LDLT edition, that should be encoded as follows:</p>
+               <p>At 1.33.3, the apparatus criticus has: <quote>-duum <hi rend="italic">hinc adest
+                        M</hi></quote>. In an LDLT edition, that should be encoded as follows:</p>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem wit="#M" xml:id="M-lacuna-1.1"><lacunaStart/></lem>
-                        <witDetail wit="#M" target="#M-lacuna-1.1">1.1.1–1.33.3 M deest, vice eius m
-                           citatur.</witDetail>
-                     </app>Litteris </egXML>
-
-                  <p>At 1.33.3, the apparatus criticus has: <quote>-duum <hi rend="italic">hinc
-                           adest M</hi></quote>. In an LDLT edition, that should be encoded as
-                     follows:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <p>Sic tri<app>
-                           <lem>duum</lem>
-                           <rdg wit="#M" xml:id="rdg-1.33.3-lacunaEnd"><lacunaEnd/></rdg>
-                           <witDetail wit="#M" target="#rdg-1.33.3-lacunaEnd">hinc adest
-                              M</witDetail>
-                        </app> disputationibus …</p>
-                  </egXML>
-
-                  <p>Note that square brackets will surround ***.</p>
-
-               </div>
-
-               <div xml:id="apparatus-criticus-lacuna-conjecture">
-                  <head>Conjectured Lacuna, No Text Supplied</head>
-
-                  <p>&lt;***&gt; = A lacuna has been conjectured on the grounds of style, context,
-                     or carelessness of a copyist (e.g., <foreign xml:lang="fr">saut du même au
-                        même</foreign>). No text has been supplied in its place.</p>
-
-                  <p>
-                     <specList>
-                        <specDesc key="gap"/>
-                     </specList>
-                  </p>
-
-                  <list>
-                     <item><gi>gap</gi> signifies that text is missing.</item>
-                     <item><att>reason</att> with value "lost" indicates that the text has been
-                        lost.</item>
-                  </list>
-
-                  <p>If the conjectured lacuna has been accepted by the editor of the edition,
-                        <gi>lem</gi> with <att>type</att>="emendation" should contain <gi>gap</gi>.
-                     If the conjectured lacuna is only noted in the apparatus criticus, then
-                        <gi>rdg</gi> with <att>type</att>="conjecture" should contain <gi>gap</gi>.
-                     For more on encoding conjecture and emendation see the section "<ref
-                        target="#apparatus-criticus-conjecture-and-emendation">Conjecture and
-                        Emendation</ref>".</p>
-
-                  <p>For example, at the conclusion of section 3.8.4 of Julius Caesar's
-                           <bibl><title>de Bello Civili</title></bibl>, <ref target="#damon-caesar"
-                        >Cynthia Damon's OCT</ref> edition has the following in the main text: si in
-                     Caesaris complexum uenire posset ***. The apparatus criticus has the following
-                     annotation: <hi rend="italic">lacunam statuit Vascosanus</hi>.</p>
-
-                  <p>In an LDLT edition, that should be encoded as follows:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <p>si in Caesaris complexum uenire posset <app>
-                           <lem source="#Vascosanus" type="emendation"><gap reason="lost"/></lem>
-                        </app></p>
-                  </egXML>
-
-                  <p>The same encoding should be used to indicated the conjectured lacuna of a
-                     number of lines of verse. For example, <ref target="#verdiere-calpurnius">Raoul
-                        Verdière</ref> argues that nine verses have been omitted by the copyist of
-                     the archetype of all manuscripts of Calpurnius Siculus' eclogues. He prints
-                     nine lines of equally spaced dots in the text, and he writes in the apparatus
-                     criticus, <quote>u. 1–9 <hi rend="italic">librarii incuria cecidisse
-                        puto</hi>.</quote></p>
-
-                  <p>If the editor of an LDLT edition of Calpurnius accepts this argument,
-                     Verdière's conjecture would be encoded as follows:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app type="line-omission">
-                        <lem source="#Verdière" xml:id="lem-1.1-9">
-                           <l n="1"><gap reason="lost"/></l>
-                           <l n="2"><gap reason="lost"/></l>
-                           <l n="3"><gap reason="lost"/></l>
-                           <l n="4"><gap reason="lost"/></l>
-                           <l n="5"><gap reason="lost"/></l>
-                           <l n="6"><gap reason="lost"/></l>
-                           <l n="7"><gap reason="lost"/></l>
-                           <l n="8"><gap reason="lost"/></l>
-                           <l n="9"><gap reason="lost"/></l>
-                        </lem>
-                        <note target="#lem-1.1-9">u. 1–9 librarii incuria cecidisse putavit
-                           Verdière</note>
-                     </app>
-                  </egXML>
-
-                  <p>In the digital or print version, nine lines of &lt; *** &gt; would be printed
-                     at the beginning of the text, and the numbering of the lines that follow would
-                     begin with 10. The apparatus criticus would have the entry <quote>u. 1–9
-                        librarii incuria cecidisse putavit Verdière</quote>.</p>
-               </div>
-               <!-- End section "Lacuna Conjectured, No Text Supplied" -->
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p>Sic tri<app>
+                        <lem>duum</lem>
+                        <rdg wit="#M" xml:id="rdg-1.33.3-lacunaEnd"><lacunaEnd/></rdg>
+                        <witDetail wit="#M" target="#rdg-1.33.3-lacunaEnd">hinc adest M</witDetail>
+                     </app> disputationibus …</p>
+               </egXML>
             </div>
-            <!-- End of section on lacunae -->
+            <!-- End of section on gap in a witness or family of witnesses. -->
+
+            <div xml:id="apparatus-criticus-conjectured-lacuna">
+               <head>Conjectured Lacuna, No Text Supplied</head>
+
+               <p>&lt;***&gt; = A lacuna has been conjectured on the grounds of style, context, or
+                  carelessness of a copyist (e.g., <foreign xml:lang="fr">saut du même au
+                     même</foreign>). No text has been supplied in its place.</p>
+
+               <p>If the conjectured lacuna has been accepted by the editor of the edition,
+                     <gi>lem</gi> with <att>type</att>="emendation" should contain <gi>gap</gi>. If
+                  the conjectured lacuna is only noted in the apparatus criticus, then <gi>rdg</gi>
+                  with <att>type</att>="conjecture" should contain <gi>gap</gi>. For more on
+                  encoding conjecture and emendation see the section "<ref
+                     target="#apparatus-criticus-conjecture-and-emendation">Conjecture and
+                     Emendation</ref>".</p>
+
+               <p>For example, at the conclusion of section 3.8.4 of Julius Caesar's <bibl><title>de
+                        Bello Civili</title></bibl>, <ref target="#damon-caesar">Cynthia Damon's
+                     OCT</ref> edition has the following in the main text: si in Caesaris complexum
+                  uenire posset ***. The apparatus criticus has the following annotation: <hi
+                     rend="italic">lacunam statuit Vascosanus</hi>.</p>
+
+               <p>In an LDLT edition, that should be encoded as follows:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p>si in Caesaris complexum uenire posset <app>
+                        <lem source="#Vascosanus" type="emendation"><gap reason="lost"/></lem>
+                     </app></p>
+               </egXML>
+
+               <p>The same encoding should be used to indicated the conjectured lacuna of a number
+                  of lines of verse. For example, <ref target="#verdiere-calpurnius">Raoul
+                     Verdière</ref> argues that nine verses have been omitted by the copyist of the
+                  archetype of all manuscripts of Calpurnius Siculus' eclogues. He prints nine lines
+                  of equally spaced dots in the text, and he writes in the apparatus criticus,
+                     <quote>u. 1–9 <hi rend="italic">librarii incuria cecidisse
+                  puto</hi>.</quote></p>
+
+               <p>If the editor of an LDLT edition of Calpurnius accepts this argument, Verdière's
+                  conjecture would be encoded as follows:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app type="line-omission">
+                     <lem source="#Verdière" xml:id="lem-1.1-9">
+                        <l n="1"><gap reason="lost"/></l>
+                        <l n="2"><gap reason="lost"/></l>
+                        <l n="3"><gap reason="lost"/></l>
+                        <l n="4"><gap reason="lost"/></l>
+                        <l n="5"><gap reason="lost"/></l>
+                        <l n="6"><gap reason="lost"/></l>
+                        <l n="7"><gap reason="lost"/></l>
+                        <l n="8"><gap reason="lost"/></l>
+                        <l n="9"><gap reason="lost"/></l>
+                     </lem>
+                     <note target="#lem-1.1-9">u. 1–9 librarii incuria cecidisse putavit
+                        Verdière</note>
+                  </app>
+               </egXML>
+
+               <p>In the digital or print version, nine lines of &lt; *** &gt; would be printed at
+                  the beginning of the text, and the numbering of the lines that follow would begin
+                  with 10. The apparatus criticus would have the entry <quote>u. 1–9 librarii
+                     incuria cecidisse putavit Verdière</quote>.</p>
+            </div>
+            <!-- End section "Conjectured Lacuna, No Text Supplied" -->
+            
+            
+            
+            
+            
+            
+            
+            <!-- Find a way to group gap, conjectured lacuna, known amount of characters lost, and omission together -->
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
 
             <div xml:id="apparatus-criticus-symbols-known-loss-characters"
                corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html">
@@ -3209,11 +3257,11 @@
 
                   <p>For example, at section 29 of Suetonius' life of Claudius, <ref
                         target="#kaster-suetonius">Robert Kaster</ref> indicates in the text of his
-                     OCT edition that that he accepts as correct the deletion of two words by previous scholars: <quote
-                        rend="blockquote">His, ut dixi, uxoribusque addictus non principem {se} sed
-                        ministrum egit, compendio cuiusque horum uel etiam studio aut libidine
-                        honores exercitus impunitates supplicia largitus {est} et quidem insciens
-                        plerumque et ignarus.</quote></p>
+                     OCT edition that that he accepts as correct the deletion of two words by
+                     previous scholars: <quote rend="blockquote">His, ut dixi, uxoribusque addictus
+                        non principem {se} sed ministrum egit, compendio cuiusque horum uel etiam
+                        studio aut libidine honores exercitus impunitates supplicia largitus {est}
+                        et quidem insciens plerumque et ignarus.</quote></p>
 
                   <p>The entry for the first one in the apparatus criticus has the following:
                         <quote>se <hi rend="italic">secl. Graev. 1697, 411 (Polak 1882,
@@ -3383,10 +3431,11 @@
                         target="#apparatus-criticus-transposition">text above</ref>). In this
                      example, the witness known as Bern transposes portions of two lines. Witnesses
                      H M<hi rend="superscript">ac</hi> (and N<hi rend="superscript">ac</hi>)
-                     conflate the lines, which is another kind of transposition (or omission). That is, it can be
-                     assumed that they did not write the first half the line at 304 and the second
-                     half of the line at 305, but rather wrote the two halves together on the same
-                     line (i.e., nat lupus inter oues, nec uires fulminis apro).</p>
+                     conflate the lines, which is another kind of transposition (or omission). That
+                     is, it can be assumed that they did not write the first half of the line at 304
+                     and the second half of the line at 305, but rather wrote the two halves
+                     together on the same line (i.e., nat lupus inter oues, nec uires fulminis
+                     apro).</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <l n="304">nat lupus inter oues, <app>
@@ -3700,8 +3749,8 @@
             <div xml:id="apparatus-criticus-conjecture-and-emendation">
                <head>Conjecture and Emendation</head>
 
-               <p>&lt; &gt; = A conjectural supplement has been adopted by the editor for the main edition
-                  text.</p>
+               <p>&lt; &gt; = A conjectural supplement has been adopted by the editor for the main
+                  edition text.</p>
 
                <p>As explained in the section <ref target="#apparatus-criticus-concepts-definitions"
                      >Concepts and Definitions</ref>, conjectures are readings that are not
