@@ -2811,51 +2811,8 @@
             </div>
             <!-- End of section on the use of catch-all references -->
 
-            <div xml:id="apparatus-criticus-gaps">
-               <head>Gaps in Witnesses</head>
-
-               <p>If a witness or family of witnesses has a gap in coverage of the text, for
-                  whatever reason, the gap should be noted in the apparatus criticus using
-                     <gi>lacunaStart</gi> and <gi>lacunaEnd</gi>.</p>
-
-               <p>The use of the term "lacuna" here is likely to cause confusion. The TEI Guidelines
-                  use the term "lacuna" in the elements <gi>lacunaStart</gi> and <gi>lacunaEnd</gi>,
-                  which are used here to indicate a gap in a witness or group of witnesses. If the
-                  gap occurs in the entire tradition, the guidelines in the section "<ref
-                     target="#edition-text-lacuna">Lacuna</ref>" should be followed.</p>
-
-               <p>Sections 1.1–1.33.3 of Julius Caesar's <bibl><title>de Bello
-                        Civili</title></bibl> are missing from manuscript <hi rend="bold">M</hi>.
-                     <ref target="#damon-caesar">Cynthia Damon's OCT</ref> edition has the following
-                  in the critical apparatus: 1.1.1–1.33.3 <hi rend="italic">M deest, vice eius m
-                     citatur</hi>.</p>
-
-               <p>In an LDLT edition, that should be encoded as follows:</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <app>
-                     <lem>Litteris</lem>
-                     <rdg wit="#M" xml:id="M-lacuna-1.1"><lacunaStart/></rdg>
-                     <witDetail wit="#M" target="#M-lacuna-1.1">1.1.1–1.33.3 M deest, vice eius m
-                        citatur.</witDetail>
-                  </app>
-               </egXML>
-
-               <p>At 1.33.3, the apparatus criticus has: <quote>-duum <hi rend="italic">hinc adest
-                        M</hi></quote>. In an LDLT edition, that should be encoded as follows:</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <p>Sic tri<app>
-                        <lem>duum</lem>
-                        <rdg wit="#M" xml:id="rdg-1.33.3-lacunaEnd"><lacunaEnd/></rdg>
-                        <witDetail wit="#M" target="#rdg-1.33.3-lacunaEnd">hinc adest M</witDetail>
-                     </app> disputationibus …</p>
-               </egXML>
-            </div>
-            <!-- End of section on gap in a witness or family of witnesses. -->
-
             <div xml:id="apparatus-criticus-conjectured-lacuna">
-               <head>Conjectured Lacuna, No Text Supplied</head>
+               <head>Conjectured Lacuna</head>
 
                <p>&lt;***&gt; = A lacuna has been conjectured on the grounds of style, context, or
                   carelessness of a copyist (e.g., <foreign xml:lang="fr">saut du même au
@@ -2918,30 +2875,8 @@
                      incuria cecidisse putavit Verdière</quote>.</p>
             </div>
             <!-- End section "Conjectured Lacuna, No Text Supplied" -->
-            
-            
-            
-            
-            
-            
-            
-            <!-- Find a way to group gap, conjectured lacuna, known amount of characters lost, and omission together -->
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
 
-
-            <div xml:id="apparatus-criticus-symbols-known-loss-characters"
+            <div xml:id="apparatus-criticus-known-loss-characters"
                corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html">
                <head>Known Amount Of Characters Lost</head>
 
@@ -2998,43 +2933,107 @@
             <div xml:id="apparatus-criticus-omission">
                <head>Omission</head>
 
-               <p>This section explains how to encode omission of text from a witness. Omission is
-                  different from a lacuna in scope. Omission generally affects a word, phrase, or
-                  line(s) in a particular witness or set of witnesses, but a lacuna affects a either
-                  a larger amount of text, or the entire tradition, or both.</p>
+               <p>Omission is different from a lacuna, which is the absence of an unknown or
+                  uncertain quantity of text from the tradition in general. This section explains
+                  how to encode omission of known quantities of text from a particular witness or
+                  witnesses. Two kinds of omission are discussed here:<list>
+                     <item>omission of a letter or letters, words, phrases, or lines in a witness or
+                        family of witnesses</item>
+                     <item>a substantial gap in a witness or family of witnesses</item>
+                  </list>.</p>
 
-               <p>For example, the witness known as "P" has omitted the word <foreign xml:lang="lat"
-                     >pecus</foreign> from the Calp. 1.38: <foreign xml:lang="lat">securo custode
-                     pecus nocturnaque pastor</foreign>. The traditional apparatus criticus
-                  indicates the omission as follows: pecus <hi rend="italic">om.</hi>
-                  <hi rend="bold">P</hi></p>
+               <p>Related sections:<list>
+                     <!-- Validate these references -->
+                     <item><ref target="#edition-text-lacuna">Lacuna</ref></item>
+                     <item><ref target="#apparatus-criticus-conjectured-lacuna">Conjectured
+                           Lacuna</ref></item>
+                     <item><ref target="#apparatus-criticus-known-loss-characters">Known Amount of
+                           Characters Lost</ref></item>
+                     <item><ref target="#apparatus-criticus-deletions">Deletions</ref></item>
+                  </list></p>
 
-               <p>In these guidelines, omission is represented by a so-called "self-closing" or
-                  empty <gi>rdg</gi> (i.e., &lt;rdg/&gt;):</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <l>securo custode <app>
-                        <lem>pecus</lem>
-                        <rdg wit="#P"/>
-                     </app> nocturnaque pastor</l>
-               </egXML>
+               <div xml:id="apparatus-criticus-omission-text">
+                  <p>For example, the witness known as "P" has omitted the word <foreign
+                        xml:lang="lat">pecus</foreign> from the Calp. 1.38: <foreign xml:lang="lat"
+                        >securo custode pecus nocturnaque pastor</foreign>. The traditional
+                     apparatus criticus indicates the omission as follows: pecus <hi rend="italic"
+                        >om.</hi>
+                     <hi rend="bold">P</hi></p>
 
-               <p>The same model applies to the omission of an entire line of verse by a witness or
-                  witnesses, but in that case <gi>app</gi> has <att>type</att>="line-omission" and
-                     <gi>lem</gi> contains the entire line, with the omission marked by a
-                  self-closing <gi>rdg</gi>:</p>
+                  <p>In these guidelines, omission is represented by a so-called "self-closing" or
+                     empty <gi>rdg</gi> (i.e., &lt;rdg/&gt;):</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l>securo custode <app>
+                           <lem>pecus</lem>
+                           <rdg wit="#P"/>
+                        </app> nocturnaque pastor</l>
+                  </egXML>
 
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <app type="line-omission">
-                     <lem>
-                        <l n="3">et spument rauco ferventia musta susurro.</l>
-                     </lem>
-                     <rdg wit="#n #h"/>
-                  </app>
-               </egXML>
+                  <p>The same model applies to the omission of an entire line of verse by a witness
+                     or witnesses, but in that case <gi>app</gi> has <att>type</att>="line-omission"
+                     and <gi>lem</gi> contains the entire line, with the omission marked by a
+                     self-closing <gi>rdg</gi>:</p>
 
-               <p>This will be displayed in the apparatus criticus as <quote><hi rend="italic">vers.
-                        om.</hi>
-                     <hi rend="bold">n h</hi></quote></p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app type="line-omission">
+                        <lem>
+                           <l n="3">et spument rauco ferventia musta susurro.</l>
+                        </lem>
+                        <rdg wit="#n #h"/>
+                     </app>
+                  </egXML>
+
+                  <p>This will be displayed in the apparatus criticus as <quote><hi rend="italic"
+                           >vers. om.</hi>
+                        <hi rend="bold">n h</hi></quote></p>
+               </div>
+               <!-- End of subsection omission-text -->
+
+               <div xml:id="apparatus-criticus-omission-gaps">
+                  <head>Gaps in Witnesses</head>
+
+                  <p>If a witness or family of witnesses has a gap in coverage of the text, for
+                     whatever reason, the gap should be noted in the apparatus criticus using
+                        <gi>lacunaStart</gi> and <gi>lacunaEnd</gi>.</p>
+
+                  <p>The use of the term "lacuna" here is likely to cause confusion. The TEI
+                     Guidelines use the term "lacuna" in the elements <gi>lacunaStart</gi> and
+                        <gi>lacunaEnd</gi>, which are used here to indicate a gap in a witness or
+                     group of witnesses. If the gap occurs in the entire tradition, the guidelines
+                     in the section "<ref target="#edition-text-lacuna">Lacuna</ref>" should be
+                     followed.</p>
+
+                  <p>Sections 1.1–1.33.3 of Julius Caesar's <bibl><title>de Bello
+                        Civili</title></bibl> are missing from manuscript <hi rend="bold">M</hi>.
+                        <ref target="#damon-caesar">Cynthia Damon's OCT</ref> edition has the
+                     following in the critical apparatus: 1.1.1–1.33.3 <hi rend="italic">M deest,
+                        vice eius m citatur</hi>.</p>
+
+                  <p>In an LDLT edition, that should be encoded as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>Litteris</lem>
+                        <rdg wit="#M" xml:id="M-lacuna-1.1"><lacunaStart/></rdg>
+                        <witDetail wit="#M" target="#M-lacuna-1.1">1.1.1–1.33.3 M deest, vice eius m
+                           citatur.</witDetail>
+                     </app>
+                  </egXML>
+
+                  <p>At 1.33.3, the apparatus criticus has: <quote>-duum <hi rend="italic">hinc
+                           adest M</hi></quote>. In an LDLT edition, that should be encoded as
+                     follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>Sic tri<app>
+                           <lem>duum</lem>
+                           <rdg wit="#M" xml:id="rdg-1.33.3-lacunaEnd"><lacunaEnd/></rdg>
+                           <witDetail wit="#M" target="#rdg-1.33.3-lacunaEnd">hinc adest
+                              M</witDetail>
+                        </app> disputationibus …</p>
+                  </egXML>
+               </div>
+               <!-- End of subsection on omission-gap. -->
             </div>
             <!-- End of section on omission -->
 
