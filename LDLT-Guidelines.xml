@@ -2102,140 +2102,148 @@
                      <item>† † = <ref target="#apparatus-criticus-crux">text deemed to be
                            irretrievably corrupt</ref>.</item>
                   </list></p>
+
+               <div xml:id="edition-text-abbreviation-expansion">
+                  <head>Expansion of Abbreviation</head>
+
+                  <p>( ) = An editor expands an abbreviation as an aid to reading or to remove
+                     ambiguity. Encoded according to the following guidelines, a digital edition
+                     will display the abbreviated forms by default, but a user will be able to
+                     toggle between the abbreviated and expanded forms.</p>
+
+                  <p>The preface should indicate whether or not abbreviations are expanded.</p>
+                  <p>
+                     <specList>
+                        <specDesc key="choice"/>
+                        <specDesc key="abbr"/>
+                        <specDesc key="ex"/>
+                     </specList>
+                  </p>
+                  <list>
+                     <item><gi>expan</gi> (expansion) contains the full expansion of an
+                        abbreviation.</item>
+                     <item><gi>abbr</gi> (abbreviation) contains the abbreviated part, i.e. the
+                        letters actually on the page.</item>
+                     <item><gi>ex</gi> (editorial expansion) contains a sequence of letters added by
+                        an editor or transcriber when expanding an abbreviation.</item>
+                  </list>
+                  <p>
+                     <quote>M(arcus) Cicero S(alutem) D(ixit) L(ucio) Lucceio Q(uinti)
+                        F(ilio)</quote>
+                  </p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p><expan><abbr>M</abbr><ex>arcus</ex></expan> Cicero
+                              <expan><abbr>S</abbr><ex>alutem</ex><abbr>D</abbr><ex>ixit</ex></expan>
+                        <expan><abbr>L</abbr><ex>ucio</ex></expan> Lucceio
+                              <expan><abbr>Q</abbr><ex>uinti</ex></expan>
+                        <expan><abbr>F</abbr><ex>ilio</ex></expan></p>
+                  </egXML>
+
+                  <p>Multiple &lt;abbr&gt; elements within a single &lt;expan&gt; compose a single
+                     abbreviation between them. For example, e.g. is one abbreviation for the phrase
+                     "exempli gratia."</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <abbr>e</abbr>
+                     <ex>xempli</ex>
+                     <abbr>g</abbr>
+                     <ex>ratia</ex>
+                  </egXML>
+               </div>
+               <!-- End section on expansion of abbreviations. -->
+
+               <div xml:id="edition-text-uncertain-characters">
+                  <head>Uncertainly Deciphered Characters</head>
+
+                  <p>When an edition is based on a limited number of witnesses, it may be necessary
+                     to indicate that characters are difficult to read. The accepted way to do this
+                     is with dots underneath the uncertainly deciphered characters.</p>
+
+                  <p>
+                     <specList>
+                        <specDesc key="unclear"/>
+                     </specList>
+                  </p>
+
+                  <p><gi>unclear</gi> contains characters, words, or phrases that cannot be
+                     transcribed with certainty.</p>
+
+                  <p>For example, the entry for <foreign xml:lang="lat">Mensae</foreign> in
+                     Lindsay's edition of Festus (157M) has the following uncertainly deciphered
+                     text:</p>
+
+                  <p>a&#x323;m&#x323;e&#x323; . . . a&#x323;
+                     t&#x323;e&#x323;n&#x323;e&#x323;b&#x323;a&#x323;t&#x323;
+                     a&#x323;r&#x323;a&#x323;m&#x323; . . . . . . . . . .</p>
+
+                  <p>In an LDLT edition, that should be encoded as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <unclear>ame</unclear>
+                     <gap reason="lost" quantity="3" unit="characters"/>
+                     <unclear>a tenebat aram</unclear>
+                     <gap reason="lost" quantity="10" unit="characters"/>
+                  </egXML>
+
+               </div>
+               <!-- End section on uncertainly deciphered characters. -->
+
+               <div xml:id="edition-text-lacunae">
+                  <head>Lacunae</head>
+
+                  <p> *** = An unknown amount of text has been lost from the entire textual
+                     tradition, whether because of physical loss or human error (e.g., <foreign
+                        xml:lang="fr">saut du même au même</foreign>).</p>
+
+                  <p>
+                     <specList>
+                        <specDesc key="gap"/>
+                     </specList>
+                  </p>
+
+                  <list>
+                     <item><gi>gap</gi> signifies that text is missing.</item>
+                     <item><att>reason</att> with value "lacuna" indicates that the text has been
+                        lost from the entire tradition, not just one witness or family of
+                        witnesses.</item>
+                  </list>
+
+                  <p>For example, an undetermined amount of text is missing from all witnesses at
+                     the end of 3.8.4 of Julius Caesar's <bibl><title>de Bello
+                     Civili</title></bibl>. <ref target="#damon-caesar">Cynthia Damon's OCT</ref>
+                     edition has the following in the main text: Custodiisque diligentius dispositis
+                     ipse grauissima hieme in nauibus excubans neque ullum laborem aut munus
+                     despiciens neque subsidium expectans si in Caesaris complexum uenire posset
+                     ***.</p>
+
+                  <p><gi>gap</gi> with <att>reason</att>="lacuna" is inserted into the main text to
+                     indicate the lacuna:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>Custodiisque diligentius dispositis ipse grauissima hieme in nauibus
+                        excubans neque ullum laborem aut munus despiciens neque subsidium expectans
+                        si in Caesaris complexum uenire posset <gap reason="lacuna"/></p>
+                  </egXML>
+
+                  <p>If it is desirable to insert a comment on the lacuna in the apparatus criticus,
+                        <gi>note</gi> should be used as explained in the section <ref
+                        target="#apparatus-criticus-editorial-notes">Editorial Notes</ref>.</p>
+
+                  <p>These guidelines also have provisions for cases where an editor suspects a
+                     lacuna in the text, but lacks physical evidence of damage to support the claim.
+                     See the section "<ref target="#apparatus-criticus-conjectured-lacuna"
+                        >Conjectured Lacuna</ref>" for more information.</p>
+
+                  <p>If a single witness or family of witnesses has a gap in coverage of the text,
+                     but the rest of the tradition preserves the text, the symbol for a lacuna
+                     should not be used, but the gap in the witness(es) should be noted in the
+                     apparatus criticus. See the section "<ref target="#apparatus-criticus-gaps">Gap
+                        in Witnesses</ref>" for encoding instructions.</p>
+               </div>
+               <!-- End of section on lacunae -->
             </div>
             <!-- End section on symbols in the main text. -->
-
-            <div xml:id="edition-text-abbreviation-expansion">
-               <head>Expansion of Abbreviation</head>
-
-               <p>( ) = An editor expands an abbreviation as an aid to reading or to remove
-                  ambiguity. Encoded according to the following guidelines, a digital edition will
-                  display the abbreviated forms by default, but a user will be able to toggle
-                  between the abbreviated and expanded forms.</p>
-
-               <p>The preface should indicate whether or not abbreviations are expanded.</p>
-               <p>
-                  <specList>
-                     <specDesc key="choice"/>
-                     <specDesc key="abbr"/>
-                     <specDesc key="ex"/>
-                  </specList>
-               </p>
-               <list>
-                  <item><gi>expan</gi> (expansion) contains the full expansion of an
-                     abbreviation.</item>
-                  <item><gi>abbr</gi> (abbreviation) contains the abbreviated part, i.e. the letters
-                     actually on the page.</item>
-                  <item><gi>ex</gi> (editorial expansion) contains a sequence of letters added by an
-                     editor or transcriber when expanding an abbreviation.</item>
-               </list>
-               <p>
-                  <quote>M(arcus) Cicero S(alutem) D(ixit) L(ucio) Lucceio Q(uinti) F(ilio)</quote>
-               </p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <p><expan><abbr>M</abbr><ex>arcus</ex></expan> Cicero
-                           <expan><abbr>S</abbr><ex>alutem</ex><abbr>D</abbr><ex>ixit</ex></expan>
-                     <expan><abbr>L</abbr><ex>ucio</ex></expan> Lucceio
-                           <expan><abbr>Q</abbr><ex>uinti</ex></expan>
-                     <expan><abbr>F</abbr><ex>ilio</ex></expan></p>
-               </egXML>
-
-               <p>Multiple &lt;abbr&gt; elements within a single &lt;expan&gt; compose a single
-                  abbreviation between them. For example, e.g. is one abbreviation for the phrase
-                  "exempli gratia."</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <abbr>e</abbr>
-                  <ex>xempli</ex>
-                  <abbr>g</abbr>
-                  <ex>ratia</ex>
-               </egXML>
-            </div>
-            <!-- End section on expansion of abbreviations. -->
-
-            <div xml:id="edition-text-uncertain-characters">
-               <head>Uncertainly Deciphered Characters</head>
-
-               <p>When an edition is based on a limited number of witnesses, it may be necessary to
-                  indicate that characters are difficult to read. The accepted way to do this is
-                  with dots underneath the uncertainly deciphered characters.</p>
-
-               <p>
-                  <specList>
-                     <specDesc key="unclear"/>
-                  </specList>
-               </p>
-
-               <p><gi>unclear</gi> contains characters, words, or phrases that cannot be transcribed
-                  with certainty.</p>
-
-               <p>For example, the entry for <foreign xml:lang="lat">Mensae</foreign> in Lindsay's
-                  edition of Festus (157M) has the following uncertainly deciphered text:</p>
-
-               <p>a&#x323;m&#x323;e&#x323; . . . a&#x323;
-                  t&#x323;e&#x323;n&#x323;e&#x323;b&#x323;a&#x323;t&#x323;
-                  a&#x323;r&#x323;a&#x323;m&#x323; . . . . . . . . . .</p>
-
-               <p>In an LDLT edition, that should be encoded as follows:</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <unclear>ame</unclear>
-                  <gap reason="lost" quantity="3" unit="characters"/>
-                  <unclear>a tenebat aram</unclear>
-                  <gap reason="lost" quantity="10" unit="characters"/>
-               </egXML>
-
-            </div>
-            <!-- End section on uncertainly deciphered characters. -->
-
-            <div xml:id="edition-text-lacuna">
-               <head>Lacuna</head>
-
-               <p> *** = An unknown amount of text has been lost from the entire textual tradition,
-                  whether because of physical loss or human error (e.g., <foreign xml:lang="fr">saut
-                     du même au même</foreign>).</p>
-
-               <p>
-                  <specList>
-                     <specDesc key="gap"/>
-                  </specList>
-               </p>
-
-               <list>
-                  <item><gi>gap</gi> signifies that text is missing.</item>
-                  <item><att>reason</att> with value "lacuna" indicates that the text has been lost
-                     from the entire tradition, not just one witness or family of witnesses.</item>
-               </list>
-
-               <p>For example, an undetermined amount of text is missing from all witnesses at the
-                  beginning of Julius Caesar's <bibl><title>de Bello Civili</title></bibl>. <ref
-                     target="#damon-caesar">Cynthia Damon's OCT</ref> edition has the following in
-                  the main text: ***Litteris.</p>
-
-               <p><gi>gap</gi> with <att>reason</att>="lost" is inserted into the main text to
-                  indicate the lacuna:</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <!-- Example here -->
-               </egXML>
-
-               <p>If it is desirable to insert a comment on the lacuna in the apparatus criticus,
-                     <gi>note</gi> should be used as explained in the section <ref
-                     target="#apparatus-criticus-editorial-notes">Editorial Notes</ref>.</p>
-
-               <p>These guidelines also have provisions for cases where an editor suspects a lacuna
-                  in the text, but lacks physical evidence of damage to support the claim. See the
-                  section "<ref target="#apparatus-criticus-conjectured-lacuna">Conjectured
-                     Lacuna</ref>" for more information.</p>
-
-               <p>If a single witness or family of witnesses has a gap in coverage of the text, but
-                  the rest of the tradition preserves the text, the symbol for a lacuna should not
-                  be used, but the gap in the witness(es) should be noted in the apparatus criticus.
-                  See the section "<ref target="#apparatus-criticus-gaps">Gap in Witnesses</ref>"
-                  for encoding instructions.</p>
-            </div>
-            <!-- End of section on lacuna -->
          </div>
          <!-- End section on edition text. -->
 
@@ -2811,134 +2819,16 @@
             </div>
             <!-- End of section on the use of catch-all references -->
 
-            <div xml:id="apparatus-criticus-conjectured-lacuna">
-               <head>Conjectured Lacuna</head>
-
-               <p>&lt;***&gt; = A lacuna has been conjectured on the grounds of style, context, or
-                  carelessness of a copyist (e.g., <foreign xml:lang="fr">saut du même au
-                     même</foreign>). No text has been supplied in its place.</p>
-
-               <p>If the conjectured lacuna has been accepted by the editor of the edition,
-                     <gi>lem</gi> with <att>type</att>="emendation" should contain <gi>gap</gi>. If
-                  the conjectured lacuna is only noted in the apparatus criticus, then <gi>rdg</gi>
-                  with <att>type</att>="conjecture" should contain <gi>gap</gi>. For more on
-                  encoding conjecture and emendation see the section "<ref
-                     target="#apparatus-criticus-conjecture-and-emendation">Conjecture and
-                     Emendation</ref>".</p>
-
-               <p>For example, at the conclusion of section 3.8.4 of Julius Caesar's <bibl><title>de
-                        Bello Civili</title></bibl>, <ref target="#damon-caesar">Cynthia Damon's
-                     OCT</ref> edition has the following in the main text: si in Caesaris complexum
-                  uenire posset ***. The apparatus criticus has the following annotation: <hi
-                     rend="italic">lacunam statuit Vascosanus</hi>.</p>
-
-               <p>In an LDLT edition, that should be encoded as follows:</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <p>si in Caesaris complexum uenire posset <app>
-                        <lem source="#Vascosanus" type="emendation"><gap reason="lost"/></lem>
-                     </app></p>
-               </egXML>
-
-               <p>The same encoding should be used to indicated the conjectured lacuna of a number
-                  of lines of verse. For example, <ref target="#verdiere-calpurnius">Raoul
-                     Verdière</ref> argues that nine verses have been omitted by the copyist of the
-                  archetype of all manuscripts of Calpurnius Siculus' eclogues. He prints nine lines
-                  of equally spaced dots in the text, and he writes in the apparatus criticus,
-                     <quote>u. 1–9 <hi rend="italic">librarii incuria cecidisse
-                  puto</hi>.</quote></p>
-
-               <p>If the editor of an LDLT edition of Calpurnius accepts this argument, Verdière's
-                  conjecture would be encoded as follows:</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <app type="line-omission">
-                     <lem source="#Verdière" xml:id="lem-1.1-9">
-                        <l n="1"><gap reason="lost"/></l>
-                        <l n="2"><gap reason="lost"/></l>
-                        <l n="3"><gap reason="lost"/></l>
-                        <l n="4"><gap reason="lost"/></l>
-                        <l n="5"><gap reason="lost"/></l>
-                        <l n="6"><gap reason="lost"/></l>
-                        <l n="7"><gap reason="lost"/></l>
-                        <l n="8"><gap reason="lost"/></l>
-                        <l n="9"><gap reason="lost"/></l>
-                     </lem>
-                     <note target="#lem-1.1-9">u. 1–9 librarii incuria cecidisse putavit
-                        Verdière</note>
-                  </app>
-               </egXML>
-
-               <p>In the digital or print version, nine lines of &lt; *** &gt; would be printed at
-                  the beginning of the text, and the numbering of the lines that follow would begin
-                  with 10. The apparatus criticus would have the entry <quote>u. 1–9 librarii
-                     incuria cecidisse putavit Verdière</quote>.</p>
-            </div>
-            <!-- End section "Conjectured Lacuna, No Text Supplied" -->
-
-            <div xml:id="apparatus-criticus-known-loss-characters"
-               corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html">
-               <head>Known Amount Of Characters Lost</head>
-
-               <p>[ . . . ] = The editor knows from context and/or observation how many characters
-                  have been lost. Each dot represents a missing character.</p>
-
-               <p>
-                  <specList>
-                     <specDesc key="gap"/>
-                  </specList>
-               </p>
-
-               <list>
-                  <item><gi>gap</gi> signifies text missing.</item>
-                  <item><att>reason</att> with value "lost" indicates that the text has been
-                     lost.</item>
-                  <item><att>quantity</att> indicates the number of characters lost.</item>
-                  <item><att>unit</att> with value "characters" indicates the unit measured in
-                        <att>quantity</att>.</item>
-               </list>
-
-               <p>For example, in the apparatus criticus to Calp. 4.4, <ref
-                     target="#giarratano-calpurnius">Giarratano</ref> has the following with
-                  reference to lemma <foreign xml:lang="lat">spiritus amnis</foreign>:
-                     <quote>sp&#099;&#773; N (deinde lac. 6 litt.)</quote>.</p>
-
-               <p>In an LDLT edition, that would be encoded as follows:</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <l n="4">ripa levatque diem vicini <app>
-                        <lem>spiritus amnis</lem>
-                        <rdg wit="#N">sp&#099;&#773; <gap reason="lost" quantity="6"
-                              unit="characters"/></rdg>
-                     </app>? </l>
-               </egXML>
-
-               <p>That encoding would produce the following entry in the apparatus: <quote>spc̅
-                     [......]</quote>. If it is desirable to supplement that with a note, the
-                     <gi>rdg</gi> should be given an <att>xml:id</att> and the note should be
-                  inserted in a <gi>witDetail</gi> pointing to it:</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <l n="4">ripa levatque diem vicini <app>
-                        <lem>spiritus amnis</lem>
-                        <rdg wit="#N" xml:id="rdg-4.4-spiritus-amnis">sp&#099;&#773; <gap
-                              reason="lost" quantity="6" unit="characters"/></rdg>
-                        <witDetail wit="#N" target="#rdg-4.4-spiritus-amnis">lac. 6
-                           litt.</witDetail>
-                     </app>? </l>
-               </egXML>
-            </div>
-            <!-- End section "Known amount of text lost" -->
-
             <div xml:id="apparatus-criticus-omission">
                <head>Omission</head>
 
                <p>Omission is different from a lacuna, which is the absence of an unknown or
                   uncertain quantity of text from the tradition in general. This section explains
                   how to encode omission of known quantities of text from a particular witness or
-                  witnesses. Two kinds of omission are discussed here:<list>
+                  witnesses. Three kinds of omission are discussed here:<list>
                      <item>omission of a letter or letters, words, phrases, or lines in a witness or
                         family of witnesses</item>
+                     <item>omission of a known or estimated quantity of letters</item>
                      <item>a substantial gap in a witness or family of witnesses</item>
                   </list>.</p>
 
@@ -2947,8 +2837,6 @@
                      <item><ref target="#edition-text-lacuna">Lacuna</ref></item>
                      <item><ref target="#apparatus-criticus-conjectured-lacuna">Conjectured
                            Lacuna</ref></item>
-                     <item><ref target="#apparatus-criticus-known-loss-characters">Known Amount of
-                           Characters Lost</ref></item>
                      <item><ref target="#apparatus-criticus-deletions">Deletions</ref></item>
                   </list></p>
 
@@ -2988,6 +2876,60 @@
                         <hi rend="bold">n h</hi></quote></p>
                </div>
                <!-- End of subsection omission-text -->
+
+               <div xml:id="apparatus-criticus-omission-known-loss-characters"
+                  corresp="http://www.stoa.org/epidoc/gl/latest/trans-lostcharknown.html">
+                  <head>Known Amount Of Characters Lost</head>
+
+                  <p>[ . . . ] = The editor knows from context and/or observation how many
+                     characters have been lost. Each dot represents a missing character.</p>
+
+                  <p>
+                     <specList>
+                        <specDesc key="gap"/>
+                     </specList>
+                  </p>
+
+                  <list>
+                     <item><gi>gap</gi> signifies text missing.</item>
+                     <item><att>reason</att> with value "lost" indicates that the text has been
+                        lost.</item>
+                     <item><att>quantity</att> indicates the number of characters lost.</item>
+                     <item><att>unit</att> with value "characters" indicates the unit measured in
+                           <att>quantity</att>.</item>
+                  </list>
+
+                  <p>For example, in the apparatus criticus to Calp. 4.4, <ref
+                        target="#giarratano-calpurnius">Giarratano</ref> has the following with
+                     reference to lemma <foreign xml:lang="lat">spiritus amnis</foreign>:
+                        <quote>sp&#099;&#773; N (deinde lac. 6 litt.)</quote>.</p>
+
+                  <p>In an LDLT edition, that would be encoded as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l n="4">ripa levatque diem vicini <app>
+                           <lem>spiritus amnis</lem>
+                           <rdg wit="#N">sp&#099;&#773; <gap reason="lost" quantity="6"
+                                 unit="characters"/></rdg>
+                        </app>? </l>
+                  </egXML>
+
+                  <p>That encoding would produce the following entry in the apparatus: <quote>spc̅
+                        [......]</quote>. If it is desirable to supplement that with a note, the
+                        <gi>rdg</gi> should be given an <att>xml:id</att> and the note should be
+                     inserted in a <gi>witDetail</gi> pointing to it:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l n="4">ripa levatque diem vicini <app>
+                           <lem>spiritus amnis</lem>
+                           <rdg wit="#N" xml:id="rdg-4.4-spiritus-amnis">sp&#099;&#773; <gap
+                                 reason="lost" quantity="6" unit="characters"/></rdg>
+                           <witDetail wit="#N" target="#rdg-4.4-spiritus-amnis">lac. 6
+                              litt.</witDetail>
+                        </app>? </l>
+                  </egXML>
+               </div>
+               <!-- End section "Known amount of text lost" -->
 
                <div xml:id="apparatus-criticus-omission-gaps">
                   <head>Gaps in Witnesses</head>
@@ -3833,6 +3775,72 @@
                      should be used.</p>
                </div>
                <!-- End section on letters added by conjecture -->
+
+               <div xml:id="apparatus-criticus-conjecture-and-emendation-lacuna">
+                  <head>Conjectured Lacuna</head>
+
+                  <p>&lt;***&gt; = A lacuna has been conjectured on the grounds of style, context,
+                     or carelessness of a copyist (e.g., <foreign xml:lang="fr">saut du même au
+                        même</foreign>). No text has been supplied in its place.</p>
+
+                  <p>If the conjectured lacuna has been accepted by the editor of the edition,
+                        <gi>lem</gi> with <att>type</att>="emendation" should contain <gi>gap</gi>.
+                     If the conjectured lacuna is only noted in the apparatus criticus, then
+                        <gi>rdg</gi> with <att>type</att>="conjecture" should contain <gi>gap</gi>.
+                     For more on encoding conjecture and emendation see the section "<ref
+                        target="#apparatus-criticus-conjecture-and-emendation">Conjecture and
+                        Emendation</ref>".</p>
+
+                  <p>For example, at the conclusion of section 3.8.4 of Julius Caesar's
+                           <bibl><title>de Bello Civili</title></bibl>, <ref target="#damon-caesar"
+                        >Cynthia Damon's OCT</ref> edition has the following in the main text: si in
+                     Caesaris complexum uenire posset ***. The apparatus criticus has the following
+                     annotation: <hi rend="italic">lacunam statuit Vascosanus</hi>.</p>
+
+                  <p>In an LDLT edition, that should be encoded as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <p>si in Caesaris complexum uenire posset <app>
+                           <lem source="#Vascosanus" type="emendation"><gap reason="lost"/></lem>
+                        </app></p>
+                  </egXML>
+
+                  <p>The same encoding should be used to indicated the conjectured lacuna of a
+                     number of lines of verse. For example, <ref target="#verdiere-calpurnius">Raoul
+                        Verdière</ref> argues that nine verses have been omitted by the copyist of
+                     the archetype of all manuscripts of Calpurnius Siculus' eclogues. He prints
+                     nine lines of equally spaced dots in the text, and he writes in the apparatus
+                     criticus, <quote>u. 1–9 <hi rend="italic">librarii incuria cecidisse
+                        puto</hi>.</quote></p>
+
+                  <p>If the editor of an LDLT edition of Calpurnius accepts this argument,
+                     Verdière's conjecture would be encoded as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app type="line-omission">
+                        <lem source="#Verdière" xml:id="lem-1.1-9">
+                           <l n="1"><gap reason="lost"/></l>
+                           <l n="2"><gap reason="lost"/></l>
+                           <l n="3"><gap reason="lost"/></l>
+                           <l n="4"><gap reason="lost"/></l>
+                           <l n="5"><gap reason="lost"/></l>
+                           <l n="6"><gap reason="lost"/></l>
+                           <l n="7"><gap reason="lost"/></l>
+                           <l n="8"><gap reason="lost"/></l>
+                           <l n="9"><gap reason="lost"/></l>
+                        </lem>
+                        <note target="#lem-1.1-9">u. 1–9 librarii incuria cecidisse putavit
+                           Verdière</note>
+                     </app>
+                  </egXML>
+
+                  <p>In the digital or print version, nine lines of &lt; *** &gt; would be printed
+                     at the beginning of the text, and the numbering of the lines that follow would
+                     begin with 10. The apparatus criticus would have the entry <quote>u. 1–9
+                        librarii incuria cecidisse putavit Verdière</quote>.</p>
+               </div>
+               <!-- End section "Conjectured Lacuna, No Text Supplied" -->
+
             </div>
             <!-- End of section on conjecture and emendation -->
 
