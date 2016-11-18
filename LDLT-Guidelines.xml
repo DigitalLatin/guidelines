@@ -1447,8 +1447,7 @@
                               Hans</author>. "<title level="a">Zu Calpurnius</title>.” <title
                               level="j">Wiener Studien</title>
                            <biblScope unit="volume">22</biblScope> (<date>1901</date>): <biblScope
-                              unit="page">139–40</biblScope>. URL: 
-                          <ptr
+                              unit="page">139–40</biblScope>. URL: <ptr
                               target="https://books.google.com/books?id=gbmMVZEcoGMC&amp;pg=PA139#v=onepage&amp;q&amp;f=false"
                            />.</bibl>
                      </egXML>
@@ -2975,49 +2974,6 @@
                   </egXML>
                </div>
                <!-- End of subsection on omission-gap. -->
-            </div>
-            <!-- End section "Known amount of text lost" -->
-
-            <div xml:id="apparatus-criticus-omission">
-               <head>Omission</head>
-
-               <p>This section explains how to encode omission of text from a witness. Omission is
-                  different from a lacuna because omission may be the result of something other than
-                  physical damage to a witness. Omission can occur when a copyist accidentally skips
-                  a word, a line, or a whole section.</p>
-
-               <p>For example, the witness known as “P” has omitted the word <foreign xml:lang="lat"
-                     >pecus</foreign> from the Calp. 1.38: <foreign xml:lang="lat">securo custode
-                     pecus nocturnaque pastor</foreign>. The traditional apparatus criticus
-                  indicates the omission as follows: pecus <hi rend="italic">om.</hi>
-                  <hi rend="bold">P</hi></p>
-
-               <p>In these guidelines, omission is represented by a so-called “self-closing” or
-                  empty <gi>rdg</gi> (i.e., &lt;rdg/&gt;):</p>
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <l>securo custode <app>
-                        <lem>pecus</lem>
-                        <rdg wit="#P"/>
-                     </app> nocturnaque pastor</l>
-               </egXML>
-
-               <p>The same model applies to the omission of an entire line of verse by a witness or
-                  witnesses, but in that case <gi>app</gi> has <att>type</att>="line-omission" and
-                     <gi>lem</gi> contains the entire line, with the omission marked by a
-                  self-closing <gi>rdg</gi>:</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <app type="line-omission">
-                     <lem>
-                        <l n="3">et spument rauco ferventia musta susurro.</l>
-                     </lem>
-                     <rdg wit="#n #h"/>
-                  </app>
-               </egXML>
-
-               <p>This will be displayed in the apparatus criticus as <quote><hi rend="italic">vers.
-                        om.</hi>
-                     <hi rend="bold">n h</hi></quote></p>
             </div>
             <!-- End of section on omission -->
 
