@@ -38,7 +38,7 @@ of this software, even if advised of the possibility of such damage.
 /* main layout */
 @import url(odd.css);
 @import url(https://fonts.google.com/?query=noto&selection.family=Noto+Sans);
-@import url(https://fonts.google.com/?query=noto&selection.family=Inconsolata);
+@import url(https://fonts.google.com/?query=noto&selection.family=Noto+Mono);
 
 body.simple{
     color:#000000;
@@ -343,8 +343,8 @@ div.eg{
     padding-left:10px;
     color:#000000;
     line-height:1.1em;
-    font-family:Inconsolata, "Courier New", monospace;
-    font-size:11pt;
+    font-family:"Noto Mono";
+    font-size:10pt;
     white-space:pre;
 }
 
@@ -902,7 +902,7 @@ div.EpubCoverPage{
 
 /* <hi> rend values */
 span.typewriter{
-    font-family:Inconsolata, monospace;
+    font-family:"Noto Mono", monospace;
 }
 span.normalweight{
     font-weight:normal;

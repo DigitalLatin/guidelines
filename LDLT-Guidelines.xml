@@ -1774,9 +1774,9 @@
                      reported by Suetonius, should be encoded as follows:</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <p>tunc Caesar, <said who="#Caesar">eatur,</said> inquit, <said who="#Caesar"
-                           >quo deorum ostenta et inimicorum iniquitas uocat: iacta alea
-                           esto.</said></p>
+                     <p>tunc Caesar, <said who="#Caesar">eatur,</said> inquit, 
+                       <said who="#Caesar">quo deorum ostenta et inimicorum iniquitas uocat: 
+                         iacta alea esto.</said></p>
                   </egXML>
 
                   <p><gi>said</gi> may be nested inside <gi>said</gi> to indication quotation within
