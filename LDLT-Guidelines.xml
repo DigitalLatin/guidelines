@@ -27,7 +27,7 @@
             <head>Structure of an LDLT Edition</head>
 
             <p>This section describes the basic structure of the file containing an edition for the
-               Digital Latin Library's <bibl><title>Library of Digital Latin Texts</title></bibl>
+               Digital Latin Library’s <bibl><title>Library of Digital Latin Texts</title></bibl>
                (LDLT). The structure of an LDLT edition resembles the structure of a traditional
                printed critical edition:</p>
             <list>
@@ -38,7 +38,7 @@
                <item>Indices</item>
             </list>
             <p>Since every text is unique, not every LDLT edition will have all of these sections.
-               The nature of the text and the editor's judgment will determine the contents of an
+               The nature of the text and the editor’s judgment will determine the contents of an
                edition. The purpose of this section is to define the parts of an LDLT edition and
                provide guidelines for representing them in XML.</p>
             <p>These guidelines are based on the standard established by the <ref target="#TEI">Text
@@ -193,7 +193,7 @@
                <p>Since a critical edition is often based upon many sources (e.g., manuscripts,
                   previous editions, commentaries, etc.), the <gi>teiHeader</gi> for an LDLT edition
                   does not hew strictly to the TEI guidelines for <gi>sourceDesc</gi>. The sources
-                  for an LDLT edition are documented and described in the edition's front
+                  for an LDLT edition are documented and described in the edition’s front
                   matter.</p>
                <p>Just as an editor is not expected to create the title page and document the
                   publication information, this section of an LDLT is the responsibility of the DLL
@@ -293,10 +293,10 @@
                   adjust to the difference in meaning without much effort. In contrast, machines
                   need clear instructions and a reliable set of rules for reading a digital file.
                   For example, a human might see <hi rend="bold">N<hi rend="superscript">2</hi></hi>
-                  and correctly interpret it within a particular edition as meaning "text written by
+                  and correctly interpret it within a particular edition as meaning “text written by
                   the second in a succession of people who wrote in the manuscript known as codex
-                  Neapolitanus V A 8." Without explicit instructions, a machine will interpret the
-                  same information as simply the letter "N" with a superscript numeral 2 next to it.
+                  Neapolitanus V A 8.” Without explicit instructions, a machine will interpret the
+                  same information as simply the letter “N” with a superscript numeral 2 next to it.
                   A less experienced human reader might reach the same conclusion as the
                   machine.</p>
 
@@ -313,10 +313,10 @@
                   numerals. Nevertheless, the values of <att>xml:id</att> and <gi>abbr</gi> should
                   be similar, if not identical, to each other, and they should be meaningful.
                   Editors should follow the conventions in previous editions of the same text,
-                  changing a siglum only if it is important to the edition's argument to do so. If
+                  changing a siglum only if it is important to the edition’s argument to do so. If
                   the text has never been edited, the editor should choose sigla according to the
                   principles outlined by <ref target="#West">West</ref> (74–75). In brief, sigla
-                  should have mnemonic value (e.g., "V" for "Vaticanus" or "P" for "Parisinus").</p>
+                  should have mnemonic value (e.g., “V” for “Vaticanus” or “P” for “Parisinus”).</p>
 
                <p>Because the needs of editors will vary from edition to edition, the LDLT does not
                   have strict rules for representing manuscript hands or similar information. The
@@ -402,11 +402,11 @@
                   <p>Sometimes it is necessary to use a siglum to stand for the consensus of a
                      particular group of manuscripts (e.g., ω or ϛ). Consensus sigla should be
                      defined in the <gi>listWit</gi> as described in the section "<ref
-                        target="#bibliography-manuscripts">Manuscripts</ref>."</p>
+                        target="#bibliography-manuscripts">Manuscripts</ref>.”</p>
 
-                  <p>"Catch-all" references can also be useful: <hi rend="italic">codd.</hi> or <hi
-                        rend="italic">mss.</hi> for "the manuscripts," <hi rend="italic">cett.</hi>
-                     for "the other manuscripts," <hi rend="italic">edd.</hi> for "the editions,"
+                  <p>“Catch-all” references can also be useful: <hi rend="italic">codd.</hi> or <hi
+                        rend="italic">mss.</hi> for “the manuscripts,” <hi rend="italic">cett.</hi>
+                     for “the other manuscripts,” <hi rend="italic">edd.</hi> for “the editions,”
                      etc. It might also be necessary to indicate that, in general, all editions
                      before or after one in particular have a certain reading (e.g., <hi
                         rend="italic">edd. ante </hi>Burm., Burm. <hi rend="italic">sqq.</hi>).</p>
@@ -426,7 +426,7 @@
 
                   <list>
                      <item><gi>list</gi> with <att>xml:id</att> with a value of
-                        "bibliography-catch-all" contains the catch-all references as items.</item>
+                        “bibliography-catch-all” contains the catch-all references as items.</item>
                      <item><gi>item</gi> with <gi>abbr</gi>contains a single abbreviation or phrase
                         used as a catch-all reference in the edition. <gi>item</gi> should have an
                            <att>xml:id</att> based on the abbreviation or phrase in
@@ -456,7 +456,7 @@
             <div xml:id="bibliography-manuscripts">
                <head>Manuscripts</head>
                <p>The description of manuscripts is a discipline unto itself, with long-established
-                  conventions for capturing all of the details about not only a manuscript's
+                  conventions for capturing all of the details about not only a manuscript’s
                   contents, but also its dimensions, provenance, material, and other physical
                   details. It is customary for critical editions to provide a brief prose
                   description of the major manuscripts used for establishing the text, usually only
@@ -484,7 +484,7 @@
                <div xml:id="bibliography-manuscript-description">
                   <head>Manuscript Description</head>
 
-                  <p>The TEI's <ref
+                  <p>The TEI’s <ref
                         target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html">module
                         for manuscript description</ref> offers a model for presenting nearly every
                      imaginable detail about a manuscript as structured data. Editors may wish to
@@ -520,7 +520,7 @@
                      <item><gi>witness</gi> groups the information about a single manuscript,
                         archetype, or hyparchetype. The <att>xml:id</att> of each <gi>witness</gi>
                         is the unique machine-readable identifier to be used when referring to the
-                        manuscript's data (e.g., in the <att>wit</att> of a <gi>rdg</gi> in the
+                        manuscript’s data (e.g., in the <att>wit</att> of a <gi>rdg</gi> in the
                         apparatus criticus).</item>
                      <item><gi>abbr</gi> contains the human-readable siglum that should be displayed
                         on screen or printed. Any superscript or subscript characters should be
@@ -544,18 +544,18 @@
                               the manuscript. For example, the manuscript may have been recataloged,
                               but its old number is still used.</item>
                            <item><gi>msContents</gi> (manuscript contents) contains a prose
-                              description (using <gi>p</gi>) of the manuscript's contents, including
+                              description (using <gi>p</gi>) of the manuscript’s contents, including
                               incipits and explicits. Encode each work with <gi>bibl</gi> with
                                  <gi>author</gi> and <gi>title</gi>.</item>
                            <item><gi>phsyDesc</gi> (physical description) groups information about
                               the manuscript.</item>
                            <item><gi>objectDesc</gi> (object description) contains a prose
-                              description (using <gi>p</gi>) of the manuscript's physical
+                              description (using <gi>p</gi>) of the manuscript’s physical
                               characteristics (e.g., material(s), size, pagination, lines per page,
                               etc.). It is up to the editor to decide how to present this
                               information, but it is recommended to adopt a pattern and use it
-                              consistently (e.g., "Parchment: 261 X 160 mm.: 116 leaves: 38 verses
-                              per page"). Note that the TEI module for manuscript description has
+                              consistently (e.g., “Parchment: 261 X 160 mm.: 116 leaves: 38 verses
+                              per page”). Note that the TEI module for manuscript description has
                               tags for these details. Editors may use them, but they will not affect
                               the display or functionality of the LDLT edition.</item>
                            <item><gi>handDesc</gi> (hand description) groups information about the
@@ -566,17 +566,17 @@
                               of a hand that wrote in the manuscript. Each <gi>handNote</gi> has
                                  <att>xml:id</att> with a unique identifier (based on the
                                  <att>xml:id</att> of the manuscript) and <gi>abbr</gi> with a
-                              human-readable version of the value of the hand's <att>xml:id</att>
+                              human-readable version of the value of the hand’s <att>xml:id</att>
                               (see the section "<ref target="#bibliography-sigla">Human- and
                                  Machine-Readable Sigla, Symbols, and Abbreviations</ref>" for more
                               information).</item>
                            <item><gi>history</gi> groups information about the date of the
                               manuscript.</item>
                            <item><gi>origin</gi> contains a prose description (using <gi>p</gi>) of
-                              the manuscript's date. Enclose the date with <gi>origDate</gi> with
+                              the manuscript’s date. Enclose the date with <gi>origDate</gi> with
                                  <att>notAfter</att> and <att>notBefore</att>.</item>
                            <item><gi>provenance</gi> contains a prose description (using <gi>p</gi>)
-                              of the manuscript's provenance, if available.</item>
+                              of the manuscript’s provenance, if available.</item>
                         </list>
                      </item>
                   </list>
@@ -612,20 +612,20 @@
                                  </altIdentifier>
                               </msIdentifier>
                               <msContents>
-                                 <p>1–36ʳ contain Cato's <bibl><title>De Agricultura</title></bibl>;
-                                    20–101ʳ, Varro's <bibl><title>De Re Rustica</title></bibl>;
+                                 <p>1–36ʳ contain Cato’s <bibl><title>De Agricultura</title></bibl>;
+                                    20–101ʳ, Varro’s <bibl><title>De Re Rustica</title></bibl>;
                                     101ʳ–115ᵛ, the <bibl><title>Bucolica</title></bibl> of
                                     Calpurnius and Nemesianus.</p>
                                  <p>The individual poems lack titles, but they are separated from
                                     each other by brief spaces. The following subscription appears
                                     at the end of the whole work: <quote xml:lang="lat">Aureliani
                                        Nemesiani Cartag&#773; bucol&#8217; explicit: Deo gratias
-                                       amen</quote>. Finally, another more recent hand, as <ref
-                                       target="#Bursian">Bursian</ref> and <ref target="#Schenkl"
-                                       >Schenkl</ref> recognized, wrote <quote xml:lang="lat"
-                                       >Calpurnii eclogae</quote> and <quote xml:lang="lat"
-                                       >Nemesiani eclogae</quote>. The remaining leaves are
-                                    blank.</p>
+                                       amen</quote>. Finally, another more recent hand, as 
+                                       <ref target="#Bursian">Bursian</ref> and 
+                                       <ref target="#Schenkl">Schenkl</ref> recognized, wrote 
+                                       <quote xml:lang="lat">Calpurnii eclogae</quote> and 
+                                       <quote xml:lang="lat">Nemesiani eclogae</quote>. The remaining 
+                                       leaves are blank.</p>
                               </msContents>
                               <physDesc>
                                  <objectDesc>
@@ -637,7 +637,7 @@
                                     <handNote xml:id="N1"><abbr type="siglum">N<hi
                                              rend="superscript">1</hi></abbr> belongs to the
                                        original copyist. See <ref target="#Ndesc-firsthand"
-                                          >above</ref> for a detailed description of this hand's
+                                          >above</ref> for a detailed description of this hand’s
                                        activity.</handNote>
                                     <handNote xml:id="N2"><abbr type="siglum">N<hi
                                              rend="superscript">2</hi></abbr>: The manuscript was
@@ -645,7 +645,7 @@
                                        second hand cannot easily be distinguished from the
                                        first.</handNote>
                                     <handNote xml:id="N3"><abbr type="siglum">N<hi
-                                             rend="superscript">3</hi></abbr>: a third hand's
+                                             rend="superscript">3</hi></abbr>: a third hand’s
                                        emendations can be discerned in only a few places.</handNote>
                                  </handDesc>
                               </physDesc>
@@ -661,13 +661,13 @@
                                        passages written on the last leaf: <quote xml:lang="lat"
                                           >Joannes Antonius Perillus patric. neap. ac iuvenis
                                           apprime litteratus Jacobum Perillum hoc libro donavit
-                                          MDCVII, Klis Juniis</quote> ("Joannes Antonius Perillus, a
+                                          MDCVII, Klis Juniis</quote> (“Joannes Antonius Perillus, a
                                        nobleman of Naples and most learned gentleman, gave this book
-                                       to Jacob Perillus in 1667 on the first of June"), and a
+                                       to Jacob Perillus in 1667 on the first of June”), and a
                                        little below, <quote xml:lang="lat">Antonii Seripandi ex
-                                          Jacobi Perilli amici opt. munere</quote> ("This book
+                                          Jacobi Perilli amici opt. munere</quote> (“This book
                                        belongs to Antonius Seripandus, received as a gift from his
-                                       best friend Jacob Perillus"). Later it was brought to the
+                                       best friend Jacob Perillus”). Later it was brought to the
                                        library of San Giovanni a Carbonara, and from there it came
                                        to the greatest library in Naples, formerly known as the
                                           <orgName>Reale biblioteca borbonica</orgName>, (now the
@@ -700,7 +700,7 @@
                                        incipiunt</quote> (<quote>Here begin the eclogues of
                                        Aurelianus Nemesianus of Carthage</quote>). At the end of
                                     each eclogue there appears an <hi rend="italic">explicit</hi>
-                                    with the number of each eclogue, but Calpurnius' sixth eclogue
+                                    with the number of each eclogue, but Calpurnius’ sixth eclogue
                                     lacks a subscription, and the following is written at the end of
                                     the seventh: <quote xml:lang="lat">explicit sexta egloga
                                        Calphurnii</quote> (<quote>Here ends the sixth eclogue of
@@ -710,7 +710,7 @@
                                     this manuscript. But in the margin, where the sixth eclogue
                                     ought to end, the copyist has added the following: <quote
                                        xml:lang="lat">aliqui volunt dicere quod ista sit alia et
-                                       diversa egloga ubi incipit "lentus," aliqui dicunt quod est
+                                       diversa egloga ubi incipit “lentus,” aliqui dicunt quod est
                                        una etc.</quote> (<quote>Some wish to say that the eclogue
                                        that begins <hi rend="italic">lentus</hi> is a completely
                                        different eclogue; others say that it is the same,
@@ -728,7 +728,7 @@
                                        added almost all of the corrections either by removing
                                        scribal errors in the verses or adding variant readings to
                                        the margin. See <ref target="#Gdesc-hand">above</ref> for a
-                                       more detailed description of this hand's activity.</handNote>
+                                       more detailed description of this hand’s activity.</handNote>
                                     <handNote xml:id="G2"><abbr type="siglum">G<hi
                                              rend="superscript">2</hi></abbr>: Some corrections seem
                                        to have been made by another hand.</handNote>
@@ -753,7 +753,7 @@
                   <p>Sigla may be assigned to families of manuscripts, archetypes, and hyparchetypes
                      so that they may be referred to in the apparatus criticus or elsewhere. As
                      indicated in the section "<ref target="#bibliography-sigla">Human- and
-                        Machine-Readable Sigla, Symbols, and Abbreviations</ref>," each family,
+                        Machine-Readable Sigla, Symbols, and Abbreviations</ref>,” each family,
                      archetype, and hyparchetype must have both a unique <att>xml:id</att>
                      (machine-readable siglum) and an <gi>abbr</gi> (human-readable siglum).</p>
 
@@ -794,7 +794,7 @@
                         letters.</p>
 
                      <p>For example, <ref target="#kaster-suetonius">Robert Kaster</ref> assigns the
-                        siglum ω to the archetype of the manuscripts of Suetonius' <bibl><title>De
+                        siglum ω to the archetype of the manuscripts of Suetonius’ <bibl><title>De
                               Vita Caesarum</title></bibl>. The manuscripts can be analyzed into two
                         families that stem from two hyparchetypes, to which Kaster has assigned the
                         sigla α and β. The two families have branches, each with their own
@@ -822,7 +822,7 @@
 
                      <p>Though no longer extant, archetypes and hyparchetypes can be referred to as
                         witnesses to readings. Therefore, they are encoded with <gi>witness</gi>.
-                        The following example demonstrates how Kaster's list should be encoded:</p>
+                        The following example demonstrates how Kaster’s list should be encoded:</p>
 
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <listWit>
@@ -957,9 +957,9 @@
                         <item><gi>bibl</gi> (bibliographic citation) contains the following
                            bibliographical information about the edition: <list>
                               <item><gi>editor</gi> contains the name of the editor in the form
-                                 "Last name, First name," if known. If the name is in Latin, it
+                                 “Last name, First name,” if known. If the name is in Latin, it
                                  should not be translated. If the name is not known, <gi>editor</gi>
-                                 contains the word "Anonymous."</item>
+                                 contains the word “Anonymous.”</item>
                               <item><gi>title</gi> contains either the name by which the edition is
                                  commonly known (e.g., <foreign xml:lang="lat">editio
                                     Romana</foreign>, <foreign xml:lang="lat">editio
@@ -967,19 +967,19 @@
                               <item><gi>pubPlace</gi> (place of publication) contains the name of
                                  the place where the edition was published, as it appears on the
                                  title page (e.g., Lipsiae instead of Leipzig). If the place is
-                                 unknown, the value should be "s.l." (<foreign xml:lang="lat">sine
+                                 unknown, the value should be “s.l.” (<foreign xml:lang="lat">sine
                                     loco</foreign>). If the place is known, but not explicitly
                                  printed in the edition, the place name should be enclosed in square
                                  brackets.</item>
                               <item><gi>publisher</gi> contains the name of the publisher, as it
-                                 appears on the title page. If the publisher's name is unknown, the
-                                 value should be "s.n." (<foreign xml:lang="lat">sine
+                                 appears on the title page. If the publisher’s name is unknown, the
+                                 value should be “s.n.” (<foreign xml:lang="lat">sine
                                     nomine</foreign>). If the publisher is known, but not explicitly
-                                 printed in the edition, the publisher's name should be enclosed in
+                                 printed in the edition, the publisher’s name should be enclosed in
                                  square brackets.</item>
                               <item><gi>date</gi> contains the date in arabic numerals (e.g., 1504,
                                  not MDIV or CIↃIↃIV). If the date is unknown, the value should be
-                                 "s.d." (<foreign xml:lang="lat">sine die</foreign>). If the date is
+                                 “s.d.” (<foreign xml:lang="lat">sine die</foreign>). If the date is
                                  known, but not explicitly printed in the edition, the date should
                                  be enclosed in square brackets.</item>
                               <item><gi>ptr</gi> (pointer) has <att>target</att> with the URL of a
@@ -1070,28 +1070,28 @@
                                  abbreviation for the record, i.e., how the edition is referred to
                                  in the apparatus criticus.</item>
                               <item><gi>editor</gi> contains the name of the editor in the form
-                                 "Last name, First name," if known. If the name is in Latin, it
+                                 “Last name, First name,” if known. If the name is in Latin, it
                                  should not be translated. If the name is not known, <gi>editor</gi>
-                                 contains the word "Anonymous."</item>
+                                 contains the word “Anonymous.”</item>
                               <item><gi>title</gi> contains either the name by which the edition is
                                  commonly known (e.g., editio Romana, editio Aldina) and/or the
                                  actual title of the edition.</item>
                               <item><gi>pubPlace</gi> (place of publication) contains the name of
                                  the place where the edition was published, as it appears on the
                                  title page (e.g., Lipsiae instead of Leipzig). If the place is
-                                 unknown, the value should be "s.l." (<foreign xml:lang="lat">sine
+                                 unknown, the value should be “s.l.” (<foreign xml:lang="lat">sine
                                     loco</foreign>). If the place is known, but not explicitly
                                  printed in the edition, the place name should be enclosed in square
                                  brackets.</item>
                               <item><gi>publisher</gi> contains the name of the publisher, as it
-                                 appears on the title page. If the publisher's name is unknown, the
-                                 value should be "s.n." (<foreign xml:lang="lat">sine
+                                 appears on the title page. If the publisher’s name is unknown, the
+                                 value should be “s.n.” (<foreign xml:lang="lat">sine
                                     nomine</foreign>). If the publisher is known, but not explicitly
-                                 printed in the edition, the publisher's name should be enclosed in
+                                 printed in the edition, the publisher’s name should be enclosed in
                                  square brackets.</item>
                               <item><gi>date</gi> contains the date in arabic numerals (e.g., 1504,
                                  not MDIV or CIↃIↃIV). If the date is unknown, the value should be
-                                 "s.d." (<foreign xml:lang="lat">sine die</foreign>). If the date is
+                                 “s.d.” (<foreign xml:lang="lat">sine die</foreign>). If the date is
                                  known, but not explicitly printed in the edition, the date should
                                  be enclosed in square brackets.</item>
                               <item><gi>ptr</gi> (pointer) has <att>target</att> with the URL of a
@@ -1335,9 +1335,9 @@
                                  abbreviation for the record, i.e., how the book is referred to in
                                  the apparatus criticus.</item>
                               <item><gi>author</gi> contains the name of the author in the form
-                                 "Last name, First name," if known. If the name is in Latin, it
+                                 “Last name, First name,” if known. If the name is in Latin, it
                                  should not be translated. If the name is not known, <gi>author</gi>
-                                 should contain the word "Anonymous."</item>
+                                 should contain the word “Anonymous.”</item>
                               <item><gi>title</gi> contains either the name by which the edition is
                                  commonly known (e.g., <foreign xml:lang="lat">editio
                                     Romana</foreign>, <foreign xml:lang="lat">editio
@@ -1345,19 +1345,19 @@
                               <item><gi>pubPlace</gi> (place of publication) contains the name of
                                  the place where the edition was published, as it appears on the
                                  title page (e.g., Lipsiae instead of Leipzig). If the place is
-                                 unknown, the value should be "s.l." (<foreign xml:lang="lat">sine
+                                 unknown, the value should be “s.l.” (<foreign xml:lang="lat">sine
                                     loco</foreign>). If the place is known, but not explicitly
                                  printed in the edition, the place name should be enclosed in square
                                  brackets.</item>
                               <item><gi>publisher</gi> contains the name of the publisher, as it
-                                 appears on the title page. If the publisher's name is unknown, the
-                                 value should be "s.n." (<foreign xml:lang="lat">sine
+                                 appears on the title page. If the publisher’s name is unknown, the
+                                 value should be “s.n.” (<foreign xml:lang="lat">sine
                                     nomine</foreign>). If the publisher is known, but not explicitly
-                                 printed in the edition, the publisher's name should be enclosed in
+                                 printed in the edition, the publisher’s name should be enclosed in
                                  square brackets.</item>
                               <item><gi>date</gi> contains the date in arabic numerals (e.g., 1504,
                                  not MDIV or CIↃIↃIV). If the date is unknown, the value should be
-                                 "s.d." (<foreign xml:lang="lat">sine die</foreign>). If the date is
+                                 “s.d.” (<foreign xml:lang="lat">sine die</foreign>). If the date is
                                  known, but not explicitly printed in the edition, the date should
                                  be enclosed in square brackets.</item>
                               <item><gi>ptr</gi> (pointer) has <att>target</att> with the URL of a
@@ -1392,8 +1392,8 @@
                            Style</hi></ref>. The minimum required encoding for articles is as
                         follows:</p>
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <bibl xml:id="Lucas"><abbr type="siglum">Lucas</abbr> = Lucas, Hans. "Zu
-                           Calpurnius." Wiener Studien 22 (1901): 139–40. URL:
+                        <bibl xml:id="Lucas"><abbr type="siglum">Lucas</abbr> = Lucas, Hans. “Zu
+                           Calpurnius.” Wiener Studien 22 (1901): 139–40. URL:
                            https://books.google.com/books?id=gbmMVZEcoGMC&amp;pg=PA139#v=onepage&amp;q&amp;f=false.</bibl>
                      </egXML>
 
@@ -1419,12 +1419,12 @@
                                  abbreviation for the record, i.e., how the article is referred to
                                  in the apparatus criticus.</item>
                               <item><gi>author</gi> contains the name of the author in the form
-                                 "Last name, First name."</item>
+                                 “Last name, First name.”</item>
                               <item><gi>title</gi> with <att>level</att>="a" contains the title of
                                  the article. Quotation marks for the title should be outside of
-                                    <gi>title</gi> (e.g., "&lt;title&gt;Article
-                                 Title&lt;/title&gt;", not &lt;title&gt;"Article
-                                 Title"&lt;/title&gt;).</item>
+                                    <gi>title</gi> (e.g., “&lt;title&gt;Article
+                                 Title&lt;/title&gt;”, not &lt;title&gt;“Article
+                                 Title”&lt;/title&gt;).</item>
                               <item><gi>title</gi> with <att>level</att>="j" contains the title of
                                  the journal or periodical.</item>
                               <item><gi>biblScope</gi> (scope of bibliographic reference) is used
@@ -1444,7 +1444,7 @@
 
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <bibl xml:id="Lucas"><abbr type="siglum">Lucas</abbr> = <author>Lucas,
-                              Hans</author>. "<title level="a">Zu Calpurnius</title>." <title
+                              Hans</author>. "<title level="a">Zu Calpurnius</title>.” <title
                               level="j">Wiener Studien</title>
                            <biblScope unit="volume">22</biblScope> (<date>1901</date>): <biblScope
                               unit="page">139–40</biblScope>. URL: <ptr
@@ -1456,14 +1456,14 @@
                         <head>Reviews</head>
                         <p>A review of an edition or other work should be handled in the same way as
                            a journal article, with the exception that the title should begin with
-                           the words "Review of" followed by the title of the work being
+                           the words “Review of” followed by the title of the work being
                            reviewed.</p>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <bibl xml:id="Jacoby"><abbr type="siglum">Jacoby</abbr> = <author>Jacoby,
-                                 Karl</author>. <title level="a">Review of 'Calpurnii et Nemesiani
+                                 Karl</author>. <title level="a">Review of ‘Calpurnii et Nemesiani
                                  Bucolica recensuit Henricus Schenkl, Lipsiae, G. Freytag, Pragae,
-                                 F. Tempsky, 1885'</title>. <title level="j">Wochenschrift für
+                                 F. Tempsky, 1885’</title>. <title level="j">Wochenschrift für
                                  klassiche Philologie</title>
                               <biblScope unit="volume">3</biblScope> (<date>1886</date>): <biblScope
                                  unit="page">1287–94</biblScope>. URL: <ptr
@@ -1482,8 +1482,8 @@
                   <head>List of Scholars</head>
 
                   <p>Occasionally it is necessary to refer to a scholar whose unpublished work has
-                     been quoted or paraphrased elsewhere. For example, editors often cite Heinsius'
-                     unpublished conjectures, found in books in his own library. But "Heins." does
+                     been quoted or paraphrased elsewhere. For example, editors often cite Heinsius’
+                     unpublished conjectures, found in books in his own library. But “Heins.” does
                      not help a reader find more information, which is why the bibliography of an
                      LDLT edition includes a list of scholars mentioned by name in the edition, with
                      information about where to find more information, if it is available.</p>
@@ -1507,9 +1507,9 @@
                      <item><gi>person</gi> groups information about an individual. It has a
                         machine-readable siglum in <att>xml:id</att> as described in the section
                            "<ref target="#bibliography-sigla">Human- and Machine-Readable Sigla,
-                           Symbols, and Abbreviations</ref>."</item>
+                           Symbols, and Abbreviations</ref>.”</item>
                      <item><gi>persName</gi> (personal name) groups the information about an
-                        individuals's name. For identification purposes, it is helpful, but not
+                        individuals’s name. For identification purposes, it is helpful, but not
                         required, to use <att>ref</att> with the <ref target="https://viaf.org"
                            >Virtual International Authorify File (VIAF)</ref> permalink for that
                         person. The following information is contained by <gi>persName</gi>
@@ -1518,12 +1518,12 @@
                               abbreviated name used to refer to the person in the edition (e.g.,
                               Heins.), as described in the section "<ref
                                  target="#bibliography-sigla">Human- and Machine-Readable Sigla,
-                                 Symbols, and Abbreviations</ref>."</item>
-                           <item><gi>forename</gi> contains the scholar's first and middle names
+                                 Symbols, and Abbreviations</ref>.”</item>
+                           <item><gi>forename</gi> contains the scholar’s first and middle names
                               (middle name optional), or initials, of the scholar. A separate
                                  <gi>forename</gi> should be used for the first and middle
                               names.</item>
-                           <item><gi>surname</gi> contains the scholar's last name.</item>
+                           <item><gi>surname</gi> contains the scholar’s last name.</item>
                            <item><gi>addname</gi> (additional name) contains an additional or
                               alternate name by which a scholar is known. If a scholars is commonly
                               known by a Latinized form of his or her name, that name should be
@@ -1531,7 +1531,7 @@
                         </list>
                      </item>
                      <item><gi>note</gi> contains further information about the nature of the
-                        citation (e.g., "personal correspondence with editor"), with <gi>ref</gi>
+                        citation (e.g., “personal correspondence with editor”), with <gi>ref</gi>
                         (reference) containing a reference to the entry in the bibliography that has
                         citations of the scholar. <att>target</att> with the xml:id of that entry
                         will point the reader to that entry.</item>
@@ -1565,7 +1565,7 @@
          <div xml:id="edition-text">
             <head>Edition Text</head>
 
-            <p>The edition text corresponds to the text printed "above the line" of the critical
+            <p>The edition text corresponds to the text printed “above the line” of the critical
                apparatus in a traditional edition. It is composed of lemmata, that is, text judged
                by the editor to be authentic, accurate, and/or authoritative.</p>
 
@@ -1574,10 +1574,10 @@
                work over time. Scribes often record the version of the text that makes sense in
                their context. Scholars and other readers offer conjectures for problematic passages.
                But an editor must make decisions about the text an edition presents to readers.
-               Those decisions are part of the editor's argument about the text, and they are on
+               Those decisions are part of the editor’s argument about the text, and they are on
                display in the official edition text in its initial state.</p>
 
-            <p>"Initial state" is an important phrase. Since the digital version of an LDLT allows
+            <p>“Initial state” is an important phrase. Since the digital version of an LDLT allows
                readers to swap readings from the critical apparatus into the main text, it is
                possible to encounter many versions of the text in one viewing of it, but the
                official edition text in its default initial state (i.e., what is displayed when the
@@ -1599,7 +1599,7 @@
                   text itself. It is often unclear whether the numbers are meant to mark syntactic
                   units, reflect the numbering of pages or sections in a canonical edition, or
                   signify something else entirely. An advantage to semantically encoding the
-                  reference scheme is that it makes the scheme's significance explicit. For that
+                  reference scheme is that it makes the scheme’s significance explicit. For that
                   reason, a human- and machine-readable reference scheme is essential for an LDLT
                   edition. Moreover, if the structure is not encoded according to these guidelines,
                   search and browse functionality will not be supported.</p>
@@ -1608,9 +1608,9 @@
                   <head>Prose: Structure of the Work</head>
 
                   <p>For an LDLT edition of a prose text, the top-level <gi>div</gi> has the
-                        <att>type</att> "edition"; this division contains the entire text of the
+                        <att>type</att> “edition”; this division contains the entire text of the
                      edition. The next <gi>div</gi> will normally have the <att>type</att>
-                     "textpart" with <att>subtype</att> "book" and <att>n</att> to indicate the
+                     “textpart” with <att>subtype</att> “book” and <att>n</att> to indicate the
                      number of the book.</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -1651,7 +1651,7 @@
                         those cases, editors should work with LDLT staff to identify the best way to
                         encode the text in question.</item>
                      <item><gi>seg</gi> (segment) contains a segment of a paragraph (e.g., a
-                        sentence or a more general "section"). If <gi>seg</gi> is used, <att>n</att>
+                        sentence or a more general “section”). If <gi>seg</gi> is used, <att>n</att>
                         must be used to reflect the numbering scheme of the edition.</item>
                   </list>
 
@@ -1734,9 +1734,9 @@
                   <head>Verse: Structure of the Collection</head>
 
                   <p>For an LDLT edition of a verse text, the top-level <gi>div</gi> has the
-                        <att>type</att> "edition"; this division contains the entire text of the
+                        <att>type</att> “edition”; this division contains the entire text of the
                      edition. The next <gi>div</gi> will normally have the <att>type</att>
-                     "textpart" with <att>subtype</att> "book" and <att>n</att> to indicate the
+                     “textpart” with <att>subtype</att> “book” and <att>n</att> to indicate the
                      number of the book. <gi>div</gi> with <att>type</att>="poem" contains the parts
                      of a single poem (e.g., stanzas or lines). If there is more than one poem in a
                      book, <att>n</att> should be used to number the poems. <att>met</att> with the
@@ -1769,7 +1769,7 @@
                   <list>
                      <item><gi>lg</gi> (line group) groups one or more verse lines that form a
                         stanza or a couplet; <att>type</att> may be used to identify the grouping
-                        (e.g., "stanza" or "couplet").</item>
+                        (e.g., “stanza” or “couplet”).</item>
                      <item><gi>l</gi> (line) contains the text of a single line of verse, with
                            <att>n</att> and the number of the line.</item>
                   </list>
@@ -1853,15 +1853,15 @@
                      should be recorded elsewhere (e.g., preface, appendix) in a <gi>list</gi> with
                         <att>type</att>="speakers". They can also be incorporated into
                         <gi>listPerson</gi> as described below in the section "<ref
-                        target="#edition-text-people">People</ref>."</p>
+                        target="#edition-text-people">People</ref>.”</p>
 
-                  <p>For example, Julius Caesar's famous words before crossing the Rubicon, as
+                  <p>For example, Julius Caesar’s famous words before crossing the Rubicon, as
                      reported by Suetonius, should be encoded as follows:</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <p>tunc Caesar, <said who="#Caesar">eatur,</said> inquit, <said who="#Caesar"
-                           >quo deorum ostenta et inimicorum iniquitas uocat: iacta alea
-                           esto.</said></p>
+                     <p>tunc Caesar, <said who="#Caesar">eatur,</said> inquit, 
+                       <said who="#Caesar">quo deorum ostenta et inimicorum iniquitas uocat: 
+                         iacta alea esto.</said></p>
                   </egXML>
 
                   <p><gi>said</gi> may be nested inside <gi>said</gi> to indication quotation within
@@ -1882,7 +1882,7 @@
                   </p>
 
                   <list>
-                     <item><gi>sp</gi> (speech) groups elements related to a person or character's
+                     <item><gi>sp</gi> (speech) groups elements related to a person or character’s
                         speech.</item>
                      <item><att>who</att> is used with <gi>sp</gi> to identify the speaker.</item>
                      <item><gi>speaker</gi> contains a human-readable label identifying the person
@@ -1924,7 +1924,7 @@
                <head>Quotation of Literature</head>
 
                <p>Quotations of literature should be encoded according to the guidelines set forth
-                  in the section "<ref target="#apparatus-fontium">Apparatus Fontium</ref>."</p>
+                  in the section "<ref target="#apparatus-fontium">Apparatus Fontium</ref>.”</p>
             </div>
             <div xml:id="edition-text-people">
                <head>People</head>
@@ -2013,7 +2013,7 @@
                   <item><gi>placeName</gi> contains the name of a place, with <att>ref</att> and the
                      canonical Uniform Resource Identifier (URI) for it at <ref
                         target="http://pleiades.stoa.org">Pleiades</ref> or some other standard
-                     source of URI's for place names.</item>
+                     source of URIs for place names.</item>
                   <item><gi>orgName</gi> (organization name) contains the name of the inhabitants of
                      a place, with <att>ref</att> and the canonical Uniform Resource Identifier
                      (URI) for the place at <ref target="http://pleiades.stoa.org"
@@ -2022,44 +2022,40 @@
 
                <p>Only the first reference in a section to a place or its inhabitants needs to be
                   encoded for indexing purposes, but it is up to the editor to decide which
-                  references to encode. The following example from Caesar's <bibl><title>de bello
+                  references to encode. The following example from Caesar’s <bibl><title>de bello
                         Gallico</title></bibl> demonstrates how to encode place names and
                   organization names.</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <p><placeName ref="http://pleiades.stoa.org/places/993">Gallia</placeName> est
-                     omnis divisa in partes tres, quarum unam incolunt <orgName
-                        ref="http://pleiades.stoa.org/places/79326">Belgae</orgName>, aliam <orgName
-                        ref="http://pleiades.stoa.org/places/246175">Aquitani</orgName>, tertiam qui
-                     ipsorum lingua <orgName ref="http://pleiades.stoa.org/places/993"
-                        >Celtae</orgName>, nostra <orgName ref="http://pleiades.stoa.org/places/993"
-                        >Galli</orgName> appellantur. Hi omnes lingua, institutis, legibus inter se
-                     differunt. Gallos ab Aquitanis <placeName
-                        ref="http://pleiades.stoa.org/places/138369">Garumna</placeName> flumen, a
-                     Belgis <placeName ref="http://pleiades.stoa.org/places/109147"
-                        >Matrona</placeName> et <placeName
-                        ref="http://pleiades.stoa.org/places/109341">Sequana</placeName> dividit.
+                     omnis divisa in partes tres, quarum unam incolunt 
+                     <orgName ref="http://pleiades.stoa.org/places/79326">Belgae</orgName>, aliam 
+                     <orgName ref="http://pleiades.stoa.org/places/246175">Aquitani</orgName>, tertiam qui
+                     ipsorum lingua <orgName ref="http://pleiades.stoa.org/places/993">Celtae</orgName>, 
+                     nostra <orgName ref="http://pleiades.stoa.org/places/993">Galli</orgName> appellantur. 
+                     Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis 
+                     <placeName ref="http://pleiades.stoa.org/places/138369">Garumna</placeName> flumen, a
+                     Belgis <placeName ref="http://pleiades.stoa.org/places/109147">Matrona</placeName> 
+                     et <placeName ref="http://pleiades.stoa.org/places/109341">Sequana</placeName> dividit.
                      Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate
                      provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque
-                     ea quae ad effeminandos animos pertinent important, proximique sunt <orgName
-                        ref="http://pleiades.stoa.org/places/20468">Germanis</orgName>, qui trans
-                        <placeName ref="http://pleiades.stoa.org/places/393483">Rhenum</placeName>
-                     incolunt, quibuscum continenter bellum gerunt. Qua de causa <orgName
-                        ref="http://pleiades.stoa.org/places/177534">Helvetii</orgName> quoque
+                     ea quae ad effeminandos animos pertinent important, proximique sunt 
+                     <orgName ref="http://pleiades.stoa.org/places/20468">Germanis</orgName>, qui trans
+                     <placeName ref="http://pleiades.stoa.org/places/393483">Rhenum</placeName>
+                     incolunt, quibuscum continenter bellum gerunt. Qua de causa 
+                     <orgName ref="http://pleiades.stoa.org/places/177534">Helvetii</orgName> quoque
                      reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis
                      contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum
                      gerunt. Eorum una, pars, quam Gallos obtinere dictum est, initium capit a
-                     flumine <placeName ref="http://pleiades.stoa.org/places/148168"
-                        >Rhodano</placeName>, continetur Garumna flumine, <placeName
-                        ref="http://pleiades.stoa.org/places/845">Oceano</placeName>, finibus
-                     Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad
+                     flumine <placeName ref="http://pleiades.stoa.org/places/148168">Rhodano</placeName>, 
+                     continetur Garumna flumine, <placeName ref="http://pleiades.stoa.org/places/845">Oceano</placeName>, 
+                     finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad
                      septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad
                      inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem.
-                        <placeName ref="http://pleiades.stoa.org/places/981505"
-                        >Aquitania</placeName> a Garumna flumine ad <placeName
-                        ref="http://pleiades.stoa.org/places/246582">Pyrenaeos montes</placeName> et
-                     eam partem Oceani quae est ad <placeName
-                        ref="http://pleiades.stoa.org/places/1027">Hispaniam</placeName> pertinet;
+                     <placeName ref="http://pleiades.stoa.org/places/981505">Aquitania</placeName> a 
+                     Garumna flumine ad <placeName ref="http://pleiades.stoa.org/places/246582">Pyrenaeos montes</placeName> 
+                     et eam partem Oceani quae est ad 
+                     <placeName ref="http://pleiades.stoa.org/places/1027">Hispaniam</placeName> pertinet;
                      spectat inter occasum solis et septentriones.</p>
                </egXML>
             </div>
@@ -2103,13 +2099,13 @@
                            irretrievably corrupt</ref>.</item>
                   </list></p>
 
-               <div xml:id="edition-text-abbreviation-expansion">
-                  <head>Expansion of Abbreviation</head>
+            <div xml:id="edition-text-abbreviation-expansion">
+               <head>Expansion of Abbreviation</head>
 
-                  <p>( ) = An editor expands an abbreviation as an aid to reading or to remove
-                     ambiguity. Encoded according to the following guidelines, a digital edition
-                     will display the abbreviated forms by default, but a user will be able to
-                     toggle between the abbreviated and expanded forms.</p>
+               <p>( ) = An editor expands an abbreviation as an aid to reading or to remove
+                  ambiguity. Encoded according to the following guidelines, a digital edition will
+                  display the abbreviated forms by default, but a user will be able to toggle
+                  between the abbreviated and expanded forms.</p>
 
                   <p>The preface should indicate whether or not abbreviations are expanded.</p>
                   <p>
@@ -2132,17 +2128,17 @@
                         F(ilio)</quote>
                   </p>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <p><expan><abbr>M</abbr><ex>arcus</ex></expan> Cicero
-                              <expan><abbr>S</abbr><ex>alutem</ex><abbr>D</abbr><ex>ixit</ex></expan>
-                        <expan><abbr>L</abbr><ex>ucio</ex></expan> Lucceio
-                              <expan><abbr>Q</abbr><ex>uinti</ex></expan>
-                        <expan><abbr>F</abbr><ex>ilio</ex></expan></p>
-                  </egXML>
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p><expan><abbr>M</abbr><ex>arcus</ex></expan> Cicero
+                           <expan><abbr>S</abbr><ex>alutem</ex><abbr>D</abbr><ex>ixit</ex></expan>
+                     <expan><abbr>L</abbr><ex>ucio</ex></expan> Lucceio
+                           <expan><abbr>Q</abbr><ex>uinti</ex></expan>
+                     <expan><abbr>F</abbr><ex>ilio</ex></expan></p>
+               </egXML>
 
-                  <p>Multiple &lt;abbr&gt; elements within a single &lt;expan&gt; compose a single
-                     abbreviation between them. For example, e.g. is one abbreviation for the phrase
-                     "exempli gratia."</p>
+               <p>Multiple &lt;abbr&gt; elements within a single &lt;expan&gt; compose a single
+                  abbreviation between them. For example, e.g. is one abbreviation for the phrase
+                  “exempli gratia.”</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <abbr>e</abbr>
@@ -2170,7 +2166,7 @@
                      transcribed with certainty.</p>
 
                   <p>For example, the entry for <foreign xml:lang="lat">Mensae</foreign> in
-                     Lindsay's edition of Festus (157M) has the following uncertainly deciphered
+                     Lindsay’s edition of Festus (157M) has the following uncertainly deciphered
                      text:</p>
 
                   <p>a&#x323;m&#x323;e&#x323; . . . a&#x323;
@@ -2282,9 +2278,9 @@
                <att>rend</att>="blockquote" will be displayed or printed on a new line and indented.
                In the latter case, prose and verse text within <gi>quote</gi> should be encoded
                according to the guidelines in the sections "<ref target="#edition-text-prose"
-                  >Prose</ref>" and "<ref target="#edition-text-verse">Verse</ref>."</p>
+                  >Prose</ref>" and "<ref target="#edition-text-verse">Verse</ref>.”</p>
 
-            <p><bibl><author>Macrobius'</author>
+            <p><bibl><author>Macrobius’</author>
                   <title>Saturnalia</title> 3.16.1–5 has examples of block quotations of prose and
                   verse texts, and an inline quotation of a prose text</bibl>. Note that it is also
                an example of <ref target="#edition-text-speech">direct speech</ref>, since the
@@ -2344,7 +2340,7 @@
             <p>In the edition text, the text would be displayed or printed without interruption
                (i.e., <foreign xml:lang="lat">Probatio minoris per Boethium De Trinitate: dicit quod
                   septem praedicamenta non dicunt absolutas res, sed tantum respectus</foreign>).
-               The apparatus fontium would include the following entry: "Boethius <hi rend="italic"
+               The apparatus fontium would include the following entry: “Boethius <hi rend="italic"
                   >De Trin.</hi> c. 4 (ed. R. Peiper 159; PL 64, 1353C).</p>
 
             <p>If it is desirable to provide the text of the reference in the apparatus fontium, it
@@ -2369,7 +2365,7 @@
 
             <p>This section provides models for handling the different kinds of entries that occur
                in an apparatus criticus. It uses the terminology, elements, and attributes of the
-               TEI's module <ref
+               TEI’s module <ref
                   target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html">12 Critical
                   Apparatus</ref>, but it also defines terms and encoding methods specific to LDLT
                editions. It is not an instructional manual for composing an apparatus criticus.
@@ -2416,7 +2412,7 @@
                   <p xml:id="variant">A <hi rend="bold">variant reading</hi> is a word or phrase (or
                      absence thereof) judged by the editor to be unsatisfactory for linguistic
                      and/or stylistic reasons, but of interest for establishing the text. This type
-                     of reading is a "variant" insofar as it varies from what the editor has judged
+                     of reading is a “variant” insofar as it varies from what the editor has judged
                      to be the lemma. A variant reading may be attested by a manuscript or it may be
                      a conjecture or the result of a correction. By default in LDLT editions,
                      variant readings are displayed or printed in the apparatus criticus. In digital
@@ -2439,20 +2435,20 @@
                      called an emendation.</p>
 
                   <p xml:id="correction"><hi rend="bold">Correction</hi> describes any attempt by
-                     the original copyist or some other hand to alter a witness' reading, regardless
+                     the original copyist or some other hand to alter a witness’ reading, regardless
                      of whether the result of the correction matches the lemma of the current
                      edition. It is a matter of perspective whether or not the result of a
-                     correction is "correct." Opinions can differ from editor to editor about what
-                     the "correct" reading is, which is why having more than one critical edition of
+                     correction is “correct.” Opinions can differ from editor to editor about what
+                     the “correct” reading is, which is why having more than one critical edition of
                      a text is not necessarily redundant. Similarly, copyists and other users of
-                     manuscripts have their own idea of what the "correct" reading is. The original
+                     manuscripts have their own idea of what the “correct” reading is. The original
                      copyist might notice a slip of the pen in his own work and correct it. A later
                      hand might correct a mistake missed by the copyist. Another reader comparing
-                     two manuscripts might "correct" one of them based on the other's reading. In
+                     two manuscripts might “correct” one of them based on the other’s reading. In
                      these cases and others, the motivation is to correct what is perceived to be
-                     incorrect. For all of these reasons, "correction" is used in these guidelines
+                     incorrect. For all of these reasons, “correction” is used in these guidelines
                      to refer to an attempt to alter existing text so that it conforms to some
-                     perceived standard, whether or not that standard matches the editor's view of
+                     perceived standard, whether or not that standard matches the editor’s view of
                      what the correct reading is.</p>
 
                   <p>The next two sections discuss where readings are found, i.e., in witnesses and
@@ -2472,41 +2468,41 @@
                      a witness. Rather, it preserves a record of the activities of the copyist(s),
                      rubricator(s), corrector(s), and/or other annotator(s) who wrote on its pages,
                      each of whom might be a witness to a different exemplar. At the very least,
-                     they represent different perceptions of the same exemplar. By synecdoche, those
-                     people are referred to as "hands." (These hands are not to be confused with the
-                     drawings of hands, known as manicules, that sometimes appear in the margins of
-                     manuscripts to point out passages of interest.) The manuscript's hands are
-                     represented in a critical edition by superscript numerals appended to its
-                     siglum. A change in number, however, does not necessarily indicate a change of
-                     person. For example, the copyist and corrector might be one and the same
+                     they represent different perceptions of the same exemplar. By synechdoche,
+                     those people are referred to as “hands.” (These hands are not to be confused
+                     with the drawings of hands, known as manicules, that sometimes appear in the
+                     margins of manuscripts to point out passages of interest.) The manuscript’s
+                     hands are represented in a critical edition by superscript numerals appended to
+                     its siglum. A change in number, however, does not necessarily indicate a change
+                     of person. For example, the copyist and corrector might be one and the same
                      person, but it can be important to distinguish them, since they represent
                      different views of the text.</p>
 
                   <p>Confusion can arise from assigning numbers only to hands subsequent to the
                      original copyist. That is, the siglum for the manuscript by itself (i.e.,
                      without a superscript numeral) is understood to represent both the physical
-                     object and the hand of the original copyist who wrote in it. The hand of the
-                     original copyist altering the text he originally wrote is numbered “1”, and
-                     every subsequent hand is numbered in ascending order starting with “2”.
-                     Strictly speaking, the original copyist is "hand zero," but adding a
-                     superscript zero to every siglum would be redundant, since it can be inferred
-                     from the absence of a numeral that the original copyist is meant.</p>
+                     object and the hand of the original copyist who wrote in it; every subsequent
+                     hand, including the original copyist correcting his own mistakes, is numbered
+                     in descending order from “1”. Strictly speaking, the original copyist is “hand
+                     zero,” but adding a superscript zero to every siglum would be redundant, since
+                     it can be inferred from the absence of a numeral that the original copyist is
+                     meant.</p>
 
                   <p>In some cases, it is not necessary, possible, or desirable to make such a sharp
                      distinction between hands. It may be sufficient instead to refer to hands other
                      than the original copyist with the general <foreign xml:lang="lat">manus
-                        recentior</foreign>, or <hi rend="italic">m.r.</hi> ("a later hand").
-                     However the editor decides to represent the activities of a manuscript's hands
+                        recentior</foreign>, or <hi rend="italic">m.r.</hi> (“a later hand”).
+                     However the editor decides to represent the activities of a manuscript’s hands
                      and the relationships between them, an explanation should be provided in the
                      preface.</p>
 
                   <p>For more information on representing the hands in manuscripts, see the sections
                         "<ref target="#bibliography-manuscript-description">Manuscript
-                        Description</ref>" and "<ref target="#bibliography-sigla">Sigla</ref>."</p>
+                        Description</ref>" and "<ref target="#bibliography-sigla">Sigla</ref>.”</p>
 
                   <p>In sum, for the purposes of these guidelines, manuscript hands are witnesses,
                      and the following scheme should be used to indicate them: <list>
-                        <item>siglum without a superscript number (= "hand zero"): the original
+                        <item>siglum without a superscript number (= “hand zero”): the original
                            copyist.</item>
                         <item>siglum with superscript 1 (= "hand one"): the original copyist
                            altering the text he originally wrote.</item>
@@ -2519,10 +2515,18 @@
                      </list>
                   </p>
 
+                  <p>Another acceptable approach is to append abbreviations such as “ac” and “pc”
+                        (<foreign xml:lang="lat">ante corrections</foreign> and <foreign
+                        xml:lang="lat">post correctionem</foreign>) as superscript notations on the
+                     manuscript’s siglum. It all depends on what suits the editor’s purposes,
+                     provided that the method of distinguishing hands is explained in the
+                     description of manuscripts and both human- and machine-readable sigla are
+                     assigned to them.</p>
+
                   <p>If it is desirable to identify different copyists (e.g., if the manuscript was
                      originally copied by more than one person), subscript notations should be used
                      (e.g, A<hi rend="subscript">1</hi>, A<hi rend="subscript">2</hi>, A<hi
-                        rend="subscript">3</hi>, etc.). Each copyist's hand should be described and
+                        rend="subscript">3</hi>, etc.). Each copyist’s hand should be described and
                      assigned a human- and machine-readable siglum in the description of the
                      manuscript.</p>
                </div>
@@ -2541,7 +2545,7 @@
                   <head>Order</head>
 
                   <p>As in traditional printed editions, the order in which certain information is
-                     presented has meaning in LDLT editions, though the order's meaning is not
+                     presented has meaning in LDLT editions, though the order’s meaning is not
                      itself explicitly encoded. Editors should follow the recommendations of West
                      (87–88) on the issue of order. In brief:</p>
 
@@ -2580,7 +2584,7 @@
                      be nested inside of another <gi>app</gi>, if necessary.</item>
                   <item xml:id="lem"><gi>lem</gi> (lemma) contains a reading judged by the editor to
                      be authentic, or as close as possible to it. This type of reading constitutes
-                     the text of the initial state (i.e., when first opened) of an LDLT edition's
+                     the text of the initial state (i.e., when first opened) of an LDLT edition’s
                      text. A lemma may be an absence of text, if the editor has reason to doubt the
                      authenticity of the extant readings.</item>
                   <item xml:id="rdg"><gi>rdg</gi> (reading) contains text (or absence of text)
@@ -2597,9 +2601,9 @@
                      sigla for any printed edition(s) or other scholarly work(s) (e.g., article,
                      textual note, commentary) addressing an aspect of the text.</item>
                   <item><att>ana</att> (analysis) indicates that a reading belongs to at least one
-                     category in the LDLT's taxonomy of readings. More than one value is possible.
+                     category in the LDLT’s taxonomy of readings. More than one value is possible.
                      See the section "<ref target="#apparatus-criticus-analysis">Tagging Readings
-                        for Analysis</ref>."</item>
+                        for Analysis</ref>.”</item>
                   <item xml:id="wit"><gi>wit</gi> contains general information about a reading or a
                      group of witnesses.</item>
                   <item xml:id="witDetail"><gi>witDetail</gi> (witness detail) contains information
@@ -2621,16 +2625,16 @@
                   the certainty and reliability of the edition text.</p>
 
                <p>In the <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html"
-                     >TEI's model for the critical apparatus</ref>, which is the basis for these
+                     >TEI’s model for the critical apparatus</ref>, which is the basis for these
                   guidelines, each entry includes the lemma and its variants. How that information
                   is displayed or printed is a separate issue, but at least the relationship between
                   the lemma and the variant readings is explicitly encoded. In digital
                   representations of an edition encoded according to the guidelines presented here,
-                  readings may be swapped into or out of the edition text, but the editor's
+                  readings may be swapped into or out of the edition text, but the editor’s
                   determination about what is the lemma and what is a variant remains encoded to
                   preserve the argument the edition makes about the text. In this way, it is
                   possible for readers to experience many versions of a text in addition to the
-                  edition's reference state (i.e., its default setting). The variety of readings
+                  edition’s reference state (i.e., its default setting). The variety of readings
                   depends on what the editor decides to encode, and it is expected that those
                   decisions will be explained in the preface.</p>
 
@@ -2765,7 +2769,7 @@
                <p>If it is desirable to use a consensus reference (e.g., ω, ς) or a catch-all
                   reference (e.g., codd., mss., cett., edd.) the references must be defined in the
                   bibliography of the edition according to the guidelines in the section "<ref
-                     target="#bibliography-sigla-catch-all">Catch-all References</ref>." This
+                     target="#bibliography-sigla-catch-all">Catch-all References</ref>.” This
                   section demonstrates how to insert catch-all references into the apparatus.</p>
 
                <p>If consensus or catchall references are used without any addition annotation, they
@@ -3070,11 +3074,11 @@
 
                <p>For deletions made by the editor of the current edition or a previous editor, see
                   the section "<ref target="#apparatus-criticus-deletion-editorial">Editorial
-                     Deletions</ref>."</p>
+                     Deletions</ref>.”</p>
 
                <p>Deletion almost always occurs as part of a correction. In that case, this section
                   should be used in combination with the guidelines in "<ref
-                     target="#apparatus-criticus-correction">Correction</ref>." The examples in this
+                     target="#apparatus-criticus-correction">Correction</ref>.” The examples in this
                   section represent deletion as part of a correction.</p>
 
                <p>There are two methods for encoding deletions: prose description and semantic
@@ -3170,8 +3174,8 @@
                   <p>Square brackets have been used to indicate editorial deletions in the past,
                      but, as <ref target="#West">West</ref> argues (p. 80), this is apt to cause
                      confusion, since they have a different meaning for papyrologists and
-                     epigraphists (see "Undetermined Amount Of Text Lost" in these guidelines).
-                     Accordingly, LDLT editions follow West's suggestion to use braces to indicate
+                     epigraphists (see “Undetermined Amount Of Text Lost” in these guidelines).
+                     Accordingly, LDLT editions follow West’s suggestion to use braces to indicate
                      editorial deletions.</p>
 
                   <p>
@@ -3190,7 +3194,7 @@
                         >del.</hi></item>
                   </list>
 
-                  <p>For example, at section 29 of Suetonius' life of Claudius, <ref
+                  <p>For example, at section 29 of Suetonius’ life of Claudius, <ref
                         target="#kaster-suetonius">Robert Kaster</ref> indicates in the text of his
                      OCT edition that that he accepts as correct the deletion of two words by
                      previous scholars: <quote rend="blockquote">His, ut dixi, uxoribusque addictus
@@ -3245,13 +3249,13 @@
                <p>The sections below demonstrate the prose description and semantic markup methods
                   for the following examples:</p>
 
-               <p>Example 1: In the Teubner edition of Ovid's <bibl><title>Tristia</title></bibl>,
+               <p>Example 1: In the Teubner edition of Ovid’s <bibl><title>Tristia</title></bibl>,
                      <ref target="#hall-ovid">J.B. Hall</ref> follows the recommendation of
                   Wilamowitz and transposes lines 41–42 of poem 3.12 so that they follow line 36. In
                   the apparatus criticus, Hall writes <quote><hi rend="bold">41–42</hi>
                      <hi rend="italic">post 36 transposuit Wilamowitz.</hi></quote></p>
 
-               <p>Example 2: In <ref target="#tarrant-ovid">Richard Tarrant's OCT</ref> of Ovid's
+               <p>Example 2: In <ref target="#tarrant-ovid">Richard Tarrant’s OCT</ref> of Ovid’s
                         <bibl><title>Metamorphoses</title></bibl>, the text of 1.304–305 is as
                   follows:</p>
 
@@ -3320,7 +3324,7 @@
                         <bibl><title>Tr.</title></bibl> 3.12.36ff., <ref
                         target="#apparatus-criticus-transposition">text above</ref>), there are
                      basically two forms of the text: with and without the transposition. Since the
-                     editor (Hall) has accepted Wilamowitz' proposed transposition, the transposed
+                     editor (Hall) has accepted Wilamowitz’ proposed transposition, the transposed
                      version is contained in <gi>lem</gi> and the original is contained in
                         <gi>rdg</gi>:</p>
 
@@ -3349,10 +3353,10 @@
 
                   <p>This will allow users to toggle between the original and emended versions of
                      the text. <att>exclude</att> ensures that lines 41–42 will never be displayed
-                     in two places at once. When the lemma (i.e., Wilamowitz' emendation) is
+                     in two places at once. When the lemma (i.e., Wilamowitz’ emendation) is
                      displayed in the edition text, lines 41–42 will follow line 36. When the
                      reading that has lines 41–42 following line 40 is selected for display,
-                     Wilamowitz' emendation will be excluded from the display.</p>
+                     Wilamowitz’ emendation will be excluded from the display.</p>
 
                   <p>More complicated transpositions, like the one in example 2 below, operate in
                      the same way: <att>exclude</att> ensures that mutually exclusive readings are
@@ -3422,7 +3426,7 @@
                         concha.</foreign></quote>. Heinsius proposes <foreign xml:lang="lat">exesae
                      - conchae</foreign>. That means that whenever <foreign xml:lang="lat"
                      >exesa</foreign> is displayed, <foreign xml:lang="lat">concha</foreign> must
-                  also be displayed, and whenever one of Heinsius' conjectures is displayed, the
+                  also be displayed, and whenever one of Heinsius’ conjectures is displayed, the
                   other one must accompany it.</p>
 
                <p>As with line transpositions, <att>exclude</att> is used to prevent mutually
@@ -3448,9 +3452,9 @@
 
                <p>Correction has been discussed in the section "<ref
                      target="#apparatus-criticus-concepts-definitions">Concepts and
-                     Definitions</ref>." In short, for the purposes of these guidelines,
-                  "correction" describes any attempt by the original copyist or some other hand to
-                  alter a witness' reading, whether or not the result matches what is in the main
+                     Definitions</ref>.” In short, for the purposes of these guidelines,
+                  “correction” describes any attempt by the original copyist or some other hand to
+                  alter a witness’ reading, whether or not the result matches what is in the main
                   edition text.</p>
 
                <p>The amount of detail to report about corrections is a matter for editors to
@@ -3617,7 +3621,7 @@
                         <p>The lemma is <foreign xml:lang="la">insidias</foreign>. Manuscript <hi
                               rend="bold">N</hi> has <foreign xml:lang="la">insidia</foreign>; <hi
                               rend="bold">N<hi rend="superscript">2</hi></hi> has added the letter
-                           "s." A traditional apparatus criticus might report this as follows:
+                           “s.” A traditional apparatus criticus might report this as follows:
                            insidias] insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi
                                  rend="superscript">2</hi></hi>).</p>
 
@@ -3760,7 +3764,7 @@
                   supported by documentary evidence, but are instead proposed by someone and
                   considered by the editor to be worthy of inclusion in a critical edition. A
                   conjecture is called an emendation if it is adopted as the official reading of a
-                  particular criticial edition's main text. In other words, for the purposes of
+                  particular criticial edition’s main text. In other words, for the purposes of
                   these guidelines, an emendation is a successful conjecture. But above all,
                   conjectures and emendations are readings, and they are encoded as such in LDLT
                   editions.</p>
@@ -3775,15 +3779,15 @@
                   them. The annotation is accomplished with <att>type</att>.</p>
 
                <p>Since an emendation is a conjecture that has been adopted for the main text of the
-                  edition, only <gi>lem</gi> can have <att>type</att> with the value "emendation."
+                  edition, only <gi>lem</gi> can have <att>type</att> with the value “emendation.”
                   It could be inferred that a lemma with <att>source</att> only is an emendation,
                   but in the interest of being explicit, an emendation should be annotated
-                  accordingly. Using <att>type</att> with the value of "emendation" will also ensure
+                  accordingly. Using <att>type</att> with the value of “emendation” will also ensure
                   that the lemma will be displayed or printed with the appropriate symbols around it
                   (i.e., &lt; &gt;) in the main text of the edition.</p>
 
                <p>Conversely, only <gi>rdg</gi> may have <att>type</att> with the value
-                  "conjecture." It could be inferred that a reading with <att>source</att> only is a
+                  “conjecture.” It could be inferred that a reading with <att>source</att> only is a
                   conjecture, but it is best to be explicit in the identification if for no other
                   reason than ensuring that the conjecture will be displayed with the appropriate
                   symbols around it (i.e., &lt; &gt;) if it is swapped into the main text in the
@@ -3812,7 +3816,7 @@
                      <hi rend="italic">ci</hi>. C. Schenkl.</p>
 
                <p>Multiple conjectures proposed by a single person should be contained in
-                     <gi>rdgGrp</gi> with <att>type</att> and value "conjecture."</p>
+                     <gi>rdgGrp</gi> with <att>type</att> and value “conjecture.”</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <app>
@@ -3920,13 +3924,13 @@
                   usage it is not paired with its customary partner <gi>corr</gi> because the nature
                   of a crux is that it cannot be corrected.</p>
 
-               <p>For example, at section 2.4.12 of Macrobius'
+               <p>For example, at section 2.4.12 of Macrobius’
                      <bibl><title>Saturnalia</title></bibl>, <ref target="#kaster-macrobius">Robert
                      Kaster</ref> marks two words in the text of his OCT edition with <foreign
-                     xml:lang="lat">cruces</foreign>:<quote rend="blockquote">… "vale mel gentium
+                     xml:lang="lat">cruces</foreign>:<quote rend="blockquote">… “vale mel gentium
                      †meculle†, ebur ex Etruria, lasar Arretinum, adamas Supernas, Tiberinum
                      margaritum, Cilniorum smargde, iaspi figulorum, berulle Porsenae, carbunculum
-                     †habeas†, ἵνα συντέμω πάντα, ἄλλαγμα moecharum."</quote></p>
+                     †habeas†, ἵνα συντέμω πάντα, ᾶλλαγμα moecharum.”</quote></p>
 
                <p>In the apparatus criticus for the first crux, Kaster has the following:
                      <quote>meculle <hi rend="italic">Nβ</hi>(melcule <hi rend="italic">DP<hi
@@ -3971,8 +3975,8 @@
             <div xml:id="apparatus-criticus-analysis">
                <head>Tagging Readings for Analysis</head>
 
-               <p>An editor may enhance an edition's functionality by adding one or more of the
-                  analytical "tags" listed below. Use of these tags will enable additional filtering
+               <p>An editor may enhance an edition’s functionality by adding one or more of the
+                  analytical “tags” listed below. Use of these tags will enable additional filtering
                   and querying functionality, such as filtering out purely orthographical variants
                   or focusing on variants that affect the syntax of the text.</p>
 
@@ -4183,7 +4187,7 @@
                      Caesaris Einsidlensia quae dicuntur carmina</title>. <series><title level="s"
                         >Collection Latomus</title>
                      <biblScope unit="volume">19</biblScope></series>.
-                     <pubPlace>Berchem-Bruxelles</pubPlace>: Latomus: Revue d'Études Latines,
+                     <pubPlace>Berchem-Bruxelles</pubPlace>: Latomus: Revue d’Études Latines,
                      <date>1954</date>.</bibl>
             </listBibl>
             <!-- End list of editions cited -->
@@ -4222,831 +4226,909 @@
             <!-- End list of other works cited -->
          </div>
          <!-- End section works cited -->
-
-         <div>
-            <head>The DLL Critical Editions Schema</head>
-            <schemaSpec ident="tei-DLL" docLang="en" prefix="tei_" start="TEI" xml:lang="en">
-
-               <!--       MODULES USED BY THE DLL SCHEMA       -->
-               <moduleRef key="core"/>
-               <moduleRef key="tei"/>
-               <moduleRef key="header" except="appInfo"/>
-               <moduleRef key="textstructure"
-                  except="argument byline closer div1 div2 div3 div4 div5 div6 div7 imprimatur
-                    opener postscript salute signed titlePage titlePart trailer"/>
-               <moduleRef key="transcr" except="damageSpan restore"/>
-               <moduleRef key="verse"/>
-               <moduleRef key="analysis" except="cl span spanGrp"/>
-               <moduleRef key="certainty" except="respons"/>
-               <moduleRef key="gaiji" except="char charName unicodeName"/>
-               <moduleRef key="linking" except="alt altGrp joinGrp timeline when"/>
-               <moduleRef key="msdescription"/>
-               <moduleRef key="namesdates"
-                  except="affiliation age climate education faith geoFeat langKnowledge
-                    langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
-               <moduleRef key="textcrit"/>
-               <moduleRef key="figures" except="formula"/>
-               <moduleRef key="spoken"
-                  except="broadcast equipment incident kinesic pause recording recordingStmt
-                    scriptStmt shift u vocal writing"/>
-               <moduleRef key="corpus"
-                  except="activity channel constitution derivation domain factuality interaction locale
-                    preparedness purpose setting textDesc"/>
-
-               <!-- DATA SPECS -->
-               <dataSpec ident="teidata.fragId">
-                  <content>
-                     <dataRef name="token" restriction="#(\p{L}|\p{N}|\p{P}|\p{S})+"/>
-                  </content>
-               </dataSpec>
-
-               <!-- CHANGED MODEL CLASSES -->
-               <classSpec type="atts" ident="att.textCritical.linking" mode="add">
-                  <attList>
-                     <attDef ident="require">
-                        <datatype maxOccurs="unbounded">
-                           <dataRef key="teidata.pointer"/>
-                        </datatype>
-                     </attDef>
-                  </attList>
-               </classSpec>
-
-               <classSpec type="atts" ident="att.textCritical.global" mode="add">
-                  <classes>
-                     <memberOf key="att.global.rendition"/>
-                     <memberOf key="att.global.linking"/>
-                     <memberOf key="att.textCritical.analytic"/>
-                     <memberOf key="att.global.facs"/>
-                     <memberOf key="att.global.change"/>
-                     <memberOf key="att.global.responsibility"/>
-                  </classes>
-                  <attList>
-                     <attDef ident="xml:id" usage="opt">
-                        <gloss versionDate="2007-07-02" xml:lang="en">identifier</gloss>
-                        <gloss versionDate="2007-12-20" xml:lang="ko">확인소</gloss>
-                        <gloss versionDate="2008-04-06" xml:lang="es">identificador</gloss>
-                        <gloss versionDate="2008-03-30" xml:lang="fr">identifiant</gloss>
-                        <gloss versionDate="2007-11-06" xml:lang="it">identificatore</gloss>
-                        <desc versionDate="2005-10-10" xml:lang="en">provides a unique identifier
-                           for the element bearing the attribute.</desc>
-                        <desc versionDate="2007-12-20" xml:lang="ko">속성을 포함하는 요소에 대한 고유한 확인소를
-                           제공한다.</desc>
-                        <desc versionDate="2007-05-02" xml:lang="zh-TW"
-                           >提供一個獨特識別符碼，識別帶有該屬性的元素。</desc>
-                        <desc versionDate="2008-04-05" xml:lang="ja">当該要素にユニークな識別子を示す．</desc>
-                        <desc versionDate="2009-05-25" xml:lang="fr">fournit un identifiant unique
-                           pour l'élément qui porte l'attribut</desc>
-                        <desc versionDate="2007-05-04" xml:lang="es">proporciona un identificador
-                           único para el elemento al cual se asocia el atributo.</desc>
-                        <desc versionDate="2007-01-21" xml:lang="it">assegna un identificatore unico
-                           all'elemento a cui è associato l'attributo</desc>
-                        <datatype>
-                           <dataRef name="ID"/>
-                        </datatype>
-                        <remarks versionDate="2005-10-10" xml:lang="en">
-                           <p>The <att>xml:id</att> attribute may be used to specify a canonical
-                              reference for an element; see section <ptr target="#CORS"/>.</p>
-                        </remarks>
-                        <remarks xml:lang="fr" versionDate="2007-06-12">
-                           <p>L'attribut <att>xml:id</att> peut être employé pour indiquer une
-                              référence canonique pour un élément ; voir la section<ptr
-                                 target="#CORS"/>.</p>
-                        </remarks>
-                        <remarks xml:lang="es" versionDate="2008-04-06">
-                           <p>El atributo <att>xml:id</att> se puede utilizar para especificar una
-                              referencia canónica para un elemento; ver la sección <ptr
-                                 target="#CORS"/>.</p>
-                        </remarks>
-                        <remarks xml:lang="ja" versionDate="2008-04-05">
-                           <p> 当該属性<att>xml:id</att>は，属性の指示対象を示している．詳細 は<ptr target="#CORS"/>を参照のこと．
-                           </p>
-                        </remarks>
-                     </attDef>
-                     <attDef ident="n" usage="opt">
-                        <gloss versionDate="2007-07-02" xml:lang="en">number</gloss>
-                        <gloss versionDate="2007-12-20" xml:lang="ko">수</gloss>
-                        <gloss versionDate="2008-04-06" xml:lang="es">número</gloss>
-                        <gloss versionDate="2008-03-30" xml:lang="fr">nombre</gloss>
-                        <gloss versionDate="2007-11-06" xml:lang="it">numero</gloss>
-                        <desc versionDate="2005-10-10" xml:lang="en">gives a number (or other label)
-                           for an element, which is not necessarily unique within the
-                           document.</desc>
-                        <desc versionDate="2007-12-20" xml:lang="ko">요소의 번호(또는 다른 표지)를 제시하며, 문서 내에서
-                           반드시 고유값일 필요는 없다.</desc>
-                        <desc versionDate="2007-05-02" xml:lang="zh-TW">將元素標上一個數字
-                           (或其他標號)，該標號在文件中未必是獨特的。</desc>
-                        <desc versionDate="2008-04-05" xml:lang="ja"
-                           >要素に数値やラベルを与える．これは当該文書中でユニークである必要 はない．</desc>
-                        <desc versionDate="2009-05-25" xml:lang="fr">donne un nombre (ou une autre
-                           étiquette) pour un élément, qui n'est pas nécessairement unique dans le
-                           document TEI.</desc>
-                        <desc versionDate="2007-05-04" xml:lang="es">proporciona un número (u otra
-                           etiqueta) a un elemento que no es necesariamente único en el
-                           documento.</desc>
-                        <desc versionDate="2007-01-21" xml:lang="it">assegna un numero (o altra
-                           etichetta) a un elemento che non è necessariamente unico all'interno del
-                           documento</desc>
-                        <datatype maxOccurs="1">
-                           <dataRef key="teidata.text"/>
-                        </datatype>
-                        <remarks versionDate="2013-12-06" xml:lang="en">
-                           <p>The value of this attribute is always understood to be a single token,
-                              even if it contains space or other punctuation characters, and need
-                              not be composed of numbers only. It is typically used to specify the
-                              numbering of chapters, sections, list items, etc.; it may also be used
-                              in the specification of a standard reference system for the text.</p>
-                        </remarks>
-                        <remarks xml:lang="fr" versionDate="2007-06-12">
-                           <p>L'attribut <att>n</att> peut être employé pour indiquer la
-                              numérotation de chapitres, sections, items de liste, etc. ; il peut
-                              également être employé dans les spécifications d'un système standard
-                              de référence pour le texte. </p>
-                        </remarks>
-                        <remarks xml:lang="es" versionDate="2008-04-06">
-                           <p>El atributo <att>n</att> se puede utilizar para especificar la
-                              enumeración de los capítulos, de las secciones, de los items de una
-                              lista, etc.; puede también ser utilizado en la especificación de un
-                              sistema de referencia estándar para el texto.</p>
-                        </remarks>
-                        <remarks xml:lang="ja" versionDate="2008-04-05">
-                           <p> 当該属性<att>n</att>は，章・節・リスト項目などの番号を特定する ために使われる．これは，テキストを指示する標準参照システムにお
-                              いも採用されている． </p>
-                        </remarks>
-                     </attDef>
-                     <attDef ident="xml:lang" usage="opt">
-                        <gloss versionDate="2007-07-02" xml:lang="en">language</gloss>
-                        <gloss versionDate="2007-12-20" xml:lang="ko">언어</gloss>
-                        <gloss versionDate="2008-04-06" xml:lang="es">lengua</gloss>
-                        <gloss versionDate="2008-03-30" xml:lang="fr">langue</gloss>
-                        <gloss versionDate="2007-11-06" xml:lang="it">lingua</gloss>
-                        <desc versionDate="2013-01-07" xml:lang="en">indicates the language of the
-                           element content using a <soCalled>tag</soCalled> generated according to
-                              <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP
-                           47</ref>.</desc>
-                        <desc versionDate="2007-12-20" xml:lang="ko"><ref
-                              target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>에 따라
-                           생성된 <soCalled>tag</soCalled>를 사용하는 요소 내용의 언어를 나타낸다.</desc>
-                        <desc versionDate="2007-05-02" xml:lang="zh-TW">使用<ref
-                              target="http://www.ietf.org/rfc/rfc3066.txt"
-                           >RFC3066</ref>的代碼，指出該元素內容的使用語言</desc>
-                        <desc versionDate="2008-04-05" xml:lang="ja">当該要素の内容で使用されている言語を， <ref
-                              target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>
-                              に準拠して作られた<soCalled>タグ</soCalled>で示す．</desc>
-                        <desc versionDate="2007-06-12" xml:lang="fr">indique la langue du contenu de
-                           l'élément en utilisant les codes du <ref
-                              target="http://www.ietf.org/rfc/rfc3066.txt">RFC 3066</ref>
-                        </desc>
-                        <desc versionDate="2007-05-04" xml:lang="es">indica la lengua del contenido
-                           del elemento utilizando los códigos extraídos de <ref
-                              target="http://www.ietf.org/rfc/rfc3066.txt">RFC 3066</ref>
-                        </desc>
-                        <desc versionDate="2007-01-21" xml:lang="it">indica la lingua del contenuto
-                           dell'elemento utilizzando i codici tratti da <ref
-                              target="http://www.ietf.org/rfc/rfc3066.txt">RFC 3066</ref>
-                        </desc>
-                        <datatype>
-                           <dataRef key="teidata.language"/>
-                        </datatype>
-                        <remarks versionDate="2013-12-06" xml:lang="en">
-                           <p>The xml:lang value will be inherited from the immediately enclosing
-                              element, or from its parent, and so on up the document hierarchy. It
-                              is generally good practice to specify xml:lang at the highest
-                              appropriate level, noticing that a different default may be needed for
-                              the teiHeader from that needed for the associated resource element or
-                              elements, and that a single TEI document may contain texts in many
-                              languages.</p>
-                           <p>The authoritative list of registered language subtags is maintained by
-                              IANA and is available at <ptr
-                                 target="http://www.iana.org/assignments/language-subtag-registry"
-                              />. For a good general overview of the construction of language tags,
-                              see <ptr
-                                 target="http://www.w3.org/International/articles/language-tags/"/>,
-                              and for a practical step-by-step guide, see <ptr
-                                 target="https://www.w3.org/International/questions/qa-choosing-language-tags.en.php"
-                              />.</p>
-                           <p>The value used must conform with BCP 47. If the value is a private use
-                              code (i.e., starts with <val>x-</val> or contains <val>-x-</val>), a
-                                 <gi>language</gi> element with a matching value for its
-                                 <att>ident</att> attribute should be supplied in the TEI header to
-                              document this value. Such documentation may also optionally be
-                              supplied for non-private-use codes, though these must remain
-                              consistent with their <choice>
-                                 <abbr>IETF</abbr>
-                                 <expan>Internet Engineering Task Force</expan>
-                              </choice> definitions.</p>
-                        </remarks>
-                        <remarks xml:lang="fr" versionDate="2007-06-12">
-                           <p> Si aucune valeur n'est indiquée pour <att>xml:lang</att>, la valeur
-                              de l'attribut<att>xml:lang</att> de l'élément immédiatement supérieur
-                              est héritée ; c'est pour cette raison qu'une valeur devrait toujours
-                              être attribuée à l'élément du plus haut niveau hiérarchique
-                                 (<gi>TEI</gi>).</p>
-                           <p>La valeur doit être conforme au BCP 47. Si la valeur est un code
-                              d'usage privé (c'est-à-dire commence par <code>x-</code> ou contient
-                                 <code>-x-</code>), il devrait correspondre à la valeur d'un
-                              attribut <att>ident</att> d'un élément <gi>language</gi> fourni dans
-                              l'en-tête TEI du document courant.</p>
-                        </remarks>
-                        <remarks xml:lang="es" versionDate="2008-04-06">
-                           <p>Si no se especifica ningún valor para <att>xml:lang</att>, el valor de
-                                 <att>xml:lang</att> para el elemento inmediatamente englobado, se
-                              hereda; por esta razón, un valor se debe especificar siempre en el
-                              elemento exterior (<gi>TEI</gi>).</p>
-                        </remarks>
-                        <remarks xml:lang="ja" versionDate="2008-04-05">
-                           <p> 当該属性<att>xml:lang</att>に値がない場合には，親要素にある属
-                                 性値を継承する．従って，一番外側の要素(すなわち<gi>TEI</gi>)の 属性値は常に継承されることになる． </p>
-                        </remarks>
-                     </attDef>
-
-
-
-                     <attDef ident="xml:base" usage="opt">
-                        <desc versionDate="2005-10-10" xml:lang="en">provides a base URI reference
-                           with which applications can resolve relative URI references into absolute
-                           URI references.</desc>
-                        <desc versionDate="2007-12-20" xml:lang="ko">애플리케이션이 상대 URI 참조를 절대 URI 참조로
-                           해결할 수 있게 해 주는 기본 URI 참조를 제공한다.</desc>
-                        <desc versionDate="2007-05-02" xml:lang="zh-TW">提供一個基礎統一資源識別符 (URI)
-                           參照，可將相對統一資源識別符參照轉變為絕對統一資源識別符參照。</desc>
-                        <desc versionDate="2008-04-05" xml:lang="ja"
-                           >相対URIから絶対URIを構成する際に必要なベースURIを示す．</desc>
-                        <desc versionDate="2007-06-12" xml:lang="fr">donne une référence URI de base
-                           au moyen de laquelle les applications peuvent résoudre des références
-                           d'URI relatives en références d'URI absolues</desc>
-                        <desc versionDate="2007-05-04" xml:lang="es">proporciona una referencia URI
-                           de base gracias a la aplicación eventual de la cual pueden analizarse
-                           tanto referencias URI relativas como referencias URI absolutas.</desc>
-                        <desc versionDate="2007-01-21" xml:lang="it">assegna un riferimento URI di
-                           base grazie al quale eventuali applicazioni possono analizzare
-                           riferimenti URI relativi come riferimenti URI assoluti</desc>
-                        <datatype>
-                           <dataRef key="teidata.pointer"/>
-                        </datatype>
-                     </attDef>
-                     <attDef ident="xml:space" usage="opt">
-                        <desc versionDate="2010-02-10" xml:lang="en">signals an intention about how
-                           white space should be managed by applications.</desc>
-                        <desc versionDate="2007-06-12" xml:lang="fr">signale que les applications
-                           doivent préserver l'espace blanc</desc>
-                        <desc versionDate="2007-05-04" xml:lang="es">señala la voluntad de hacer que
-                           el espaciado sea preservado por cualquier aplicación.</desc>
-                        <desc versionDate="2007-01-21" xml:lang="it">segnala la volontà di far sì
-                           che la spaziatura sia mantenuta da qualsivoglia applicazione.</desc>
-                        <desc versionDate="2006-10-28" xml:lang="ja"
-                           >空白文字類をアプリケーションがどう解釈するかを示す．</desc>
-                        <datatype>
-                           <dataRef key="teidata.enumerated"/>
-                        </datatype>
-                        <valList type="closed">
-                           <valItem ident="default">
-                              <desc versionDate="2012-09-07" xml:lang="en">signals that the
-                                 application's default white-space processing modes are
-                                 acceptable</desc>
-                           </valItem>
-                           <valItem ident="preserve">
-                              <desc versionDate="2012-09-07" xml:lang="en">indicates the intent that
-                                 applications preserve all white space</desc>
-                           </valItem>
-                        </valList>
-                        <remarks versionDate="2012-09-07" xml:lang="en">
-                           <p>The <ref target="http://www.w3.org/TR/REC-xml/#sec-white-space">XML
-                                 specification</ref> provides further guidance on the use of this
-                              attribute. Note that many parsers may not handle xml:space
-                              correctly.</p>
-                        </remarks>
-                     </attDef>
-                  </attList>
-               </classSpec>
-
-               <classSpec type="atts" ident="att.textCritical.analytic" mode="add">
-                  <attList>
-                     <attDef ident="ana" mode="replace">
-                        <datatype maxOccurs="unbounded">
-                           <dataRef key="teidata.fragId"/>
-                        </datatype>
-                        <valList type="semi">
-                           <valItem ident="#lexical"/>
-                           <valItem ident="#syntactic"/>
-                           <valItem ident="#morphological"/>
-                           <valItem ident="#ordinal"/>
-                           <valItem ident="#orthographical"/>
-                           <valItem ident="#subtractive"/>
-                           <valItem ident="#additive"/>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </classSpec>
-
-               <!--        CHANGED ELEMENT SPECS        -->
-               <elementSpec ident="add" module="core" mode="change">
-                  <attList>
-                     <!-- constraining values of add/@place -->
-                     <attDef ident="place" mode="replace">
-                        <valList type="closed">
-                           <valItem ident="above"/>
-                           <valItem ident="below"/>
-                           <valItem ident="bottom"/>
-                           <valItem ident="inline"/>
-                           <valItem ident="inRas">
-                              <desc versionDate="2016-03-15" xml:lang="en">added in an erased
-                                 area</desc>
-                           </valItem>
-                           <valItem ident="interlinear"/>
-                           <valItem ident="left"/>
-                           <valItem ident="margin"/>
-                           <valItem ident="mixed"/>
-                           <valItem ident="opposite"/>
-                           <valItem ident="overleaf"/>
-                           <valItem ident="overstrike"/>
-                           <valItem ident="right"/>
-                           <valItem ident="top"/>
-                           <valItem ident="unspecified"/>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </elementSpec>
-
-               <elementSpec ident="app" module="textcrit" mode="change">
-                  <classes mode="replace">
-                     <memberOf key="att.textCritical.global"/>
-                     <memberOf key="att.textCritical.linking"/>
-                     <memberOf key="model.global.edit"/>
-                  </classes>
-               </elementSpec>
-
-               <!-- constraining values of div/@type -->
-               <elementSpec ident="div" mode="change" module="textstructure">
-                  <attList>
-                     <attDef ident="type" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="introduction">
-                              <desc versionDate="2015-11-23" xml:lang="en">to contain introductory
-                                 material</desc>
-                           </valItem>
-                           <valItem ident="sources">
-                              <desc versionDate="2015-11-23" xml:lang="en">to contain documentation
-                                 of source texts</desc>
-                           </valItem>
-                           <valItem ident="apparatus">
-                              <desc versionDate="2015-10-20" xml:lang="en">to contain apparatus
-                                 criticus or textual notes</desc>
-                           </valItem>
-                           <valItem ident="bibliography">
-                              <desc versionDate="2015-10-20" xml:lang="en">to contain
-                                 bibliographical information, previous publications, etc.</desc>
-                           </valItem>
-                           <valItem ident="commentary">
-                              <desc versionDate="2015-10-20" xml:lang="en">to contain all editorial
-                                 commentary, historical/prosopographical discussion, etc.</desc>
-                           </valItem>
-                           <valItem ident="edition">
-                              <desc versionDate="2015-10-20" xml:lang="en">to contain the text of
-                                 the edition itself; may include multiple text-parts</desc>
-                           </valItem>
-                           <valItem ident="section">
-                              <desc versionDate="2016-06-06" xml:lang="en">A subordinate part of the
-                                 introduction or other section, but not the edition of
-                                 translation.</desc>
-                           </valItem>
-                           <valItem ident="textpart">
-                              <desc versionDate="2015-10-20" xml:lang="en">used to divide a
-                                 div[type=edition] into multiple parts (fragments, columns, faces,
-                                 etc.)</desc>
-                           </valItem>
-                           <valItem ident="translation">
-                              <desc versionDate="2015-10-20" xml:lang="en">to contain a translation
-                                 of the text into one or more modern languages</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </elementSpec>
-
-               <elementSpec ident="ex" module="transcr" mode="change">
-                  <!-- testing for <ex> outside of <expan> -->
-                  <constraintSpec scheme="isoschematron" ident="ex">
-                     <constraint>
-                        <sch:rule context="tei:ex">
-                           <sch:report test="not(ancestor::tei:expan)">ex should only appear inside
-                              expan</sch:report>
-                           <sch:report test="parent::tei:abbr">ex should not be a child of
-                              abbr</sch:report>
-                        </sch:rule>
-                     </constraint>
-                  </constraintSpec>
-               </elementSpec>
-
-               <elementSpec ident="expan" module="transcr" mode="change">
-                  <!-- testing for <expan> with no descendant <ex> -->
-                  <constraintSpec scheme="isoschematron" ident="expan">
-                     <constraint>
-                        <sch:rule context="tei:expan">
-                           <sch:report test="not(descendant::tei:ex)">expan should contain
-                              ex</sch:report>
-                        </sch:rule>
-                     </constraint>
-                  </constraintSpec>
-               </elementSpec>
-
-               <elementSpec ident="gap" module="core" mode="change">
-                  <!-- testing for <gap> with both quantity/extent, no unit, or contained in supplied -->
-                  <constraintSpec ident="gap" scheme="isoschematron">
-                     <constraint>
-                        <sch:rule context="tei:gap">
-                           <sch:report test="@quantity and @extent">gap may have @quantity (a
-                              figure) or @extent (a descriptive text value) but not
-                              both</sch:report>
-                           <sch:report test="@quantity and not(@unit)">If gap has @quantity then
-                              @unit is required</sch:report>
-                           <sch:report
-                              test="not(@reason='ellipsis') and ancestor::tei:supplied[not(@reason='undefined')]"
-                              >gap may not appear within supplied text</sch:report>
-                        </sch:rule>
-                     </constraint>
-                  </constraintSpec>
-                  <!-- constraining values of gap/@reason -->
-                  <attList>
-                     <attDef ident="reason" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="lost">
-                              <desc versionDate="2015-10-20" xml:lang="en">Text completely lost from
-                                 the surface and unrecoverable</desc>
-                           </valItem>
-                           <valItem ident="illegible">
-                              <desc versionDate="2015-10-20" xml:lang="en">Traces of text remain on
-                                 the surface but cannot be interpreted</desc>
-                           </valItem>
-                           <valItem ident="omitted">
-                              <desc versionDate="2015-10-20" xml:lang="en">Text erroneously omitted
-                                 from the surface by the scribe/cutter</desc>
-                           </valItem>
-                           <valItem ident="ellipsis">
-                              <desc versionDate="2015-10-20" xml:lang="en">Text omitted from the
-                                 edition by the editor, for whatever reason (brevity, context,
-                                 language, etc.)</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                     <!-- removing gap/@dur (not needed in EpiDoc) -->
-                     <attDef ident="dur" mode="delete"/>
-                  </attList>
-               </elementSpec>
-
-               <!-- suggesting but not constraining values of hi/@rend -->
-               <elementSpec ident="hi" module="core" mode="change">
-                  <attList>
-                     <attDef ident="rend" mode="replace" usage="req">
-                        <datatype maxOccurs="5">
-                           <dataRef key="teidata.word"/>
-                        </datatype>
-                        <valList type="semi">
-                           <valItem ident="acute">
-                              <desc versionDate="2015-10-20" xml:lang="en">ancient acute (oxia,
-                                 tonos) diacritic</desc>
-                           </valItem>
-                           <valItem ident="apex">
-                              <desc versionDate="2015-10-20" xml:lang="en">ancient apex (identical
-                                 in appearance to acute), marking a long vowel</desc>
-                           </valItem>
-                           <valItem ident="asper">
-                              <desc versionDate="2015-10-20" xml:lang="en">ancient asper (rough
-                                 breathing) diacritic</desc>
-                           </valItem>
-                           <valItem ident="circumflex">
-                              <desc versionDate="2015-10-20" xml:lang="en">ancient circumflex
-                                 (perispomeni) diacritic</desc>
-                           </valItem>
-                           <valItem ident="diaeresis">
-                              <desc versionDate="2015-10-20" xml:lang="en">ancient diaeresis</desc>
-                           </valItem>
-                           <valItem ident="grave">
-                              <desc versionDate="2015-10-20" xml:lang="en">ancient grave (varia)
-                                 diacritic</desc>
-                           </valItem>
-                           <valItem ident="intraline">
-                              <desc versionDate="2015-10-20" xml:lang="en">characters scored or
-                                 struck through at the mid-line level</desc>
-                           </valItem>
-                           <valItem ident="inverted">
-                              <desc versionDate="2015-10-20" xml:lang="en">character(s) inverted or
-                                 rotated with respect to the rest of the text</desc>
-                           </valItem>
-                           <valItem ident="italic">
-                              <desc versionDate="2015-10-20" xml:lang="en">italicized
-                                 character(s)</desc>
-                           </valItem>
-                           <valItem ident="lenis">
-                              <desc versionDate="2015-10-20" xml:lang="en">ancient lenis (smooth
-                                 breathing) diacritic</desc>
-                           </valItem>
-                           <valItem ident="ligature">
-                              <desc versionDate="2015-10-20" xml:lang="en">two (or more) letters
-                                 ligatured, monogrammed, or therwise joined</desc>
-                           </valItem>
-                           <valItem ident="normal">
-                              <desc versionDate="2015-10-20" xml:lang="en">unmarked
-                                 character(s)</desc>
-                           </valItem>
-                           <valItem ident="reversed">
-                              <desc versionDate="2015-10-20" xml:lang="en">characters reversed
-                                 (backward-facing) with respect to the rest of the line of
-                                 text</desc>
-                           </valItem>
-                           <valItem ident="small">
-                              <desc versionDate="2015-10-20" xml:lang="en">Letter(s) smaller than
-                                 those around them</desc>
-                           </valItem>
-                           <valItem ident="subscript">
-                              <desc versionDate="2015-10-20" xml:lang="en">characters written lower
-                                 than the surrounding text</desc>
-                           </valItem>
-                           <valItem ident="superscript">
-                              <desc versionDate="2015-10-20" xml:lang="en">characters written higher
-                                 than the surrounding text</desc>
-                           </valItem>
-                           <valItem ident="supraline">
-                              <desc versionDate="2015-10-20" xml:lang="en">characters written with a
-                                 supralinear line above (e.g. for abbreviation or numerals)</desc>
-                           </valItem>
-                           <valItem ident="tall">
-                              <desc versionDate="2015-10-20" xml:lang="en">Letter(s) taller than
-                                 those around it, e.g. I-longa</desc>
-                           </valItem>
-                           <valItem ident="underline">
-                              <desc versionDate="2015-10-20" xml:lang="en">text written with solid
-                                 line beneath</desc>
-                           </valItem>
-                           <valItem ident="stacked">
-                              <desc versionDate="2015-10-20" xml:lang="en">a character written
-                                 directly above another character (as opposed to superscript)</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </elementSpec>
-
-               <elementSpec ident="l" mode="change" module="core">
-                  <constraintSpec ident="l-app" scheme="isoschematron">
-                     <constraint>
-                        <sch:rule context="tei:l[tei:app]">
-                           <sch:report
-                              test="tei:app and count(*) = 1 and normalize-space(string-join(text(),'')) = ''"
-                              role="warn">Consider whether the line should be inside the
-                              app.</sch:report>
-                        </sch:rule>
-                     </constraint>
-                  </constraintSpec>
-               </elementSpec>
-
-               <elementSpec ident="lb" mode="change" module="core">
-                  <!-- offer value "no" for lb/@break -->
-                  <attList>
-                     <attDef ident="break" mode="replace" usage="opt">
-                        <datatype>
-                           <dataRef key="teidata.enumerated"/>
-                        </datatype>
-                        <valList type="semi">
-                           <valItem ident="no">
-                              <desc versionDate="2015-10-20" xml:lang="en">this line-beginning
-                                 should not be taken as a word-break, i.e. word would be hyphenated
-                                 in a printed text</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </elementSpec>
-
-               <elementSpec ident="lem" module="textcrit" mode="change">
-                  <classes mode="change">
-                     <memberOf key="att.textCritical.linking"/>
-                  </classes>
-               </elementSpec>
-
-
-               <!-- suggested attribute values for origDate/@evidence -->
-               <elementSpec ident="origDate" module="msdescription" mode="change">
-                  <attList>
-                     <attDef ident="evidence" mode="replace" usage="opt">
-                        <datatype maxOccurs="6">
-                           <dataRef key="teidata.word"/>
-                        </datatype>
-                        <valList type="semi">
-                           <valItem ident="lettering">
-                              <desc versionDate="2015-10-20" xml:lang="en">Text dated
-                                 palaeographically</desc>
-                           </valItem>
-                           <valItem ident="nomenclature">
-                              <desc versionDate="2015-10-20" xml:lang="en">Text dated by
-                                 nomenclature or onomastics</desc>
-                           </valItem>
-                           <valItem ident="prosopography">
-                              <desc versionDate="2015-10-20" xml:lang="en">Text dated by known
-                                 persons named or implied within it</desc>
-                           </valItem>
-                           <valItem ident="reign">
-                              <desc versionDate="2015-10-20" xml:lang="en">Text dated by the reign
-                                 of an emperor or other ruler</desc>
-                           </valItem>
-                           <valItem ident="titulature">
-                              <desc versionDate="2015-10-20" xml:lang="en">Text dated by the use of
-                                 official titles</desc>
-                           </valItem>
-                           <valItem ident="internal-date">
-                              <desc versionDate="2015-10-20" xml:lang="en">Text dated by explicit
-                                 internal date</desc>
-                           </valItem>
-                           <valItem ident="context">
-                              <desc versionDate="2015-10-20" xml:lang="en">Archaeological,
-                                 epigraphic, iconographic or other context of the text
-                                 support</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </elementSpec>
-
-               <elementSpec ident="rdg" module="textcrit" mode="change">
-                  <classes mode="replace">
-                     <memberOf key="att.textCritical.global"/>
-                     <memberOf key="att.textCritical"/>
-                     <memberOf key="att.textCritical.linking"/>
-                     <memberOf key="att.witnessed"/>
-                     <memberOf key="model.rdgLike"/>
-                  </classes>
-               </elementSpec>
-
-               <elementSpec ident="rdgGrp" module="textcrit" mode="change">
-                  <classes mode="replace">
-                     <memberOf key="att.textCritical.global"/>
-                     <memberOf key="att.textCritical"/>
-                     <memberOf key="att.textCritical.linking"/>
-                  </classes>
-               </elementSpec>
-
-               <elementSpec ident="space" module="transcr" mode="change">
-                  <!-- testing for <space> with both quantity/extent or no unit -->
-                  <constraintSpec ident="space" scheme="isoschematron">
-                     <constraint>
-                        <sch:rule context="tei:space">
-                           <sch:report test="@quantity and @extent">space may have @quantity (a
-                              figure) or @extent (a descriptive text value) but not
-                              both</sch:report>
-                           <sch:report test="@quantity and not(@unit)">If space has @quantity then
-                              @unit is required</sch:report>
-                        </sch:rule>
-                     </constraint>
-                  </constraintSpec>
-               </elementSpec>
-
-               <elementSpec ident="supplied" module="transcr" mode="change">
-                  <attList>
-                     <!-- suggested attribute list for supplied/@evidence -->
-                     <attDef ident="evidence" mode="replace" usage="opt">
-                        <datatype maxOccurs="1">
-                           <dataRef key="teidata.word"/>
-                        </datatype>
-                        <valList type="semi">
-                           <valItem ident="parallel">
-                              <desc versionDate="2015-10-20" xml:lang="en">Characters supplied from
-                                 a parallel version of this text, absent from this one</desc>
-                           </valItem>
-                           <valItem ident="previouseditor">
-                              <desc versionDate="2015-10-20" xml:lang="en">Characters visible to a
-                                 previous editor, now lost/unclear due to damage</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                     <!-- constrained attribute list for supplied/@reason -->
-                     <attDef ident="reason" mode="replace" usage="req">
-                        <valList type="closed">
-                           <valItem ident="lost">
-                              <desc versionDate="2015-10-20" xml:lang="en">Restoration of text
-                                 completely lost from the surface</desc>
-                           </valItem>
-                           <valItem ident="omitted">
-                              <desc versionDate="2015-10-20" xml:lang="en">Supplement of text
-                                 erroneously omitted from the surface by the scribe/cutter</desc>
-                           </valItem>
-                           <valItem ident="subaudible">
-                              <desc versionDate="2015-10-20" xml:lang="en">Editorial supplement of
-                                 words subaudible to the native reader</desc>
-                           </valItem>
-                           <valItem ident="explanation">
-                              <desc versionDate="2015-10-20" xml:lang="en">Editorial explanation of
-                                 oblique text in original</desc>
-                           </valItem>
-                           <valItem ident="undefined">
-                              <desc versionDate="2015-10-20" xml:lang="en">Text restored (e.g. from
-                                 earlier witness or alternate copy) without specification of current
-                                 state of this text</desc>
-                           </valItem>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </elementSpec>
-
-               <!-- modifying <unclear> because in EpiDoc it should not contain anything but text and <g/> -->
-               <elementSpec ident="unclear" module="core" mode="change">
-                  <content>
-                     <macroRef key="macro.xtext"/>
-                  </content>
-               </elementSpec>
-
-               <!--       CHANGING ATTRIBUTE CLASSES         -->
-
-               <!--<classSpec type="atts" ident="att.datable.custom" mode="change">
-                    <constraintSpec scheme="isoschematron" ident="datable.custom">
-                         <constraint>
-                             <sch:rule context="tei:*[contains(@datingMethod,'julian')]">
-                                 <sch:report test="@when-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
-                                     in Julian dating method @when-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
-                                 <sch:report test="@notBefore-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
-                                     in Julian dating method @notBefore-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
-                                 <sch:report test="@notAfter-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
-                                     in Julian dating method @notAfter-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
-                             </sch:rule>
-                         </constraint>
-                     </constraintSpec>
-                </classSpec>-->
-
-               <classSpec type="atts" ident="att.dimensions" mode="change">
-                  <attList>
-                     <attDef ident="precision" mode="replace">
-                        <valList type="closed">
-                           <valItem ident="low"/>
-                           <valItem ident="medium"/>
-                           <valItem ident="high"/>
-                        </valList>
-                     </attDef>
-                     <attDef ident="unit" mode="change">
-                        <valList type="semi" mode="replace">
-                           <valItem ident="character"/>
-                           <valItem ident="line"/>
-                           <valItem ident="metre"/>
-                           <valItem ident="cm"/>
-                           <valItem ident="mm"/>
-                        </valList>
-                     </attDef>
-                     <attDef ident="extent" mode="change">
-                        <valList type="semi" mode="replace">
-                           <valItem ident="unknown"/>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </classSpec>
-
-               <!-- Make @target on ref and ptr contain a single address. -->
-               <classSpec ident="att.pointing" type="atts" mode="change">
-                  <attList>
-                     <attDef ident="target" mode="change">
-                        <datatype>
-                           <dataRef key="teidata.pointer"/>
-                        </datatype>
-                     </attDef>
-                  </attList>
-               </classSpec>
-
-               <classSpec type="atts" ident="att.responsibility" mode="change">
-                  <attList>
-                     <attDef ident="cert" mode="replace">
-                        <valList type="closed">
-                           <valItem ident="low"/>
-                           <valItem ident="high"/>
-                        </valList>
-                     </attDef>
-                  </attList>
-               </classSpec>
-
-               <classSpec ident="att.witnessed" type="atts" mode="change">
-                  <constraintSpec ident="crited.witnessed" scheme="isoschematron">
-                     <constraint>
-                        <sch:rule context="tei:*[@wit]">
-                           <sch:report
-                              test="exists(for $i in tokenize(normalize-space(translate(@wit,'#','')),'\s+') return if(not(id($i))) then $i else null)"
-                              >No matching xmml:id for reference(s): <sch:value-of
-                                 select="string-join(for $i in tokenize(normalize-space(translate(@wit,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
-                              />.</sch:report>
-                        </sch:rule>
-                     </constraint>
-                  </constraintSpec>
-               </classSpec>
-
-               <classSpec ident="att.source" type="atts" mode="change">
-                  <constraintSpec ident="crited.source" scheme="isoschematron">
-                     <constraint>
-                        <sch:rule context="tei:*[@source]">
-                           <sch:report
-                              test="exists(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null)"
-                              >No matching xmml:id for reference(s): <sch:value-of
-                                 select="string-join(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
-                              />.</sch:report>
-                        </sch:rule>
-                     </constraint>
-                  </constraintSpec>
-               </classSpec>
-            </schemaSpec>
-         </div>
+        
+        <div>
+          <head>The DLL Critical Editions Schema</head>
+          <schemaSpec ident="tei-DLL" docLang="en" prefix="tei_" start="TEI" xml:lang="en" source="http://www.stoa.org/epidoc/schema/latest/tei-epidoc-full.compiled.odd">
+            
+            <!--       MODULES USED BY THE DLL SCHEMA       -->
+            <moduleRef key="core"/>
+            <moduleRef key="tei"/>
+            <moduleRef key="header" except="appInfo"/>
+            <moduleRef key="textstructure"
+              except="argument byline closer div1 div2 div3 div4 div5 div6 div7 imprimatur
+              opener postscript salute signed titlePage titlePart trailer"/>
+            <moduleRef key="transcr" except="damageSpan restore"/>
+            <moduleRef key="verse"/>
+            <moduleRef key="analysis" except="cl span spanGrp"/>
+            <moduleRef key="certainty" except="respons"/>
+            <moduleRef key="gaiji" except="char charName unicodeName"/>
+            <moduleRef key="linking" except="alt altGrp joinGrp timeline when"/>
+            <moduleRef key="msdescription"/>
+            <moduleRef key="namesdates"
+              except="affiliation age climate education faith geoFeat langKnowledge
+              langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
+            <moduleRef key="textcrit" source="http://www.tei-c.org/Vault/P5/3.0.0/xml/tei/odd/p5subset.xml"/>
+            <moduleRef key="figures" source="http://www.tei-c.org/Vault/P5/3.0.0/xml/tei/odd/p5subset.xml" except="formula"/>
+            <moduleRef key="spoken"
+              except="broadcast equipment incident kinesic pause recording recordingStmt
+              scriptStmt shift u vocal writing"/>
+            <moduleRef key="corpus"
+              except="activity channel constitution derivation domain factuality interaction locale
+              preparedness purpose setting textDesc"/>
+            
+            <!-- DATA SPECS -->
+            <dataSpec ident="teidata.fragId">
+              <content>
+                <dataRef name="token" restriction="#(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+              </content>
+            </dataSpec>
+            
+            <!-- CHANGED ATTRIBUTE CLASSES -->
+            <!-- Put "back" att.tableDecoration, because EpiDoc will have stripped it -->
+            <classSpec module="tei" type="atts" ident="att.tableDecoration" mode="add">
+              <desc versionDate="2006-04-17" xml:lang="en">provides attributes used to decorate rows or cells of a table.</desc>
+              <desc versionDate="2007-12-20" xml:lang="ko">테이블의 행 또는 셀을 장식하는 속성을 제공한다.</desc>
+              <desc versionDate="2007-05-02" xml:lang="zh-TW">提供屬性，用以裝飾表格內的儲存格或列。</desc>
+              <desc versionDate="2008-04-05" xml:lang="ja">
+                表の行またはセルを修飾する属性を示す．
+              </desc>
+              <desc versionDate="2009-05-28" xml:lang="fr">fournit des attributs pour mettre en forme les lignes ou les cellules d’un tableau.</desc>
+              <desc versionDate="2007-05-04" xml:lang="es">proporciona atributos usados para decorar filas o celdas de una tabla.</desc>
+              <desc versionDate="2007-01-21" xml:lang="it">assegna degli attributi utilizzati per decorare righe e celle di una tabella</desc>
+              <attList>
+                <attDef ident="role" usage="opt">
+                  <gloss versionDate="2009-05-28" xml:lang="fr">rôle</gloss>
+                  <desc versionDate="2006-04-17" xml:lang="en">indicates the kind of information held in this cell or
+                    in each cell of this row.</desc>
+                  <desc versionDate="2007-12-20" xml:lang="ko">이 셀에 또는 이 행의 각 셀에 나타난 정보의 종류를 제시한다.</desc>
+                  <desc versionDate="2007-05-02" xml:lang="zh-TW">指出此儲存格或列當中，各儲存格所包含的資訊類型。</desc>
+                  <desc versionDate="2008-04-05" xml:lang="ja">
+                    当該セル，または当該行中のセルにある情報の種類を示す．
+                  </desc>
+                  <desc versionDate="2007-06-12" xml:lang="fr">indique le type des
+                    informations contenues dans cette cellule ou dans chaque cellule de cette ligne.</desc>
+                  <desc versionDate="2007-05-04" xml:lang="es">especifica el tipo de información contenida en la celda en cuestión o en cada una de las celdas de la fila.</desc>
+                  <desc versionDate="2007-01-21" xml:lang="it">specifica il tipo di informazione contenuta nela cella in questione o in ciascuna delle celle della riga presa in esame</desc>
+                  <datatype><dataRef key="teidata.enumerated"/></datatype>
+                  <defaultVal>data</defaultVal>
+                  <valList type="semi">
+                    <valItem ident="label">
+                      <desc versionDate="2007-06-27" xml:lang="en">labelling or descriptive information only.</desc>
+                      <desc versionDate="2007-12-20" xml:lang="ko">표지 또는 기술적 정보만 허용</desc>
+                      <desc versionDate="2007-05-02" xml:lang="zh-TW">僅為標號或描述性資訊。</desc>
+                      <desc versionDate="2008-04-06" xml:lang="es">etiquetado o información descriptiva solamente.</desc>
+                      <desc versionDate="2008-04-05" xml:lang="ja">
+                        記述的情報またはラベルのみ．
+                      </desc>
+                      <desc versionDate="2009-05-28" xml:lang="fr">uniquement des informations relatives au codage ou à la description</desc>
+                      <desc versionDate="2007-01-21" xml:lang="it">informazione esclusivamente descrittiva o del tipo etichetta</desc>
+                    </valItem>
+                    <valItem ident="data">
+                      <desc versionDate="2007-06-27" xml:lang="en">data values.</desc>
+                      <desc versionDate="2007-12-20" xml:lang="ko">데이터 값</desc>
+                      <desc versionDate="2007-05-02" xml:lang="zh-TW">數據值。</desc>
+                      <desc versionDate="2008-04-06" xml:lang="es">valores de datos.</desc>
+                      <desc versionDate="2008-04-05" xml:lang="ja">
+                        日付情報．
+                      </desc>
+                      <desc versionDate="2008-03-30" xml:lang="fr">valeurs de données</desc>
+                      <desc versionDate="2007-01-21" xml:lang="it">valori di dati</desc>
+                    </valItem>
+                  </valList>
+                  <remarks versionDate="2006-04-17" xml:lang="en">
+                    <p>When this attribute is specified on a row, its value is the
+                      default for all cells in this row. When specified on a cell,
+                      its value overrides any default specified by the
+                      <att>role</att> attribute of the parent <gi>row</gi> element.</p>
+                  </remarks>
+                  <remarks xml:lang="fr" versionDate="2007-06-12">
+                    <p> Quand cet attribut est appliqué à une ligne de tableau, sa valeur est
+                      transmise comme valeur par défaut à toutes les cellules de cette ligne.
+                      Quand il est spécifié sur une cellule, sa valeur annule et remplace toute
+                      valeur spécifiée par défaut dans l’attribut <att>role</att> de l’élément
+                      parent <gi>row</gi>.</p>
+                  </remarks>
+                  <remarks xml:lang="es" versionDate="2008-04-06">
+                    <p>Cuando este atributo se especifica en una fila, su valor es el valor por defecto para todas las celdas de esta fila. Cuando está especificado en una celda, su valor reemplaza cualquier valor por defecto especificado por
+                      el atributo <att>role</att> (papel) del elemento padre <gi>row</gi> (fila).</p>
+                  </remarks>
+                  <remarks xml:lang="ja" versionDate="2008-04-05">
+                    <p>
+                      当該属性が行に付与されている場合，当該属性値は当該行中の全セル
+                      のデフォルト値になる．当該属性がセルに付与されている場合，当該
+                      属性値は，親要素<gi>row</gi>の属性<att>role</att>にあるデフォ
+                      ルト値を上書きする．
+                    </p>
+                  </remarks>
+                </attDef>
+                <attDef ident="rows" usage="opt">
+                  <gloss versionDate="2009-05-28" xml:lang="fr">lignes</gloss>
+                  <desc versionDate="2006-04-17" xml:lang="en">indicates the number of rows occupied by this cell or row.</desc>
+                  <desc versionDate="2007-12-20" xml:lang="ko">이 셀 또는 행에 의해 사용된 행의 수를 나타낸다.</desc>
+                  <desc versionDate="2007-05-02" xml:lang="zh-TW">指出此儲存格或列所占的列數。</desc>
+                  <desc versionDate="2008-04-05" xml:lang="ja">
+                    当該セルまたは行を含む行の数を示す．
+                  </desc>
+                  <desc versionDate="2009-05-28" xml:lang="fr">indique le nombre de lignes occupées par la cellule ou la ligne en question.</desc>
+                  <desc versionDate="2007-05-04" xml:lang="es">indica el número de filas ocupado por una celda o por la fila en cuestión.</desc>
+                  <desc versionDate="2007-01-21" xml:lang="it">indica il numero di righe occupate dalla cella o riga in questione</desc>
+                  <datatype><dataRef key="teidata.count"/></datatype>
+                  <defaultVal>1</defaultVal>
+                  <remarks versionDate="2013-12-09" xml:lang="en">
+                    <p>A value greater than one indicates that this
+                      cell <!--(or row)-->
+                      spans several rows. Where several cells span multiple rows, it may be more convenient
+                      to use nested tables.</p>
+                  </remarks>
+                  <remarks xml:lang="fr" versionDate="2007-06-12">
+                    <p> Lorsque plusieurs cellules s’étendent sur plusieurs lignes, il peut être plus pratique d’employer des tableaux inclus.</p>
+                  </remarks>
+                  <remarks xml:lang="es" versionDate="2008-04-06">
+                    <p>Donde varias celdas atraviesan varias filas, puede ser más conveniente utilizar los vectores jerarquizados.</p>
+                  </remarks>
+                  <remarks xml:lang="ja" versionDate="2008-04-05">
+                    <p>
+                      複数のセルが複数行に渡る場合には，入れ子の表を使った方が便利で
+                      ある．
+                    </p>
+                  </remarks>
+                </attDef>
+                <attDef ident="cols" usage="opt">
+                  <gloss versionDate="2007-07-02" xml:lang="en">columns</gloss>
+                  <gloss versionDate="2007-12-20" xml:lang="ko">열</gloss>
+                  <gloss versionDate="2008-04-06" xml:lang="es">columnas</gloss>
+                  <gloss versionDate="2008-03-30" xml:lang="fr">colonnes</gloss>
+                  <gloss versionDate="2007-11-06" xml:lang="it">colonne</gloss>
+                  <desc versionDate="2006-04-17" xml:lang="en">indicates the number of columns occupied by this cell or
+                    row.</desc>
+                  <desc versionDate="2007-12-20" xml:lang="ko">이 셀 또는 행에 의해 사용된 열의 수를 나타낸다.</desc>
+                  <desc versionDate="2007-05-02" xml:lang="zh-TW">指出此儲存格或列所佔的欄位數。</desc>
+                  <desc versionDate="2008-04-05" xml:lang="ja">
+                    当該セルまたは行を含む列の数を示す．      
+                  </desc>
+                  <desc versionDate="2007-06-12" xml:lang="fr">indique le nombre de colonnes occupées par cette cellule ou cette ligne.</desc>
+                  <desc versionDate="2007-05-04" xml:lang="es">indica el número de columnas que abraza una celda o fila.</desc>
+                  <desc versionDate="2007-01-21" xml:lang="it">indica il numero di colonne occupate dalla cella o riga</desc>
+                  <datatype><dataRef key="teidata.count"/></datatype>
+                  <defaultVal>1</defaultVal>
+                  <remarks versionDate="2013-12-09" xml:lang="en">
+                    <p>A value greater than one indicates that this cell or row
+                      spans several columns. Where an initial cell spans an entire
+                      row, it may be better treated as a heading.</p>
+                  </remarks>
+                  <remarks xml:lang="fr" versionDate="2013-12-09">
+                    <p>Une valeur plus grande que 1 indique que cette cellule (ou cette ligne)
+                      occupe plusieurs colonnes. Lorsqu’une première cellule s’étend sur une ligne entière, il peut être préférable de la considérer comme un titre.</p>
+                  </remarks>
+                  <remarks xml:lang="es" versionDate="2008-04-06">
+                    <p>Donde una celda inicial atraviesa una fila entera, puede ser tratada como título.</p>
+                  </remarks>
+                  <remarks xml:lang="ja" versionDate="2008-04-05">
+                    <p>
+                      始めのセルが行全体である場合には，見出しとして扱った方がよい．
+                    </p>
+                  </remarks>
+                </attDef>
+              </attList>
+              <listRef>
+                <ptr target="#FT"/>
+              </listRef>
+            </classSpec>
+            
+            <!-- CHANGED MODEL CLASSES -->
+            <classSpec type="atts" ident="att.textCritical.linking" mode="add">
+              <attList>
+                <attDef ident="require">
+                  <datatype maxOccurs="unbounded">
+                    <dataRef key="teidata.pointer"/>
+                  </datatype>
+                </attDef>
+              </attList>
+            </classSpec>
+            
+            <classSpec type="atts" ident="att.textCritical.global" mode="add">
+              <classes>
+                <memberOf key="att.global.rendition"/>
+                <memberOf key="att.global.linking"/>
+                <memberOf key="att.textCritical.analytic"/>
+                <memberOf key="att.global.facs"/>
+                <memberOf key="att.global.change"/>
+                <memberOf key="att.global.responsibility"/>
+              </classes>
+              <attList>
+                <attDef ident="xml:id" usage="opt">
+                  <gloss versionDate="2007-07-02" xml:lang="en">identifier</gloss>
+                  <gloss versionDate="2007-12-20" xml:lang="ko">확인소</gloss>
+                  <gloss versionDate="2008-04-06" xml:lang="es">identificador</gloss>
+                  <gloss versionDate="2008-03-30" xml:lang="fr">identifiant</gloss>
+                  <gloss versionDate="2007-11-06" xml:lang="it">identificatore</gloss>
+                  <desc versionDate="2005-10-10" xml:lang="en">provides a unique identifier for the element bearing the attribute.</desc>
+                  <desc versionDate="2007-12-20" xml:lang="ko">속성을 포함하는 요소에 대한 고유한 확인소를 제공한다.</desc>
+                  <desc versionDate="2007-05-02" xml:lang="zh-TW">提供一個獨特識別符碼，識別帶有該屬性的元素。</desc>
+                  <desc versionDate="2008-04-05" xml:lang="ja">当該要素にユニークな識別子を示す．</desc>
+                  <desc versionDate="2009-05-25" xml:lang="fr">fournit un identifiant unique pour l’élément qui
+                    porte l’attribut</desc>
+                  <desc versionDate="2007-05-04" xml:lang="es">proporciona un identificador único para el elemento
+                    al cual se asocia el atributo.</desc>
+                  <desc versionDate="2007-01-21" xml:lang="it">assegna un identificatore unico all’elemento a cui è
+                    associato l’attributo</desc>
+                  <datatype><dataRef name="ID"/></datatype>
+                  <remarks versionDate="2005-10-10" xml:lang="en">
+                    <p>The <att>xml:id</att> attribute may be used to specify a canonical reference for an
+                      element; see section <ptr target="#CORS"/>.</p>
+                  </remarks>
+                  <remarks xml:lang="fr" versionDate="2007-06-12">
+                    <p>L’attribut <att>xml:id</att> peut être employé pour indiquer une référence canonique pour
+                      un élément ; voir la section<ptr target="#CORS"/>.</p>
+                  </remarks>
+                  <remarks xml:lang="es" versionDate="2008-04-06">
+                    <p>El atributo <att>xml:id</att> se puede utilizar para especificar una referencia canónica
+                      para un elemento; ver la sección <ptr target="#CORS"/>.</p>
+                  </remarks>
+                  <remarks xml:lang="ja" versionDate="2008-04-05">
+                    <p> 当該属性<att>xml:id</att>は，属性の指示対象を示している．詳細 は<ptr target="#CORS"/>を参照のこと． </p>
+                  </remarks>
+                </attDef>
+                <attDef ident="n" usage="opt">
+                  <gloss versionDate="2007-07-02" xml:lang="en">number</gloss>
+                  <gloss versionDate="2007-12-20" xml:lang="ko">수</gloss>
+                  <gloss versionDate="2008-04-06" xml:lang="es">número</gloss>
+                  <gloss versionDate="2008-03-30" xml:lang="fr">nombre</gloss>
+                  <gloss versionDate="2007-11-06" xml:lang="it">numero</gloss>
+                  <desc versionDate="2005-10-10" xml:lang="en">gives a number (or other label) for an element, which is not necessarily unique within
+                    the document.</desc>
+                  <desc versionDate="2007-12-20" xml:lang="ko">요소의 번호(또는 다른 표지)를 제시하며, 문서 내에서 반드시 고유값일 필요는 없다.</desc>
+                  <desc versionDate="2007-05-02" xml:lang="zh-TW">將元素標上一個數字 (或其他標號)，該標號在文件中未必是獨特的。</desc>
+                  <desc versionDate="2008-04-05" xml:lang="ja">要素に数値やラベルを与える．これは当該文書中でユニークである必要 はない．</desc>
+                  <desc versionDate="2009-05-25" xml:lang="fr">donne un nombre (ou une autre étiquette) pour un
+                    élément, qui n’est pas nécessairement unique dans le document TEI.</desc>
+                  <desc versionDate="2007-05-04" xml:lang="es">proporciona un número (u otra etiqueta) a un elemento
+                    que no es necesariamente único en el documento.</desc>
+                  <desc versionDate="2007-01-21" xml:lang="it">assegna un numero (o altra etichetta) a un elemento
+                    che non è necessariamente unico all’interno del documento</desc>
+                  <datatype maxOccurs="1"><dataRef key="teidata.text"/></datatype>
+                  <remarks versionDate="2013-12-06" xml:lang="en">
+                    <p>The value of this attribute is always understood to be a single token, even if it contains space or other punctuation characters, and need not be composed of numbers only. It is typically used to specify the numbering of chapters, sections,
+                      list items, etc.; it may also be used in the specification of a standard reference system
+                      for the text.</p>
+                  </remarks>
+                  <remarks xml:lang="fr" versionDate="2007-06-12">
+                    <p>L’attribut <att>n</att> peut être employé pour indiquer la numérotation de chapitres,
+                      sections, items de liste, etc. ; il peut également être employé dans les spécifications
+                      d’un système standard de référence pour le texte. </p>
+                  </remarks>
+                  <remarks xml:lang="es" versionDate="2008-04-06">
+                    <p>El atributo <att>n</att> se puede utilizar para especificar la enumeración de los
+                      capítulos, de las secciones, de los items de una lista, etc.; puede también ser utilizado
+                      en la especificación de un sistema de referencia estándar para el texto.</p>
+                  </remarks>
+                  <remarks xml:lang="ja" versionDate="2008-04-05">
+                    <p> 当該属性<att>n</att>は，章・節・リスト項目などの番号を特定する ために使われる．これは，テキストを指示する標準参照システムにお いも採用されている． </p>
+                  </remarks>
+                </attDef>
+                <attDef ident="xml:lang" usage="opt">
+                  <gloss versionDate="2007-07-02" xml:lang="en">language</gloss>
+                  <gloss versionDate="2007-12-20" xml:lang="ko">언어</gloss>
+                  <gloss versionDate="2008-04-06" xml:lang="es">lengua</gloss>
+                  <gloss versionDate="2008-03-30" xml:lang="fr">langue</gloss>
+                  <gloss versionDate="2007-11-06" xml:lang="it">lingua</gloss>
+                  <desc versionDate="2013-01-07" xml:lang="en">indicates the language of the element content using a <soCalled>tag</soCalled> generated
+                    according to <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>.</desc>
+                  <desc versionDate="2007-12-20" xml:lang="ko"><ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>에 따라 생성된
+                    <soCalled>tag</soCalled>를 사용하는 요소 내용의 언어를 나타낸다.</desc>
+                  <desc versionDate="2007-05-02" xml:lang="zh-TW">使用<ref target="http://www.ietf.org/rfc/rfc3066.txt">RFC3066</ref>的代碼，指出該元素內容的使用語言</desc>
+                  <desc versionDate="2008-04-05" xml:lang="ja">当該要素の内容で使用されている言語を， <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>
+                    に準拠して作られた<soCalled>タグ</soCalled>で示す．</desc>
+                  <desc versionDate="2007-06-12" xml:lang="fr">indique la langue du contenu de l’élément en
+                    utilisant les codes du <ref target="http://www.ietf.org/rfc/rfc3066.txt">RFC 3066</ref>
+                  </desc>
+                  <desc versionDate="2007-05-04" xml:lang="es">indica la lengua del contenido del elemento
+                    utilizando los códigos extraídos de <ref target="http://www.ietf.org/rfc/rfc3066.txt">RFC
+                      3066</ref>
+                  </desc>
+                  <desc versionDate="2007-01-21" xml:lang="it">indica la lingua del contenuto dell’elemento
+                    utilizzando i codici tratti da <ref target="http://www.ietf.org/rfc/rfc3066.txt">RFC
+                      3066</ref>
+                  </desc>
+                  <datatype><dataRef key="teidata.language"/></datatype>
+                  <remarks versionDate="2013-12-06" xml:lang="en">
+                    <p>The xml:lang value will be inherited from the immediately
+                      enclosing element, or from its parent, and so on up the document hierarchy.
+                      It is generally good practice to specify xml:lang at the highest
+                      appropriate level, noticing that a different default may be needed for the
+                      teiHeader from that needed for the associated resource element or elements,
+                      and that a single TEI document may contain texts in many languages.</p>
+                    <p>The authoritative list of registered language subtags is maintained by IANA and 
+                      is available at <ptr target="http://www.iana.org/assignments/language-subtag-registry"/>. 
+                      For a good general overview of the construction of language tags, see 
+                      <ptr target="http://www.w3.org/International/articles/language-tags/"/>, and for 
+                      a practical step-by-step guide, see 
+                      <ptr target="https://www.w3.org/International/questions/qa-choosing-language-tags.en.php"/>.</p>
+                    <p>The value used must conform with BCP 47. If the value is a
+                      private use code (i.e., starts with <val>x-</val> or contains
+                      <val>-x-</val>), a <gi>language</gi> element with a matching
+                      value for its <att>ident</att> attribute should be supplied in
+                      the TEI header to document this value. Such documentation may
+                      also optionally be supplied for non-private-use codes, though
+                      these must remain consistent with their
+                      <choice><abbr>IETF</abbr><expan>Internet Engineering Task
+                        Force</expan></choice> definitions.</p>
+                  </remarks>
+                  <remarks xml:lang="fr" versionDate="2007-06-12">
+                    <p> Si aucune valeur n’est indiquée pour <att>xml:lang</att>, la valeur de
+                      l’attribut<att>xml:lang</att> de l’élément immédiatement supérieur est héritée ; c’est
+                      pour cette raison qu’une valeur devrait toujours être attribuée à l’élément du plus haut
+                      niveau hiérarchique (<gi>TEI</gi>).</p>
+                    <p>La valeur doit être conforme au BCP 47. Si la
+                      valeur est un code d’usage privé (c’est-à-dire commence par <code>x-</code> ou contient
+                      <code>-x-</code>),  il devrait correspondre à la valeur d’un attribut <att>ident</att> d’un élément <gi>language</gi> fourni dans l’en-tête TEI du document courant.</p>
+                  </remarks>
+                  <remarks xml:lang="es" versionDate="2008-04-06">
+                    <p>Si no se especifica ningún valor para <att>xml:lang</att>, el valor de <att>xml:lang</att> para el elemento inmediatamente englobado, se hereda; por esta razón, un valor
+                      se debe especificar siempre en el elemento exterior (<gi>TEI</gi>).</p>
+                  </remarks>
+                  <remarks xml:lang="ja" versionDate="2008-04-05">
+                    <p> 当該属性<att>xml:lang</att>に値がない場合には，親要素にある属 性値を継承する．従って，一番外側の要素(すなわち<gi>TEI</gi>)の
+                      属性値は常に継承されることになる． </p>
+                  </remarks>
+                </attDef>
+                
+                
+                
+                <attDef ident="xml:base" usage="opt">
+                  <desc versionDate="2005-10-10" xml:lang="en">provides a base URI reference with which applications can resolve relative URI
+                    references into absolute URI references.</desc>
+                  <desc versionDate="2007-12-20" xml:lang="ko">애플리케이션이 상대 URI 참조를 절대 URI 참조로 해결할 수 있게 해 주는 기본 URI
+                    참조를 제공한다.</desc>
+                  <desc versionDate="2007-05-02" xml:lang="zh-TW">提供一個基礎統一資源識別符 (URI)
+                    參照，可將相對統一資源識別符參照轉變為絕對統一資源識別符參照。</desc>
+                  <desc versionDate="2008-04-05" xml:lang="ja">相対URIから絶対URIを構成する際に必要なベースURIを示す．</desc>
+                  <desc versionDate="2007-06-12" xml:lang="fr">donne une référence URI de base au moyen de laquelle
+                    les applications peuvent résoudre des références d’URI relatives en références d’URI
+                    absolues</desc>
+                  <desc versionDate="2007-05-04" xml:lang="es">proporciona una referencia URI de base gracias a la
+                    aplicación eventual de la cual pueden analizarse tanto referencias URI relativas como
+                    referencias URI absolutas.</desc>
+                  <desc versionDate="2007-01-21" xml:lang="it">assegna un riferimento URI di base grazie al quale
+                    eventuali applicazioni possono analizzare riferimenti URI relativi come riferimenti URI
+                    assoluti</desc>
+                  <datatype><dataRef key="teidata.pointer"/></datatype>
+                </attDef>
+                <attDef ident="xml:space" usage="opt">
+                  <desc versionDate="2010-02-10" xml:lang="en">signals an intention about how white space should be 
+                    managed by  applications.</desc>
+                  <desc versionDate="2007-06-12" xml:lang="fr">signale que les applications doivent préserver
+                    l’espace blanc</desc>
+                  <desc versionDate="2007-05-04" xml:lang="es">señala la voluntad de hacer que el espaciado sea preservado por cualquier aplicación.</desc>
+                  <desc versionDate="2007-01-21" xml:lang="it">segnala la volontà di far sì che la spaziatura sia mantenuta da qualsivoglia applicazione.</desc>
+                  <desc versionDate="2006-10-28" xml:lang="ja">空白文字類をアプリケーションがどう解釈するかを示す．</desc>
+                  <datatype><dataRef key="teidata.enumerated"/></datatype>
+                  <valList type="closed">
+                    <valItem ident="default">
+                      <desc versionDate="2012-09-07" xml:lang="en">signals that the application’s default white-space processing modes are acceptable</desc>
+                    </valItem>
+                    <valItem ident="preserve">
+                      <desc versionDate="2012-09-07" xml:lang="en">indicates the intent that applications preserve all white space</desc>
+                    </valItem>
+                  </valList>
+                  <remarks versionDate="2012-09-07" xml:lang="en">
+                    <p>The <ref target="http://www.w3.org/TR/REC-xml/#sec-white-space">XML
+                      specification</ref> provides further guidance on the use of this
+                      attribute. Note that many parsers may not handle xml:space correctly.</p>
+                  </remarks>
+                </attDef>
+              </attList>
+            </classSpec>
+            
+            <classSpec type="atts" ident="att.textCritical.analytic" mode="add">
+              <attList>
+                <attDef ident="ana" mode="replace">
+                  <datatype maxOccurs="unbounded">
+                    <dataRef key="teidata.fragId"/>
+                  </datatype>
+                  <valList type="semi">
+                    <valItem ident="#lexical"/>
+                    <valItem ident="#syntactic"/>
+                    <valItem ident="#morphological"/>
+                    <valItem ident="#ordinal"/>
+                    <valItem ident="#orthographical"/>
+                    <valItem ident="#subtractive"/>
+                    <valItem ident="#additive"/>
+                  </valList>
+                </attDef>
+              </attList>
+            </classSpec>
+            
+            <!--        CHANGED ELEMENT SPECS        -->
+            <elementSpec ident="add" module="core" mode="change">
+              <attList>
+                <!-- constraining values of add/@place -->
+                <attDef ident="place" mode="replace">
+                  <valList type="closed">
+                    <valItem ident="above"/>
+                    <valItem ident="below"/>
+                    <valItem ident="bottom"/>
+                    <valItem ident="inline"/>
+                    <valItem ident="inRas">
+                      <desc versionDate="2016-03-15" xml:lang="en">added in an erased area</desc>
+                    </valItem>
+                    <valItem ident="interlinear"/>
+                    <valItem ident="left"/>
+                    <valItem ident="margin"/>
+                    <valItem ident="mixed"/>
+                    <valItem ident="opposite"/>
+                    <valItem ident="overleaf"/>
+                    <valItem ident="overstrike"/>
+                    <valItem ident="right"/>
+                    <valItem ident="top"/>
+                    <valItem ident="unspecified"/>
+                  </valList>
+                </attDef>
+              </attList>
+            </elementSpec>
+            
+            <elementSpec ident="app" module="textcrit" mode="change">
+              <classes mode="replace">
+                <memberOf key="att.textCritical.global"/>
+                <memberOf key="att.textCritical.linking"/>
+                <memberOf key="model.global.edit"/>
+              </classes>
+            </elementSpec>
+            
+            <!-- constraining values of div/@type -->
+            <elementSpec ident="div" mode="change" module="textstructure">
+              <attList>
+                <attDef ident="type" mode="replace" usage="req">
+                  <valList type="closed">
+                    <valItem ident="introduction">
+                      <desc versionDate="2015-11-23" xml:lang="en">to contain introductory material</desc>
+                    </valItem>
+                    <valItem ident="sources">
+                      <desc versionDate="2015-11-23" xml:lang="en">to contain documentation of source texts</desc>
+                    </valItem>
+                    <valItem ident="apparatus">
+                      <desc versionDate="2015-10-20" xml:lang="en">to contain apparatus criticus or
+                        textual notes</desc>
+                    </valItem>
+                    <valItem ident="bibliography">
+                      <desc versionDate="2015-10-20" xml:lang="en">to contain bibliographical
+                        information, previous publications, etc.</desc>
+                    </valItem>
+                    <valItem ident="commentary">
+                      <desc versionDate="2015-10-20" xml:lang="en">to contain all editorial
+                        commentary, historical/prosopographical discussion, etc.</desc>
+                    </valItem>
+                    <valItem ident="edition">
+                      <desc versionDate="2015-10-20" xml:lang="en">to contain the text of the edition
+                        itself; may include multiple text-parts</desc>
+                    </valItem>
+                    <valItem ident="section">
+                      <desc versionDate="2016-06-06" xml:lang="en">A subordinate part of the introduction
+                        or other section, but not the edition of translation.</desc>
+                    </valItem>
+                    <valItem ident="textpart">
+                      <desc versionDate="2015-10-20" xml:lang="en">used to divide a div[type=edition]
+                        into multiple parts (fragments, columns, faces, etc.)</desc>
+                    </valItem>
+                    <valItem ident="translation">
+                      <desc versionDate="2015-10-20" xml:lang="en">to contain a translation of the
+                        text into one or more modern languages</desc>
+                    </valItem>
+                  </valList>
+                </attDef>
+              </attList>
+            </elementSpec>
+            
+            <elementSpec ident="ex" module="transcr" mode="change">
+              <!-- testing for <ex> outside of <expan> -->
+              <constraintSpec scheme="isoschematron" ident="ex">
+                <constraint>
+                  <sch:rule context="tei:ex">
+                    <sch:report test="not(ancestor::tei:expan)">ex should only appear inside
+                      expan</sch:report>
+                    <sch:report test="parent::tei:abbr">ex should not be a child of abbr</sch:report>
+                  </sch:rule>
+                </constraint>
+              </constraintSpec>
+            </elementSpec>
+            
+            <elementSpec ident="expan" module="transcr" mode="change">
+              <!-- testing for <expan> with no descendant <ex> -->
+              <constraintSpec scheme="isoschematron" ident="expan">
+                <constraint>
+                  <sch:rule context="tei:expan">
+                    <sch:report test="not(descendant::tei:ex)">expan should contain ex</sch:report>
+                  </sch:rule>
+                </constraint>
+              </constraintSpec>
+            </elementSpec>
+            
+            <elementSpec ident="gap" module="core" mode="change">
+              <!-- testing for <gap> with both quantity/extent, no unit, or contained in supplied -->
+              <constraintSpec ident="gap" scheme="isoschematron">
+                <constraint>
+                  <sch:rule context="tei:gap">
+                    <sch:report test="@quantity and @extent">gap may have @quantity (a figure) or
+                      @extent (a descriptive text value) but not both</sch:report>
+                    <sch:report test="@quantity and not(@unit)">If gap has @quantity then @unit is
+                      required</sch:report>
+                    <sch:report
+                      test="not(@reason='ellipsis') and ancestor::tei:supplied[not(@reason='undefined')]"
+                      >gap may not appear within supplied text</sch:report>
+                  </sch:rule>
+                </constraint>
+              </constraintSpec>
+              <!-- constraining values of gap/@reason -->
+              <attList>
+                <attDef ident="reason" mode="replace" usage="req">
+                  <valList type="closed">
+                    <valItem ident="lost">
+                      <desc versionDate="2015-10-20" xml:lang="en">Text completely lost from the
+                        surface and unrecoverable</desc>
+                    </valItem>
+                    <valItem ident="illegible">
+                      <desc versionDate="2015-10-20" xml:lang="en">Traces of text remain on the
+                        surface but cannot be interpreted</desc>
+                    </valItem>
+                    <valItem ident="omitted">
+                      <desc versionDate="2015-10-20" xml:lang="en">Text erroneously omitted from the
+                        surface by the scribe/cutter</desc>
+                    </valItem>
+                    <valItem ident="ellipsis">
+                      <desc versionDate="2015-10-20" xml:lang="en">Text omitted from the edition by
+                        the editor, for whatever reason (brevity, context, language, etc.)</desc>
+                    </valItem>
+                  </valList>
+                </attDef>
+                <!-- removing gap/@dur (not needed in EpiDoc) -->
+                <attDef ident="dur" mode="delete"/>
+              </attList>
+            </elementSpec>
+            
+            <!-- suggesting but not constraining values of hi/@rend -->
+            <elementSpec ident="hi" module="core" mode="change">
+              <attList>
+                <attDef ident="rend" mode="replace" usage="req">
+                  <datatype maxOccurs="5">
+                    <dataRef key="teidata.word"/>
+                  </datatype>
+                  <valList type="semi">
+                    <valItem ident="acute">
+                      <desc versionDate="2015-10-20" xml:lang="en">ancient acute (oxia, tonos)
+                        diacritic</desc>
+                    </valItem>
+                    <valItem ident="apex">
+                      <desc versionDate="2015-10-20" xml:lang="en">ancient apex (identical in
+                        appearance to acute), marking a long vowel</desc>
+                    </valItem>
+                    <valItem ident="asper">
+                      <desc versionDate="2015-10-20" xml:lang="en">ancient asper (rough breathing)
+                        diacritic</desc>
+                    </valItem>
+                    <valItem ident="circumflex">
+                      <desc versionDate="2015-10-20" xml:lang="en">ancient circumflex (perispomeni)
+                        diacritic</desc>
+                    </valItem>
+                    <valItem ident="diaeresis">
+                      <desc versionDate="2015-10-20" xml:lang="en">ancient diaeresis</desc>
+                    </valItem>
+                    <valItem ident="grave">
+                      <desc versionDate="2015-10-20" xml:lang="en">ancient grave (varia)
+                        diacritic</desc>
+                    </valItem>
+                    <valItem ident="intraline">
+                      <desc versionDate="2015-10-20" xml:lang="en">characters scored or struck through
+                        at the mid-line level</desc>
+                    </valItem>
+                    <valItem ident="inverted">
+                      <desc versionDate="2015-10-20" xml:lang="en">character(s) inverted or rotated
+                        with respect to the rest of the text</desc>
+                    </valItem>
+                    <valItem ident="italic">
+                      <desc versionDate="2015-10-20" xml:lang="en">italicized character(s)</desc>
+                    </valItem>
+                    <valItem ident="lenis">
+                      <desc versionDate="2015-10-20" xml:lang="en">ancient lenis (smooth breathing)
+                        diacritic</desc>
+                    </valItem>
+                    <valItem ident="ligature">
+                      <desc versionDate="2015-10-20" xml:lang="en">two (or more) letters ligatured,
+                        monogrammed, or therwise joined</desc>
+                    </valItem>
+                    <valItem ident="normal">
+                      <desc versionDate="2015-10-20" xml:lang="en">unmarked character(s)</desc>
+                    </valItem>
+                    <valItem ident="reversed">
+                      <desc versionDate="2015-10-20" xml:lang="en">characters reversed
+                        (backward-facing) with respect to the rest of the line of text</desc>
+                    </valItem>
+                    <valItem ident="small">
+                      <desc versionDate="2015-10-20" xml:lang="en">Letter(s) smaller than those around
+                        them</desc>
+                    </valItem>
+                    <valItem ident="subscript">
+                      <desc versionDate="2015-10-20" xml:lang="en">characters written lower than the
+                        surrounding text</desc>
+                    </valItem>
+                    <valItem ident="superscript">
+                      <desc versionDate="2015-10-20" xml:lang="en">characters written higher than the
+                        surrounding text</desc>
+                    </valItem>
+                    <valItem ident="supraline">
+                      <desc versionDate="2015-10-20" xml:lang="en">characters written with a
+                        supralinear line above (e.g. for abbreviation or numerals)</desc>
+                    </valItem>
+                    <valItem ident="tall">
+                      <desc versionDate="2015-10-20" xml:lang="en">Letter(s) taller than those around
+                        it, e.g. I-longa</desc>
+                    </valItem>
+                    <valItem ident="underline">
+                      <desc versionDate="2015-10-20" xml:lang="en">text written with solid line
+                        beneath</desc>
+                    </valItem>
+                    <valItem ident="stacked">
+                      <desc versionDate="2015-10-20" xml:lang="en">a character written directly above
+                        another character (as opposed to superscript)</desc>
+                    </valItem>
+                  </valList>
+                </attDef>
+              </attList>
+            </elementSpec>
+            
+            <elementSpec ident="l" mode="change" module="core">
+              <constraintSpec ident="l-app" scheme="isoschematron">
+                <constraint>
+                  <sch:rule context="tei:l[tei:app]">
+                    <sch:report test="tei:app and count(*) = 1 and normalize-space(string-join(text(),'')) = ''" role="warn">Consider whether the line should be inside the app.</sch:report>
+                  </sch:rule>
+                </constraint>
+              </constraintSpec>
+            </elementSpec>
+            
+            <elementSpec ident="lb" mode="change" module="core">
+              <!-- offer value "no" for lb/@break -->
+              <attList>
+                <attDef ident="break" mode="replace" usage="opt">
+                  <datatype>
+                    <dataRef key="teidata.enumerated"/>
+                  </datatype>
+                  <valList type="semi">
+                    <valItem ident="no">
+                      <desc versionDate="2015-10-20" xml:lang="en">this line-beginning should not be
+                        taken as a word-break, i.e. word would be hyphenated in a printed text</desc>
+                    </valItem>
+                  </valList>
+                </attDef>
+              </attList>
+            </elementSpec>
+            
+            <elementSpec ident="lem" module="textcrit" mode="change">
+              <classes mode="change">
+                <memberOf key="att.textCritical.linking"/>
+              </classes>
+            </elementSpec>
+            
+            
+            <!-- suggested attribute values for origDate/@evidence -->
+            <elementSpec ident="origDate" module="msdescription" mode="change">
+              <attList>
+                <attDef ident="evidence" mode="replace" usage="opt">
+                  <datatype maxOccurs="6">
+                    <dataRef key="teidata.word"/>
+                  </datatype>
+                  <valList type="semi">
+                    <valItem ident="lettering">
+                      <desc versionDate="2015-10-20" xml:lang="en">Text dated palaeographically</desc>
+                    </valItem>
+                    <valItem ident="nomenclature">
+                      <desc versionDate="2015-10-20" xml:lang="en">Text dated by nomenclature or
+                        onomastics</desc>
+                    </valItem>
+                    <valItem ident="prosopography">
+                      <desc versionDate="2015-10-20" xml:lang="en">Text dated by known persons named
+                        or implied within it</desc>
+                    </valItem>
+                    <valItem ident="reign">
+                      <desc versionDate="2015-10-20" xml:lang="en">Text dated by the reign of an
+                        emperor or other ruler</desc>
+                    </valItem>
+                    <valItem ident="titulature">
+                      <desc versionDate="2015-10-20" xml:lang="en">Text dated by the use of official
+                        titles</desc>
+                    </valItem>
+                    <valItem ident="internal-date">
+                      <desc versionDate="2015-10-20" xml:lang="en">Text dated by explicit internal
+                        date</desc>
+                    </valItem>
+                    <valItem ident="context">
+                      <desc versionDate="2015-10-20" xml:lang="en">Archaeological, epigraphic,
+                        iconographic or other context of the text support</desc>
+                    </valItem>
+                  </valList>
+                </attDef>
+              </attList>
+            </elementSpec>
+            
+            <elementSpec ident="rdg" module="textcrit" mode="change">
+              <classes mode="replace">
+                <memberOf key="att.textCritical.global"/>
+                <memberOf key="att.textCritical"/>
+                <memberOf key="att.textCritical.linking"/>
+                <memberOf key="att.witnessed"/>
+                <memberOf key="model.rdgLike"/>
+              </classes>
+            </elementSpec>
+            
+            <elementSpec ident="rdgGrp" module="textcrit" mode="change">
+              <classes mode="replace">
+                <memberOf key="att.textCritical.global"/>
+                <memberOf key="att.textCritical"/>
+                <memberOf key="att.textCritical.linking"/>
+              </classes>
+            </elementSpec>
+            
+            <elementSpec ident="space" module="transcr" mode="change">
+              <!-- testing for <space> with both quantity/extent or no unit -->
+              <constraintSpec ident="space" scheme="isoschematron">
+                <constraint>
+                  <sch:rule context="tei:space">
+                    <sch:report test="@quantity and @extent">space may have @quantity (a figure) or
+                      @extent (a descriptive text value) but not both</sch:report>
+                    <sch:report test="@quantity and not(@unit)">If space has @quantity then @unit is
+                      required</sch:report>
+                  </sch:rule>
+                </constraint>
+              </constraintSpec>
+            </elementSpec>
+            
+            <elementSpec ident="supplied" module="transcr" mode="change">
+              <attList>
+                <!-- suggested attribute list for supplied/@evidence -->
+                <attDef ident="evidence" mode="replace" usage="opt">
+                  <datatype maxOccurs="1">
+                    <dataRef key="teidata.word"/>
+                  </datatype>
+                  <valList type="semi">
+                    <valItem ident="parallel">
+                      <desc versionDate="2015-10-20" xml:lang="en">Characters supplied from a parallel
+                        version of this text, absent from this one</desc>
+                    </valItem>
+                    <valItem ident="previouseditor">
+                      <desc versionDate="2015-10-20" xml:lang="en">Characters visible to a previous
+                        editor, now lost/unclear due to damage</desc>
+                    </valItem>
+                  </valList>
+                </attDef>
+                <!-- constrained attribute list for supplied/@reason -->
+                <attDef ident="reason" mode="replace" usage="req">
+                  <valList type="closed">
+                    <valItem ident="lost">
+                      <desc versionDate="2015-10-20" xml:lang="en">Restoration of text completely lost
+                        from the surface</desc>
+                    </valItem>
+                    <valItem ident="omitted">
+                      <desc versionDate="2015-10-20" xml:lang="en">Supplement of text erroneously
+                        omitted from the surface by the scribe/cutter</desc>
+                    </valItem>
+                    <valItem ident="subaudible">
+                      <desc versionDate="2015-10-20" xml:lang="en">Editorial supplement of words
+                        subaudible to the native reader</desc>
+                    </valItem>
+                    <valItem ident="explanation">
+                      <desc versionDate="2015-10-20" xml:lang="en">Editorial explanation of oblique
+                        text in original</desc>
+                    </valItem>
+                    <valItem ident="undefined">
+                      <desc versionDate="2015-10-20" xml:lang="en">Text restored (e.g. from earlier
+                        witness or alternate copy) without specification of current state of this
+                        text</desc>
+                    </valItem>
+                  </valList>
+                </attDef>
+              </attList>
+            </elementSpec>
+            
+            <!-- modifying <unclear> because in EpiDoc it should not contain anything but text and <g/> -->
+            <elementSpec ident="unclear" module="core" mode="change">
+              <content>
+                <macroRef key="macro.xtext"/>
+              </content>
+            </elementSpec>
+            
+            <!--       CHANGING ATTRIBUTE CLASSES         -->
+            
+            <!--<classSpec type="atts" ident="att.datable.custom" mode="change">
+              <constraintSpec scheme="isoschematron" ident="datable.custom">
+              <constraint>
+              <sch:rule context="tei:*[contains(@datingMethod,'julian')]">
+              <sch:report test="@when-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
+              in Julian dating method @when-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
+              <sch:report test="@notBefore-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
+              in Julian dating method @notBefore-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
+              <sch:report test="@notAfter-custom[not(matches(.,'-?(\d{4})(-\d{2}(-\d{2})?)?'))]">
+              in Julian dating method @notAfter-custom must be a date in the form [-]YYYY[-MM[-DD]]</sch:report>
+              </sch:rule>
+              </constraint>
+              </constraintSpec>
+              </classSpec>-->
+            
+            <classSpec type="atts" ident="att.dimensions" mode="change">
+              <attList>
+                <attDef ident="precision" mode="replace">
+                  <valList type="closed">
+                    <valItem ident="low"/>
+                    <valItem ident="medium"/>
+                    <valItem ident="high"/>
+                  </valList>
+                </attDef>
+                <attDef ident="unit" mode="change">
+                  <valList type="semi" mode="replace">
+                    <valItem ident="character"/>
+                    <valItem ident="line"/>
+                    <valItem ident="metre"/>
+                    <valItem ident="cm"/>
+                    <valItem ident="mm"/>
+                  </valList>
+                </attDef>
+                <attDef ident="extent" mode="change">
+                  <valList type="semi" mode="replace">
+                    <valItem ident="unknown"/>
+                  </valList>
+                </attDef>
+              </attList>
+            </classSpec>
+            
+            <!-- Make @target on ref and ptr contain a single address. -->
+            <classSpec ident="att.pointing" type="atts" mode="change">
+              <attList>
+                <attDef ident="target" mode="change">
+                  <datatype>
+                    <dataRef key="teidata.pointer"/>
+                  </datatype>
+                </attDef>
+              </attList>
+            </classSpec>
+            
+            <classSpec type="atts" ident="att.responsibility" mode="change">
+              <attList>
+                <attDef ident="cert" mode="replace">
+                  <valList type="closed">
+                    <valItem ident="low"/>
+                    <valItem ident="high"/>
+                  </valList>
+                </attDef>
+              </attList>
+            </classSpec>
+            
+            <classSpec ident="att.witnessed" type="atts" mode="change">
+              <constraintSpec ident="crited.witnessed" scheme="isoschematron">
+                <constraint>
+                  <sch:rule context="tei:*[@wit]">
+                    <sch:report
+                      test="exists(for $i in tokenize(normalize-space(translate(@wit,'#','')),'\s+') return if(not(id($i))) then $i else null)"
+                      >No matching xmml:id for reference(s): <sch:value-of
+                        select="string-join(for $i in tokenize(normalize-space(translate(@wit,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
+                      />.</sch:report>
+                  </sch:rule>
+                </constraint>
+              </constraintSpec>
+            </classSpec>
+            
+            <classSpec ident="att.source" type="atts" mode="change">
+              <constraintSpec ident="crited.source" scheme="isoschematron">
+                <constraint>
+                  <sch:rule context="tei:*[@source]">
+                    <sch:report
+                      test="exists(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null)"
+                      >No matching xmml:id for reference(s): <sch:value-of
+                        select="string-join(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
+                      />.</sch:report>
+                  </sch:rule>
+                </constraint>
+              </constraintSpec>
+            </classSpec>
+          </schemaSpec></div>
       </body>
    </text>
 </TEI>
