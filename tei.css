@@ -41,11 +41,9 @@ of this software, even if advised of the possibility of such damage.
 @import url(https://fonts.google.com/?query=noto&selection.family=Noto+Mono);
 
 nav.navbar {
-	height: 77px;
 	background-color: #005cb9;
-}
-div.stdheader {
-	margin-top:83px;
+  margin:-15;
+  padding: 15;
 }
 
 body.simple{
@@ -136,7 +134,7 @@ body.pagetable{
 
 /* the main title */
 div.stdheader{
-    border-bottom:1pt solid black;
+    font-size: 1.3em;
 }
 
 #hdr{
@@ -863,12 +861,14 @@ div.altfigure{
     border-bottom:solid black 1pt;
 }
 
-table.table,
-table.table tr,
-table.table td{
-    border:solid black 1pt;
+table {
+  border-collapse: collapse;
 }
-table.table td{
+table th,
+table td{
+    border:solid gray 1pt;
+}
+table td,table th{
     padding:1ex 1ex 1ex 1ex;
 }
 p.mainAuthor{
