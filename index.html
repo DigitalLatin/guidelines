@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Digital Latin Library: Critical Editions Schemas</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+      integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+      crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="dll.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://digitallatin.org/"><img src="images/DLL-logo.png" alt="Digital Latin Library Home" /></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Critical Editions Schemas</h2>
+        <p>As part of its mission, the Digital Latin Library project is developing a
+          <a href="http://www.tei-c.org/Guidelines/Customization/odds.xml">TEI ODD</a>
+          and a set of schemas, derived from <a href="http://epidoc.sf.net">EpiDoc</a>,
+          that will serve as the foundation for the editions it publishes. You can track
+          the development of the Critical Editions ODD in our
+          <a href="https://github.com/DigitalLatin/Schema">repo</a>.</p>
+        <ul>
+          <li><a href="critical-editions.rng">RelaxNG Schema</a></li>
+          <li><a href="critical-editions.rnc">RNG Compact Schema</a></li>
+        </ul>
+        <p>These may be employed in a TEI document by linking them in schema declarations at the head of your document:
+          <pre>
+&lt;?xml version="1.1" encoding="UTF-8"?>
+&lt;?xml-model href="http://digitallatin.github.io/Schema/critical-editions.rng"
+            type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+&lt;?xml-model href="http://digitallatin.github.io/Schema/critical-editions.rng"
+            type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+&lt;TEI xmlns="http://www.tei-c.org/ns/1.0">
+...
+          </pre>
+
+        </p>
+      </div>
+    </div>
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+      integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+      crossorigin="anonymous"></script>
+  </body>
+</html>
