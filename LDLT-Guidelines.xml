@@ -23,6 +23,8 @@
    </teiHeader>
    <text>
       <body>
+
+         <!-- Add section on fragmentary witnesses using <witStart/> and <witEnd /> -->
          <div xml:id="LDLT-edition-structure">
             <head>Structure of an LDLT Edition</head>
 
@@ -96,34 +98,37 @@
                            <!--This is where the bibliography for the edition is listed.-->
                            <div xml:id="bibliography-manuscripts">
                               <head>Manuscripts</head>
-                              <!--Descriptions of manuscripts, using <gi>listWit</gi>.-->
+                              <!--Descriptions of manuscripts, using <listWit>.-->
                            </div>
                            <div xml:id="bibliography-early-editions">
                               <head>Early Editions</head>
                               <!--Bibliographical details for early editions or editiones vetustiores, using
-                                 <gi>listBibl</gi> with <att>type</att>="editions-witnesses".-->
+                                 <listBibl> with @xml:id="editions-witnesses".-->
                            </div>
                            <div xml:id="bibliography-modern-editions">
                               <head>Modern Editions</head>
                               <!--Bibliographical details for modern editions and commentaries, using
-                                 <gi>listBibl</gi> with <att>type</att>="editions-sources".-->
+                                 <listBibl> with @xml:id="editions-sources".-->
                            </div>
                            <div xml:id="bibliography-secondary-sources">
                               <head>Secondary Sources</head>
                               <!--Bibliographical details for articles, notes, books, and other sources,
-                              using <gi>listBibl</gi> with <att>type</att>="secondary-sources".-->
+                              using <listBibl> with @xml:id="secondary-sources".-->
                            </div>
                            <div xml:id="bibliography-scholars">
                               <head>List of Scholars Referred to By Name</head>
                               <!-- A list of the names of individual scholars referred to by name in the 
-                                 apparatus, if they are not listed elsewhere in the bibliography. -->
+                                 apparatus (if they are not listed elsewhere in the bibliography), using <listPerson> with @xml:id="scholars". -->
                            </div>
-                        </div>
-                        <div xml:id="conspectus">
-                           <head>Conspectus</head>
-                           <!--A key to the special sigla and abbreviations used in the edition (drawn
-                           from the <att>xml:id</att>'s assigned to the various items in the
+                           <div xml:id="bibliography-abbreviations">
+                              <!-- A list of other abbreviations used in the edition to refer to bibliographical items (e.g., cett., edd., etc.), using <list> with xml:id="abbreviations" -->
+                           </div>
+                           <div xml:id="conspectus">
+                              <head>Conspectus</head>
+                              <!--A key to the special sigla and abbreviations used in the edition (drawn
+                           from the @xml:id's assigned to the various items in the
                            bibliography).-->
+                           </div>
                         </div>
                      </front>
                      <body>
@@ -1871,53 +1876,183 @@
                <div xml:id="edition-text-speech-dialogue">
                   <head>Dialogue</head>
 
-                  <p>Texts that feature interlocutors (e.g., drama, dialogue) should be encoded
-                     using <gi>sp</gi> and <gi>speaker</gi>.</p>
+                  <p>In texts with interlocutors, the label for a speaker is a "paratext," or aid to
+                     the reader; it is not, strictly speaking, part of the text itself. For that
+                     reason, these guidelines treat labels for speakers as metadata associated with
+                     the point in the text where a character begins to speak. For example, the first
+                     line of Vergil's <title>Eclogues</title> is spoken by the character Corydon,
+                     but "Corydon" or "C" is not part of the text of the first line. Otherwise, the
+                     line would not scan properly as dactylic hexameter.</p>
 
-                  <p>
-                     <specList>
-                        <specDesc key="sp"/>
-                        <specDesc key="speaker"/>
-                     </specList>
-                  </p>
+                  <p>Texts that feature interlocutors (e.g., drama, dialogue) should use one of the
+                     following methods to indicate a change in speaker.</p>
 
-                  <list>
-                     <item><gi>sp</gi> (speech) groups elements related to a person or character's
-                        speech.</item>
-                     <item><att>who</att> is used with <gi>sp</gi> to identify the speaker.</item>
-                     <item><gi>speaker</gi> contains a human-readable label identifying the person
-                        or character speaking the text.</item>
-                  </list>
+                  <div xml:id="edition-text-speech-dialogue-label">
+                     <head>Labels</head>
 
-                  <p>These features can be used in verse and prose texts:</p>
+                     <p>Labels are the simplest way of indicating a change of speakers, since they
+                        do not add a new layer of hierachy to the markup.</p>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <sp who="Corydon">
-                        <speaker>C.</speaker>
-                        <l n="1">Nondum Solis equos declinis mitigat aestas,</l>
+                     <p>
+                        <specList>
+                           <specDesc key="label"/>
+                        </specList>
+                     </p>
+
+                     <p><gi>label</gi> with <att>type</att>="speaker" may be used as a simple way of
+                        indicating a change of speaker in verse and prose texts.</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p><label type="speaker">Laelius</label>Atqui, Cato, gratissimum nobis, ut
+                           etiam pro Scipione pollicear, feceris, si, quoniam speramus, volumus
+                           quidem certe, senes fieri, multo ante a te didicerimus quibus facillime
+                           rationibus ingravescentem aetatem ferre possimus.</p>
+                        <p><label type="speaker">Cato</label>Faciam vero, Laeli, praesertim si
+                           utrique vestrum, ut dicis, gratum futurum est.</p>
+                     </egXML>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <l n="1"><label type="speaker">C.</label>Nondum Solis equos declinis mitigat
+                           aestas,</l>
                         <l n="2">quamvis et madidis incumbant prela racemis</l>
                         <l n="3">et spument rauco ferventia musta susurro.</l>
                         <l n="4">cernis ut ecce pater quas tradidit, Ornyte, vaccae</l>
                         <l n="5">molle sub hirsuta latus explicuere genista?</l>
                         <l n="6">nos quoque vicinis cur non succedimus umbris?</l>
                         <l n="7">torrida cur solo defendimus ora galero?</l>
-                     </sp>
-                  </egXML>
+                     </egXML>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <sp who="Laelius">
-                        <speaker>Laelius</speaker>
-                        <p>Atqui, Cato, gratissimum nobis, ut etiam pro Scipione pollicear, feceris,
-                           si, quoniam speramus, volumus quidem certe, senes fieri, multo ante a te
-                           didicerimus quibus facillime rationibus ingravescentem aetatem ferre
-                           possimus.</p>
-                     </sp>
-                     <sp who="Cato">
-                        <speaker>Cato</speaker>
-                        <p>Faciam vero, Laeli, praesertim si utrique vestrum, ut dicis, gratum
-                           futurum est.</p>
-                     </sp>
-                  </egXML>
+                     <p>Since <gi>label</gi> is treated as metadata and thus ignored as part of the
+                        actual text, it will be omitted from searches of the text itself.</p>
+
+                     <p>Because <gi>label</gi> less hierarchical than <gi>sp</gi> (below), it is a
+                        good choice if there is considerable dispute in the sources about the
+                        attribution of lines to speakers. If used with <att>exclude</att>, it can
+                        enable the swapping of variants, to allow readers to see the text with
+                        alternate attributions.</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <l n="1"><label type="speaker"><app>
+                                 <lem wit="#G #P #A #φ" source="#Ulit. #Wernsd. #Glaeser"
+                                    xml:id="lem1.01-label-C" exclude="#rdg1.04-label-C"> C. </lem>
+                                 <rdg wit="#N #π #χ" source="#p" xml:id="rdg1.01-label-omit"/>
+                                 <rdg wit="#ε #β #γ #μ #ρ" xml:id="rdg1.01-label-O">O.</rdg>
+                              </app></label>Nondum Solis equos declinis mitigat aestas,</l>
+                        <l n="2">quamvis et madidis incumbant prela racemis</l>
+                        <l n="3">et spument rauco ferventia musta susurro.</l>
+                        <l n="4">
+                           <app>
+                              <lem/>
+                              <rdg wit="#V" exclude="#lem1.01-label-C" xml:id="rdg1.04-label-C"
+                                    ><label type="speaker">C.</label></rdg>
+                           </app>cernis ut ecce pater quas tradidit, Ornyte, vaccae</l>
+                        <l n="5">molle sub hirsuta latus explicuere genista?</l>
+                        <l n="6">nos quoque vicinis cur non succedimus umbris?</l>
+                        <l n="7">torrida cur solo defendimus ora galero?</l>
+                     </egXML>
+
+                     <p>In this example, the first line is attributed to Corydon, but some
+                        manuscripts and editions omit the label, and others attribute the lines to
+                        Ornytus. One family of manuscripts, <hi rend="bold">V</hi>, attributes the
+                        fourth line to Corydon. <att>exclude</att> has been used here to indicate
+                        that whenever the <gi>lem</gi> in line 1.1 is displayed, the variant reading
+                        in line 1.4 will not be displayed, since that would be a contradiction.
+                        Since the variant in line 1.4 does not contradict the variants in line 1.1,
+                        there is no need to use <att>exclude</att> in those cases.</p>
+
+                     <p>Note also the placement of <gi>label</gi> in the example above: in the first
+                        line, <gi>label</gi> is outside of <gi>app</gi> because the editor of the
+                        text is asserting that a label belongs there, but he is also indicating that
+                        there is disagreement in the sources about the contents of the label; in the
+                        fourth line, the editor asserts that a label does not belong on that line,
+                        but he also indicates that a variant reading inserts a label there.</p>
+
+                  </div>
+                  <!-- End section on <label> for speakers -->
+
+
+                  <div xml:id="edition-text-speech-dialogue-sp">
+                     <head>Semantic Markup of Speakers</head>
+
+                     <p>If it is desirable to mark the beginning and ending points of a character's
+                        speech, <gi>sp</gi> and <gi>speaker</gi> may be used.</p>
+
+                     <p>
+                        <specList>
+                           <specDesc key="sp"/>
+                           <specDesc key="speaker"/>
+                        </specList>
+                     </p>
+
+                     <list>
+                        <item><gi>sp</gi> (speech) groups elements related to a person or
+                           character's speech.</item>
+                        <item><att>who</att> is used with <gi>sp</gi> to identify the
+                           speaker.</item>
+                        <item><gi>speaker</gi> contains a human-readable label identifying the
+                           person or character speaking the text.</item>
+                     </list>
+
+                     <p>These features can be used in verse and prose texts:</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <sp who="Corydon">
+                           <speaker>C.</speaker>
+                           <l n="1">Nondum Solis equos declinis mitigat aestas,</l>
+                           <l n="2">quamvis et madidis incumbant prela racemis</l>
+                           <l n="3">et spument rauco ferventia musta susurro.</l>
+                           <l n="4">cernis ut ecce pater quas tradidit, Ornyte, vaccae</l>
+                           <l n="5">molle sub hirsuta latus explicuere genista?</l>
+                           <l n="6">nos quoque vicinis cur non succedimus umbris?</l>
+                           <l n="7">torrida cur solo defendimus ora galero?</l>
+                        </sp>
+                     </egXML>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <sp who="Laelius">
+                           <speaker>Laelius</speaker>
+                           <p>Atqui, Cato, gratissimum nobis, ut etiam pro Scipione pollicear,
+                              feceris, si, quoniam speramus, volumus quidem certe, senes fieri,
+                              multo ante a te didicerimus quibus facillime rationibus ingravescentem
+                              aetatem ferre possimus.</p>
+                        </sp>
+                        <sp who="Cato">
+                           <speaker>Cato</speaker>
+                           <p>Faciam vero, Laeli, praesertim si utrique vestrum, ut dicis, gratum
+                              futurum est.</p>
+                        </sp>
+                     </egXML>
+
+                     <p>The hierarchy involved in this method makes it impossible to enable the
+                        swapping of variant attributions. At most, <gi>app</gi> can be used to
+                        indicate where variant attibutions are found.</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <sp who="Corydon">
+                           <speaker>
+                              <app>
+                                 <lem wit="#G #P #A #φ" source="#Ulit. #Wernsd. #Glaeser">C.</lem>
+                                 <rdg wit="#N #π #χ"/>
+                                 <rdg wit="#ε #β #γ #μ #ρ">O.</rdg>
+                              </app>
+                           </speaker>
+                           <l n="1">Nondum Solis equos declinis mitigat aestas,</l>
+                           <l n="2">quamvis et madidis incumbant prela racemis</l>
+                           <l n="3">et spument rauco ferventia musta susurro.</l>
+                           <l n="4"><app>
+                                 <lem/>
+                                 <rdg wit="#V" exclude="#lem1.01-label-C" xml:id="rdg1.04-label-C"
+                                       ><label type="speaker">C.</label></rdg>
+                              </app>cernis ut ecce pater quas tradidit, Ornyte, vaccae</l>
+                           <l n="5">molle sub hirsuta latus explicuere genista?</l>
+                           <l n="6">nos quoque vicinis cur non succedimus umbris?</l>
+                           <l n="7">torrida cur solo defendimus ora galero?</l>
+                        </sp>
+                     </egXML>
+
+                     <!-- COME BACK TO THIS !!! -->
+
+                  </div>
                </div>
             </div>
             <div xml:id="edition-text-quotation">
@@ -1992,6 +2127,32 @@
                   <l n="9">conscia percussit meritorum pectora <persName ref="#Medea"
                         >Colchis</persName></l>
                </egXML>
+
+               <p>If there are variant readings of a name, <gi>persName</gi> should enclose the
+                     <gi>app</gi> with the lemma and variant reading(s):</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <persName ref="#Faunus">
+                     <app>
+                        <lem>Fauni</lem>
+                        <rdg wit="#P">fanni</rdg>
+                     </app>
+                  </persName>
+               </egXML>
+
+               <p>This will cause the lemma and the variant(s) to be identified as names.</p>
+
+               <p>But if it is clear that the nature of the variation is such that the lemma is a
+                  proper name, but the variant is a common noun (or vice versa), <gi>persName</gi>
+                  should enclose only the proper noun inside of <gi>lem</gi> or <gi>rdg</gi>.</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem><persName ref="#Meliboeus">Meliboeus</persName></lem>
+                     <rdg wit="#χ #φ"><persName ref="#Meliboeus">melibaeus</persName></rdg>
+                     <rdg wit="#μ">me libens</rdg></app>
+               </egXML>
+
             </div>
             <!-- End of section on people -->
 
@@ -2970,6 +3131,9 @@
                   </egXML>
                </div>
                <!-- End of subsection on omission-gap. -->
+
+               <!-- Add section on <witStart> and <witEnd> here? -->
+
             </div>
             <!-- End of section on omission -->
 
@@ -3574,178 +3738,176 @@
                </div>
                <!-- End section correction: specifications -->
 
-                  <div xml:id="apparatus-criticus-correction-examples">
-                     <head>Correction: Examples</head>
+               <div xml:id="apparatus-criticus-correction-examples">
+                  <head>Correction: Examples</head>
 
-                     <div xml:id="apparatus-criticus-correction-examples-1">
-                        <head>Example 1</head>
+                  <div xml:id="apparatus-criticus-correction-examples-1">
+                     <head>Example 1</head>
 
-                        <p>The first example is simple correction of a variant reading to the lemma:
-                           protegit] protegis <hi rend="bold">G</hi> (a.c.).</p>
+                     <p>The first example is simple correction of a variant reading to the lemma:
+                        protegit] protegis <hi rend="bold">G</hi> (a.c.).</p>
 
-                        <p>It is clear in this instance what the reading after correction is, so
-                           there is no need to report it. There is no need to list all of the other
-                           witnesses to the lemma, since it is clear that the uncorrected form is a
-                           unique reading. Also, the editor has decided that it is not useful to
-                           indicate which hand made the correction. In this example, manuscript <hi
-                              rend="bold">G</hi> has a variant reading <foreign xml:lang="la"
-                              >protegis</foreign> for the lemma <foreign xml:lang="la"
-                              >protegit</foreign>, to which the variant reading in <hi rend="bold"
-                              >G</hi> has been corrected.</p>
+                     <p>It is clear in this instance what the reading after correction is, so there
+                        is no need to report it. There is no need to list all of the other witnesses
+                        to the lemma, since it is clear that the uncorrected form is a unique
+                        reading. Also, the editor has decided that it is not useful to indicate
+                        which hand made the correction. In this example, manuscript <hi rend="bold"
+                           >G</hi> has a variant reading <foreign xml:lang="la">protegis</foreign>
+                        for the lemma <foreign xml:lang="la">protegit</foreign>, to which the
+                        variant reading in <hi rend="bold">G</hi> has been corrected.</p>
 
-                        <p>In this instance, the encoding for the prose method and the semantic
-                           markup method are identical:</p>
+                     <p>In this instance, the encoding for the prose method and the semantic markup
+                        method are identical:</p>
 
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <app>
-                              <lem xml:id="lem-protegit">protegit</lem>
-                              <rdg wit="#G" xml:id="rdg-protegis">protegis</rdg>
-                              <witDetail wit="#G" target="#rdg-protegis" corresp="#lem-protegit"
-                                 type="correction-original"/>
-                           </app>
-                        </egXML>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <lem xml:id="lem-protegit">protegit</lem>
+                           <rdg wit="#G" xml:id="rdg-protegis">protegis</rdg>
+                           <witDetail wit="#G" target="#rdg-protegis" corresp="#lem-protegit"
+                              type="correction-original"/>
+                        </app>
+                     </egXML>
 
-                     </div>
-                     <!-- End of first example of correction -->
+                  </div>
+                  <!-- End of first example of correction -->
 
-                     <div xml:id="apparatus-criticus-correction-examples-2">
-                        <head>Example 2</head>
+                  <div xml:id="apparatus-criticus-correction-examples-2">
+                     <head>Example 2</head>
 
-                        <p>This example is similar to the first one, but it is necessary to indicate
-                           the hand that made the correction.</p>
+                     <p>This example is similar to the first one, but it is necessary to indicate
+                        the hand that made the correction.</p>
 
-                        <p>The lemma is <foreign xml:lang="la">insidias</foreign>. Manuscript <hi
-                              rend="bold">N</hi> has <foreign xml:lang="la">insidia</foreign>; <hi
-                              rend="bold">N<hi rend="superscript">2</hi></hi> has added the letter
-                           "s." A traditional apparatus criticus might report this as follows:
-                           insidias] insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi
-                                 rend="superscript">2</hi></hi>).</p>
+                     <p>The lemma is <foreign xml:lang="la">insidias</foreign>. Manuscript <hi
+                           rend="bold">N</hi> has <foreign xml:lang="la">insidia</foreign>; <hi
+                           rend="bold">N<hi rend="superscript">2</hi></hi> has added the letter "s."
+                        A traditional apparatus criticus might report this as follows: insidias]
+                        insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi
+                              rend="superscript">2</hi></hi>).</p>
 
-                        <p>As in the first example, the encoding for the prose method and the
-                           semantic markup method are identical:</p>
+                     <p>As in the first example, the encoding for the prose method and the semantic
+                        markup method are identical:</p>
 
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <app>
-                              <lem xml:id="lem-insidias">insidias</lem>
-                              <rdg wit="#N" xml:id="rdg-insidia">insidia</rdg>
-                              <witDetail wit="#N" target="#rdg-insidia" corresp="#lem-insidias"
-                                 type="correction-original">corr. <hi rend="bold">N<hi
-                                       rend="superscript">2</hi></hi></witDetail>
-                           </app>
-                        </egXML>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <lem xml:id="lem-insidias">insidias</lem>
+                           <rdg wit="#N" xml:id="rdg-insidia">insidia</rdg>
+                           <witDetail wit="#N" target="#rdg-insidia" corresp="#lem-insidias"
+                              type="correction-original">corr. <hi rend="bold">N<hi
+                                    rend="superscript">2</hi></hi></witDetail>
+                        </app>
+                     </egXML>
 
-                        <p>This encoding will produce the following entry in the apparatus criticus:
-                           insidias] insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi
-                                 rend="superscript">2</hi></hi></p>
-                     </div>
-                     <!-- End of the second example -->
+                     <p>This encoding will produce the following entry in the apparatus criticus:
+                        insidias] insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi
+                              rend="superscript">2</hi></hi></p>
+                  </div>
+                  <!-- End of the second example -->
 
-                     <div xml:id="apparatus-critics-correction-examples-3">
-                        <head>Example 3:</head>
+                  <div xml:id="apparatus-critics-correction-examples-3">
+                     <head>Example 3:</head>
 
-                        <p>In this example, a variant reading is corrected to the lemma, but for a
-                           number of reasons it is important to indicate the reading before and
-                           after correction.</p>
+                     <p>In this example, a variant reading is corrected to the lemma, but for a
+                        number of reasons it is important to indicate the reading before and after
+                        correction.</p>
 
-                        <p>The witness <hi rend="bold">N</hi> originally had <hi rend="italic"
-                              >co</hi> and <hi rend="italic">ice</hi> with an erasure of two
-                           characters between them. The correcting hand <hi rend="bold">N<hi
-                                 rend="superscript">2</hi></hi> has inserted the letters "r" and "t"
-                           in the erasure. The corrected form (<hi rend="italic">cortice</hi>)
-                           matches the reading in witnesses <hi rend="bold">P</hi> and <hi
-                              rend="bold">V</hi>. Another reading is present in witnesses <hi
-                              rend="bold">G</hi> and <hi rend="bold">A</hi>. A traditional apparatus
-                           criticus might report this as follows: cortice <hi rend="bold">N<hi
-                                 rend="superscript">2</hi></hi> (<hi rend="italic">p.c.</hi>, rt <hi
-                              rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> :
-                           co&#10214;..&#10215;ice <hi rend="bold">N</hi> (a.c.) : codice <hi
-                              rend="bold">G A</hi>.</p>
+                     <p>The witness <hi rend="bold">N</hi> originally had <hi rend="italic">co</hi>
+                        and <hi rend="italic">ice</hi> with an erasure of two characters between
+                        them. The correcting hand <hi rend="bold">N<hi rend="superscript"
+                           >2</hi></hi> has inserted the letters "r" and "t" in the erasure. The
+                        corrected form (<hi rend="italic">cortice</hi>) matches the reading in
+                        witnesses <hi rend="bold">P</hi> and <hi rend="bold">V</hi>. Another reading
+                        is present in witnesses <hi rend="bold">G</hi> and <hi rend="bold">A</hi>. A
+                        traditional apparatus criticus might report this as follows: cortice <hi
+                           rend="bold">N<hi rend="superscript">2</hi></hi> (<hi rend="italic"
+                           >p.c.</hi>, rt <hi rend="italic">add. in ras.</hi>) <hi rend="bold"
+                           >PV</hi> : co&#10214;..&#10215;ice <hi rend="bold">N</hi> (a.c.) : codice
+                           <hi rend="bold">G A</hi>.</p>
 
-                        <p>In the prose method, the details are described in <gi>witDetail</gi>:</p>
+                     <p>In the prose method, the details are described in <gi>witDetail</gi>:</p>
 
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <app>
-                              <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
-                              <rdg wit="#N" xml:id="rdg-coice">co&#10214;..&#10215;ice</rdg>
-                              <rdg wit="#G #A">codice</rdg>
-                              <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice"
-                                 type="correction-original"/>
-                              <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice"
-                                 type="correction-altered">rt <hi rend="italic">add. in
-                                 ras.</hi></witDetail>
-                           </app>
-                        </egXML>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
+                           <rdg wit="#N" xml:id="rdg-coice">co&#10214;..&#10215;ice</rdg>
+                           <rdg wit="#G #A">codice</rdg>
+                           <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice"
+                              type="correction-original"/>
+                           <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice"
+                              type="correction-altered">rt <hi rend="italic">add. in
+                              ras.</hi></witDetail>
+                        </app>
+                     </egXML>
 
-                        <p>This encoding will produce the following entry in the apparatus criticus:
-                           cortice <hi rend="bold">N<hi rend="superscript">2</hi></hi> (<hi
-                              rend="italic">p.c.</hi>, rt <hi rend="italic">add. in ras.</hi>) <hi
-                              rend="bold">PV</hi> : co&#10214;..&#10215;ice <hi rend="bold">N</hi>
-                           (a.c.) : codice <hi rend="bold">G A</hi>.</p>
+                     <p>This encoding will produce the following entry in the apparatus criticus:
+                        cortice <hi rend="bold">N<hi rend="superscript">2</hi></hi> (<hi
+                           rend="italic">p.c.</hi>, rt <hi rend="italic">add. in ras.</hi>) <hi
+                           rend="bold">PV</hi> : co&#10214;..&#10215;ice <hi rend="bold">N</hi>
+                        (a.c.) : codice <hi rend="bold">G A</hi>.</p>
 
-                        <p>The semantic markup method uses techniques described elsewhere in these
-                           guidelines to make the details readable by humans and machines:</p>
+                     <p>The semantic markup method uses techniques described elsewhere in these
+                        guidelines to make the details readable by humans and machines:</p>
 
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <app>
-                              <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
-                              <rdg wit="#N" xml:id="rdg-coice">co<del rend="erasure"><gap
-                                       reason="lost" quantity="2" unit="character"/></del>ice</rdg>
-                              <rdg wit="#G #A">codice</rdg>
-                              <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice"
-                                 type="correction-original"/>
-                              <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice"
-                                 type="correction-altered"><add place="inRas">rt</add></witDetail>
-                           </app>
-                        </egXML>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
+                           <rdg wit="#N" xml:id="rdg-coice">co<del rend="erasure"><gap reason="lost"
+                                    quantity="2" unit="character"/></del>ice</rdg>
+                           <rdg wit="#G #A">codice</rdg>
+                           <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice"
+                              type="correction-original"/>
+                           <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice"
+                              type="correction-altered"><add place="inRas">rt</add></witDetail>
+                        </app>
+                     </egXML>
 
-                        <p>That encoding would produce the following entry: cortice <hi rend="bold"
-                                 >N<hi rend="superscript">2</hi></hi> (<hi rend="italic">p.c.</hi>,
-                           rt <hi rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> :
-                           co&#10214;..&#10215;ice <hi rend="bold">N</hi> (a.c.) : codice <hi
-                              rend="bold">G A</hi>.</p>
-                     </div>
-                     <!-- End of the third example of correction -->
+                     <p>That encoding would produce the following entry: cortice <hi rend="bold"
+                              >N<hi rend="superscript">2</hi></hi> (<hi rend="italic">p.c.</hi>, rt
+                           <hi rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> :
+                        co&#10214;..&#10215;ice <hi rend="bold">N</hi> (a.c.) : codice <hi
+                           rend="bold">G A</hi>.</p>
+                  </div>
+                  <!-- End of the third example of correction -->
 
 
-                     <div xml:id="apparatus-criticus-correction-examples-4">
-                        <head>Example 4</head>
+                  <div xml:id="apparatus-criticus-correction-examples-4">
+                     <head>Example 4</head>
 
-                        <p>This example includes multiple corrections.</p>
+                     <p>This example includes multiple corrections.</p>
 
-                        <p>The lemma is <foreign xml:lang="la">descripta</foreign>. Manuscript <hi
-                              rend="bold">N</hi> originally had <foreign xml:lang="la"
-                              >dipicta</foreign>, but <hi rend="bold">N<hi rend="superscript"
-                              >1</hi></hi> corrected it to <foreign xml:lang="la">depicta</foreign>.
-                           Another hand (<hi rend="bold">N<hi rend="superscript">2</hi></hi> has
-                              <foreign xml:lang="la">descripta</foreign> in the margin. Other
-                           manuscripts support these and other readings. A traditional apparatus
-                           criticus might report this as follows: descripta <hi rend="bold">P V N<hi
-                                 rend="superscript">2</hi></hi> (in mg.) : depicta <hi rend="bold">G
-                                 N<hi rend="superscript">1</hi></hi> (p.c.) : dipicta <hi
-                              rend="bold">N</hi> (a.c.).</p>
+                     <p>The lemma is <foreign xml:lang="la">descripta</foreign>. Manuscript <hi
+                           rend="bold">N</hi> originally had <foreign xml:lang="la"
+                           >dipicta</foreign>, but <hi rend="bold">N<hi rend="superscript"
+                           >1</hi></hi> corrected it to <foreign xml:lang="la">depicta</foreign>.
+                        Another hand (<hi rend="bold">N<hi rend="superscript">2</hi></hi> has
+                           <foreign xml:lang="la">descripta</foreign> in the margin. Other
+                        manuscripts support these and other readings. A traditional apparatus
+                        criticus might report this as follows: descripta <hi rend="bold">P V N<hi
+                              rend="superscript">2</hi></hi> (in mg.) : depicta <hi rend="bold">G
+                              N<hi rend="superscript">1</hi></hi> (p.c.) : dipicta <hi rend="bold"
+                           >N</hi> (a.c.).</p>
 
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <app>
-                              <lem wit="#N2 #P #V" xml:id="lem-descripta">descripta</lem>
-                              <witDetail wit="#N2" target="#lem-descripta">in mg.</witDetail>
-                              <rdg wit="#G #N1" xml:id="rdg-depicta">depicta</rdg>
-                              <witDetail wit="#N1" target="#rdg-depicta" corresp="#rdg-dipicta"
-                                 type="correction-altered"/>
-                              <rdg wit="#N" xml:id="rdg-dipicta">dipicta</rdg>
-                              <witDetail wit="#N" target="#rdg-dipicta" corresp="#rdg-depicta"
-                                 type="correction-original"/>
-                           </app>
-                        </egXML>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <lem wit="#N2 #P #V" xml:id="lem-descripta">descripta</lem>
+                           <witDetail wit="#N2" target="#lem-descripta">in mg.</witDetail>
+                           <rdg wit="#G #N1" xml:id="rdg-depicta">depicta</rdg>
+                           <witDetail wit="#N1" target="#rdg-depicta" corresp="#rdg-dipicta"
+                              type="correction-altered"/>
+                           <rdg wit="#N" xml:id="rdg-dipicta">dipicta</rdg>
+                           <witDetail wit="#N" target="#rdg-dipicta" corresp="#rdg-depicta"
+                              type="correction-original"/>
+                        </app>
+                     </egXML>
 
-                        <p>This encoding will produce the following entry in the apparatus criticus:
-                           descripta <hi rend="bold">N<hi rend="superscript">2</hi></hi> (in mg. <hi
-                              rend="bold">PV</hi> : depicta <hi rend="bold">G N<hi
-                                 rend="superscript">1</hi></hi> (p.c.) : dipicta <hi rend="bold"
-                              >N</hi> (a.c.).</p>
+                     <p>This encoding will produce the following entry in the apparatus criticus:
+                        descripta <hi rend="bold">N<hi rend="superscript">2</hi></hi> (in mg. <hi
+                           rend="bold">PV</hi> : depicta <hi rend="bold">G N<hi rend="superscript"
+                              >1</hi></hi> (p.c.) : dipicta <hi rend="bold">N</hi> (a.c.).</p>
 
-                     </div>
-                     <!-- End of the fourth example -->
-                  </div><!-- End of the section on examples of correction -->
+                  </div>
+                  <!-- End of the fourth example -->
+               </div>
+               <!-- End of the section on examples of correction -->
             </div>
             <!-- End of section on correction -->
 
@@ -3867,9 +4029,9 @@
                         </app></p>
                   </egXML>
 
-                  <p>The same encoding should be used to indicated the conjectured lacuna of a
-                     number of lines of verse. For example, <ref target="#verdiere-calpurnius">Raoul
-                        Verdière</ref> argues that nine verses have been omitted by the copyist of
+                  <p>The same encoding should be used to indicate the conjectured lacuna of a
+                     number of lines of verse. For example, <ref target="#verdiere-calpurnius"
+                        >Verdière</ref> argues that nine verses have been omitted by the copyist of
                      the archetype of all manuscripts of Calpurnius Siculus' eclogues. He prints
                      nine lines of equally spaced dots in the text, and he writes in the apparatus
                      criticus, <quote>u. 1–9 <hi rend="italic">librarii incuria cecidisse
@@ -3881,15 +4043,7 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app type="line-omission">
                         <lem source="#Verdière" xml:id="lem-1.1-9">
-                           <l n="1"><gap reason="lost"/></l>
-                           <l n="2"><gap reason="lost"/></l>
-                           <l n="3"><gap reason="lost"/></l>
-                           <l n="4"><gap reason="lost"/></l>
-                           <l n="5"><gap reason="lost"/></l>
-                           <l n="6"><gap reason="lost"/></l>
-                           <l n="7"><gap reason="lost"/></l>
-                           <l n="8"><gap reason="lost"/></l>
-                           <l n="9"><gap reason="lost"/></l>
+                           <gap reason="lost" quantity="9" unit="lines" />
                         </lem>
                         <note target="#lem-1.1-9">u. 1–9 librarii incuria cecidisse putavit
                            Verdière</note>
