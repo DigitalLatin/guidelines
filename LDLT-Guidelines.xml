@@ -3088,6 +3088,15 @@
 
                <div xml:id="apparatus-criticus-omission-gaps">
                   <head>Gaps in Witnesses</head>
+                  
+                  <p>
+                     <specList>
+                        <specDesc key="lacunaStart"/>
+                        <specDesc key="lacunaEnd"/>
+                        <specDesc key="witStart"/>
+                        <specDesc key="witEnd"/>
+                     </specList>
+                  </p>
 
                   <p>If a witness or family of witnesses has a gap in coverage of the text, for
                      whatever reason, the gap should be noted in the apparatus criticus using
@@ -3129,10 +3138,33 @@
                               M</witDetail>
                         </app> disputationibus …</p>
                   </egXML>
+
+                  <p>Conversely, the presence of fragmentary witnesses should be noted in the
+                     apparatus criticus using <gi>witStart</gi> and <gi>witEnd</gi>.</p>
+
+                  <p>The fragmentary witnesses known collectively as "Exc. Par." (= Thuaneus 7647
+                     and Nostradamensis 17903) in Giarratno's edition of Calpurnius Siculus have the
+                     couplet 5.12–13. Giarratano notes this fact in the apparatus criticus as
+                     follows: <foreign xml:lang="la">12 et sq. habent Exc. Par.</foreign>. In an
+                     LDLT edition, the presence of a fragmentary witness should be noted in an
+                        <gi>app</gi> as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l n="12"><app>
+                           <lem>aspicis</lem>
+                           <rdg wit="#ExcPar"><witStart/></rdg>
+                        </app> ut nobis aetas iam mille querelas</l>
+                     <l n="13">afferat et baculum premat inclinata <app>
+                           <lem>senectus</lem>
+                           <rdg wit="#ExcPar"><witEnd/></rdg>
+                        </app>?</l>
+                  </egXML>
+
+                  <p><gi>rdg</gi> with <att>wit</att> and the value of the witness' machine-readable
+                     siglum (<att>xml:id</att>) encloses <gi>witStart</gi> or <gi>witEnd</gi> to
+                     show where the witness begins and ends.</p>
                </div>
                <!-- End of subsection on omission-gap. -->
-
-               <!-- Add section on <witStart> and <witEnd> here? -->
 
             </div>
             <!-- End of section on omission -->
@@ -4029,8 +4061,8 @@
                         </app></p>
                   </egXML>
 
-                  <p>The same encoding should be used to indicate the conjectured lacuna of a
-                     number of lines of verse. For example, <ref target="#verdiere-calpurnius"
+                  <p>The same encoding should be used to indicate the conjectured lacuna of a number
+                     of lines of verse. For example, <ref target="#verdiere-calpurnius"
                         >Verdière</ref> argues that nine verses have been omitted by the copyist of
                      the archetype of all manuscripts of Calpurnius Siculus' eclogues. He prints
                      nine lines of equally spaced dots in the text, and he writes in the apparatus
@@ -4043,7 +4075,7 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app type="line-omission">
                         <lem source="#Verdière" xml:id="lem-1.1-9">
-                           <gap reason="lost" quantity="9" unit="lines" />
+                           <gap reason="lost" quantity="9" unit="lines"/>
                         </lem>
                         <note target="#lem-1.1-9">u. 1–9 librarii incuria cecidisse putavit
                            Verdière</note>
