@@ -6,7 +6,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>XML Patterns for Representing Critical Edition Data</title>
+            <title>XML Patterns for Encoding Critical Editions</title>
             <respStmt>
                <resp>Developed by</resp>
                <name>Samuel J. Huskey</name>
@@ -23,12 +23,40 @@
    </teiHeader>
    <text>
       <body>
+        <div xml:id="Getting-started">
+          <head>Getting Started</head>
+          <p>These Guidelines describe how to create a critical edition for the Digital Latin Library's
+            <bibl><title>Library of Digital Latin Texts</title></bibl>. The LDLT uses a customization
+            of the standard established by the <ref target="#TEI">Text Encoding Initiative (TEI)</ref>.
+            LDLT texts are in a format called XML, which uses tags wrapped in angle brackets to mark
+            various aspects of the text. XML is a <soCalled>plain text</soCalled> format, meaning writing programs like
+            Microsoft Word are not suitable for editing it. We recommend you either purchase an XML
+            editor, like <ref target="https://www.oxygenxml.com/">oXygen</ref>, or use a free text editor, ideally with XML support. 
+            <ref target="https://atom.io/">Atom</ref>, with the 
+            <ref target="https://atom.io/packages/linter-autocomplete-jing">linter-autocomplete-jing</ref>
+            plugin is one example. Oxygen comes with a lot of built-in TEI support, so it may give you a 
+            better experience. </p>
+          <p>There are some very basic rules to editing XML documents you should be aware of: XML tags 
+            (or elements) must nest properly. If you open one (e.g. <code>&lt;p></code>), you must close 
+            it (<code>&lt;/p></code>) or have it close itself (e.g. <code>&lt;ptr/></code>). You can 
+            have only one root element (<code>&lt;TEI></code> in this case). Some special characters 
+            (especially <code>&lt;</code>) need to be escaped (<code>&amp;lt;</code> is how you do a 
+            left angle branket). LDLT documents use a <soCalled>schema</soCalled> to check whether the 
+            tags you've used are in the right places. In general, you can only put certain tags in 
+            certain locations, so no <gi>div</gi>s (which mark a section of text, e.g. a chapter) inside 
+            a <gi>p</gi> (a paragraph), for example (because that would be silly). The schema contains 
+            rules that enforce these kinds of restrictions. Your editing program 
+            should tell you when and where you've done something wrong, and should help you out by 
+            telling you what tags you're allowed to use at any given spot. We have provided a 
+            <ref target="https://digitallatin.github.io/guidelines/template.xml">template</ref> file to 
+            get you started with your edition.
+          </p>
+        </div>
          <div xml:id="LDLT-edition-structure">
             <head>Structure of an LDLT Edition</head>
 
-            <p>This section describes the basic structure of the file containing an edition for the
-               Digital Latin Library’s <bibl><title>Library of Digital Latin Texts</title></bibl>
-               (LDLT). The structure of an LDLT edition resembles the structure of a traditional
+            <p>This section describes the basic structure of the file containing an edition for the LDLT. 
+              The structure of an LDLT edition resembles the structure of a traditional
                printed critical edition:</p>
             <list>
                <head>Parts of an LDLT Edition</head>
@@ -41,9 +69,6 @@
                The nature of the text and the editor’s judgment will determine the contents of an
                edition. The purpose of this section is to define the parts of an LDLT edition and
                provide guidelines for representing them in XML.</p>
-            <p>These guidelines are based on the standard established by the <ref target="#TEI">Text
-                  Encoding Initiative (TEI)</ref>, with modification and customization to
-               accommodate the special characteristics of Latin texts.</p>
 
             <div xml:id="general-structure">
                <head>General Structure of an LDLT Edition</head>
