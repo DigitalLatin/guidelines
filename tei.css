@@ -42,8 +42,8 @@ of this software, even if advised of the possibility of such damage.
 
 nav.navbar {
 	background-color: #005cb9;
-  margin:-15;
-  padding: 15;
+  margin:-15px;
+  padding: 15px;
 }
 
 body.simple{

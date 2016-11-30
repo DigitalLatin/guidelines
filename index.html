@@ -39,7 +39,8 @@
       <div class="container">
         <h2>Critical Editions Guidelines and Schemas</h2>
         <p>As part of its mission, the Digital Latin Library project is developing a
-          set of <a href="LDLT-Guidelines.html">guidelines</a> for the encoding of critical editions as a
+          set of <a href="LDLT-Guidelines.html">guidelines</a> for the encoding of critical
+          editions for the Library of Digital Latin Texts as a
           <a href="http://www.tei-c.org/Guidelines/Customization/odds.xml">TEI ODD</a>.
           A set of schemas, based on <a href="http://epidoc.sf.net">EpiDoc</a>,
           that will serve as the foundation for the editions it publishes are available
@@ -49,13 +50,14 @@
           <li><a href="critical-editions.rng">RelaxNG Schema</a></li>
           <li><a href="critical-editions.rnc">RNG Compact Schema</a></li>
           <li><a href="critical-editions.compiled.odd">Compiled ODD</a></li>
+          <li><a href="template.xml">A template file to get started with.</a></li>
         </ul>
         <p>These may be employed in a TEI document by linking them in schema declarations at the head of your document:
           <pre>
 &lt;?xml version="1.1" encoding="UTF-8"?>
-&lt;?xml-model href="http://digitallatin.github.io/Schema/critical-editions.rng"
+&lt;?xml-model href="https://digitallatin.github.io/Schema/critical-editions.rng"
             type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-&lt;?xml-model href="http://digitallatin.github.io/Schema/critical-editions.rng"
+&lt;?xml-model href="https://digitallatin.github.io/Schema/critical-editions.rng"
             type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 &lt;TEI xmlns="http://www.tei-c.org/ns/1.0">
 ...
