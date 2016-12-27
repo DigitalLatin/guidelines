@@ -2255,6 +2255,8 @@
                            >conjectured lacuna</ref></item>
                      <item>[ ... ] = <ref target="#apparatus-criticus-symbols-known-loss-characters"
                            >known amount of characters lost</ref></item>
+                     <item>[---] = <ref target="#apparatus-criticus-illegible-characters-unknown"
+                           >illegible characters, quantity unknown</ref>.</item>
                      <item>&#10214; &#10215; = <ref target="#apparatus-criticus-deletions">deletion
                            by a scribe in a witness</ref>.</item>
                      <item>{ } = <ref target="#apparatus-criticus-deletion-editorial">editorial
@@ -2348,6 +2350,38 @@
 
                </div>
                <!-- End section on uncertainly deciphered characters. -->
+               <div xml:id="apparatus-criticus-illegible-characters-unknown" corresp="http://www.stoa.org/epidoc/gl/latest/trans-illegiblecharunknown.html">
+                  <head>Illegible Characters, Quantity Unknown</head>
+
+                  <p>It is occasionally necessary to indicate the presence of illegible characters
+                     in a witness' text.</p>
+
+                  <p>
+                     <specList>
+                        <specDesc key="gap"/>
+                        <specDesc key="reason"/>
+                        <specDesc key="extent"/>
+                        <specDesc key="unit"/>
+                     </specList>
+                  </p>
+
+                  <p>For example, at Calp. 6.4, the lemma is <foreign xml:lang="la">dedit</foreign>,
+                     but the witness known as <hi rend="bold">N</hi> has <foreign xml:lang="la"
+                        >deo</foreign> and some illegible characters after it. Giarratano has
+                     indicated the presence of illegible characters with an asterisk: <foreign
+                        xml:lang="la">deo *</foreign>. These guidelines use dashes to indicate
+                     illegible characters, but the attributes <att>reason</att>, <att>extent</att>,
+                     and <att>unit</att> provide more information.</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>dedit</lem>
+                        <rdg wit="#N"><gap reason="illegible" extent="unknown" unit="character"
+                           /></rdg>
+                     </app>
+                  </egXML>
+
+               </div>
 
                <div xml:id="edition-text-lacunae">
                   <head>Lacunae</head>
@@ -3087,7 +3121,7 @@
 
                <div xml:id="apparatus-criticus-omission-gaps">
                   <head>Gaps in Witnesses</head>
-                  
+
                   <p>
                      <specList>
                         <specDesc key="lacunaStart"/>
