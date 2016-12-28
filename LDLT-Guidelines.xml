@@ -2237,15 +2237,15 @@
 
             </div>
             <!-- End of section on people -->
-            
-            <!-- Begin section on places. --> <!-- Start here. -->
+
+            <!-- Begin section on places. -->
 
             <div xml:id="edition-text-places">
                <head>Places</head>
-               <p>Place names, and the names of peoples, can be encoded in LDLT editions to
-                  facilitate creation of an index or to assist readers in identifying the places
-                  mentioned in the text. If it is desirable to encode this information, the
-                  following guidelines should be followed.</p>
+               <p>Names of places and peoples can be encoded in LDLT editions to facilitate creation
+                  of an index or to assist readers in identifying the places and peoples mentioned
+                  in the text. If it is desirable to encode this information, the following
+                  guidelines should be followed.</p>
 
                <p>
                   <specList>
@@ -2261,7 +2261,7 @@
                      source of URIs for place names.</item>
                   <item><gi>orgName</gi> (organization name) contains the name of the inhabitants of
                      a place, with <att>ref</att> and the canonical Uniform Resource Identifier
-                     (URI) for the place at <ref target="http://pleiades.stoa.org"
+                     (URI) for the people at <ref target="http://pleiades.stoa.org"
                      >Pleiades</ref>.</item>
                </list>
 
@@ -2310,6 +2310,8 @@
             </div>
             <!-- End of section on places -->
 
+            <!-- Begin section on symbols commonly used in the text. -->
+
             <div xml:id="edition-text-symbols">
                <head>Symbols Commonly Used in the Text of a Critical Edition</head>
 
@@ -2318,7 +2320,7 @@
                   The present guidelines observe the standards as described by <ref target="#West"
                      >West</ref> (80–81), but they call for semantically encoding them instead of
                   simply inserting the various punctuation marks and other symbols that represent
-                  complex information. The encoding will still produce the standard symbols, but the
+                  complex information. The encoding will produce the standard symbols, and the
                   information they represent will be explicit and in a form readable by humans and
                   machines. That means that it will also be available for processing, querying, and
                   analyzing with digital tools.</p>
@@ -2333,13 +2335,15 @@
                            target="#edition-text-uncertain-characters">text uncertainly
                            restored</ref>.</item>
                      <item>&lt; &gt; = <ref target="#apparatus-criticus-conjecture-and-emendation"
-                           >text added by conjecture or emendation</ref></item>
+                           >text added by conjecture or emendation</ref>.</item>
                      <item>*** = <ref target="#edition-text-lacuna">lacuna in the textual tradition
                            as a whole.</ref></item>
-                     <item>&lt; *** &gt; = <ref target="#apparatus-criticus-lacuna-conjecture"
+                     <item>&lt; *** &gt; = <ref
+                           target="#apparatus-criticus-conjecture-and-emendation-lacunae"
                            >conjectured lacuna</ref></item>
-                     <item>[ ... ] = <ref target="#apparatus-criticus-symbols-known-loss-characters"
-                           >known amount of characters lost</ref></item>
+                     <item>[ ... ] = <ref
+                           target="#apparatus-criticus-omission-known-loss-characters">known amount
+                           of characters lost</ref></item>
                      <item>[---] = <ref target="#apparatus-criticus-illegible-characters-unknown"
                            >illegible characters, quantity unknown</ref>.</item>
                      <item>&#10214; &#10215; = <ref target="#apparatus-criticus-deletions">deletion
@@ -2349,6 +2353,8 @@
                      <item>† † = <ref target="#apparatus-criticus-crux">text deemed to be
                            irretrievably corrupt</ref>.</item>
                   </list></p>
+               
+               <!-- Begin subsection on expansion of abbreviation. -->
 
                <div xml:id="edition-text-abbreviation-expansion">
                   <head>Expansion of Abbreviation</head>
@@ -2357,6 +2363,7 @@
                      ambiguity. Encoded according to the following guidelines, a digital edition
                      will display the abbreviated forms by default, but a user will be able to
                      toggle between the abbreviated and expanded forms.</p>
+                  <!-- Hugh: Is this indeed a feature of the reading room? -->
 
                   <p>The preface should indicate whether or not abbreviations are expanded.</p>
                   <p>
@@ -2374,6 +2381,7 @@
                      <item><gi>ex</gi> (editorial expansion) contains a sequence of letters added by
                         an editor or transcriber when expanding an abbreviation.</item>
                   </list>
+
                   <p>
                      <quote>M(arcus) Cicero S(alutem) D(ixit) L(ucio) Lucceio Q(uinti)
                         F(ilio)</quote>
@@ -2388,24 +2396,28 @@
                   </egXML>
 
                   <p>Multiple &lt;abbr&gt; elements within a single &lt;expan&gt; compose a single
-                     abbreviation between them. For example, e.g. is one abbreviation for the phrase
-                     “exempli gratia.”</p>
+                     abbreviation between them. For example, "e.g." is one abbreviation for the
+                     phrase “exempli gratia.”</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <abbr>e</abbr>
-                     <ex>xempli</ex>
-                     <abbr>g</abbr>
-                     <ex>ratia</ex>
+                     <expan>
+                        <abbr>e</abbr>
+                        <ex>xempli</ex>
+                        <abbr>g</abbr>
+                        <ex>ratia</ex>
+                     </expan>
                   </egXML>
                </div>
-               <!-- End section on expansion of abbreviations. -->
+               <!-- End subsection on expansion of abbreviations. -->
 
+               <!-- Begin subsection on uncertainly deciphered characters. -->
+               
                <div xml:id="edition-text-uncertain-characters">
-                  <head>Uncertainly Deciphered Characters</head>
+                  <head>Uncertainly Restored Characters</head>
 
                   <p>When an edition is based on a limited number of witnesses, it may be necessary
                      to indicate that characters are difficult to read. The accepted way to do this
-                     is with dots underneath the uncertainly deciphered characters.</p>
+                     is with dots underneath the uncertainly restored characters.</p>
 
                   <p>
                      <specList>
@@ -2434,41 +2446,10 @@
                   </egXML>
 
                </div>
-               <!-- End section on uncertainly deciphered characters. -->
-               <div xml:id="apparatus-criticus-illegible-characters-unknown"
-                  corresp="http://www.stoa.org/epidoc/gl/latest/trans-illegiblecharunknown.html">
-                  <head>Illegible Characters, Quantity Unknown</head>
-
-                  <p>It is occasionally necessary to indicate the presence of illegible characters
-                     in a witness' text.</p>
-
-                  <p>
-                     <specList>
-                        <specDesc key="gap"/>
-                        <specDesc key="reason"/>
-                        <specDesc key="extent"/>
-                        <specDesc key="unit"/>
-                     </specList>
-                  </p>
-
-                  <p>For example, at Calp. 6.4, the lemma is <foreign xml:lang="la">dedit</foreign>,
-                     but the witness known as <hi rend="bold">N</hi> has <foreign xml:lang="la"
-                        >deo</foreign> and some illegible characters after it. Giarratano has
-                     indicated the presence of illegible characters with an asterisk: <foreign
-                        xml:lang="la">deo *</foreign>. These guidelines use dashes to indicate
-                     illegible characters, but the attributes <att>reason</att>, <att>extent</att>,
-                     and <att>unit</att> provide more information.</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem>dedit</lem>
-                        <rdg wit="#N"><gap reason="illegible" extent="unknown" unit="character"
-                           /></rdg>
-                     </app>
-                  </egXML>
-
-               </div>
-
+               <!-- End subsection on uncertainly deciphered characters. -->
+               
+               <!-- Begin subsection on lacunae. -->
+               
                <div xml:id="edition-text-lacunae">
                   <head>Lacunae</head>
 
@@ -2512,8 +2493,9 @@
 
                   <p>These guidelines also have provisions for cases where an editor suspects a
                      lacuna in the text, but lacks physical evidence of damage to support the claim.
-                     See the section "<ref target="#apparatus-criticus-conjectured-lacunae"
-                        >Conjectured Lacunae</ref>" for more information.</p>
+                     See the section "<ref
+                        target="#apparatus-criticus-conjecture-and-emendation-lacunae">Conjectured
+                        Lacunae</ref>" for more information.</p>
 
                   <p>If a single witness or family of witnesses has a gap in coverage of the text,
                      but the rest of the tradition preserves the text, the symbol for a lacuna
@@ -2521,19 +2503,21 @@
                      apparatus criticus. See the section "<ref target="#apparatus-criticus-gaps">Gap
                         in Witnesses</ref>" for encoding instructions.</p>
                </div>
-               <!-- End of section on lacunae -->
+               <!-- End of subsection on lacunae -->
             </div>
-            <!-- End section on symbols in the main text. -->
+            <!-- End subsection on symbols in the main text. -->
          </div>
          <!-- End section on edition text. -->
 
+         <!-- Begin section on apparatus fontium et testium. -->
+         
          <div xml:id="apparatus-fontium-testium">
             <head>Apparatus Fontium et Testium</head>
 
-            <p>An apparatus fontium collects references to texts quoted or cited in the text of the
+            <p>An apparatus fontium et testium collects references to texts quoted or cited in the text of the
                edition. This section demonstrates how to encode such references so that they will be
                displayed appropriately in the text and so that bibliographical information about
-               them will appear in the apparatus fontium. </p>
+               them will appear in the edition. </p>
 
             <p>
                <specList>
@@ -2643,6 +2627,8 @@
             <p>The text of the quotation will be displayed in the apparatus fontium.</p>
          </div>
          <!-- End section on apparatus fontium -->
+         
+         <!-- Begin section on the apparatus criticus. --><!-- Start here. -->
 
          <div xml:id="apparatus-criticus">
             <head>Apparatus Criticus</head>
@@ -3116,8 +3102,8 @@
                <p>Related sections:<list>
                      <!-- Validate these references -->
                      <item><ref target="#edition-text-lacuna">Lacuna</ref></item>
-                     <item><ref target="#apparatus-criticus-conjectured-lacuna">Conjectured
-                           Lacuna</ref></item>
+                     <item><ref target="#apparatus-criticus-conjecture-and-emendation-lacunae"
+                           >Conjectured Lacuna</ref></item>
                      <item><ref target="#apparatus-criticus-deletions">Deletions</ref></item>
                   </list></p>
 
@@ -3212,89 +3198,89 @@
                   </egXML>
                </div>
                <!-- End section "Known amount of text lost" -->
-
-               <div xml:id="apparatus-criticus-omission-gaps">
-                  <head>Gaps in Witnesses</head>
-
-                  <p>
-                     <specList>
-                        <specDesc key="lacunaStart"/>
-                        <specDesc key="lacunaEnd"/>
-                        <specDesc key="witStart"/>
-                        <specDesc key="witEnd"/>
-                     </specList>
-                  </p>
-
-                  <p>If a witness or family of witnesses has a gap in coverage of the text, for
-                     whatever reason, the gap should be noted in the apparatus criticus using
-                        <gi>lacunaStart</gi> and <gi>lacunaEnd</gi>.</p>
-
-                  <p>The use of the term "lacuna" here is likely to cause confusion. The TEI
-                     Guidelines use the term "lacuna" in the elements <gi>lacunaStart</gi> and
-                        <gi>lacunaEnd</gi>, which are used here to indicate a gap in a witness or
-                     group of witnesses. If the gap occurs in the entire tradition, the guidelines
-                     in the section "<ref target="#edition-text-lacuna">Lacuna</ref>" should be
-                     followed.</p>
-
-                  <p>Sections 1.1–1.33.3 of Julius Caesar's <bibl><title>de Bello
-                        Civili</title></bibl> are missing from manuscript <hi rend="bold">M</hi>.
-                        <ref target="#damon-caesar">Cynthia Damon's OCT</ref> edition has the
-                     following in the critical apparatus: 1.1.1–1.33.3 <hi rend="italic">M deest,
-                        vice eius m citatur</hi>.</p>
-
-                  <p>In an LDLT edition, that should be encoded as follows:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem>Litteris</lem>
-                        <rdg wit="#M" xml:id="M-lacuna-1.1"><lacunaStart/></rdg>
-                        <witDetail wit="#M" target="#M-lacuna-1.1">1.1.1–1.33.3 M deest, vice eius m
-                           citatur.</witDetail>
-                     </app>
-                  </egXML>
-
-                  <p>At 1.33.3, the apparatus criticus has: <quote>-duum <hi rend="italic">hinc
-                           adest M</hi></quote>. In an LDLT edition, that should be encoded as
-                     follows:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <p>Sic tri<app>
-                           <lem>duum</lem>
-                           <rdg wit="#M" xml:id="rdg-1.33.3-lacunaEnd"><lacunaEnd/></rdg>
-                           <witDetail wit="#M" target="#rdg-1.33.3-lacunaEnd">hinc adest
-                              M</witDetail>
-                        </app> disputationibus …</p>
-                  </egXML>
-
-                  <p>Conversely, the presence of fragmentary witnesses should be noted in the
-                     apparatus criticus using <gi>witStart</gi> and <gi>witEnd</gi>.</p>
-
-                  <p>The fragmentary witnesses known collectively as "Exc. Par." (= Thuaneus 7647
-                     and Nostradamensis 17903) in Giarratno's edition of Calpurnius Siculus have the
-                     couplet 5.12–13. Giarratano notes this fact in the apparatus criticus as
-                     follows: <foreign xml:lang="la">12 et sq. habent Exc. Par.</foreign>. In an
-                     LDLT edition, the presence of a fragmentary witness should be noted in an
-                        <gi>app</gi> as follows:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <l n="12"><app>
-                           <lem>aspicis</lem>
-                           <rdg wit="#ExcPar"><witStart/></rdg>
-                        </app> ut nobis aetas iam mille querelas</l>
-                     <l n="13">afferat et baculum premat inclinata <app>
-                           <lem>senectus</lem>
-                           <rdg wit="#ExcPar"><witEnd/></rdg>
-                        </app>?</l>
-                  </egXML>
-
-                  <p><gi>rdg</gi> with <att>wit</att> and the value of the witness' machine-readable
-                     siglum (<att>xml:id</att>) encloses <gi>witStart</gi> or <gi>witEnd</gi> to
-                     show where the witness begins and ends.</p>
-               </div>
-               <!-- End of subsection on omission-gap. -->
-
             </div>
             <!-- End of section on omission -->
+            
+            <div xml:id="apparatus-criticus-gaps">
+               <head>Gaps in Witnesses</head>
+               
+               <p>
+                  <specList>
+                     <specDesc key="lacunaStart"/>
+                     <specDesc key="lacunaEnd"/>
+                     <specDesc key="witStart"/>
+                     <specDesc key="witEnd"/>
+                  </specList>
+               </p>
+               
+               <p>If a witness or family of witnesses has a gap in coverage of the text, for
+                  whatever reason, the gap should be noted in the apparatus criticus using
+                  <gi>lacunaStart</gi> and <gi>lacunaEnd</gi>.</p>
+               
+               <p>The use of the term "lacuna" here is likely to cause confusion. The TEI
+                  Guidelines use the term "lacuna" in the elements <gi>lacunaStart</gi> and
+                  <gi>lacunaEnd</gi>, which are used here to indicate a gap in a witness or
+                  group of witnesses. If the gap occurs in the entire tradition, the guidelines
+                  in the section "<ref target="#edition-text-lacuna">Lacuna</ref>" should be
+                  followed.</p>
+               
+               <p>Sections 1.1–1.33.3 of Julius Caesar's <bibl><title>de Bello
+                  Civili</title></bibl> are missing from manuscript <hi rend="bold">M</hi>.
+                  <ref target="#damon-caesar">Cynthia Damon's OCT</ref> edition has the
+                  following in the critical apparatus: 1.1.1–1.33.3 <hi rend="italic">M deest,
+                     vice eius m citatur</hi>.</p>
+               
+               <p>In an LDLT edition, that should be encoded as follows:</p>
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem>Litteris</lem>
+                     <rdg wit="#M" xml:id="M-lacuna-1.1"><lacunaStart/></rdg>
+                     <witDetail wit="#M" target="#M-lacuna-1.1">1.1.1–1.33.3 M deest, vice eius m
+                        citatur.</witDetail>
+                  </app>
+               </egXML>
+               
+               <p>At 1.33.3, the apparatus criticus has: <quote>-duum <hi rend="italic">hinc
+                  adest M</hi></quote>. In an LDLT edition, that should be encoded as
+                  follows:</p>
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p>Sic tri<app>
+                     <lem>duum</lem>
+                     <rdg wit="#M" xml:id="rdg-1.33.3-lacunaEnd"><lacunaEnd/></rdg>
+                     <witDetail wit="#M" target="#rdg-1.33.3-lacunaEnd">hinc adest
+                        M</witDetail>
+                  </app> disputationibus …</p>
+               </egXML>
+               
+               <p>Conversely, the presence of fragmentary witnesses should be noted in the
+                  apparatus criticus using <gi>witStart</gi> and <gi>witEnd</gi>.</p>
+               
+               <p>The fragmentary witnesses known collectively as "Exc. Par." (= Thuaneus 7647
+                  and Nostradamensis 17903) in Giarratno's edition of Calpurnius Siculus have the
+                  couplet 5.12–13. Giarratano notes this fact in the apparatus criticus as
+                  follows: <foreign xml:lang="la">12 et sq. habent Exc. Par.</foreign>. In an
+                  LDLT edition, the presence of a fragmentary witness should be noted in an
+                  <gi>app</gi> as follows:</p>
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <l n="12"><app>
+                     <lem>aspicis</lem>
+                     <rdg wit="#ExcPar"><witStart/></rdg>
+                  </app> ut nobis aetas iam mille querelas</l>
+                  <l n="13">afferat et baculum premat inclinata <app>
+                     <lem>senectus</lem>
+                     <rdg wit="#ExcPar"><witEnd/></rdg>
+                  </app>?</l>
+               </egXML>
+               
+               <p><gi>rdg</gi> with <att>wit</att> and the value of the witness' machine-readable
+                  siglum (<att>xml:id</att>) encloses <gi>witStart</gi> or <gi>witEnd</gi> to
+                  show where the witness begins and ends.</p>
+            </div>
+            <!-- End of subsection on omission-gap. -->
+            
 
             <div xml:id="apparatus-criticus-addition">
                <head>Addition</head>
@@ -3556,6 +3542,42 @@
                <!-- End of section on editorial deletion -->
             </div>
             <!-- End of section on deletion -->
+            
+            
+            <div xml:id="apparatus-criticus-illegible-characters-unknown"
+               corresp="http://www.stoa.org/epidoc/gl/latest/trans-illegiblecharunknown.html">
+               <head>Illegible Characters, Quantity Unknown</head>
+               
+               <p>It is occasionally necessary to indicate the presence of illegible characters
+                  in a witness' text.</p>
+               
+               <p>
+                  <specList>
+                     <specDesc key="gap"/>
+                     <specDesc key="reason"/>
+                     <specDesc key="extent"/>
+                     <specDesc key="unit"/>
+                  </specList>
+               </p>
+               
+               <p>For example, at Calp. 6.4, the lemma is <foreign xml:lang="la">dedit</foreign>,
+                  but the witness known as <hi rend="bold">N</hi> has <foreign xml:lang="la"
+                     >deo</foreign> and some illegible characters after it. Giarratano has
+                  indicated the presence of illegible characters with an asterisk: <foreign
+                     xml:lang="la">deo *</foreign>. These guidelines use dashes to indicate
+                  illegible characters, but the attributes <att>reason</att>, <att>extent</att>,
+                  and <att>unit</att> provide more information.</p>
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem>dedit</lem>
+                     <rdg wit="#N"><gap reason="illegible" extent="unknown" unit="character"
+                     /></rdg>
+                  </app>
+               </egXML>
+               
+            </div>
+            
 
             <div xml:id="apparatus-criticus-transposition">
                <head>Transpositions</head>
