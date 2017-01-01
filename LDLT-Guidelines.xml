@@ -3965,16 +3965,14 @@
                      Possible values:<list>
                         <item>correction-original: the original reading, i.e., before correction
                               (<foreign xml:lang="lat">ante correctionem</foreign> or a.c.). If
-                              <gi>witDetail</gi> is self-closing and has
-                           <att>type</att>="correction-original", the LDLT reader will insert
+                              <gi>witDetail</gi> with this type is self-closing, the LDLT reader will insert
                            "(a.c.)" after the siglum for the witness designated in <att>wit</att>.
                            Otherwise, the value of <gi>witDetail</gi> will be inserted in
                            parentheses after the siglum for the witness designated in
-                              <att>witt</att>.</item>
+                              <att>wit</att>.</item>
                         <item>correction-altered: the altered reading, i.e., after correction
                               (<foreign xml:lang="lat">post correctionem</foreign> or p.c.). If
-                              <gi>witDetail</gi> is self-closing and has
-                           <att>type</att>="correction-altered", the LDLT reader will insert
+                              <gi>witDetail</gi> with this type is self-closing, the LDLT reader will insert
                            "(p.c.)" after the witness designated in <att>wit</att>. Otherwise, the value of <gi>witDetail</gi>
                            will be inserted in parentheses after the siglum for the witness
                            designated in <att>witt</att>.</item>
