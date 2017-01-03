@@ -19,12 +19,40 @@
    </teiHeader>
    <text>
       <body>
+        <div xml:id="Getting-started">
+          <head>Getting Started</head>
+          <p>These Guidelines describe how to create a critical edition for the Digital Latin Library's
+            <bibl><title>Library of Digital Latin Texts</title></bibl>. The LDLT uses a customization
+            of the standard established by the <ref target="#TEI">Text Encoding Initiative (TEI)</ref>.
+            LDLT texts are in a format called XML, which uses tags wrapped in angle brackets to mark
+            various aspects of the text. XML is a <soCalled>plain text</soCalled> format, meaning writing programs like
+            Microsoft Word are not suitable for editing it. We recommend you either purchase an XML
+            editor, like <ref target="https://www.oxygenxml.com/">oXygen</ref>, or use a free text editor, ideally with XML support. 
+            <ref target="https://atom.io/">Atom</ref>, with the 
+            <ref target="https://atom.io/packages/linter-autocomplete-jing">linter-autocomplete-jing</ref>
+            plugin is one example. Oxygen comes with a lot of built-in TEI support, so it may give you a 
+            better experience. </p>
+          <p>There are some very basic rules to editing XML documents you should be aware of: XML tags 
+            (or elements) must nest properly. If you open one (e.g. <code>&lt;p&gt;</code>), you must close 
+            it (<code>&lt;/p&gt;</code>) or have it close itself (e.g. <code>&lt;ptr/&gt;</code>). You can 
+            have only one root element (<code>&lt;TEI&gt;</code> in this case). Some special characters 
+            (especially <code>&lt;</code>) need to be escaped (<code>&amp;lt;</code> is how you do a 
+            left angle branket). LDLT documents use a <soCalled>schema</soCalled> to check whether the 
+            tags you've used are in the right places. In general, you can only put certain tags in 
+            certain locations, so no <gi>div</gi>s (which mark a section of text, e.g. a chapter) inside 
+            a <gi>p</gi> (a paragraph), for example (because that would be silly). The schema contains 
+            rules that enforce these kinds of restrictions. Your editing program 
+            should tell you when and where you've done something wrong, and should help you out by 
+            telling you what tags you're allowed to use at any given spot. We have provided a 
+            <ref target="https://digitallatin.github.io/guidelines/template.xml">template</ref> file to 
+            get you started with your edition.
+          </p>
+        </div>
          <div xml:id="LDLT-edition-structure">
             <head>Structure of an LDLT Edition</head>
 
-            <p>This section describes the basic structure of the file containing an edition for the
-               Digital Latin Library’s <bibl><title>Library of Digital Latin Texts</title></bibl>
-               (LDLT). The structure of an LDLT edition resembles the structure of a traditional
+            <p>This section describes the basic structure of the file containing an edition for the LDLT. 
+              The structure of an LDLT edition resembles the structure of a traditional
                printed critical edition:</p>
             <list>
                <head>Parts of an LDLT Edition</head>
@@ -37,9 +65,6 @@
                The nature of the text and the editor’s judgment will determine the contents of an
                edition. The purpose of this section is to define the parts of an LDLT edition and
                provide guidelines for representing them in XML.</p>
-            <p>These guidelines are based on the standard established by the <ref target="#TEI">Text
-                  Encoding Initiative (TEI)</ref>, with modification and customization to
-               accommodate the special characteristics of Latin texts.</p>
 
             <div xml:id="general-structure">
                <head>General Structure of an LDLT Edition</head>
@@ -91,34 +116,37 @@
                            <!--This is where the bibliography for the edition is listed.-->
                            <div xml:id="bibliography-manuscripts">
                               <head>Manuscripts</head>
-                              <!--Descriptions of manuscripts, using <gi>listWit</gi>.-->
+                              <!--Descriptions of manuscripts, using <listWit>.-->
                            </div>
                            <div xml:id="bibliography-early-editions">
                               <head>Early Editions</head>
                               <!--Bibliographical details for early editions or editiones vetustiores, using
-                                 <gi>listBibl</gi> with <att>type</att>="editions-witnesses".-->
+                                 <listBibl> with @xml:id="editions-witnesses".-->
                            </div>
                            <div xml:id="bibliography-modern-editions">
                               <head>Modern Editions</head>
                               <!--Bibliographical details for modern editions and commentaries, using
-                                 <gi>listBibl</gi> with <att>type</att>="editions-sources".-->
+                                 <listBibl> with @xml:id="editions-sources".-->
                            </div>
                            <div xml:id="bibliography-secondary-sources">
                               <head>Secondary Sources</head>
                               <!--Bibliographical details for articles, notes, books, and other sources,
-                              using <gi>listBibl</gi> with <att>type</att>="secondary-sources".-->
+                              using <listBibl> with @xml:id="secondary-sources".-->
                            </div>
                            <div xml:id="bibliography-scholars">
                               <head>List of Scholars Referred to By Name</head>
                               <!-- A list of the names of individual scholars referred to by name in the 
-                                 apparatus, if they are not listed elsewhere in the bibliography. -->
+                                 apparatus (if they are not listed elsewhere in the bibliography), using <listPerson> with @xml:id="scholars". -->
                            </div>
-                        </div>
-                        <div xml:id="conspectus">
-                           <head>Conspectus</head>
-                           <!--A key to the special sigla and abbreviations used in the edition (drawn
-                           from the <att>xml:id</att>'s assigned to the various items in the
+                           <div xml:id="bibliography-abbreviations">
+                              <!-- A list of other abbreviations used in the edition to refer to bibliographical items (e.g., cett., edd., etc.), using <list> with xml:id="abbreviations" -->
+                           </div>
+                           <div xml:id="conspectus">
+                              <head>Conspectus</head>
+                              <!--A key to the special sigla and abbreviations used in the edition (drawn
+                           from the @xml:id's assigned to the various items in the
                            bibliography).-->
+                           </div>
                         </div>
                      </front>
                      <body>
@@ -1753,53 +1781,179 @@
                <div xml:id="edition-text-speech-dialogue">
                   <head>Dialogue</head>
 
-                  <p>Texts that feature interlocutors (e.g., drama, dialogue) should be encoded
-                     using <gi>sp</gi> and <gi>speaker</gi>.</p>
+                  <p>In texts with interlocutors, the label for a speaker is a "paratext," or aid to
+                     the reader; it is not, strictly speaking, part of the text itself. For that
+                     reason, these guidelines treat labels for speakers as metadata associated with
+                     the point in the text where a character begins to speak. For example, the first
+                     line of Vergil's <title>Eclogues</title> is spoken by the character Corydon,
+                     but "Corydon" or "C" is not part of the text of the first line. Otherwise, the
+                     line would not scan properly as dactylic hexameter.</p>
 
-                  <p>
-                     <specList>
-                        <specDesc key="sp"/>
-                        <specDesc key="speaker"/>
-                     </specList>
-                  </p>
+                  <p>Texts that feature interlocutors (e.g., drama, dialogue) should use one of the
+                     following methods to indicate a change in speaker.</p>
+                  <div xml:id="edition-text-speech-dialogue-label">
+                     <head>Labels</head>
 
-                  <list>
-                     <item><gi>sp</gi> (speech) groups elements related to a person or character’s
-                        speech.</item>
-                     <item><att>who</att> is used with <gi>sp</gi> to identify the speaker.</item>
-                     <item><gi>speaker</gi> contains a human-readable label identifying the person
-                        or character speaking the text.</item>
-                  </list>
+                     <p>Labels are the simplest way of indicating a change of speakers, since they
+                        do not add a new layer of hierachy to the markup.</p>
 
-                  <p>These features can be used in verse and prose texts:</p>
+                     <p>
+                        <specList>
+                           <specDesc key="label"/>
+                        </specList>
+                     </p>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <sp who="Corydon">
-                        <speaker>C.</speaker>
-                        <l n="1">Nondum Solis equos declinis mitigat aestas,</l>
+                     <p><gi>label</gi> with <att>type</att>="speaker" may be used as a simple way of
+                        indicating a change of speaker in verse and prose texts.</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p><label type="speaker">Laelius</label>Atqui, Cato, gratissimum nobis, ut
+                           etiam pro Scipione pollicear, feceris, si, quoniam speramus, volumus
+                           quidem certe, senes fieri, multo ante a te didicerimus quibus facillime
+                           rationibus ingravescentem aetatem ferre possimus.</p>
+                        <p><label type="speaker">Cato</label>Faciam vero, Laeli, praesertim si
+                           utrique vestrum, ut dicis, gratum futurum est.</p>
+                     </egXML>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <l n="1"><label type="speaker">C.</label>Nondum Solis equos declinis mitigat
+                           aestas,</l>
                         <l n="2">quamvis et madidis incumbant prela racemis</l>
                         <l n="3">et spument rauco ferventia musta susurro.</l>
                         <l n="4">cernis ut ecce pater quas tradidit, Ornyte, vaccae</l>
                         <l n="5">molle sub hirsuta latus explicuere genista?</l>
                         <l n="6">nos quoque vicinis cur non succedimus umbris?</l>
                         <l n="7">torrida cur solo defendimus ora galero?</l>
-                     </sp>
-                  </egXML>
+                     </egXML>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <sp who="Laelius">
-                        <speaker>Laelius</speaker>
-                        <p>Atqui, Cato, gratissimum nobis, ut etiam pro Scipione pollicear, feceris,
-                           si, quoniam speramus, volumus quidem certe, senes fieri, multo ante a te
-                           didicerimus quibus facillime rationibus ingravescentem aetatem ferre
-                           possimus.</p>
-                     </sp>
-                     <sp who="Cato">
-                        <speaker>Cato</speaker>
-                        <p>Faciam vero, Laeli, praesertim si utrique vestrum, ut dicis, gratum
-                           futurum est.</p>
-                     </sp>
-                  </egXML>
+                     <p>Since <gi>label</gi> is treated as metadata and thus ignored as part of the
+                        actual text, it will be omitted from searches of the text itself.</p>
+
+                     <p>Because <gi>label</gi> less hierarchical than <gi>sp</gi> (below), it is a
+                        good choice if there is considerable dispute in the sources about the
+                        attribution of lines to speakers. If used with <att>exclude</att>, it can
+                        enable the swapping of variants, to allow readers to see the text with
+                        alternate attributions.</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <l n="1"><label type="speaker"><app>
+                                 <lem wit="#G #P #A #φ" source="#Ulit. #Wernsd. #Glaeser" xml:id="lem1.01-label-C" exclude="#rdg1.04-label-C"> C. </lem>
+                                 <rdg wit="#N #π #χ" source="#p" xml:id="rdg1.01-label-omit"/>
+                                 <rdg wit="#ε #β #γ #μ #ρ" xml:id="rdg1.01-label-O">O.</rdg>
+                              </app></label>Nondum Solis equos declinis mitigat aestas,</l>
+                        <l n="2">quamvis et madidis incumbant prela racemis</l>
+                        <l n="3">et spument rauco ferventia musta susurro.</l>
+                        <l n="4">
+                           <app>
+                              <lem/>
+                              <rdg wit="#V" exclude="#lem1.01-label-C" xml:id="rdg1.04-label-C"><label type="speaker">C.</label></rdg>
+                           </app>cernis ut ecce pater quas tradidit, Ornyte, vaccae</l>
+                        <l n="5">molle sub hirsuta latus explicuere genista?</l>
+                        <l n="6">nos quoque vicinis cur non succedimus umbris?</l>
+                        <l n="7">torrida cur solo defendimus ora galero?</l>
+                     </egXML>
+
+                     <p>In this example, the first line is attributed to Corydon, but some
+                        manuscripts and editions omit the label, and others attribute the lines to
+                        Ornytus. One family of manuscripts, <hi rend="bold">V</hi>, attributes the
+                        fourth line to Corydon. <att>exclude</att> has been used here to indicate
+                        that whenever the <gi>lem</gi> in line 1.1 is displayed, the variant reading
+                        in line 1.4 will not be displayed, since that would be a contradiction.
+                        Since the variant in line 1.4 does not contradict the variants in line 1.1,
+                        there is no need to use <att>exclude</att> in those cases.</p>
+
+                     <p>Note also the placement of <gi>label</gi> in the example above: in the first
+                        line, <gi>label</gi> is outside of <gi>app</gi> because the editor of the
+                        text is asserting that a label belongs there, but he is also indicating that
+                        there is disagreement in the sources about the contents of the label; in the
+                        fourth line, the editor asserts that a label does not belong on that line,
+                        but he also indicates that a variant reading inserts a label there.</p>
+
+                  </div>
+                  <!-- End section on <label> for speakers -->
+
+
+                  <div xml:id="edition-text-speech-dialogue-sp">
+                     <head>Semantic Markup of Speakers</head>
+
+                     <p>If it is desirable to mark the beginning and ending points of a character's
+                        speech, <gi>sp</gi> and <gi>speaker</gi> may be used.</p>
+
+                     <p>
+                        <specList>
+                           <specDesc key="sp"/>
+                           <specDesc key="speaker"/>
+                        </specList>
+                     </p>
+
+                     <list>
+                        <item><gi>sp</gi> (speech) groups elements related to a person or
+                           character's speech.</item>
+                        <item><att>who</att> is used with <gi>sp</gi> to identify the
+                           speaker.</item>
+                        <item><gi>speaker</gi> contains a human-readable label identifying the
+                           person or character speaking the text.</item>
+                     </list>
+
+                     <p>These features can be used in verse and prose texts:</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <sp who="Corydon">
+                           <speaker>C.</speaker>
+                           <l n="1">Nondum Solis equos declinis mitigat aestas,</l>
+                           <l n="2">quamvis et madidis incumbant prela racemis</l>
+                           <l n="3">et spument rauco ferventia musta susurro.</l>
+                           <l n="4">cernis ut ecce pater quas tradidit, Ornyte, vaccae</l>
+                           <l n="5">molle sub hirsuta latus explicuere genista?</l>
+                           <l n="6">nos quoque vicinis cur non succedimus umbris?</l>
+                           <l n="7">torrida cur solo defendimus ora galero?</l>
+                        </sp>
+                     </egXML>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <sp who="Laelius">
+                           <speaker>Laelius</speaker>
+                           <p>Atqui, Cato, gratissimum nobis, ut etiam pro Scipione pollicear,
+                              feceris, si, quoniam speramus, volumus quidem certe, senes fieri,
+                              multo ante a te didicerimus quibus facillime rationibus ingravescentem
+                              aetatem ferre possimus.</p>
+                        </sp>
+                        <sp who="Cato">
+                           <speaker>Cato</speaker>
+                           <p>Faciam vero, Laeli, praesertim si utrique vestrum, ut dicis, gratum
+                              futurum est.</p>
+                        </sp>
+                     </egXML>
+
+                     <p>The hierarchy involved in this method makes it impossible to enable the
+                        swapping of variant attributions. At most, <gi>app</gi> can be used to
+                        indicate where variant attibutions are found.</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <sp who="Corydon">
+                           <speaker>
+                              <app>
+                                 <lem wit="#G #P #A #φ" source="#Ulit. #Wernsd. #Glaeser">C.</lem>
+                                 <rdg wit="#N #π #χ"/>
+                                 <rdg wit="#ε #β #γ #μ #ρ">O.</rdg>
+                              </app>
+                           </speaker>
+                           <l n="1">Nondum Solis equos declinis mitigat aestas,</l>
+                           <l n="2">quamvis et madidis incumbant prela racemis</l>
+                           <l n="3">et spument rauco ferventia musta susurro.</l>
+                           <l n="4"><app>
+                                 <lem/>
+                                 <rdg wit="#V" exclude="#lem1.01-label-C" xml:id="rdg1.04-label-C"><label type="speaker">C.</label></rdg>
+                              </app>cernis ut ecce pater quas tradidit, Ornyte, vaccae</l>
+                           <l n="5">molle sub hirsuta latus explicuere genista?</l>
+                           <l n="6">nos quoque vicinis cur non succedimus umbris?</l>
+                           <l n="7">torrida cur solo defendimus ora galero?</l>
+                        </sp>
+                     </egXML>
+
+                     <!-- COME BACK TO THIS !!! -->
+
+                  </div>
                </div>
             </div>
             <div xml:id="edition-text-quotation">
@@ -1873,6 +2027,32 @@
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <l n="9">conscia percussit meritorum pectora <persName ref="#Medea">Colchis</persName></l>
                </egXML>
+
+               <p>If there are variant readings of a name, <gi>persName</gi> should enclose the
+                     <gi>app</gi> with the lemma and variant reading(s):</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <persName ref="#Faunus">
+                     <app>
+                        <lem>Fauni</lem>
+                        <rdg wit="#P">fanni</rdg>
+                     </app>
+                  </persName>
+               </egXML>
+
+               <p>This will cause the lemma and the variant(s) to be identified as names.</p>
+
+               <p>But if it is clear that the nature of the variation is such that the lemma is a
+                  proper name, but the variant is a common noun (or vice versa), <gi>persName</gi>
+                  should enclose only the proper noun inside of <gi>lem</gi> or <gi>rdg</gi>.</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem><persName ref="#Meliboeus">Meliboeus</persName></lem>
+                     <rdg wit="#χ #φ"><persName ref="#Meliboeus">melibaeus</persName></rdg>
+                     <rdg wit="#μ">me libens</rdg></app>
+               </egXML>
+
             </div>
             <!-- End of section on people -->
 
@@ -2781,6 +2961,15 @@
 
                <div xml:id="apparatus-criticus-omission-gaps">
                   <head>Gaps in Witnesses</head>
+                  
+                  <p>
+                     <specList>
+                        <specDesc key="lacunaStart"/>
+                        <specDesc key="lacunaEnd"/>
+                        <specDesc key="witStart"/>
+                        <specDesc key="witEnd"/>
+                     </specList>
+                  </p>
 
                   <p>If a witness or family of witnesses has a gap in coverage of the text, for
                      whatever reason, the gap should be noted in the apparatus criticus using
@@ -2822,8 +3011,34 @@
                               M</witDetail>
                         </app> disputationibus …</p>
                   </egXML>
+
+                  <p>Conversely, the presence of fragmentary witnesses should be noted in the
+                     apparatus criticus using <gi>witStart</gi> and <gi>witEnd</gi>.</p>
+
+                  <p>The fragmentary witnesses known collectively as "Exc. Par." (= Thuaneus 7647
+                     and Nostradamensis 17903) in Giarratno's edition of Calpurnius Siculus have the
+                     couplet 5.12–13. Giarratano notes this fact in the apparatus criticus as
+                     follows: <foreign xml:lang="la">12 et sq. habent Exc. Par.</foreign>. In an
+                     LDLT edition, the presence of a fragmentary witness should be noted in an
+                        <gi>app</gi> as follows:</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l n="12"><app>
+                           <lem>aspicis</lem>
+                           <rdg wit="#ExcPar"><witStart/></rdg>
+                        </app> ut nobis aetas iam mille querelas</l>
+                     <l n="13">afferat et baculum premat inclinata <app>
+                           <lem>senectus</lem>
+                           <rdg wit="#ExcPar"><witEnd/></rdg>
+                        </app>?</l>
+                  </egXML>
+
+                  <p><gi>rdg</gi> with <att>wit</att> and the value of the witness' machine-readable
+                     siglum (<att>xml:id</att>) encloses <gi>witStart</gi> or <gi>witEnd</gi> to
+                     show where the witness begins and ends.</p>
                </div>
                <!-- End of subsection on omission-gap. -->
+
             </div>
             <!-- End of section on omission -->
 
@@ -3387,141 +3602,146 @@
                </div>
                <!-- End section correction: specifications -->
 
-                  <div xml:id="apparatus-criticus-correction-examples">
-                     <head>Correction: Examples</head>
+               <div xml:id="apparatus-criticus-correction-examples">
+                  <head>Correction: Examples</head>
 
-                     <div xml:id="apparatus-criticus-correction-examples-1">
-                        <head>Example 1</head>
+                  <div xml:id="apparatus-criticus-correction-examples-1">
+                     <head>Example 1</head>
 
-                        <p>The first example is simple correction of a variant reading to the lemma:
-                           protegit] protegis <hi rend="bold">G</hi> (a.c.).</p>
+                     <p>The first example is simple correction of a variant reading to the lemma:
+                        protegit] protegis <hi rend="bold">G</hi> (a.c.).</p>
 
-                        <p>It is clear in this instance what the reading after correction is, so
-                           there is no need to report it. There is no need to list all of the other
-                           witnesses to the lemma, since it is clear that the uncorrected form is a
-                           unique reading. Also, the editor has decided that it is not useful to
-                           indicate which hand made the correction. In this example, manuscript <hi rend="bold">G</hi> has a variant reading <foreign xml:lang="la">protegis</foreign> for the lemma <foreign xml:lang="la">protegit</foreign>, to which the variant reading in <hi rend="bold">G</hi> has been corrected.</p>
+                     <p>It is clear in this instance what the reading after correction is, so there
+                        is no need to report it. There is no need to list all of the other witnesses
+                        to the lemma, since it is clear that the uncorrected form is a unique
+                        reading. Also, the editor has decided that it is not useful to indicate
+                        which hand made the correction. In this example, manuscript <hi rend="bold">G</hi> has a variant reading <foreign xml:lang="la">protegis</foreign>
+                        for the lemma <foreign xml:lang="la">protegit</foreign>, to which the
+                        variant reading in <hi rend="bold">G</hi> has been corrected.</p>
 
-                        <p>In this instance, the encoding for the prose method and the semantic
-                           markup method are identical:</p>
+                     <p>In this instance, the encoding for the prose method and the semantic markup
+                        method are identical:</p>
 
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <app>
-                              <lem xml:id="lem-protegit">protegit</lem>
-                              <rdg wit="#G" xml:id="rdg-protegis">protegis</rdg>
-                              <witDetail wit="#G" target="#rdg-protegis" corresp="#lem-protegit" type="correction-original"/>
-                           </app>
-                        </egXML>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <lem xml:id="lem-protegit">protegit</lem>
+                           <rdg wit="#G" xml:id="rdg-protegis">protegis</rdg>
+                           <witDetail wit="#G" target="#rdg-protegis" corresp="#lem-protegit" type="correction-original"/>
+                        </app>
+                     </egXML>
 
-                     </div>
-                     <!-- End of first example of correction -->
+                  </div>
+                  <!-- End of first example of correction -->
 
-                     <div xml:id="apparatus-criticus-correction-examples-2">
-                        <head>Example 2</head>
+                  <div xml:id="apparatus-criticus-correction-examples-2">
+                     <head>Example 2</head>
 
-                        <p>This example is similar to the first one, but it is necessary to indicate
-                           the hand that made the correction.</p>
+                     <p>This example is similar to the first one, but it is necessary to indicate
+                        the hand that made the correction.</p>
 
                         <p>The lemma is <foreign xml:lang="la">insidias</foreign>. Manuscript <hi rend="bold">N</hi> has <foreign xml:lang="la">insidia</foreign>; <hi rend="bold">N<hi rend="superscript">2</hi></hi> has added the letter
                            “s.” A traditional apparatus criticus might report this as follows:
                            insidias] insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi rend="superscript">2</hi></hi>).</p>
 
-                        <p>As in the first example, the encoding for the prose method and the
-                           semantic markup method are identical:</p>
+                     <p>As in the first example, the encoding for the prose method and the semantic
+                        markup method are identical:</p>
 
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <app>
-                              <lem xml:id="lem-insidias">insidias</lem>
-                              <rdg wit="#N" xml:id="rdg-insidia">insidia</rdg>
-                              <witDetail wit="#N" target="#rdg-insidia" corresp="#lem-insidias" type="correction-original">corr. <hi rend="bold">N<hi rend="superscript">2</hi></hi></witDetail>
-                           </app>
-                        </egXML>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <lem xml:id="lem-insidias">insidias</lem>
+                           <rdg wit="#N" xml:id="rdg-insidia">insidia</rdg>
+                           <witDetail wit="#N" target="#rdg-insidia" corresp="#lem-insidias" type="correction-original">corr. <hi rend="bold">N<hi rend="superscript">2</hi></hi></witDetail>
+                        </app>
+                     </egXML>
 
-                        <p>This encoding will produce the following entry in the apparatus criticus:
-                           insidias] insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi rend="superscript">2</hi></hi></p>
-                     </div>
-                     <!-- End of the second example -->
+                     <p>This encoding will produce the following entry in the apparatus criticus:
+                        insidias] insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi rend="superscript">2</hi></hi></p>
+                  </div>
+                  <!-- End of the second example -->
 
-                     <div xml:id="apparatus-critics-correction-examples-3">
-                        <head>Example 3:</head>
+                  <div xml:id="apparatus-critics-correction-examples-3">
+                     <head>Example 3:</head>
 
-                        <p>In this example, a variant reading is corrected to the lemma, but for a
-                           number of reasons it is important to indicate the reading before and
-                           after correction.</p>
+                     <p>In this example, a variant reading is corrected to the lemma, but for a
+                        number of reasons it is important to indicate the reading before and after
+                        correction.</p>
 
-                        <p>The witness <hi rend="bold">N</hi> originally had <hi rend="italic">co</hi> and <hi rend="italic">ice</hi> with an erasure of two
-                           characters between them. The correcting hand <hi rend="bold">N<hi rend="superscript">2</hi></hi> has inserted the letters "r" and "t"
-                           in the erasure. The corrected form (<hi rend="italic">cortice</hi>)
-                           matches the reading in witnesses <hi rend="bold">P</hi> and <hi rend="bold">V</hi>. Another reading is present in witnesses <hi rend="bold">G</hi> and <hi rend="bold">A</hi>. A traditional apparatus
-                           criticus might report this as follows: cortice <hi rend="bold">N<hi rend="superscript">2</hi></hi> (<hi rend="italic">p.c.</hi>, rt <hi rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> :
-                           co⟦..⟧ice <hi rend="bold">N</hi> (a.c.) : codice <hi rend="bold">G A</hi>.</p>
+                     <p>The witness <hi rend="bold">N</hi> originally had <hi rend="italic">co</hi>
+                        and <hi rend="italic">ice</hi> with an erasure of two characters between
+                        them. The correcting hand <hi rend="bold">N<hi rend="superscript">2</hi></hi> has inserted the letters "r" and "t" in the erasure. The
+                        corrected form (<hi rend="italic">cortice</hi>) matches the reading in
+                        witnesses <hi rend="bold">P</hi> and <hi rend="bold">V</hi>. Another reading
+                        is present in witnesses <hi rend="bold">G</hi> and <hi rend="bold">A</hi>. A
+                        traditional apparatus criticus might report this as follows: cortice <hi rend="bold">N<hi rend="superscript">2</hi></hi> (<hi rend="italic">p.c.</hi>, rt <hi rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> : co⟦..⟧ice <hi rend="bold">N</hi> (a.c.) : codice
+                           <hi rend="bold">G A</hi>.</p>
 
-                        <p>In the prose method, the details are described in <gi>witDetail</gi>:</p>
+                     <p>In the prose method, the details are described in <gi>witDetail</gi>:</p>
 
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <app>
-                              <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
-                              <rdg wit="#N" xml:id="rdg-coice">co⟦..⟧ice</rdg>
-                              <rdg wit="#G #A">codice</rdg>
-                              <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice" type="correction-original"/>
-                              <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice" type="correction-altered">rt <hi rend="italic">add. in
-                                 ras.</hi></witDetail>
-                           </app>
-                        </egXML>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
+                           <rdg wit="#N" xml:id="rdg-coice">co⟦..⟧ice</rdg>
+                           <rdg wit="#G #A">codice</rdg>
+                           <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice" type="correction-original"/>
+                           <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice" type="correction-altered">rt <hi rend="italic">add. in
+                              ras.</hi></witDetail>
+                        </app>
+                     </egXML>
 
-                        <p>This encoding will produce the following entry in the apparatus criticus:
-                           cortice <hi rend="bold">N<hi rend="superscript">2</hi></hi> (<hi rend="italic">p.c.</hi>, rt <hi rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> : co⟦..⟧ice <hi rend="bold">N</hi>
-                           (a.c.) : codice <hi rend="bold">G A</hi>.</p>
+                     <p>This encoding will produce the following entry in the apparatus criticus:
+                        cortice <hi rend="bold">N<hi rend="superscript">2</hi></hi> (<hi rend="italic">p.c.</hi>, rt <hi rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> : co⟦..⟧ice <hi rend="bold">N</hi>
+                        (a.c.) : codice <hi rend="bold">G A</hi>.</p>
 
-                        <p>The semantic markup method uses techniques described elsewhere in these
-                           guidelines to make the details readable by humans and machines:</p>
+                     <p>The semantic markup method uses techniques described elsewhere in these
+                        guidelines to make the details readable by humans and machines:</p>
 
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <app>
-                              <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
-                              <rdg wit="#N" xml:id="rdg-coice">co<del rend="erasure"><gap reason="lost" quantity="2" unit="character"/></del>ice</rdg>
-                              <rdg wit="#G #A">codice</rdg>
-                              <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice" type="correction-original"/>
-                              <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice" type="correction-altered"><add place="inRas">rt</add></witDetail>
-                           </app>
-                        </egXML>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
+                           <rdg wit="#N" xml:id="rdg-coice">co<del rend="erasure"><gap reason="lost" quantity="2" unit="character"/></del>ice</rdg>
+                           <rdg wit="#G #A">codice</rdg>
+                           <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice" type="correction-original"/>
+                           <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice" type="correction-altered"><add place="inRas">rt</add></witDetail>
+                        </app>
+                     </egXML>
 
-                        <p>That encoding would produce the following entry: cortice <hi rend="bold">N<hi rend="superscript">2</hi></hi> (<hi rend="italic">p.c.</hi>,
-                           rt <hi rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> :
-                           co⟦..⟧ice <hi rend="bold">N</hi> (a.c.) : codice <hi rend="bold">G A</hi>.</p>
-                     </div>
-                     <!-- End of the third example of correction -->
+                     <p>That encoding would produce the following entry: cortice <hi rend="bold">N<hi rend="superscript">2</hi></hi> (<hi rend="italic">p.c.</hi>, rt
+                           <hi rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> :
+                        co⟦..⟧ice <hi rend="bold">N</hi> (a.c.) : codice <hi rend="bold">G A</hi>.</p>
+                  </div>
+                  <!-- End of the third example of correction -->
 
 
-                     <div xml:id="apparatus-criticus-correction-examples-4">
-                        <head>Example 4</head>
+                  <div xml:id="apparatus-criticus-correction-examples-4">
+                     <head>Example 4</head>
 
-                        <p>This example includes multiple corrections.</p>
+                     <p>This example includes multiple corrections.</p>
 
-                        <p>The lemma is <foreign xml:lang="la">descripta</foreign>. Manuscript <hi rend="bold">N</hi> originally had <foreign xml:lang="la">dipicta</foreign>, but <hi rend="bold">N<hi rend="superscript">1</hi></hi> corrected it to <foreign xml:lang="la">depicta</foreign>.
-                           Another hand (<hi rend="bold">N<hi rend="superscript">2</hi></hi> has
-                              <foreign xml:lang="la">descripta</foreign> in the margin. Other
-                           manuscripts support these and other readings. A traditional apparatus
-                           criticus might report this as follows: descripta <hi rend="bold">P V N<hi rend="superscript">2</hi></hi> (in mg.) : depicta <hi rend="bold">G
-                                 N<hi rend="superscript">1</hi></hi> (p.c.) : dipicta <hi rend="bold">N</hi> (a.c.).</p>
+                     <p>The lemma is <foreign xml:lang="la">descripta</foreign>. Manuscript <hi rend="bold">N</hi> originally had <foreign xml:lang="la">dipicta</foreign>, but <hi rend="bold">N<hi rend="superscript">1</hi></hi> corrected it to <foreign xml:lang="la">depicta</foreign>.
+                        Another hand (<hi rend="bold">N<hi rend="superscript">2</hi></hi> has
+                           <foreign xml:lang="la">descripta</foreign> in the margin. Other
+                        manuscripts support these and other readings. A traditional apparatus
+                        criticus might report this as follows: descripta <hi rend="bold">P V N<hi rend="superscript">2</hi></hi> (in mg.) : depicta <hi rend="bold">G
+                              N<hi rend="superscript">1</hi></hi> (p.c.) : dipicta <hi rend="bold">N</hi> (a.c.).</p>
 
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                           <app>
-                              <lem wit="#N2 #P #V" xml:id="lem-descripta">descripta</lem>
-                              <witDetail wit="#N2" target="#lem-descripta">in mg.</witDetail>
-                              <rdg wit="#G #N1" xml:id="rdg-depicta">depicta</rdg>
-                              <witDetail wit="#N1" target="#rdg-depicta" corresp="#rdg-dipicta" type="correction-altered"/>
-                              <rdg wit="#N" xml:id="rdg-dipicta">dipicta</rdg>
-                              <witDetail wit="#N" target="#rdg-dipicta" corresp="#rdg-depicta" type="correction-original"/>
-                           </app>
-                        </egXML>
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <lem wit="#N2 #P #V" xml:id="lem-descripta">descripta</lem>
+                           <witDetail wit="#N2" target="#lem-descripta">in mg.</witDetail>
+                           <rdg wit="#G #N1" xml:id="rdg-depicta">depicta</rdg>
+                           <witDetail wit="#N1" target="#rdg-depicta" corresp="#rdg-dipicta" type="correction-altered"/>
+                           <rdg wit="#N" xml:id="rdg-dipicta">dipicta</rdg>
+                           <witDetail wit="#N" target="#rdg-dipicta" corresp="#rdg-depicta" type="correction-original"/>
+                        </app>
+                     </egXML>
 
-                        <p>This encoding will produce the following entry in the apparatus criticus:
-                           descripta <hi rend="bold">N<hi rend="superscript">2</hi></hi> (in mg. <hi rend="bold">PV</hi> : depicta <hi rend="bold">G N<hi rend="superscript">1</hi></hi> (p.c.) : dipicta <hi rend="bold">N</hi> (a.c.).</p>
+                     <p>This encoding will produce the following entry in the apparatus criticus:
+                        descripta <hi rend="bold">N<hi rend="superscript">2</hi></hi> (in mg. <hi rend="bold">PV</hi> : depicta <hi rend="bold">G N<hi rend="superscript">1</hi></hi> (p.c.) : dipicta <hi rend="bold">N</hi> (a.c.).</p>
 
-                     </div>
-                     <!-- End of the fourth example -->
-                  </div><!-- End of the section on examples of correction -->
+                  </div>
+                  <!-- End of the fourth example -->
+               </div>
+               <!-- End of the section on examples of correction -->
             </div>
             <!-- End of section on correction -->
 
@@ -3634,9 +3854,8 @@
                         </app></p>
                   </egXML>
 
-                  <p>The same encoding should be used to indicated the conjectured lacuna of a
-                     number of lines of verse. For example, <ref target="#verdiere-calpurnius">Raoul
-                        Verdière</ref> argues that nine verses have been omitted by the copyist of
+                  <p>The same encoding should be used to indicate the conjectured lacuna of a number
+                     of lines of verse. For example, <ref target="#verdiere-calpurnius">Verdière</ref> argues that nine verses have been omitted by the copyist of
                      the archetype of all manuscripts of Calpurnius Siculus' eclogues. He prints
                      nine lines of equally spaced dots in the text, and he writes in the apparatus
                      criticus, <quote>u. 1–9 <hi rend="italic">librarii incuria cecidisse
@@ -3648,15 +3867,7 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app type="line-omission">
                         <lem source="#Verdière" xml:id="lem-1.1-9">
-                           <l n="1"><gap reason="lost"/></l>
-                           <l n="2"><gap reason="lost"/></l>
-                           <l n="3"><gap reason="lost"/></l>
-                           <l n="4"><gap reason="lost"/></l>
-                           <l n="5"><gap reason="lost"/></l>
-                           <l n="6"><gap reason="lost"/></l>
-                           <l n="7"><gap reason="lost"/></l>
-                           <l n="8"><gap reason="lost"/></l>
-                           <l n="9"><gap reason="lost"/></l>
+                           <gap reason="lost" quantity="9" unit="lines"/>
                         </lem>
                         <note target="#lem-1.1-9">u. 1–9 librarii incuria cecidisse putavit
                            Verdière</note>
@@ -5462,7 +5673,7 @@ associated with a dated element, at the time indicated.</desc>
     intervento critico codificato o interpretazione di altro tipo</desc>
   <classes xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <memberOf key="att.dimensions"/>
-    <memberOf key="att.source"/>
+    
   </classes>
   <attList xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <attDef ident="evidence" usage="opt">
@@ -5706,27 +5917,10 @@ the TEI header.</p>
     
   </attList>
   
-</classSpec><classSpec rend="add" module="tei" xml:id="GLOBAL" type="atts" ident="att.global">
-  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-10-02" xml:lang="en">provides attributes common to all elements in the TEI encoding scheme.</desc>
-  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-12-20" xml:lang="ko">TEI 부호화 스키마의 모든 요소에 공통 속성을 제공한다.</desc>
-  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-02" xml:lang="zh-TW">提供一組屬性，通用於TEI編碼標準中的所有元素。</desc>
-  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2008-04-05" xml:lang="ja">TEI符号化スキーム中の全要素に共通する属性を示す． </desc>
-  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-06-12" xml:lang="fr">fournit un jeu d'attributs communs à tous les éléments
-    dans le système de codage TEI.</desc>
-  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-04" xml:lang="es">proporciona un conjunto de atributos común a todos los
-    elementos del esquema de codificación TEI.</desc>
-  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-01-21" xml:lang="it">stabilisce un insieme di attributi comuni a tutti gli
-    elementi dello schema di codifica TEI</desc>
-  <classes xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
-    <memberOf key="att.global.rendition"/>
-    <memberOf key="att.global.linking"/>
-    <memberOf key="att.global.analytic"/>
-    <memberOf key="att.global.facs"/>
-    <memberOf key="att.global.change"/>
-    <memberOf key="att.global.responsibility"/>
-  </classes>
-  <attList xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
-    <attDef ident="xml:id" usage="opt">
+</classSpec><classSpec rend="add" module="tei" xml:id="GLOBAL" type="atts" ident="att.global"><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-10-02" xml:lang="en">provides attributes common to all elements in the TEI encoding scheme.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-12-20" xml:lang="ko">TEI 부호화 스키마의 모든 요소에 공통 속성을 제공한다.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-02" xml:lang="zh-TW">提供一組屬性，通用於TEI編碼標準中的所有元素。</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2008-04-05" xml:lang="ja">TEI符号化スキーム中の全要素に共通する属性を示す． </desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-06-12" xml:lang="fr">fournit un jeu d'attributs communs à tous les éléments
+    dans le système de codage TEI.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-04" xml:lang="es">proporciona un conjunto de atributos común a todos los
+    elementos del esquema de codificación TEI.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-01-21" xml:lang="it">stabilisce un insieme di attributi comuni a tutti gli
+    elementi dello schema di codifica TEI</desc><classes><memberOf key="att.global.rendition"/><memberOf key="att.global.linking"/><memberOf key="att.global.analytic"/><memberOf key="att.global.facs"/><memberOf key="att.global.change"/><memberOf key="att.global.responsibility"/><memberOf key="att.global.source"/></classes><attList><attDef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="xml:id" usage="opt">
       <gloss versionDate="2007-07-02" xml:lang="en">identifier</gloss>
       <gloss versionDate="2007-12-20" xml:lang="ko">확인소</gloss>
       <gloss versionDate="2008-04-06" xml:lang="es">identificador</gloss>
@@ -5758,8 +5952,7 @@ the TEI header.</p>
       <remarks xml:lang="ja" versionDate="2008-04-05">
         <p> 当該属性<att>xml:id</att>は，属性の指示対象を示している．詳細 は<ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CORS">3.10. Reference Systems</ref>を参照のこと． </p>
       </remarks>
-    </attDef>
-    <attDef ident="n" usage="opt">
+    </attDef><attDef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="n" usage="opt">
       <gloss versionDate="2007-07-02" xml:lang="en">number</gloss>
       <gloss versionDate="2007-12-20" xml:lang="ko">수</gloss>
       <gloss versionDate="2008-04-06" xml:lang="es">número</gloss>
@@ -5795,8 +5988,7 @@ the TEI header.</p>
       <remarks xml:lang="ja" versionDate="2008-04-05">
         <p> 当該属性<att>n</att>は，章・節・リスト項目などの番号を特定する ために使われる．これは，テキストを指示する標準参照システムにお いも採用されている． </p>
       </remarks>
-    </attDef>
-    <attDef ident="xml:lang" usage="opt">
+    </attDef><attDef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="xml:lang" usage="opt">
       <gloss versionDate="2007-07-02" xml:lang="en">language</gloss>
       <gloss versionDate="2007-12-20" xml:lang="ko">언어</gloss>
       <gloss versionDate="2008-04-06" xml:lang="es">lengua</gloss>
@@ -5870,11 +6062,7 @@ and that a single TEI document may contain texts in many languages.</p>
         <p> 当該属性<att>xml:lang</att>に値がない場合には，親要素にある属 性値を継承する．従って，一番外側の要素(すなわち<gi>TEI</gi>)の
           属性値は常に継承されることになる． </p>
       </remarks>
-    </attDef>
-    
-    
-    
-    <attDef ident="xml:base" usage="opt">
+    </attDef><attDef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="xml:base" usage="opt">
       <desc versionDate="2005-10-10" xml:lang="en">provides a base URI reference with which applications can resolve relative URI
         references into absolute URI references.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">애플리케이션이 상대 URI 참조를 절대 URI 참조로 해결할 수 있게 해 주는 기본 URI
@@ -5964,8 +6152,7 @@ and that a single TEI document may contain texts in many languages.</p>
           </div>
         </egXML>
       </exemplum>
-    </attDef>
-    <attDef ident="xml:space" usage="opt">
+    </attDef><attDef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="xml:space" usage="opt">
       <desc versionDate="2010-02-10" xml:lang="en">signals an intention about how white space should be 
       managed by  applications.</desc>
       <desc versionDate="2007-06-12" xml:lang="fr">signale que les applications doivent préserver
@@ -5987,10 +6174,7 @@ and that a single TEI document may contain texts in many languages.</p>
       specification</ref> provides further guidance on the use of this
       attribute. Note that many parsers may not handle xml:space correctly.</p>
       </remarks>
-    </attDef>
-  </attList>
-  
-</classSpec><classSpec rend="add" module="tei" type="atts" ident="att.handFeatures">
+    </attDef></attList></classSpec><classSpec rend="add" module="tei" type="atts" ident="att.handFeatures">
   <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-09-27" xml:lang="en">provides attributes describing aspects of the hand in which a
   manuscript is written.</desc>
   <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-12-20" xml:lang="ko">원고가 쓰여진 필적의 측면을 기술하는 속성을 제공한다.</desc>
@@ -6232,7 +6416,7 @@ ressource informatique selon une taxinomie normalisée.</desc>
   <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-04" xml:lang="es">proporciona atributos para elementos que represental un análisis o interpretación formal.</desc>
   <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-01-21" xml:lang="it">assegna degli attributi agli elementi che rappresentano un'analisi o un'interpretazione formali</desc>
   <classes xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
-    <memberOf key="att.source"/>
+    
   </classes>
   <attList xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <attDef ident="type" usage="rec">
@@ -7021,8 +7205,17 @@ sub-classification for the element additional to that provided by its
     the project-specific schema description, as described in <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/USE.html#MDMDAL">23.3.1.4. Modification of Attribute and Attribute Value Lists</ref> .</p>
   </remarks>
   
-</classSpec><classSpec rend="add" module="tei" type="atts" ident="att.pointing"><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2016-01-15" xml:lang="en">provides a set of attributes used by all elements which point
-  to other elements by means of one or more URI references.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-12-20" xml:lang="ko">하나 이상의 URI 참조를 통해서 다른 요소를 가리키는 모든 요소에 의해 사용된 속성 집합을 정의한다.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-02" xml:lang="zh-TW">定義一組與其他元素相連結的所有元素皆使用的屬性，連結是使用ㄧ個或多個統一資源識別符 (URI) 參照。</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2008-04-05" xml:lang="ja">URIにより要素を参照する要素に共通して付与される属性を定義する．</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2016-02-15" xml:lang="fr">fournit un ensemble d'attributs utilisés par tous les éléments qui pointent vers d'autres éléments au moyen d'une ou de plusieurs références URI.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-04" xml:lang="es">define un conjunto de atributos usados por todos los elementos que señalan a otros elementos a través de uno o más URI.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-01-21" xml:lang="it">definisce un insieme di attributi usati da tutti gli elementi che puntano ad altri elementi tramite uno o più URI</desc><classes/><attList><attDef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="targetLang" usage="opt">
+</classSpec><classSpec rend="add" module="tei" type="atts" ident="att.pointing">
+  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2016-01-15" xml:lang="en">provides a set of attributes used by all elements which point
+  to other elements by means of one or more URI references.</desc>
+  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-12-20" xml:lang="ko">하나 이상의 URI 참조를 통해서 다른 요소를 가리키는 모든 요소에 의해 사용된 속성 집합을 정의한다.</desc>
+  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-02" xml:lang="zh-TW">定義一組與其他元素相連結的所有元素皆使用的屬性，連結是使用ㄧ個或多個統一資源識別符 (URI) 參照。</desc>
+  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2008-04-05" xml:lang="ja">URIにより要素を参照する要素に共通して付与される属性を定義する．</desc>
+  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2016-02-15" xml:lang="fr">fournit un ensemble d'attributs utilisés par tous les éléments qui pointent vers d'autres éléments au moyen d'une ou de plusieurs références URI.</desc>
+  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-04" xml:lang="es">define un conjunto de atributos usados por todos los elementos que señalan a otros elementos a través de uno o más URI.</desc>
+  <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-01-21" xml:lang="it">definisce un insieme di attributi usati da tutti gli elementi che puntano ad altri elementi tramite uno o più URI</desc>
+  <attList xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
+    <attDef ident="targetLang" usage="opt">
       <desc versionDate="2012-06-16" xml:lang="en">specifies the language of the content to be found at the destination referenced by <att>target</att>, using a <soCalled>language tag</soCalled> generated
         according to <ref target="http://www.rfc-editor.org/rfc/bcp/bcp47.txt">BCP 47</ref>.</desc>
       <datatype><dataRef key="teidata.language"/></datatype>
@@ -7054,19 +7247,30 @@ sub-classification for the element additional to that provided by its
       these must remain consistent with their
       <choice><abbr>IETF</abbr><expan>Internet Engineering Task
       Force</expan></choice> definitions.</p></remarks>
-    </attDef><attDef ident="target" usage="opt"><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2010-05-02" xml:lang="en">specifies the destination of the reference by supplying one or more URI References</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-12-20" xml:lang="ko">하나 혹은 다수의 URI 참조를 제시하여 참조의 목적지를 명시한다.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-02" xml:lang="zh-TW">用一個或多個統一資源識別符參照 (URI References) 來說明參照所指位置。</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2008-04-05" xml:lang="ja">ひとつ以上のURIで，参照先を特定する．</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2009-01-06" xml:lang="fr">précise la cible de la référence en donnant une ou
-        plusieurs références URI</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-04" xml:lang="es">especifica la destinación de una referencia
-        proporcionando una o más referencias URI.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-01-21" xml:lang="it">specifica la destinazione di un riferimento, fornendo
-        uno o più riferimenti URI</desc><datatype>
-                    <dataRef key="teidata.pointer"/>
-                  </datatype><remarks xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-01-21" xml:lang="en"><p>One or more syntactically valid URI references, separated by whitespace. Because
+    </attDef>
+    <attDef ident="target" usage="opt">
+      <desc versionDate="2010-05-02" xml:lang="en">specifies the destination of the reference by supplying one or more URI References</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">하나 혹은 다수의 URI 참조를 제시하여 참조의 목적지를 명시한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">用一個或多個統一資源識別符參照 (URI References) 來說明參照所指位置。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">ひとつ以上のURIで，参照先を特定する．</desc>
+      <desc versionDate="2009-01-06" xml:lang="fr">précise la cible de la référence en donnant une ou
+        plusieurs références URI</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">especifica la destinación de una referencia
+        proporcionando una o más referencias URI.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">specifica la destinazione di un riferimento, fornendo
+        uno o più riferimenti URI</desc>
+      <datatype maxOccurs="unbounded"><dataRef key="teidata.pointer"/></datatype>
+      <remarks versionDate="2007-01-21" xml:lang="en"><p>One or more syntactically valid URI references, separated by whitespace. Because
         whitespace is used to separate URIs, no whitespace is permitted inside a single URI. If a
         whitespace character is required in a URI, it should be escaped with the normal mechanism,
-        e.g. <code>TEI%20Consortium</code>.</p></remarks><remarks xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-01-21" xml:lang="fr"><p>Une ou plusieurs références URI syntaxiquement valables, séparée par
+        e.g. <code>TEI%20Consortium</code>.</p></remarks>
+      <remarks versionDate="2007-01-21" xml:lang="fr"><p>Une ou plusieurs références URI syntaxiquement valables, séparée par
         un espace. Puisqu'un espace  est employé pour séparer des URIs, aucun espace
         n’est autorisé à l'intérieur d'un URI. Si un espace est requis dans un URI, il
         faut le représenter avec une séquence d'échappement, comme par exemple 
-        <code>TEI%20Consortium</code>.</p></remarks></attDef><attDef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="evaluate" usage="opt">
+        <code>TEI%20Consortium</code>.</p></remarks>
+    </attDef>
+    <attDef ident="evaluate" usage="opt">
       <gloss versionDate="2009-05-28" xml:lang="fr">évalué</gloss>
       <desc versionDate="2005-10-10" xml:lang="en">specifies the intended meaning when the target of a
       pointer is itself a pointer.</desc>
@@ -7133,7 +7337,10 @@ sub-classification for the element additional to that provided by its
 	  らく利用者が指示を元に行われる)．
 	  </p>
       </remarks>
-    </attDef></attList></classSpec><classSpec rend="add" module="tei" type="atts" ident="att.pointing.group">
+    </attDef>
+  </attList>
+  
+</classSpec><classSpec rend="add" module="tei" type="atts" ident="att.pointing.group">
   <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2016-02-15" xml:lang="en">provides a set of attributes common to all elements which
   enclose groups of pointer elements.</desc>
   <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-12-20" xml:lang="ko">포인터 요소군을 포함하는 모든 요소에 공통적인 속성 집합을 정의한다.</desc>
@@ -10541,18 +10748,7 @@ resource, either within the current document or elsewhere.</desc>
 </classSpec><classSpec rend="add" predeclare="true" module="tei" type="model" ident="model.correspDescPart">
     <desc xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2014-01-13" xml:lang="en">groups together metadata
         elements for describing correspondence</desc>
-</classSpec><classSpec rend="add" module="tei" type="atts" ident="att.source" predeclare="true"><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2013-01-11" xml:lang="en">provides attributes for pointing to the source of a bibliographic reference.</desc><classes/><constraintSpec ident="crited.source" scheme="isoschematron">
-                <constraint>
-                  <sch:rule context="tei:*[@source]">
-                    <sch:report test="exists(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null)">No matching xmml:id for reference(s): <sch:value-of select="string-join(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"/>.</sch:report>
-                  </sch:rule>
-                </constraint>
-              </constraintSpec><attList><attDef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="source" usage="opt">
-
-
-      <desc versionDate="2013-01-11" xml:lang="en">provides a pointer to the bibliographical source from which a quotation or citation is drawn.</desc>
-      <datatype maxOccurs="unbounded"><dataRef key="teidata.pointer"/></datatype>
-    </attDef></attList></classSpec><classSpec rend="add" module="tei" type="model" ident="model.resourceLike" predeclare="true">
+</classSpec><classSpec rend="add" module="tei" type="model" ident="model.resourceLike" predeclare="true">
   <desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2016-02-19" xml:lang="en">groups separate elements
     which constitute the content of a digital resource, as opposed to its
     metadata.</desc>
@@ -11349,7 +11545,7 @@ Ce ne seroyt que bon que nous rendissiez noz cloches...</egXML>
     <memberOf key="model.quoteLike"/>
     <memberOf key="att.typed"/>
     <memberOf key="att.msExcerpt"/>
-    <memberOf key="att.source"/>
+    
   </classes><content xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <macroRef key="macro.specialPara"/>
   </content><exemplum xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xml:lang="en">
@@ -11405,7 +11601,7 @@ Ce ne seroyt que bon que nous rendissiez noz cloches...</egXML>
     <memberOf key="att.global"/>
     <memberOf key="model.qLike"/>
     <memberOf key="att.ascribed"/>
-    <memberOf key="att.source"/>
+    
   </classes><content xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <macroRef key="macro.specialPara"/>
   </content><attList><attDef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="type" usage="opt">
@@ -11844,7 +12040,7 @@ Ce ne seroyt que bon que nous rendissiez noz cloches...</egXML>
     <memberOf key="att.global"/>
     <memberOf key="model.pPart.transcriptional"/>
     <memberOf key="model.choicePart"/>
-    <memberOf key="att.source"/>
+    
   </classes><content xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     
     <macroRef key="macro.paraContent"/>
@@ -12077,7 +12273,7 @@ Normalization</ref>
     <memberOf key="att.global"/>
     <memberOf key="model.pPart.transcriptional"/>
     <memberOf key="model.choicePart"/>
-    <memberOf key="att.source"/>
+    
   </classes><content xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     
     <macroRef key="macro.paraContent"/>
@@ -12656,7 +12852,7 @@ concerned, as further discussed in section <ref target="http://www.tei-c.org/rel
     <memberOf key="att.naming"/>
     <memberOf key="model.nameLike"/>
     <memberOf key="att.typed"/>
-    <memberOf key="att.source"/>
+    
   </classes><content xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <macroRef key="macro.phraseSeq"/>
   </content><exemplum xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xml:lang="en">
@@ -13333,7 +13529,7 @@ Measures</ref>
     <memberOf key="att.global"/>
     <memberOf key="model.pPart.editorial"/>
     <memberOf key="model.choicePart"/>
-    <memberOf key="att.source"/>
+    
     <memberOf key="att.typed"/>
   </classes><content xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <macroRef key="macro.phraseSeq"/>
@@ -14342,7 +14538,7 @@ entre les Romains.</label>
     <memberOf key="model.noteLike"/>
     <memberOf key="att.placement"/>
     <memberOf key="att.pointing"/>
-    <memberOf key="att.source"/>
+    
     <memberOf key="att.typed"/>
     <memberOf key="att.written"/>
     <memberOf key="model.correspDescPart"/>
@@ -18658,29 +18854,7 @@ during the encoding of a text.</desc><desc xmlns:xi="http://www.w3.org/2001/XInc
     régularisation effectuée sur le texte source dans sa conversion vers sa forme électronique.</desc><desc xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-12-20" xml:lang="ko">전자 형식으로 변환할 때 수행된 원본 텍스트의 표준화 또는 규칙화의 정도를 표시한다.</desc><desc xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-02" xml:lang="zh-TW">指出來源文件轉換成電子文本時規格化或標準化的程度。</desc><desc xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2008-04-05" xml:lang="ja">元資料が電子形式に変換される施される正規化の程度を示す．</desc><desc xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2006-10-18" xml:lang="de">gibt an, in welchem Ausmaß das Original bei der
     Umwandlung in elektronische Form normalisiert und vereinheitlicht wurde.</desc><desc xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-04" xml:lang="es">indica el grado de normalización o de regularización
     aplicado a la fuente original en el proceso de conversión a formato electrónico.</desc><desc xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-01-21" xml:lang="it">indica il grado di normalizzazione o regolarizzazione
-    della fonte effettuato nella conversione a documento elettronico.</desc><classes xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
-    <memberOf key="att.global"/>
-    <memberOf key="att.declarable"/>
-    <memberOf key="model.editorialDeclPart"/>
-  </classes><content xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
-    
-      <classRef key="model.pLike" minOccurs="1" maxOccurs="unbounded"/>
-    
-  </content><attList><attDef xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="source" usage="opt">
-      <desc versionDate="2013-12-21" xml:lang="en">indicates a bibliographic description or other resource documenting the principles
-        underlying the normalization carried out.</desc>
-      <desc versionDate="2009-01-05" xml:lang="fr">indique l’autorité pour toute normalisation
-        effectuée.</desc>
-      <desc versionDate="2007-12-20" xml:lang="ko">수행된 표준화를 행한 기준 을 표시한다.</desc>
-      <desc versionDate="2007-05-02" xml:lang="zh-TW">指出任何規格化所實行的依據。</desc>
-      <desc versionDate="2008-04-05" xml:lang="ja">正規化を施した責任者を示す．</desc>
-      <desc versionDate="2006-10-18" xml:lang="de">nennt die für die Normalisierung verantwortliche
-        Instanz</desc>
-      <desc versionDate="2007-05-04" xml:lang="es">indica la autoridad de cualquier normalización
-        llevada a cabo.</desc>
-      <desc versionDate="2007-01-21" xml:lang="it">indica l'autorità per ogni normalizzazione eseguita.</desc>
-      <datatype><dataRef key="teidata.pointer"/></datatype>
-    </attDef><attDef xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="method" usage="opt">
+    della fonte effettuato nella conversione a documento elettronico.</desc><classes><memberOf key="att.global"/><memberOf key="att.declarable"/><memberOf key="model.editorialDeclPart"/></classes><content><classRef xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" key="model.pLike" minOccurs="1" maxOccurs="unbounded"/></content><attList><attDef ident="source" mode="delete"/><attDef xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="method" usage="opt">
       <desc versionDate="2005-01-14" xml:lang="en">indicates the method adopted to indicate normalizations within the text.</desc>
       <desc versionDate="2009-01-05" xml:lang="fr">indique la méthode adoptée pour signaler les
         normalisations dans le texte.</desc>
@@ -20434,7 +20608,7 @@ elements of  <gi>profileDesc</gi> unless these are documenting multiple texts.</
   </listRef></elementSpec><elementSpec rend="add" module="header" ident="abstract"><desc xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2012-12-27" xml:lang="en">contains a summary or formal
     abstract prefixed to an existing source document by the encoder.</desc><classes xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <memberOf key="att.global"/>
-    <memberOf key="att.source"/>
+    
     <memberOf key="model.profileDescPart"/>
   </classes><content xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <alternate minOccurs="1" maxOccurs="unbounded"><classRef key="model.pLike"/><classRef key="model.listLike"/></alternate>
@@ -23610,7 +23784,7 @@ hand, or the beginning of a scribal stint.</desc><desc xmlns:tei="http://www.tei
     <memberOf key="model.pPart.transcriptional"/>
     <memberOf key="model.linePart"/>
     <memberOf key="att.handFeatures"/>
-    <memberOf key="att.source"/>
+    
   </classes><content xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     
   </content><attList><attDef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="new" usage="rec">
@@ -23711,7 +23885,7 @@ l'abréviation</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="ht
     </egXML>
   </exemplum><listRef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHAB">11.3.1.2. Abbreviation and Expansion</ref>
-  </listRef></elementSpec><elementSpec rend="change" module="transcr" ident="space"><gloss xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-06-12" xml:lang="fr">espace</gloss><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2005-01-14" xml:lang="en">indicates the location of a significant space in the text.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-12-20" xml:lang="ko">복사본에서 중요한 공간의 위치를 표시한다.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-02" xml:lang="zh-TW">指出來源文件中出現大片空白的位置。</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2008-04-05" xml:lang="ja">元資料にある重要な空白の場所を示す．</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2009-11-16" xml:lang="fr">permet de situer un espace significatif dans le texte édité.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-04" xml:lang="es">indica la localización de un espacio significativo en el texto de copia.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-01-21" xml:lang="it">indica la posizione di uno spazio significativo nel testo copia</desc><classes><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.global.edit"/><memberOf key="att.dimensions"/><memberOf key="att.source"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><classRef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" key="model.descLike"/><classRef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" key="model.certLike"/></alternate></content><constraintSpec ident="space" scheme="isoschematron">
+  </listRef></elementSpec><elementSpec rend="change" module="transcr" ident="space"><gloss xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-06-12" xml:lang="fr">espace</gloss><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2005-01-14" xml:lang="en">indicates the location of a significant space in the text.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-12-20" xml:lang="ko">복사본에서 중요한 공간의 위치를 표시한다.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-02" xml:lang="zh-TW">指出來源文件中出現大片空白的位置。</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2008-04-05" xml:lang="ja">元資料にある重要な空白の場所を示す．</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2009-11-16" xml:lang="fr">permet de situer un espace significatif dans le texte édité.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-05-04" xml:lang="es">indica la localización de un espacio significativo en el texto de copia.</desc><desc xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2007-01-21" xml:lang="it">indica la posizione di uno spazio significativo nel testo copia</desc><classes><memberOf key="att.global"/><memberOf key="att.typed"/><memberOf key="model.global.edit"/><memberOf key="att.dimensions"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><classRef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" key="model.descLike"/><classRef xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" key="model.certLike"/></alternate></content><constraintSpec ident="space" scheme="isoschematron">
                 <constraint>
                   <sch:rule context="tei:space">
                     <sch:report test="@quantity and @extent">space may have @quantity (a figure) or
@@ -25894,7 +26068,7 @@ and <code>simplified</code>  for simplified characters. The
     <memberOf key="model.segLike"/>
     <memberOf key="att.segLike"/>
     <memberOf key="att.typed"/>
-    <memberOf key="att.source"/>
+    
     <memberOf key="att.written"/>
     <memberOf key="model.choicePart"/>
     <memberOf key="model.linePart"/>
@@ -29194,7 +29368,7 @@ or manuscript part, after its creation but before its acquisition.</desc><desc x
     <memberOf key="att.global"/>
     <memberOf key="att.datable"/>
     <memberOf key="att.typed"/>
-    <memberOf key="att.source"/>
+    
   </classes><content xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0">
     <macroRef key="macro.specialPara"/>
   </content><exemplum xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xml:lang="en">
@@ -31837,7 +32011,6 @@ supplied as the content of a child <gi>wit</gi> element.</p>
   <desc versionDate="2007-05-04" xml:lang="es">define un conjunto de atributos comunes a todos los elementos que presentan lecturas de variantes en la lectura crítica de una obra</desc>
   <desc versionDate="2007-01-21" xml:lang="it">definisce un insieme di attributi comuni a tutti gli elementi che rappresentano letture di varianti nella lettura critica di un'opera</desc>
   <classes>
-    <memberOf key="att.source"/>
     <memberOf key="att.written"/>
   </classes>
   <attList>
@@ -31933,7 +32106,12 @@ des séquences de variantes plus complexes (par exemple comportant de multiples 
         </p>
       </remarks>
     </attDef>
-  
+    <attDef ident="require" usage="opt">
+      <desc versionDate="2016-08-19" xml:lang="en">points to other readings that are required when adopting the current reading or lemma.</desc>
+      <desc versionDate="2016-08-19" xml:lang="it">punta ad altre letture che vanno obbligatoriamente considerate insieme all'elemento corrente</desc>
+      <datatype maxOccurs="unbounded"><dataRef key="teidata.pointer"/></datatype>
+    </attDef>
+    
   </attList>
   <remarks versionDate="2005-10-10" xml:lang="en">
     <p>This element class defines attributes inherited by
@@ -31954,7 +32132,7 @@ des séquences de variantes plus complexes (par exemple comportant de multiples 
 </classSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" rend="change" module="textcrit" ident="app"><gloss versionDate="2005-01-14" xml:lang="en">apparatus entry</gloss><gloss versionDate="2007-12-20" xml:lang="ko">참조 도구 표제 항목</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">學術編輯註解項目</gloss><gloss versionDate="2007-06-12" xml:lang="fr">entrée d'apparat critique</gloss><gloss versionDate="2007-05-04" xml:lang="es">entrada de aparato crítico</gloss><gloss versionDate="2007-01-21" xml:lang="it">voce dell'apparato</gloss><desc versionDate="2013-10-17" xml:lang="en">contains one entry in a critical apparatus, with an optional
 lemma and usually one or more readings or notes on the relevant passage.</desc><desc versionDate="2007-12-20" xml:lang="ko">수의적 레마와 적어도 하나의 독법을 포함하여 비평적 참조 도구에서 하나의 표제 항목을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">一項學術編輯註解，內含一個不必備主題以及至少一個對應本。</desc><desc versionDate="2008-04-05" xml:lang="ja">校勘資料中のいち対象で，内容として少なくとも1つの読みと，選択的に見
   出し(lemma)をとる．</desc><desc versionDate="2007-06-12" xml:lang="fr">contient une entrée dans un apparat critique,
-			constituée d'un lemme facultatif et d'au moins une leçon.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una entrada en el aparato crítico, con un lema opcional y, al menos, una lectura.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una singola voce in un apparato critico, con un lemma facoltativo e almeno una lettura</desc><classes><memberOf key="att.textCritical.global"/><memberOf key="att.textCritical.linking"/><memberOf key="model.global.edit"/></classes><content><sequence minOccurs="1" maxOccurs="1"><elementRef key="lem" minOccurs="0"/><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.rdgLike"/><classRef key="model.noteLike"/><elementRef key="wit"/><elementRef key="rdgGrp"/></alternate></sequence></content><attList><attDef ident="type" usage="opt">
+			constituée d'un lemme facultatif et d'au moins une leçon.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una entrada en el aparato crítico, con un lema opcional y, al menos, una lectura.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene una singola voce in un apparato critico, con un lemma facoltativo e almeno una lettura</desc><classes><memberOf key="att.textCritical.global"/><memberOf key="model.global.edit"/></classes><content><sequence minOccurs="1" maxOccurs="1"><elementRef key="lem" minOccurs="0"/><alternate minOccurs="0" maxOccurs="unbounded"><classRef key="model.rdgLike"/><classRef key="model.noteLike"/><elementRef key="wit"/><elementRef key="rdgGrp"/></alternate></sequence></content><attList><attDef ident="type" usage="opt">
       <desc versionDate="2005-01-14" xml:lang="en">classifies the variation contained in this element according to
 some convenient typology.</desc>
       <desc versionDate="2007-12-20" xml:lang="ko">다양한 유형에 따라 이 요소에 포함된 변이형을 분류한다.</desc>
@@ -32193,7 +32371,7 @@ encoding method is used.  It supplies a  string containing a canonical reference
     <ptr target="#TCAPLK"/>
   </listRef>
 </elementSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" rend="change" module="textcrit" ident="lem"><gloss versionDate="2005-01-14" xml:lang="en">lemma</gloss><gloss versionDate="2007-12-20" xml:lang="ko">레마</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">主題</gloss><gloss versionDate="2007-06-12" xml:lang="fr">lemme</gloss><gloss versionDate="2007-05-04" xml:lang="es">lema</gloss><desc versionDate="2005-01-14" xml:lang="en">contains the lemma, or base text, of a textual variation.</desc><desc versionDate="2007-12-20" xml:lang="ko">텍스트 변이형의 레마 또는 기본 텍스트를 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含一個原文變異的主題或基礎文件。</desc><desc versionDate="2008-04-05" xml:lang="ja">異なるテキストにおける対象語，すなわち基底テキスト(base text)を示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">contient le lemme ou le texte de base d'une
-			variante textuelle</desc><desc versionDate="2007-05-04" xml:lang="es">contiene el lema, o texto base, de una variante textuale</desc><desc versionDate="2007-01-21" xml:lang="it">contiene il lemma, o testo base, di una variante testuale</desc><classes><memberOf key="att.textCritical.linking"/><memberOf key="att.global"/><memberOf key="att.textCritical"/><memberOf key="att.witnessed"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><textNode/><classRef key="model.divLike"/><classRef key="model.divPart"/><classRef key="model.gLike"/><classRef key="model.phrase"/><classRef key="model.inter"/><classRef key="model.global"/><classRef key="model.rdgPart"/></alternate></content><attList/><exemplum xml:lang="en">
+			variante textuelle</desc><desc versionDate="2007-05-04" xml:lang="es">contiene el lema, o texto base, de una variante textuale</desc><desc versionDate="2007-01-21" xml:lang="it">contiene il lemma, o testo base, di una variante testuale</desc><classes><memberOf key="att.global"/><memberOf key="att.textCritical"/><memberOf key="att.witnessed"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><textNode/><classRef key="model.divLike"/><classRef key="model.divPart"/><classRef key="model.gLike"/><classRef key="model.phrase"/><classRef key="model.inter"/><classRef key="model.global"/><classRef key="model.rdgPart"/></alternate></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <app>
         <lem wit="#El #Hg">Experience</lem>
@@ -32225,7 +32403,7 @@ form in the running text).</p>
   </remarks><listRef>
     <ptr target="#TCAPLL"/>
   </listRef></elementSpec><elementSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" rend="change" module="textcrit" ident="rdg"><gloss versionDate="2005-01-14" xml:lang="en">reading</gloss><gloss versionDate="2007-12-20" xml:lang="ko">독법</gloss><gloss versionDate="2007-05-02" xml:lang="zh-TW">對應本</gloss><gloss versionDate="2007-06-12" xml:lang="fr">leçon</gloss><gloss versionDate="2007-05-04" xml:lang="es">lectura</gloss><gloss versionDate="2007-01-21" xml:lang="it">lettura</gloss><desc versionDate="2005-01-14" xml:lang="en">contains a single reading within a textual variation.</desc><desc versionDate="2007-12-20" xml:lang="ko">텍스트 변이형 내에서 단일 독법을 포함한다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">包含原文變異中的一個對應本。</desc><desc versionDate="2008-04-05" xml:lang="ja">異なるテキスト中で，ひとつの読みを示す．</desc><desc versionDate="2007-06-12" xml:lang="fr">contient une leçon à l'intérieur d'une variante
-			du texte.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una única lectura dentro de una variante textual.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene un'unica lettura entro una variante testuale</desc><classes><memberOf key="att.textCritical.global"/><memberOf key="att.textCritical"/><memberOf key="att.textCritical.linking"/><memberOf key="att.witnessed"/><memberOf key="model.rdgLike"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><textNode/><classRef key="model.divLike"/><classRef key="model.divPart"/><classRef key="model.gLike"/><classRef key="model.phrase"/><classRef key="model.inter"/><classRef key="model.global"/><classRef key="model.rdgPart"/></alternate></content><attList/><exemplum xml:lang="en">
+			du texte.</desc><desc versionDate="2007-05-04" xml:lang="es">contiene una única lectura dentro de una variante textual.</desc><desc versionDate="2007-01-21" xml:lang="it">contiene un'unica lettura entro una variante testuale</desc><classes><memberOf key="att.global"/><memberOf key="att.textCritical"/><memberOf key="att.witnessed"/><memberOf key="model.rdgLike"/></classes><content><alternate minOccurs="0" maxOccurs="unbounded"><textNode/><classRef key="model.divLike"/><classRef key="model.divPart"/><classRef key="model.gLike"/><classRef key="model.phrase"/><classRef key="model.inter"/><classRef key="model.global"/><classRef key="model.rdgPart"/></alternate></content><attList/><exemplum xml:lang="en">
     <egXML xmlns="http://www.tei-c.org/ns/Examples">
       <rdg wit="#Ra2">Eryment</rdg>
     </egXML>
@@ -32239,7 +32417,7 @@ form in the running text).</p>
 groups two or more readings perceived to have a genetic
 relationship or other affinity.</desc><desc versionDate="2007-12-20" xml:lang="ko">텍스트 변이형 내에서 계통 관계 또는 유사 관계로 이해되는 둘 이상의 독법을 모아 놓는다.</desc><desc versionDate="2007-05-02" xml:lang="zh-TW">原文變異中，匯集兩個或多個認為具有根源關係或於其他方面性質類似的對應本。</desc><desc versionDate="2008-04-05" xml:lang="ja">異なるテキストで，系統関係や類縁性があるとされる，二つ以上の読みをま
   とめる．</desc><desc versionDate="2007-06-12" xml:lang="fr">regroupe deux leçons ou plus qui sont perçues
-			comme ayant une relation génétique ou une autre affinité.</desc><desc versionDate="2007-05-04" xml:lang="es">agrupa al interno de una variante textual dos o más lecturas consideradas emparentadas o afines.</desc><desc versionDate="2007-01-21" xml:lang="it">all'interno di una variante testuale raggruppa due o più letture considerate imparentate o affini</desc><classes><memberOf key="att.textCritical.global"/><memberOf key="att.textCritical"/><memberOf key="att.textCritical.linking"/></classes><content><alternate minOccurs="1" maxOccurs="unbounded"><sequence minOccurs="1" maxOccurs="1"><elementRef key="rdgGrp"/><elementRef key="wit" minOccurs="0"/></sequence><sequence minOccurs="0" maxOccurs="unbounded"><sequence minOccurs="0" maxOccurs="1"><elementRef key="lem"/><elementRef key="wit" minOccurs="0"/></sequence><sequence minOccurs="1" maxOccurs="1"><classRef key="model.rdgLike"/><elementRef key="wit" minOccurs="0"/></sequence></sequence></alternate></content><constraintSpec scheme="isoschematron" ident="only1lem">
+			comme ayant une relation génétique ou une autre affinité.</desc><desc versionDate="2007-05-04" xml:lang="es">agrupa al interno de una variante textual dos o más lecturas consideradas emparentadas o afines.</desc><desc versionDate="2007-01-21" xml:lang="it">all'interno di una variante testuale raggruppa due o più letture considerate imparentate o affini</desc><classes><memberOf key="att.global"/><memberOf key="att.textCritical"/></classes><content><alternate minOccurs="1" maxOccurs="unbounded"><sequence minOccurs="1" maxOccurs="1"><elementRef key="rdgGrp"/><elementRef key="wit" minOccurs="0"/></sequence><sequence minOccurs="0" maxOccurs="unbounded"><sequence minOccurs="0" maxOccurs="1"><elementRef key="lem"/><elementRef key="wit" minOccurs="0"/></sequence><sequence minOccurs="1" maxOccurs="1"><classRef key="model.rdgLike"/><elementRef key="wit" minOccurs="0"/></sequence></sequence><classRef key="model.noteLike" minOccurs="0" maxOccurs="unbounded"/></alternate></content><constraintSpec scheme="isoschematron" ident="only1lem">
     <constraint>
       <sch:assert test="count(tei:lem) &lt; 2">Only one &lt;lem&gt; element may appear within a &lt;rdgGrp&gt;</sch:assert>
     </constraint>
@@ -32314,7 +32492,6 @@ witnesses, to a particular reading.</desc>
     <memberOf key="att.global"/>
     <memberOf key="model.noteLike"/>
     <memberOf key="att.placement"/>
-    <memberOf key="att.source"/>
     <memberOf key="att.pointing"/>
   </classes>
   <content>
@@ -33804,14 +33981,6 @@ généralement dans des textes oraux</desc>
                 </attDef>
               </attList>
               
-            </classSpec><classSpec rend="add" module="derived-module-tei-DLL" type="atts" ident="att.textCritical.linking" mode="add">
-              <attList>
-                <attDef ident="require">
-                  <datatype maxOccurs="unbounded">
-                    <dataRef key="teidata.pointer"/>
-                  </datatype>
-                </attDef>
-              </attList>
             </classSpec><classSpec rend="add" module="derived-module-tei-DLL" type="atts" ident="att.textCritical.global" mode="add">
               <classes>
                 <memberOf key="att.global.rendition"/>
@@ -34021,7 +34190,26 @@ généralement dans des textes oraux</desc>
                   </valList>
                 </attDef>
               </attList>
-            </classSpec><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="CO" xml:id="DCO" ident="core"/><moduleSpec xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="HD" xml:id="DHD" ident="header"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="PH" xml:id="DPH" ident="transcr"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="VE" xml:id="DVE" ident="verse"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="AI" xml:id="DAI" ident="analysis"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="CE" xml:id="DCE" ident="certainty"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="WD" xml:id="DWD" ident="gaiji"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="SA" xml:id="DSA" ident="linking"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="MS" xml:id="DMSD2" ident="msdescription"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="ND" xml:id="DND" ident="namesdates"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="TC" xml:id="DTC" ident="textcrit"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="TS" xml:id="DTS" ident="spoken"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="CC" xml:id="DCCHDR" ident="corpus"/></schemaSpec></div>
+            </classSpec><classSpec rend="add" predeclare="true" xml:id="GBLSRC" module="tei" type="atts" ident="att.global.source" mode="add">
+              <desc xmlns:rng="http://relaxng.org/ns/structure/1.0" versionDate="2016-02-15" xml:lang="en">provides an attribute used by elements to point to an external source.</desc>
+              <constraintSpec xmlns:rng="http://relaxng.org/ns/structure/1.0" ident="crited.source" scheme="isoschematron">
+                <constraint>
+                  <sch:rule context="tei:*[@source]">
+                    <sch:report test="exists(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null)">No matching xml:id for reference(s): <sch:value-of select="string-join(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"/>.</sch:report>
+                  </sch:rule>
+                </constraint>
+              </constraintSpec>
+              <attList xmlns:rng="http://relaxng.org/ns/structure/1.0">
+                <attDef ident="source" usage="opt">
+                  <desc versionDate="2010-05-09" xml:lang="en">specifies the source from which some aspect of this element is drawn.</desc>
+                  <datatype maxOccurs="unbounded"><dataRef key="teidata.pointer"/></datatype>
+                  <remarks xml:lang="en" versionDate="2016-12-04">
+                    <p>The <att>source</att> attribute points to an external source. When used on elements describing schema components it locates the source for the ODD processor from which declarations and definitions for the components of the object being defined may be obtained. On other elements it provides a pointer to the bibliographical source from which a quotation or citation is drawn. These are provided as any form of URI, for example an absolute URI, a relative URI, or private scheme URI that is expanded to an absolute URI as documented in a <gi>prefixDef</gi>.</p>
+                  </remarks>
+                </attDef>
+              </attList>
+            </classSpec><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="ST" xml:id="DSTTEI2" ident="tei" type="core"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="CO" xml:id="DCO" ident="core"/><moduleSpec xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="HD" xml:id="DHD" ident="header"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="DS" xml:id="DDS" ident="textstructure"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="PH" xml:id="DPH" ident="transcr"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="VE" xml:id="DVE" ident="verse"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="AI" xml:id="DAI" ident="analysis"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="CE" xml:id="DCE" ident="certainty"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="WD" xml:id="DWD" ident="gaiji"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="SA" xml:id="DSA" ident="linking"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="MS" xml:id="DMSD2" ident="msdescription"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="ND" xml:id="DND" ident="namesdates"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="TC" xml:id="DTC" ident="textcrit"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="FT" xml:id="DFTFF" ident="figures"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="TS" xml:id="DTS" ident="spoken"/><moduleSpec xmlns:tei="http://www.tei-c.org/ns/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" n="CC" xml:id="DCCHDR" ident="corpus"/></schemaSpec>
+        </div>
       </body>
    </text>
 </TEI>
