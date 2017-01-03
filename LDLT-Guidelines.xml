@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../../TEIC/TEI/P5/p5odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../TEIC/TEI/P5/p5odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
    <teiHeader>
       <fileDesc>
@@ -4456,8 +4455,8 @@
             <moduleRef key="namesdates"
               except="affiliation age climate education faith geoFeat langKnowledge
               langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
-            <moduleRef key="textcrit" source="http://www.tei-c.org/Vault/P5/3.0.0/xml/tei/odd/p5subset.xml"/>
-            <moduleRef key="figures" source="http://www.tei-c.org/Vault/P5/3.0.0/xml/tei/odd/p5subset.xml" except="formula"/>
+            <moduleRef key="textcrit" source="http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml"/>
+            <moduleRef key="figures" source="http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml" except="formula"/>
             <moduleRef key="spoken"
               except="broadcast equipment incident kinesic pause recording recordingStmt
               scriptStmt shift u vocal writing"/>
@@ -4625,15 +4624,6 @@
             </classSpec>
             
             <!-- CHANGED MODEL CLASSES -->
-            <classSpec type="atts" ident="att.textCritical.linking" mode="add">
-              <attList>
-                <attDef ident="require">
-                  <datatype maxOccurs="unbounded">
-                    <dataRef key="teidata.pointer"/>
-                  </datatype>
-                </attDef>
-              </attList>
-            </classSpec>
             
             <classSpec type="atts" ident="att.textCritical.global" mode="add">
               <classes>
@@ -5113,6 +5103,7 @@
             
             <elementSpec ident="lem" module="textcrit" mode="change">
               <classes mode="change">
+                <memberOf key="att.global"/>
                 <memberOf key="att.textCritical.linking"/>
               </classes>
             </elementSpec>
@@ -5160,7 +5151,7 @@
             
             <elementSpec ident="rdg" module="textcrit" mode="change">
               <classes mode="replace">
-                <memberOf key="att.textCritical.global"/>
+                <memberOf key="att.global"/>
                 <memberOf key="att.textCritical"/>
                 <memberOf key="att.textCritical.linking"/>
                 <memberOf key="att.witnessed"/>
@@ -5170,7 +5161,7 @@
             
             <elementSpec ident="rdgGrp" module="textcrit" mode="change">
               <classes mode="replace">
-                <memberOf key="att.textCritical.global"/>
+                <memberOf key="att.global"/>
                 <memberOf key="att.textCritical"/>
                 <memberOf key="att.textCritical.linking"/>
               </classes>
@@ -5287,17 +5278,6 @@
               </attList>
             </classSpec>
             
-            <!-- Make @target on ref and ptr contain a single address. -->
-            <classSpec ident="att.pointing" type="atts" mode="change">
-              <attList>
-                <attDef ident="target" mode="change">
-                  <datatype>
-                    <dataRef key="teidata.pointer"/>
-                  </datatype>
-                </attDef>
-              </attList>
-            </classSpec>
-            
             <classSpec type="atts" ident="att.responsibility" mode="change">
               <attList>
                 <attDef ident="cert" mode="replace">
@@ -5323,20 +5303,51 @@
               </constraintSpec>
             </classSpec>
             
-            <classSpec ident="att.source" type="atts" mode="change">
+            <!-- Global @source. Remove when EpiDoc updates to TEI 3.1.0 -->
+            <classSpec xmlns="http://www.tei-c.org/ns/1.0"
+              xmlns:rng="http://relaxng.org/ns/structure/1.0" predeclare="true" xml:id="GBLSRC" module="tei" type="atts" ident="att.global.source" mode="add">
+              <desc versionDate="2016-02-15" xml:lang="en">provides an attribute used by elements to point to an external source.</desc>
               <constraintSpec ident="crited.source" scheme="isoschematron">
                 <constraint>
                   <sch:rule context="tei:*[@source]">
                     <sch:report
                       test="exists(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null)"
-                      >No matching xmml:id for reference(s): <sch:value-of
+                      >No matching xml:id for reference(s): <sch:value-of
                         select="string-join(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
                       />.</sch:report>
                   </sch:rule>
                 </constraint>
               </constraintSpec>
+              <attList>
+                <attDef ident="source" usage="opt">
+                  <desc versionDate="2010-05-09" xml:lang="en">specifies the source from which some aspect of this element is drawn.</desc>
+                  <datatype maxOccurs="unbounded"><dataRef key="teidata.pointer"/></datatype>
+                  <remarks xml:lang="en" versionDate="2016-12-04">
+                    <p>The <att>source</att> attribute points to an external source. When used on elements describing schema components it locates the source for the ODD processor from which declarations and definitions for the components of the object being defined may be obtained. On other elements it provides a pointer to the bibliographical source from which a quotation or citation is drawn. These are provided as any form of URI, for example an absolute URI, a relative URI, or private scheme URI that is expanded to an absolute URI as documented in a <gi>prefixDef</gi>.</p>
+                  </remarks>
+                </attDef>
+              </attList>
             </classSpec>
-          </schemaSpec></div>
+            <!-- Add att.global.source to att.global -->
+            <classSpec type="atts" ident="att.global" mode="change">
+              <classes>
+                <memberOf key="att.global.rendition"/>
+                <memberOf key="att.global.linking"/>
+                <memberOf key="att.global.analytic"/>
+                <memberOf key="att.global.facs"/>
+                <memberOf key="att.global.change"/>
+                <memberOf key="att.global.responsibility"/>
+                <memberOf key="att.global.source"/>
+              </classes>
+            </classSpec>
+            <classSpec type="atts" ident="att.source" mode="delete"/>
+            <elementSpec ident="normalization" module="header" mode="change">
+              <attList>
+                <attDef ident="source" mode="delete"/>
+              </attList>
+            </elementSpec>
+          </schemaSpec>
+        </div>
       </body>
    </text>
 </TEI>
