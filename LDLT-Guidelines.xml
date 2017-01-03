@@ -5539,7 +5539,9 @@
                 <memberOf key="att.global.source"/>
               </classes>
             </classSpec>
+            <!-- Delete old att.source -->
             <classSpec type="atts" ident="att.source" mode="delete"/>
+            <!-- Kill @source defined on normalization -->
             <elementSpec ident="normalization" module="header" mode="change">
               <attList>
                 <attDef ident="source" mode="delete"/>
