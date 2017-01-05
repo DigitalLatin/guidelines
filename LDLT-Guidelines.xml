@@ -2433,7 +2433,7 @@
 
                   <list>
                      <item><gi>gap</gi> signifies that text is missing.</item>
-                     <item><att>reason</att> with value "lacuna" indicates that the text has been
+                     <item><att>reason</att> with value "lost" indicates that the text has been
                         lost from the entire tradition, not just one witness or family of
                         witnesses.</item>
                   </list>
@@ -2452,7 +2452,7 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <p>Custodiisque diligentius dispositis ipse grauissima hieme in nauibus
                         excubans neque ullum laborem aut munus despiciens neque subsidium expectans
-                        si in Caesaris complexum uenire posset <gap reason="lacuna"/></p>
+                        si in Caesaris complexum uenire posset <gap reason="lost"/></p>
                   </egXML>
 
                   <p>If it is desirable to insert a comment on the lacuna in the apparatus criticus,
