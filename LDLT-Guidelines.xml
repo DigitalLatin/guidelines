@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../TEIC/TEI/P5/p5odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../TEIC/TEI/P5/p5odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
    <teiHeader>
       <fileDesc>
@@ -2581,7 +2583,7 @@
                may be inserted in <gi>quote</gi> after <gi>bibl</gi>:</p>
 
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-               <p>Probatio minoris per <cit><ref>Boethium De Trinitate</ref><bibl>Boethius <title>De
+               <p>Probatio minoris per <cit><ref>Boethium De Trinitate</ref><bibl><author>Boethius</author> <title>De
                            Trin.</title> c. 4 (ed. R. Peiper 159; PL 64, 1353C)</bibl>: <quote>Iamne
                         patet quae sit differentia praedicationum? Quod aliae quidem quasi rem
                         monstrant, aliae vero quasi circumstantias rei; quodque illa quae ita
