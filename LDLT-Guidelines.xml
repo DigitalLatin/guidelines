@@ -1480,7 +1480,7 @@
 
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <bibl xml:id="Lucas"><abbr type="siglum">Lucas</abbr> = <author>Lucas,
-                              Hans</author>. "<title level="a">Zu Calpurnius</title>.” <title
+                              Hans</author>. “<title level="a">Zu Calpurnius</title>.” <title
                               level="j">Wiener Studien</title>
                            <biblScope unit="volume">22</biblScope> (<date>1901</date>): <biblScope
                               unit="page">139–40</biblScope>. URL: <ptr
@@ -2479,6 +2479,8 @@
          <!-- Begin section on apparatus fontium et testium. -->
          <div xml:id="apparatus-fontium-testium">
             <head>Apparatus Fontium et Testium</head>
+            
+            <!-- Need to add a section on using <note> to point out similar passages? -->
 
             <p>An apparatus fontium et testium collects references to texts quoted or cited in the
                text of the edition. This section demonstrates how to encode such references so that
@@ -4507,7 +4509,7 @@
                <l n="97">Aspicis, ut virides audito Caesare silvae</l>
                <!-- Edition continues until end. -->
                <div xml:id="textual-commentary">
-                  <note type="commentary" target="lem-4.96-gap" xml:id="comm-4.96">
+                  <note type="commentary" target="#lem-4.96-gap" xml:id="comm-4.96">
                      <p>4.96: Carmen amoebaeum, quod vocatur, cum ex impari stropharum numero
                         constare nequeat, in hac ecloga integrum non esses <ref target="#Hermann">G.
                            Hermann</ref> (ad Bion. et Mosch. p. 46) primus sensit. <ref
