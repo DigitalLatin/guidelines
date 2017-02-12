@@ -2206,6 +2206,8 @@
                      <rdg wit="#χ #φ"><persName ref="#Meliboeus">melibaeus</persName></rdg>
                      <rdg wit="#μ">me libens</rdg></app>
                </egXML>
+               
+               <!-- Need a section on groups of people using <orgName>. -->
 
             </div>
             <!-- End of section on people -->
@@ -3856,6 +3858,8 @@
             <!-- Begin section on corrections. -->
             <div xml:id="apparatus-criticus-correction">
                <head>Corrections</head>
+               
+               <!-- Need a section for the abbreviated way of handling this with G and Gc, for example. They're just different witnesses at that point. -->
 
                <p>Correction has been discussed in the section “<ref
                      target="#apparatus-criticus-concepts-definitions">Concepts and
@@ -4508,7 +4512,7 @@
                </app>
                <l n="97">Aspicis, ut virides audito Caesare silvae</l>
                <!-- Edition continues until end. -->
-               <div xml:id="textual-commentary">
+               <div type="commentary">
                   <note type="commentary" target="#lem-4.96-gap" xml:id="comm-4.96">
                      <p>4.96: Carmen amoebaeum, quod vocatur, cum ex impari stropharum numero
                         constare nequeat, in hac ecloga integrum non esses <ref target="#Hermann">G.
