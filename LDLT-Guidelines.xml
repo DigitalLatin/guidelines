@@ -24,7 +24,7 @@
       <body>
          <div xml:id="Getting-started">
             <head>Getting Started</head>
-            <p>These Guidelines describe how to create a critical edition for the Digital Latin
+            <p>These HI! Guidelines describe how to create a critical edition for the Digital Latin
                Library's <bibl><title>Library of Digital Latin Texts</title></bibl>. The LDLT uses a
                customization of the standard established by the <ref target="#TEI">Text Encoding
                   Initiative (TEI)</ref>. LDLT texts are in a format called XML, which uses tags
