@@ -280,34 +280,33 @@
                <head>Terminology: Witness and Source</head>
 
                <p>Editors consult many types of documents and publications in the process of
-                  creating critical editions: manuscripts, incunables, modern editions, monographs,
+                  creating critical editions: manuscripts, incunabula, modern editions, monographs,
                   articles, notes, correspondence, etc. Some of these types (i.e., manuscripts and
-                  incunables) are commonly referred to as "witnesses," since they stand in close
-                  relationship to a certain version of the text. The term "witness" cannot be
+                  incunables) are commonly referred to as “witnesses,” since they stand in close
+                  relationship to a certain version of the text. The term “witness” cannot be
                   applied to the other types, since they do not cleave to one exemplar, but rather
                   reflect a broad range of sources (including scholarly conjecture).</p>
 
                <p>This issue is raised here because the model for LDLT editions requires precision
-                  in the use of the terms "witness" and "source," particularly with regard to the
+                  in the use of the terms “witness” and “source,” particularly with regard to the
                   encoding of the critical apparatus, where <att>wit</att> (witness) and
                      <att>source</att> (external source) are used to classify variant readings. The
                   classification of resources as witnesses and sources also affects how they are
-                  encoded in the bibliography, since the former are contained in <gi>listWit</gi>, the latter in <gi>listBibl</gi></p>
+                  encoded in the bibliography, since the former are contained in <gi>listWit</gi>,
+                  the latter in <gi>listBibl</gi>.</p>
 
-               <p>For the purposes of these guidelines, manuscripts and some incunables retain their
+               <p>For the purposes of these guidelines, manuscripts and some incunabula retain their
                   traditional distinction as witnesses, but that category has been enlarged to
                   include manuscript hands, which may bear witness to alternative readings, glosses,
                   marginalia, corrections, and conjectures. This is a departure from the <ref
                      target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#msph2"
                      >TEI's guidelines on Manuscript Description</ref>, which treat the manuscript
                   itself as a witness, but consider hands as agents responsible for specific textual
-                  content. It is up to the editor to determine whether an incunable is a witness to
-                  a single manuscript.</p>
+                  content. It is up to the editor to determine whether an incunabulum is a witness
+                  to a single manuscript.</p>
 
-               <p>All other resources cited in an edition fall under the category of "source," a
+               <p>All other resources cited in an edition fall under the category of “source,” a
                   capacious term that refers to any resource external to the current edition.</p>
-
-
             </div>
 
             <!-- End section on terms "witness" and "source" -->
@@ -397,7 +396,7 @@
                      <cell role="data">Fragments of ancient copies</cell>
                      <cell role="data">Π1, Π2</cell>
                      <cell role="data">Π<hi rend="superscript">1</hi>, Π<hi rend="superscript"
-                           >1</hi></cell>
+                           >2</hi></cell>
                   </row>
                   <row role="data">
                      <cell role="data">Consensus of manuscripts</cell>
@@ -406,7 +405,7 @@
                   </row>
                   <row role="data">
                      <cell role="data">One or more late manuscripts</cell>
-                     <cell role="data">Ϛ</cell>
+                     <cell role="data" xml:id="stigma-siglum">Ϛ (see note below)</cell>
                      <cell role="data">ϛ</cell>
                   </row>
                   <row role="data">
@@ -432,6 +431,10 @@
                      <cell role="data">Burm. 1731, Burm. 1759</cell>
                   </row>
                </table>
+
+               <note xml:id="stigma-note" target="#stigma-siglum" >Note that the lower-case character "stigma" (ϛ) is, for whatever reason, an
+                  illegal value for <att>xml:id</att>, so the upper-case character (Ϛ) must be used
+                  in its place.</note>
 
                <p>In short, <hi rend="bold">every entry, regardless of type, in the bibliography of
                      an LDLT edition must have values for both <att>xml:id</att> and
