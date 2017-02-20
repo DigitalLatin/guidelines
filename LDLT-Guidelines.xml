@@ -943,7 +943,7 @@
 
                <p>The bibliography for early editions, modern editions, commentaries, translations,
                   articles, notes, and other materials cited in the edition should be formatted
-                  according to latest edition of <ref target="#Chicago"><hi rend="italic">The
+                  according to the latest edition of <ref target="#Chicago"><hi rend="italic">The
                         Chicago Manual of Style</hi></ref>. As noted <ref target="#zotero">elsewhere
                      in these guidelines</ref>, it is recommended that editors use <ref
                      target="https://www.zotero.org/">Zotero</ref> to manage the bibliography for
@@ -995,24 +995,28 @@
                   <head>Editions</head>
                   <p>To make the most of the functionality supported by the LDLT and to remain true
                      to its data model, previous editions should be classified in one of two
-                     categories: early editions based on a single manuscript, and modern critical
-                     editions based on more than one source. This will have consequences for how the
-                     editions are handled in the apparatus criticus (see the section "<ref
-                        target="#apparatus-criticus">Apparatus Criticus</ref>"). The distinction
-                     should be preserved in the bibliography with the use of two different kinds of
-                     lists: <gi>listWit</gi> for early editions, and <gi>listBibl</gi> for modern
-                     editions. In both types of list, the items should be presented in chronological
-                     order.</p>
+                     categories: early editions based on a single manuscript (witness), and modern
+                     critical editions based on more than one external source (source). This will
+                     have consequences for how the editions are handled in the apparatus criticus
+                     (see the section "<ref target="#apparatus-criticus">Apparatus Criticus</ref>").
+                     The distinction should be preserved in the bibliography with the use of two
+                     different kinds of lists: <gi>listWit</gi> for early editions, and
+                        <gi>listBibl</gi> for modern editions. In both types of list, the items
+                     should be presented in chronological order.</p>
+
+                  <p>For more information on the terms “witness” and “source” as they are used here,
+                     see the section “<ref target="#bibliography-terminology">Terminology: Witness
+                        and Source</ref>” above.</p>
 
                   <!-- Begin section on early editions. -->
                   <div xml:id="bibliography-editions-early">
                      <head>Early Editions</head>
 
                      <p>Since it is often the case that an early edition is a witness to a single
-                        manuscript that might otherwise be lost, early editions should be encoded in
-                        the bibliography with <gi>witness</gi>. Accordingly, they must be grouped in
-                           <gi>listWit</gi>. Since they are also printed books, they also require
-                        the use of <gi>bibl</gi> and its related elements.</p>
+                        manuscript, early editions should be encoded in the bibliography with
+                           <gi>witness</gi>. Accordingly, they must be grouped in <gi>listWit</gi>.
+                        Since they are also printed books, they also require the use of
+                           <gi>bibl</gi> and its related elements.</p>
 
                      <p>
                         <specList>
@@ -1329,7 +1333,8 @@
                      </egXML>
 
                      <p>If it is necessary to group two or more editions together (e.g., first and
-                        second editions), another <gi>listBibl</gi> should enclose the group:</p>
+                        second editions) and refer to them as a unit with one siglum, another
+                           <gi>listBibl</gi> should enclose the group:</p>
 
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <listBibl>
@@ -1460,8 +1465,9 @@
 
                      <p>This will be rendered as follows: <hi rend="bold">Haupt 1854</hi> = Haupt,
                         Moriz. <hi rend="italic">De Carminibus Bucolicis Calpurnii et
-                        Nemesiani</hi>. Berolini: Typis Academics, 1854. URL:
-                        https://books.google.com/books?id=8SwUAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false</p>
+                        Nemesiani</hi>. Berolini: Typis Academics, 1854. URL: <ref
+                           target="https://books.google.com/books?id=8SwUAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
+                           >https://books.google.com/books?id=8SwUAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false</ref>.</p>
                   </div>
                   <!-- End of section on books. -->
 
@@ -1567,7 +1573,7 @@
                      been quoted or paraphrased elsewhere. For example, editors often cite Heinsius’
                      unpublished conjectures, found in books in his own library. But “Heins.” does
                      not help a reader find more information, which is why the bibliography of an
-                     LDLT edition includes a list of scholars mentioned by name in the edition, with
+                     LDLT edition must include a list of scholars mentioned by name in the edition, with
                      information about where to find more information, if it is available.</p>
                   <p>
                      <specList>
@@ -1607,7 +1613,7 @@
                               names.</item>
                            <item><gi>surname</gi> contains the scholar’s last name.</item>
                            <item><gi>addname</gi> (additional name) contains an additional or
-                              alternate name by which a scholar is known. If a scholars is commonly
+                              alternate name by which a scholar is known. If a scholar is commonly
                               known by a Latinized form of his or her name, that name should be
                               inserted in <gi>addname</gi>.</item>
                         </list>
