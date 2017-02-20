@@ -132,7 +132,7 @@
                            </div>
                         </div>
                      </front>
-                     
+
                      <body>
                         <div type="edition" xml:id="edition-text" xml:space="preserve">
                         <div type="textpart" n="1" xml:id="part1">
@@ -204,8 +204,8 @@
                   matter.</p>
 
                <p>Just as an editor is not expected to create the title page and document the
-                  publication information, this section of an LDLT text is the responsibility of the DLL
-                  staff.</p>
+                  publication information, this section of an LDLT text is the responsibility of the
+                  DLL staff.</p>
             </div>
             <!-- End of section on publication details. -->
 
@@ -217,9 +217,8 @@
 
                <p>The <hi rend="bold">preface</hi> lays out (in prose, using <gi>p</gi>) the
                   argument for the edition. It also describes the textual tradition and its major
-                  sources. It is recommended to compile the bibliography first, to
-                  facilitate linking to the individual entries as they are mentioned in the
-                  preface.</p>
+                  sources. It is recommended to compile the bibliography first, to facilitate
+                  linking to the individual entries as they are mentioned in the preface.</p>
 
                <p>The elements available in all TEI documents are available for use in the preface.
                   For example, an editor might want to make a table comparing the readings of
@@ -240,7 +239,7 @@
                edition. For this reason, every item in the bibliography is encoded as structured
                data (contained in <gi>witness</gi> or <gi>bibl</gi>), so that the bibliography
                itself can become a useful tool for finding and using resources, especially those
-               that are available online.</p>
+               available online.</p>
 
             <p xml:id="zotero">The bibliography is all the more useful as a tool if it is created
                and made available via <ref target="http://www.zotero.org">Zotero</ref>, an open
@@ -275,6 +274,43 @@
                   about where the information can be verified.</p>
             </div>
             <!-- End of section bibliography: structure. -->
+
+            <!-- Begin section on terms "witness" and "source" -->
+            <div xml:id="bibliography-terminology">
+               <head>Terminology: Witness and Source</head>
+
+               <p>Editors consult many types of documents and publications in the process of
+                  creating critical editions: manuscripts, incunables, modern editions, monographs,
+                  articles, notes, correspondence, etc. Some of these types (i.e., manuscripts and
+                  incunables) are commonly referred to as "witnesses," since they stand in close
+                  relationship to a certain version of the text. The term "witness" cannot be
+                  applied to the other types, since they do not cleave to one exemplar, but rather
+                  reflect a broad range of sources (including scholarly conjecture).</p>
+
+               <p>This issue is raised here because the model for LDLT editions requires precision
+                  in the use of the terms "witness" and "source," particularly with regard to the
+                  encoding of the critical apparatus, where <att>wit</att> (witness) and
+                     <att>source</att> (external source) are used to classify variant readings. The
+                  classification of resources as witnesses and sources also affects how they are
+                  encoded in the bibliography, since the former are contained in <gi>listWit</gi>, the latter in <gi>listBibl</gi></p>
+
+               <p>For the purposes of these guidelines, manuscripts and some incunables retain their
+                  traditional distinction as witnesses, but that category has been enlarged to
+                  include manuscript hands, which may bear witness to alternative readings, glosses,
+                  marginalia, corrections, and conjectures. This is a departure from the <ref
+                     target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html#msph2"
+                     >TEI's guidelines on Manuscript Description</ref>, which treat the manuscript
+                  itself as a witness, but consider hands as agents responsible for specific textual
+                  content. It is up to the editor to determine whether an incunable is a witness to
+                  a single manuscript.</p>
+
+               <p>All other resources cited in an edition fall under the category of "source," a
+                  capacious term that refers to any resource external to the current edition.</p>
+
+
+            </div>
+
+            <!-- End section on terms "witness" and "source" -->
 
             <!-- Bibliography: sigla -->
             <div xml:id="bibliography-sigla">
