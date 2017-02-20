@@ -432,9 +432,9 @@
                   </row>
                </table>
 
-               <note xml:id="stigma-note" target="#stigma-siglum" >Note that the lower-case character "stigma" (ϛ) is, for whatever reason, an
-                  illegal value for <att>xml:id</att>, so the upper-case character (Ϛ) must be used
-                  in its place.</note>
+               <note xml:id="stigma-note" target="#stigma-siglum">Note that the lower-case character
+                  "stigma" (ϛ) is, for whatever reason, an illegal value for <att>xml:id</att>, so
+                  the upper-case character (Ϛ) must be used in its place.</note>
 
                <p>In short, <hi rend="bold">every entry, regardless of type, in the bibliography of
                      an LDLT edition must have values for both <att>xml:id</att> and
@@ -504,12 +504,12 @@
                <head>Manuscripts</head>
                <p>The description of manuscripts is a discipline unto itself, with long-established
                   conventions for capturing all of the details about not only a manuscript’s
-                  contents, but also its dimensions, provenance, material, and other physical
-                  details. It is customary for critical editions to provide a brief prose
-                  description of the major manuscripts used for establishing the text, usually only
-                  enough to identify where the manuscript may be found for consultation, but
-                  sometimes including information about its provenance and other details relevant to
-                  the edition (e.g., manuscript hands).</p>
+                  contents, but also its dimensions, provenance, material, and other details. It is
+                  customary for critical editions to provide a brief prose description of the major
+                  manuscripts used for establishing the text, usually only enough to identify where
+                  the manuscript may be found for consultation, but sometimes including information
+                  about its provenance and other details relevant to the edition (e.g., manuscript
+                  hands).</p>
 
                <p>The prose format for describing manuscripts is a predictable and efficient way of
                   conveying this information to human readers, but it is not useful for making the
@@ -520,7 +520,7 @@
                   structured data for machine-readability. This section is a customization of that
                   module for LDLT editions.</p>
 
-               <p>This section establishes a minimum requirement for describing a manuscript for an
+               <p>This section establishes a minimum requirement for describing a manuscript in an
                   LDLT edition so that the information can be processed and displayed as expected.
                   It also includes instructions for encoding a finer degree of detail. Above all,
                   the point is to make the information available to both human and machine readers.
@@ -536,8 +536,8 @@
                         target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/MS.html">module
                         for manuscript description</ref> offers a model for presenting nearly every
                      imaginable detail about a manuscript as structured data. Editors may wish to
-                     use more of the features of the module than are described here, but LDLT viewer
-                     will display only the following:</p>
+                     use more of the features of the module than are described here, but the LDLT
+                     viewer will display only the following:</p>
                   <p>
                      <specList>
                         <specDesc key="listWit"/>
@@ -593,9 +593,9 @@
                               the manuscript. For example, the manuscript may have been recataloged,
                               but its old number is still used.</item>
                            <item><gi>msContents</gi> (manuscript contents) contains a prose
-                              description (using <gi>p</gi>) of the manuscript’s contents, including
-                              incipits and explicits. Encode each work with <gi>bibl</gi> with
-                                 <gi>author</gi> and <gi>title</gi>.</item>
+                              description (using <gi>p</gi>) of the manuscript’s contents. Encode
+                              each work with <gi>bibl</gi> with <gi>author</gi> and
+                              <gi>title</gi>.</item>
                            <item><gi>phsyDesc</gi> (physical description) groups information about
                               the manuscript.</item>
                            <item><gi>objectDesc</gi> (object description) contains a prose
@@ -822,7 +822,7 @@
 
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <listWit xml:id="V">
-                           <head>First Family (<abbr type="siglum">V</abbr></head>
+                           <head>First Family (<abbr type="siglum">V</abbr>)</head>
                            <witness xml:id="A">
                               <!-- Description of manuscript A -->
                            </witness>
@@ -897,6 +897,39 @@
                            </witness>
                         </listWit>
                      </egXML>
+
+                     <p>The nesting of witnesses in this way can lead to confusion, so it is a good
+                        idea to include comments to help with navigation:</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <listWit>
+                           <witness xml:id="ω"><abbr type="siglum">ω</abbr> = archetypus codicum αβ <listWit>
+                                 <witness xml:id="a"><abbr type="siglum">α</abbr> = hyparchetypus
+                                    codicum α<hi rend="subscript">1</hi>Vα <listWit>
+                                       <witness xml:id="α1"><abbr type="siglum">α<hi
+                                                rend="subscript">1</hi></abbr> = hyparchetypus
+                                          codicum MG <listWit>
+                                             <witness xml:id="M"><abbr type="siglum"
+                                                >M</abbr><!-- Description of witness M -->
+                                             </witness>
+                                             <witness xml:id="G"><abbr type="siglum"
+                                                >G</abbr><!-- Description of witness G --></witness>
+                                          </listWit>
+                                          <!-- End of list of children of hyparchetype α1. -->
+                                       </witness>
+                                       <!-- End of hyparchetype α1 -->
+                                    </listWit>
+                                    <!-- End of list of witnesses descending from hyparchetype α -->
+                                 </witness>
+                                 <!-- End of hyparchetype α. This is where a description of β would begin. -->
+                              </listWit>
+                              <!-- End of list of witnesses descending from ω. -->
+                           </witness>
+                           <!-- End of witness ω, archetype of αβ. -->
+                        </listWit>
+                        <!-- End of the initial list. -->
+                     </egXML>
+
                   </div>
                   <!-- End of section on archetypes and hyparchetypes. -->
                </div>
