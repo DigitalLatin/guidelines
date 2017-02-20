@@ -1834,7 +1834,7 @@
                      of a single poem (e.g., stanzas or lines). If there is more than one poem in a
                      book, <att>n</att> should be used to number the poems. <att>met</att> with the
                      name of the meter may also be used, if the editor wishes to identify the meter.
-                     If a different division scheme is required, editors should consult the DLL
+                     If a different division scheme is required, editors should consult LDLT
                      staff.</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
