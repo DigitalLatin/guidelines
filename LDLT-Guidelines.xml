@@ -2164,8 +2164,7 @@
                <head>Quotation of Literature</head>
 
                <p>Quotations of literature should be encoded according to the guidelines set forth
-                  in the section “<ref target="#apparatus-fontium">Apparatus Testium et
-                     Fontium</ref>.”</p>
+                  in the section “<ref target="#apparatus-fontium">Apparatus Fontium</ref>.”</p>
             </div>
             <!-- End section on quotation of literature. -->
 
@@ -2569,13 +2568,13 @@
          </div>
          <!-- End section on edition text. -->
 
-         <!-- Begin section on apparatus fontium et testium. -->
-         <div xml:id="apparatus-fontium-testium">
-            <head>Apparatus Fontium et Testium</head>
+         <!-- Begin section on apparatus fontium. -->
+         <div xml:id="apparatus-fontium">
+            <head>Apparatus Fontium</head>
 
-            <p>An apparatus fontium et testium collects references to texts quoted or cited by the author(s) in the
-               text of the edition. This section demonstrates how to encode such references so that
-               they will be displayed appropriately in the text and so that bibliographical
+            <p>An apparatus fontium collects references to texts quoted or cited by the author(s) in
+               the text of the edition. This section demonstrates how to encode such references so
+               that they will be displayed appropriately in the text and so that bibliographical
                information about them will appear in the edition.</p>
 
             <p>
@@ -2608,8 +2607,8 @@
                   >Prose</ref>" and "<ref target="#edition-text-verse">Verse</ref>.”</p>
 
             <p><bibl><author>Macrobius’</author>
-               <title>Saturnalia</title> 3.16.1–5</bibl> has examples of block quotations of prose and
-                  verse texts, and an inline quotation of a prose text. Note that it is also
+                  <title>Saturnalia</title> 3.16.1–5</bibl> has examples of block quotations of
+               prose and verse texts, and an inline quotation of a prose text. Note that it is also
                an example of <ref target="#edition-text-speech">direct speech</ref>, since the
                entire passage is spoken by a character (Rufius):</p>
 
@@ -2687,7 +2686,106 @@
             <p>The text of the quotation will be displayed in the apparatus fontium.</p>
          </div>
          <!-- End section on apparatus fontium -->
+         <div xml:id="parallel-passages">
+            <head>Parallel Passages</head>
 
+            <p>A register of parallel passages differs from an <ref target="#apparatus-fontium"
+                  >apparatus fontium</ref> in that it reflects the editor's judgment about passages
+               that might be of interest to readers, whereas an apparatus fontium provides
+               information on passages quoted or cited by the author(s). For this reason, entries in
+               the apparatus fontium are encoded within the edition text, but parallel passages are
+               encoded as notes, similar to the way that an editor's textual notes are handled (see
+               the section "<ref target="#apparatus-criticus-editorial-notes">Editorial
+               Notes</ref>").</p>
+
+            <p>
+               <specList>
+                  <specDesc key="note"/>
+                  <specDesc key="listBibl"/>
+                  <specDesc key="bibl"/>
+                  <specDesc key="author"/>
+                  <specDesc key="title"/>
+                  <specDesc key="biblScope"/>
+                  <specDesc key="quote"/>
+               </specList>
+            </p>
+
+            <list>
+               <item><gi>note</gi> contains a list of parallel passages related to the text. Each
+                     <gi>note</gi> must have an <att>xml:id</att> and <att>target</att> pointing to
+                  the <att>xml:id</att> related to the section of text referred to by the
+                     <gi>note</gi>. Each <gi>note</gi> must also have <att>type</att>="parallel" to
+                  distinguish it from other uses of <gi>note</gi>.</item>
+               <item><gi>listBibl</gi> (citation list) contains references to parallel
+                  passages.</item>
+               <item><gi>bibl</gi> (bibliographic citation) contains the following bibliographic
+                  information pertaining to an individual parallel passage.</item>
+               <list>
+                  <item><gi>author</gi> contains the name of the author (or a standard abbreviation)
+                     of a parallel passage.</item>
+                  <item><gi>title</gi> contains the title of the work (or a standard abbreviation)
+                     in which the parallel passage occurs.</item>
+                  <item><gi>biblScope</gi> (scope of bibliographic reference) contains the specific
+                     unit where the parallel passage may be found (e.g., book number, section
+                     number, paragraph number, line number, etc.).</item>
+               </list>
+               <item><gi>quote</gi> contains the quoted text of the passage, if desirable.</item>
+            </list>
+
+            <p>For example, Gelsomino includes an extensive list of parallel passages to individual
+               entries in his <ref target="#gelsomino-sequester">edition of Vibius Sequester</ref>.
+               If that edition were encoded according to these guidelines, each paragraph in the
+               edition text would have an <att>xml:id</att> and <att>corresp</att> pointing to the
+                  <att>xml:id</att> of the note with the parallel passages:</p>
+
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <p n="1" xml:id="f1-achelous" corresp="p-f1-achelous">Achelous, Aetoliae, primus
+                  erupisse terram dicitur.</p>
+
+               <note type="parallel" target="#f1-achelous" xml:id="p-f1-achelous">
+                  <listBibl>
+                     <bibl><author>Verg.</author>
+                        <title>G</title>
+                        <biblScope>1.9</biblScope></bibl>: <quote>poculaque … Acheloia"</quote> (cf.
+                           <bibl><author>Serv. Auct.</author> ad loc.</bibl>);
+                           <bibl><author>Macr.</author>
+                        <title>Satur.</title>
+                        <biblScope>5.18.1–2</biblScope> praesertim 9</bibl>
+                  </listBibl>
+               </note>
+
+               <p n="2" xml:id="f2-arar">Arar, <app>
+                     <lem>Germaniae</lem>
+                     <rdg wit="#Tschu. #Siml.">Galliae</rdg>
+                  </app>, e <app>
+                     <lem>Vogeso</lem>
+                     <rdg wit="#Sal." source="#Rie.">Vosego</rdg>
+                  </app> monte. miscetur Rhodano. ita lene decurrit, ut vix intellegi possit
+                  decursus eius.</p>
+
+               <note type="parallel" target="#f2-arar" xml:id="p-f2-arar">
+                  <listBibl>
+                     <bibl><author>Verg.</author>
+                        <title>E</title>
+                        <biblScope>1.62</biblScope></bibl>: <quote>aut Ararim Parthus bibet aut
+                        Germania Tigrim</quote>; (cf. <bibl><author>Serv.</author></bibl>:
+                        <quote>Ararim Germaniae flumen … Arar fluvius Galliae fluens in
+                        Rhodanum</quote>
+                     <bibl><title>Schol. Bern.</title></bibl>: <quote>Arar flumen Germaniae, tamen
+                        alii dicunt Galliae, in Rhodanum iens</quote>
+                     <bibl><author>Phil.</author>
+                        <biblScope>II</biblScope></bibl>: <quote>fluvius Germaniae vel
+                        Galliae</quote>
+                     <bibl><author>Ansil.</author>
+                        <title>AR</title>
+                        <biblScope>35, 35, 36</biblScope></bibl>: <quote>Fluvius Germaniae</quote>;
+                     cf. <bibl><author>Caes.</author>
+                        <title>BG</title>
+                        <biblScope>1.12</biblScope></bibl></listBibl>
+               </note>
+            </egXML>
+         </div>
+         
          <!-- Begin section on the apparatus criticus. -->
          <div xml:id="apparatus-criticus">
             <head>Apparatus Criticus</head>
@@ -4675,6 +4773,11 @@
                      Commentariorum Libri III De Bello Civili</title>. <series><title level="s"
                         >Oxford Classical Texts</title></series>. <pubPlace>Oxford</pubPlace>:
                      <publisher>Clarendon Press</publisher>, <date>2015</date>.</bibl>
+               <bibl xml:id="gelsomino-sequester"><editor>Gelsomino, Remo</editor>, ed.
+                     <title>Vibius Sequester</title>. <series><title level="s">Bibliotheca
+                        Scriptorum Graecorum et Romanorum Teubneriana</title></series>.
+                     <pubPlace>Leipzig</pubPlace>: <publisher>B. G. Teubner</publisher>,
+                     <date>1967</date>.</bibl>
                <bibl xml:id="giarratano-calpurnius"><editor>Giarratano, Caesar</editor>, ed.
                      <title>Calpurnii et Nemesiani Bucolica</title>. <pubPlace>Naples</pubPlace>:
                   Detken and Rocholl, <date>1910</date>.</bibl>
