@@ -1573,8 +1573,8 @@
                      been quoted or paraphrased elsewhere. For example, editors often cite Heinsius’
                      unpublished conjectures, found in books in his own library. But “Heins.” does
                      not help a reader find more information, which is why the bibliography of an
-                     LDLT edition must include a list of scholars mentioned by name in the edition, with
-                     information about where to find more information, if it is available.</p>
+                     LDLT edition must include a list of scholars mentioned by name in the edition,
+                     with information about where to find more information, if it is available.</p>
                   <p>
                      <specList>
                         <specDesc key="listPerson"/>
@@ -1931,8 +1931,8 @@
                <!-- Begin section on direct speech. -->
                <div xml:id="edition-text-speech-direct-speech">
                   <head>Direct Speech</head>
-                  <p>Quotation of direct speech may be handled in two ways: with punctuation or with
-                     semantic markup.</p>
+                  <p>Quotation of direct speech may be handled in two ways: with punctuation alone
+                     or with semantic markup.</p>
 
                   <p>If an editor wishes to use standard punctuation to represent direct speech, the
                      current edition of <ref target="#Chicago"><hi rend="italic">The Chicago Manual
@@ -1963,8 +1963,8 @@
                            esto.</said></p>
                   </egXML>
 
-                  <p><gi>said</gi> may be nested inside <gi>said</gi> to indication quotation within
-                     a quotation.</p>
+                  <p><gi>said</gi> may be nested inside <gi>said</gi> to indicate quotation within a
+                     quotation.</p>
                </div>
                <!-- End section on direct speech. -->
 
@@ -2023,10 +2023,10 @@
                         actual text, it will be omitted from searches of the text itself.</p>
 
                      <p>Because <gi>label</gi> is less hierarchical than <gi>sp</gi> (below), it is
-                        a good choice if there is considerable dispute in the sources about the
-                        attribution of lines to speakers. If used with <att>exclude</att>, it can
-                        enable the swapping of variants, to allow readers to see the text with
-                        alternate attributions.</p>
+                        a good choice if there is dispute in the sources about the attribution of
+                        lines to speakers. If used with <att>exclude</att>, it can enable the
+                        swapping of variants, to allow readers to see the text with alternate
+                        attributions.</p>
 
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <l n="1"><label type="speaker"><app>
@@ -2164,7 +2164,8 @@
                <head>Quotation of Literature</head>
 
                <p>Quotations of literature should be encoded according to the guidelines set forth
-                  in the section “<ref target="#apparatus-fontium">Apparatus Fontium</ref>.”</p>
+                  in the section “<ref target="#apparatus-fontium">Apparatus Testium et
+                     Fontium</ref>.”</p>
             </div>
             <!-- End section on quotation of literature. -->
 
@@ -2186,13 +2187,25 @@
 
                <list>
                   <item><gi>listPerson</gi> (list of persons) contains a list of names of people
-                     mentioned in the text.</item>
-                  <item><gi>person</gi> contains the nominative form of the name of a person
-                     mentioned in the text. It must also have <att>xml:id</att> with a
-                     machine-readable version of the name to serve as a reference for instances of
-                     the name in the text.</item>
-                  <item><gi>persName</gi> contains the name of a person as it is mentioned in the
+                     mentioned in the text. It is placed in the <gi>back</gi> section of the
+                     edition.</item>
+                  <item><gi>person</gi> is an item in <gi>listPerson</gi> in the <gi>back</gi>
+                     section of the edition. Each <gi>person</gi> contains the nominative form of
+                     the name of an individual person (or deity, monster, etc.) mentioned in the
+                     text. It must also have <att>xml:id</att> with a machine-readable version of
+                     the name to serve as a reference for instances of the name in the text.</item>
+                  <item><gi>persName</gi> contains the name of each person as it appears in the
                      edition text, regardless of case.</item>
+                  <item><gi>org</gi> (organization) is an item in <gi>listPerson</gi> in
+                        <gi>back</gi> section of the edition. Each <gi>org</gi> contains the
+                     nominative form of the name of a group of people such as a tribe, a nation, a
+                     company, etc., mentioned in the text. It must also have <att>xml:id</att> with
+                     a machine-readable version of the name to serve as a reference for instances of
+                     the name in the text.</item>
+                  <item><gi>orgName</gi> (organization name) contains the name of each group of
+                     people as it appears in the edition text, regardless of case. It also has
+                        <att>ref</att> and the canonical Uniform Resource Identifier (URI) for the
+                     people at <ref target="http://pleiades.stoa.org">Pleiades</ref>.</item>
                   <item><gi>note</gi> contains further identifying information about the person
                      (e.g., dates, the ID number in a reference work or prosopography), if the name
                      is not enough to make the distinction.</item>
@@ -2201,7 +2214,8 @@
                <p>Since inflected forms of names may appear in the text, it is vital to have a
                   reference list of names in the nominative form. While working on a text, editors
                   should establish a working list of names, in a separate XML document, using
-                     <gi>listPerson</gi>, <gi>person</gi>, and <gi>persName</gi>:</p>
+                     <gi>listPerson</gi>, <gi>person</gi> and <gi>persName</gi> or <gi>org</gi> and
+                     <gi>orgName</gi>:</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <listPerson>
@@ -2216,12 +2230,15 @@
                      <person xml:id="Actaeon">
                         <persName>Actaeon</persName>
                      </person>
+                     <org xml:id="Aedui">
+                        <orgName>Aedui</orgName>
+                     </org>
                   </listPerson>
                </egXML>
 
                <p>Where names of people in the reference list appear in the edition text, they
-                  should be encoded with <gi>persName</gi> and <att>ref</att> pointing to the
-                     <att>xml:id</att> of the person.</p>
+                  should be encoded with <gi>persName</gi> or <gi>orgName</gi> and <att>ref</att>
+                  pointing to the <att>xml:id</att> of the person in the <gi>listPerson</gi>.</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <l n="6">constat ab <persName ref="#Absyrtus">Absyrti</persName> caede fuisse
@@ -2264,80 +2281,99 @@
                      <rdg wit="#μ">me libens</rdg>
                   </app>
                </egXML>
-
-               <!-- Need a section on groups of people using <orgName>. -->
-
             </div>
             <!-- End of section on people -->
 
             <!-- Begin section on places. -->
             <div xml:id="edition-text-places">
+
+               <!-- Rewrite with <listPlace> -->
+
                <head>Places</head>
-               <p>Names of places and peoples can be encoded in LDLT editions to facilitate creation
-                  of an index or to assist readers in identifying the places and peoples mentioned
-                  in the text. If it is desirable to encode this information, the following
-                  guidelines should be followed.</p>
+               <p>Names of places can be encoded in LDLT editions to facilitate creation of an index
+                  or to assist readers in identifying the places mentioned in the text. If it is
+                  desirable to encode this information, the following guidelines should be
+                  followed.</p>
 
                <p>
                   <specList>
+                     <specDesc key="listPlace"/>
+                     <specDesc key="place"/>
                      <specDesc key="placeName"/>
-                     <specDesc key="orgName"/>
                   </specList>
                </p>
 
                <list>
+                  <item><gi>listPlace</gi> (list of places) contains a list of names of places
+                     mentioned in the text. It is placed in the <gi>back</gi> section of the
+                     edition.</item>
+                  <item><gi>place</gi> is an item in <gi>listPlace</gi> in the <gi>back</gi> section
+                     of the edition. Each <gi>place</gi> contains the nominative form of the name of
+                     a place mentioned in the text. It must also have <att>xml:id</att> with a
+                     machine-readable version of the name to serve as a reference for instances of
+                     the name in the text.</item>
                   <item><gi>placeName</gi> contains the name of a place, with <att>ref</att> and the
                      canonical Uniform Resource Identifier (URI) for it at <ref
                         target="http://pleiades.stoa.org">Pleiades</ref> or some other standard
                      source of URIs for place names.</item>
-                  <item><gi>orgName</gi> (organization name) contains the name of the inhabitants of
-                     a place, with <att>ref</att> and the canonical Uniform Resource Identifier
-                     (URI) for the people at <ref target="http://pleiades.stoa.org"
-                     >Pleiades</ref>.</item>
                </list>
 
-               <p>Only the first reference in a section to a place or its inhabitants needs to be
-                  encoded for indexing purposes, but it is up to the editor to decide which
-                  references to encode. The following example from Caesar’s <bibl><title>de bello
-                        Gallico</title></bibl> demonstrates how to encode place names and
-                  organization names.</p>
+               <p>Since inflected forms of place names may appear in the text, it can be helpful to
+                  provide a reference list of names in the nominative form. While working on a text,
+                  editors should establish a working list of names, in a separate XML document,
+                  using <gi>listPlace</gi>, <gi>place</gi> and <gi>placeName</gi>.</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <listPlace>
+                     <place xml:id="Gallia">
+                        <placeName ref="http://pleiades.stoa.org/places/993">Gallia</placeName>
+                     </place>
+                     <place xml:id="Garumna">
+                        <placeName ref="http://pleiades.stoa.org/places/138369">Garumna</placeName>
+                     </place>
+                     <place xml:id="Matrona">
+                        <placeName ref="https://pleiades.stoa.org/places/109147">Matrona</placeName>
+                     </place>
+                     <place xml:id="Sequana">
+                        <placeName ref="https://pleiades.stoa.org/places/109341">Sequana</placeName>
+                     </place>
+                  </listPlace>
+               </egXML>
+
+               <p>The final list can be incorporated into the <gi>back</gi> of the edition at a
+                  later stage.</p>
+
+               <p>The following example from Caesar’s <bibl><title>de bello Gallico</title></bibl>
+                  demonstrates how to encode place names when a <gi>listPlace</gi> is maintained in
+                  the <gi>back</gi> of the edition:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p><placeName ref="#Gallia">Gallia</placeName> est omnis divisa in partes tres,
+                     quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae,
+                     nostra Galli appellantur. Hi omnes lingua, institutis, legibus inter se
+                     differunt. Gallos ab Aquitanis <placeName ref="#Garumna">Garumna</placeName>
+                     flumen, a Belgis <placeName ref="#Matrona">Matrona</placeName> et <placeName
+                        ref="#Sequana">Sequana</placeName> dividit.</p>
+               </egXML>
+
+               <p>It is also possible to forgo <gi>listPlace</gi> and just encode place names as
+                  they occur. This may be desirable in texts with only a few references to place
+                  names. In this case, it is recommended to include <att>ref</att> with each
+                     <gi>placeName</gi>, with a URI pointing to some reference (e.g., <ref
+                     target="https://pleiades.stoa.org/">Pleiades</ref>) for the place name:</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <p><placeName ref="http://pleiades.stoa.org/places/993">Gallia</placeName> est
-                     omnis divisa in partes tres, quarum unam incolunt <orgName
-                        ref="http://pleiades.stoa.org/places/79326">Belgae</orgName>, aliam <orgName
-                        ref="http://pleiades.stoa.org/places/246175">Aquitani</orgName>, tertiam qui
-                     ipsorum lingua <orgName ref="http://pleiades.stoa.org/places/993"
-                        >Celtae</orgName>, nostra <orgName ref="http://pleiades.stoa.org/places/993"
-                        >Galli</orgName> appellantur. Hi omnes lingua, institutis, legibus inter se
-                     differunt. Gallos ab Aquitanis <placeName
+                     omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani,
+                     tertiam qui ipsorum lingua Celtae, nostra Galli appellantur. Hi omnes lingua,
+                     institutis, legibus inter se differunt. Gallos ab Aquitanis <placeName
                         ref="http://pleiades.stoa.org/places/138369">Garumna</placeName> flumen, a
-                     Belgis <placeName ref="http://pleiades.stoa.org/places/109147"
+                     Belgis <placeName ref="https://pleiades.stoa.org/places/109147"
                         >Matrona</placeName> et <placeName
-                        ref="http://pleiades.stoa.org/places/109341">Sequana</placeName> dividit.
-                     Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate
-                     provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque
-                     ea quae ad effeminandos animos pertinent important, proximique sunt <orgName
-                        ref="http://pleiades.stoa.org/places/20468">Germanis</orgName>, qui trans
-                        <placeName ref="http://pleiades.stoa.org/places/393483">Rhenum</placeName>
-                     incolunt, quibuscum continenter bellum gerunt. Qua de causa <orgName
-                        ref="http://pleiades.stoa.org/places/177534">Helvetii</orgName> quoque
-                     reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis
-                     contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum
-                     gerunt. Eorum una, pars, quam Gallos obtinere dictum est, initium capit a
-                     flumine <placeName ref="http://pleiades.stoa.org/places/148168"
-                        >Rhodano</placeName>, continetur Garumna flumine, <placeName
-                        ref="http://pleiades.stoa.org/places/845">Oceano</placeName>, finibus
-                     Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad
-                     septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad
-                     inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem.
-                        <placeName ref="http://pleiades.stoa.org/places/981505"
-                        >Aquitania</placeName> a Garumna flumine ad <placeName
-                        ref="http://pleiades.stoa.org/places/246582">Pyrenaeos montes</placeName> et
-                     eam partem Oceani quae est ad <placeName
-                        ref="http://pleiades.stoa.org/places/1027">Hispaniam</placeName> pertinet;
-                     spectat inter occasum solis et septentriones.</p>
+                        ref="https://pleiades.stoa.org/places/109341">Sequana</placeName>
+                     dividit.</p>
                </egXML>
+
             </div>
             <!-- End of section on places -->
 
@@ -2346,21 +2382,21 @@
                <head>Symbols Commonly Used in the Text of a Critical Edition</head>
 
                <p>Over time, certain typographical conventions have become standard for representing
-                  emendations, lacunae, omissions, gaps, editorial deletions, and other information.
-                  The present guidelines observe the standards as described by <ref target="#West"
-                     >West</ref> (80–81), but they call for semantically encoding them instead of
-                  simply inserting the various punctuation marks and other symbols that represent
-                  complex information. The encoding will produce the standard symbols, and the
-                  information they represent will be explicit and in a form readable by humans and
-                  machines. That means that it will also be available for processing, querying, and
-                  analyzing with digital tools.</p>
+                  emendations, lacunae, omissions, gaps, editorial deletions, and other information
+                  in the edition text. The present guidelines observe the standards as described by
+                     <ref target="#West">West</ref> (80–81), but they call for semantically encoding
+                  them instead of simply inserting the various punctuation marks and other symbols
+                  that represent complex information. The encoding will produce the standard
+                  symbols, and the information they represent will be explicit and in a form
+                  readable by humans and machines. That means that it will also be available for
+                  processing, querying, and analyzing with digital tools.</p>
 
                <p>Since most of the standard symbols usually have corresponding annotations in the
                   critical apparatus, the encoding guidelines for many of them can be found in
                   subsections of the guidelines for encoding entries in the critical apparatus. The
                   following list identifies the symbols and points to the guidelines for encoding them:<list>
                      <item>( ) = <ref target="#edition-text-abbreviation-expansion">expansion of an
-                           abbreviation</ref></item>
+                           abbreviation</ref>.</item>
                      <item>a&#x323;b&#x323;c&#x323;d&#x323; = <ref
                            target="#edition-text-uncertain-characters">text uncertainly
                            restored</ref>.</item>
@@ -2370,16 +2406,16 @@
                            as a whole.</ref></item>
                      <item>&lt; *** &gt; = <ref
                            target="#apparatus-criticus-conjecture-and-emendation-lacunae"
-                           >conjectured lacuna</ref></item>
+                           >conjectured lacuna</ref>.</item>
                      <item>[ ... ] = <ref
                            target="#apparatus-criticus-omission-known-loss-characters">known amount
-                           of characters lost</ref></item>
+                           of characters lost</ref>.</item>
                      <item>[---] = <ref target="#apparatus-criticus-illegible-characters-unknown"
                            >illegible characters, quantity unknown</ref>.</item>
                      <item>&#10214; &#10215; = <ref target="#apparatus-criticus-deletions">deletion
                            by a scribe in a witness</ref>.</item>
                      <item>{ } = <ref target="#apparatus-criticus-deletion-editorial">editorial
-                           deletion</ref></item>
+                           deletion</ref>.</item>
                      <item>† † = <ref target="#apparatus-criticus-crux">text deemed by the editor to
                            be readable but not understandable, with no satisfactory
                            alternatives</ref>.</item>
@@ -2411,10 +2447,7 @@
                         an editor or transcriber when expanding an abbreviation.</item>
                   </list>
 
-                  <p>
-                     <quote>M(arcus) Cicero S(alutem) D(ixit) L(ucio) Lucceio Q(uinti)
-                        F(ilio)</quote>
-                  </p>
+                  <p> Example: M(arcus) Cicero S(alutem) D(ixit) L(ucio) Lucceio Q(uinti) F(ilio) </p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <p><expan><abbr>M</abbr><ex>arcus</ex></expan> Cicero
@@ -2527,8 +2560,8 @@
                   <p>If a single witness or family of witnesses has a gap in coverage of the text,
                      but the rest of the tradition preserves the text, the symbol for a lacuna
                      should not be used, but the gap in the witness(es) should be noted in the
-                     apparatus criticus. See the section "<ref target="#apparatus-criticus-gaps">Gap
-                        in Witnesses</ref>" for encoding instructions.</p>
+                     apparatus criticus. See the section "<ref target="#apparatus-criticus-gaps"
+                        >Gaps in Witnesses</ref>" for encoding instructions.</p>
                </div>
                <!-- End of section on lacunae -->
             </div>
@@ -2540,12 +2573,10 @@
          <div xml:id="apparatus-fontium-testium">
             <head>Apparatus Fontium et Testium</head>
 
-            <!-- Need to add a section on using <note> to point out similar passages? -->
-
-            <p>An apparatus fontium et testium collects references to texts quoted or cited in the
+            <p>An apparatus fontium et testium collects references to texts quoted or cited by the author(s) in the
                text of the edition. This section demonstrates how to encode such references so that
                they will be displayed appropriately in the text and so that bibliographical
-               information about them will appear in the edition. </p>
+               information about them will appear in the edition.</p>
 
             <p>
                <specList>
@@ -2577,8 +2608,8 @@
                   >Prose</ref>" and "<ref target="#edition-text-verse">Verse</ref>.”</p>
 
             <p><bibl><author>Macrobius’</author>
-                  <title>Saturnalia</title> 3.16.1–5 has examples of block quotations of prose and
-                  verse texts, and an inline quotation of a prose text</bibl>. Note that it is also
+               <title>Saturnalia</title> 3.16.1–5</bibl> has examples of block quotations of prose and
+                  verse texts, and an inline quotation of a prose text. Note that it is also
                an example of <ref target="#edition-text-speech">direct speech</ref>, since the
                entire passage is spoken by a character (Rufius):</p>
 
