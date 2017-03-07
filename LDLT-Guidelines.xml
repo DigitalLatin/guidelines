@@ -2307,14 +2307,13 @@
                      mentioned in the text. It is placed in the <gi>back</gi> section of the
                      edition.</item>
                   <item><gi>place</gi> is an item in <gi>listPlace</gi> in the <gi>back</gi> section
-                     of the edition. Each <gi>place</gi> contains the nominative form of the name of
-                     a place mentioned in the text. It must also have <att>xml:id</att> with a
+                     of the edition. It must <att>xml:id</att> with a
                      machine-readable version of the name to serve as a reference for instances of
-                     the name in the text.</item>
-                  <item><gi>placeName</gi> contains the name of a place, with <att>ref</att> and the
+                     the name in the text. It may also have <att>corresp</att> with the
                      canonical Uniform Resource Identifier (URI) for it at <ref
                         target="http://pleiades.stoa.org">Pleiades</ref> or some other standard
                      source of URIs for place names.</item>
+                  <item><gi>placeName</gi> contains the nominative form of the name of a place.</item>
                </list>
 
                <p>Since inflected forms of place names may appear in the text, it can be helpful to
@@ -2324,17 +2323,17 @@
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <listPlace>
-                     <place xml:id="Gallia">
-                        <placeName ref="http://pleiades.stoa.org/places/993">Gallia</placeName>
+                     <place xml:id="Gallia" corresp="http://pleiades.stoa.org/places/993">
+                        <placeName>Gallia</placeName>
                      </place>
-                     <place xml:id="Garumna">
-                        <placeName ref="http://pleiades.stoa.org/places/138369">Garumna</placeName>
+                     <place xml:id="Garumna" corresp="http://pleiades.stoa.org/places/138369">
+                        <placeName>Garumna</placeName>
                      </place>
-                     <place xml:id="Matrona">
-                        <placeName ref="https://pleiades.stoa.org/places/109147">Matrona</placeName>
+                     <place xml:id="Matrona" corresp="https://pleiades.stoa.org/places/109147">
+                        <placeName>Matrona</placeName>
                      </place>
-                     <place xml:id="Sequana">
-                        <placeName ref="https://pleiades.stoa.org/places/109341">Sequana</placeName>
+                     <place xml:id="Sequana" corresp="https://pleiades.stoa.org/places/109341">
+                        <placeName>Sequana</placeName>
                      </place>
                   </listPlace>
                </egXML>
@@ -2358,8 +2357,8 @@
                <p>It is also possible to forgo <gi>listPlace</gi> and just encode place names as
                   they occur. This may be desirable in texts with only a few references to place
                   names. In this case, it is recommended to include <att>ref</att> with each
-                     <gi>placeName</gi>, with a URI pointing to some reference (e.g., <ref
-                     target="https://pleiades.stoa.org/">Pleiades</ref>) for the place name:</p>
+                     <gi>placeName</gi>, with a URI pointing to some reference (e.g., <placeName
+                     ref="https://pleiades.stoa.org/">Pleiades</placeName>) for the place name:</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <p><placeName ref="http://pleiades.stoa.org/places/993">Gallia</placeName> est
@@ -2789,6 +2788,8 @@
          <!-- Begin section on the apparatus criticus. -->
          <div xml:id="apparatus-criticus">
             <head>Apparatus Criticus</head>
+            
+            <!-- Need section on what to do in this case:  antea g- uel ante ag- MUSTcVac -->
 
             <p>This section provides models for handling the different kinds of entries that occur
                in an apparatus criticus. It uses the terminology, elements, and attributes of the
@@ -4457,6 +4458,8 @@
                <!-- Begin section on letters added by conjecture. -->
                <div xml:id="apparatus-criticus-conjecture-and-emendation-partial">
                   <head>Letters Added by Conjecture</head>
+                  
+                  <!-- What about @type="emendation", too? -->
 
                   <p>If it is necessary to represent letters added by conjecture in a <gi>rdg</gi>
                      within an apparatus entry, <gi>add</gi> with <att>type</att>="conjecture"
