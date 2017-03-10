@@ -2285,9 +2285,6 @@
 
             <!-- Begin section on places. -->
             <div xml:id="edition-text-places">
-
-               <!-- Rewrite with <listPlace> -->
-
                <head>Places</head>
                <p>Names of places can be encoded in LDLT editions to facilitate creation of an index
                   or to assist readers in identifying the places mentioned in the text. If it is
