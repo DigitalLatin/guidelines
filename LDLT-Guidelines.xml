@@ -2409,7 +2409,7 @@
                            >illegible characters, quantity unknown</ref>.</item>
                      <item>&#10214; &#10215; = <ref target="#apparatus-criticus-deletion-witness"
                            >deletion by a scribe in a witness</ref>.</item>
-                     <item>{ } = <ref target="#apparatus-criticus-addition-deletion-editorial"
+                     <item>{ } = <ref target="#apparatus-criticus-conjecture-and-emendation-editorial"
                            >editorial deletion</ref>.</item>
                      <item>† † = <ref target="#apparatus-criticus-crux">text deemed by the editor to
                            be readable but not understandable, with no satisfactory
@@ -3500,7 +3500,7 @@
                   as querying and filtering on readings added in the margin or elsewhere.</p>
 
                <p>For additions made by the editor of the current edition or a previous editor, see
-                  the section "<ref target="#apparatus-criticus-addition-deletion-editorial"
+                  the section "<ref target="#apparatus-criticus-conjecture-and-emendation-editorial"
                      >Editorial Additions and Deletions</ref>.”</p>
 
                <div xml:id="apparatus-criticus-addition-witness-prose">
@@ -3594,7 +3594,7 @@
                   known).</p>
 
                <p>For deletions made by the editor of the current edition or a previous editor, see
-                  the section "<ref target="#apparatus-criticus-addition-deletion-editorial"
+                  the section "<ref target="#apparatus-criticus-conjecture-and-emendation-editorial"
                      >Editorial Additions and Deletions</ref>.”</p>
 
                <p>Deletion almost always occurs as part of a correction. In that case, this section
@@ -3689,857 +3689,880 @@
                </div>
                <!-- End of section on deletion: semantic markup -->
 
-               <!-- Begin section on editorial deletion. -->
-               <div xml:id="apparatus-criticus-addition-deletion-editorial">
-                  <head>Editorial Addition and Deletion</head>
-
-                  <p>In some cases, an editor may wish to indicate that text has been added or
-                     deleted by conjecture. The following subsections describe the methods for
-                     encoding editorial additions and deletions.</p>
-
-                  <!-- Begin section on letters added by conjecture. -->
-                  <div xml:id="apparatus-criticus-addition-deletion-editorial-addition">
-                     <head>Editorial Addition</head>
-
-                     <p>&lt; &gt; = Text added or supplied by conjecture where text does not exist
-                        in the documentary evidence.</p>
-
-                     <p>
-                        <specList>
-                           <specDesc key="supplied"/>
-                           <specDesc key="note"/>
-                        </specList>
-                     </p>
-
-                     <list>
-                        <item><gi>supplied</gi> encloses text supplied by an emender in the absence
-                           of text in the documentary evidence. It may be used in <gi>lem</gi> or
-                              <gi>rdg</gi>.</item>
-                     </list>
-
-                     <p>For example, Cynthia Damon prints the following in her <ref
-                           target="#damon-caesar">OCT of Caesar's <bibl><title>De Bello
-                                 Civile</title></bibl></ref>: <foreign xml:lang="lat">Ipsi
-                           Massilienses et celeritate nauium et scientia gubernatorum confisi
-                           nostros eludebant impetusque eorum excipiebant
-                        &lt;cedendo&gt;.</foreign></p>
-
-                     <p>Her apparatus criticus has the following:</p>
-
-                     <p>excipiebant &lt;cedendo&gt; <hi rend="italic">scripsi ex Luc. 3.55 (cf. Liu.
-                           29.34.13)</hi> : &lt;non&gt; exc- <hi rend="italic">Kramer</hi> : dec-
-                           <hi rend="italic">Nipperdey (cf. Stat. Theb. 2.304)</hi> : effugiebant
-                           <hi rend="italic">Terpstra coll. 2.41.6</hi> : <hi rend="italic">nisi
-                           mauis e.g.</hi> &lt;laxata classe&gt; exc- <hi rend="italic">ex Luc.
-                           3.548 (cf. BG 2.25.2)</hi>.</p>
-
-                     <p>Every instance of text enclosed in &lt; &gt; indicates that text has been
-                        added where text does not exist in the documentary evidence.</p>
-
-                     <p>In an LDLT edition, that would be encoded as follows:</p>
-
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <p>Ipsi Massilienses et celeritate nauium et scientia gubernatorum confisi
-                           nostros eludebant impetusque eorum <app>
-                              <lem source="#Damon" type="emendation" xml:id="lem-1.58.1-excipiebant-cedendo">excipiebant <supplied>cedendo</supplied></lem>
-                              
-                           </app>.</p>
-                     </egXML>
-
-                     <!-- End section on letters added by conjecture -->
-                  </div>
-
-                  <div xml:id="apparatus-criticus-addition-deletion-editorial-deletion">
-                     <head>Editorial Deletion</head>
-
-                     <p>{ } = Text considered by the editor to be inauthentic, but nevertheless
-                        retained between braces in the edition to indicate that it is part of the
-                        text’s documentary history.</p>
-
-                     <p>Square brackets have been used to indicate editorial deletions in the past,
-                        but, as <ref target="#West">West</ref> argues (p. 80), this is apt to cause
-                        confusion, since square brackets have a different meaning for papyrologists
-                        and epigraphists (see “<ref
-                           target="#apparatus-criticus-omission-known-loss-characters">Undetermined
-                           Amount Of Text Lost</ref>” in these guidelines). Accordingly, LDLT
-                        editions follow West’s suggestion to use braces to indicate editorial
-                        deletions.</p>
-
-                     <p>
-                        <specList>
-                           <specDesc key="surplus"/>
-                           <specDesc key="note"/>
-                        </specList>
-                     </p>
-
-                     <list>
-                        <item><gi>surplus</gi> contains text identified by the editor as added by
-                           someone other than the original author (e.g., interpolation).</item>
-                        <item><gi>note</gi> contains information about the deletion (e.g.,
-                           bibliography, comments). This allows editors to make the distinction
-                           between the usage of <hi rend="italic">secl.</hi> and <hi rend="italic"
-                              >del.</hi></item>
-                     </list>
-
-                     <p>For example, at section 29 of Suetonius’ life of Claudius, <ref
-                           target="#kaster-suetonius">Robert Kaster</ref> indicates in the text of
-                        his OCT edition that he accepts as correct the deletion of two words by
-                        previous scholars: <quote rend="blockquote">His, ut dixi, uxoribusque
-                           addictus non principem {se} sed ministrum egit, compendio cuiusque horum
-                           uel etiam studio aut libidine honores exercitus impunitates supplicia
-                           largitus {est} et quidem insciens plerumque et ignarus.</quote></p>
-
-                     <p>The entry for the first one in the apparatus criticus has the following:
-                           <quote>se <hi rend="italic">secl. Graev. 1697, 411 (Polak 1882,
-                           12)</hi></quote>. The entry for the second one is as follows: <quote>est
-                              <hi rend="italic">del. Bent.</hi></quote>.</p>
-
-                     <p>In an LDLT edition, the deletion would be encoded in the text as
-                        follows:</p>
-
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <p>His, ut dixi, uxoribusque addictus non principem <app>
-                              <lem xml:id="lem-29-se" source="#Graev.">
-                                 <surplus>se</surplus></lem>
-                              <note target="#lem-29-se">secl. <ref target="#Graev.">Graev. 1697,
-                                    411</ref> (<ref target="#Polak">Polak 1882, 12</ref>)</note>
-                           </app> sed ministrum egit, compendio cuiusque horum uel etiam studio aut
-                           libidine honores exercitus impunitates supplicia largitus <app>
-                              <lem xml:id="#lem-29-est" source="#Bent.">
-                                 <surplus>est</surplus>
-                              </lem>
-                              <note target="#lem-29-est">del. <ref target="#Bent."
-                                 >Bent.</ref></note></app> et quidem insciens plerumque et
-                           ignarus.</p>
-                     </egXML>
-
-                     <p>The use of <gi>surplus</gi> will cause the braces { } to be inserted on both
-                        sides of the word(s) to be deleted. The rest of the information is handled
-                        as a normal entry in the apparatus criticus.</p>
-
-                     <p>If it is desirable to indicate in the apparatus criticus that a previous
-                        editor has proposed deleting some text, even if the deletion has not been
-                        adopted for the main text of the edition, <gi>surplus</gi> should be used
-                        inside of <gi>rdg</gi>. If the reading is swapped into the main text in the
-                        digital version, the braces { } will be displayed around the reading.</p>
-                  </div>
-               </div>
-               <!-- End of section on editorial deletion -->
-            </div>
-            <!-- End of section on deletion -->
-
-            <!-- Begin section on illegible characters, quantity unknown. -->
-            <div xml:id="apparatus-criticus-illegible-characters-unknown"
-               corresp="http://www.stoa.org/epidoc/gl/latest/trans-illegiblecharunknown.html">
-               <head>Illegible Characters, Quantity Unknown</head>
-
-               <p>It is occasionally necessary to indicate the presence of illegible characters in a
-                  witness' text.</p>
-
-               <p>
-                  <specList>
-                     <specDesc key="gap"/>
-                     <specDesc key="reason"/>
-                     <specDesc key="extent"/>
-                     <specDesc key="unit"/>
-                  </specList>
-               </p>
-
-               <p>For example, at Calp. 6.4, the lemma is <foreign xml:lang="lat">dedit</foreign>,
-                  but the witness known as <hi rend="bold">N</hi> has <foreign xml:lang="lat"
-                     >deo</foreign> and some illegible characters after it. <ref
-                     target="#giarratano-calpurnius">Giarratano</ref> has indicated the presence of
-                  illegible characters with an asterisk: <foreign xml:lang="lat">deo *</foreign>.
-                  These guidelines use dashes to indicate illegible characters, but the attributes
-                     <att>reason</att>, <att>extent</att>, and <att>unit</att> provide more
-                  information.</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <app>
-                     <lem>dedit</lem>
-                     <rdg wit="#N">
-                        <gap reason="illegible" extent="unknown" unit="character"/>
-                     </rdg>
-                  </app>
-               </egXML>
-
-            </div>
-            <!-- End of section on illegible characters, quantity unknown. -->
-
-            <!-- Begin section on transpositions. -->
-            <div xml:id="apparatus-criticus-transposition">
-               <head>Transpositions</head>
-
-               <p>Transpositions may be handled in two ways: prose description or semantic markup.
-                  Prose description produces a note in the apparatus criticus. Semantic encoding
-                  also produces a note in the apparatus criticus, but it will also enable readers to
-                  swap the transpositions in and out of the text in a digital version.</p>
-
-               <p>The sections below demonstrate the prose description and semantic markup methods
-                  for the following examples:</p>
-
-               <p><hi rend="bold">Example 1</hi>: In the Teubner edition of Ovid’s
-                        <bibl><title>Tristia</title></bibl>, <ref target="#hall-ovid">J.B.
-                     Hall</ref> follows the recommendation of Wilamowitz and transposes lines 41–42
-                  of poem 3.12 so that they follow line 36. In the apparatus criticus, Hall writes
-                        <quote><hi rend="bold">41–42</hi>
-                     <hi rend="italic">post 36 transposuit Wilamowitz.</hi></quote></p>
-
-               <p><hi rend="bold">Example 2</hi>: In <ref target="#tarrant-ovid">Richard Tarrant’s
-                     OCT</ref> of Ovid’s <bibl><title>Metamorphoses</title></bibl>, the text of
-                  1.304–305 is as follows:</p>
-
-               <l>nat lupus inter oues, fuluos uehit unda leones,</l>
-               <l>unda uehit tigres; nec uires fulminis apro</l>
-
-               <p>In the apparatus criticus, Tarrant notes the following: 304–5 fuluos … tigres <hi
-                     rend="italic">om HM<hi rend="superscript">ac</hi>(N<hi rend="superscript"
-                        >ac</hi></hi>); <hi rend="italic">habet Bern, sed ordine turbato</hi> (nat …
-                  oues nec uires f. apro | unda u. tigres, fuluos … leones)</p>
-
-               <!-- Begin section on prose description of transposition. -->
-               <div xml:id="apparatus-criticus-transposition-prose-description">
-                  <head>Transposition: Prose Description</head>
-
-                  <p>To describe this transposition in the apparatus criticus, <gi>app</gi> encloses
-                     the affected passage, and <gi>witDetail</gi> or <gi>note</gi> contains the
-                     description.</p>
-
-                  <p><hi rend="bold">Example 1</hi> (Ov. <bibl><title>Tr.</title></bibl>
-                     3.12.36ff.)</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <l n="35">ille quidem mirum ni de regione propinqua</l>
-                     <l n="36">non nisi uicinas tutus ararit aquas.</l>
-                     <app>
-                        <lem xml:id="lem-3.12.41-42">
-                           <l n="41">fas quoque ab ore freti longaeque Propontidos undis</l>
-                           <l n="42">huc aliquem certo uela dedisse Noto.</l>
-                        </lem>
-                        <note target="#lem-3.12.41-42">41–42 post 36 transposuit <ref
-                              target="#Wilamowitz">Wilamowitz</ref>.</note>
-                     </app>
-                     <l n="37">rarus ab Italia tantum mare nauita transit,</l>
-                     <l n="38">litora rarus in haec portubus orba uenit.</l>
-                  </egXML>
-
-                  <p><hi rend="bold">Example 2</hi> (Ov. <bibl><title>Met.</title></bibl>,
-                     1.304–305):</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <lem xml:id="lem-1.304–305">
-                           <l n="304">nat lupus inter oues, fuluos uehit unda leones,</l>
-                           <l n="305">unda uehit tigres; nec uires fulminis apro</l>
-                        </lem>
-                        <note target="#lem-1.304–305"> fuluos … tigres <hi rend="italic">om</hi>.
-                              <ref target="#H">H</ref><ref target="#Mac">M<hi rend="superscript"
-                                 >ac</hi></ref>(<ref target="#Nac">N<hi rend="superscript"
-                              >ac</hi></ref>)</note>
-                        <note target="#lem-1.304–305">304–5 <hi rend="italic">habet <ref
-                                 target="#Bern">Bern</ref>, sed ordine turbato</hi> (nat … oues nec
-                           uires f. apro | unda u. tigres, fuluos … leones)</note>
-                     </app>
-                  </egXML>
-
-                  <p>Neither one of these examples would support the functionality of swapping the
-                     transpositions in and out of the main text of the edition. Instead, readers
-                     would just see a note in the apparatus criticus describing the
-                     transposition.</p>
-
-               </div>
-               <!-- End of section on prose description of transpositions -->
-
-               <!-- Begin section on semantic encoding of transposition. -->
-               <div xml:id="apparatus-criticus-transposition-semantic-encoding">
-                  <head>Transposition: Semantic Encoding</head>
-
-                  <p>In some cases, a transposition may be semantically encoded using the basic
-                     pattern for an apparatus entry. In example 1 (Ov.
-                        <bibl><title>Tr.</title></bibl> 3.12.36ff., <ref
-                        target="#apparatus-criticus-transposition">text above</ref>), there are
-                     basically two forms of the text: with and without the transposition. Since the
-                     editor (Hall) has accepted Wilamowitz’ proposed transposition, the transposed
-                     version is contained in <gi>lem</gi> and the original is contained in
-                        <gi>rdg</gi>:</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <l n="35">ille quidem mirum ni de regione propinqua</l>
-                     <l n="36">non nisi uicinas tutus ararit aquas.</l>
-                     <app>
-                        <lem xml:id="lem-3.12.41-42" exclude="#rdg-3.12.41–42" type="emendation">
-                           <l n="41">fas quoque ab ore freti longaeque Propontidos undis</l>
-                           <l n="42">huc aliquem certo uela dedisse Noto.</l>
-                        </lem>
-                        <note target="#lem-3.12.41-42">41–42 post 36 transposuit <ref
-                              target="#Wilamowitz">Wilamowitz</ref>.</note>
-                     </app>
-                     <l n="37">rarus ab Italia tantum mare nauita transit,</l>
-                     <l n="38">litora rarus in haec portubus orba uenit.</l>
-                     <l n="39">siue tamen Graia scierit siue ille Latina</l>
-                     <l n="40">uoce loqui—certe gratior huius erit</l>
-                     <app>
-                        <rdg xml:id="rdg-3.12.41–42" exclude="#lem-3.12.41–42">
-                           <l n="41">fas quoque ab ore freti longaeque Propontidos undis</l>
-                           <l n="42">huc aliquem certo uela dedisse Noto.</l>
-                        </rdg>
-                     </app>
-                  </egXML>
-
-                  <p>This will allow users to toggle between the original and emended versions of
-                     the text. Using <att>exclude</att> and <att>require</att> ensures that lines
-                     41–42 will never be displayed in two places at once. When the lemma (i.e.,
-                     Wilamowitz’ emendation) is displayed in the edition text, lines 41–42 will
-                     follow line 36. When the reading that has lines 41–42 following line 40 is
-                     selected for display, Wilamowitz’ emendation will be excluded from the
-                     display.</p>
-
-                  <p>More complicated transpositions, like the one in example 2 below, operate in
-                     the same way: <att>exclude</att> ensures that mutually exclusive readings are
-                     never displayed together.</p>
-
-                  <p>Keeping track of the mutually exclusive readings can be a challenge, as the
-                     example below demonstrates. It can be helpful to make a table or to use some
-                     other method of keeping track of the mutually exclusive readings.</p>
-
-                  <p>Example 2 (Ov. <bibl><title>Met.</title></bibl>, 1.304–305, <ref
-                        target="#apparatus-criticus-transposition">text above</ref>). In this
-                     example, the witness known as Bern transposes portions of two lines. Witnesses
-                     H M<hi rend="superscript">ac</hi> (and N<hi rend="superscript">ac</hi>)
-                     conflate the lines, which is another kind of transposition (or omission). That
-                     is, it can be assumed that they did not write the first half of the line at 304
-                     and the second half of the line at 305, but rather wrote the two halves
-                     together on the same line (i.e., <foreign xml:lang="lat">nat lupus inter oues,
-                        nec uires fulminis apro</foreign>).</p>
-
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <app>
-                        <!-- <app> enclosing the entire passage in question. -->
-                        <lem>
-                           <!-- <lem> enclosing full text of lines 304 and 305. -->
-                           <l n="304">
-                              <app>
-                                 <!-- First nested <app>, marking one of the conflated half-lines. -->
-                                 <lem xml:id="lem-304-nat">nat lupus inter oues,</lem>
-                              </app>
-                              <app>
-                                 <!-- Second nested <app>, handling the variant that transposes half-lines. -->
-                                 <lem xml:id="lem-304-fuluos" require="#lem-305-unda">fuluos uehit
-                                    unda leones,</lem>
-                                 <rdg wit="#Bern" xml:id="rdg-304-Bern" require="#rdg-305-Bern"
-                                    copyOf="#lem-305-nec"/>
-                              </app>
-                           </l>
-                           <l n="305">unda uehit tigres; <app>
-                                 <!-- Third nested <app>, marking the other conflated or transposed half-line. -->
-                                 <lem xml:id="lem-305-nec" require="#lem-304-nat">nec uires fulminis
-                                    apro</lem>
-                                 <rdg wit="#Bern" xml:id="rdg-305-Bern" require="#rdg-304-Bern"
-                                    copyOf="#lem-304-fuluos"/>
-                              </app>
-                           </l>
-                        </lem>
-                        <!-- <rdg> enclosing the conflated lines in H and M -->
-                        <rdg wit="#H #M" xml:id="rdg-305-HM">
-                           <l n="304/5">
-                              <join target="#lem-304-nat #lem-305-nec"/>
-                           </l>
-                        </rdg>
-                        <witDetail wit="#M" target="#rdg-305-HM" type="correction-original"><hi
-                              rend="superscript">ac</hi>(N<hi rend="superscript">ac</hi></witDetail>
-                     </app>
-                  </egXML>
-
-                  <p>The extensive markup in this example calls for explication. The desired
-                     outcomes are: <list>
-                        <item>two lines printed in the edition text.</item>
-                        <item>a variant reading showing two lines with half-lines transposed.</item>
-                        <item>a variant reading that conflates the two lines.</item>
-                     </list></p>
-
-                  <p>These outcomes require nested <gi>app</gi> elements: <list>
-                        <item>The first <gi>app</gi> encloses the entire passage. Its <gi>lem</gi>
-                           encloses the text of lines 304 and 305 as the editor wishes them to be
-                           printed in the edition text.</item>
-                        <item>The first nested <gi>app</gi> encloses one of the conflated half-lines
-                           with <gi>lem</gi> and gives it an <att>xml:id</att> so that its value can
-                           be copied elsewhere using <att>copyOf</att>. There is no <gi>rdg</gi>
-                           here because none of the variations differs with respect to the words or
-                           their position.</item>
-                        <item>The second nested <gi>app</gi> encloses the second half of line 304 in
-                              <gi>lem</gi> so that Bern's transposition, enclosed in <gi>rdg</gi>,
-                           can be swapped into its place.</item>
-                        <item>The third nested <gi>app</gi> encloses the second of the conflated
-                           half-lines in <gi>lem</gi> and gives it an <att>xml:id</att> so that its
-                           value can be copied elsewhere using <att>copyOf</att>. Its <gi>rdg</gi>
-                           also allows for Bern's transposition to be completed.</item>
-                     </list></p>
-
-                  <p>Instead of entering the text of the transposed lines more than once,
-                        <att>copyOf</att> causes the text to be inserted automatically. This not
-                     only reduces the potential for errors in transcription, but also acknowledges
-                     that the text is otherwise identical.</p>
-
-                  <p>The use of <att>require</att> ensures that Bern's transposed lines will be
-                     display or printed together. That is, the reader will not see one correctly
-                     transposed half-line and one without transposition, since that would be a false
-                     representation of Bern's text.</p>
-
-                  <p>The use of <gi>join</gi> to represent the conflated lines in H and M allows the
-                     text of the two lemmata in question to be copied and displayed or printed
-                     together.</p>
-
-                  <p>The effort required to keep track of the mutually exclusive readings pays off
-                     in the ability to swap the conflated and transposed readings in and out of the
-                     edition text in the digital version.</p>
-               </div>
-               <!-- End of section on semantically encoded transpositions. -->
-            </div>
-            <!-- End of section on transposition. -->
-
-            <!-- Begin section on connected readings. -->
-            <div xml:id="apparatus-criticus-connected-readings">
-               <head>Connected Readings</head>
-
-               <p>In some cases, it may be necessary to show that a witness or a source has variants
-                  in separate places that are related to each other. For example, the text of Calp.
-                  6.68 is as follows: <quote><foreign xml:lang="lat">imminet exesa veluti testudine
-                        concha.</foreign></quote>. Heinsius proposes <foreign xml:lang="lat">exesae
-                     - conchae</foreign>. That means that whenever <foreign xml:lang="lat"
-                     >exesa</foreign> is displayed, <foreign xml:lang="lat">concha</foreign> must
-                  also be displayed, and whenever one of Heinsius’ conjectures is displayed, the
-                  other one must accompany it.</p>
-
-               <p>As with <ref target="#apparatus-criticus-transposition">line transpositions</ref>,
-                     <att>exclude</att> and <att>require</att> are used to prevent mutually
-                  exclusive readings from being displayed together. Calp. 6.68 should be encoded as
-                  follows:</p>
-
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <l>imminet <app>
-                        <lem xml:id="lem-6.68-exesa" exclude="#rdg-6.68-conchae"
-                           require="##lem-6.68-concha">exesa</lem>
-                        <rdg source="#Heinsius" xml:id="rdg-6.68-exesae" exclude="#lem-6.68-concha"
-                           require="#rdg-6.68-conchae">exesae</rdg>
-                     </app> veluti testudine <app>
-                        <lem xml:id="lem-6.68-concha" exclude="#rdg-6.68-exesae"
-                           require="#lem-6.68-exesa">concha</lem>
-                        <rdg xml:id="rdg-6.68-conchae" exclude="#lem-6.68-exesa"
-                           require="#rdg-6.68-exesae">conchae</rdg>
-                     </app>
-                  </l>
-               </egXML>
-
-            </div>
-            <!-- End section on connected readings. -->
-
-            <!-- Begin section on corrections. -->
-            <div xml:id="apparatus-criticus-correction">
-               <head>Corrections</head>
-
-               <!-- Need a section for the abbreviated way of handling this with G and Gc, for example. They're just different witnesses at that point. -->
-
-               <p>Correction has been discussed in the section “<ref
-                     target="#apparatus-criticus-concepts-definitions">Concepts and
-                     Definitions</ref>.” In short, for the purposes of these guidelines,
-                  “correction” describes any attempt by the original copyist or some other hand to
-                  alter a witness’ reading, whether or not the result matches what is in the main
-                  edition text.</p>
-
-               <p>The amount of detail to report about corrections is a matter for editors to
-                  decide; these guidelines accommodate a range of approaches. When determining the
-                  method to use, editors should bear in mind not only the amount of detail necessary
-                  to communicate the nature of a correction, but also the functionality they want
-                  their edition to support. The subsections below include discussions intended to
-                  help editors make those determinations.</p>
-
-               <p>Before reading the encoding guidelines for corrections, it is recommended to read
-                  the section “<ref target="#apparatus-criticus-correction-as-metadata">Correction
-                     as Metadata</ref>” to understand the concepts behind the guidelines.</p>
-
-               <!-- Begin section on correction as metadata. -->
-               <div xml:id="apparatus-criticus-correction-as-metadata">
-                  <head>Correction as Metadata</head>
-
-                  <p>Over time, editors have devised creative ways of reporting corrections. The
-                     simplest method is to report readings and annotate them with <foreign
-                        xml:lang="lat">ante correctionem</foreign>, <foreign xml:lang="lat">post
-                        correctionem</foreign>, or something similar. Another method is to add
-                     abbreviations for those phrases as superscript notations on manuscript sigla
-                     (e.g., B<hi rend="superscript">ac</hi>, B<hi rend="superscript">pc</hi>).
-                     Sometimes it is necessary to provide more detail about the method of
-                     correction, in which cases editors will either describe the correction (e.g., t
-                        <hi rend="italic">exp.</hi>, r <hi rend="italic">add. s.l.</hi>) or they
-                     will try to represent it typographically (e.g., referṭ<hi rend="superscript"
-                        >r</hi>e). Some rely on superscript notation for all of these details (e.g.,
-                        P<hi rend="superscript">csl</hi> = P <foreign xml:lang="lat">correctio supra
-                        lineam</foreign>).</p>
-
-                  <p>The different methods have advantages and disadvantages, but each one
-                     effectively demonstrates that correction is a complex subject. Even the word
-                     “correction” is problematic, since it can refer to the result of a process or
-                     the process itself. Therefore, representing correction faithfully in a digital
-                     critical edition depends on careful analysis of the information that comprises
-                     a correction.</p>
-
-                  <p>Aside from judgments about correctness, “correction” may involve at least five
-                     kinds of information: <list>
-                        <item>a reading.</item>
-                        <item>the state of the reading: original or altered.</item>
-                        <item>an agent or agents (i.e., the correcting hand or hands).</item>
-                        <item>a method or methods of correction (i.e., deletion, addition above the
-                           line, etc.).</item>
-                        <item>the relationship between the original reading and the altered
-                           reading.</item>
-                     </list></p>
-
-                  <p>In the context of a digital edition, it is useful to think of readings as the
-                     data, and the information about state, agency, method, and relationship as
-                     metadata, or data about the data.</p>
-
-                  <p>Not all of these metadata items will be reported in every instance. The
-                     original reading, for example, obviously does not have an agent (beyond the
-                     witness to the reading) or a method of correction, but it will have a state
-                     (original). The original reading might have a correspondence to show that it is
-                     related to its altered form, if one is provided, but it is not always necessary
-                     to report the altered form. For example, if the altered form matches the lemma
-                     in the main text of the edition, it may be sufficient to report the original
-                     form with a note that it was corrected (the inference being that it was
-                     corrected to the "correct" form of the lemma, if no other form is reported).
-                     Similarly, it may not be necessary to report the method of correction.</p>
-
-                  <p>It is possible to use techniques described elsewhere in these guidelines to
-                     encode the details of corrections (e.g., deletion and/or addition of
-                     characters), but it is also possible to describe those details in prose. The
-                     examples below demonstrate both options.</p>
-
-               </div>
-               <!-- End of section on correction as metadata -->
-
-               <!-- Begin section on specifications for correction. -->
-               <div xml:id="apparatus-criticus-correction-specs">
-                  <head>Correction: Specifications</head>
-
-                  <p>Readings before and after correction are encoded as any other readings, i.e.,
-                     with <gi>rdg</gi> inside of <gi>app</gi>. The details of the correction are
-                     contained in <gi>witDetail</gi>, with the use of several attributes to
-                     determine how the information is processed.</p>
+               <!-- Begin section on illegible characters, quantity unknown. -->
+               <div xml:id="apparatus-criticus-illegible-characters-unknown"
+                  corresp="http://www.stoa.org/epidoc/gl/latest/trans-illegiblecharunknown.html">
+                  <head>Illegible Characters, Quantity Unknown</head>
+
+                  <p>It is occasionally necessary to indicate the presence of illegible characters
+                     in a witness' text.</p>
 
                   <p>
                      <specList>
-                        <specDesc key="witDetail"/>
-                        <specDesc key="wit"/>
-                        <specDesc key="target"/>
-                        <specDesc key="corresp"/>
-                        <specDesc key="type"/>
+                        <specDesc key="gap"/>
+                        <specDesc key="reason"/>
+                        <specDesc key="extent"/>
+                        <specDesc key="unit"/>
                      </specList>
                   </p>
 
-                  <p><gi>witDetail</gi> (witness detail) may be empty (i.e., self-closing) or it may
-                     contain a prose description.</p>
-                  <p><att>wit</att> (witness) has as its value the machine-readable siglum of the
-                     witness that has the original or the altered reading.</p>
-                  <p><att>target</att> has as its value the <att>xml:id</att> of the reading in
-                     question.</p>
-                  <p><att>corresp</att> (corresponds) has as its value the <att>xml:id</att> of the
-                     related reading (i.e., the original reading corresponds to the corrected
-                     reading and vice versa).</p>
-                  <p><att>type</att> has one of the following values to classify the correction.
-                     Possible values:<list>
-                        <item>correction-original: the original reading, i.e., before correction
-                              (<foreign xml:lang="lat">ante correctionem</foreign> or a.c.). If
-                              <gi>witDetail</gi> with this type is self-closing, the LDLT reader
-                           will insert "(a.c.)" after the siglum for the witness designated in
-                              <att>wit</att>. Otherwise, the value of <gi>witDetail</gi> will be
-                           inserted in parentheses after the siglum for the witness designated in
-                              <att>wit</att>.</item>
-                        <item>correction-altered: the altered reading, i.e., after correction
-                              (<foreign xml:lang="lat">post correctionem</foreign> or p.c.). If
-                              <gi>witDetail</gi> with this type is self-closing, the LDLT reader
-                           will insert "(p.c.)" after the witness designated in <att>wit</att>.
-                           Otherwise, the value of <gi>witDetail</gi> will be inserted in
-                           parentheses after the siglum for the witness designated in
-                              <att>witt</att>.</item>
-                     </list></p>
+                  <p>For example, at Calp. 6.4, the lemma is <foreign xml:lang="lat"
+                     >dedit</foreign>, but the witness known as <hi rend="bold">N</hi> has <foreign
+                        xml:lang="lat">deo</foreign> and some illegible characters after it. <ref
+                        target="#giarratano-calpurnius">Giarratano</ref> has indicated the presence
+                     of illegible characters with an asterisk: <foreign xml:lang="lat">deo
+                        *</foreign>. These guidelines use dashes to indicate illegible characters,
+                     but the attributes <att>reason</att>, <att>extent</att>, and <att>unit</att>
+                     provide more information.</p>
 
-                  <p>It is impossible to describe all of the possible scenarios for correction, but
-                     the examples in the following sections should provide a basis for determining
-                     how to encode the most common instances.</p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>dedit</lem>
+                        <rdg wit="#N">
+                           <gap reason="illegible" extent="unknown" unit="character"/>
+                        </rdg>
+                     </app>
+                  </egXML>
+
                </div>
-               <!-- End section correction: specifications -->
+               <!-- End of section on illegible characters, quantity unknown. -->
 
-               <!-- Begin section on examples of correction. -->
-               <div xml:id="apparatus-criticus-correction-examples">
-                  <head>Correction: Examples</head>
+               <!-- Begin section on transpositions. -->
+               <div xml:id="apparatus-criticus-transposition">
+                  <head>Transpositions</head>
 
-                  <!-- First example. -->
-                  <div xml:id="apparatus-criticus-correction-examples-1">
-                     <head>Example 1</head>
+                  <p>Transpositions may be handled in two ways: prose description or semantic
+                     markup. Prose description produces a note in the apparatus criticus. Semantic
+                     encoding also produces a note in the apparatus criticus, but it will also
+                     enable readers to swap the transpositions in and out of the text in a digital
+                     version.</p>
 
-                     <p>The first example is simple correction of a variant reading to the lemma:
-                        protegit] protegis <hi rend="bold">G</hi> (a.c.).</p>
+                  <p>The sections below demonstrate the prose description and semantic markup
+                     methods for the following examples:</p>
 
-                     <p>It is clear in this instance what the reading after correction is, so there
-                        is no need to report it. There is no need to list all of the other witnesses
-                        to the lemma, since it is clear that the uncorrected form is a unique
-                        reading. Also, the editor has decided that it is not useful to indicate
-                        which hand made the correction. In this example, manuscript <hi rend="bold"
-                           >G</hi> simply has the variant reading <foreign xml:lang="lat"
-                           >protegis</foreign> for the lemma <foreign xml:lang="lat"
-                           >protegit</foreign>, to which the variant reading in <hi rend="bold"
-                           >G</hi> has been corrected.</p>
+                  <p><hi rend="bold">Example 1</hi>: In the Teubner edition of Ovid’s
+                           <bibl><title>Tristia</title></bibl>, <ref target="#hall-ovid">J.B.
+                        Hall</ref> follows the recommendation of Wilamowitz and transposes lines
+                     41–42 of poem 3.12 so that they follow line 36. In the apparatus criticus, Hall
+                     writes <quote><hi rend="bold">41–42</hi>
+                        <hi rend="italic">post 36 transposuit Wilamowitz.</hi></quote></p>
 
-                     <p>The encoding for the prose method and the semantic markup method are
-                        identical for such a straightforward correction:</p>
+                  <p><hi rend="bold">Example 2</hi>: In <ref target="#tarrant-ovid">Richard
+                        Tarrant’s OCT</ref> of Ovid’s <bibl><title>Metamorphoses</title></bibl>, the
+                     text of 1.304–305 is as follows:</p>
+
+                  <l>nat lupus inter oues, fuluos uehit unda leones,</l>
+                  <l>unda uehit tigres; nec uires fulminis apro</l>
+
+                  <p>In the apparatus criticus, Tarrant notes the following: 304–5 fuluos … tigres
+                        <hi rend="italic">om HM<hi rend="superscript">ac</hi>(N<hi
+                           rend="superscript">ac</hi></hi>); <hi rend="italic">habet Bern, sed
+                        ordine turbato</hi> (nat … oues nec uires f. apro | unda u. tigres, fuluos …
+                     leones)</p>
+
+                  <!-- Begin section on prose description of transposition. -->
+                  <div xml:id="apparatus-criticus-transposition-prose-description">
+                     <head>Transposition: Prose Description</head>
+
+                     <p>To describe this transposition in the apparatus criticus, <gi>app</gi>
+                        encloses the affected passage, and <gi>witDetail</gi> or <gi>note</gi>
+                        contains the description.</p>
+
+                     <p><hi rend="bold">Example 1</hi> (Ov. <bibl><title>Tr.</title></bibl>
+                        3.12.36ff.)</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <l n="35">ille quidem mirum ni de regione propinqua</l>
+                        <l n="36">non nisi uicinas tutus ararit aquas.</l>
+                        <app>
+                           <lem xml:id="lem-3.12.41-42">
+                              <l n="41">fas quoque ab ore freti longaeque Propontidos undis</l>
+                              <l n="42">huc aliquem certo uela dedisse Noto.</l>
+                           </lem>
+                           <note target="#lem-3.12.41-42">41–42 post 36 transposuit <ref
+                                 target="#Wilamowitz">Wilamowitz</ref>.</note>
+                        </app>
+                        <l n="37">rarus ab Italia tantum mare nauita transit,</l>
+                        <l n="38">litora rarus in haec portubus orba uenit.</l>
+                     </egXML>
+
+                     <p><hi rend="bold">Example 2</hi> (Ov. <bibl><title>Met.</title></bibl>,
+                        1.304–305):</p>
 
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <app>
-                           <lem xml:id="lem-protegit">protegit</lem>
-                           <rdg wit="#G" xml:id="rdg-protegis">protegis</rdg>
-                           <witDetail wit="#G" target="#rdg-protegis" corresp="#lem-protegit"
-                              type="correction-original"/>
+                           <lem xml:id="lem-1.304–305">
+                              <l n="304">nat lupus inter oues, fuluos uehit unda leones,</l>
+                              <l n="305">unda uehit tigres; nec uires fulminis apro</l>
+                           </lem>
+                           <note target="#lem-1.304–305"> fuluos … tigres <hi rend="italic">om</hi>.
+                                 <ref target="#H">H</ref><ref target="#Mac">M<hi rend="superscript"
+                                    >ac</hi></ref>(<ref target="#Nac">N<hi rend="superscript"
+                                    >ac</hi></ref>)</note>
+                           <note target="#lem-1.304–305">304–5 <hi rend="italic">habet <ref
+                                    target="#Bern">Bern</ref>, sed ordine turbato</hi> (nat … oues
+                              nec uires f. apro | unda u. tigres, fuluos … leones)</note>
                         </app>
                      </egXML>
+
+                     <p>Neither one of these examples would support the functionality of swapping
+                        the transpositions in and out of the main text of the edition. Instead,
+                        readers would just see a note in the apparatus criticus describing the
+                        transposition.</p>
 
                   </div>
-                  <!-- End of first example of correction -->
+                  <!-- End of section on prose description of transpositions -->
 
-                  <!-- Second example. -->
-                  <div xml:id="apparatus-criticus-correction-examples-2">
-                     <head>Example 2</head>
+                  <!-- Begin section on semantic encoding of transposition. -->
+                  <div xml:id="apparatus-criticus-transposition-semantic-encoding">
+                     <head>Transposition: Semantic Encoding</head>
 
-                     <p>This example is similar to the first one, but it is necessary to indicate
-                        the hand that made the correction.</p>
-
-                     <p>The lemma is <foreign xml:lang="lat">insidias</foreign>. Manuscript <hi
-                           rend="bold">N</hi> has <foreign xml:lang="lat">insidia</foreign>; <hi
-                           rend="bold">N<hi rend="superscript">2</hi></hi> has added the letter “s.”
-                        A traditional apparatus criticus might report this as follows: insidias]
-                        insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi
-                              rend="superscript">2</hi></hi>).</p>
-
-                     <p>As in the first example, the encoding for the prose method and the semantic
-                        markup method are identical:</p>
+                     <p>In some cases, a transposition may be semantically encoded using the basic
+                        pattern for an apparatus entry. In example 1 (Ov.
+                           <bibl><title>Tr.</title></bibl> 3.12.36ff., <ref
+                           target="#apparatus-criticus-transposition">text above</ref>), there are
+                        basically two forms of the text: with and without the transposition. Since
+                        the editor (Hall) has accepted Wilamowitz’ proposed transposition, the
+                        transposed version is contained in <gi>lem</gi> and the original is
+                        contained in <gi>rdg</gi>:</p>
 
                      <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <l n="35">ille quidem mirum ni de regione propinqua</l>
+                        <l n="36">non nisi uicinas tutus ararit aquas.</l>
                         <app>
-                           <lem xml:id="lem-insidias">insidias</lem>
-                           <rdg wit="#N" xml:id="rdg-insidia">insidia</rdg>
-                           <witDetail wit="#N" target="#rdg-insidia" corresp="#lem-insidias"
-                              type="correction-original">corr. <hi rend="bold">N<hi
-                                    rend="superscript">2</hi></hi></witDetail>
+                           <lem xml:id="lem-3.12.41-42" exclude="#rdg-3.12.41–42" type="emendation">
+                              <l n="41">fas quoque ab ore freti longaeque Propontidos undis</l>
+                              <l n="42">huc aliquem certo uela dedisse Noto.</l>
+                           </lem>
+                           <note target="#lem-3.12.41-42">41–42 post 36 transposuit <ref
+                                 target="#Wilamowitz">Wilamowitz</ref>.</note>
+                        </app>
+                        <l n="37">rarus ab Italia tantum mare nauita transit,</l>
+                        <l n="38">litora rarus in haec portubus orba uenit.</l>
+                        <l n="39">siue tamen Graia scierit siue ille Latina</l>
+                        <l n="40">uoce loqui—certe gratior huius erit</l>
+                        <app>
+                           <rdg xml:id="rdg-3.12.41–42" exclude="#lem-3.12.41–42">
+                              <l n="41">fas quoque ab ore freti longaeque Propontidos undis</l>
+                              <l n="42">huc aliquem certo uela dedisse Noto.</l>
+                           </rdg>
                         </app>
                      </egXML>
 
-                     <p>This encoding will produce the following entry in the apparatus criticus:
-                        insidias] insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi
-                              rend="superscript">2</hi></hi></p>
+                     <p>This will allow users to toggle between the original and emended versions of
+                        the text. Using <att>exclude</att> and <att>require</att> ensures that lines
+                        41–42 will never be displayed in two places at once. When the lemma (i.e.,
+                        Wilamowitz’ emendation) is displayed in the edition text, lines 41–42 will
+                        follow line 36. When the reading that has lines 41–42 following line 40 is
+                        selected for display, Wilamowitz’ emendation will be excluded from the
+                        display.</p>
+
+                     <p>More complicated transpositions, like the one in example 2 below, operate in
+                        the same way: <att>exclude</att> ensures that mutually exclusive readings
+                        are never displayed together.</p>
+
+                     <p>Keeping track of the mutually exclusive readings can be a challenge, as the
+                        example below demonstrates. It can be helpful to make a table or to use some
+                        other method of keeping track of the mutually exclusive readings.</p>
+
+                     <p>Example 2 (Ov. <bibl><title>Met.</title></bibl>, 1.304–305, <ref
+                           target="#apparatus-criticus-transposition">text above</ref>). In this
+                        example, the witness known as Bern transposes portions of two lines.
+                        Witnesses H M<hi rend="superscript">ac</hi> (and N<hi rend="superscript"
+                           >ac</hi>) conflate the lines, which is another kind of transposition (or
+                        omission). That is, it can be assumed that they did not write the first half
+                        of the line at 304 and the second half of the line at 305, but rather wrote
+                        the two halves together on the same line (i.e., <foreign xml:lang="lat">nat
+                           lupus inter oues, nec uires fulminis apro</foreign>).</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <!-- <app> enclosing the entire passage in question. -->
+                           <lem>
+                              <!-- <lem> enclosing full text of lines 304 and 305. -->
+                              <l n="304">
+                                 <app>
+                                    <!-- First nested <app>, marking one of the conflated half-lines. -->
+                                    <lem xml:id="lem-304-nat">nat lupus inter oues,</lem>
+                                 </app>
+                                 <app>
+                                    <!-- Second nested <app>, handling the variant that transposes half-lines. -->
+                                    <lem xml:id="lem-304-fuluos" require="#lem-305-unda">fuluos
+                                       uehit unda leones,</lem>
+                                    <rdg wit="#Bern" xml:id="rdg-304-Bern" require="#rdg-305-Bern"
+                                       copyOf="#lem-305-nec"/>
+                                 </app>
+                              </l>
+                              <l n="305">unda uehit tigres; <app>
+                                    <!-- Third nested <app>, marking the other conflated or transposed half-line. -->
+                                    <lem xml:id="lem-305-nec" require="#lem-304-nat">nec uires
+                                       fulminis apro</lem>
+                                    <rdg wit="#Bern" xml:id="rdg-305-Bern" require="#rdg-304-Bern"
+                                       copyOf="#lem-304-fuluos"/>
+                                 </app>
+                              </l>
+                           </lem>
+                           <!-- <rdg> enclosing the conflated lines in H and M -->
+                           <rdg wit="#H #M" xml:id="rdg-305-HM">
+                              <l n="304/5">
+                                 <join target="#lem-304-nat #lem-305-nec"/>
+                              </l>
+                           </rdg>
+                           <witDetail wit="#M" target="#rdg-305-HM" type="correction-original"><hi
+                                 rend="superscript">ac</hi>(N<hi rend="superscript"
+                              >ac</hi></witDetail>
+                        </app>
+                     </egXML>
+
+                     <p>The extensive markup in this example calls for explication. The desired
+                        outcomes are: <list>
+                           <item>two lines printed in the edition text.</item>
+                           <item>a variant reading showing two lines with half-lines
+                              transposed.</item>
+                           <item>a variant reading that conflates the two lines.</item>
+                        </list></p>
+
+                     <p>These outcomes require nested <gi>app</gi> elements: <list>
+                           <item>The first <gi>app</gi> encloses the entire passage. Its
+                                 <gi>lem</gi> encloses the text of lines 304 and 305 as the editor
+                              wishes them to be printed in the edition text.</item>
+                           <item>The first nested <gi>app</gi> encloses one of the conflated
+                              half-lines with <gi>lem</gi> and gives it an <att>xml:id</att> so that
+                              its value can be copied elsewhere using <att>copyOf</att>. There is no
+                                 <gi>rdg</gi> here because none of the variations differs with
+                              respect to the words or their position.</item>
+                           <item>The second nested <gi>app</gi> encloses the second half of line 304
+                              in <gi>lem</gi> so that Bern's transposition, enclosed in
+                              <gi>rdg</gi>, can be swapped into its place.</item>
+                           <item>The third nested <gi>app</gi> encloses the second of the conflated
+                              half-lines in <gi>lem</gi> and gives it an <att>xml:id</att> so that
+                              its value can be copied elsewhere using <att>copyOf</att>. Its
+                                 <gi>rdg</gi> also allows for Bern's transposition to be
+                              completed.</item>
+                        </list></p>
+
+                     <p>Instead of entering the text of the transposed lines more than once,
+                           <att>copyOf</att> causes the text to be inserted automatically. This not
+                        only reduces the potential for errors in transcription, but also
+                        acknowledges that the text is otherwise identical.</p>
+
+                     <p>The use of <att>require</att> ensures that Bern's transposed lines will be
+                        display or printed together. That is, the reader will not see one correctly
+                        transposed half-line and one without transposition, since that would be a
+                        false representation of Bern's text.</p>
+
+                     <p>The use of <gi>join</gi> to represent the conflated lines in H and M allows
+                        the text of the two lemmata in question to be copied and displayed or
+                        printed together.</p>
+
+                     <p>The effort required to keep track of the mutually exclusive readings pays
+                        off in the ability to swap the conflated and transposed readings in and out
+                        of the edition text in the digital version.</p>
                   </div>
-                  <!-- End of the second example -->
-
-                  <!-- Begin example 3 -->
-                  <div xml:id="apparatus-criticus-correction-examples-3">
-                     <head>Example 3</head>
-
-                     <p>In this example, a variant reading is corrected to the lemma, but for a
-                        number of reasons it is important to indicate the reading before and after
-                        correction.</p>
-
-                     <p>The witness <hi rend="bold">N</hi> originally had <hi rend="italic">co</hi>
-                        and <hi rend="italic">ice</hi> with an erasure of two characters between
-                        them. The correcting hand <hi rend="bold">N<hi rend="superscript"
-                           >2</hi></hi> has inserted the letters “r” and “t” in the erasure. The
-                        corrected form (<hi rend="italic">cortice</hi>) matches the reading in
-                        witnesses <hi rend="bold">P</hi> and <hi rend="bold">V</hi>. Another reading
-                        is present in witnesses <hi rend="bold">G</hi> and <hi rend="bold">A</hi>. A
-                        traditional apparatus criticus might report this as follows: cortice <hi
-                           rend="bold">N<hi rend="superscript">2</hi></hi> (<hi rend="italic"
-                           >p.c.</hi>, rt <hi rend="italic">add. in ras.</hi>) <hi rend="bold"
-                           >PV</hi> : co&#10214;..&#10215;ice <hi rend="bold">N</hi> (a.c.) : codice
-                           <hi rend="bold">G A</hi>.</p>
-
-                     <p>In the prose method, the details are described in <gi>witDetail</gi>:</p>
-
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <app>
-                           <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
-                           <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice"
-                              type="correction-altered">rt <hi rend="italic">add. in
-                              ras.</hi></witDetail>
-                           <rdg wit="#N" xml:id="rdg-coice">co&#10214;..&#10215;ice</rdg>
-                           <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice"
-                              type="correction-original"/>
-                           <rdg wit="#G #A">codice</rdg>
-                        </app>
-                     </egXML>
-
-                     <p>This encoding will produce the following entry in the apparatus criticus:
-                        cortice <hi rend="bold">N<hi rend="superscript">2</hi></hi> (<hi
-                           rend="italic">p.c.</hi>, rt <hi rend="italic">add. in ras.</hi>) <hi
-                           rend="bold">PV</hi> : co&#10214;..&#10215;ice <hi rend="bold">N</hi>
-                        (a.c.) : codice <hi rend="bold">G A</hi>.</p>
-
-                     <p>The semantic markup method uses techniques described elsewhere in these
-                        guidelines to make the details readable by humans and machines:</p>
-
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <app>
-                           <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
-                           <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice"
-                              type="correction-altered">
-                              <add place="inRas">rt</add>
-                           </witDetail>
-                           <rdg wit="#N" xml:id="rdg-coice">co<del rend="erasure"><gap reason="lost"
-                                    quantity="2" unit="character"/></del>ice</rdg>
-                           <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice"
-                              type="correction-original"/>
-                           <rdg wit="#G #A">codice</rdg>
-                        </app>
-                     </egXML>
-
-                     <p>That encoding would produce the following entry: cortice <hi rend="bold"
-                              >N<hi rend="superscript">2</hi></hi> (<hi rend="italic">p.c.</hi>, rt
-                           <hi rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> :
-                        co&#10214;..&#10215;ice <hi rend="bold">N</hi> (a.c.) : codice <hi
-                           rend="bold">G A</hi>.</p>
-                  </div>
-                  <!-- End of the third example of correction -->
-
-                  <!-- Begin example 4. -->
-                  <div xml:id="apparatus-criticus-correction-examples-4">
-                     <head>Example 4</head>
-
-                     <p>This example includes multiple corrections.</p>
-
-                     <p>The lemma is <foreign xml:lang="lat">descripta</foreign>. Manuscript <hi
-                           rend="bold">N</hi> originally had <foreign xml:lang="lat"
-                           >dipicta</foreign>, but <hi rend="bold">N<hi rend="superscript"
-                           >1</hi></hi> corrected it to <foreign xml:lang="lat">depicta</foreign>.
-                        Another hand (<hi rend="bold">N<hi rend="superscript">2</hi></hi> has
-                           <foreign xml:lang="lat">descripta</foreign> in the margin. Other
-                        manuscripts support these and other readings. A traditional apparatus
-                        criticus might report this as follows: descripta <hi rend="bold">P V N<hi
-                              rend="superscript">2</hi></hi> (in mg.) : depicta <hi rend="bold">G
-                              N<hi rend="superscript">1</hi></hi> (p.c.) : dipicta <hi rend="bold"
-                           >N</hi> (a.c.).</p>
-
-                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <app>
-                           <lem wit="#N2 #P #V" xml:id="lem-descripta">descripta</lem>
-                           <witDetail wit="#N2" target="#lem-descripta">in mg.</witDetail>
-                           <rdg wit="#G #N1" xml:id="rdg-depicta">depicta</rdg>
-                           <witDetail wit="#N1" target="#rdg-depicta" corresp="#rdg-dipicta"
-                              type="correction-altered"/>
-                           <rdg wit="#N" xml:id="rdg-dipicta">dipicta</rdg>
-                           <witDetail wit="#N" target="#rdg-dipicta" corresp="#rdg-depicta"
-                              type="correction-original"/>
-                        </app>
-                     </egXML>
-
-                     <p>This encoding will produce the following entry in the apparatus criticus:
-                        descripta <hi rend="bold">N<hi rend="superscript">2</hi></hi> (in mg. <hi
-                           rend="bold">PV</hi> : depicta <hi rend="bold">G N<hi rend="superscript"
-                              >1</hi></hi> (p.c.) : dipicta <hi rend="bold">N</hi> (a.c.).</p>
-
-                     <p>Note that it is not possible to use the semantic markup method (i.e.,
-                           <gi>add</gi> with <att>place</att>="margin") for the marginal reading of
-                           <hi rend="bold">N<hi rend="superscript">2</hi></hi>, since the same
-                        reading appears in other witnesses in the text itself. Instead, the notation
-                        “in mg.” is inserted using <gi>witDetail</gi>.</p>
-
-                  </div>
-                  <!-- End of the fourth example -->
+                  <!-- End of section on semantically encoded transpositions. -->
                </div>
-               <!-- End of the section on examples of correction -->
-            </div>
-            <!-- End of section on correction -->
+               <!-- End of section on transposition. -->
 
-            <!-- Begin section on conjecture and emendation. -->
-            <div xml:id="apparatus-criticus-conjecture-and-emendation">
+               <!-- Begin section on connected readings. -->
+               <div xml:id="apparatus-criticus-connected-readings">
+                  <head>Connected Readings</head>
 
-               <!-- Move section on Editorial Additions and Deletions here, then fix the reference in the section symbols in the edition text. -->
+                  <p>In some cases, it may be necessary to show that a witness or a source has
+                     variants in separate places that are related to each other. For example, the
+                     text of Calp. 6.68 is as follows: <quote><foreign xml:lang="lat">imminet exesa
+                           veluti testudine concha.</foreign></quote>. Heinsius proposes <foreign
+                        xml:lang="lat">exesae - conchae</foreign>. That means that whenever <foreign
+                        xml:lang="lat">exesa</foreign> is displayed, <foreign xml:lang="lat"
+                        >concha</foreign> must also be displayed, and whenever one of Heinsius’
+                     conjectures is displayed, the other one must accompany it.</p>
 
+                  <p>As with <ref target="#apparatus-criticus-transposition">line
+                        transpositions</ref>, <att>exclude</att> and <att>require</att> are used to
+                     prevent mutually exclusive readings from being displayed together. Calp. 6.68
+                     should be encoded as follows:</p>
 
-               <head>Conjecture and Emendation</head>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <l>imminet <app>
+                           <lem xml:id="lem-6.68-exesa" exclude="#rdg-6.68-conchae"
+                              require="##lem-6.68-concha">exesa</lem>
+                           <rdg source="#Heinsius" xml:id="rdg-6.68-exesae"
+                              exclude="#lem-6.68-concha" require="#rdg-6.68-conchae">exesae</rdg>
+                        </app> veluti testudine <app>
+                           <lem xml:id="lem-6.68-concha" exclude="#rdg-6.68-exesae"
+                              require="#lem-6.68-exesa">concha</lem>
+                           <rdg xml:id="rdg-6.68-conchae" exclude="#lem-6.68-exesa"
+                              require="#rdg-6.68-exesae">conchae</rdg>
+                        </app>
+                     </l>
+                  </egXML>
 
-               <p>As explained in the section <ref target="#apparatus-criticus-concepts-definitions"
-                     >Concepts and Definitions</ref>, conjectures are readings that are not
-                  supported by documentary evidence, but are instead proposed by someone and
-                  considered by the editor to be worthy of inclusion in a critical edition. A
-                  conjecture is called an emendation if it is adopted as the official reading of a
-                  particular criticial edition’s main text. In other words, for the purposes of
-                  these guidelines, an emendation is a successful conjecture. But above all,
-                  conjectures and emendations are readings, and they are encoded as such in LDLT
-                  editions.</p>
+               </div>
+               <!-- End section on connected readings. -->
 
-               <p>Traditionally, conjectures and emendations have been annotated in various ways in
-                  critical editions (e.g., <foreign xml:lang="lat">ci.</foreign> or <foreign
-                     xml:lang="lat">conj.</foreign> for <foreign xml:lang="lat">coniecit</foreign>,
-                     <foreign xml:lang="lat">em.</foreign> or <foreign xml:lang="lat"
-                     >emend.</foreign> for <foreign xml:lang="lat">emendavit</foreign>, among
-                  others). They should be annotated in digital editions, too, both to facilitate
-                  their identification, and to enable features such as filtering and searching for
-                  them. The annotation is accomplished with <att>type</att>.</p>
+               <!-- Begin section on corrections. -->
+               <div xml:id="apparatus-criticus-correction">
+                  <head>Corrections</head>
 
-               <p>Since an emendation is a conjecture that has been adopted for the main text of the
-                  edition, only <gi>lem</gi> can have <att>type</att> with the value “emendation.”
-                  It could be inferred that a lemma with <att>source</att> only is an emendation,
-                  but in the interest of being explicit, an emendation should be annotated
-                  accordingly. Using <att>type</att> with the value of “emendation” will also
-                  facilitate searching and filtering for emendations.</p>
+                  <!-- Need a section for the abbreviated way of handling this with G and Gc, for example. They're just different witnesses at that point. -->
 
-               <p>Conversely, only <gi>rdg</gi> may have <att>type</att> with the value
-                  “conjecture.” It could be inferred that a reading with <att>source</att> only is a
-                  conjecture, but it is best to be explicit in the identification if for no other
-                  reason than ensuring that “conjecture” is available as a criterion for searching
-                  and filtering.</p>
+                  <p>Correction has been discussed in the section “<ref
+                        target="#apparatus-criticus-concepts-definitions">Concepts and
+                        Definitions</ref>.” In short, for the purposes of these guidelines,
+                     “correction” describes any attempt by the original copyist or some other hand
+                     to alter a witness’ reading, whether or not the result matches what is in the
+                     main edition text.</p>
 
-               <p>The following example demonstrates how to encode both an emendation and a
-                  conjecture.</p>
+                  <p>The amount of detail to report about corrections is a matter for editors to
+                     decide; these guidelines accommodate a range of approaches. When determining
+                     the method to use, editors should bear in mind not only the amount of detail
+                     necessary to communicate the nature of a correction, but also the functionality
+                     they want their edition to support. The subsections below include discussions
+                     intended to help editors make those determinations.</p>
 
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <app>
-                     <lem source="#Haupt1854" type="emendation" xml:id="lem-plenumque"
-                        >plenumque</lem>
-                     <note target="#lem-plenumque">prob. <ref taret="#Keene">Keene</ref> et <ref
-                           target="#Schenkl">Schenkl</ref></note>
-                     <rdg wit="#ω" source="#edd.">primumque</rdg>
-                     <rdg source="#Baehr." type="conjecture">rivumque</rdg>
-                     <rdg source="#CSchenkl" type="conjecture">pronumque</rdg>
-                  </app>
-               </egXML>
+                  <p>Before reading the encoding guidelines for corrections, it is recommended to
+                     read the section “<ref target="#apparatus-criticus-correction-as-metadata"
+                        >Correction as Metadata</ref>” to understand the concepts behind the
+                     guidelines.</p>
 
-               <p>This encoding will produce <foreign xml:lang="lat">plenumque</foreign> in the main
-                  text of the edition and the following in the apparatus criticus: plenumque] <hi
-                     rend="italic">em</hi>. Haupt (<hi rend="italic">prob</hi>. Keene <hi
-                     rend="italic">et</hi> Schenkl), primumque <hi rend="bold">ω</hi>
-                  <hi rend="italic">edd</hi>., rivumque <hi rend="italic">ci.</hi> Baehr., pronumque
-                     <hi rend="italic">ci</hi>. C. Schenkl.</p>
+                  <!-- Begin section on correction as metadata. -->
+                  <div xml:id="apparatus-criticus-correction-as-metadata">
+                     <head>Correction as Metadata</head>
 
-               <p>Multiple conjectures proposed by a single person should be contained in
-                     <gi>rdgGrp</gi> and separated by <gi>note</gi> with value <foreign
-                     xml:lang="lat">vel</foreign>.</p>
+                     <p>Over time, editors have devised creative ways of reporting corrections. The
+                        simplest method is to report readings and annotate them with <foreign
+                           xml:lang="lat">ante correctionem</foreign>, <foreign xml:lang="lat">post
+                           correctionem</foreign>, or something similar. Another method is to add
+                        abbreviations for those phrases as superscript notations on manuscript sigla
+                        (e.g., B<hi rend="superscript">ac</hi>, B<hi rend="superscript">pc</hi>).
+                        Sometimes it is necessary to provide more detail about the method of
+                        correction, in which cases editors will either describe the correction
+                        (e.g., t <hi rend="italic">exp.</hi>, r <hi rend="italic">add. s.l.</hi>) or
+                        they will try to represent it typographically (e.g., referṭ<hi
+                           rend="superscript">r</hi>e). Some rely on superscript notation for all of
+                        these details (e.g., P<hi rend="superscript">csl</hi> = P <foreign
+                           xml:lang="lat">correctio supra lineam</foreign>).</p>
 
-               <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                  <app>
-                     <lem>pallenti</lem>
-                     <rdgGrp>
-                        <rdg source="#Heins." type="conjecture">ridenti</rdg>
-                        <note>vel</note>
-                        <rdg source="#Heins." type="conjecture">varianti</rdg>
-                        <note>vel</note>
-                        <rdg source="#Heins." type="conjecture">vernanti</rdg>
-                        <note>vel</note>
-                        <rdg source="#Heins." type="conjecture">roranti</rdg>
-                     </rdgGrp>
-                  </app>
-               </egXML>
+                     <p>The different methods have advantages and disadvantages, but each one
+                        effectively demonstrates that correction is a complex subject. Even the word
+                        “correction” is problematic, since it can refer to the result of a process
+                        or the process itself. Therefore, representing correction faithfully in a
+                        digital critical edition depends on careful analysis of the information that
+                        comprises a correction.</p>
 
-               <p>This would be displayed in the apparatus criticus as pallenti] ridenti <hi
-                     rend="italic">vel</hi> varianti <hi rend="italic">vel</hi> vernanti <hi
-                     rend="italic">vel</hi> roranti <hi rend="italic">ci</hi>. Heins.</p>
+                     <p>Aside from judgments about correctness, “correction” may involve at least
+                        five kinds of information: <list>
+                           <item>a reading.</item>
+                           <item>the state of the reading: original or altered.</item>
+                           <item>an agent or agents (i.e., the correcting hand or hands).</item>
+                           <item>a method or methods of correction (i.e., deletion, addition above
+                              the line, etc.).</item>
+                           <item>the relationship between the original reading and the altered
+                              reading.</item>
+                        </list></p>
 
+                     <p>In the context of a digital edition, it is useful to think of readings as
+                        the data, and the information about state, agency, method, and relationship
+                        as metadata, or data about the data.</p>
 
+                     <p>Not all of these metadata items will be reported in every instance. The
+                        original reading, for example, obviously does not have an agent (beyond the
+                        witness to the reading) or a method of correction, but it will have a state
+                        (original). The original reading might have a correspondence to show that it
+                        is related to its altered form, if one is provided, but it is not always
+                        necessary to report the altered form. For example, if the altered form
+                        matches the lemma in the main text of the edition, it may be sufficient to
+                        report the original form with a note that it was corrected (the inference
+                        being that it was corrected to the "correct" form of the lemma, if no other
+                        form is reported). Similarly, it may not be necessary to report the method
+                        of correction.</p>
+
+                     <p>It is possible to use techniques described elsewhere in these guidelines to
+                        encode the details of corrections (e.g., deletion and/or addition of
+                        characters), but it is also possible to describe those details in prose. The
+                        examples below demonstrate both options.</p>
+
+                  </div>
+                  <!-- End of section on correction as metadata -->
+
+                  <!-- Begin section on specifications for correction. -->
+                  <div xml:id="apparatus-criticus-correction-specs">
+                     <head>Correction: Specifications</head>
+
+                     <p>Readings before and after correction are encoded as any other readings,
+                        i.e., with <gi>rdg</gi> inside of <gi>app</gi>. The details of the
+                        correction are contained in <gi>witDetail</gi>, with the use of several
+                        attributes to determine how the information is processed.</p>
+
+                     <p>
+                        <specList>
+                           <specDesc key="witDetail"/>
+                           <specDesc key="wit"/>
+                           <specDesc key="target"/>
+                           <specDesc key="corresp"/>
+                           <specDesc key="type"/>
+                        </specList>
+                     </p>
+
+                     <p><gi>witDetail</gi> (witness detail) may be empty (i.e., self-closing) or it
+                        may contain a prose description.</p>
+                     <p><att>wit</att> (witness) has as its value the machine-readable siglum of the
+                        witness that has the original or the altered reading.</p>
+                     <p><att>target</att> has as its value the <att>xml:id</att> of the reading in
+                        question.</p>
+                     <p><att>corresp</att> (corresponds) has as its value the <att>xml:id</att> of
+                        the related reading (i.e., the original reading corresponds to the corrected
+                        reading and vice versa).</p>
+                     <p><att>type</att> has one of the following values to classify the correction.
+                        Possible values:<list>
+                           <item>correction-original: the original reading, i.e., before correction
+                                 (<foreign xml:lang="lat">ante correctionem</foreign> or a.c.). If
+                                 <gi>witDetail</gi> with this type is self-closing, the LDLT reader
+                              will insert "(a.c.)" after the siglum for the witness designated in
+                                 <att>wit</att>. Otherwise, the value of <gi>witDetail</gi> will be
+                              inserted in parentheses after the siglum for the witness designated in
+                                 <att>wit</att>.</item>
+                           <item>correction-altered: the altered reading, i.e., after correction
+                                 (<foreign xml:lang="lat">post correctionem</foreign> or p.c.). If
+                                 <gi>witDetail</gi> with this type is self-closing, the LDLT reader
+                              will insert "(p.c.)" after the witness designated in <att>wit</att>.
+                              Otherwise, the value of <gi>witDetail</gi> will be inserted in
+                              parentheses after the siglum for the witness designated in
+                                 <att>witt</att>.</item>
+                        </list></p>
+
+                     <p>It is impossible to describe all of the possible scenarios for correction,
+                        but the examples in the following sections should provide a basis for
+                        determining how to encode the most common instances.</p>
+                  </div>
+                  <!-- End section correction: specifications -->
+
+                  <!-- Begin section on examples of correction. -->
+                  <div xml:id="apparatus-criticus-correction-examples">
+                     <head>Correction: Examples</head>
+
+                     <!-- First example. -->
+                     <div xml:id="apparatus-criticus-correction-examples-1">
+                        <head>Example 1</head>
+
+                        <p>The first example is simple correction of a variant reading to the lemma:
+                           protegit] protegis <hi rend="bold">G</hi> (a.c.).</p>
+
+                        <p>It is clear in this instance what the reading after correction is, so
+                           there is no need to report it. There is no need to list all of the other
+                           witnesses to the lemma, since it is clear that the uncorrected form is a
+                           unique reading. Also, the editor has decided that it is not useful to
+                           indicate which hand made the correction. In this example, manuscript <hi
+                              rend="bold">G</hi> simply has the variant reading <foreign
+                              xml:lang="lat">protegis</foreign> for the lemma <foreign
+                              xml:lang="lat">protegit</foreign>, to which the variant reading in <hi
+                              rend="bold">G</hi> has been corrected.</p>
+
+                        <p>The encoding for the prose method and the semantic markup method are
+                           identical for such a straightforward correction:</p>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <app>
+                              <lem xml:id="lem-protegit">protegit</lem>
+                              <rdg wit="#G" xml:id="rdg-protegis">protegis</rdg>
+                              <witDetail wit="#G" target="#rdg-protegis" corresp="#lem-protegit"
+                                 type="correction-original"/>
+                           </app>
+                        </egXML>
+
+                     </div>
+                     <!-- End of first example of correction -->
+
+                     <!-- Second example. -->
+                     <div xml:id="apparatus-criticus-correction-examples-2">
+                        <head>Example 2</head>
+
+                        <p>This example is similar to the first one, but it is necessary to indicate
+                           the hand that made the correction.</p>
+
+                        <p>The lemma is <foreign xml:lang="lat">insidias</foreign>. Manuscript <hi
+                              rend="bold">N</hi> has <foreign xml:lang="lat">insidia</foreign>; <hi
+                              rend="bold">N<hi rend="superscript">2</hi></hi> has added the letter
+                           “s.” A traditional apparatus criticus might report this as follows:
+                           insidias] insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi
+                                 rend="superscript">2</hi></hi>).</p>
+
+                        <p>As in the first example, the encoding for the prose method and the
+                           semantic markup method are identical:</p>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <app>
+                              <lem xml:id="lem-insidias">insidias</lem>
+                              <rdg wit="#N" xml:id="rdg-insidia">insidia</rdg>
+                              <witDetail wit="#N" target="#rdg-insidia" corresp="#lem-insidias"
+                                 type="correction-original">corr. <hi rend="bold">N<hi
+                                       rend="superscript">2</hi></hi></witDetail>
+                           </app>
+                        </egXML>
+
+                        <p>This encoding will produce the following entry in the apparatus criticus:
+                           insidias] insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi
+                                 rend="superscript">2</hi></hi></p>
+                     </div>
+                     <!-- End of the second example -->
+
+                     <!-- Begin example 3 -->
+                     <div xml:id="apparatus-criticus-correction-examples-3">
+                        <head>Example 3</head>
+
+                        <p>In this example, a variant reading is corrected to the lemma, but for a
+                           number of reasons it is important to indicate the reading before and
+                           after correction.</p>
+
+                        <p>The witness <hi rend="bold">N</hi> originally had <hi rend="italic"
+                              >co</hi> and <hi rend="italic">ice</hi> with an erasure of two
+                           characters between them. The correcting hand <hi rend="bold">N<hi
+                                 rend="superscript">2</hi></hi> has inserted the letters “r” and “t”
+                           in the erasure. The corrected form (<hi rend="italic">cortice</hi>)
+                           matches the reading in witnesses <hi rend="bold">P</hi> and <hi
+                              rend="bold">V</hi>. Another reading is present in witnesses <hi
+                              rend="bold">G</hi> and <hi rend="bold">A</hi>. A traditional apparatus
+                           criticus might report this as follows: cortice <hi rend="bold">N<hi
+                                 rend="superscript">2</hi></hi> (<hi rend="italic">p.c.</hi>, rt <hi
+                              rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> :
+                           co&#10214;..&#10215;ice <hi rend="bold">N</hi> (a.c.) : codice <hi
+                              rend="bold">G A</hi>.</p>
+
+                        <p>In the prose method, the details are described in <gi>witDetail</gi>:</p>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <app>
+                              <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
+                              <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice"
+                                 type="correction-altered">rt <hi rend="italic">add. in
+                                 ras.</hi></witDetail>
+                              <rdg wit="#N" xml:id="rdg-coice">co&#10214;..&#10215;ice</rdg>
+                              <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice"
+                                 type="correction-original"/>
+                              <rdg wit="#G #A">codice</rdg>
+                           </app>
+                        </egXML>
+
+                        <p>This encoding will produce the following entry in the apparatus criticus:
+                           cortice <hi rend="bold">N<hi rend="superscript">2</hi></hi> (<hi
+                              rend="italic">p.c.</hi>, rt <hi rend="italic">add. in ras.</hi>) <hi
+                              rend="bold">PV</hi> : co&#10214;..&#10215;ice <hi rend="bold">N</hi>
+                           (a.c.) : codice <hi rend="bold">G A</hi>.</p>
+
+                        <p>The semantic markup method uses techniques described elsewhere in these
+                           guidelines to make the details readable by humans and machines:</p>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <app>
+                              <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
+                              <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice"
+                                 type="correction-altered">
+                                 <add place="inRas">rt</add>
+                              </witDetail>
+                              <rdg wit="#N" xml:id="rdg-coice">co<del rend="erasure"><gap
+                                       reason="lost" quantity="2" unit="character"/></del>ice</rdg>
+                              <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice"
+                                 type="correction-original"/>
+                              <rdg wit="#G #A">codice</rdg>
+                           </app>
+                        </egXML>
+
+                        <p>That encoding would produce the following entry: cortice <hi rend="bold"
+                                 >N<hi rend="superscript">2</hi></hi> (<hi rend="italic">p.c.</hi>,
+                           rt <hi rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> :
+                           co&#10214;..&#10215;ice <hi rend="bold">N</hi> (a.c.) : codice <hi
+                              rend="bold">G A</hi>.</p>
+                     </div>
+                     <!-- End of the third example of correction -->
+
+                     <!-- Begin example 4. -->
+                     <div xml:id="apparatus-criticus-correction-examples-4">
+                        <head>Example 4</head>
+
+                        <p>This example includes multiple corrections.</p>
+
+                        <p>The lemma is <foreign xml:lang="lat">descripta</foreign>. Manuscript <hi
+                              rend="bold">N</hi> originally had <foreign xml:lang="lat"
+                              >dipicta</foreign>, but <hi rend="bold">N<hi rend="superscript"
+                              >1</hi></hi> corrected it to <foreign xml:lang="lat"
+                           >depicta</foreign>. Another hand (<hi rend="bold">N<hi rend="superscript"
+                                 >2</hi></hi> has <foreign xml:lang="lat">descripta</foreign> in the
+                           margin. Other manuscripts support these and other readings. A traditional
+                           apparatus criticus might report this as follows: descripta <hi
+                              rend="bold">P V N<hi rend="superscript">2</hi></hi> (in mg.) : depicta
+                              <hi rend="bold">G N<hi rend="superscript">1</hi></hi> (p.c.) : dipicta
+                              <hi rend="bold">N</hi> (a.c.).</p>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <app>
+                              <lem wit="#N2 #P #V" xml:id="lem-descripta">descripta</lem>
+                              <witDetail wit="#N2" target="#lem-descripta">in mg.</witDetail>
+                              <rdg wit="#G #N1" xml:id="rdg-depicta">depicta</rdg>
+                              <witDetail wit="#N1" target="#rdg-depicta" corresp="#rdg-dipicta"
+                                 type="correction-altered"/>
+                              <rdg wit="#N" xml:id="rdg-dipicta">dipicta</rdg>
+                              <witDetail wit="#N" target="#rdg-dipicta" corresp="#rdg-depicta"
+                                 type="correction-original"/>
+                           </app>
+                        </egXML>
+
+                        <p>This encoding will produce the following entry in the apparatus criticus:
+                           descripta <hi rend="bold">N<hi rend="superscript">2</hi></hi> (in mg. <hi
+                              rend="bold">PV</hi> : depicta <hi rend="bold">G N<hi
+                                 rend="superscript">1</hi></hi> (p.c.) : dipicta <hi rend="bold"
+                              >N</hi> (a.c.).</p>
+
+                        <p>Note that it is not possible to use the semantic markup method (i.e.,
+                              <gi>add</gi> with <att>place</att>="margin") for the marginal reading
+                           of <hi rend="bold">N<hi rend="superscript">2</hi></hi>, since the same
+                           reading appears in other witnesses in the text itself. Instead, the
+                           notation “in mg.” is inserted using <gi>witDetail</gi>.</p>
+
+                     </div>
+                     <!-- End of the fourth example -->
+                  </div>
+                  <!-- End of the section on examples of correction -->
+               </div>
+               <!-- End of section on correction -->
+
+               <!-- Begin section on conjecture and emendation. -->
+               <div xml:id="apparatus-criticus-conjecture-and-emendation">
+                  <head>Conjecture and Emendation</head>
+
+                  <p>As explained in the section <ref
+                        target="#apparatus-criticus-concepts-definitions">Concepts and
+                        Definitions</ref>, conjectures are readings that are not supported by
+                     documentary evidence, but are instead proposed by someone and considered by the
+                     editor to be worthy of inclusion in a critical edition. A conjecture is called
+                     an emendation if it is adopted as the official reading of a particular
+                     criticial edition’s main text. In other words, for the purposes of these
+                     guidelines, an emendation is a successful conjecture. But above all,
+                     conjectures and emendations are readings, and they are encoded as such in LDLT
+                     editions.</p>
+
+                  <p>Traditionally, conjectures and emendations have been annotated in various ways
+                     in critical editions (e.g., <foreign xml:lang="lat">ci.</foreign> or <foreign
+                        xml:lang="lat">conj.</foreign> for <foreign xml:lang="lat"
+                        >coniecit</foreign>, <foreign xml:lang="lat">em.</foreign> or <foreign
+                        xml:lang="lat">emend.</foreign> for <foreign xml:lang="lat"
+                        >emendavit</foreign>, among others). They should be annotated in digital
+                     editions, too, both to facilitate their identification, and to enable features
+                     such as filtering and searching for them. The annotation is accomplished with
+                        <att>type</att>.</p>
+
+                  <p>Since an emendation is a conjecture that has been adopted for the main text of
+                     the edition, only <gi>lem</gi> can have <att>type</att> with the value
+                     “emendation.” It could be inferred that a lemma with <att>source</att> only is
+                     an emendation, but in the interest of being explicit, an emendation should be
+                     annotated accordingly. Using <att>type</att> with the value of “emendation”
+                     will also facilitate searching and filtering for emendations.</p>
+
+                  <p>Conversely, only <gi>rdg</gi> may have <att>type</att> with the value
+                     “conjecture.” It could be inferred that a reading with <att>source</att> only
+                     is a conjecture, but it is best to be explicit in the identification if for no
+                     other reason than ensuring that “conjecture” is available as a criterion for
+                     searching and filtering.</p>
+
+                  <p>The following example demonstrates how to encode both an emendation and a
+                     conjecture.</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem source="#Haupt1854" type="emendation" xml:id="lem-plenumque"
+                           >plenumque</lem>
+                        <note target="#lem-plenumque">prob. <ref taret="#Keene">Keene</ref> et <ref
+                              target="#Schenkl">Schenkl</ref></note>
+                        <rdg wit="#ω" source="#edd.">primumque</rdg>
+                        <rdg source="#Baehr." type="conjecture">rivumque</rdg>
+                        <rdg source="#CSchenkl" type="conjecture">pronumque</rdg>
+                     </app>
+                  </egXML>
+
+                  <p>This encoding will produce <foreign xml:lang="lat">plenumque</foreign> in the
+                     main text of the edition and the following in the apparatus criticus:
+                     plenumque] <hi rend="italic">em</hi>. Haupt (<hi rend="italic">prob</hi>. Keene
+                        <hi rend="italic">et</hi> Schenkl), primumque <hi rend="bold">ω</hi>
+                     <hi rend="italic">edd</hi>., rivumque <hi rend="italic">ci.</hi> Baehr.,
+                     pronumque <hi rend="italic">ci</hi>. C. Schenkl.</p>
+
+                  <p>Multiple conjectures proposed by a single person should be contained in
+                        <gi>rdgGrp</gi> and separated by <gi>note</gi> with value <foreign
+                        xml:lang="lat">vel</foreign>.</p>
+
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <app>
+                        <lem>pallenti</lem>
+                        <rdgGrp>
+                           <rdg source="#Heins." type="conjecture">ridenti</rdg>
+                           <note>vel</note>
+                           <rdg source="#Heins." type="conjecture">varianti</rdg>
+                           <note>vel</note>
+                           <rdg source="#Heins." type="conjecture">vernanti</rdg>
+                           <note>vel</note>
+                           <rdg source="#Heins." type="conjecture">roranti</rdg>
+                        </rdgGrp>
+                     </app>
+                  </egXML>
+
+                  <p>This would be displayed in the apparatus criticus as pallenti] ridenti <hi
+                        rend="italic">vel</hi> varianti <hi rend="italic">vel</hi> vernanti <hi
+                        rend="italic">vel</hi> roranti <hi rend="italic">ci</hi>. Heins.</p>
+
+                  <!-- Begin section on editorial deletion. -->
+                  <div xml:id="apparatus-criticus-conjecture-and-emendation-editorial">
+                     <head>Editorial Addition and Deletion</head>
+
+                     <p>In some cases, an editor may wish to indicate that text has been added or
+                        deleted by conjecture. The following subsections describe the methods for
+                        encoding editorial additions and deletions.</p>
+
+                     <!-- Begin section on letters added by conjecture. -->
+                     <div xml:id="apparatus-criticus-conjecture-and-emendation-editorial-addition">
+                        <head>Editorial Addition</head>
+
+                        <p>&lt; &gt; = Text added or supplied by conjecture where text does not
+                           exist in the documentary evidence.</p>
+
+                        <p>
+                           <specList>
+                              <specDesc key="supplied"/>
+                              <specDesc key="note"/>
+                           </specList>
+                        </p>
+
+                        <list>
+                           <item><gi>supplied</gi> encloses text supplied by an emender in the
+                              absence of text in the documentary evidence. It may be used in
+                                 <gi>lem</gi> or <gi>rdg</gi>.</item>
+                        </list>
+
+                        <p>For example, Cynthia Damon prints the following in her <ref
+                              target="#damon-caesar">OCT of Caesar's <bibl><title>De Bello
+                                    Civile</title></bibl></ref>: <foreign xml:lang="lat">Ipsi
+                              Massilienses et celeritate nauium et scientia gubernatorum confisi
+                              nostros eludebant impetusque eorum excipiebant
+                              &lt;cedendo&gt;.</foreign></p>
+
+                        <p>Her apparatus criticus has the following:</p>
+
+                        <p>excipiebant &lt;cedendo&gt; <hi rend="italic">scripsi ex Luc. 3.55 (cf.
+                              Liu. 29.34.13)</hi> : &lt;non&gt; exc- <hi rend="italic">Kramer</hi> :
+                           dec- <hi rend="italic">Nipperdey (cf. Stat. Theb. 2.304)</hi> :
+                           effugiebant <hi rend="italic">Terpstra coll. 2.41.6</hi> : <hi
+                              rend="italic">nisi mauis e.g.</hi> &lt;laxata classe&gt; exc- <hi
+                              rend="italic">ex Luc. 3.548 (cf. BG 2.25.2)</hi>.</p>
+
+                        <p>Every instance of text enclosed in &lt; &gt; indicates that text has been
+                           added where text does not exist in the documentary evidence.</p>
+
+                        <p>In an LDLT edition, that would be encoded as follows:</p>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <p>Ipsi Massilienses et celeritate nauium et scientia gubernatorum
+                              confisi nostros eludebant impetusque eorum <app>
+                                 <lem source="#Damon" type="emendation"
+                                    xml:id="lem-1.58.1-excipiebant-cedendo">excipiebant
+                                       <supplied>cedendo</supplied></lem>
+                                 <note target="#lem-1.58.1-excipiebant-cedendo">scripsi ex
+                                          <bibl><author>Luc.</author> 3.55</bibl> (cf. <ref
+                                       target="#Liue">Liu</ref>. 29.34.13)</note>
+                                 <rdg source="#Kramer" type="conjecture"><supplied>non</supplied>
+                                    excipiebant</rdg>
+                                 <rdg source="#Nipperdey" type="conjecture"
+                                    xml:id="rdg-1.58.1-decipiebant">decipiebant</rdg>
+                                 <note target="#rdg-1.58.1-decipiebant">(cf.
+                                          <bibl><author>Stat.</author>
+                                       <title>Theb.</title> 2.304</bibl>)</note>
+                                 <rdg source="#Terpstra" type="conjecture"
+                                    xml:id="rdg-1.58.1-effugiebant">effugiebant</rdg>
+                                 <note target="#rdg-1.58.1-effugiebant">coll. 2.41.6</note>
+                                 <note>nisi mauis e.g. &lt;laxata classe&gt; exc- ex
+                                          <bibl><author>Luc.</author> 3.548</bibl> (cf.
+                                          <bibl><title>BG</title> 2.25.2</bibl>)</note>
+                              </app>.</p>
+                        </egXML>
+                     </div>
+                     <!-- End section on letters added by conjecture -->
+
+                     <div xml:id="apparatus-criticus-conjecture-and-emendation-editorial-deletion">
+                        <head>Editorial Deletion</head>
+
+                        <p>{ } = Text considered by the editor to be inauthentic, but nevertheless
+                           retained between braces in the edition to indicate that it is part of the
+                           text’s documentary history.</p>
+
+                        <p>Square brackets have been used to indicate editorial deletions in the
+                           past, but, as <ref target="#West">West</ref> argues (p. 80), this is apt
+                           to cause confusion, since square brackets have a different meaning for
+                           papyrologists and epigraphists (see “<ref
+                              target="#apparatus-criticus-omission-known-loss-characters"
+                              >Undetermined Amount Of Text Lost</ref>” in these guidelines).
+                           Accordingly, LDLT editions follow West’s suggestion to use braces to
+                           indicate editorial deletions.</p>
+
+                        <p>
+                           <specList>
+                              <specDesc key="surplus"/>
+                              <specDesc key="note"/>
+                           </specList>
+                        </p>
+
+                        <list>
+                           <item><gi>surplus</gi> contains text identified by the editor as added by
+                              someone other than the original author (e.g., interpolation).</item>
+                           <item><gi>note</gi> contains information about the deletion (e.g.,
+                              bibliography, comments). This allows editors to make the distinction
+                              between the usage of <hi rend="italic">secl.</hi> and <hi
+                                 rend="italic">del.</hi></item>
+                        </list>
+
+                        <p>For example, at section 29 of Suetonius’ life of Claudius, <ref
+                              target="#kaster-suetonius">Robert Kaster</ref> indicates in the text
+                           of his OCT edition that he accepts as correct the deletion of two words
+                           by previous scholars: <quote rend="blockquote">His, ut dixi, uxoribusque
+                              addictus non principem {se} sed ministrum egit, compendio cuiusque
+                              horum uel etiam studio aut libidine honores exercitus impunitates
+                              supplicia largitus {est} et quidem insciens plerumque et
+                              ignarus.</quote></p>
+
+                        <p>The entry for the first one in the apparatus criticus has the following:
+                              <quote>se <hi rend="italic">secl. Graev. 1697, 411 (Polak 1882,
+                                 12)</hi></quote>. The entry for the second one is as follows:
+                              <quote>est <hi rend="italic">del. Bent.</hi></quote>.</p>
+
+                        <p>In an LDLT edition, the deletion would be encoded in the text as
+                           follows:</p>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <p>His, ut dixi, uxoribusque addictus non principem <app>
+                                 <lem xml:id="lem-29-se" source="#Graev.">
+                                    <surplus>se</surplus></lem>
+                                 <note target="#lem-29-se">secl. <ref target="#Graev.">Graev. 1697,
+                                       411</ref> (<ref target="#Polak">Polak 1882, 12</ref>)</note>
+                              </app> sed ministrum egit, compendio cuiusque horum uel etiam studio
+                              aut libidine honores exercitus impunitates supplicia largitus <app>
+                                 <lem xml:id="#lem-29-est" source="#Bent.">
+                                    <surplus>est</surplus>
+                                 </lem>
+                                 <note target="#lem-29-est">del. <ref target="#Bent."
+                                    >Bent.</ref></note></app> et quidem insciens plerumque et
+                              ignarus.</p>
+                        </egXML>
+
+                        <p>The use of <gi>surplus</gi> will cause the braces { } to be inserted on
+                           both sides of the word(s) to be deleted. The rest of the information is
+                           handled as a normal entry in the apparatus criticus.</p>
+
+                        <p>If it is desirable to indicate in the apparatus criticus that a previous
+                           editor has proposed deleting some text, even if the deletion has not been
+                           adopted for the main text of the edition, <gi>surplus</gi> should be used
+                           inside of <gi>rdg</gi>. If the reading is swapped into the main text in
+                           the digital version, the braces { } will be displayed around the
+                           reading.</p>
+                     </div>
+                  </div>
+                  <!-- End of section on editorial deletion -->
+               </div>
+               <!-- End of section on editorial addition and deletion -->
 
                <!-- Begin section on conjectured lacunae. -->
                <div xml:id="apparatus-criticus-conjecture-and-emendation-lacunae">
