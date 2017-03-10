@@ -2304,13 +2304,13 @@
                      mentioned in the text. It is placed in the <gi>back</gi> section of the
                      edition.</item>
                   <item><gi>place</gi> is an item in <gi>listPlace</gi> in the <gi>back</gi> section
-                     of the edition. It must <att>xml:id</att> with a
-                     machine-readable version of the name to serve as a reference for instances of
-                     the name in the text. It may also have <att>corresp</att> with the
-                     canonical Uniform Resource Identifier (URI) for it at <ref
-                        target="http://pleiades.stoa.org">Pleiades</ref> or some other standard
-                     source of URIs for place names.</item>
-                  <item><gi>placeName</gi> contains the nominative form of the name of a place.</item>
+                     of the edition. It must <att>xml:id</att> with a machine-readable version of
+                     the name to serve as a reference for instances of the name in the text. It may
+                     also have <att>corresp</att> with the canonical Uniform Resource Identifier
+                     (URI) for it at <ref target="http://pleiades.stoa.org">Pleiades</ref> or some
+                     other standard source of URIs for place names.</item>
+                  <item><gi>placeName</gi> contains the nominative form of the name of a
+                     place.</item>
                </list>
 
                <p>Since inflected forms of place names may appear in the text, it can be helpful to
@@ -2407,9 +2407,9 @@
                            of characters lost</ref>.</item>
                      <item>[---] = <ref target="#apparatus-criticus-illegible-characters-unknown"
                            >illegible characters, quantity unknown</ref>.</item>
-                     <item>&#10214; &#10215; = <ref target="#apparatus-criticus-deletions">deletion
-                           by a scribe in a witness</ref>.</item>
-                     <item>{ } = <ref target="#apparatus-criticus-deletion-editorial">editorial
+                     <item>&#10214; &#10215; = <ref target="#apparatus-criticus-deletion-witness"
+                           >deletion by a scribe in a witness</ref>.</item>
+                     <item>{ } = <ref target="#apparatus-criticus-addition-deletion-editorial">editorial
                            deletion</ref>.</item>
                      <item>† † = <ref target="#apparatus-criticus-crux">text deemed by the editor to
                            be readable but not understandable, with no satisfactory
@@ -2781,11 +2781,11 @@
                </note>
             </egXML>
          </div>
-         
+
          <!-- Begin section on the apparatus criticus. -->
          <div xml:id="apparatus-criticus">
             <head>Apparatus Criticus</head>
-            
+
             <!-- Need section on what to do in this case:  antea g- uel ante ag- MUSTcVac -->
 
             <p>This section provides models for handling the different kinds of entries that occur
@@ -2802,14 +2802,16 @@
                   <item>Readings from manuscripts and other sources can be filtered in or out of the
                      text.</item>
                   <item>Certain types of variant readings (e.g., orthographic variants, conjectures,
-                     corrections) can be filtered in or out of the text.</item>
+                     corrections) can be removed from the apparatus criticus to reduce its
+                     size.</item>
                   <item>A variant reading can be swapped into the text so that it can be viewed
                         <foreign xml:lang="lat">in situ</foreign>.</item>
                   <item>Line transpositions can be activated and viewed in the text.</item>
                </list></p>
 
-            <p>In a printed version, critical editions encoded according to these guidelines will
-               have an apparatus criticus in a format familiar from standard critical ediitons.</p>
+            <p>In a printed version, critical editions encoded according to these guidelines can be
+               styled to have an apparatus criticus in a format familiar from standard critical
+               ediitons.</p>
 
             <!-- Begin section on concepts and definitions. -->
 
@@ -2864,14 +2866,14 @@
 
                   <p xml:id="conjecture">A <hi rend="bold">conjecture</hi> is a reading expressly
                      proposed by some person (possibly the editor) and determined by an editor to be
-                     worthy of consideration for establishing the text, but not to be printed in the
-                     main text of the edition.</p>
+                     of interest in establishing the text, but not to be printed in the main text of
+                     the edition.</p>
 
                   <p>This distinction between "emendation” and "conjecture" supports the goal of
-                     these guidelines to draw attention to editions as arguments. The terms are used
-                     subjectively, with regard to a particular edition. Readers of an edition may
-                     agree or disagree about whether a particular reading emends the text, but the
-                     editor's argument is that that reading does emend the text, therefore it is
+                     these guidelines of drawing attention to editions as arguments. The terms are
+                     used subjectively, with regard to a particular edition. Readers of an edition
+                     may agree or disagree about whether a particular reading emends the text, but
+                     the editor's argument is that a reading does emend the text. Therefore, it is
                      called an emendation.</p>
 
                   <p xml:id="correction"><hi rend="bold">Correction</hi> describes any attempt by
@@ -2903,21 +2905,21 @@
                   <head>Witnesses</head>
 
                   <p>A <hi rend="bold">witness</hi> may be a manuscript, the individual hands that
-                     wrote in a manuscript, or an early printed edition (e.g., <foreign
-                        xml:lang="lat">editio princeps</foreign>) that may preserve the readings of
-                     a single manuscript.</p>
+                     wrote in a manuscript, or an early printed edition (<foreign xml:lang="lat"
+                        >editio princeps</foreign>) that may preserve the readings of a single
+                     manuscript.</p>
 
                   <p xml:id="hands">The physical object referred to as a manuscript is not by itself
                      a witness. Rather, it preserves a record of the activities of the copyist(s),
                      rubricator(s), corrector(s), and/or other annotator(s) who wrote on its pages,
                      each of whom might be a witness to a different exemplar. At the very least,
-                     they represent different perceptions of the same exemplar. By synechdoche,
-                     those people are referred to as “hands.” (These hands are not to be confused
-                     with the drawings of hands, known as manicules, that sometimes appear in the
-                     margins of manuscripts to point out passages of interest.) The manuscript’s
-                     hands are represented in a critical edition by superscript numerals appended to
-                     its siglum. A change in number, however, does not necessarily indicate a change
-                     of person. For example, the copyist and corrector might be one and the same
+                     they represent different perceptions of the same exemplar. By synecdoche, those
+                     people are referred to as “hands.” (These hands are not to be confused with the
+                     drawings of hands, known as manicules, that sometimes appear in the margins of
+                     manuscripts to point out passages of interest.) A manuscript’s hands are
+                     represented in a critical edition by superscript numerals appended to its
+                     siglum. A change in number, however, does not necessarily indicate a change of
+                     person. For example, the copyist and corrector might be one and the same
                      person, but it can be important to distinguish them, since they represent
                      different views and experiences of the text.</p>
 
@@ -2999,7 +3001,7 @@
                         manuscript tradition, indirect tradition, conjectures (in descending order
                         of merit, as determined by the editor).</item>
                      <item>Manuscripts should be given a regular order for citation, though editors
-                        may deviate from the practice for the sake of clarity.</item>
+                        may deviate from this practice for the sake of clarity.</item>
                   </list>
                </div>
                <!-- End of section on order -->
@@ -3042,7 +3044,7 @@
                      viewer.</item>
                   <item xml:id="wit-att"><att>wit</att> (witness) contains machine-readable sigla
                      for any manuscript(s) (or manuscript hands) or early printed edition(s) (esp.
-                     without an apparatus or commentary; i.e., <foreign xml:lang="lat">editiones
+                     without an apparatus or commentary, so-called <foreign xml:lang="lat">editiones
                         vetustiores</foreign>).</item>
                   <item xml:id="source-att"><att>source</att> (source) contains machine-readable
                      sigla for any printed edition(s) or other scholarly work(s) (e.g., article,
@@ -3050,7 +3052,7 @@
                   <item><att>ana</att> (analysis) classifies a reading as belonging to one or more
                      categories in the LDLT’s taxonomy of readings. More than one value is possible.
                      See the section “<ref target="#apparatus-criticus-analysis">Tagging Readings
-                        for Analysis</ref>.” Use of <att>ana</att> enables the LDLT reading room's
+                        for Analysis</ref>.” Use of <att>ana</att> enables the LDLT viewer's
                      filtering functionality.</item>
                   <item xml:id="wit"><gi>wit</gi> contains general information about a reading or a
                      group of witnesses.</item>
@@ -3126,8 +3128,15 @@
                   </app>
                </egXML>
 
-               <p>The attribute <att>wit</att> contains the witness(es) for lemmata and
-                  readings:</p>
+               <p>It is up to the editor to decide whether to list the witnesses for the lemma. In
+                  many cases, it can be inferred that the lemma is supported by most of the
+                  evidence. All readings, however, should include witnesses or sources so that users
+                  will be able to track that information.</p>
+
+               <p>The attribute <att>wit</att> contains the witness(es) for the lemma and
+                  reading(s). A hash or pound sign (#) before the siglum for the witness indicates
+                  that the witness has been described elsewhere in the edition, making it possible
+                  to retrieve that information.</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <app>
@@ -3136,10 +3145,6 @@
                      <rdg wit="#C"><!-- text of variant reading goes here --></rdg>
                   </app>
                </egXML>
-
-               <p>The hash or pound sign (#) before the siglum for the witness indicates that the
-                  witness has been described elsewhere in the edition, making it possible to
-                  retrieve that information, if desired.</p>
 
                <p>If there is more than one witness for a reading, the sigla should be values for
                      <att>wit</att> separated by spaces.</p>
@@ -3158,7 +3163,7 @@
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <app>
-                     <lem wit="#A" source="#Bottas"><!-- text of lemma goes here --></lem>
+                     <lem wit="#A" source="#Alonso"><!-- text of lemma goes here --></lem>
                      <rdg wit="#B #C" source="#Vettel #Grosjean"
                         ><!-- text of reading goes here --></rdg>
                   </app>
@@ -3169,13 +3174,14 @@
                <div xml:id="apparatus-criticus-basic-entry-examples">
                   <head>Examples of basic apparatus criticus entries</head>
 
-                  <p>At Calp. 1.2 (<foreign xml:lang="lat">quamvis et madidis incumbant praela
-                        racemis</foreign>), the manuscript <hi rend="bold">P</hi> has <foreign
-                        xml:lang="lat">praeda</foreign> where the lemma is <foreign xml:lang="lat"
-                        >praela</foreign>. In a traditional apparatus criticus, this would be
-                     printed as follows: 2 praeda <hi rend="bold">P</hi>.</p>
+                  <p>At Calpurnius (Calp.) 1.2 (<foreign xml:lang="lat">quamvis et madidis incumbant
+                        praela racemis</foreign>), the manuscript <hi rend="bold">P</hi> has
+                        <foreign xml:lang="lat">praeda</foreign> where the lemma is <foreign
+                        xml:lang="lat">praela</foreign>. In a traditional apparatus criticus, this
+                     would be printed as follows: 2 praeda <hi rend="bold">P</hi>.</p>
 
-                  <p>The following pattern demonstrates how to encode the entry in XML:</p>
+                  <p>The following pattern demonstrates how to encode the entry in according to
+                     these guidelines:</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <l n="2">quamvis et madidis incumbant <app>
@@ -3226,7 +3232,7 @@
                      target="#bibliography-sigla-catch-all">Catch-all References</ref>.” This
                   section demonstrates how to insert catch-all references into the apparatus.</p>
 
-               <p>If consensus or catch-all references are used without any addition annotation,
+               <p>If consensus or catch-all references are used without any additional annotation,
                   they may be treated like any other witness or source (i.e., as values of
                      <att>wit</att> or <att>source</att>), provided that they have both machine- and
                   human-readable sigla.</p>
@@ -3288,22 +3294,25 @@
                      <item><ref target="#edition-text-lacunae">Lacuna</ref></item>
                      <item><ref target="#apparatus-criticus-conjecture-and-emendation-lacunae"
                            >Conjectured Lacuna</ref></item>
-                     <item><ref target="#apparatus-criticus-deletions">Deletions</ref></item>
+                     <item><ref target="#apparatus-criticus-deletion-witness">Deletions</ref></item>
                   </list></p>
 
                <!-- Begin section on omission of a letter or letters, words, phrases, or lines. -->
                <div xml:id="apparatus-criticus-omission-text">
                   <head>Omission of a Letter or Letters, Words, Phrases, or Lines</head>
 
-                  <p>For example, the witness known as <hi rend="bold">P</hi> has omitted the word
-                        <foreign xml:lang="lat">pecus</foreign> from the Calp. 1.38: <foreign
+                  <p>Witnesses and sources sometimes omit items from the text. This section
+                     describes how to encode those omissions.</p>
+
+                  <p>For example, the witness known as <hi rend="bold">P</hi> omitted the word
+                        <foreign xml:lang="lat">pecus</foreign> from Calp. 1.38: <foreign
                         xml:lang="lat">securo custode pecus nocturnaque pastor</foreign>. The
                      traditional apparatus criticus indicates the omission as follows: pecus <hi
                         rend="italic">om.</hi>
                      <hi rend="bold">P</hi></p>
 
                   <p>In these guidelines, omission is represented by a so-called "self-closing" or
-                     empty <gi>rdg</gi> (i.e., &lt;rdg/&gt;):</p>
+                     empty <gi>rdg</gi> (i.e., &lt;rdg /&gt;):</p>
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <l>securo custode <app>
                            <lem>pecus</lem>
@@ -3406,15 +3415,19 @@
                      <gi>lacunaStart</gi> and <gi>lacunaEnd</gi>.</p>
 
                <p>The use of the term "lacuna" here is likely to cause confusion. The TEI Guidelines
-                  use the term "lacuna" in the elements <gi>lacunaStart</gi> and <gi>lacunaEnd</gi>,
-                  which are used here to indicate a gap in a witness or group of witnesses. If the
-                  gap occurs in the entire tradition, the guidelines in the section "<ref
-                     target="#edition-text-lacunae">Lacunae</ref>" should be followed.</p>
+                     (<ref
+                     target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/TC.html#TCAPMI"
+                     >12.1.5 Fragmentary Witnesses</ref>) use the term "lacuna" in the elements
+                     <gi>lacunaStart</gi> and <gi>lacunaEnd</gi>, which are used here to indicate a
+                  gap in a witness or group of witnesses. If the gap occurs in the entire tradition,
+                  the section "<ref target="#edition-text-lacunae">Lacunae</ref>" in these
+                  guidelines should be followed.</p>
 
-               <p>Sections 1.1–1.33.3 of Julius Caesar's <bibl><title>de Bello Civili</title></bibl>
-                  are missing from manuscript <hi rend="bold">M</hi>. <ref target="#damon-caesar"
-                     >Cynthia Damon's OCT</ref> edition has the following in the critical apparatus:
-                  1.1.1–1.33.3 <hi rend="italic">M deest, vice eius m citatur</hi>.</p>
+               <p>For example, sections 1.1–1.33.3 of Julius Caesar's <bibl><title>de Bello
+                        Civili</title></bibl> are missing from manuscript <hi rend="bold">M</hi>.
+                     <ref target="#damon-caesar">Cynthia Damon's OCT</ref> edition has the following
+                  in the critical apparatus: 1.1.1–1.33.3 <hi rend="italic">M deest, vice eius m
+                     citatur</hi>.</p>
 
                <p>In an LDLT edition, that should be encoded as follows:</p>
 
@@ -3452,8 +3465,8 @@
 
                <p>For example, the fragmentary witnesses known collectively as "Exc. Par." (=
                   Thuaneus 7647 and Nostradamensis 17903) in <ref target="#giarratano-calpurnius"
-                     >Giarratano's</ref> edition of Calpurnius Siculus have the couplet 5.12–13.
-                     <ref target="#giarratano-calpurnius">Giarratano</ref> notes this fact in the
+                     >Giarratano's</ref> edition of Calpurnius Siculus have 5.12–13. <ref
+                     target="#giarratano-calpurnius">Giarratano</ref> notes this fact in the
                   apparatus criticus as follows: <foreign xml:lang="lat">12 et sq. habent Exc.
                      Par.</foreign>. In an LDLT edition, this should be noted in an <gi>app</gi> as
                   follows:</p>
@@ -3471,13 +3484,14 @@
 
                <p><gi>rdg</gi> with <att>wit</att> and the value of the witness' machine-readable
                   siglum (<att>xml:id</att>) encloses <gi>witStart</gi> or <gi>witEnd</gi> to show
-                  where the witness begins and ends.</p>
+                  where the witness begins and ends. <gi>witDetail</gi> may be used to describe the
+                  presence of witnesses.</p>
             </div>
             <!-- End section on fragmentary witnesses. -->
 
             <!-- Begin section on addition. -->
-            <div xml:id="apparatus-criticus-addition">
-               <head>Addition</head>
+            <div xml:id="apparatus-criticus-addition-witness">
+               <head>Addition of Text in a Witness</head>
 
                <p>This section demonstrates how to indicate that text has been added to a witness.
                   There are two methods for encoding additions: prose description and semantic
@@ -3485,7 +3499,11 @@
                   both cases, but the semantic markup version supports additional functionality such
                   as querying and filtering on readings added in the margin or elsewhere.</p>
 
-               <div xml:id="apparatus-criticus-addition-prose">
+               <p>For additions made by the editor of the current edition or a previous editor, see
+                  the section "<ref target="#apparatus-criticus-addition-deletion-editorial">Editorial
+                     Additions and Deletions</ref>.”</p>
+
+               <div xml:id="apparatus-criticus-addition-witness-prose">
                   <head>Addition: Prose Description</head>
 
                   <p>
@@ -3520,7 +3538,7 @@
                <!-- End of section on addition: prose description -->
 
                <!-- Begin section on semantic markup of addition. -->
-               <div xml:id="apparatus-criticus-addition-semantic">
+               <div xml:id="apparatus-criticus-addition-witness-semantic">
                   <head>Addition: Semantic Markup</head>
 
                   <p>The semantic markup method uses <gi>add</gi> to encode the addition:</p>
@@ -3568,24 +3586,24 @@
             <!-- End of section on additions -->
 
             <!-- Begin section on deletion. -->
-            <div xml:id="apparatus-criticus-deletions">
-               <head>Deletions</head>
+            <div xml:id="apparatus-criticus-deletion-witness">
+               <head>Deletion in a Witness</head>
 
                <p>The following guidelines demonstrate how to produce a notation about the deletion
                   of text from a witness by a scribe, along with the method of deletion (if
                   known).</p>
 
                <p>For deletions made by the editor of the current edition or a previous editor, see
-                  the section "<ref target="#apparatus-criticus-deletion-editorial">Editorial
+                  the section "<ref target="#apparatus-criticus-addition-deletion-editorial">Editorial Additions and
                      Deletions</ref>.”</p>
 
                <p>Deletion almost always occurs as part of a correction. In that case, this section
-                  should be used in combination with the guidelines in “<ref
+                  should be used in combination with the guidelines in the section “<ref
                      target="#apparatus-criticus-correction">Correction</ref>.” The examples in this
                   section represent deletion as part of a correction.</p>
 
                <p>There are two methods for encoding deletions: prose description and semantic
-                  markup. Both are described in this section. The same information is presented in
+                  markup. Both are described in the following subsections. The same information is presented in
                   both cases, but the semantic markup version will support additional functionality
                   such as querying and filtering on deleted readings and the method of deletion.</p>
 
@@ -3671,8 +3689,10 @@
                <!-- End of section on deletion: semantic markup -->
 
                <!-- Begin section on editorial deletion. -->
-               <div xml:id="apparatus-criticus-deletion-editorial">
-                  <head>Editorial Deletion</head>
+               <div xml:id="apparatus-criticus-addition-deletion-editorial">
+                  <head>Editorial Addition and Deletion</head>
+                  
+                  <p></p>
 
                   <p>{ } = Text considered by the editor to be inauthentic but retained between
                      braces in the edition text to indicate that it is part of the text’s
@@ -4455,7 +4475,7 @@
                <!-- Begin section on letters added by conjecture. -->
                <div xml:id="apparatus-criticus-conjecture-and-emendation-partial">
                   <head>Letters Added by Conjecture</head>
-                  
+
                   <!-- What about @type="emendation", too? -->
 
                   <p>If it is necessary to represent letters added by conjecture in a <gi>rdg</gi>
