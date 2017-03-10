@@ -4833,19 +4833,19 @@
                   <lem source="#Giarratano" type="emendation" xml:id="lem-4.96-gap">
                      <!-- Lines are not numbered so as not to interrupt the traditional numbering -->
                      <l>
-                        <gap reason="lost"/>
+                        <supplied><gap reason="lost"/></supplied>
                      </l>
                      <l>
-                        <gap reason="lost"/>
+                        <supplied><gap reason="lost"/></supplied>
                      </l>
                      <l>
-                        <gap reason="lost"/>
+                        <supplied><gap reason="lost"/></supplied>
                      </l>
                      <l>
-                        <gap reason="lost"/>
+                        <supplied><gap reason="lost"/></supplied>
                      </l>
                      <l>
-                        <gap reason="lost"/>
+                        <supplied><gap reason="lost"/></supplied>
                      </l>
                   </lem>
                   <note target="#lem-4.96-gap">quinque vv. deesse puto. <anchor xml:id="gap-4.96"
