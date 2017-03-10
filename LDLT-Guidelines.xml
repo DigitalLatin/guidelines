@@ -2409,8 +2409,8 @@
                            >illegible characters, quantity unknown</ref>.</item>
                      <item>&#10214; &#10215; = <ref target="#apparatus-criticus-deletion-witness"
                            >deletion by a scribe in a witness</ref>.</item>
-                     <item>{ } = <ref target="#apparatus-criticus-addition-deletion-editorial">editorial
-                           deletion</ref>.</item>
+                     <item>{ } = <ref target="#apparatus-criticus-addition-deletion-editorial"
+                           >editorial deletion</ref>.</item>
                      <item>† † = <ref target="#apparatus-criticus-crux">text deemed by the editor to
                            be readable but not understandable, with no satisfactory
                            alternatives</ref>.</item>
@@ -3500,8 +3500,8 @@
                   as querying and filtering on readings added in the margin or elsewhere.</p>
 
                <p>For additions made by the editor of the current edition or a previous editor, see
-                  the section "<ref target="#apparatus-criticus-addition-deletion-editorial">Editorial
-                     Additions and Deletions</ref>.”</p>
+                  the section "<ref target="#apparatus-criticus-addition-deletion-editorial"
+                     >Editorial Additions and Deletions</ref>.”</p>
 
                <div xml:id="apparatus-criticus-addition-witness-prose">
                   <head>Addition: Prose Description</head>
@@ -3594,8 +3594,8 @@
                   known).</p>
 
                <p>For deletions made by the editor of the current edition or a previous editor, see
-                  the section "<ref target="#apparatus-criticus-addition-deletion-editorial">Editorial Additions and
-                     Deletions</ref>.”</p>
+                  the section "<ref target="#apparatus-criticus-addition-deletion-editorial"
+                     >Editorial Additions and Deletions</ref>.”</p>
 
                <p>Deletion almost always occurs as part of a correction. In that case, this section
                   should be used in combination with the guidelines in the section “<ref
@@ -3603,9 +3603,10 @@
                   section represent deletion as part of a correction.</p>
 
                <p>There are two methods for encoding deletions: prose description and semantic
-                  markup. Both are described in the following subsections. The same information is presented in
-                  both cases, but the semantic markup version will support additional functionality
-                  such as querying and filtering on deleted readings and the method of deletion.</p>
+                  markup. Both are described in the following subsections. The same information is
+                  presented in both cases, but the semantic markup version will support additional
+                  functionality such as querying and filtering on deleted readings and the method of
+                  deletion.</p>
 
                <!-- Begin section on prose description of deletion. -->
                <div xml:id="apparatus-criticus-deletion-prose">
@@ -3691,75 +3692,137 @@
                <!-- Begin section on editorial deletion. -->
                <div xml:id="apparatus-criticus-addition-deletion-editorial">
                   <head>Editorial Addition and Deletion</head>
-                  
-                  <p></p>
 
-                  <p>{ } = Text considered by the editor to be inauthentic but retained between
-                     braces in the edition text to indicate that it is part of the text’s
-                     documentary history.</p>
+                  <p>In some cases, an editor may wish to indicate that text has been added or
+                     deleted by conjecture. The following subsections describe the methods for
+                     encoding editorial additions and deletions.</p>
 
-                  <p>Square brackets have been used to indicate editorial deletions in the past,
-                     but, as <ref target="#West">West</ref> argues (p. 80), this is apt to cause
-                     confusion, since they have a different meaning for papyrologists and
-                     epigraphists (see “Undetermined Amount Of Text Lost” in these guidelines).
-                     Accordingly, LDLT editions follow West’s suggestion to use braces to indicate
-                     editorial deletions.</p>
+                  <!-- Begin section on letters added by conjecture. -->
+                  <div xml:id="apparatus-criticus-addition-deletion-editorial-addition">
+                     <head>Editorial Addition</head>
 
-                  <p>
-                     <specList>
-                        <specDesc key="surplus"/>
-                        <specDesc key="note"/>
-                     </specList>
-                  </p>
+                     <p>&lt; &gt; = Text added or supplied by conjecture where text does not exist
+                        in the documentary evidence.</p>
 
-                  <list>
-                     <item><gi>surplus</gi> signifies text identified by the editor as added by
-                        someone other than the original author.</item>
-                     <item><gi>note</gi> contains information about the deletion (e.g.,
-                        bibliography, comments). This allows editors to make the distinction between
-                        the usage of <hi rend="italic">secl.</hi> and <hi rend="italic"
-                        >del.</hi></item>
-                  </list>
+                     <p>
+                        <specList>
+                           <specDesc key="supplied"/>
+                           <specDesc key="note"/>
+                        </specList>
+                     </p>
 
-                  <p>For example, at section 29 of Suetonius’ life of Claudius, <ref
-                        target="#kaster-suetonius">Robert Kaster</ref> indicates in the text of his
-                     OCT edition that he accepts as correct the deletion of two words by previous
-                     scholars: <quote rend="blockquote">His, ut dixi, uxoribusque addictus non
-                        principem {se} sed ministrum egit, compendio cuiusque horum uel etiam studio
-                        aut libidine honores exercitus impunitates supplicia largitus {est} et
-                        quidem insciens plerumque et ignarus.</quote></p>
+                     <list>
+                        <item><gi>supplied</gi> encloses text supplied by an emender in the absence
+                           of text in the documentary evidence. It may be used in <gi>lem</gi> or
+                              <gi>rdg</gi>.</item>
+                     </list>
 
-                  <p>The entry for the first one in the apparatus criticus has the following:
-                        <quote>se <hi rend="italic">secl. Graev. 1697, 411 (Polak 1882,
-                        12)</hi></quote>. The entry for the second one is as follows: <quote>est <hi
-                           rend="italic">del. Bent.</hi></quote>.</p>
+                     <p>For example, Cynthia Damon prints the following in her <ref
+                           target="#damon-caesar">OCT of Caesar's <bibl><title>De Bello
+                                 Civile</title></bibl></ref>: <foreign xml:lang="lat">Ipsi
+                           Massilienses et celeritate nauium et scientia gubernatorum confisi
+                           nostros eludebant impetusque eorum excipiebant
+                        &lt;cedendo&gt;.</foreign></p>
 
-                  <p>In an LDLT edition, the deletion would be encoded in the text as follows:</p>
+                     <p>Her apparatus criticus has the following:</p>
 
-                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                     <p>His, ut dixi, uxoribusque addictus non principem <app>
-                           <lem xml:id="lem-29-se">
-                              <surplus>se</surplus></lem>
-                           <note target="#lem-29-se">secl. <ref target="#Graev.">Graev. 1697,
-                                 411</ref> (<ref target="#Polak">Polak 1882, 12</ref>)</note>
-                        </app> sed ministrum egit, compendio cuiusque horum uel etiam studio aut
-                        libidine honores exercitus impunitates supplicia largitus <app>
-                           <lem xml:id="#lem-29-est">
-                              <surplus>est</surplus>
-                           </lem>
-                           <note target="#lem-29-est">del. <ref target="#Bent."
-                           >Bent.</ref></note></app> et quidem insciens plerumque et ignarus.</p>
-                  </egXML>
+                     <p>excipiebant &lt;cedendo&gt; <hi rend="italic">scripsi ex Luc. 3.55 (cf. Liu.
+                           29.34.13)</hi> : &lt;non&gt; exc- <hi rend="italic">Kramer</hi> : dec-
+                           <hi rend="italic">Nipperdey (cf. Stat. Theb. 2.304)</hi> : effugiebant
+                           <hi rend="italic">Terpstra coll. 2.41.6</hi> : <hi rend="italic">nisi
+                           mauis e.g.</hi> &lt;laxata classe&gt; exc- <hi rend="italic">ex Luc.
+                           3.548 (cf. BG 2.25.2)</hi>.</p>
 
-                  <p>The use of <gi>surplus</gi> will cause the braces { } to be inserted on both
-                     sides of the word(s) to be deleted. The rest of the information is handled as a
-                     normal entry in the apparatus criticus.</p>
+                     <p>Every instance of text enclosed in &lt; &gt; indicates that text has been
+                        added where text does not exist in the documentary evidence.</p>
 
-                  <p>If it is desirable to indicate in the apparatus criticus that a previous editor
-                     has proposed deleting some text, even if the deletion has not been adopted for
-                     the main text of the edition, <gi>surplus</gi> should be used inside of
-                        <gi>rdg</gi>. If the reading is swapped into the main text in the digital
-                     version, the braces { } will be displayed around the reading.</p>
+                     <p>In an LDLT edition, that would be encoded as follows:</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>Ipsi Massilienses et celeritate nauium et scientia gubernatorum confisi
+                           nostros eludebant impetusque eorum <app>
+                              <lem source="#Damon" type="emendation" xml:id="lem-1.58.1-excipiebant-cedendo">excipiebant <supplied>cedendo</supplied></lem>
+                              
+                           </app>.</p>
+                     </egXML>
+
+                     <!-- End section on letters added by conjecture -->
+                  </div>
+
+                  <div xml:id="apparatus-criticus-addition-deletion-editorial-deletion">
+                     <head>Editorial Deletion</head>
+
+                     <p>{ } = Text considered by the editor to be inauthentic, but nevertheless
+                        retained between braces in the edition to indicate that it is part of the
+                        text’s documentary history.</p>
+
+                     <p>Square brackets have been used to indicate editorial deletions in the past,
+                        but, as <ref target="#West">West</ref> argues (p. 80), this is apt to cause
+                        confusion, since square brackets have a different meaning for papyrologists
+                        and epigraphists (see “<ref
+                           target="#apparatus-criticus-omission-known-loss-characters">Undetermined
+                           Amount Of Text Lost</ref>” in these guidelines). Accordingly, LDLT
+                        editions follow West’s suggestion to use braces to indicate editorial
+                        deletions.</p>
+
+                     <p>
+                        <specList>
+                           <specDesc key="surplus"/>
+                           <specDesc key="note"/>
+                        </specList>
+                     </p>
+
+                     <list>
+                        <item><gi>surplus</gi> contains text identified by the editor as added by
+                           someone other than the original author (e.g., interpolation).</item>
+                        <item><gi>note</gi> contains information about the deletion (e.g.,
+                           bibliography, comments). This allows editors to make the distinction
+                           between the usage of <hi rend="italic">secl.</hi> and <hi rend="italic"
+                              >del.</hi></item>
+                     </list>
+
+                     <p>For example, at section 29 of Suetonius’ life of Claudius, <ref
+                           target="#kaster-suetonius">Robert Kaster</ref> indicates in the text of
+                        his OCT edition that he accepts as correct the deletion of two words by
+                        previous scholars: <quote rend="blockquote">His, ut dixi, uxoribusque
+                           addictus non principem {se} sed ministrum egit, compendio cuiusque horum
+                           uel etiam studio aut libidine honores exercitus impunitates supplicia
+                           largitus {est} et quidem insciens plerumque et ignarus.</quote></p>
+
+                     <p>The entry for the first one in the apparatus criticus has the following:
+                           <quote>se <hi rend="italic">secl. Graev. 1697, 411 (Polak 1882,
+                           12)</hi></quote>. The entry for the second one is as follows: <quote>est
+                              <hi rend="italic">del. Bent.</hi></quote>.</p>
+
+                     <p>In an LDLT edition, the deletion would be encoded in the text as
+                        follows:</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>His, ut dixi, uxoribusque addictus non principem <app>
+                              <lem xml:id="lem-29-se" source="#Graev.">
+                                 <surplus>se</surplus></lem>
+                              <note target="#lem-29-se">secl. <ref target="#Graev.">Graev. 1697,
+                                    411</ref> (<ref target="#Polak">Polak 1882, 12</ref>)</note>
+                           </app> sed ministrum egit, compendio cuiusque horum uel etiam studio aut
+                           libidine honores exercitus impunitates supplicia largitus <app>
+                              <lem xml:id="#lem-29-est" source="#Bent.">
+                                 <surplus>est</surplus>
+                              </lem>
+                              <note target="#lem-29-est">del. <ref target="#Bent."
+                                 >Bent.</ref></note></app> et quidem insciens plerumque et
+                           ignarus.</p>
+                     </egXML>
+
+                     <p>The use of <gi>surplus</gi> will cause the braces { } to be inserted on both
+                        sides of the word(s) to be deleted. The rest of the information is handled
+                        as a normal entry in the apparatus criticus.</p>
+
+                     <p>If it is desirable to indicate in the apparatus criticus that a previous
+                        editor has proposed deleting some text, even if the deletion has not been
+                        adopted for the main text of the edition, <gi>surplus</gi> should be used
+                        inside of <gi>rdg</gi>. If the reading is swapped into the main text in the
+                        digital version, the braces { } will be displayed around the reading.</p>
+                  </div>
                </div>
                <!-- End of section on editorial deletion -->
             </div>
@@ -4393,6 +4456,10 @@
 
             <!-- Begin section on conjecture and emendation. -->
             <div xml:id="apparatus-criticus-conjecture-and-emendation">
+
+               <!-- Move section on Editorial Additions and Deletions here, then fix the reference in the section symbols in the edition text. -->
+
+
                <head>Conjecture and Emendation</head>
 
                <p>As explained in the section <ref target="#apparatus-criticus-concepts-definitions"
@@ -4472,18 +4539,7 @@
                      rend="italic">vel</hi> varianti <hi rend="italic">vel</hi> vernanti <hi
                      rend="italic">vel</hi> roranti <hi rend="italic">ci</hi>. Heins.</p>
 
-               <!-- Begin section on letters added by conjecture. -->
-               <div xml:id="apparatus-criticus-conjecture-and-emendation-partial">
-                  <head>Letters Added by Conjecture</head>
 
-                  <!-- What about @type="emendation", too? -->
-
-                  <p>If it is necessary to represent letters added by conjecture in a <gi>rdg</gi>
-                     within an apparatus entry, <gi>add</gi> with <att>type</att>="conjecture"
-                     should be used. That will cause the symbols &lt; and &gt; to be added around
-                     the letters added by conjecture.</p>
-               </div>
-               <!-- End section on letters added by conjecture -->
 
                <!-- Begin section on conjectured lacunae. -->
                <div xml:id="apparatus-criticus-conjecture-and-emendation-lacunae">
