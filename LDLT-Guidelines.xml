@@ -4475,9 +4475,12 @@
                      </p>
 
                      <list>
-                        <item><gi>note</gi> contains the interrogative <foreign xml:lang="lat"
-                              >an</foreign> or a similar remark to introduce a tentative
-                           conjecture.</item>
+                        <item><gi>note</gi> before the <gi>rdg</gi> contains the interrogative
+                              <foreign xml:lang="lat">an</foreign> or a similar remark to introduce
+                           a tentative conjecture. Another <gi>note</gi> after the <gi>rdg</gi>
+                           contains a question mark to end the entry. Each <gi>note</gi> must have
+                           an <att>xml:id</att>. The attributes <att>next</att> and <att>prev</att>
+                           must be used to connect the two notes.</item>
                         <item><gi>rdg</gi> with <att>type</att>="conjecture" and
                            <att>cert</att>="low" indicates that the reading is a tentative
                            conjecture.</item>
@@ -4498,13 +4501,14 @@
                            <lem>relicto praetore</lem>
                            <rdg source="#Basiner" type="conjecture"
                               xml:id="rdg-1.24.3-relictis-praetoribus">relictis praetoribus</rdg>
-                           <note target="##rdg-1.24.3-relictis-praetoribus">coll.
+                           <note target="#rdg-1.24.3-relictis-praetoribus">coll.
                                     <bibl><author>Cic.</author>
                                  <title>Att.</title> 9.6.1</bibl></note>
-                           <note>an</note>
+                           <note xml:id="note-1.24.3-a" next="#note-1.24.3-b">an</note>
                            <rdg source="#Damon" type="conjecture" cert="low">
                               <surplus>relicto praetore</surplus>
                            </rdg>
+                           <note xml:id="note-1.24.3-b" prev="note-1.24.3-a">?</note>
                         </app>
                      </egXML>
                   </div>
