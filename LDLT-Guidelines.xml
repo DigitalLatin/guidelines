@@ -3221,6 +3221,45 @@
             </div>
             <!-- End of section on basic apparatus entry -->
 
+            <!-- Begin section on apparatus entries that cross structural boundaries. -->
+            <div xml:id="apparatus-criticus-basic-entry-cross-elements">
+               <head>Apparatus Entries That Cross Structural Boundaries</head>
+
+               <p>Most entries in an critical apparatus concern text within the boundaries of a
+                  structural unit such as a line of poetry or a section within a paragraph, but
+                  sometimes it is necessary for entries to cross those structural boundaries. This
+                  presents a problem for the hierarchical nature of XML, but using <att>next</att>
+                  and <att>prev</att> can compensate for that issue.</p>
+
+               <p>For example, the witness <hi rend="bold">V</hi> omits the final word of section
+                  19.3 and all of section 19.4 from the <bibl><title>Bellum
+                     Alexandrinum</title></bibl>. In a print edition, it would be possible to write
+                  the following: enatauerunt … 19.4 fuit VI milium <hi rend="italic">om. <hi
+                        rend="bold">V</hi></hi>, but in an LDLT edition, that must be encoded as
+                  follows:</p>
+
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <seg n="3"> … interuallum ad oppidum <!-- @next points to the <app> in the next segment -->
+                     <app xml:id="app-18.3-enatauerunt" next="#app-18.4-multi">
+                        <lem>enatauerunt.</lem>
+                        <rdg wit="#V" ana="#subtractive"/>
+                     </app>
+                  </seg>
+                  <seg n="4">
+                     <!-- @prev points to the <app> in the previous segment -->
+                     <app xml:id="app-18.4-multi" prev="#app-18.3-enatauerunt">
+                        <lem>Multi tamen ex his capti interfectique sunt; sed numerus captiuorum
+                           omnino fuit VI milium.</lem>
+                        <rdg wit="#V" ana="#subtractive"/>
+                     </app>
+                  </seg>
+               </egXML>
+
+               <p>This particular example could also be handled with <gi>lacunaStart</gi> and
+                     <gi>lacunaEnd</gi>, as described in the section "<ref
+                     target="#apparatus-criticus-gaps">Gaps in Witnesses</ref>."</p>
+            </div>
+
             <!-- Begin section on variations on readings in a group of witnesses/sources -->
             <div xml:id="apparatus-criticus-multiple-entries">
                <head>Variations on Readings in a Group of Witnesses/Sources</head>
@@ -3443,8 +3482,6 @@
                   <specList>
                      <specDesc key="lacunaStart"/>
                      <specDesc key="lacunaEnd"/>
-                     <specDesc key="witStart"/>
-                     <specDesc key="witEnd"/>
                   </specList>
                </p>
 
@@ -3497,6 +3534,13 @@
             <!-- Begin section on fragmentary witnesses. -->
             <div xml:id="apparatus-criticus-fragmentary-witnesses">
                <head>Fragmentary Witnesses</head>
+               
+               <p>
+                  <specList>
+                     <specDesc key="witStart"/>
+                     <specDesc key="witEnd"/>
+                  </specList>
+               </p>
 
                <p>The presence of fragmentary witnesses should be noted in the apparatus criticus
                   using <gi>witStart</gi> and <gi>witEnd</gi>.</p>
@@ -4478,8 +4522,10 @@
                         <item><gi>note</gi> before the <gi>rdg</gi> contains the interrogative
                               <foreign xml:lang="lat">an</foreign> or a similar remark to introduce
                            a tentative conjecture. Another <gi>note</gi> after the <gi>rdg</gi>
-                           contains a question mark to end the entry. Each <gi>note</gi> must have
-                           an <att>xml:id</att>. The attributes <att>next</att> and <att>prev</att>
+                           contains a question mark to end the entry. The second <gi>note</gi> may
+                           also contain other text (e.g., a parenthetical reference to a passage
+                           that supports the conjecture). Each <gi>note</gi> must have an
+                              <att>xml:id</att>. The attributes <att>next</att> and <att>prev</att>
                            must be used to connect the two notes.</item>
                         <item><gi>rdg</gi> with <att>type</att>="conjecture" and
                            <att>cert</att>="low" indicates that the reading is a tentative
