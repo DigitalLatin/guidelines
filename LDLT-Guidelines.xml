@@ -3228,15 +3228,17 @@
                <p>Most entries in an critical apparatus concern text within the boundaries of a
                   structural unit such as a line of poetry or a section within a paragraph, but
                   sometimes it is necessary for entries to cross those structural boundaries. This
-                  presents a problem for the hierarchical nature of XML, but using <att>next</att>
-                  and <att>prev</att> can compensate for that issue.</p>
+                  presents a problem for the hierarchical nature of XML, since a "child" element
+                  cannot overlap its "parent" element. Using <att>next</att> and <att>prev</att> can
+                  compensate for that issue.</p>
 
                <p>For example, the witness <hi rend="bold">V</hi> omits the final word of section
                   19.3 and all of section 19.4 from the <bibl><title>Bellum
                      Alexandrinum</title></bibl>. In a print edition, it would be possible to write
                   the following: enatauerunt … 19.4 fuit VI milium <hi rend="italic">om. <hi
-                        rend="bold">V</hi></hi>, but in an LDLT edition, that must be encoded as
-                  follows:</p>
+                        rend="bold">V</hi></hi>, but in an LDLT edition, the <gi>app</gi> contained
+                  by <gi>seg</gi> 3 cannot extend into <gi>seg</gi> 4. It must be encoded using
+                     <att>next</att> and <att>prev</att> as follows:</p>
 
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <seg n="3"> … interuallum ad oppidum <!-- @next points to the <app> in the next segment -->
@@ -3534,7 +3536,7 @@
             <!-- Begin section on fragmentary witnesses. -->
             <div xml:id="apparatus-criticus-fragmentary-witnesses">
                <head>Fragmentary Witnesses</head>
-               
+
                <p>
                   <specList>
                      <specDesc key="witStart"/>
