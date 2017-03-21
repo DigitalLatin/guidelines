@@ -2787,8 +2787,6 @@
          <div xml:id="apparatus-criticus">
             <head>Apparatus Criticus</head>
 
-            <!-- Need section on what to do in this case:  antea g- uel ante ag- MUSTcVac -->
-
             <p>This section provides models for handling the different kinds of entries that occur
                in an apparatus criticus. It uses the terminology, elements, and attributes of the
                TEI’s module <ref
@@ -3222,6 +3220,39 @@
                <!-- End section basic-entry-examples -->
             </div>
             <!-- End of section on basic apparatus entry -->
+
+            <div xml:id="apparatus-criticus-multiple-entries">
+               <head>Variations on Readings in a Group of Witnesses/Sources</head>
+
+               <p>For the sake of keeping the emphasis on the grouping of witnesses or sources, it
+                  may be necessary to indicate that variations on a reading appear in the group,
+                  instead of reporting which witnesses or sources have the variations. In that case,
+                  a combination of <gi>rdgGrp</gi> (reading group) and <gi>note</gi> can be
+                  used.</p>
+               
+               <p>
+                  <specList>
+                     <specDesc key="rdgGrp"/>
+                     <specDesc key="note"/>
+                  </specList>
+               </p>
+               
+               <list>
+                  <item><gi>rdgGrp</gi> (reading group) contains two or more readings (<gi>rdg</gi>) related to each other in some way.</item>
+                  <item><gi>note</gi> contains language that connects the readings in <gi>rdgGrp</gi> (e.g., <foreign xml:lang="lat">an</foreign>, <foreign xml:lang="lat">aut</foreign>, or <foreign xml:lang="lat">vel</foreign>)</item>
+               </list>
+               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <app>
+                     <lem wit="#A">ante A. Gellium</lem>
+                     <rdgGrp>
+                        <rdg wit="#B #C #D #E">antea gellium</rdg>
+                        <note>vel</note>
+                        <rdg wit="#B #C #D #E">ante agellium</rdg>
+                     </rdgGrp>
+                  </app>
+               </egXML>
+            </div>
 
             <!-- Begin section on use of catch-all references. -->
             <div xml:id="apparatus-criticus-catch-all-references">
@@ -4400,11 +4431,9 @@
                      <hi rend="italic">edd</hi>., rivumque <hi rend="italic">ci.</hi> Baehr.,
                      pronumque <hi rend="italic">ci</hi>. C. Schenkl.</p>
 
-                  <!-- Hugh: is this true? -->
-
                   <p>Multiple conjectures proposed by a single person should be contained in
                         <gi>rdgGrp</gi> and separated by <gi>note</gi> with value <foreign
-                        xml:lang="lat">vel</foreign>.</p>
+                        xml:lang="lat">vel</foreign> (or something similar).</p>
 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app>
@@ -4603,10 +4632,10 @@
                   <p>The conjectured lacuna itself should be encoded with <gi>gap</gi> with
                         <att>reason</att>="lost" as indicated in the section “<ref
                         target="#edition-text-lacunae">Lacunae</ref>.” To indicate that it has been
-                     added by conjecture, <gi>gap</gi> should be enclosed by <gi>supplied</gi>. Further, if
-                     it has been accepted by the editor of the edition, it should be contained by
-                        <gi>lem</gi> with <att>type</att>="emendation". If the conjectured lacuna is
-                     only noted in the apparatus criticus, then it should be contained by
+                     added by conjecture, <gi>gap</gi> should be enclosed by <gi>supplied</gi>.
+                     Further, if it has been accepted by the editor of the edition, it should be
+                     contained by <gi>lem</gi> with <att>type</att>="emendation". If the conjectured
+                     lacuna is only noted in the apparatus criticus, then it should be contained by
                         <gi>rdg</gi> with <att>type</att>="conjecture".</p>
 
                   <p>For example, at the conclusion of section 3.8.4 of Julius Caesar's
@@ -4639,7 +4668,9 @@
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                      <app type="line-omission">
                         <lem source="#Verdière" xml:id="lem-1.1-9">
-                           <supplied><gap reason="lost" quantity="9" unit="lines"/></supplied>
+                           <supplied>
+                              <gap reason="lost" quantity="9" unit="lines"/>
+                           </supplied>
                         </lem>
                         <note target="#lem-1.1-9">u. 1–9 librarii incuria cecidisse putavit
                            Verdière</note>
@@ -4833,19 +4864,29 @@
                   <lem source="#Giarratano" type="emendation" xml:id="lem-4.96-gap">
                      <!-- Lines are not numbered so as not to interrupt the traditional numbering -->
                      <l>
-                        <supplied><gap reason="lost"/></supplied>
+                        <supplied>
+                           <gap reason="lost"/>
+                        </supplied>
                      </l>
                      <l>
-                        <supplied><gap reason="lost"/></supplied>
+                        <supplied>
+                           <gap reason="lost"/>
+                        </supplied>
                      </l>
                      <l>
-                        <supplied><gap reason="lost"/></supplied>
+                        <supplied>
+                           <gap reason="lost"/>
+                        </supplied>
                      </l>
                      <l>
-                        <supplied><gap reason="lost"/></supplied>
+                        <supplied>
+                           <gap reason="lost"/>
+                        </supplied>
                      </l>
                      <l>
-                        <supplied><gap reason="lost"/></supplied>
+                        <supplied>
+                           <gap reason="lost"/>
+                        </supplied>
                      </l>
                   </lem>
                   <note target="#lem-4.96-gap">quinque vv. deesse puto. <anchor xml:id="gap-4.96"
