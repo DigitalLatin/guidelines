@@ -3221,6 +3221,7 @@
             </div>
             <!-- End of section on basic apparatus entry -->
 
+            <!-- Begin section on variations on readings in a group of witnesses/sources -->
             <div xml:id="apparatus-criticus-multiple-entries">
                <head>Variations on Readings in a Group of Witnesses/Sources</head>
 
@@ -3229,19 +3230,23 @@
                   instead of reporting which witnesses or sources have the variations. In that case,
                   a combination of <gi>rdgGrp</gi> (reading group) and <gi>note</gi> can be
                   used.</p>
-               
+
                <p>
                   <specList>
                      <specDesc key="rdgGrp"/>
                      <specDesc key="note"/>
                   </specList>
                </p>
-               
+
                <list>
-                  <item><gi>rdgGrp</gi> (reading group) contains two or more readings (<gi>rdg</gi>) related to each other in some way.</item>
-                  <item><gi>note</gi> contains language that connects the readings in <gi>rdgGrp</gi> (e.g., <foreign xml:lang="lat">an</foreign>, <foreign xml:lang="lat">aut</foreign>, or <foreign xml:lang="lat">vel</foreign>)</item>
+                  <item><gi>rdgGrp</gi> (reading group) contains two or more readings (<gi>rdg</gi>)
+                     related to each other in some way.</item>
+                  <item><gi>note</gi> contains language that connects the readings in
+                        <gi>rdgGrp</gi> (e.g., <foreign xml:lang="lat">an</foreign>, <foreign
+                        xml:lang="lat">aut</foreign>, or <foreign xml:lang="lat"
+                     >vel</foreign>)</item>
                </list>
-               
+
                <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <app>
                      <lem wit="#A">ante A. Gellium</lem>
@@ -3253,6 +3258,7 @@
                   </app>
                </egXML>
             </div>
+            <!-- End section on variations on readings in a group of witnesses/sources -->
 
             <!-- Begin section on use of catch-all references. -->
             <div xml:id="apparatus-criticus-catch-all-references">
@@ -4454,6 +4460,56 @@
                         rend="italic">vel</hi> varianti <hi rend="italic">vel</hi> vernanti <hi
                         rend="italic">vel</hi> roranti <hi rend="italic">ci</hi>. Heins.</p>
 
+                  <!-- Begin section on tentative conjectures. -->
+                  <div xml:id="apparatus-criticus-conjecture-and-emendation-tentative">
+                     <head>Tentative Conjectures</head>
+
+                     <p>Occasionally, editors propose conjectures at the end of an entry in the
+                        critical apparatus but express uncertainty or doubt about the viability of
+                        the proposal.</p>
+
+                     <p>
+                        <specList>
+                           <specDesc key="note"/>
+                        </specList>
+                     </p>
+
+                     <list>
+                        <item><gi>note</gi> contains the interrogative <foreign xml:lang="lat"
+                              >an</foreign> or a similar remark to introduce a tentative
+                           conjecture.</item>
+                        <item><gi>rdg</gi> with <att>type</att>="conjecture" and
+                           <att>cert</att>="low" indicates that the reading is a tentative
+                           conjecture.</item>
+                     </list>
+
+                     <p>For example, Cynthia Damon prints the following in her OCT edition of
+                        Caesar's <bibl><title>De Bello Civili</title></bibl> at 1.24.3: relicto
+                        praetore] -tis -oribus <hi rend="italic">Basiner coll. Cic. Att. 9.6.1 :
+                           an</hi> [r- p-]?</p>
+
+                     <p>At the end of that entry, Damon has suggested the deletion of <foreign
+                           xml:lang="lat">relicto praetore</foreign>, but it is only a suggestion
+                        for others to consider. In an LDLT edition, that would be encoded as
+                        follows:</p>
+
+                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                           <lem>relicto praetore</lem>
+                           <rdg source="#Basiner" type="conjecture"
+                              xml:id="rdg-1.24.3-relictis-praetoribus">relictis praetoribus</rdg>
+                           <note target="##rdg-1.24.3-relictis-praetoribus">coll.
+                                    <bibl><author>Cic.</author>
+                                 <title>Att.</title> 9.6.1</bibl></note>
+                           <note>an</note>
+                           <rdg source="#Damon" type="conjecture" cert="low">
+                              <surplus>relicto praetore</surplus>
+                           </rdg>
+                        </app>
+                     </egXML>
+                  </div>
+                  <!-- End section on tentative conjectures. -->
+
                   <!-- Begin section on editorial deletion. -->
                   <div xml:id="apparatus-criticus-conjecture-and-emendation-editorial">
                      <head>Editorial Addition and Deletion</head>
@@ -4484,7 +4540,7 @@
 
                         <p>For example, Cynthia Damon prints the following in her <ref
                               target="#damon-caesar">OCT of Caesar's <bibl><title>De Bello
-                                    Civile</title></bibl></ref>: <foreign xml:lang="lat">Ipsi
+                                    Civili</title></bibl></ref>: <foreign xml:lang="lat">Ipsi
                               Massilienses et celeritate nauium et scientia gubernatorum confisi
                               nostros eludebant impetusque eorum excipiebant
                               &lt;cedendo&gt;.</foreign></p>
