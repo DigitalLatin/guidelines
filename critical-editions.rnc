@@ -7,7 +7,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2017-03-07T19:56:32Z. .
+# Schema generated from ODD source 2017-03-27T18:53:19Z. .
 # TEI Edition: 
 # TEI Edition Location: http://www.tei-c.org/Vault/P5//
 #
@@ -35,6 +35,11 @@ tei_macro.specialPara =
    | tei_model.divPart
    | tei_model.global)*
 tei_macro.xtext = (text | tei_model.gLike)*
+anyElement-xenoData =
+  element * - (tei:* | teix:egXML) {
+    attribute * { text }*,
+    (text | anyElement-xenoData)*
+  }
 tei_att.ascribed.attributes = tei_att.ascribed.attribute.who
 tei_att.ascribed.attribute.who =
   
@@ -587,6 +592,30 @@ tei_att.global.source.attribute.source =
   attribute source {
     list { xsd:anyURI+ }
   }?
+sch:pattern [
+  id = "tei-DLL-att.global.source-crited.sourced-constraint-rule-5"
+  "\x{a}" ~
+  "      "
+  sch:rule [
+    context = "tei:*[@source]"
+    "\x{a}" ~
+    "                      "
+    sch:report [
+      test =
+        "exists(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null)"
+      "No matching xml:id for reference(s): "
+      sch:value-of [
+        select =
+          "string-join(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
+      ]
+      "."
+    ]
+    "\x{a}" ~
+    "                    "
+  ]
+  "\x{a}" ~
+  "   "
+]
 tei_att.global.attributes =
   tei_att.global.rendition.attributes,
   tei_att.global.linking.attributes,
@@ -901,7 +930,7 @@ tei_att.typed.attribute.subtype =
     xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
   }?
 sch:pattern [
-  id = "tei-DLL-att.typed-subtypeTyped-constraint-rule-5"
+  id = "tei-DLL-att.typed-subtypeTyped-constraint-rule-6"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -934,7 +963,7 @@ tei_att.pointing.attribute.targetLang =
        "")
   }?
 sch:pattern [
-  id = "tei-DLL-att.pointing-targetLang-targetLang-constraint-rule-6"
+  id = "tei-DLL-att.pointing-targetLang-targetLang-constraint-rule-7"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -1046,7 +1075,7 @@ tei_att.spanning.attribute.spanTo =
   ## indicates the end of a span initiated by the element bearing this attribute.
   attribute spanTo { xsd:anyURI }?
 sch:pattern [
-  id = "tei-DLL-att.spanning-spanTo-spanTo-2-constraint-rule-7"
+  id = "tei-DLL-att.spanning-spanTo-spanTo-2-constraint-rule-8"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -1098,7 +1127,7 @@ tei_att.styleDef.attribute.schemeVersion =
   }?
 sch:pattern [
   id =
-    "tei-DLL-att.styleDef-schemeVersion-schemeVersionRequiresScheme-constraint-rule-8"
+    "tei-DLL-att.styleDef-schemeVersion-schemeVersionRequiresScheme-constraint-rule-9"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -2067,7 +2096,7 @@ tei_p =
   element p {
     tei_macro.paraContent
     >> sch:pattern [
-         id = "tei-DLL-p-abstractModel-p-constraint-report-4"
+         id = "tei-DLL-p-abstractModel-p-constraint-report-5"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2088,7 +2117,7 @@ tei_p =
          "         "
        ]
     >> sch:pattern [
-         id = "tei-DLL-p-abstractModel-structure-l-constraint-report-5"
+         id = "tei-DLL-p-abstractModel-structure-l-constraint-report-6"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2685,7 +2714,7 @@ tei_gap =
   element gap {
     ((tei_model.descLike | tei_model.certLike)*)
     >> sch:pattern [
-         id = "tei-DLL-gap-gap-constraint-rule-9"
+         id = "tei-DLL-gap-gap-constraint-rule-10"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -2719,7 +2748,7 @@ tei_gap =
          "         "
        ]
     >> sch:pattern [
-         id = "tei-DLL-gap-gap-constraint-rule-10"
+         id = "tei-DLL-gap-gap-constraint-rule-11"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3039,7 +3068,7 @@ tei_expan =
   element expan {
     tei_macro.phraseSeq
     >> sch:pattern [
-         id = "tei-DLL-expan-expan-constraint-rule-11"
+         id = "tei-DLL-expan-expan-constraint-rule-12"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3058,7 +3087,7 @@ tei_expan =
          "         "
        ]
     >> sch:pattern [
-         id = "tei-DLL-expan-expan-constraint-rule-12"
+         id = "tei-DLL-expan-expan-constraint-rule-13"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3085,7 +3114,7 @@ tei_ptr =
   element ptr {
     empty
     >> sch:pattern [
-         id = "tei-DLL-ptr-ptrAtts-constraint-report-14"
+         id = "tei-DLL-ptr-ptrAtts-constraint-report-15"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3119,7 +3148,7 @@ tei_ref =
   element ref {
     tei_macro.paraContent
     >> sch:pattern [
-         id = "tei-DLL-ref-refAtts-constraint-report-15"
+         id = "tei-DLL-ref-refAtts-constraint-report-16"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3160,7 +3189,7 @@ tei_list =
      (tei_model.divBottom, tei_model.global*)*)
     >> sch:pattern [
          id =
-           "tei-DLL-list-gloss-list-must-have-labels-constraint-rule-13"
+           "tei-DLL-list-gloss-list-must-have-labels-constraint-rule-14"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3659,7 +3688,7 @@ tei_relatedItem =
     ((tei_model.biblLike | tei_model.ptrLike)?)
     >> sch:pattern [
          id =
-           "tei-DLL-relatedItem-targetorcontent1-constraint-report-16"
+           "tei-DLL-relatedItem-targetorcontent1-constraint-report-17"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3716,7 +3745,7 @@ tei_l =
       | tei_model.inter
       | tei_model.global)*)
     >> sch:pattern [
-         id = "tei-DLL-l-l-app-constraint-rule-14"
+         id = "tei-DLL-l-l-app-constraint-rule-15"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3737,7 +3766,7 @@ tei_l =
          "         "
        ]
     >> sch:pattern [
-         id = "tei-DLL-l-abstractModel-structure-l-constraint-report-18"
+         id = "tei-DLL-l-abstractModel-structure-l-constraint-report-19"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -3800,7 +3829,7 @@ tei_lg =
        ]
     >> sch:pattern [
          id =
-           "tei-DLL-lg-abstractModel-structure-l-constraint-report-19"
+           "tei-DLL-lg-abstractModel-structure-l-constraint-report-20"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -4290,7 +4319,7 @@ tei_quotation =
   element quotation {
     (tei_model.pLike*)
     >> sch:pattern [
-         id = "tei-DLL-quotation-quotationContents-constraint-report-20"
+         id = "tei-DLL-quotation-quotationContents-constraint-report-21"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -4771,7 +4800,7 @@ tei_xenoData =
   
   ## (non-TEI metadata) provides a container element into which metadata in non-TEI formats may be placed. [2.5. Non-TEI Metadata]
   element xenoData {
-    (text),
+    (text | anyElement-xenoData),
     tei_att.global.attributes,
     tei_att.declarable.attributes,
     tei_att.typed.attributes,
@@ -4929,7 +4958,7 @@ tei_div =
       (tei_model.divBottom, tei_model.global*)*)?)
     >> sch:pattern [
          id =
-           "tei-DLL-div-abstractModel-structure-l-constraint-report-21"
+           "tei-DLL-div-abstractModel-structure-l-constraint-report-22"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -4950,7 +4979,7 @@ tei_div =
        ]
     >> sch:pattern [
          id =
-           "tei-DLL-div-abstractModel-structure-p-constraint-report-22"
+           "tei-DLL-div-abstractModel-structure-p-constraint-report-23"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -5385,7 +5414,7 @@ tei_ex =
   element ex {
     tei_macro.xtext
     >> sch:pattern [
-         id = "tei-DLL-ex-ex-constraint-rule-15"
+         id = "tei-DLL-ex-ex-constraint-rule-16"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -5411,7 +5440,7 @@ tei_ex =
          "         "
        ]
     >> sch:pattern [
-         id = "tei-DLL-ex-ex-constraint-rule-16"
+         id = "tei-DLL-ex-ex-constraint-rule-17"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -5486,7 +5515,7 @@ tei_space =
   element space {
     ((tei_model.descLike | tei_model.certLike)*)
     >> sch:pattern [
-         id = "tei-DLL-space-space-constraint-rule-17"
+         id = "tei-DLL-space-space-constraint-rule-18"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -5513,7 +5542,7 @@ tei_space =
          "         "
        ]
     >> sch:pattern [
-         id = "tei-DLL-space-space-constraint-rule-18"
+         id = "tei-DLL-space-space-constraint-rule-19"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -5832,7 +5861,7 @@ tei_s =
   element s {
     tei_macro.phraseSeq
     >> sch:pattern [
-         id = "tei-DLL-s-noNestedS-constraint-report-31"
+         id = "tei-DLL-s-noNestedS-constraint-report-32"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -6242,7 +6271,7 @@ tei_ab =
     tei_macro.paraContent
     >> sch:pattern [
          id =
-           "tei-DLL-ab-abstractModel-structure-p-constraint-report-32"
+           "tei-DLL-ab-abstractModel-structure-p-constraint-report-33"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -6264,7 +6293,7 @@ tei_ab =
        ]
     >> sch:pattern [
          id =
-           "tei-DLL-ab-abstractModel-structure-l-constraint-report-33"
+           "tei-DLL-ab-abstractModel-structure-l-constraint-report-34"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -6421,7 +6450,7 @@ tei_dimensions =
   element dimensions {
     ((tei_dim | tei_model.dimLike)*)
     >> sch:pattern [
-         id = "tei-DLL-dimensions-duplicateDim-constraint-report-34"
+         id = "tei-DLL-dimensions-duplicateDim-constraint-report-35"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -6443,7 +6472,7 @@ tei_dimensions =
          "         "
        ]
     >> sch:pattern [
-         id = "tei-DLL-dimensions-duplicateDim-constraint-report-35"
+         id = "tei-DLL-dimensions-duplicateDim-constraint-report-36"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -6465,7 +6494,7 @@ tei_dimensions =
          "         "
        ]
     >> sch:pattern [
-         id = "tei-DLL-dimensions-duplicateDim-constraint-report-36"
+         id = "tei-DLL-dimensions-duplicateDim-constraint-report-37"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -6854,7 +6883,7 @@ tei_msIdentifier =
       tei_idno?),
      (tei_msName | tei_altIdentifier)*)
     >> sch:pattern [
-         id = "tei-DLL-msIdentifier-msId_minimal-constraint-report-37"
+         id = "tei-DLL-msIdentifier-msId_minimal-constraint-report-38"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -8015,7 +8044,7 @@ tei_relation =
          "         "
        ]
     >> sch:pattern [
-         id = "tei-DLL-relation-activemutual-constraint-report-38"
+         id = "tei-DLL-relation-activemutual-constraint-report-39"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -8034,7 +8063,7 @@ tei_relation =
          "         "
        ]
     >> sch:pattern [
-         id = "tei-DLL-relation-activepassive-constraint-report-39"
+         id = "tei-DLL-relation-activepassive-constraint-report-40"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -8146,7 +8175,7 @@ tei_att.witnessed.attribute.wit =
     list { xsd:anyURI+ }
   }?
 sch:pattern [
-  id = "tei-DLL-att.witnessed-crited.witnessed-constraint-rule-19"
+  id = "tei-DLL-att.witnessed-crited.witnessed-constraint-rule-20"
   "\x{a}" ~
   "      "
   sch:rule [
@@ -8156,7 +8185,7 @@ sch:pattern [
     sch:report [
       test =
         "exists(for $i in tokenize(normalize-space(translate(@wit,'#','')),'\s+') return if(not(id($i))) then $i else null)"
-      "No matching xmml:id for reference(s): "
+      "No matching xml:id for reference(s): "
       sch:value-of [
         select =
           "string-join(for $i in tokenize(normalize-space(translate(@wit,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
@@ -8598,7 +8627,7 @@ tei_variantEncoding =
     }
     >> sch:pattern [
          id =
-           "tei-DLL-variantEncoding-location-variantEncodingLocation-constraint-rule-20"
+           "tei-DLL-variantEncoding-location-variantEncodingLocation-constraint-rule-21"
          "\x{a}" ~
          "            "
          sch:rule [
