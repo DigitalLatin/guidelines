@@ -5135,7 +5135,7 @@
          <div>
             <head>The DLL Critical Editions Schema</head>
             <schemaSpec ident="tei-DLL" docLang="en" prefix="tei_" start="TEI" xml:lang="en"
-              source="/Users/hac13/Development/EpiDoc/epidoc-code/trunk/schema/tei-epidoc-full.compiled.odd">
+              source="http://www.stoa.org/epidoc/schema/latest/tei-epidoc-full.compiled.odd">
 
                <!--       MODULES USED BY THE DLL SCHEMA       -->
                <moduleRef key="core"/>
@@ -5856,6 +5856,20 @@
                      </attDef>
                   </attList>
                </classSpec>
+              
+              <classSpec ident="att.global.source" type="atts" mode="change">
+                <constraintSpec ident="crited.sourced" scheme="isoschematron">
+                  <constraint>
+                    <sch:rule context="tei:*[@source]">
+                      <sch:report
+                        test="exists(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null)"
+                        >No matching xml:id for reference(s): <sch:value-of
+                          select="string-join(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
+                        />.</sch:report>
+                    </sch:rule>
+                  </constraint>
+                </constraintSpec>
+              </classSpec>
 
                <classSpec ident="att.witnessed" type="atts" mode="change">
                   <constraintSpec ident="crited.witnessed" scheme="isoschematron">
@@ -5863,7 +5877,7 @@
                         <sch:rule context="tei:*[@wit]">
                            <sch:report
                               test="exists(for $i in tokenize(normalize-space(translate(@wit,'#','')),'\s+') return if(not(id($i))) then $i else null)"
-                              >No matching xmml:id for reference(s): <sch:value-of
+                              >No matching xml:id for reference(s): <sch:value-of
                                  select="string-join(for $i in tokenize(normalize-space(translate(@wit,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
                               />.</sch:report>
                         </sch:rule>
