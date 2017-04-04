@@ -2718,14 +2718,14 @@
                <item><gi>bibl</gi> (bibliographic citation) contains the following bibliographic
                   information pertaining to an individual parallel passage.</item>
                <item>
-                 <list>
-                  <item><gi>author</gi> contains the name of the author (or a standard abbreviation)
-                     of a parallel passage.</item>
-                  <item><gi>title</gi> contains the title of the work (or a standard abbreviation)
-                     in which the parallel passage occurs.</item>
-                  <item><gi>biblScope</gi> (scope of bibliographic reference) contains the specific
-                     unit where the parallel passage may be found (e.g., book number, section
-                     number, paragraph number, line number, etc.).</item>
+                  <list>
+                     <item><gi>author</gi> contains the name of the author (or a standard
+                        abbreviation) of a parallel passage.</item>
+                     <item><gi>title</gi> contains the title of the work (or a standard
+                        abbreviation) in which the parallel passage occurs.</item>
+                     <item><gi>biblScope</gi> (scope of bibliographic reference) contains the
+                        specific unit where the parallel passage may be found (e.g., book number,
+                        section number, paragraph number, line number, etc.).</item>
                   </list>
                </item>
                <item><gi>quote</gi> contains the quoted text of the passage, if desirable.</item>
@@ -4191,7 +4191,6 @@
                            <specDesc key="witDetail"/>
                            <specDesc key="wit"/>
                            <specDesc key="target"/>
-                           <specDesc key="corresp"/>
                            <specDesc key="type"/>
                         </specList>
                      </p>
@@ -4203,9 +4202,6 @@
                         witness that has the original or the altered reading.</p>
                      <p><att>target</att> has as its value the <att>xml:id</att> of the reading in
                         question.</p>
-                     <p><att>corresp</att> (corresponds) has as its value the <att>xml:id</att> of
-                        the related reading (i.e., the original reading corresponds to the corrected
-                        reading and vice versa).</p>
                      <p><att>type</att> has one of the following values to classify the correction.
                         Possible values:<list>
                            <item>correction-original: the original reading, i.e., before correction
@@ -4258,14 +4254,13 @@
                            <app>
                               <lem xml:id="lem-protegit">protegit</lem>
                               <rdg wit="#G" xml:id="rdg-protegis">protegis</rdg>
-                              <witDetail wit="#G" target="#rdg-protegis" corresp="#lem-protegit"
-                                 type="correction-original"/>
+                              <witDetail wit="#G" target="#rdg-protegis" type="correction-original"
+                              />
                            </app>
                         </egXML>
 
                         <p>That is, <gi>witDetail</gi> uses <att>target</att> to point to the
-                           variant reading and <att>corresp</att> to show that the corrected form is
-                           the lemma. <att>type</att> shows that <foreign xml:lang="lat"
+                           variant reading, and <att>type</att> shows that <foreign xml:lang="lat"
                               >protegis</foreign> is the original, uncorrected form.</p>
 
                      </div>
@@ -4292,9 +4287,9 @@
                            <app>
                               <lem xml:id="lem-insidias">insidias</lem>
                               <rdg wit="#N" xml:id="rdg-insidia">insidia</rdg>
-                              <witDetail wit="#N" target="#rdg-insidia" corresp="#lem-insidias"
-                                 type="correction-original">corr. <hi rend="bold">N<hi
-                                       rend="superscript">2</hi></hi></witDetail>
+                              <witDetail wit="#N" target="#rdg-insidia" type="correction-original"
+                                 >corr. <hi rend="bold">N<hi rend="superscript"
+                                 >2</hi></hi></witDetail>
                            </app>
                         </egXML>
 
@@ -4332,12 +4327,10 @@
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <app>
                               <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
-                              <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice"
-                                 type="correction-altered">rt <hi rend="italic">add. in
-                                 ras.</hi></witDetail>
+                              <witDetail wit="#N2" target="#lem-cortice" type="correction-altered"
+                                 >rt <hi rend="italic">add. in ras.</hi></witDetail>
                               <rdg wit="#N" xml:id="rdg-coice">co&#10214;..&#10215;ice</rdg>
-                              <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice"
-                                 type="correction-original"/>
+                              <witDetail wit="#N" target="#rdg-coice" type="correction-original"/>
                               <rdg wit="#G #A">codice</rdg>
                            </app>
                         </egXML>
@@ -4354,14 +4347,12 @@
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                            <app>
                               <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
-                              <witDetail wit="#N2" target="#lem-cortice" corresp="#rdg-coice"
-                                 type="correction-altered">
+                              <witDetail wit="#N2" target="#lem-cortice" type="correction-altered">
                                  <add place="inRas">rt</add>
                               </witDetail>
                               <rdg wit="#N" xml:id="rdg-coice">co<del rend="erasure"><gap
                                        reason="lost" quantity="2" unit="character"/></del>ice</rdg>
-                              <witDetail wit="#N" target="#rdg-coice" corresp="#lem-cortice"
-                                 type="correction-original"/>
+                              <witDetail wit="#N" target="#rdg-coice" type="correction-original"/>
                               <rdg wit="#G #A">codice</rdg>
                            </app>
                         </egXML>
@@ -4398,11 +4389,9 @@
                               <lem wit="#N2 #P #V" xml:id="lem-descripta">descripta</lem>
                               <witDetail wit="#N2" target="#lem-descripta">in mg.</witDetail>
                               <rdg wit="#G #N1" xml:id="rdg-depicta">depicta</rdg>
-                              <witDetail wit="#N1" target="#rdg-depicta" corresp="#rdg-dipicta"
-                                 type="correction-altered"/>
+                              <witDetail wit="#N1" target="#rdg-depicta" type="correction-altered"/>
                               <rdg wit="#N" xml:id="rdg-dipicta">dipicta</rdg>
-                              <witDetail wit="#N" target="#rdg-dipicta" corresp="#rdg-depicta"
-                                 type="correction-original"/>
+                              <witDetail wit="#N" target="#rdg-dipicta" type="correction-original"/>
                            </app>
                         </egXML>
 
@@ -5134,7 +5123,7 @@
          <div>
             <head>The DLL Critical Editions Schema</head>
             <schemaSpec ident="tei-DLL" docLang="en" prefix="tei_" start="TEI" xml:lang="en"
-              source="http://www.stoa.org/epidoc/schema/latest/tei-epidoc-full.compiled.odd">
+               source="http://www.stoa.org/epidoc/schema/latest/tei-epidoc-full.compiled.odd">
 
                <!--       MODULES USED BY THE DLL SCHEMA       -->
                <moduleRef key="core"/>
@@ -5373,22 +5362,22 @@
                </elementSpec>
 
                <elementSpec ident="app" module="textcrit" mode="change">
-                 <attList>
-                   <attDef ident="ana" mode="replace">
-                     <datatype maxOccurs="unbounded">
-                       <dataRef key="teidata.fragId"/>
-                     </datatype>
-                     <valList type="semi">
-                       <valItem ident="#lexical"/>
-                       <valItem ident="#syntactic"/>
-                       <valItem ident="#morphological"/>
-                       <valItem ident="#ordinal"/>
-                       <valItem ident="#orthographical"/>
-                       <valItem ident="#subtractive"/>
-                       <valItem ident="#additive"/>
-                     </valList>
-                   </attDef>
-                 </attList>
+                  <attList>
+                     <attDef ident="ana" mode="replace">
+                        <datatype maxOccurs="unbounded">
+                           <dataRef key="teidata.fragId"/>
+                        </datatype>
+                        <valList type="semi">
+                           <valItem ident="#lexical"/>
+                           <valItem ident="#syntactic"/>
+                           <valItem ident="#morphological"/>
+                           <valItem ident="#ordinal"/>
+                           <valItem ident="#orthographical"/>
+                           <valItem ident="#subtractive"/>
+                           <valItem ident="#additive"/>
+                        </valList>
+                     </attDef>
+                  </attList>
                </elementSpec>
 
                <!-- constraining values of div/@type -->
@@ -5634,22 +5623,22 @@
                </elementSpec>
 
                <elementSpec ident="lem" module="textcrit" mode="change">
-                 <attList>
-                   <attDef ident="ana" mode="replace">
-                     <datatype maxOccurs="unbounded">
-                       <dataRef key="teidata.fragId"/>
-                     </datatype>
-                     <valList type="semi">
-                       <valItem ident="#lexical"/>
-                       <valItem ident="#syntactic"/>
-                       <valItem ident="#morphological"/>
-                       <valItem ident="#ordinal"/>
-                       <valItem ident="#orthographical"/>
-                       <valItem ident="#subtractive"/>
-                       <valItem ident="#additive"/>
-                     </valList>
-                   </attDef>
-                 </attList>
+                  <attList>
+                     <attDef ident="ana" mode="replace">
+                        <datatype maxOccurs="unbounded">
+                           <dataRef key="teidata.fragId"/>
+                        </datatype>
+                        <valList type="semi">
+                           <valItem ident="#lexical"/>
+                           <valItem ident="#syntactic"/>
+                           <valItem ident="#morphological"/>
+                           <valItem ident="#ordinal"/>
+                           <valItem ident="#orthographical"/>
+                           <valItem ident="#subtractive"/>
+                           <valItem ident="#additive"/>
+                        </valList>
+                     </attDef>
+                  </attList>
                </elementSpec>
 
 
@@ -5696,41 +5685,41 @@
                </elementSpec>
 
                <elementSpec ident="rdg" module="textcrit" mode="change">
-                 <attList>
-                   <attDef ident="ana" mode="replace">
-                     <datatype maxOccurs="unbounded">
-                       <dataRef key="teidata.fragId"/>
-                     </datatype>
-                     <valList type="semi">
-                       <valItem ident="#lexical"/>
-                       <valItem ident="#syntactic"/>
-                       <valItem ident="#morphological"/>
-                       <valItem ident="#ordinal"/>
-                       <valItem ident="#orthographical"/>
-                       <valItem ident="#subtractive"/>
-                       <valItem ident="#additive"/>
-                     </valList>
-                   </attDef>
-                 </attList>
+                  <attList>
+                     <attDef ident="ana" mode="replace">
+                        <datatype maxOccurs="unbounded">
+                           <dataRef key="teidata.fragId"/>
+                        </datatype>
+                        <valList type="semi">
+                           <valItem ident="#lexical"/>
+                           <valItem ident="#syntactic"/>
+                           <valItem ident="#morphological"/>
+                           <valItem ident="#ordinal"/>
+                           <valItem ident="#orthographical"/>
+                           <valItem ident="#subtractive"/>
+                           <valItem ident="#additive"/>
+                        </valList>
+                     </attDef>
+                  </attList>
                </elementSpec>
 
                <elementSpec ident="rdgGrp" module="textcrit" mode="change">
-                 <attList>
-                   <attDef ident="ana" mode="replace">
-                     <datatype maxOccurs="unbounded">
-                       <dataRef key="teidata.fragId"/>
-                     </datatype>
-                     <valList type="semi">
-                       <valItem ident="#lexical"/>
-                       <valItem ident="#syntactic"/>
-                       <valItem ident="#morphological"/>
-                       <valItem ident="#ordinal"/>
-                       <valItem ident="#orthographical"/>
-                       <valItem ident="#subtractive"/>
-                       <valItem ident="#additive"/>
-                     </valList>
-                   </attDef>
-                 </attList>
+                  <attList>
+                     <attDef ident="ana" mode="replace">
+                        <datatype maxOccurs="unbounded">
+                           <dataRef key="teidata.fragId"/>
+                        </datatype>
+                        <valList type="semi">
+                           <valItem ident="#lexical"/>
+                           <valItem ident="#syntactic"/>
+                           <valItem ident="#morphological"/>
+                           <valItem ident="#ordinal"/>
+                           <valItem ident="#orthographical"/>
+                           <valItem ident="#subtractive"/>
+                           <valItem ident="#additive"/>
+                        </valList>
+                     </attDef>
+                  </attList>
                </elementSpec>
 
                <elementSpec ident="space" module="transcr" mode="change">
@@ -5855,20 +5844,20 @@
                      </attDef>
                   </attList>
                </classSpec>
-              
-              <classSpec ident="att.global.source" type="atts" mode="change">
-                <constraintSpec ident="crited.sourced" scheme="isoschematron">
-                  <constraint>
-                    <sch:rule context="tei:*[@source]">
-                      <sch:report
-                        test="exists(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null)"
-                        >No matching xml:id for reference(s): <sch:value-of
-                          select="string-join(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
-                        />.</sch:report>
-                    </sch:rule>
-                  </constraint>
-                </constraintSpec>
-              </classSpec>
+
+               <classSpec ident="att.global.source" type="atts" mode="change">
+                  <constraintSpec ident="crited.sourced" scheme="isoschematron">
+                     <constraint>
+                        <sch:rule context="tei:*[@source]">
+                           <sch:report
+                              test="exists(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null)"
+                              >No matching xml:id for reference(s): <sch:value-of
+                                 select="string-join(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null, ', ')"
+                              />.</sch:report>
+                        </sch:rule>
+                     </constraint>
+                  </constraintSpec>
+               </classSpec>
 
                <classSpec ident="att.witnessed" type="atts" mode="change">
                   <constraintSpec ident="crited.witnessed" scheme="isoschematron">
