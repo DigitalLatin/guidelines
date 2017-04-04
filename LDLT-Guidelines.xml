@@ -3261,6 +3261,7 @@
                      <gi>lacunaEnd</gi>, as described in the section "<ref
                      target="#apparatus-criticus-gaps">Gaps in Witnesses</ref>."</p>
             </div>
+            <!-- End section on apparatus entries that cross structural boundaries. -->
 
             <!-- Begin section on variations on readings in a group of witnesses/sources -->
             <div xml:id="apparatus-criticus-multiple-entries">
@@ -4086,8 +4087,6 @@
                <!-- Begin section on corrections. -->
                <div xml:id="apparatus-criticus-correction">
                   <head>Corrections</head>
-
-                  <!-- Need a section for the abbreviated way of handling this with G and Gc, for example. They're just different witnesses at that point. -->
 
                   <p>Correction has been discussed in the section “<ref
                         target="#apparatus-criticus-concepts-definitions">Concepts and
