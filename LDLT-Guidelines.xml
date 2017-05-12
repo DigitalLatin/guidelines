@@ -2469,8 +2469,8 @@
                <!-- End section on expansion of abbreviations. -->
 
                <!-- Begin section on uncertainly deciphered characters. -->
-               <div xml:id="edition-text-uncertain-characters">
-                  <head>Uncertainly Restored Characters</head>
+               <div xml:id="edition-text-ambiguous-characters" corresp="http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html">
+                  <head>Ambiguous Characters</head>
 
                   <p>When an edition is based on a limited number of witnesses, it may be necessary
                      to indicate that characters are difficult to read. The accepted way to do this
@@ -3775,7 +3775,7 @@
                         rend="italic">exp.</hi>)</p>
                </div>
                <!-- End of section on deletion: semantic markup -->
-
+               
                <!-- Begin section on illegible characters, quantity unknown. -->
                <div xml:id="apparatus-criticus-illegible-characters-unknown"
                   corresp="http://www.stoa.org/epidoc/gl/latest/trans-illegiblecharunknown.html">
