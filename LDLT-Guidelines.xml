@@ -3477,6 +3477,8 @@
                             target="#apparatus-criticus-gaps">Gaps in Witnesses</ref>."</p>
                 </div>
 
+                <!-- End section on apparatus entries that cross structural boundaries. -->
+
                 <!-- Begin section on variations on readings in a group of witnesses/sources -->
                 <div xml:id="apparatus-criticus-multiple-entries">
                     <head>Variations on Readings in a Group of Witnesses/Sources</head>
@@ -4452,7 +4454,6 @@
                                     <specDesc key="witDetail"/>
                                     <specDesc key="wit"/>
                                     <specDesc key="target"/>
-                                    <specDesc key="corresp"/>
                                     <specDesc key="type"/>
                                 </specList>
                             </p>
@@ -4465,9 +4466,6 @@
                                 of the witness that has the original or the altered reading.</p>
                             <p><att>target</att> has as its value the <att>xml:id</att> of the
                                 reading in question.</p>
-                            <p><att>corresp</att> (corresponds) has as its value the
-                                    <att>xml:id</att> of the related reading (i.e., the original
-                                reading corresponds to the corrected reading and vice versa).</p>
                             <p><att>type</att> has one of the following values to classify the
                                 correction. Possible values:<list>
                                     <item>correction-original: the original reading, i.e., before
@@ -4527,13 +4525,12 @@
                                         <lem xml:id="lem-protegit">protegit</lem>
                                         <rdg wit="#G" xml:id="rdg-protegis">protegis</rdg>
                                         <witDetail wit="#G" target="#rdg-protegis"
-                                            corresp="#lem-protegit" type="correction-original"/>
+                                            type="correction-original"/>
                                     </app>
                                 </egXML>
 
                                 <p>That is, <gi>witDetail</gi> uses <att>target</att> to point to
-                                    the variant reading and <att>corresp</att> to show that the
-                                    corrected form is the lemma. <att>type</att> shows that <foreign
+                                    the variant reading, and <att>type</att> shows that <foreign
                                         xml:lang="lat">protegis</foreign> is the original,
                                     uncorrected form.</p>
 
@@ -4563,9 +4560,8 @@
                                         <lem xml:id="lem-insidias">insidias</lem>
                                         <rdg wit="#N" xml:id="rdg-insidia">insidia</rdg>
                                         <witDetail wit="#N" target="#rdg-insidia"
-                                            corresp="#lem-insidias" type="correction-original">corr.
-                                                <hi rend="bold">N<hi rend="superscript"
-                                            >2</hi></hi></witDetail>
+                                            type="correction-original">corr. <hi rend="bold">N<hi
+                                                  rend="superscript">2</hi></hi></witDetail>
                                     </app>
                                 </egXML>
 
@@ -4607,12 +4603,12 @@
                                     <app>
                                         <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
                                         <witDetail wit="#N2" target="#lem-cortice"
-                                            corresp="#rdg-coice" type="correction-altered">rt <hi
-                                                rend="italic">add. in ras.</hi></witDetail>
+                                            type="correction-altered">rt <hi rend="italic">add. in
+                                                ras.</hi></witDetail>
                                         <rdg wit="#N" xml:id="rdg-coice"
                                             >co&#10214;..&#10215;ice</rdg>
                                         <witDetail wit="#N" target="#rdg-coice"
-                                            corresp="#lem-cortice" type="correction-original"/>
+                                            type="correction-original"/>
                                         <rdg wit="#G #A">codice</rdg>
                                     </app>
                                 </egXML>
@@ -4632,14 +4628,14 @@
                                     <app>
                                         <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
                                         <witDetail wit="#N2" target="#lem-cortice"
-                                            corresp="#rdg-coice" type="correction-altered">
+                                            type="correction-altered">
                                             <add place="inRas">rt</add>
                                         </witDetail>
                                         <rdg wit="#N" xml:id="rdg-coice">co<del rend="erasure"><gap
                                                   reason="lost" quantity="2" unit="character"
                                                 /></del>ice</rdg>
                                         <witDetail wit="#N" target="#rdg-coice"
-                                            corresp="#lem-cortice" type="correction-original"/>
+                                            type="correction-original"/>
                                         <rdg wit="#G #A">codice</rdg>
                                     </app>
                                 </egXML>
@@ -4681,10 +4677,10 @@
                                             mg.</witDetail>
                                         <rdg wit="#G #N1" xml:id="rdg-depicta">depicta</rdg>
                                         <witDetail wit="#N1" target="#rdg-depicta"
-                                            corresp="#rdg-dipicta" type="correction-altered"/>
+                                            type="correction-altered"/>
                                         <rdg wit="#N" xml:id="rdg-dipicta">dipicta</rdg>
                                         <witDetail wit="#N" target="#rdg-dipicta"
-                                            corresp="#rdg-depicta" type="correction-original"/>
+                                            type="correction-original"/>
                                     </app>
                                 </egXML>
 
