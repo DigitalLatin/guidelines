@@ -3430,7 +3430,7 @@
                                 <lem>sequor</lem>
                                 <rdg wit="#N" source="#Glaeser">sequar</rdg>
                             </app>
-                            
+
                         </egXML>
                     </div>
                     <!-- End section basic-entry-examples -->
@@ -3481,7 +3481,7 @@
 
                 <!-- End section on apparatus entries that cross structural boundaries. -->
 
-            <!-- Begin section on variations on readings in a group of witnesses/sources -->
+                <!-- Begin section on variations on readings in a group of witnesses/sources -->
                 <div xml:id="apparatus-criticus-multiple-entries">
                     <head>Variations on Readings in a Group of Witnesses/Sources</head>
 
@@ -4535,13 +4535,13 @@
                                     <app>
                                         <lem xml:id="lem-protegit">protegit</lem>
                                         <rdg wit="#G" xml:id="rdg-protegis">protegis</rdg>
-                                        <witDetail wit="#G" target="#rdg-protegis" type="correction-original"
-                              />
+                                        <witDetail wit="#G" target="#rdg-protegis"
+                                            type="correction-original"/>
                                     </app>
                                 </egXML>
 
-                                <p>That is, <gi>witDetail</gi> uses <att>target</att> to point to the
-                           variant reading, and <att>type</att> shows that <foreign
+                                <p>That is, <gi>witDetail</gi> uses <att>target</att> to point to
+                                    the variant reading, and <att>type</att> shows that <foreign
                                         xml:lang="lat">protegis</foreign> is the original,
                                     uncorrected form.</p>
 
@@ -4570,10 +4570,9 @@
                                     <app>
                                         <lem xml:id="lem-insidias">insidias</lem>
                                         <rdg wit="#N" xml:id="rdg-insidia">insidia</rdg>
-                                        <witDetail wit="#N" target="#rdg-insidia" type="correction-original"
-                                 >corr.
-                                                <hi rend="bold">N<hi rend="superscript"
-                                            >2</hi></hi></witDetail>
+                                        <witDetail wit="#N" target="#rdg-insidia"
+                                            type="correction-original">corr. <hi rend="bold">N<hi
+                                                  rend="superscript">2</hi></hi></witDetail>
                                     </app>
                                 </egXML>
 
@@ -4614,12 +4613,13 @@
                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <app>
                                         <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
-                                        <witDetail wit="#N2" target="#lem-cortice" type="correction-altered"
-                                 >rt <hi
-                                                rend="italic">add. in ras.</hi></witDetail>
+                                        <witDetail wit="#N2" target="#lem-cortice"
+                                            type="correction-altered">rt <hi rend="italic">add. in
+                                                ras.</hi></witDetail>
                                         <rdg wit="#N" xml:id="rdg-coice"
                                             >co&#10214;..&#10215;ice</rdg>
-                                        <witDetail wit="#N" target="#rdg-coice" type="correction-original"/>
+                                        <witDetail wit="#N" target="#rdg-coice"
+                                            type="correction-original"/>
                                         <rdg wit="#G #A">codice</rdg>
                                     </app>
                                 </egXML>
@@ -4638,13 +4638,15 @@
                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <app>
                                         <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
-                                        <witDetail wit="#N2" target="#lem-cortice" type="correction-altered">
+                                        <witDetail wit="#N2" target="#lem-cortice"
+                                            type="correction-altered">
                                             <add place="inRas">rt</add>
                                         </witDetail>
                                         <rdg wit="#N" xml:id="rdg-coice">co<del rend="erasure"><gap
                                                   reason="lost" quantity="2" unit="character"
                                                 /></del>ice</rdg>
-                                        <witDetail wit="#N" target="#rdg-coice" type="correction-original"/>
+                                        <witDetail wit="#N" target="#rdg-coice"
+                                            type="correction-original"/>
                                         <rdg wit="#G #A">codice</rdg>
                                     </app>
                                 </egXML>
@@ -4685,9 +4687,11 @@
                                         <witDetail wit="#N2" target="#lem-descripta">in
                                             mg.</witDetail>
                                         <rdg wit="#G #N1" xml:id="rdg-depicta">depicta</rdg>
-                                        <witDetail wit="#N1" target="#rdg-depicta" type="correction-altered"/>
+                                        <witDetail wit="#N1" target="#rdg-depicta"
+                                            type="correction-altered"/>
                                         <rdg wit="#N" xml:id="rdg-dipicta">dipicta</rdg>
-                                        <witDetail wit="#N" target="#rdg-dipicta" type="correction-original"/>
+                                        <witDetail wit="#N" target="#rdg-dipicta"
+                                            type="correction-original"/>
                                     </app>
                                 </egXML>
 
