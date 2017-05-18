@@ -3425,10 +3425,12 @@
                             witness and a source.</p>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
+
                             <app>
                                 <lem>sequor</lem>
                                 <rdg wit="#N" source="#Glaeser">sequar</rdg>
                             </app>
+
                         </egXML>
                     </div>
                     <!-- End section basic-entry-examples -->
@@ -3447,9 +3449,9 @@
                             <att>next</att> and <att>prev</att> can compensate for that issue.</p>
 
                     <p>For example, the witness <hi rend="bold">V</hi> omits the final word of
-                        section 19.3 and all of section 19.4 from the <bibl><title>Bellum
+                        section 18.3 and all of section 18.4 from the <bibl><title>Bellum
                                 Alexandrinum</title></bibl>. In a print edition, it would be
-                        possible to write the following: enatauerunt … 19.4 fuit VI milium <hi
+                        possible to write the following: enatauerunt … 18.4 fuit VI milium <hi
                             rend="italic">om. <hi rend="bold">V</hi></hi>, but in an LDLT edition,
                         the <gi>app</gi> contained by <gi>seg</gi> 3 cannot extend into <gi>seg</gi>
                         4. It must be encoded using <att>next</att> and <att>prev</att> as
@@ -3614,10 +3616,12 @@
                         <p>In these guidelines, omission is represented by a so-called
                             "self-closing" or empty <gi>rdg</gi> (i.e., &lt;rdg /&gt;):</p>
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
+
                             <l>securo custode <app>
                                     <lem>pecus</lem>
                                     <rdg wit="#P"/>
                                 </app> nocturnaque pastor</l>
+
                         </egXML>
 
                         <p>The same model applies to the omission of an entire line of verse by a
@@ -3673,11 +3677,13 @@
                         <p>In an LDLT edition, that would be encoded as follows:</p>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
+
                             <l n="4">ripa levatque diem vicini <app>
                                     <lem>spiritus amnis</lem>
                                     <rdg wit="#N">sp&#099;&#773; <gap reason="lost" quantity="6"
                                             unit="characters"/></rdg>
                                 </app>? </l>
+
                         </egXML>
 
                         <p>That encoding would produce the following entry in the apparatus:
@@ -3686,6 +3692,7 @@
                             the note should be inserted in a <gi>witDetail</gi> pointing to it:</p>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
+
                             <l n="4">ripa levatque diem vicini <app>
                                     <lem>spiritus amnis</lem>
                                     <rdg wit="#N" xml:id="rdg-4.4-spiritus-amnis">sp&#099;&#773;
@@ -3694,6 +3701,7 @@
                                     <witDetail wit="#N" target="#rdg-4.4-spiritus-amnis">lac. 6
                                         litt.</witDetail>
                                 </app>? </l>
+
                         </egXML>
                     </div>
                     <!-- End section "Known amount of text lost" -->
@@ -3841,11 +3849,13 @@
                             addition:</p>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
+
                             <app>
                                 <lem>certare</lem>
                                 <rdg wit="#G1" xml:id="rdg-certate">certate</rdg>
                                 <witDetail wit="#G1" target="#rdg-certate">(add. in mg.)</witDetail>
                             </app>
+
                         </egXML>
                     </div>
                     <!-- End of section on addition: prose description -->
@@ -4134,6 +4144,7 @@
                                 swapping the transpositions in and out of the main text of the
                                 edition. Instead, readers would just see a note in the apparatus
                                 criticus describing the transposition.</p>
+
 
                         </div>
                         <!-- End of section on prose description of transpositions -->
@@ -4567,7 +4578,7 @@
 
                                 <p>This encoding will produce the following entry in the apparatus
                                     criticus: insidias] insidia <hi rend="bold">N</hi> (corr. <hi
-                                        rend="bold">N<hi rend="superscript">2</hi></hi></p>
+                                        rend="bold">N<hi rend="superscript">2</hi></hi>)</p>
                             </div>
                             <!-- End of the second example -->
 
@@ -5106,7 +5117,7 @@
                     corresp="http://www.stoa.org/epidoc/gl/latest/trans-ambiguous.html">
                     <head>Crux</head>
                     <p>† † = Text deemed by the editor to be readable but not understandable, with
-                        no satisfactory alternatives.</p>
+                        no satisfactory alternative or convincing emendation.</p>
                     <p>
                         <specList>
                             <specDesc key="sic"/>
@@ -5344,6 +5355,7 @@
                 <p>The digital version will have the additional feature of links from the apparatus
                     to the commentary and from the commentary to the apparatus.</p>
             </div>
+
             <!-- End of section on textual commentary -->
 
             <!-- Begin works cited. -->
@@ -5462,6 +5474,7 @@
                     <moduleRef key="header" except="appInfo"/>
                     <moduleRef key="textstructure"
                         except="argument byline closer div1 div2 div3 div4 div5 div6 div7 imprimatur
+
               opener postscript salute signed titlePage titlePart trailer"/>
                     <moduleRef key="transcr" except="damageSpan restore"/>
                     <moduleRef key="verse"/>
@@ -5473,6 +5486,7 @@
                     <moduleRef key="namesdates"
                         except="affiliation age climate education faith geoFeat langKnowledge
               langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
+
                     <moduleRef key="textcrit"
                         source="http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml"/>
                     <moduleRef key="figures"
@@ -5480,6 +5494,7 @@
                         except="formula"/>
                     <moduleRef key="spoken"
                         except="broadcast equipment incident kinesic pause recording recordingStmt
+
               scriptStmt shift u vocal writing"/>
                     <moduleRef key="corpus"
                         except="activity channel constitution derivation domain factuality interaction locale
@@ -5680,7 +5695,6 @@
                     </classSpec>
 
                     <!-- CHANGED MODEL CLASSES -->
-
 
                     <!--        CHANGED ELEMENT SPECS        -->
                     <elementSpec ident="add" module="core" mode="change">
@@ -6237,7 +6251,6 @@
                             </constraint>
                         </constraintSpec>
                     </classSpec>
-
                 </schemaSpec>
             </div>
         </body>
