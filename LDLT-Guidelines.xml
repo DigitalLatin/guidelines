@@ -2416,7 +2416,7 @@
                         <item><gi>orgName</gi> (organization name) contains the name of each group
                             of people as it appears in the edition text, regardless of case. It also
                             has <att>ref</att> and the canonical Uniform Resource Identifier (URI)
-                            for the people at <ref target="http://pleiades.stoa.org"
+                            for the group of people at <ref target="http://pleiades.stoa.org"
                             >Pleiades</ref>.</item>
                         <item><gi>note</gi> contains further identifying information about the
                             person (e.g., dates, the ID number in a reference work or
