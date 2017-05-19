@@ -912,7 +912,7 @@
                             <p>Kaster lists the sigla as follows:<list>
                                     <item>ω archetypus codicum αβ <list>
                                             <item>α hyparchetypus codicum α<hi rend="subscript"
-                                                  >1</hi>Vα<hi rend="subscript">2</hi><list>
+                                                  >1</hi> α<hi rend="subscript">2</hi><list>
                                                   <item>α<hi rend="subscript">1</hi> hyparchetypus
                                                   codicum MG<list>
                                                   <item>M Paris. lat. 6115 s. IX<hi
@@ -939,7 +939,9 @@
                                     <witness xml:id="ω"><abbr type="siglum">ω</abbr> = archetypus
                                         codicum αβ <listWit>
                                             <witness xml:id="a"><abbr type="siglum">α</abbr> =
-                                                hyparchetypus codicum α<hi rend="subscript">1</hi>Vα <listWit>
+                                                hyparchetypus codicum α<hi rend="subscript">1</hi>
+                                                  α<hi rend="subscript">2</hi>
+                                                <listWit>
                                                   <witness xml:id="α1"><abbr type="siglum">α<hi
                                                   rend="subscript">1</hi></abbr> = hyparchetypus
                                                   codicum MG <listWit>
@@ -950,7 +952,9 @@
                                                   >G</abbr><!-- Description of witness G --></witness>
                                                   </listWit>
                                                   </witness>
+                                                    <!-- Start a new <witness> for α2 here, with <listWit> for any of its children. -->  
                                                 </listWit>
+                                                
                                             </witness>
                                         </listWit>
                                     </witness>
@@ -965,7 +969,8 @@
                                     <witness xml:id="ω"><abbr type="siglum">ω</abbr> = archetypus
                                         codicum αβ <listWit>
                                             <witness xml:id="a"><abbr type="siglum">α</abbr> =
-                                                hyparchetypus codicum α<hi rend="subscript">1</hi>Vα <listWit>
+                                                hyparchetypus codicum α<hi rend="subscript">1</hi> α<hi rend="subscript">2</hi>
+                                                <listWit>
                                                   <witness xml:id="α1"><abbr type="siglum">α<hi
                                                   rend="subscript">1</hi></abbr> = hyparchetypus
                                                   codicum MG <listWit>
@@ -3041,10 +3046,10 @@
                             phrase (or the absence thereof) judged by the editor to be authentic,
                             accurate, and/or authoritative. It may be attested by documentary
                             sources (e.g., a manuscript, an early edition) or it may be an
-                            emendation made by a scholar independently of a documentary source.
-                            Lemmata constitute the text printed in the main portion (i.e., <ref
-                                target="#edition-text">edition text</ref>) of a critical
-                            edition.</p>
+                            emendation made by a scholar independently of a documentary source. The
+                            text printed in the main portion (i.e., <ref target="#edition-text"
+                                >edition text</ref>) of a critical edition is made up of
+                            lemmata.</p>
 
                         <p xml:id="variant">A <hi rend="bold">variant reading</hi> is a word or
                             phrase (or absence thereof) judged by the editor to be unsatisfactory
