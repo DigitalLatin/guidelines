@@ -12,6 +12,11 @@
                     <name>Samuel J. Huskey</name>
                     <name>Hugh Cayless</name>
                 </respStmt>
+                <respStmt>
+                    <resp>Proofreading and Consulting</resp>
+                    <name>Cynthia Damon</name>
+                    <name>Robert Kaster</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
                 <p>Encoding guidelines for <hi rend="italics">The Library of Digital Latin
@@ -34,20 +39,6 @@
                     Classical Computing), but many others deserve acknowledgment for their
                     contributions.</p>
 
-                <p>Chris Weaver (University of Oklahoma) and June Abbas (University of Oklahoma),
-                    both co-PI's on the Digital Latin Library project, provided important comments
-                    and insights from their perspectives in the fields of computer science and
-                    library and information studies, respectively.</p>
-
-                <p>Tom Elliott (Institute for the Study of the Ancient World, New York University)
-                    contributed valuable insights and suggestions throughout, but particularly with regard to the
-                    sections "<ref target="#edition-text-people">People</ref>" and "<ref
-                        target="#edition-text-places">Places</ref>."</p>
-
-                <p>Jeffrey C. Witt (Loyola University, Maryland) also contributed to the development
-                    of these guidelines by sharing the encoding guidelines for his own project,
-                    Lombard Press (<ptr type="url" target="http://lombardpress.org/"/>).</p>
-
                 <p>Cynthia Damon (University of Pennsylvania) and Robert Kaster (Princeton
                     University) read and commented on the guidelines from their perspectives as
                     editors of critical texts. Their insights into the methods and practice of
@@ -56,24 +47,38 @@
                     refining the encoding guidelines. Robert Kaster also devoted considerable time
                     to developing the typology of variant readings in the section "<ref
                         target="apparatus-criticus-analysis">Tagging Readings for Analysis</ref>."
-                    Since that typology is the basis for a significant feature of the <hi
-                        rend="italics">Library of Digital Latin Texts</hi>, his efforts deserve
-                    special recognition here.</p>
+                    Since that typology is the basis for a significant feature of the Library of
+                    Digital Latin Texts, his efforts deserve special recognition here.</p>
+
+                <p>Tom Elliott (Institute for the Study of the Ancient World, New York University)
+                    contributed valuable insights and suggestions throughout, but particularly with
+                    regard to the sections "<ref target="#edition-text-people">People</ref>" and
+                        "<ref target="#edition-text-places">Places</ref>."</p>
+
+                <p>Jeffrey C. Witt (Loyola University, Maryland) also contributed to the development
+                    of these guidelines by sharing the encoding guidelines for his own project,
+                    Lombard Press (<ptr type="url" target="http://lombardpress.org/"/>).</p>
 
                 <p>Jim Ginther (St. Michael's College, University of Toronto), Patrick Cuba (St.
                     Louis University), Joshua D. Sosin (Duke University), and Jeffrey C. Witt
                     (Loyola University, Maryland) participated in technical meetings to discuss
                     various aspects of this project.</p>
-                
-                <p>The Andrew W. Mellon Foundation provided funding for the development of these guidelines.</p>
+
+                <p>Chris Weaver (University of Oklahoma) and June Abbas (University of Oklahoma),
+                    both co-PI's with Huskey on the Digital Latin Library project, provided
+                    important comments and insights from their perspectives in the fields of
+                    computer science and library and information studies, respectively.</p>
+
+                <p>The Andrew W. Mellon Foundation provided funding for the development of these
+                    guidelines.</p>
 
                 <p>Finally, the many contributors to the standard established and maintained by <ref
                         target="#TEI">Text Encoding Initiative (TEI)</ref> deserve the gratitude of
                     anyone involved in humanities computing. The LDLT guidelines are a customization
-                    of the TEI, but they also owe much to the <ref target="#EpiDoc">EpiDoc</ref>
-                    guidelines for XML text markup of ancient documents.</p>
+                    of the TEI and the <ref target="#EpiDoc">EpiDoc</ref> guidelines for XML text markup of ancient documents,
+                    to which they also owe much.</p>
             </div>
-            
+
             <div xml:id="Getting-started">
                 <head>Getting Started</head>
                 <p>These Guidelines describe how to create a critical edition for the Digital Latin
@@ -2417,7 +2422,7 @@
                             of people as it appears in the edition text, regardless of case. It also
                             has <att>ref</att> and the canonical Uniform Resource Identifier (URI)
                             for the group of people at <ref target="http://pleiades.stoa.org"
-                            >Pleiades</ref>.</item>
+                                >Pleiades</ref>.</item>
                         <item><gi>note</gi> contains further identifying information about the
                             person (e.g., dates, the ID number in a reference work or
                             prosopography), if the name is not enough to make the
