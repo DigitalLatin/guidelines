@@ -3094,8 +3094,8 @@
                     <div xml:id="apparatus-criticus-concepts-definitions-readings">
                         <head>Readings</head>
 
-                        <p xml:id="reading">A critical edition contains two types of <hi rend="bold">reading</hi>: lemma
-                            and variant.</p>
+                        <p xml:id="reading">A critical edition contains two types of <hi rend="bold"
+                                >reading</hi>: lemma and variant.</p>
 
                         <p xml:id="lemma">A <hi rend="bold">lemma</hi> (pl. lemmata) is a word or
                             phrase (or the absence thereof) judged by the editor to be authentic,
@@ -3106,16 +3106,16 @@
                                 >edition text</ref>) of a critical edition is made up of
                             lemmata.</p>
 
-                        <p xml:id="variant">A <hi rend="bold">variant</hi> is a word or
-                            phrase (or absence thereof) judged by the editor to be unsatisfactory
-                            for linguistic and/or stylistic reasons, but of interest for
-                            establishing the text. This type of reading is a “variant” insofar as it
-                            varies from what the editor has judged to be the lemma. A variant
-                            reading may be attested by a manuscript or it may be a conjecture or the
-                            result of a correction. By default in LDLT editions, variant readings
-                            are displayed or printed in the apparatus criticus. In digital versions,
-                            variants can be swapped into the edition text in real time so that
-                            readers may judge the merits of variant readings for themselves.</p>
+                        <p xml:id="variant">A <hi rend="bold">variant</hi> is a word or phrase (or
+                            absence thereof) judged by the editor to be unsatisfactory for
+                            linguistic and/or stylistic reasons, but of interest for establishing
+                            the text. This type of reading is a “variant” insofar as it varies from
+                            what the editor has judged to be the lemma. A variant reading may be
+                            attested by a manuscript or it may be a conjecture or the result of a
+                            correction. By default in LDLT editions, variant readings are displayed
+                            or printed in the apparatus criticus. In digital versions, variants can
+                            be swapped into the edition text in real time so that readers may judge
+                            the merits of variant readings for themselves.</p>
 
                         <p xml:id="emendation">An <hi rend="bold">emendation</hi> is a reading
                             expressly proposed by some person (possibly the editor) and accepted by
@@ -4833,8 +4833,7 @@
                             the main text of the edition and the following in the apparatus
                             criticus: plenumque] <hi rend="italic">em</hi>. Haupt (<hi rend="italic"
                                 >prob</hi>. Keene <hi rend="italic">et</hi> Schenkl), primumque <hi
-                                rend="bold">ω</hi>
-                            <hi rend="italic">edd</hi>., rivumque <hi rend="italic">ci.</hi> Baehr.,
+                                rend="bold">ω</hi> <hi rend="italic">edd</hi>., rivumque <hi rend="italic">ci.</hi> Baehr.,
                             pronumque <hi rend="italic">ci</hi>. C. Schenkl.</p>
 
                         <p>Multiple conjectures proposed by a single person should be contained in
