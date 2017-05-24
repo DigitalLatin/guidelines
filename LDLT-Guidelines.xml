@@ -5,23 +5,80 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>XML Patterns for Encoding Critical Editions</title>
+                <title>Guidelines for Encoding Critical Editions for the Library of Digital Latin
+                    Texts</title>
                 <respStmt>
                     <resp>Developed by</resp>
                     <name>Samuel J. Huskey</name>
                     <name>Hugh Cayless</name>
                 </respStmt>
+                <respStmt>
+                    <resp>Proofreading and Consulting</resp>
+                    <name>Cynthia Damon</name>
+                    <name>Robert Kaster</name>
+                </respStmt>
             </titleStmt>
             <publicationStmt>
-                <p>Working guidelines for the Digital Latin Library</p>
+                <p>Encoding guidelines for <hi rend="italics">The Library of Digital Latin
+                        Texts</hi>, a series to be published by the Digital Latin Library in
+                    collaboration with the Society for Classical Studies, the Medieval Academy of
+                    America, and the Renaissance Society of America.</p>
             </publicationStmt>
             <sourceDesc>
-                <p>Born digital, with references to the Epidoc Guidelines</p>
+                <p>Born digital</p>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <text>
         <body>
+            <div xml:id="Acknowledgments">
+                <head>Acknowledgments</head>
+
+                <p>The following guidelines are the product of a collaboration between Samuel J.
+                    Huskey (University of Oklahoma) and Hugh Cayless (Duke Collaboratory for
+                    Classical Computing), but many others deserve acknowledgment for their
+                    contributions.</p>
+
+                <p>Cynthia Damon (University of Pennsylvania) and Robert Kaster (Princeton
+                    University) read and commented on the guidelines from their perspectives as
+                    editors of critical texts. Their insights into the methods and practice of
+                    textual criticism, particularly with regard to terminology, have been
+                    invaluable. They also contributed pilot projects for use in evaluating and
+                    refining the encoding guidelines. Robert Kaster also devoted considerable time
+                    to developing the typology of variant readings in the section "<ref
+                        target="apparatus-criticus-analysis">Tagging Readings for Analysis</ref>."
+                    Since that typology is the basis for a significant feature of the Library of
+                    Digital Latin Texts, his efforts deserve special recognition here.</p>
+
+                <p>Tom Elliott (Institute for the Study of the Ancient World, New York University)
+                    contributed valuable insights and suggestions throughout, but particularly with
+                    regard to the sections "<ref target="#edition-text-people">People</ref>" and
+                        "<ref target="#edition-text-places">Places</ref>."</p>
+
+                <p>Jeffrey C. Witt (Loyola University, Maryland) also contributed to the development
+                    of these guidelines by sharing the encoding guidelines for his own project,
+                    Lombard Press (<ptr type="url" target="http://lombardpress.org/"/>).</p>
+
+                <p>Jim Ginther (St. Michael's College, University of Toronto), Patrick Cuba (St.
+                    Louis University), Joshua D. Sosin (Duke University), and Jeffrey C. Witt
+                    (Loyola University, Maryland) participated in technical meetings to discuss
+                    various aspects of this project.</p>
+
+                <p>Chris Weaver (University of Oklahoma) and June Abbas (University of Oklahoma),
+                    both co-PI's with Huskey on the Digital Latin Library project, provided
+                    important comments and insights from their perspectives in the fields of
+                    computer science and library and information studies, respectively.</p>
+
+                <p>The <ref target="https://mellon.org/">Andrew W. Mellon Foundation</ref> provided
+                    funding for the development of these guidelines.</p>
+
+                <p>Finally, the many contributors to the standard established and maintained by <ref
+                        target="#TEI">Text Encoding Initiative (TEI)</ref> deserve the gratitude of
+                    anyone involved in humanities computing. The LDLT guidelines are a customization
+                    of the TEI and the <ref target="#EpiDoc">EpiDoc</ref> guidelines for XML text
+                    markup of ancient documents, to which they also owe much.</p>
+            </div>
+
             <div xml:id="Getting-started">
                 <head>Getting Started</head>
                 <p>These Guidelines describe how to create a critical edition for the Digital Latin
@@ -912,7 +969,7 @@
                             <p>Kaster lists the sigla as follows:<list>
                                     <item>ω archetypus codicum αβ <list>
                                             <item>α hyparchetypus codicum α<hi rend="subscript"
-                                                  >1</hi>Vα<hi rend="subscript">2</hi><list>
+                                                  >1</hi> α<hi rend="subscript">2</hi><list>
                                                   <item>α<hi rend="subscript">1</hi> hyparchetypus
                                                   codicum MG<list>
                                                   <item>M Paris. lat. 6115 s. IX<hi
@@ -939,7 +996,9 @@
                                     <witness xml:id="ω"><abbr type="siglum">ω</abbr> = archetypus
                                         codicum αβ <listWit>
                                             <witness xml:id="a"><abbr type="siglum">α</abbr> =
-                                                hyparchetypus codicum α<hi rend="subscript">1</hi>Vα <listWit>
+                                                hyparchetypus codicum α<hi rend="subscript">1</hi>
+                                                  α<hi rend="subscript">2</hi>
+                                                <listWit>
                                                   <witness xml:id="α1"><abbr type="siglum">α<hi
                                                   rend="subscript">1</hi></abbr> = hyparchetypus
                                                   codicum MG <listWit>
@@ -965,7 +1024,9 @@
                                     <witness xml:id="ω"><abbr type="siglum">ω</abbr> = archetypus
                                         codicum αβ <listWit>
                                             <witness xml:id="a"><abbr type="siglum">α</abbr> =
-                                                hyparchetypus codicum α<hi rend="subscript">1</hi>Vα <listWit>
+                                                hyparchetypus codicum α<hi rend="subscript">1</hi>
+                                                  α<hi rend="subscript">2</hi>
+                                                <listWit>
                                                   <witness xml:id="α1"><abbr type="siglum">α<hi
                                                   rend="subscript">1</hi></abbr> = hyparchetypus
                                                   codicum MG <listWit>
@@ -978,6 +1039,7 @@
                                                   <!-- End of list of children of hyparchetype α1. -->
                                                   </witness>
                                                   <!-- End of hyparchetype α1 -->
+                                                  <!-- Start a new <witness> for α2 here, with <listWit> for any of its children. -->
                                                 </listWit>
                                                 <!-- End of list of witnesses descending from hyparchetype α -->
                                             </witness>
@@ -2359,8 +2421,8 @@
                         <item><gi>orgName</gi> (organization name) contains the name of each group
                             of people as it appears in the edition text, regardless of case. It also
                             has <att>ref</att> and the canonical Uniform Resource Identifier (URI)
-                            for the people at <ref target="http://pleiades.stoa.org"
-                            >Pleiades</ref>.</item>
+                            for the group of people at <ref target="http://pleiades.stoa.org"
+                                >Pleiades</ref>.</item>
                         <item><gi>note</gi> contains further identifying information about the
                             person (e.g., dates, the ID number in a reference work or
                             prosopography), if the name is not enough to make the
@@ -3032,30 +3094,28 @@
                     <div xml:id="apparatus-criticus-concepts-definitions-readings">
                         <head>Readings</head>
 
-                        <p xml:id="reading">In the context of a critical edition, <hi rend="bold"
-                                >reading</hi> is the generic term for any unit of information that
-                            has meaning in constituting the text of the edition. A critical edition
-                            contains two types of reading: lemma and variant.</p>
+                        <p xml:id="reading">A critical edition contains two types of <hi rend="bold"
+                                >reading</hi>: lemma and variant.</p>
 
                         <p xml:id="lemma">A <hi rend="bold">lemma</hi> (pl. lemmata) is a word or
                             phrase (or the absence thereof) judged by the editor to be authentic,
                             accurate, and/or authoritative. It may be attested by documentary
                             sources (e.g., a manuscript, an early edition) or it may be an
-                            emendation made by a scholar independently of a documentary source.
-                            Lemmata constitute the text printed in the main portion (i.e., <ref
-                                target="#edition-text">edition text</ref>) of a critical
-                            edition.</p>
+                            emendation made by a scholar independently of a documentary source. The
+                            text printed in the main portion (i.e., <ref target="#edition-text"
+                                >edition text</ref>) of a critical edition is made up of
+                            lemmata.</p>
 
-                        <p xml:id="variant">A <hi rend="bold">variant reading</hi> is a word or
-                            phrase (or absence thereof) judged by the editor to be unsatisfactory
-                            for linguistic and/or stylistic reasons, but of interest for
-                            establishing the text. This type of reading is a “variant” insofar as it
-                            varies from what the editor has judged to be the lemma. A variant
-                            reading may be attested by a manuscript or it may be a conjecture or the
-                            result of a correction. By default in LDLT editions, variant readings
-                            are displayed or printed in the apparatus criticus. In digital versions,
-                            variants can be swapped into the edition text in real time so that
-                            readers may judge the merits of variant readings for themselves.</p>
+                        <p xml:id="variant">A <hi rend="bold">variant</hi> is a word or phrase (or
+                            absence thereof) judged by the editor to be unsatisfactory for
+                            linguistic and/or stylistic reasons, but of interest for establishing
+                            the text. This type of reading is a “variant” insofar as it varies from
+                            what the editor has judged to be the lemma. A variant reading may be
+                            attested by a manuscript or it may be a conjecture or the result of a
+                            correction. By default in LDLT editions, variant readings are displayed
+                            or printed in the apparatus criticus. In digital versions, variants can
+                            be swapped into the edition text in real time so that readers may judge
+                            the merits of variant readings for themselves.</p>
 
                         <p xml:id="emendation">An <hi rend="bold">emendation</hi> is a reading
                             expressly proposed by some person (possibly the editor) and accepted by
@@ -4773,8 +4833,7 @@
                             the main text of the edition and the following in the apparatus
                             criticus: plenumque] <hi rend="italic">em</hi>. Haupt (<hi rend="italic"
                                 >prob</hi>. Keene <hi rend="italic">et</hi> Schenkl), primumque <hi
-                                rend="bold">ω</hi>
-                            <hi rend="italic">edd</hi>., rivumque <hi rend="italic">ci.</hi> Baehr.,
+                                rend="bold">ω</hi> <hi rend="italic">edd</hi>., rivumque <hi rend="italic">ci.</hi> Baehr.,
                             pronumque <hi rend="italic">ci</hi>. C. Schenkl.</p>
 
                         <p>Multiple conjectures proposed by a single person should be contained in
@@ -5425,7 +5484,7 @@
 
                 <listBibl>
                     <head>Guidelines</head>
-                    <bibl xml:id="Epidoc"><author>Elliott, Tom</author>, <author>Gabriel
+                    <bibl xml:id="EpiDoc"><author>Elliott, Tom</author>, <author>Gabriel
                             Bodard</author>, <author>Hugh Cayless</author> et al. <title>EpiDoc:
                             Epigraphic Documents in TEI XML</title>. Online material, available:
                             <ref target="http://epidoc.sf.net">http://epidoc.sf.net</ref>
