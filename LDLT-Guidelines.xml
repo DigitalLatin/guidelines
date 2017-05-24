@@ -69,14 +69,14 @@
                     important comments and insights from their perspectives in the fields of
                     computer science and library and information studies, respectively.</p>
 
-                <p>The Andrew W. Mellon Foundation provided funding for the development of these
-                    guidelines.</p>
+                <p>The <ref target="https://mellon.org/">Andrew W. Mellon Foundation</ref> provided
+                    funding for the development of these guidelines.</p>
 
                 <p>Finally, the many contributors to the standard established and maintained by <ref
                         target="#TEI">Text Encoding Initiative (TEI)</ref> deserve the gratitude of
                     anyone involved in humanities computing. The LDLT guidelines are a customization
-                    of the TEI and the <ref target="#EpiDoc">EpiDoc</ref> guidelines for XML text markup of ancient documents,
-                    to which they also owe much.</p>
+                    of the TEI and the <ref target="#EpiDoc">EpiDoc</ref> guidelines for XML text
+                    markup of ancient documents, to which they also owe much.</p>
             </div>
 
             <div xml:id="Getting-started">
