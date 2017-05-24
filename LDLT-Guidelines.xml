@@ -3094,10 +3094,8 @@
                     <div xml:id="apparatus-criticus-concepts-definitions-readings">
                         <head>Readings</head>
 
-                        <p xml:id="reading">In the context of a critical edition, <hi rend="bold"
-                                >reading</hi> is the generic term for any unit of information that
-                            has meaning in constituting the text of the edition. A critical edition
-                            contains two types of reading: lemma and variant.</p>
+                        <p xml:id="reading">A critical edition contains two types of <hi rend="bold">reading</hi>: lemma
+                            and variant.</p>
 
                         <p xml:id="lemma">A <hi rend="bold">lemma</hi> (pl. lemmata) is a word or
                             phrase (or the absence thereof) judged by the editor to be authentic,
@@ -3108,7 +3106,7 @@
                                 >edition text</ref>) of a critical edition is made up of
                             lemmata.</p>
 
-                        <p xml:id="variant">A <hi rend="bold">variant reading</hi> is a word or
+                        <p xml:id="variant">A <hi rend="bold">variant</hi> is a word or
                             phrase (or absence thereof) judged by the editor to be unsatisfactory
                             for linguistic and/or stylistic reasons, but of interest for
                             establishing the text. This type of reading is a “variant” insofar as it
