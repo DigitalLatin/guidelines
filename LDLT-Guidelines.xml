@@ -44,7 +44,7 @@
                     editors of critical texts. Their insights into the methods and practice of
                     textual criticism, particularly with regard to terminology, have been
                     invaluable. They also contributed pilot projects for use in evaluating and
-                    refining the encoding guidelines. Robert Kaster also devoted considerable time
+                    refining the encoding guidelines. In addition, Robert Kaster devoted considerable time
                     to developing the typology of variant readings in the section "<ref
                         target="apparatus-criticus-analysis">Tagging Readings for Analysis</ref>."
                     Since that typology is the basis for a significant feature of the Library of
@@ -4833,7 +4833,8 @@
                             the main text of the edition and the following in the apparatus
                             criticus: plenumque] <hi rend="italic">em</hi>. Haupt (<hi rend="italic"
                                 >prob</hi>. Keene <hi rend="italic">et</hi> Schenkl), primumque <hi
-                                rend="bold">ω</hi> <hi rend="italic">edd</hi>., rivumque <hi rend="italic">ci.</hi> Baehr.,
+                                rend="bold">ω</hi>
+                            <hi rend="italic">edd</hi>., rivumque <hi rend="italic">ci.</hi> Baehr.,
                             pronumque <hi rend="italic">ci</hi>. C. Schenkl.</p>
 
                         <p>Multiple conjectures proposed by a single person should be contained in
