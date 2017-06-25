@@ -46,7 +46,7 @@
                     invaluable. They also contributed pilot projects for use in evaluating and
                     refining the encoding guidelines. In addition, Robert Kaster devoted considerable time
                     to developing the typology of variant readings in the section "<ref
-                        target="apparatus-criticus-analysis">Tagging Readings for Analysis</ref>."
+                        target="#apparatus-criticus-analysis">Tagging Readings for Analysis</ref>."
                     Since that typology is the basis for a significant feature of the Library of
                     Digital Latin Texts, his efforts deserve special recognition here.</p>
 
@@ -141,82 +141,85 @@
                     <p>The following is an example of the general overall structure of an XML file
                         for an LDLT edition:</p>
 
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <teiHeader>
-                            <fileDesc>
-                                <titleStmt>
-                                    <title>Title of Work</title>
-                                    <author>Name of Author</author>
-                                    <editor>Name of Editor</editor>
-                                </titleStmt>
-                                <editionStmt>
-                                    <edition>First Edition</edition>
-                                </editionStmt>
-                                <publicationStmt>
-                                    <publisher>Society for Classical Studies</publisher>
-                                    <distributor>Digital Latin Library</distributor>
-                                    <date>2016</date>
-                                    <availability>
-                                        <license
-                                            target="https://creativecommons.org/licenses/by/4.0/"
-                                            >Distributed under a Creative Commons Attribution 4.0
-                                            International License.</license>
-                                    </availability>
-                                </publicationStmt>
-                                <seriesStmt>
-                                    <title level="s">Library of Digital Latin Texts</title>
-                                    <biblScope unit="vol">1</biblScope>
-                                </seriesStmt>
-                                <sourceDesc>
-                                    <p>Born digital.</p>
-                                </sourceDesc>
-                            </fileDesc>
-                        </teiHeader>
-                        <text>
-                            <front xml:id="front">
-                                <div type="section" xml:id="preface">
-                                    <head>Preface</head>
-                                    <p>General introductory remarks about the edition.</p>
-                                    <div type="section" xml:id="preface-section-1">
-                                        <!--This is a section within the preface. Editors should use
-                              sections (distinguished by <div>) to organize the content of the edition's preface.-->
-                                    </div>
-                                </div>
-                                <div type="section" xml:id="bibliography">
-                                    <head>Bibliography</head>
-                                    <!--This is where the bibliography for the edition is listed, including manuscript descriptions, and lists of early editions, modern editions, and other sources cited in the current edition. For more information on encoding the items in the bibliography see section 3 Bibliography below. -->
+<egXML xmlns="http://www.tei-c.org/ns/Examples">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Title of Work</title>
+                <author>Name of Author</author>
+                <editor>Name of Editor</editor>
+            </titleStmt>
+            <editionStmt>
+                <edition>First Edition</edition>
+            </editionStmt>
+            <publicationStmt>
+                <publisher>Society for Classical Studies</publisher>
+                <distributor>Digital Latin Library</distributor>
+                <date>2016</date>
+                <availability>
+                    <license
+                        target="https://creativecommons.org/licenses/by/4.0/"
+                        >Distributed under a Creative Commons Attribution 4.0
+                        International License.</license>
+                </availability>
+            </publicationStmt>
+            <seriesStmt>
+                <title level="s">Library of Digital Latin Texts</title>
+                <biblScope unit="vol">1</biblScope>
+            </seriesStmt>
+            <sourceDesc>
+                <p>Born digital.</p>
+            </sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        <front xml:id="front">
+            <div type="section" xml:id="preface">
+                <head>Preface</head>
+                <p>General introductory remarks about the edition.</p>
+                <div type="section" xml:id="preface-section-1">
+<!--This is a section within the preface. Editors should use
+sections (distinguished by <div>) to organize the content of the edition's preface.-->
+                </div>
+            </div>
+            <div type="section" xml:id="bibliography">
+                <head>Bibliography</head>
+<!--This is where the bibliography for the edition is listed, including manuscript 
+  descriptions, and lists of early editions, modern editions, and other sources cited 
+  in the current edition. For more information on encoding the items in the bibliography 
+  see section 3 Bibliography below. -->
 
-                                    <div type="section" xml:id="conspectus">
-                                        <head>Conspectus</head>
-                                        <!--A key to the special sigla and abbreviations used in the edition (drawn
-                           from the @xml:id's assigned to the various items in the
-                           bibliography). The list of sigla may be generated automatically. -->
-                                    </div>
-                                </div>
-                            </front>
+                <div type="section" xml:id="conspectus">
+                    <head>Conspectus</head>
+<!--A key to the special sigla and abbreviations used in the edition (drawn
+from the @xml:id's assigned to the various items in the
+bibliography). The list of sigla may be generated automatically. -->
+                </div>
+            </div>
+        </front>
 
-                            <body>
-                                <div type="edition" xml:id="edition-text" xml:space="preserve">
-                        <div type="textpart" n="1" xml:id="part1">
-                           <head>Title of First Part</head>
-                           <!--Text goes here, according to the conventions laid out elsewhere in these guidelines.-->
-                        </div>
-                        <div type="textpart" n="2" xml:id="part2">
-                           <head>Title of Second Part</head>
-                           <!--Each new major section (e.g., book, volume) has a new <div>.-->
-                        </div>
-                     </div>
-                            </body>
-                            <back>
-                                <!--The content of the back matter will be determined in consultation between
-                        the editor and the staff of the DLL. Because LDLT editions are encoded, the
-                        matter traditionally found in the back of a printed critical edition may be
-                        generated by applications instead of having to be entered manually.
-                        Nevertheless, there is space here for notes, indices, and other kinds of
-                        information.-->
-                            </back>
-                        </text>
-                    </egXML>
+        <body>
+            <div type="edition" xml:id="edition-text" xml:space="preserve">
+    <div type="textpart" n="1" xml:id="part1">
+       <head>Title of First Part</head>
+<!--Text goes here, according to the conventions laid out elsewhere in these guidelines.-->
+    </div>
+    <div type="textpart" n="2" xml:id="part2">
+       <head>Title of Second Part</head>
+<!--Each new major section (e.g., book, volume) has a new <div>.-->
+    </div>
+ </div>
+        </body>
+        <back>
+<!--The content of the back matter will be determined in consultation between
+the editor and the staff of the DLL. Because LDLT editions are encoded, the
+matter traditionally found in the back of a printed critical edition may be
+generated by applications instead of having to be entered manually.
+Nevertheless, there is space here for notes, indices, and other kinds of
+information.-->
+        </back>
+    </text>
+</egXML>
                 </div>
                 <!-- End of section on general structure. -->
 
@@ -505,10 +508,10 @@
                         </row>
                     </table>
 
-                    <note xml:id="stigma-note" target="#stigma-siglum">Note that the lower-case
-                        character "stigma" (ϛ) is, for whatever reason, an illegal value for
-                            <att>xml:id</att>, so the upper-case character (Ϛ) must be used in its
-                        place.</note>
+                    <note xml:id="stigma-note" target="#stigma-siglum">The lower-case
+                        character "stigma" (ϛ) is, due to an oversight in the XML Specification, an illegal value for
+                            <att>xml:id</att>, so the upper-case character (Ϛ) is used in its
+                        place in this example.</note>
 
                     <p>In short, <hi rend="bold">every entry, regardless of type, in the
                             bibliography of an LDLT edition must have values for both
@@ -1826,7 +1829,7 @@
                         <list>
                             <head>Scholars Cited in this Edition</head>
                             <item><hi rend="bold">Heins.</hi> = Nicolaus Heinsius. Cited in <ref
-                                    target="#Burm1731">Burman 1731</ref>.</item>
+                                    target=".">Burman 1731</ref>.</item>
                         </list>
                     </div>
                     <!-- End of section on list of scholars. -->
@@ -5253,12 +5256,6 @@
                         which ones are used and why they are used. For example, an editor may wish
                         only to tag orthographical variants so that users can filter them in or out
                         of the text as they please.</p>
-
-                    <p>
-                        <specList>
-                            <specDesc key="ana"/>
-                        </specList>
-                    </p>
 
                     <p><att>ana</att> (analysis) on <gi>rdg</gi> applies one or more of the
                         following values to a reading:<list>
