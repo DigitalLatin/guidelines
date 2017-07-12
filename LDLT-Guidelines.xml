@@ -44,11 +44,12 @@
                     editors of critical texts. Their insights into the methods and practice of
                     textual criticism, particularly with regard to terminology, have been
                     invaluable. They also contributed pilot projects for use in evaluating and
-                    refining the encoding guidelines. In addition, Robert Kaster devoted considerable time
-                    to developing the typology of variant readings in the section "<ref
-                        target="#apparatus-criticus-analysis">Tagging Readings for Analysis</ref>."
-                    Since that typology is the basis for a significant feature of the Library of
-                    Digital Latin Texts, his efforts deserve special recognition here.</p>
+                    refining the encoding guidelines. In addition, Robert Kaster devoted
+                    considerable time to developing the typology of variant readings in the section
+                        "<ref target="#apparatus-criticus-analysis">Tagging Readings for
+                        Analysis</ref>." Since that typology is the basis for a significant feature
+                    of the Library of Digital Latin Texts, his efforts deserve special recognition
+                    here.</p>
 
                 <p>Tom Elliott (Institute for the Study of the Ancient World, New York University)
                     contributed valuable insights and suggestions throughout, but particularly with
@@ -141,65 +142,65 @@
                     <p>The following is an example of the general overall structure of an XML file
                         for an LDLT edition:</p>
 
-<egXML xmlns="http://www.tei-c.org/ns/Examples">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>Title of Work</title>
-                <author>Name of Author</author>
-                <editor>Name of Editor</editor>
-            </titleStmt>
-            <editionStmt>
-                <edition>First Edition</edition>
-            </editionStmt>
-            <publicationStmt>
-                <publisher>Society for Classical Studies</publisher>
-                <distributor>Digital Latin Library</distributor>
-                <date>2016</date>
-                <availability>
-                    <license
-                        target="https://creativecommons.org/licenses/by/4.0/"
-                        >Distributed under a Creative Commons Attribution 4.0
-                        International License.</license>
-                </availability>
-            </publicationStmt>
-            <seriesStmt>
-                <title level="s">Library of Digital Latin Texts</title>
-                <biblScope unit="vol">1</biblScope>
-            </seriesStmt>
-            <sourceDesc>
-                <p>Born digital.</p>
-            </sourceDesc>
-        </fileDesc>
-    </teiHeader>
-    <text>
-        <front xml:id="front">
-            <div type="section" xml:id="preface">
-                <head>Preface</head>
-                <p>General introductory remarks about the edition.</p>
-                <div type="section" xml:id="preface-section-1">
-<!--This is a section within the preface. Editors should use
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <teiHeader>
+                            <fileDesc>
+                                <titleStmt>
+                                    <title>Title of Work</title>
+                                    <author>Name of Author</author>
+                                    <editor>Name of Editor</editor>
+                                </titleStmt>
+                                <editionStmt>
+                                    <edition>First Edition</edition>
+                                </editionStmt>
+                                <publicationStmt>
+                                    <publisher>Society for Classical Studies</publisher>
+                                    <distributor>Digital Latin Library</distributor>
+                                    <date>2016</date>
+                                    <availability>
+                                        <license
+                                            target="https://creativecommons.org/licenses/by/4.0/"
+                                            >Distributed under a Creative Commons Attribution 4.0
+                                            International License.</license>
+                                    </availability>
+                                </publicationStmt>
+                                <seriesStmt>
+                                    <title level="s">Library of Digital Latin Texts</title>
+                                    <biblScope unit="vol">1</biblScope>
+                                </seriesStmt>
+                                <sourceDesc>
+                                    <p>Born digital.</p>
+                                </sourceDesc>
+                            </fileDesc>
+                        </teiHeader>
+                        <text>
+                            <front xml:id="front">
+                                <div type="section" xml:id="preface">
+                                    <head>Preface</head>
+                                    <p>General introductory remarks about the edition.</p>
+                                    <div type="section" xml:id="preface-section-1">
+                                        <!--This is a section within the preface. Editors should use
 sections (distinguished by <div>) to organize the content of the edition's preface.-->
-                </div>
-            </div>
-            <div type="section" xml:id="bibliography">
-                <head>Bibliography</head>
-<!--This is where the bibliography for the edition is listed, including manuscript 
+                                    </div>
+                                </div>
+                                <div type="section" xml:id="bibliography">
+                                    <head>Bibliography</head>
+                                    <!--This is where the bibliography for the edition is listed, including manuscript 
   descriptions, and lists of early editions, modern editions, and other sources cited 
   in the current edition. For more information on encoding the items in the bibliography 
   see section 3 Bibliography below. -->
 
-                <div type="section" xml:id="conspectus">
-                    <head>Conspectus</head>
-<!--A key to the special sigla and abbreviations used in the edition (drawn
+                                    <div type="section" xml:id="conspectus">
+                                        <head>Conspectus</head>
+                                        <!--A key to the special sigla and abbreviations used in the edition (drawn
 from the @xml:id's assigned to the various items in the
 bibliography). The list of sigla may be generated automatically. -->
-                </div>
-            </div>
-        </front>
+                                    </div>
+                                </div>
+                            </front>
 
-        <body>
-            <div type="edition" xml:id="edition-text" xml:space="preserve">
+                            <body>
+                                <div type="edition" xml:id="edition-text" xml:space="preserve">
     <div type="textpart" n="1" xml:id="part1">
        <head>Title of First Part</head>
 <!--Text goes here, according to the conventions laid out elsewhere in these guidelines.-->
@@ -209,17 +210,17 @@ bibliography). The list of sigla may be generated automatically. -->
 <!--Each new major section (e.g., book, volume) has a new <div>.-->
     </div>
  </div>
-        </body>
-        <back>
-<!--The content of the back matter will be determined in consultation between
+                            </body>
+                            <back>
+                                <!--The content of the back matter will be determined in consultation between
 the editor and the staff of the DLL. Because LDLT editions are encoded, the
 matter traditionally found in the back of a printed critical edition may be
 generated by applications instead of having to be entered manually.
 Nevertheless, there is space here for notes, indices, and other kinds of
 information.-->
-        </back>
-    </text>
-</egXML>
+                            </back>
+                        </text>
+                    </egXML>
                 </div>
                 <!-- End of section on general structure. -->
 
@@ -508,9 +509,9 @@ information.-->
                         </row>
                     </table>
 
-                    <note xml:id="stigma-note" target="#stigma-siglum">The lower-case
-                        character "stigma" (ϛ) is, due to an oversight in the XML Specification, an illegal value for
-                            <att>xml:id</att>, so the upper-case character (Ϛ) is used in its
+                    <note xml:id="stigma-note" target="#stigma-siglum">The lower-case character
+                        "stigma" (ϛ) is, due to an oversight in the XML Specification, an illegal
+                        value for <att>xml:id</att>, so the upper-case character (Ϛ) is used in its
                         place in this example.</note>
 
                     <p>In short, <hi rend="bold">every entry, regardless of type, in the
@@ -2775,8 +2776,8 @@ information.-->
                             excubans neque ullum laborem aut munus despiciens neque subsidium
                             expectans si in Caesaris complexum uenire posset ***.</p>
 
-                        <p><gi>gap</gi> with <att>reason</att>="lost" is inserted into the main
-                            text to indicate the lacuna:</p>
+                        <p><gi>gap</gi> with <att>reason</att>="lost" is inserted into the main text
+                            to indicate the lacuna:</p>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <p>Custodiisque diligentius dispositis ipse grauissima hieme in nauibus
@@ -2818,122 +2819,291 @@ information.-->
                     such references so that they will be displayed appropriately in the text and so
                     that bibliographical information about them will appear in the edition.</p>
 
+                <p>The basic form of the encoding for an entry in the apparatus fontium has much in
+                    common with the encoding for entries in the apparatus criticus, so reading the
+                        <ref target="#apparatus-criticus">section on the apparatus criticus</ref> is
+                    recommended.</p>
+
                 <p>
                     <specList>
+                        <specDesc key="app"/>
+                        <specDesc key="lem"/>
+                        <specDesc key="rdg"/>
                         <specDesc key="cit"/>
                         <specDesc key="quote"/>
                         <specDesc key="ref"/>
                         <specDesc key="bibl"/>
+                        <specDesc key="note"/>
                     </specList>
                 </p>
 
                 <list>
+                    <item><gi>app</gi> (apparatus entry) contains information about a quotation or a
+                        reference made by the author of a text.</item>
+                    <item><gi>lem</gi> (lemma) contains the lemma, or base text, of the
+                        citation.</item>
+                    <item><gi>rdg</gi> (reading) contains a variant form of the citation, if one
+                        exists in another witness or source (see more on witnesses and sources in
+                        the section "<ref target="#apparatus-criticus-concepts-definitions"
+                            >Apparatus Criticus: Concepts and Definitions</ref>").</item>
                     <item><gi>cit</gi> (cited quotation) contains a quotation (in <gi>quote</gi>)
-                        from another source or a reference (in <gi>ref</gi>) to another source,
-                        together with bibliographical information about the source (in
-                        <gi>bibl</gi>).</item>
+                        from a source external to the text, with accompanying information about that
+                        source (in <gi>bibl</gi> or <gi>ref</gi>).</item>
                     <item><gi>quote</gi> (quotation) contains a phrase or passage attributable to
                         some agency external to the text.</item>
-                    <item><gi>ref</gi> (reference) contains a reference to a phrase or passage
-                        attributable to some agency external to the text.</item>
-                    <item><gi>bibl</gi> (bibliographic citation) contains the information required
-                        to retrieve the source of the quotation or reference. If a digital copy of
-                        the source is available, a link can be provided with <gi>ptr</gi>.</item>
+                    <item><gi>bibl</gi> (bibliographic citation) contains the bibliographical
+                        information supplied by the author.</item>
+                    <item><gi>ref</gi> (reference) with <att>target</att> contains a reference to a
+                        bibliographical item defined elsewhere in the edition.</item>
+                    <item><gi>note</gi> (note), with <att>type</att>="fontium" and <att>target</att>
+                        pointing to the <att>xml:id</att> of the <gi>lem</gi>, contains a
+                        standardized form of reference (using <gi>bibl</gi> or <gi>ref</gi>)
+                        provided by the editor. <hi rend="italic">This is the information that will
+                            appear in the apparatus fontium</hi>.</item>
                 </list>
 
                 <p>Any text in <gi>quote</gi> will be displayed or printed in quotation marks on the
                     same line as the rest of the text. Any text in <gi>quote</gi> with
-                        <att>rend</att>="blockquote" will be displayed or printed on a new line and
-                    indented. In the latter case, prose and verse text within <gi>quote</gi> should
-                    be encoded according to the guidelines in the sections "<ref
-                        target="#edition-text-prose">Prose</ref>" and "<ref
-                        target="#edition-text-verse">Verse</ref>.”</p>
+                        <att>rend</att>="blockquote" will be or printed on a new line and indented.
+                    In the latter case, prose and verse text within <gi>quote</gi> should be encoded
+                    according to the guidelines in the sections "<ref target="#edition-text-prose"
+                        >Prose</ref>" and "<ref target="#edition-text-verse">Verse</ref>.”</p>
 
-                <p><bibl><author>Macrobius’</author>
-                        <title>Saturnalia</title> 3.16.1–5</bibl> has examples of block quotations
-                    of prose and verse texts, and an inline quotation of a prose text. Note that it
-                    is also an example of <ref target="#edition-text-speech">direct speech</ref>,
-                    since the entire passage is spoken by a character (Rufius):</p>
-
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <said who="#Rufius">
-                        <p>Nec acipenser, quem maria prodigis nutriunt, illius saeculi delicias
-                            evasit; et ut liqueat secundo Punico bello celebre nomen huius piscis
-                            fuisse, accipite ut meminerit eius Plautus in fabula quae inscribitur
-                            Baccaria ex persona parasiti<cit>
-                                <quote rend="blockquote"><!-- Verse quotation to be displayed/printed on new line and indented -->
-                                    <l>quis est mortalis tanta fortuna adfectus umquam</l>
-                                    <l>qua ego nunc sum, cuius haec ventri portatur pompa?</l>
-                                    <l>vel nunc, qui mihi in mari acipenser latuit antehac,</l>
-                                    <l>cuius ego latus in latebras reddam meis dentibus et
-                                        manibus.</l>
-                                </quote>
-                                <bibl>
-                                    <author>Plautus</author>
-                                    <title>Baccar.</title> 16–20</bibl>
-                            </cit>.</p>
-                        <p>et ne vilior sit testis poeta, accipite assertore Cicerone in quo honore
-                            fuerit hic piscis apud P. Scipionem Africanum illum et Numantinum, haec
-                            sunt in dialogo de fato verba Ciceronis<cit>
-                                <quote rend="blockquote"><!-- Prose quotation to be displayed/printed on new line and indented -->
-                                    <p>nam cum esset apud se ad Lavernium Scipio unaque Pontius
-                                        adlatus est forte Scipioni acipenser, qui admodum raro
-                                        capitur, sed est piscis, ut ferunt, in primis nobilis. cum
-                                        autem Scipio unum et alterum ex his qui eum salutatum
-                                        venerant invitavisset pluresque etiam invitaturus videretur,
-                                        in aurem Pontius, <said who="#Pontius">Scipio,</said>
-                                        inquit, <said who="#Pontius">vide quid agas, acipenser iste
-                                            paucorum hominum est.</said></p>
-                                </quote>
-                                <bibl><author>Cicero</author>
-                                    <title>De Fato</title> fr. 4</bibl>
-                            </cit></p>
-                        <p>nec infitias eo temporibus Traiani hunc piscem in magno pretio non
-                            fuisse, teste Plinio Secundo, qui in Naturali historia cum de hoc pisce
-                            loqueretur sic ait: <cit><!-- Prose quotation to be displayed/printed in line -->
-                                <quote>nullo nunc in honore est, quod equidem miror, cum sit rarus
-                                    inventu.</quote>
-                                <bibl><author>Plin.</author>
-                                    <title>HN</title> 9.60</bibl>.</cit></p>
-                    </said>
-                </egXML>
-
-                <p>In the following example, Duns Scotus has referred to a work by Boethius, but he
-                    has not quoted it:</p>
+                <p>The choice to use <gi>bibl</gi> or <gi>ref</gi> to indicate the source in the
+                        <gi>note</gi> for the apparatus fontium depends on how the bibliography for
+                    the edition has been organized. If the text includes few quotations, the editor
+                    may wish to encode each source in the <gi>note</gi> with <gi>bibl</gi> and its
+                    associated elements (e.g., <gi>author</gi>, <gi>title</gi>).</p>
 
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <p>Probatio minoris per <cit><ref>Boethium De
-                                    Trinitate</ref><bibl><author>Boethius</author>
-                                <title>De Trin.</title> c. 4 (ed. R. Peiper 159; PL 64,
-                                1353C)</bibl></cit>: dicit quod septem praedicamenta non dicunt
-                        absolutas res, sed tantum respectus.</p>
+                    <note type="fontium" target="#lem-12-boethius">
+                        <bibl>
+                            <author>Boethius</author>
+                            <title>De Trin.</title>
+                            <biblScope unit="part">c. 4</biblScope> (ed. R. Peiper 159; PL 64,
+                            1353C)</bibl>
+                    </note>
                 </egXML>
 
-                <p>In the edition text, the text would be displayed or printed without interruption
-                    (i.e., <foreign xml:lang="lat">Probatio minoris per Boethium De Trinitate: dicit
-                        quod septem praedicamenta non dicunt absolutas res, sed tantum
-                        respectus</foreign>). The apparatus fontium would include the following
-                    entry: “Boethius <hi rend="italic">De Trin.</hi> c. 4 (ed. R. Peiper 159; PL 64,
-                    1353C).</p>
-
-                <p>If it is desirable to provide the text of the reference in the apparatus fontium,
-                    it may be inserted in <gi>quote</gi> after <gi>bibl</gi>:</p>
+                <p>If there are multiple quotations or references to specific texts, the editor may
+                    wish to establish a list of sources cited by the author (using
+                    <gi>listBibl</gi>, with a <gi>bibl</gi> and <att>xml:id</att> for each source),
+                    and use <gi>ref</gi> with <att>target</att> pointing to the <att>xml:id</att> of
+                    the source of the quotation.</p>
 
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <p>Probatio minoris per <cit><ref>Boethium De
-                                    Trinitate</ref><bibl><author>Boethius</author>
-                                <title>De Trin.</title> c. 4 (ed. R. Peiper 159; PL 64,
-                                1353C)</bibl>: <quote>Iamne patet quae sit differentia
-                                praedicationum? Quod aliae quidem quasi rem monstrant, aliae vero
-                                quasi circumstantias rei; quodque illa quae ita praedicantur, ut
-                                esse aliquid rem ostendant, illa vero ut non esse, sed potius
-                                extrinsecus aliquid quodam modo adfigant?</quote></cit>: dicit quod
-                        septem praedicamenta non dicunt absolutas res, sed tantum respectus.</p>
+                    <note type="fontium" target="#lem-12-boethius">
+                        <ref target="#boethius-de-trin">Boethius <hi rend="italic">De Trin.</hi> c.
+                            4 (ed. R. Peiper 159; PL 64, 1353C)</ref>
+                    </note>
                 </egXML>
 
-                <p>The text of the quotation will be displayed in the apparatus fontium.</p>
+                <p>Either method accomplishes the same objective, but note that the use of
+                        <gi>ref</gi> requires <gi>hi</gi> with <att>rend</att>="italic" for
+                    displaying or printing the title in italic type. Otherwise, the choice depends
+                    on how often the editor wishes to type the full bibliographical entry.</p>
+
+                <p>Wherever the bibliographical information is encoded, editors are encouraged to
+                    use <att>ref</att> on <gi>author</gi> and <gi>title</gi> to point to an
+                    identifier of some sort (e.g., CTS URN). For example,</p>
+
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <bibl>
+                        <author ref="urn:cts:latinLit:phi0134">Ter.</author>
+                        <title ref="urn:cts:latinLit:phi0134.phi004">Ph.</title>
+                        <biblScope unit="line">390</biblScope>
+                    </bibl>
+                </egXML>
+
+                <p>Using <att>ref</att> in this way will enrich the edition's metadata and enable
+                    access to other resources. For more information about this use of
+                    <att>ref</att>, consult the LDLT staff.</p>
+
+                <p>As for the source of the quotation, the following two types of encoding for
+                    entries in the apparatus fontium depend on whether or not the author has
+                    identified the source of the quotation in the text.</p>
+
+                <!-- Begin subsection on sources identified by the author. -->
+                <div xml:id="apparatus-fontium-author-attribution">
+                    <head>Source Identified by the Author</head>
+
+                    <p>When the author identifies a source in the text, <gi>bibl</gi> should be used
+                        to the extent that the author has provided bibliographical information. A
+                        standardized form of the bibliographical information should be inserted in a
+                            <gi>note</gi> with <att>type</att>="fontium".</p>
+
+                    <p>In the following example, Duns Scotus has referred to a work by Boethius, but
+                        he has not quoted it directly: <foreign xml:lang="lat">Probatio minoris per
+                            Boethium De Trinitate: dicit quod septem praedicamenta non dicunt
+                            absolutas res, sed tantum respectus</foreign>. That should be encoded as
+                        follows:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>Probatio minoris per <app>
+                                <lem xml:id="lem-12-boethius">
+                                    <bibl>
+                                        <author>Boethium</author>
+                                        <title>De Trinitate</title>
+                                    </bibl>
+                                </lem>
+                                <note type="fontium" target="#lem-12-boethius">
+                                    <bibl>
+                                        <author>Boethius</author>
+                                        <title>De Trin.</title>
+                                        <biblScope unit="part">c. 4</biblScope> (ed. R. Peiper 159;
+                                        PL 64, 1353C)</bibl>
+                                </note>
+                            </app>: dicit quod septem praedicamenta non dicunt absolutas res, sed
+                            tantum respectus.</p>
+                    </egXML>
+
+                    <p>In the edition text, the text would be displayed or printed without
+                        interruption: Probatio minoris per Boethium <hi rend="italic">De
+                            Trinitate</hi>: dicit quod septem praedicamenta non dicunt absolutas
+                        res, sed tantum respectus. The apparatus fontium would include the following
+                        entry: Boethius <hi rend="italic">De Trin.</hi> c. 4 (ed. R. Peiper 159; PL
+                        64, 1353C). If variant readings exist for the citation, they will appear in
+                        the apparatus criticus.</p>
+
+                    <p>If it is desirable to provide the text of the reference in the apparatus
+                        fontium, it may be inserted in <gi>quote</gi> after <gi>bibl</gi> inside of
+                        the <gi>note</gi>:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>Probatio minoris per <app>
+                                <lem xml:id="lem-12-boethius">
+                                    <bibl>
+                                        <author>Boethium</author>
+                                        <title>De Trinitate</title>
+                                    </bibl>
+                                </lem>
+                                <note type="fontium" target="#lem-12-boethius">
+                                    <bibl>
+                                        <author>Boethius</author>
+                                        <title>De Trin.</title>
+                                        <biblScope unit="part">c. 4</biblScope> (ed. R. Peiper 159;
+                                        PL 64, 1353C)</bibl>
+                                    <quote>Iamne patet quae sit differentia praedicationum? Quod
+                                        aliae quidem quasi rem monstrant, aliae vero quasi
+                                        circumstantias rei; quodque illa quae ita praedicantur, ut
+                                        esse aliquid rem ostendant, illa vero ut non esse, sed
+                                        potius extrinsecus aliquid quodam modo adfigant?</quote>
+                                </note>
+                            </app>: dicit quod septem praedicamenta non dicunt absolutas res, sed
+                            tantum respectus.</p>
+                    </egXML>
+
+                    <p>The text of the quotation will be displayed in the apparatus fontium after
+                        the bibliographical information.</p>
+
+                    <p>The following example from <ref target="#kaster-macrobius">Robert Kaster's
+                            edition of <bibl><author>Macrobius’</author>
+                                <title>Saturnalia</title> (3.16.1–5)</bibl></ref> demonstrates a
+                        more complex entry that features other aspects of the quotation of sources,
+                        including direct speech, block quotations of prose and verse texts, and an
+                        inline quotation of a prose text:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <said who="#Rufius">
+                            <p>Nec acipenser, quem maria prodigis nutriunt, illius saeculi delicias
+                                evasit; et ut liqueat secundo Punico bello celebre nomen huius
+                                piscis fuisse, accipite ut meminerit eius <app>
+                                    <lem xml:id="lem-3.16-plautus"><bibl><author>Plautus</author> in
+                                            fabula quae inscribitur <title>Baccaria</title></bibl>
+                                        ex persona parasiti<cit>
+                                            <quote rend="blockquote"><!-- Verse quotation to be displayed/printed on new line and indented -->
+                                                <l>quis est mortalis tanta fortuna adfectus
+                                                  umquam</l>
+                                                <l>qua ego nunc sum, cuius haec ventri portatur
+                                                  pompa?</l>
+                                                <l>vel nunc, qui mihi in mari acipenser latuit
+                                                  antehac,</l>
+                                                <l>cuius ego latus in latebras reddam meis dentibus
+                                                  et manibus.</l>
+                                            </quote>
+                                        </cit></lem>
+                                    <note type="fontium" target="#lem-3.16-plautus"><bibl>
+                                            <author>Plautus</author>
+                                            <title>Baccar.</title> 16–20</bibl></note></app>.</p>
+                            <p>et ne vilior sit testis poeta, accipite assertore Cicerone in quo
+                                honore fuerit hic piscis apud P. Scipionem Africanum illum et
+                                Numantinum, haec sunt in dialogo <app><lem xml:id="lem-3.16-Cicero"
+                                            ><bibl>de fato verba <author>Ciceronis</author></bibl><cit>
+                                            <quote rend="blockquote"><!-- Prose quotation to be displayed/printed on new line and indented -->
+                                                <p>nam cum esset apud se ad Lavernium Scipio unaque
+                                                  Pontius adlatus est forte Scipioni acipenser, qui
+                                                  admodum raro capitur, sed est piscis, ut ferunt,
+                                                  in primis nobilis. cum autem Scipio unum et
+                                                  alterum ex his qui eum salutatum venerant
+                                                  invitavisset pluresque etiam invitaturus
+                                                  videretur, in aurem Pontius, <said who="#Pontius"
+                                                  >Scipio,</said> inquit, <said who="#Pontius">vide
+                                                  quid agas, acipenser iste paucorum hominum
+                                                  est.</said></p>
+                                            </quote>
+                                        </cit></lem><note type="fontium" target="#lem-3.16-Cicero"
+                                                ><bibl><author>Cicero</author>
+                                            <title>De Fato</title> fr. 4</bibl></note></app></p>
+                            <p>nec infitias eo temporibus Traiani hunc piscem in magno pretio non
+                                fuisse, teste <bibl><author>Plinio Secundo</author>, qui in
+                                        <title>Naturali historia</title></bibl> cum de hoc pisce
+                                loqueretur sic ait: <app><lem><cit><!-- Prose quotation to be displayed/printed in line -->
+                                            <quote>nullo nunc in honore est, quod equidem miror, cum
+                                                sit rarus inventu.</quote></cit></lem><note
+                                        type="fontium"><bibl><author>Plin.</author>
+                                            <title>HN</title> 9.60</bibl>.</note></app></p>
+                        </said>
+                    </egXML>
+                </div>
+                <!-- End subsection on sources identified by the author. -->
+
+                <!-- Begin subsection on sources supplied by the editor. -->
+                <div xml:id="apparatus-fontium-no-attribution">
+                    <head>Source Supplied by Editor</head>
+
+                    <p>If the author has not identified the source of a direct or indirect
+                        quotation, the editor may supply it in the apparatus fontium.</p>
+
+                    <p>For example, Cicero often mentions the name of the authors he quotes, but
+                        editors must supply more detailed citation information, as in this passage
+                        from <bibl><title>Orator</title> 157</bibl>:</p>
+
+                    <p>Quid quod sic loqui: nosse, iudicasse vetant, novisse iubent et iudicavisse?
+                        Quasi vero nesciamus in hoc genere et plenum verbum recte dici et imminutum
+                        usitate. Itaque utrumque Terentius:<quote rend="blockquote">eho tu, cognatum
+                            tuom non noras?</quote></p>
+                    <p>post idem: <quote rend="blockquote">Stilponem, inquam, noveras.</quote></p>
+                    <p>Sient plenum est, sint imminutum; licet utare utroque.</p>
+
+                    <p>To be sure that the citation information appears in the apparatus fontium,
+                        this is how that passage should be encoded:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>Quid quod sic loqui: nosse, iudicasse vetant, novisse iubent et
+                            iudicavisse? Quasi vero nesciamus in hoc genere et plenum verbum recte
+                            dici et imminutum usitate. Itaque utrumque <app><lem
+                                    xml:id="lem-157-terence1"
+                                        ><bibl><author>Terentius</author></bibl>: <cit><quote
+                                            rend="blockquote">eho tu, cognatum tuom non
+                                            noras?</quote></cit></lem><note type="fontium"
+                                    target="#lem-157-terence1"><bibl><author>Ter.</author>
+                                        <title>Ph.</title>
+                                        <biblScope unit="line"
+                            >384</biblScope></bibl></note></app></p>
+                        <p>post idem <app><lem xml:id="lem-157-terence2"><cit><quote
+                                            rend="blockquote">Stilponem, inquam,
+                                        noveras.</quote></cit></lem><note type="fontium"
+                                    target="#lem-157-terence2"><bibl><author>Ter.</author>
+                                        <title>Ph.</title>
+                                        <biblScope unit="line">390</biblScope></bibl></note></app>
+                            Sient plenum est, sint imminutum; licet utare utroque.</p>
+                    </egXML>
+                </div>
+                <!-- End subsection on sources supplied by the editor. -->
             </div>
             <!-- End section on apparatus fontium -->
+
+            <!-- Begin section on parallel passages -->
             <div xml:id="parallel-passages">
                 <head>Parallel Passages</head>
 
@@ -2995,7 +3165,6 @@ information.-->
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <p n="1" xml:id="f1-achelous" corresp="p-f1-achelous">Achelous, Aetoliae, primus
                         erupisse terram dicitur.</p>
-
                     <note type="parallel" target="#f1-achelous" xml:id="p-f1-achelous">
                         <listBibl>
                             <bibl><author>Verg.</author>
@@ -3007,7 +3176,6 @@ information.-->
                                 <biblScope>5.18.1–2</biblScope> praesertim 9</bibl>
                         </listBibl>
                     </note>
-
                     <p n="2" xml:id="f2-arar">Arar, <app>
                             <lem>Germaniae</lem>
                             <rdg wit="#Tschu. #Siml.">Galliae</rdg>
@@ -3016,7 +3184,6 @@ information.-->
                             <rdg wit="#Sal." source="#Rie.">Vosego</rdg>
                         </app> monte. miscetur Rhodano. ita lene decurrit, ut vix intellegi possit
                         decursus eius.</p>
-
                     <note type="parallel" target="#f2-arar" xml:id="p-f2-arar">
                         <listBibl>
                             <bibl><author>Verg.</author>
@@ -3039,6 +3206,7 @@ information.-->
                     </note>
                 </egXML>
             </div>
+            <!-- End section on parallel passages. -->
 
             <!-- Begin section on the apparatus criticus. -->
             <div xml:id="apparatus-criticus">
