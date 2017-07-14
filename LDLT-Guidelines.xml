@@ -4695,8 +4695,6 @@ information.-->
                                 <specList>
                                     <specDesc key="witDetail"/>
                                     <specDesc key="wit"/>
-                                    <specDesc key="target"/>
-                                    <specDesc key="type"/>
                                 </specList>
                             </p>
 
