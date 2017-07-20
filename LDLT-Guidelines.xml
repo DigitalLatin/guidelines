@@ -676,10 +676,13 @@ information.-->
                                         give enough information for a reader to be able to request
                                         more information about it.</item>
                                     <item><gi>altIdentifier</gi> (alternative identifier) contains
-                                        other information (i.e., in addition to the <gi>idno</gi>)
-                                        used to identify the manuscript. For example, the manuscript
-                                        may have been recataloged, but its old number is still
-                                        used.</item>
+                                        other information (i.e., in addition to the main
+                                            <gi>idno</gi>) used to identify the manuscript. For
+                                        example, the manuscript may have been recataloged, but its
+                                        old number is still used. <gi>altIdentifier</gi> can also
+                                        contain <gi>idno</gi> with <att>type</att>="URI" to record
+                                        the location of a digital representation of the
+                                        manuscript.</item>
                                     <item><gi>msContents</gi> (manuscript contents) contains a prose
                                         description (using <gi>p</gi>) of the manuscript’s contents.
                                         Encode each work with <gi>bibl</gi> with <gi>author</gi> and
