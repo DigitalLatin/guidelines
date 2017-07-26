@@ -677,7 +677,7 @@ information.-->
                                         more information about it.</item>
                                     <item><gi>altIdentifier</gi> (alternative identifier) contains
                                         other information (i.e., in addition to the main
-                                        <gi>idno</gi>) used to identify the manuscript. For
+                                            <gi>idno</gi>) used to identify the manuscript. For
                                         example, the manuscript may have been recataloged, but its
                                         old number is still used. <gi>altIdentifier</gi> can also
                                         contain <gi>idno</gi> with <att>type</att>="URI" to record
@@ -4127,7 +4127,7 @@ information.-->
                                             rend="italic">in mg. = in margine</hi>)</item>
                                     <item><hi rend="bold">top</hi>: at the top of the page (<hi
                                             rend="italic">in mg. sup. = in margine
-                                        superiore</hi></item>
+                                        superiore</hi>)</item>
                                 </list>
                             </item>
                         </list>
