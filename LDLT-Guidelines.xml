@@ -787,18 +787,18 @@ information.-->
                                                   particular stand out:</p>
                                             </objectDesc>
                                             <handDesc hands="3">
-                                                <handNote xml:id="N1"><abbr type="siglum">N<hi
+                                                <handNote xml:id="Nms1"><abbr type="siglum">N<hi
                                                   rend="superscript">1</hi></abbr> belongs to the
                                                   original copyist. See <ref
                                                   target="#Ndesc-firsthand">above</ref> for a
                                                   detailed description of this hand’s
                                                   activity.</handNote>
-                                                <handNote xml:id="N2"><abbr type="siglum">N<hi
+                                                <handNote xml:id="Nms2"><abbr type="siglum">N<hi
                                                   rend="superscript">2</hi></abbr>: The manuscript
                                                   was corrected again around the same time, but here
                                                   and there the second hand cannot easily be
                                                   distinguished from the first.</handNote>
-                                                <handNote xml:id="N3"><abbr type="siglum">N<hi
+                                                <handNote xml:id="Nms3"><abbr type="siglum">N<hi
                                                   rend="superscript">3</hi></abbr>: a third hand’s
                                                   emendations can be discerned in only a few
                                                   places.</handNote>
@@ -889,7 +889,7 @@ information.-->
                                                   32 verses.</p>
                                             </objectDesc>
                                             <handDesc hands="2">
-                                                <handNote xml:id="G1"><abbr type="siglum">G<hi
+                                                <handNote xml:id="Gms1"><abbr type="siglum">G<hi
                                                   rend="superscript">1</hi></abbr>: The copyist
                                                   himself added almost all of the corrections either
                                                   by removing scribal errors in the verses or adding
@@ -897,7 +897,7 @@ information.-->
                                                   target="#Gdesc-hand">above</ref> for a more
                                                   detailed description of this hand’s
                                                   activity.</handNote>
-                                                <handNote xml:id="G2"><abbr type="siglum">G<hi
+                                                <handNote xml:id="Gms2"><abbr type="siglum">G<hi
                                                   rend="superscript">2</hi></abbr>: Some corrections
                                                   seem to have been made by another hand.</handNote>
                                             </handDesc>
