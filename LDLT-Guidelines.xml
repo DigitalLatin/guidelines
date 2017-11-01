@@ -482,7 +482,8 @@ information.-->
                         </row>
                         <row role="data">
                             <cell role="data">One or more late manuscripts</cell>
-                            <cell role="data" xml:id="stigma-siglum">Ϛ (see note below)</cell>
+                            <cell role="data" xml:id="stigma-siglum">Ϛ (see <ref
+                                    target="#stigma-note">note</ref> below)</cell>
                             <cell role="data">ϛ</cell>
                         </row>
                         <row role="data">
@@ -512,7 +513,9 @@ information.-->
                     <note xml:id="stigma-note" target="#stigma-siglum">The lower-case character
                         "stigma" (ϛ) is, due to an oversight in the XML Specification, an illegal
                         value for <att>xml:id</att>, so the upper-case character (Ϛ) is used in its
-                        place in this example.</note>
+                        place in this example. For more on this issue, see <ref
+                            target="https://docs.google.com/document/d/15yT6s8hR4JmWcLVjpyJgo75Z2Sh1sJkpOi_Z9kBRrPU/edit#heading=h.cqdtsrwcc56e"
+                            >Cayless "TEI Next."</ref></note>
 
                     <p>In short, <hi rend="bold">every entry, regardless of type, in the
                             bibliography of an LDLT edition must have values for both
@@ -5669,6 +5672,15 @@ information.-->
                             Consortium</publisher>. <ref
                             target="http://www.tei-c.org/Guidelines/P5/"
                             >http://www.tei-c.org/Guidelines/P5/</ref> (2016-09-17).</bibl>
+                </listBibl>
+
+                <listBibl>
+                    <head>Other References</head>
+                    <bibl xml:id="Cayless"><author>Cayless, Hugh</author>. "<title>TEI
+                        Next</title>." n.d., n.p. <ref
+                            target="https://docs.google.com/document/d/15yT6s8hR4JmWcLVjpyJgo75Z2Sh1sJkpOi_Z9kBRrPU/edit#heading=h.cqdtsrwcc56e"
+                            >https://docs.google.com/document/d/15yT6s8hR4JmWcLVjpyJgo75Z2Sh1sJkpOi_Z9kBRrPU/edit#heading=h.cqdtsrwcc56e</ref>
+                        (2017-11-01).</bibl>
                 </listBibl>
                 <!-- End list of guidelines cited -->
 
