@@ -7,7 +7,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2017-03-27T18:53:19Z. .
+# Schema generated from ODD source 2017-11-30T21:55:47Z. .
 # TEI Edition: 
 # TEI Edition Location: http://www.tei-c.org/Vault/P5//
 #
@@ -599,7 +599,7 @@ sch:pattern [
   sch:rule [
     context = "tei:*[@source]"
     "\x{a}" ~
-    "                      "
+    "                                    "
     sch:report [
       test =
         "exists(for $i in tokenize(normalize-space(translate(@source,'#','')),'\s+') return if(not(id($i))) then $i else null)"
@@ -611,7 +611,7 @@ sch:pattern [
       "."
     ]
     "\x{a}" ~
-    "                    "
+    "                                "
   ]
   "\x{a}" ~
   "   "
@@ -2720,29 +2720,29 @@ tei_gap =
          sch:rule [
            context = "tei:gap"
            "\x{a}" ~
-           "                           "
+           "                                    "
            sch:report [
              test = "@quantity and @extent"
-             "gap may have @quantity (a\x{a}" ~
-             "                              figure) or @extent (a descriptive text value) but not\x{a}" ~
-             "                              both"
+             "gap may have @quantity\x{a}" ~
+             "                                        (a figure) or @extent (a descriptive text value) but not\x{a}" ~
+             "                                        both"
            ]
            "\x{a}" ~
-           "                           "
+           "                                    "
            sch:report [
              test = "@quantity and not(@unit)"
-             "If gap has @quantity then\x{a}" ~
-             "                              @unit is required"
+             "If gap has @quantity\x{a}" ~
+             "                                        then @unit is required"
            ]
            "\x{a}" ~
-           "                           "
+           "                                    "
            sch:report [
              test =
                "not(@reason='ellipsis') and ancestor::tei:supplied[not(@reason='undefined')]"
              "gap may not appear within supplied text"
            ]
            "\x{a}" ~
-           "                        "
+           "                                "
          ]
          "\x{a}" ~
          "         "
@@ -3074,14 +3074,14 @@ tei_expan =
          sch:rule [
            context = "tei:expan"
            "\x{a}" ~
-           "                           "
+           "                                    "
            sch:report [
              test = "not(descendant::tei:ex)"
              "expan should contain\x{a}" ~
-             "                              ex"
+             "                                        ex"
            ]
            "\x{a}" ~
-           "                        "
+           "                                "
          ]
          "\x{a}" ~
          "         "
@@ -3751,16 +3751,16 @@ tei_l =
          sch:rule [
            context = "tei:l[tei:app]"
            "\x{a}" ~
-           "                           "
+           "                                    "
            sch:report [
              test =
                "tei:app and count(*) = 1 and normalize-space(string-join(text(),'')) = ''"
              role = "warn"
              "Consider whether the line should be inside the\x{a}" ~
-             "                              app."
+             "                                        app."
            ]
            "\x{a}" ~
-           "                        "
+           "                                "
          ]
          "\x{a}" ~
          "         "
@@ -5420,21 +5420,21 @@ tei_ex =
          sch:rule [
            context = "tei:ex"
            "\x{a}" ~
-           "                           "
+           "                                    "
            sch:report [
              test = "not(ancestor::tei:expan)"
-             "ex should only appear inside\x{a}" ~
-             "                              expan"
+             "ex should only\x{a}" ~
+             "                                        appear inside expan"
            ]
            "\x{a}" ~
-           "                           "
+           "                                    "
            sch:report [
              test = "parent::tei:abbr"
              "ex should not be a child of\x{a}" ~
-             "                              abbr"
+             "                                        abbr"
            ]
            "\x{a}" ~
-           "                        "
+           "                                "
          ]
          "\x{a}" ~
          "         "
@@ -5521,22 +5521,22 @@ tei_space =
          sch:rule [
            context = "tei:space"
            "\x{a}" ~
-           "                           "
+           "                                    "
            sch:report [
              test = "@quantity and @extent"
-             "space may have @quantity (a\x{a}" ~
-             "                              figure) or @extent (a descriptive text value) but not\x{a}" ~
-             "                              both"
+             "space may have\x{a}" ~
+             "                                        @quantity (a figure) or @extent (a descriptive text value)\x{a}" ~
+             "                                        but not both"
            ]
            "\x{a}" ~
-           "                           "
+           "                                    "
            sch:report [
              test = "@quantity and not(@unit)"
-             "If space has @quantity then\x{a}" ~
-             "                              @unit is required"
+             "If space has\x{a}" ~
+             "                                        @quantity then @unit is required"
            ]
            "\x{a}" ~
-           "                        "
+           "                                "
          ]
          "\x{a}" ~
          "         "
@@ -8181,7 +8181,7 @@ sch:pattern [
   sch:rule [
     context = "tei:*[@wit]"
     "\x{a}" ~
-    "                           "
+    "                                    "
     sch:report [
       test =
         "exists(for $i in tokenize(normalize-space(translate(@wit,'#','')),'\s+') return if(not(id($i))) then $i else null)"
@@ -8193,7 +8193,7 @@ sch:pattern [
       "."
     ]
     "\x{a}" ~
-    "                        "
+    "                                "
   ]
   "\x{a}" ~
   "   "
