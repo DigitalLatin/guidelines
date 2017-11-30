@@ -142,37 +142,37 @@
                     <p>The following is an example of the general overall structure of an XML file
                         for an LDLT edition:</p>
 
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <teiHeader>
-                            <fileDesc>
-                                <titleStmt>
-                                    <title>Title of Work</title>
-                                    <author>Name of Author</author>
-                                    <editor>Name of Editor</editor>
-                                </titleStmt>
-                                <editionStmt>
-                                    <edition>First Edition</edition>
-                                </editionStmt>
-                                <publicationStmt>
-                                    <publisher>Society for Classical Studies</publisher>
-                                    <distributor>Digital Latin Library</distributor>
-                                    <date>2016</date>
-                                    <availability>
-                                        <license
-                                            target="https://creativecommons.org/licenses/by/4.0/"
-                                            >Distributed under a Creative Commons Attribution 4.0
-                                            International License.</license>
-                                    </availability>
-                                </publicationStmt>
-                                <seriesStmt>
-                                    <title level="s">Library of Digital Latin Texts</title>
-                                    <biblScope unit="vol">1</biblScope>
-                                </seriesStmt>
-                                <sourceDesc>
-                                    <p>Born digital.</p>
-                                </sourceDesc>
-                            </fileDesc>
-                        </teiHeader>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">
+<teiHeader>
+    <fileDesc>
+        <titleStmt>
+            <title>Title of Work</title>
+            <author>Name of Author</author>
+            <editor>Name of Editor</editor>
+        </titleStmt>
+        <editionStmt>
+            <edition>First Edition</edition>
+        </editionStmt>
+        <publicationStmt>
+            <publisher>Society for Classical Studies</publisher>
+            <distributor>Digital Latin Library</distributor>
+            <date>2016</date>
+            <availability>
+                <license
+                    target="https://creativecommons.org/licenses/by/4.0/"
+                    >Distributed under a Creative Commons Attribution 4.0
+                    International License.</license>
+            </availability>
+        </publicationStmt>
+        <seriesStmt>
+            <title level="s">Library of Digital Latin Texts</title>
+            <biblScope unit="vol">1</biblScope>
+        </seriesStmt>
+        <sourceDesc>
+            <p>Born digital.</p>
+        </sourceDesc>
+    </fileDesc>
+</teiHeader>
                         <text>
                             <front xml:id="front">
                                 <div type="section" xml:id="preface">
