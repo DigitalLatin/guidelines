@@ -3725,9 +3725,9 @@ information.-->
                     <p>For the sake of keeping the emphasis on the grouping of witnesses or sources,
                         it may be necessary to indicate that variations on a reading appear in the
                         group, instead of reporting which witnesses or sources have the variations.
-                        In that case, <gi>note</gi> can be used with contents <foreign xml:lang="lat">an</foreign>,
-                        <foreign xml:lang="lat">aut</foreign>, or <foreign xml:lang="lat"
-                            >vel</foreign>.</p>
+                        In that case, <gi>note</gi> can be used with contents <foreign
+                            xml:lang="lat">an</foreign>, <foreign xml:lang="lat">aut</foreign>, or
+                            <foreign xml:lang="lat">vel</foreign>.</p>
 
                     <p>
                         <specList>
@@ -3736,9 +3736,9 @@ information.-->
                     </p>
 
                     <list>
-                        <item><gi>note</gi> contains language that connects the readings (e.g., <foreign xml:lang="lat">an</foreign>,
-                                <foreign xml:lang="lat">aut</foreign>, or <foreign xml:lang="lat"
-                                >vel</foreign>)</item>
+                        <item><gi>note</gi> contains language that connects the readings (e.g.,
+                                <foreign xml:lang="lat">an</foreign>, <foreign xml:lang="lat"
+                                >aut</foreign>, or <foreign xml:lang="lat">vel</foreign>)</item>
                     </list>
 
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -4674,10 +4674,15 @@ information.-->
                                     <gi>handNote</gi> section of a manuscript description. For
                                 example, an editor might define V<hi rend="superscript">ac</hi> and
                                     V<hi rend="superscript">pc</hi> for readings of manuscript V
-                                before and after correction, if it makes sense to do so. However, in
-                                cases where there are multiple hands or other factors to consider,
-                                hard coding the state of correction may restrict options for
-                                representing the manuscript's data.</p>
+                                before and after correction, if it makes sense to do so. In that
+                                case, original and corrected readings will be encoded in the same
+                                way as any other readings, with <gi>lem</gi> or <gi>rdg</gi> inside
+                                of <gi>app</gi>.</p>
+
+                            <p>Where there are multiple hands or other factors to consider, relying
+                                on sigla to indicate the state of correction may restrict options
+                                for representing the manuscript's data. The following subsections
+                                offer guidance for encoding those instances.</p>
 
                         </div>
                         <!-- End of section on correction as metadata -->
@@ -4687,10 +4692,14 @@ information.-->
                             <head>Correction: Specifications</head>
 
                             <p>Readings before and after correction are encoded as any other
-                                readings, i.e., with <gi>rdg</gi> inside of <gi>app</gi>. The
-                                details of the correction are contained in <gi>witDetail</gi>, with
-                                the use of several attributes to determine how the information is
-                                processed.</p>
+                                readings, i.e., with <gi>rdg</gi> inside of <gi>app</gi>.</p>
+
+                            <p>The details of the correction are contained in <gi>witDetail</gi>,
+                                with the use of several attributes to determine how the information
+                                is processed. However, if the decision has been made to use sigla to
+                                indicate uncorrected or corrected readings (see the section "<ref
+                                    target="#apparatus-criticus-correction-as-metadata">Correction
+                                    as Metadata</ref>"), <gi>witDetail</gi> is not necessary.</p>
 
                             <p>
                                 <specList>
@@ -4699,34 +4708,34 @@ information.-->
                                 </specList>
                             </p>
 
-                            <p><gi>witDetail</gi> (witness detail) may be empty (i.e., self-closing)
-                                or it may contain a prose description. If empty, the values of the
-                                attributes (described below) will provide the essential
-                                information.</p>
-                            <p><att>wit</att> (witness) has as its value the machine-readable siglum
-                                of the witness that has the original or the altered reading.</p>
-                            <p><att>target</att> has as its value the <att>xml:id</att> of the
-                                reading in question.</p>
-                            <p><att>type</att> has one of the following values to classify the
-                                correction. Possible values:<list>
-                                    <item>correction-original: the original reading, i.e., before
-                                        correction (<foreign xml:lang="lat">ante
-                                            correctionem</foreign> or a.c.). If <gi>witDetail</gi>
-                                        with this type is self-closing, the LDLT reader will insert
-                                        "(a.c.)" after the siglum for the witness designated in
-                                            <att>wit</att>. Otherwise, the value of
-                                            <gi>witDetail</gi> will be inserted in parentheses after
-                                        the siglum for the witness designated in
-                                        <att>wit</att>.</item>
-                                    <item>correction-altered: the altered reading, i.e., after
-                                        correction (<foreign xml:lang="lat">post
-                                            correctionem</foreign> or p.c.). If <gi>witDetail</gi>
-                                        with this type is self-closing, the LDLT reader will insert
-                                        "(p.c.)" after the witness designated in <att>wit</att>.
-                                        Otherwise, the value of <gi>witDetail</gi> will be inserted
-                                        in parentheses after the siglum for the witness designated
-                                        in <att>witt</att>.</item>
-                                </list></p>
+                            <list>
+                                <item><gi>witDetail</gi> (witness detail) must be an empty (i.e.,
+                                    self-closing) element.</item>
+                                <item><att>wit</att> (witness) has as its value the machine-readable
+                                    siglum of the witness that has the original or the altered
+                                    reading.</item>
+                                <item><att>target</att> has as its value the <att>xml:id</att> of
+                                    the reading in question.</item>
+                                <item><att>type</att> has one of the following values to classify
+                                    the correction. Possible values:<list>
+                                        <item>correction-original: the original reading, i.e.,
+                                            before correction (<foreign xml:lang="lat">ante
+                                                correctionem</foreign> or a.c.). The LDLT reader
+                                            will insert "(a.c.)" after the siglum for the witness
+                                            designated in <att>wit</att>. </item>
+                                        <item>correction-altered: the altered reading, i.e., after
+                                            correction (<foreign xml:lang="lat">post
+                                                correctionem</foreign> or p.c.). The LDLT reader
+                                            will insert "(p.c.)" after the witness designated in
+                                                <att>wit</att>.</item>
+                                        <item><att>place</att> (place) indicates where a correction
+                                            has been made (using values listed in "<ref
+                                                target="#apparatus-criticus-addition-witness-semantic"
+                                                >Addition: Semantic Markup</ref>"</item>
+                                    </list></item>
+                                <item><gi>note</gi> (note) contains a description or discussion of
+                                    the correction, beyond "(a.c.)" or "(p.c.)".</item>
+                            </list>
 
                             <p>It is impossible to describe all of the possible scenarios for
                                 correction, but the examples in the following sections should
@@ -4747,19 +4756,33 @@ information.-->
                                     the lemma: protegit] protegis <hi rend="bold">G</hi> (a.c.).</p>
 
                                 <p>It is clear in this instance what the reading after correction
-                                    is, so there is no need to report it. There is also no need to
-                                    list all of the other witnesses to the lemma, since it is clear
-                                    that the uncorrected form is a unique reading. Also, the editor
-                                    has decided that it is not useful to indicate which hand made
-                                    the correction. In this example, manuscript <hi rend="bold"
-                                        >G</hi> simply has the variant reading <foreign
-                                        xml:lang="lat">protegis</foreign> for the lemma <foreign
-                                        xml:lang="lat">protegit</foreign>, to which the variant
-                                    reading in <hi rend="bold">G</hi> has been corrected in some
-                                    way.</p>
+                                    is, so there is no need to report it. There is no need to list
+                                    all of the other witnesses to the lemma, since it is clear that
+                                    the uncorrected form is a unique reading. Also, the editor has
+                                    decided that it is not useful to indicate which hand made the
+                                    correction. In this example, manuscript <hi rend="bold">G</hi>
+                                    simply has the variant reading <foreign xml:lang="lat"
+                                        >protegis</foreign> for the lemma <foreign xml:lang="lat"
+                                        >protegit</foreign>, to which the variant reading in <hi
+                                        rend="bold">G</hi> has been corrected in some way.</p>
 
-                                <p>The encoding for the prose method and the semantic markup method
-                                    are identical for such a straightforward correction:</p>
+                                <p>If the sigla are being used to convey information about
+                                    correction, the following encoding will be sufficient:</p>
+
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <app>
+                                        <lem xml:id="lem-protegit">protegit</lem>
+                                        <rdg wit="#Gac" xml:id="rdg-protegis">protegis</rdg>
+                                    </app>
+                                </egXML>
+
+                                <p>In this example, the siglum "Gac" indicates that the reading
+                                        <foreign xml:lang="lat">protegis</foreign> was present prior
+                                    to correction.</p>
+
+                                <p>The same passage could also be encoded with <gi>witDetail</gi>,
+                                    if the editor prefers to keep correction state separate from the
+                                    siglum for the manuscript:</p>
 
                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <app>
@@ -4793,22 +4816,45 @@ information.-->
                                     insidia <hi rend="bold">N</hi> (corr. <hi rend="bold">N<hi
                                             rend="superscript">2</hi></hi>).</p>
 
-                                <p>As in the first example, the encoding for the prose method and
-                                    the semantic markup method are identical:</p>
+                                <p>As in the first example, the encoding for the method that
+                                    represents correction with sigla is straightforward:</p>
+
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <app>
+                                        <lem xml:id="lem-insidias">insidias</lem>
+                                        <rdg wit="#Nac">insidia</rdg>
+                                        <rdg wit="#Npc" copyOf="#lem-insidias" xml:id="rdg-insidias"/>
+                                        <witDetail wit="#Npc" target="#rdg-insidias">N<hi
+                                                rend="superscript">2</hi> corr.</witDetail>
+                                    </app>
+                                </egXML>
+
+                                <p>The siglum <hi rend="bold">Nac</hi> indicates the reading before
+                                    correction. The siglum <hi rend="bold">Npc</hi> indicates the
+                                    reading after correction, and the usage of <att>copyOf</att>
+                                    shows that the corrected form matches the lemma. Using
+                                        <gi>witDetail</gi> allows the editor to indicate which hand
+                                    made the correction.</p>
+
+                                <p>The following example shows how the same passage could be encoded
+                                    with more metadata:</p>
 
                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <app>
                                         <lem xml:id="lem-insidias">insidias</lem>
                                         <rdg wit="#N" xml:id="rdg-insidia">insidia</rdg>
                                         <witDetail wit="#N" target="#rdg-insidia"
-                                            type="correction-original">corr. <hi rend="bold">N<hi
-                                                  rend="superscript">2</hi></hi></witDetail>
+                                            type="correction-original"/>
+                                        <rdg wit="#N2" xml:id="rdg-insidias" copyOf="#lem-insidias"/>
+                                        <witDetail wit="#N2" target="#rdg-insidias"
+                                            type="correction-altered"/>
                                     </app>
                                 </egXML>
 
                                 <p>This encoding will produce the following entry in the apparatus
-                                    criticus: insidias] insidia <hi rend="bold">N</hi> (corr. <hi
-                                        rend="bold">N<hi rend="superscript">2</hi></hi>)</p>
+                                    criticus: insidias] insidia <hi rend="bold">N</hi>(a.c.)
+                                    insidias <hi rend="bold">N<hi rend="superscript"
+                                    >2</hi></hi>(p.c.).</p>
                             </div>
                             <!-- End of the second example -->
 
@@ -4837,15 +4883,38 @@ information.-->
                                         <hi rend="bold">N</hi> (a.c.) : codice <hi rend="bold">G
                                         A</hi>.</p>
 
-                                <p>In the prose method, the details are described in
-                                        <gi>witDetail</gi>:</p>
+                                <p>Using sigla to indicate both manuscripts and their state of
+                                    correction, that passage should be encoded as follows:</p>
 
                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <app>
-                                        <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
-                                        <witDetail wit="#N2" target="#lem-cortice"
-                                            type="correction-altered">rt <hi rend="italic">add. in
-                                                ras.</hi></witDetail>
+                                        <lem wit="#Npc #P #V" xml:id="lem-cortice">cortice</lem>
+                                        <witDetail wit="#Npc" target="#lem-cortice">rt <hi
+                                                rend="italic">add. in ras.</hi> N<hi
+                                                rend="superscript">2</hi></witDetail>
+                                        <rdg wit="#Nac" xml:id="rdg-coice"
+                                            >co&#10214;..&#10215;ice</rdg>
+                                        <rdg wit="#G #A">codice</rdg>
+                                    </app>
+                                </egXML>
+
+                                <p>This encoding will produce the following entry in the apparatus
+                                    criticus: cortice <hi rend="bold">N<hi rend="superscript"
+                                            >pc</hi></hi> (rt <hi rend="italic">add. in ras.</hi>
+                                        N<hi rend="superscript">2</hi>) <hi rend="bold">PV</hi> :
+                                    co&#10214;..&#10215;ice <hi rend="bold">N<hi rend="superscript"
+                                            >ac</hi></hi> : codice <hi rend="bold">G A</hi>.</p>
+
+                                <p>More metadata, however, could be encoded using the following
+                                    method:</p>
+
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <app>
+                                        <lem wit="#P #V" xml:id="lem-cortice">cortice</lem>
+                                        <rdg wit="#N2" xml:id="rdg-cortice">co<add place="inRas"
+                                                >rt</add>ice</rdg>
+                                        <witDetail wit="#N2" target="#rdg-cortice"
+                                            type="correction-altered"/>
                                         <rdg wit="#N" xml:id="rdg-coice"
                                             >co&#10214;..&#10215;ice</rdg>
                                         <witDetail wit="#N" target="#rdg-coice"
@@ -4855,38 +4924,10 @@ information.-->
                                 </egXML>
 
                                 <p>This encoding will produce the following entry in the apparatus
-                                    criticus: cortice <hi rend="bold">N<hi rend="superscript"
-                                        >2</hi></hi> (<hi rend="italic">p.c.</hi>, rt <hi
-                                        rend="italic">add. in ras.</hi>) <hi rend="bold">PV</hi> :
+                                    criticus: cortice <hi rend="bold">PV</hi> : co&#171;rt&#187;ice
+                                        <hi rend="bold">N<hi rend="superscript">2</hi></hi> (p.c.)
                                     co&#10214;..&#10215;ice <hi rend="bold">N</hi> (a.c.) : codice
                                         <hi rend="bold">G A</hi>.</p>
-
-                                <p>The semantic markup method uses techniques described elsewhere in
-                                    these guidelines to make the details readable by humans and
-                                    machines:</p>
-
-                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                    <app>
-                                        <lem wit="#N2 #P #V" xml:id="lem-cortice">cortice</lem>
-                                        <witDetail wit="#N2" target="#lem-cortice"
-                                            type="correction-altered">
-                                            <add place="inRas">rt</add>
-                                        </witDetail>
-                                        <rdg wit="#N" xml:id="rdg-coice">co<del rend="erasure"><gap
-                                                  reason="lost" quantity="2" unit="character"
-                                                /></del>ice</rdg>
-                                        <witDetail wit="#N" target="#rdg-coice"
-                                            type="correction-original"/>
-                                        <rdg wit="#G #A">codice</rdg>
-                                    </app>
-                                </egXML>
-
-                                <p>That encoding would produce the following entry: cortice <hi
-                                        rend="bold">N<hi rend="superscript">2</hi></hi> (<hi
-                                        rend="italic">p.c.</hi>, rt <hi rend="italic">add. in
-                                        ras.</hi>) <hi rend="bold">PV</hi> : co&#10214;..&#10215;ice
-                                        <hi rend="bold">N</hi> (a.c.) : codice <hi rend="bold">G
-                                        A</hi>.</p>
                             </div>
                             <!-- End of the third example of correction -->
 
@@ -4911,32 +4952,39 @@ information.-->
                                             rend="superscript">1</hi></hi> (p.c.) : dipicta <hi
                                         rend="bold">N</hi> (a.c.).</p>
 
+                                <p>Using sigla to indicate both manuscripts and their state of
+                                    correction, that passage should be encoded as follows:</p>
+
+                                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                                    <app>
+                                        <lem wit="#N2 #P #V" xml:id="lem-descripta">descripta</lem>
+                                        <witDetail wit="#N2" target="#lem-descripta">in
+                                            mg.</witDetail>
+                                        <rdg wit="#G #N1pc" xml:id="rdg-depicta">depicta</rdg>
+                                        <rdg wit="#Nac" xml:id="rdg-dipicta">dipicta</rdg>
+                                    </app>
+                                </egXML>
+
+                                <p>This encoding will produce the following entry in the apparatus
+                                    criticus: descripta <hi rend="bold">N<hi rend="superscript"
+                                            >2</hi></hi> (in mg.) <hi rend="bold">PV</hi> : depicta
+                                        <hi rend="bold">G N<hi rend="superscript">1</hi></hi> (p.c.)
+                                    : dipicta <hi rend="bold">N</hi> (a.c.).</p>
+
+                                <p>The following method accomplishes the same thing, but with richer
+                                    metadata:</p>
+
                                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                     <app>
                                         <lem wit="#N2 #P #V" xml:id="lem-descripta">descripta</lem>
                                         <witDetail wit="#N2" target="#lem-descripta">in
                                             mg.</witDetail>
                                         <rdg wit="#G #N1" xml:id="rdg-depicta">depicta</rdg>
-                                        <witDetail wit="#N1" target="#rdg-depicta"
-                                            type="correction-altered"/>
+                                        <witDetail wit="#N1" target="#rdg-depicta" type="correction-altered"/>
                                         <rdg wit="#N" xml:id="rdg-dipicta">dipicta</rdg>
-                                        <witDetail wit="#N" target="#rdg-dipicta"
-                                            type="correction-original"/>
+                                        <witDetail wit="#N" target="#rdg-dipicta" type="correction-original"/>
                                     </app>
                                 </egXML>
-
-                                <p>This encoding will produce the following entry in the apparatus
-                                    criticus: descripta <hi rend="bold">N<hi rend="superscript"
-                                            >2</hi></hi> (in mg. <hi rend="bold">PV</hi> : depicta
-                                        <hi rend="bold">G N<hi rend="superscript">1</hi></hi> (p.c.)
-                                    : dipicta <hi rend="bold">N</hi> (a.c.).</p>
-
-                                <p>Note that it is not possible to use the semantic markup method
-                                    (i.e., <gi>add</gi> with <att>place</att>="margin") for the
-                                    marginal reading of <hi rend="bold">N<hi rend="superscript"
-                                            >2</hi></hi>, since the same reading appears in other
-                                    witnesses in the text itself. Instead, the notation “in mg.” is
-                                    inserted using <gi>witDetail</gi>.</p>
                             </div>
                             <!-- End of the fourth example -->
                         </div>
@@ -5007,8 +5055,9 @@ information.-->
                             <hi rend="italic">edd</hi>., rivumque <hi rend="italic">ci.</hi> Baehr.,
                             pronumque <hi rend="italic">ci</hi>. C. Schenkl.</p>
 
-                        <p>Multiple conjectures proposed by a single person should be separated by <gi>note</gi> with value <foreign
-                                xml:lang="lat">vel</foreign> (or something similar).</p>
+                        <p>Multiple conjectures proposed by a single person should be separated by
+                                <gi>note</gi> with value <foreign xml:lang="lat">vel</foreign> (or
+                            something similar).</p>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <app>
