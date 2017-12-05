@@ -3725,21 +3725,18 @@ information.-->
                     <p>For the sake of keeping the emphasis on the grouping of witnesses or sources,
                         it may be necessary to indicate that variations on a reading appear in the
                         group, instead of reporting which witnesses or sources have the variations.
-                        In that case, a combination of <gi>rdgGrp</gi> (reading group) and
-                            <gi>note</gi> can be used.</p>
+                        In that case, <gi>note</gi> can be used with contents <foreign xml:lang="lat">an</foreign>,
+                        <foreign xml:lang="lat">aut</foreign>, or <foreign xml:lang="lat"
+                            >vel</foreign>.</p>
 
                     <p>
                         <specList>
-                            <specDesc key="rdgGrp"/>
                             <specDesc key="note"/>
                         </specList>
                     </p>
 
                     <list>
-                        <item><gi>rdgGrp</gi> (reading group) contains two or more readings
-                                (<gi>rdg</gi>) related to each other in some way.</item>
-                        <item><gi>note</gi> contains language that connects the readings in
-                                <gi>rdgGrp</gi> (e.g., <foreign xml:lang="lat">an</foreign>,
+                        <item><gi>note</gi> contains language that connects the readings (e.g., <foreign xml:lang="lat">an</foreign>,
                                 <foreign xml:lang="lat">aut</foreign>, or <foreign xml:lang="lat"
                                 >vel</foreign>)</item>
                     </list>
@@ -3747,11 +3744,9 @@ information.-->
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <app>
                             <lem wit="#A">ante A. Gellium</lem>
-                            <rdgGrp>
-                                <rdg wit="#B #C #D #E">antea gellium</rdg>
-                                <note>vel</note>
-                                <rdg wit="#B #C #D #E">ante agellium</rdg>
-                            </rdgGrp>
+                            <rdg wit="#B #C #D #E">antea gellium</rdg>
+                            <note>vel</note>
+                            <rdg wit="#B #C #D #E">ante agellium</rdg>
                         </app>
                     </egXML>
                 </div>
@@ -5012,22 +5007,19 @@ information.-->
                             <hi rend="italic">edd</hi>., rivumque <hi rend="italic">ci.</hi> Baehr.,
                             pronumque <hi rend="italic">ci</hi>. C. Schenkl.</p>
 
-                        <p>Multiple conjectures proposed by a single person should be contained in
-                                <gi>rdgGrp</gi> and separated by <gi>note</gi> with value <foreign
+                        <p>Multiple conjectures proposed by a single person should be separated by <gi>note</gi> with value <foreign
                                 xml:lang="lat">vel</foreign> (or something similar).</p>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <app>
                                 <lem>pallenti</lem>
-                                <rdgGrp>
-                                    <rdg source="#Heins." type="conjecture">ridenti</rdg>
-                                    <note>vel</note>
-                                    <rdg source="#Heins." type="conjecture">varianti</rdg>
-                                    <note>vel</note>
-                                    <rdg source="#Heins." type="conjecture">vernanti</rdg>
-                                    <note>vel</note>
-                                    <rdg source="#Heins." type="conjecture">roranti</rdg>
-                                </rdgGrp>
+                                <rdg source="#Heins." type="conjecture">ridenti</rdg>
+                                <note>vel</note>
+                                <rdg source="#Heins." type="conjecture">varianti</rdg>
+                                <note>vel</note>
+                                <rdg source="#Heins." type="conjecture">vernanti</rdg>
+                                <note>vel</note>
+                                <rdg source="#Heins." type="conjecture">roranti</rdg>
                             </app>
                         </egXML>
 
