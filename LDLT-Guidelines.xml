@@ -4980,9 +4980,11 @@ information.-->
                                         <witDetail wit="#N2" target="#lem-descripta">in
                                             mg.</witDetail>
                                         <rdg wit="#G #N1" xml:id="rdg-depicta">depicta</rdg>
-                                        <witDetail wit="#N1" target="#rdg-depicta" type="correction-altered"/>
+                                        <witDetail wit="#N1" target="#rdg-depicta"
+                                            type="correction-altered"/>
                                         <rdg wit="#N" xml:id="rdg-dipicta">dipicta</rdg>
-                                        <witDetail wit="#N" target="#rdg-dipicta" type="correction-original"/>
+                                        <witDetail wit="#N" target="#rdg-dipicta"
+                                            type="correction-original"/>
                                     </app>
                                 </egXML>
                             </div>
@@ -5522,6 +5524,43 @@ information.-->
                     <p>These guidelines may also be extended as the community of users discovers and
                         proposes additional encoding patterns to the staff of the LDLT.</p>
                 </div>
+
+                <!-- Begin section on links to external materials. -->
+                <div xml:id="apparatus-criticus-linking">
+                    <head>Links to External Materials</head>
+
+                    <p>Items identified elsewhere in the edition with <att>xml:id</att> are linked
+                        whenever their ID is used in an attribute. For example, whenever a
+                        manuscript's machine-readable siglum appears in <att>wit</att>, the siglum
+                        is linked to the description of the manuscript. It is also possible to
+                        include links to digital representations of manuscripts and other items in
+                        the bibliography (see "<ref target="#bibliography">Bibliography</ref>" above). But sometimes it is necessary
+                        to refer in the critical apparatus to the specific page of an item in the
+                        bibliography. In those cases, <gi>ref</gi> may be used to link to external resources.</p>
+
+                    <p>
+                        <specList>
+                            <specDesc key="ref"/>
+                        </specList>
+                    </p>
+
+                    <p><gi>ref</gi> contains the text to be linked to an external resource.</p>
+                    <p><att>target</att> contains the URL of the external resource.</p>
+
+                    <p>For example, at Calp. 1.73 Giarratano refers to a conjecture made by Müller in his review of Schenkl:
+                            <hi rend="italic">asseret</hi> L. Mueller (Berl. phil. Woch. V. p.
+                        1071). Since the fifth volume of <hi rend="italics">Berliner philologische
+                            Wochenschrift</hi> is openly available, the editor of an LDLT edition
+                        could include a link to it with <gi>ref</gi>:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <note>L. Mueller (<ref
+                                target="https://hdl.handle.net/2027/uiug.30112023962282?urlappend=%3Bseq=674"
+                                >Berl. phil. Woch. V. p. 1071</ref>)</note>
+                    </egXML>
+
+                </div>
+                <!-- End section on links to external materials. -->
             </div>
             <!-- End of section on the apparatus criticus -->
 
