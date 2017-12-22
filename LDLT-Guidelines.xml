@@ -5784,7 +5784,7 @@ information.-->
             <div>
                 <head>The DLL Critical Editions Schema</head>
                 <schemaSpec ident="tei-DLL" docLang="en" prefix="tei_" start="TEI" xml:lang="en"
-                    source="http://www.stoa.org/epidoc/schema/latest/tei-epidoc-full.compiled.odd">
+                    source="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.compiled.xml">
 
                     <!--       MODULES USED BY THE DLL SCHEMA       -->
                     <moduleRef key="core"/>
@@ -5806,9 +5806,9 @@ information.-->
               langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
 
                     <moduleRef key="textcrit"
-                        source="http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml"/>
+                        source="http://www.tei-c.org/Vault/P5/3.2.0/xml/tei/odd/p5subset.xml"/>
                     <moduleRef key="figures"
-                        source="http://www.tei-c.org/Vault/P5/3.1.0/xml/tei/odd/p5subset.xml"
+                        source="http://www.tei-c.org/Vault/P5/3.2.0/xml/tei/odd/p5subset.xml"
                         except="formula"/>
                     <moduleRef key="spoken"
                         except="broadcast equipment incident kinesic pause recording recordingStmt
@@ -6112,6 +6112,9 @@ information.-->
                                 </valList>
                             </attDef>
                         </attList>
+                      <!-- The following constraint bans most nested divs, which is problematic for
+                        the LDLT. -->
+                      <constraintSpec scheme="isoschematron" ident="div" mode="delete"/>
                     </elementSpec>
 
                     <elementSpec ident="ex" module="transcr" mode="change">
