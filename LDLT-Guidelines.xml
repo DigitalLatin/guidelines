@@ -5670,57 +5670,57 @@
 
                     <!-- constraining values of div/@type -->
                     <elementSpec ident="div" mode="change" module="textstructure">
-                        <attList>
-                            <attDef ident="type" mode="replace" usage="req">
-                                <valList type="closed">
-                                    <valItem ident="introduction">
-                                        <desc versionDate="2015-11-23" xml:lang="en">to contain
-                                            introductory material</desc>
-                                    </valItem>
-                                    <valItem ident="sources">
-                                        <desc versionDate="2015-11-23" xml:lang="en">to contain
-                                            documentation of source texts</desc>
-                                    </valItem>
-                                    <valItem ident="apparatus">
-                                        <desc versionDate="2015-10-20" xml:lang="en">to contain
-                                            apparatus criticus or textual notes</desc>
-                                    </valItem>
-                                    <valItem ident="bibliography">
-                                        <desc versionDate="2015-10-20" xml:lang="en">to contain
-                                            bibliographical information, previous publications,
-                                            etc.</desc>
-                                    </valItem>
-                                    <valItem ident="commentary">
-                                        <desc versionDate="2015-10-20" xml:lang="en">to contain all
-                                            editorial commentary, historical/prosopographical
-                                            discussion, etc.</desc>
-                                    </valItem>
-                                    <valItem ident="edition">
-                                        <desc versionDate="2015-10-20" xml:lang="en">to contain the
-                                            text of the edition itself; may include multiple
-                                            text-parts</desc>
-                                    </valItem>
-                                    <valItem ident="section">
-                                        <desc versionDate="2016-06-06" xml:lang="en">A subordinate
-                                            part of the introduction or other section, but not the
-                                            edition of translation.</desc>
-                                    </valItem>
-                                    <valItem ident="textpart">
-                                        <desc versionDate="2015-10-20" xml:lang="en">used to divide
-                                            a div[type=edition] into multiple parts (fragments,
-                                            columns, faces, etc.)</desc>
-                                    </valItem>
-                                    <valItem ident="translation">
-                                        <desc versionDate="2015-10-20" xml:lang="en">to contain a
-                                            translation of the text into one or more modern
-                                            languages</desc>
-                                    </valItem>
-                                </valList>
-                            </attDef>
-                        </attList>
                       <!-- The following constraint bans most nested divs, which is problematic for
                         the LDLT. -->
                       <constraintSpec scheme="isoschematron" ident="div" mode="delete"/>
+                      <attList>
+                          <attDef ident="type" mode="replace" usage="req">
+                              <valList type="closed">
+                                  <valItem ident="introduction">
+                                      <desc versionDate="2015-11-23" xml:lang="en">to contain
+                                          introductory material</desc>
+                                  </valItem>
+                                  <valItem ident="sources">
+                                      <desc versionDate="2015-11-23" xml:lang="en">to contain
+                                          documentation of source texts</desc>
+                                  </valItem>
+                                  <valItem ident="apparatus">
+                                      <desc versionDate="2015-10-20" xml:lang="en">to contain
+                                          apparatus criticus or textual notes</desc>
+                                  </valItem>
+                                  <valItem ident="bibliography">
+                                      <desc versionDate="2015-10-20" xml:lang="en">to contain
+                                          bibliographical information, previous publications,
+                                          etc.</desc>
+                                  </valItem>
+                                  <valItem ident="commentary">
+                                      <desc versionDate="2015-10-20" xml:lang="en">to contain all
+                                          editorial commentary, historical/prosopographical
+                                          discussion, etc.</desc>
+                                  </valItem>
+                                  <valItem ident="edition">
+                                      <desc versionDate="2015-10-20" xml:lang="en">to contain the
+                                          text of the edition itself; may include multiple
+                                          text-parts</desc>
+                                  </valItem>
+                                  <valItem ident="section">
+                                      <desc versionDate="2016-06-06" xml:lang="en">A subordinate
+                                          part of the introduction or other section, but not the
+                                          edition of translation.</desc>
+                                  </valItem>
+                                  <valItem ident="textpart">
+                                      <desc versionDate="2015-10-20" xml:lang="en">used to divide
+                                          a div[type=edition] into multiple parts (fragments,
+                                          columns, faces, etc.)</desc>
+                                  </valItem>
+                                  <valItem ident="translation">
+                                      <desc versionDate="2015-10-20" xml:lang="en">to contain a
+                                          translation of the text into one or more modern
+                                          languages</desc>
+                                  </valItem>
+                              </valList>
+                          </attDef>
+                      </attList>
                     </elementSpec>
 
                     <elementSpec ident="ex" module="transcr" mode="change">
