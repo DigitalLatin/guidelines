@@ -158,9 +158,7 @@
             <distributor>Digital Latin Library</distributor>
             <date>2016</date>
             <availability>
-                <license
-                    target="https://creativecommons.org/licenses/by/4.0/"
-                    >Distributed under a Creative Commons Attribution 4.0
+                <license target="https://creativecommons.org/licenses/by/4.0/">Distributed under a Creative Commons Attribution 4.0
                     International License.</license>
             </availability>
         </publicationStmt>
@@ -1424,7 +1422,7 @@
                             which is why the bibliography of an LDLT edition must include a list of
                             scholars mentioned by name in the edition, with information about where
                             to find more information, if it is available.</p>
-                        
+
                         <list>
                             <item><gi>listPerson</gi> with <att>xml:id</att>="bibliography-scholars"
                                 groups the information identifying the scholars.</item>
@@ -1607,7 +1605,7 @@
                 <!-- End section on linking to primary sources. -->
             </div>
             <!-- End section on linking. -->
-                
+
             <!-- Begin section on edition text. -->
             <div xml:id="edition-text">
                 <head>Edition Text</head>
@@ -2593,10 +2591,11 @@
                     displaying or printing the title in italic type. Otherwise, the choice depends
                     on how often the editor wishes to type the full bibliographical entry.</p>
 
-                <p>Wherever the bibliographical information is encoded, editors are encouraged to
-                    use <att>ref</att> on <gi>author</gi> and <gi>title</gi> to point to an
-                    identifier of some sort (e.g., CTS URN). For example,</p>
-
+                <p>Wherever bibliographical information is encoded, editors are encouraged to
+                    include links to a version of the text in a reliable, stable repository. See the
+                    section "Linking to Texts" for more information.
+                    <!-- TODO: Write this section! --></p>
+                <!-- Consider deleting this block and referring to another section entirely, on linking
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <bibl>
                         <author ref="urn:cts:latinLit:phi0134">Ter.</author>
@@ -2612,6 +2611,7 @@
                 <p>As for the source of the quotation, the following two types of encoding for
                     entries in the apparatus fontium depend on whether or not the author has
                     identified the source of the quotation in the text.</p>
+-->
 
                 <!-- Begin subsection on sources identified by the author. -->
                 <div xml:id="apparatus-fontium-author-attribution">
@@ -2793,20 +2793,60 @@
             </div>
             <!-- End section on apparatus fontium -->
 
-            <!-- Begin section on testimonia. -->
+            <!-- Begin section on apparatus testium. -->
             <div xml:id="testimonia">
                 <head>Apparatus Testium</head>
 
                 <p>The apparatus testium differs from an <ref target="#apparatus-fontium">apparatus
-                        fontium</ref> in that the former collects information about quotations of
-                    the text by other authors, and the latter collects information about quotations
-                    of other authors in the text itself. Since quotations of the text can be
-                    considered variant readings, such information can also be included as a reading
-                    or annotation in the apparatus criticus. Sometimes, however, it makes sense to
-                    include a separate register of such quotations. In those cases the following
-                    guidelines should be observed.</p>
+                        fontium</ref> in that it collects testimonia, or quotations of the text by
+                    other authors, but the apparatus fontium collects quotations of other authors in
+                    the text itself. Since it can happen that a quotation of the text attests to a
+                    variant reading, such information can also be included as a reading or
+                    annotation in the apparatus criticus. In those cases, the section on <ref
+                        target="#apparatus-criticus">encoding the apparatus criticus</ref> should be
+                    the guide. Sometimes, however, it makes sense to include a separate register of
+                    testimonia. In those cases the following guidelines should be observed.</p>
 
-                <p/>
+                <p>Testimonia are encoded using <gi>note</gi> with <att>type</att> "testium": </p>
+
+                <list>
+                    <item><gi>note</gi> contains bibiliographical information for one or more
+                        quotations of the text. Each <gi>note</gi> must have an <att>xml:id</att>
+                        and <att>target</att> pointing to the <att>xml:id</att> related to the
+                        quotation of the text. Each <gi>note</gi> must also have
+                        <att>type</att>="testium" to distinguish it from other uses of
+                        <gi>note</gi>.</item>
+                    <item><gi>bibl</gi> (bibliographic citation) contains the following
+                        bibliographic information pertaining to an individual quotation:</item>
+                    <item>
+                        <list>
+                            <item><gi>author</gi> contains the name of the author (or a standard
+                                abbreviation) who cited or quoted the work.</item>
+                            <item><gi>title</gi> contains the title of the work (or a standard
+                                abbreviation) in which the quotation occurs.</item>
+                            <item><gi>biblScope</gi> (scope of bibliographic reference) contains the
+                                specific unit where the quotation may be found (e.g., book number,
+                                section number, paragraph number, line number, etc.).</item>
+                        </list>
+                    </item>
+                    <item><gi>quote</gi> contains the actual quoted text of the passage, if
+                        desirable.</item>
+                </list>
+
+                <p>For example, Thomson's edition of Catullus has the following in the apparatus testium for poem 14: "9 <hi rend="italics">Martianus Capella 3.229</hi> 15 <hi rend="italics">Macrobius, Saturnalia 2.1.8</hi>. In an LDLT edition, the testimonia are encoded in close proximity to their point of reference:</p>
+               
+                <egXML xmlns="http://www.tei-c.org/ns/Examples"> 
+                    <l n="8">quod si, ut suspicor, hoc novum ac repertum</l>
+                    <l n="9" xml:id="C14.9">munus data tibi Sulla litterator,</l>
+                    <note type="testium" target="#C14.9"><bibl><author>Martianus Capella</author> <biblScope>14.9</biblScope></bibl></note>
+                    <l n="10">non est mi male, sed bene ac beate,</l>
+                    <l n="11">quod non dispereunt tui labores.</l>
+                    <l n="12">di magni, horribilem et sacrum libellum!</l>
+                    <l n="13">quem tu scilicet ad tuum Catullum</l>
+                    <l n="14">misti continuo, ut die periret</l>
+                    <l n="15" xml:id="C14.15">Saturnalibus optimo dierum!</l>
+                    <note type="testium" target="#C14.15"><bibl><author>Macrobius</author>, <title>Saturnalia</title> <biblScope>2.1.8</biblScope>.</bibl></note>
+                </egXML>
             </div>
             <!-- End section on testimonia. -->
 
@@ -2834,7 +2874,7 @@
                         passages.</item>
                     <item><gi>bibl</gi> (bibliographic citation) contains the following
                         bibliographic information pertaining to an individual parallel
-                        passage.</item>
+                        passage:</item>
                     <item>
                         <list>
                             <item><gi>author</gi> contains the name of the author (or a standard
@@ -5196,7 +5236,7 @@
                         pointing to the <att>xml:id</att> of the <gi>anchor</gi> contains the text
                         of the note, which is written in prose using <gi>p</gi>.</item>
                 </list>
-                
+
                 <p>For example, after Calp. 4.96, <ref target="#giarratano-calpurnius"
                         >Giarratano</ref> prints five unnumbered lines of dots to indicate that he
                     believes a stanza is missing. At 4.97, he includes in his apparatus criticus an
@@ -5328,13 +5368,17 @@
                             Nasoni Metamorphoses</title>. <series><title level="s">Oxford Classical
                                 Texts</title></series>. <pubPlace>Oxford</pubPlace>:
                             <publisher>Clarendon Press</publisher>, <date>2004</date>.</bibl>
+                    <bibl xml:id="thomson-catullus"><editor>Thomson, D. F. S.</editor>, ed.
+                            <title>Catullus: Edited with a Textual and Interpretative
+                            Commentary</title>. <pubPlace>Toronto</pubPlace>: <publisher>University
+                            of Toronto Press</publisher>, <date>1997</date>.</bibl>
                     <bibl xml:id="verdiere-calpurnius"><editor>Verdière, Raoul</editor>, ed.
                             <title>T. Calpurnii Siculi De laude Pisonis et Bucolica et M. Annaei
                             Lucani De laude Caesaris Einsidlensia quae dicuntur carmina</title>.
                                 <series><title level="s">Collection Latomus</title>
                             <biblScope unit="volume">19</biblScope></series>.
-                            <pubPlace>Berchem-Bruxelles</pubPlace>: Latomus: Revue d’Études Latines,
-                            <date>1954</date>.</bibl>
+                            <pubPlace>Berchem-Bruxelles</pubPlace>: <publisher>Latomus: Revue
+                            d’Études Latines</publisher>, <date>1954</date>.</bibl>
                 </listBibl>
                 <!-- End list of editions cited -->
 
@@ -5670,57 +5714,57 @@
 
                     <!-- constraining values of div/@type -->
                     <elementSpec ident="div" mode="change" module="textstructure">
-                      <!-- The following constraint bans most nested divs, which is problematic for
+                        <!-- The following constraint bans most nested divs, which is problematic for
                         the LDLT. -->
-                      <constraintSpec scheme="isoschematron" ident="div" mode="delete"/>
-                      <attList>
-                          <attDef ident="type" mode="replace" usage="req">
-                              <valList type="closed">
-                                  <valItem ident="introduction">
-                                      <desc versionDate="2015-11-23" xml:lang="en">to contain
-                                          introductory material</desc>
-                                  </valItem>
-                                  <valItem ident="sources">
-                                      <desc versionDate="2015-11-23" xml:lang="en">to contain
-                                          documentation of source texts</desc>
-                                  </valItem>
-                                  <valItem ident="apparatus">
-                                      <desc versionDate="2015-10-20" xml:lang="en">to contain
-                                          apparatus criticus or textual notes</desc>
-                                  </valItem>
-                                  <valItem ident="bibliography">
-                                      <desc versionDate="2015-10-20" xml:lang="en">to contain
-                                          bibliographical information, previous publications,
-                                          etc.</desc>
-                                  </valItem>
-                                  <valItem ident="commentary">
-                                      <desc versionDate="2015-10-20" xml:lang="en">to contain all
-                                          editorial commentary, historical/prosopographical
-                                          discussion, etc.</desc>
-                                  </valItem>
-                                  <valItem ident="edition">
-                                      <desc versionDate="2015-10-20" xml:lang="en">to contain the
-                                          text of the edition itself; may include multiple
-                                          text-parts</desc>
-                                  </valItem>
-                                  <valItem ident="section">
-                                      <desc versionDate="2016-06-06" xml:lang="en">A subordinate
-                                          part of the introduction or other section, but not the
-                                          edition of translation.</desc>
-                                  </valItem>
-                                  <valItem ident="textpart">
-                                      <desc versionDate="2015-10-20" xml:lang="en">used to divide
-                                          a div[type=edition] into multiple parts (fragments,
-                                          columns, faces, etc.)</desc>
-                                  </valItem>
-                                  <valItem ident="translation">
-                                      <desc versionDate="2015-10-20" xml:lang="en">to contain a
-                                          translation of the text into one or more modern
-                                          languages</desc>
-                                  </valItem>
-                              </valList>
-                          </attDef>
-                      </attList>
+                        <constraintSpec scheme="isoschematron" ident="div" mode="delete"/>
+                        <attList>
+                            <attDef ident="type" mode="replace" usage="req">
+                                <valList type="closed">
+                                    <valItem ident="introduction">
+                                        <desc versionDate="2015-11-23" xml:lang="en">to contain
+                                            introductory material</desc>
+                                    </valItem>
+                                    <valItem ident="sources">
+                                        <desc versionDate="2015-11-23" xml:lang="en">to contain
+                                            documentation of source texts</desc>
+                                    </valItem>
+                                    <valItem ident="apparatus">
+                                        <desc versionDate="2015-10-20" xml:lang="en">to contain
+                                            apparatus criticus or textual notes</desc>
+                                    </valItem>
+                                    <valItem ident="bibliography">
+                                        <desc versionDate="2015-10-20" xml:lang="en">to contain
+                                            bibliographical information, previous publications,
+                                            etc.</desc>
+                                    </valItem>
+                                    <valItem ident="commentary">
+                                        <desc versionDate="2015-10-20" xml:lang="en">to contain all
+                                            editorial commentary, historical/prosopographical
+                                            discussion, etc.</desc>
+                                    </valItem>
+                                    <valItem ident="edition">
+                                        <desc versionDate="2015-10-20" xml:lang="en">to contain the
+                                            text of the edition itself; may include multiple
+                                            text-parts</desc>
+                                    </valItem>
+                                    <valItem ident="section">
+                                        <desc versionDate="2016-06-06" xml:lang="en">A subordinate
+                                            part of the introduction or other section, but not the
+                                            edition of translation.</desc>
+                                    </valItem>
+                                    <valItem ident="textpart">
+                                        <desc versionDate="2015-10-20" xml:lang="en">used to divide
+                                            a div[type=edition] into multiple parts (fragments,
+                                            columns, faces, etc.)</desc>
+                                    </valItem>
+                                    <valItem ident="translation">
+                                        <desc versionDate="2015-10-20" xml:lang="en">to contain a
+                                            translation of the text into one or more modern
+                                            languages</desc>
+                                    </valItem>
+                                </valList>
+                            </attDef>
+                        </attList>
                     </elementSpec>
 
                     <elementSpec ident="ex" module="transcr" mode="change">
