@@ -1622,6 +1622,8 @@
                         <p>If any necessary information is not yet in the DLL's catalog, editors
                             should alert DLL staff so that it can be given the highest priority in
                             the queue for adding entries to the catalog.</p>
+                        
+                        <p>Note that the DLL plans eventually to implement a resolving service for these links, similar to the service provided by the <ref target="http://cwkb.org/">Classical Works Knowledge Base</ref>.</p>
                     </div>
                     <!-- End of section on linking to primary sources. -->
                 </div>
