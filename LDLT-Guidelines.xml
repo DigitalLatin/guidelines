@@ -95,6 +95,7 @@
                         target="https://atom.io/packages/linter-autocomplete-jing"
                         >linter-autocomplete-jing</ref> plugin is one example. Oxygen comes with a
                     lot of built-in TEI support, so it may give you a better experience. </p>
+
                 <p>There are some very basic rules to editing XML documents you should be aware of:
                     XML tags (or elements) must nest properly. If you open one (e.g.
                         <code>&lt;p></code>), you must close it (<code>&lt;/p></code>) or have it
@@ -113,6 +114,350 @@
                         >template</ref> file to get you started with your edition. </p>
             </div>
             <!-- End section "Getting Started." -->
+
+            <!-- Begin section "Definition of an LDLT Edition" -->
+            <div xml:id="edition-definition">
+                <head>Definition of an LDLT Edition</head>
+
+                <p>The term "scholarly digital edition" can refer to many different kinds of digital
+                    objects, from simple text or HTML files to dynamic, multimedia resources. Most
+                    scholarly digital editions attempt to combine textual criticism with insights
+                    and techniques from a variety of other scholarly fields such as human-computer
+                    interaction, information visualization, interface design, and data analytics. In
+                    addition to a critical text, they provide a digital environment designed for
+                    experiencing textual and other kinds of data (e.g., visual, aural). Often these
+                    environments highlight the idiosyncrasies of a specific work or works, and they
+                    require a variety of technologies to function as expected.</p>
+
+                <p>Although such editions can promote new and original ways of thinking about texts
+                    and their contexts, they are liable to loss of functionality over time as
+                    technology changes. Moreover, they do not lend themselves to becoming part of a
+                    larger corpus of texts that can be searched, analyzed, visualized, and reused
+                    with reliable, reproducible results. </p>
+
+                <p>A tenet of the Digital Latin Library project is that editors of critical editions
+                    should be encouraged to learn about and implement technology in their
+                    scholarship, but they should not have to become experts in the full stack of
+                    technology required for designing, building, and maintaining digital resources.
+                    Another tenet is that designing, building, and maintaining digital resources
+                    should be considered scholarly activities, too, especially if they make original
+                    contributions to scholarship or enable others to make those contributions. For
+                    these reasons, the <hi rend="italics">Library of Digital Latin Texts</hi> (LDLT)
+                    separates, as much as possible, data from visualization and interaction.</p>
+
+                <p>An LDLT edition is a single, version-controlled file encoded in <ref
+                        target="#TEI">TEI XML</ref> according to the guidelines articulated in this
+                    document. The file contains the elements traditionally associated with critical
+                    editions: a preface, a critical text, scholarly apparatuses, and ancillary
+                    materials. Editors may include critical transcriptions of witnesses, collation
+                    tables, notes, images, and other materials in the repository that holds the LDLT
+                    edition so that users can have access to that data if they wish to study the
+                    text in greater detail. Although LDLT editions themselves are not multimedia
+                    resources, editors should take advantage of the opportunity to enhance their
+                    editions by incorporating links to other digital resources. See the section
+                        "<ref target="#linking">Linking</ref>" for more information.</p>
+
+                <p>Because LDLT editions are openly available for reuse as the basis for information
+                    visualization, data analysis, or other projects, nothing precludes anyone from
+                    creating a multimedia project to highlight LDLT data. Indeed, the Digital Latin
+                    Library itself is developing an application for using information visualization
+                    techniques on LDLT data, and it provides the official <ref target="#ldlt-viewer"
+                        >LDLT Viewer</ref> as a reading environment for LDLT editions.</p>
+
+                <p>The overall goal of the LDLT is to build a collection of stable files that can be
+                    stored, used, and reused with reliable, reproducible results and with a minimum
+                    of special technical requirements for their use. If XML is ever displaced as a
+                    format for textual data, the uniformity of LDLT texts will facilitate their
+                    conversion to that new format. That would not be possible if each edition had
+                    its own technical requirements and special features.</p>
+
+                <!-- Begin section "The LDLT Viewer" -->
+                <div xml:id="ldlt-viewer">
+                    <head>The LDLT Viewer</head>
+
+                    <p>Because LDLT editions are XML files, humans can read them, but not with ease.
+                        That is why the Digital Latin Library has developed and maintains the
+                        official LDLT Viewer, an application that provides an interactive reading
+                        environment.</p>
+
+                    <p>The LDLT Viewer itself is an example of the reuse of LDLT data for scholarly
+                        purposes. Drawing on his experience with and knowledge of human-computer
+                        interaction, interface design, and traditional philology, Cayless built the
+                        LDLT Viewer to highlight certain aspects of these guidelines. Depending on
+                        the choices made by editors when following these guidelines, the following
+                        features may be available when an LDLT edition is viewed in the LDLT
+                        Viewer:</p>
+
+                    <list>
+                        <item>Variant readings can be swapped into or out of the text so that they
+                            can be evaluated <foreign xml:lang="lat">in situ</foreign>.</item>
+                        <item>Transposed lines can be swapped to show their "original" and altered
+                            positions.</item>
+                        <item>Types of variant readings (e.g., orthographic variations) can be
+                            filtered to limit the number of apparatus entries on the screen.</item>
+                        <item>Notes on the text can be viewed in close proximity to their related
+                            subject.</item>
+                    </list>
+
+                    <p>The LDLT Viewer also presents the apparatus criticus in two formats:
+                        clickable icons in the margin of the text, and a more traditional critical
+                        apparatus format at the end of each section of text. Reading aids are also
+                        available through the implementation of Javascript libraries available from
+                            <ref target="#Alpheios">The Alpheios Project</ref>. Clicking on a word
+                        will reveal a window that provides lexical and morphological
+                        information.</p>
+
+                    <p>To provide maximum flexibility in making editorial decisions, these
+                        guidelines offer several approaches to encoding certain types of
+                        information. As noted in the sections of this document, some approaches may
+                        affect the availability of the LDLT Viewer's features. Editors are advised
+                        to evaluate all of the approaches with a view to their impact on the
+                        appearance of their text in the LDLT Viewer. Since the LDLT Viewer is not
+                        the same thing as the LDLT edition, the functionality of the viewer should
+                        not be the determining factor in editorial decisions. Rather, editors should
+                        opt for the method that most accurately expresses their view of the
+                        text.</p>
+                </div>
+                <!-- End section "The LDLT Viewer" -->
+            </div>
+            <!-- End section "Definition of an LDLT Edition" -->
+
+            <!-- Beginning of section on language(s) in an LDLT edition. -->
+            <div xml:id="language">
+                <head>Language of an LDLT Edition</head>
+
+                <p>The <ref target="#front-matter">front matter</ref> (i.e., preface, manuscript
+                    descriptions, etc.), <ref target="#textual-commentary">textual commentary</ref>,
+                    and any appendices of an LDLT edition may be in Latin or English, depending on
+                    the editor's preference.</p>
+
+                <p>Traditional Latin conventions for the apparatus fontium, apparatus testium, and
+                    apparatus criticus should be used for those components of an LDLT edition.</p>
+
+            </div>
+            <!-- Begin section on linking. -->
+            <div xml:id="linking">
+                <head>Linking</head>
+
+                <p>In general, linking is accomplished using <att>target</att> with <gi>ptr</gi> or
+                        <gi>ref</gi>.</p>
+
+                <p><gi>ptr</gi> is a "self-closing" or milestone tag. It will simply display the
+                    address for the resource in question.</p>
+
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <ptr target="http://www.someurl.org/resource"/>
+                </egXML>
+
+                <p>That will generate the linked text <hi rend="bold"
+                        >http://www.someurl.org/resource</hi>.</p>
+
+                <p><gi>ref</gi> can contain text to be hyperlinked to a resource. In the following
+                    example, the words "Some linked text" would become a clickable hyperlink to the
+                    resource at http://www.someurl.org/resource:</p>
+
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <ref target="http://www.someurl.org/resource">Some linked text</ref>
+                </egXML>
+
+                <!-- Begin section on linking to passages. -->
+                <div xml:id="linking-referring-to-passages">
+                    <head>Referring to Passages in Texts</head>
+
+                    <p>When it is necessary to refer to or cite a primary source without mentioning
+                        a specific edition, (e.g., Verg., <hi rend="italics">Ecl.</hi> 1.5), editors
+                        have a number of options.</p>
+
+                    <p>References may be made without any semantic markup at all, or with minimal
+                        markup to indicate how the text should be displayed:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>This is a reference to Vergil, <hi rend="italics">Eclogues</hi> 1.5.</p>
+                    </egXML>
+
+                    <p>If it is desireable to generate a list of passages cited, using <gi>bibl</gi>
+                        can help with identifying citations:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>This is a reference to <bibl><author>Vergil</author>,
+                                    <title>Eclogues</title>
+                                <citedRange>1.5</citedRange></bibl></p>
+                    </egXML>
+
+                    <p>Of course, one of the greatest features of the digital format is that
+                        citations can be hyperlinked to other resources, making it possible for
+                        readers to examine the cited text for themselves. But linking to specific
+                        sites on the internet can have pitfalls. Although many maintainers of online
+                        texts take pains to observe best practices with regard to the stability and
+                        reliability of their sites, many factors beyond their control can render
+                        texts inaccessible on a temporary or permanent basis.</p>
+
+                    <p>One way of mitigating these factors is to refer not to specific instances of
+                        texts, but to a Universal Resource Name (URN). <ref
+                            target="http://cts3.sourceforge.net/">Canonical Text Services</ref>
+                        (CTS) is one such scheme for providing URN's for texts that can be used on
+                        any sites that are configured to resolve them. CTS URN's exist for all of
+                        Classical Latin and much of Medieval Latin; coverage of Neo-Latin texts,
+                        however, is spotty, though progress is being made to improve it, and the
+                        Digital Latin Library is contributing to that effort. However, since the
+                        adoption of CTS URN's varies widely from one scholarly community to another,
+                        what may be second nature to one group may be foreign to another, so these
+                        guidelines suggest an alternative approach for inserting hyperlinks to
+                        texts.</p>
+
+                    <p>Editors of texts for the LDLT are encouraged to make use of the data in the
+                        catalog of the Digital Latin Library (DLL). A mission of the DLL is to
+                        catalog versions of Latin texts available on the internet and to provide a
+                            <ref target="http://linkeddata.org">Linked Open Data</ref> architecture
+                        for referring to information related to works in Latin. This Linked Open
+                        Data architecture includes author pages and works pages that feature a range
+                        of identifiers, including not only CTS URN's (where they exist), but also
+                        identifiers from the <ref target="https://viaf.org">Virtual International
+                            Authority File</ref>, the <ref target="https://loc.gov/">Library of
+                            Congress</ref>, and individual collections such as the <ref
+                            target="http://latin.packhum.org/">Packard Humanities Institute's Latin
+                            Texts</ref>, among others.</p>
+
+                    <p>All of this means that a link to a work page in the DLL catalog will not be a
+                        direct link to a text. Rather, it will be a link to a resource for finding
+                        multiple versions of that text (e.g., digital editions, digital copies of
+                        print editions or incunabula, images of manuscripts, etc.). For this reason,
+                        linking to an entry in the DLL's catalog delivers more than just ready
+                        access to a variety of versions of the text; it sends readers to a stable
+                        resource that is updated and maintained in tandem with the LDLT, thus
+                        providing some protection against dead links in LDLT editions.</p>
+
+                    <div xml:id="linking-referring-to-passages-linking">
+                        <head>Linking to Passages via the Digital Latin Library</head>
+
+                        <p>Looking up DLL pages for all of the citations in a critical edition would
+                            take a great deal of time, once search times and page-load times are
+                            factored into the equation. Therefore, to simplify the process, and to
+                            make it possible to automate it, the DLL has made the addresses for
+                            these pages easy to generate by following a pattern based on the work's
+                            ID number or alias in the DLL's catalog. Those ID numbers and aliases
+                            are available online <!-- TODO: Insert link --> or as downloadable CSV
+                            files <!-- TODO: Insert link --> for quick reference.</p>
+
+                        <p>Generating the address for a work is a matter of appending an ID number
+                            or alias to the following pattern:</p>
+                        <list>
+                            <item>https://catalog.digitallatin.org/work/[ID]</item>
+                            <item>https://catalog.digitallatin.org/work/[alias]</item>
+                        </list>
+
+                        <p>In both cases, the text inside the square brackets is to be replaced with
+                            the real ID number or the alias for the work. For example, the pattern
+                            for Vergil's <hi rend="italics">Eclogues</hi> 1.5 would be
+                            <!-- TODO: Mint the link for Vergil's Eclogues. -->
+                            https://catalog.digitallatin.org/work/????? or
+                            https://catalog.digitallatin.org/work/?????. The resulting page will
+                            include the authorized form of the author's name, standard and
+                            alternative forms of the title of the work, known identifiers for the
+                            work, and links to versions of the text known to the DLL catalog.</p>
+
+                        <p>In an LDLT edition, an editor referring to Vergil's <hi rend="italics"
+                                >Eclogues</hi> 1.5 could link to the DLL's work page as follows:</p>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"> Verg., <title><ref
+                                    target="https://catalog.digitallatin.org/work/????"
+                                >Ecl.</ref></title> 1.5. <!-- TODO: Insert ID or alias --></egXML>
+
+                        <p>It is also possible to use the following shorthand version of the link,
+                            instead of entering the full base address dozens of times:</p>
+
+                        <egXML xmlns="http://www.tei-c.org/ns/Examples"> Verg., <title
+                                ref="dll:[ID-or-alias]">Ecl.</title> 1.5.
+                            <!-- TODO: Insert ID or alias --></egXML>
+
+                        <p>In this shorthand version, the prefix "dll" in <att>ref</att> can be
+                            expanded automatically to the string
+                            "https://catalog.digitallatin.org/work/", and the ID or alias after the
+                            colon will be appended to it to create the link to the DLL page for that
+                            work.</p>
+
+                        <p>If any necessary information is not yet in the DLL's catalog, editors
+                            should alert DLL staff so that it can be given the highest priority in
+                            the queue for adding entries to the catalog.</p>
+
+                        <p>Note that the DLL plans eventually to implement a resolving service for
+                            these links, similar to the service provided by the <ref
+                                target="http://cwkb.org/">Classical Works Knowledge Base</ref>.</p>
+                    </div>
+                    <!-- End of section on linking to passages. -->
+                </div>
+                <!-- End section on referring to passages. -->
+
+                <!-- Begin section on other references. -->
+                <div xml:id="linking-other-references">
+                    <head>Other References</head>
+
+                    <p>These guidelines recommend encoding an edition's list of manuscripts and its
+                        bibliography in the front matter. The following sections describe in detail
+                        how to encode the different types of sources:</p>
+
+                    <list>
+                        <item><ref target="#front-matter-description-listWit"
+                            >Manuscripts</ref></item>
+                        <item><ref target="#front-matter-editions">Editions</ref></item>
+                        <item><ref target="#front-matter-bibliography-books">Books (e.g.,
+                                commentaries, monographs, collections, etc.)</ref></item>
+                        <item><ref target="#front-matter-bibliography-articles"
+                            >Articles</ref></item>
+                        <item><ref target="#front-matter-bibliography-articles-reviews"
+                                >Reviews</ref></item>
+                        <item><ref target="#front-matter-bibliography-list-of-scholars">Scholars
+                                referred to by name only</ref></item>
+                    </list>
+
+                    <p>Those sections also include information about encoding hyperlinks to digital
+                        versions of items in lists of manuscripts or the bibliography. Because each
+                        item should have a unique identifier (see "<ref target="#front-matter-sigla"
+                            >Human- and Machine-Readable Sigla, Symbols, and Abbreviations</ref>",
+                        references to these sources can be made anywhere in the text using
+                            <gi>ref</gi> with <att>target</att> as follows:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples"> This is a reference to <ref
+                            target="#Weherlein1922">Wehrlein's 1922 edition</ref>. </egXML>
+
+                    <p>That encoding will render "Wehrlein's 1922 edition" as a hyperlink to the
+                        full item in the edition's bibliography.</p>
+
+                    <p>If it is desireable to refer to a particular source on the internet without
+                        citing it in the bibliography, <gi>ptr</gi> or <gi>ref</gi> with
+                            <att>target</att> may be used as described in the section "<ref
+                            target="#linking">Linking</ref>".</p>
+
+                    <div xml:id="linking-other-references-dll">
+                        <head>Linking Other References via the Digital Latin Library</head>
+
+                        <p>When linking to manuscripts and previous editions or versions of a text,
+                            links can point directly to those resources or they can point to entries
+                            about them in the DLL's catalog. Immediate, unmediated access to the
+                            resource is an obvious benefit to linking directly to a resource. Link
+                            rot, however, is a risk when using internet resources. Links can change
+                            or expire, and entire sites can become defunct. One solution is to
+                            update links periodically. Another is to link to the DLL catalog's
+                            stable record for the resource. Although this means that access to the
+                            resource will be mediated (i.e., users will be sent to the DLL's site
+                            first, where they will find a link to the resource), that mediation
+                            provides some protection against link rot. That is, even if the resource
+                            is no longer available, its metadata, or identifying information, will
+                            be preserved in the DLL's catalog.</p>
+
+                        <p>The scope and scale of the DLL's catalog limits its content to manuscript
+                            descriptions, editions, and electronic versions of texts. Secondary
+                            scholarship (e.g., monographs, notes on the text, translations, etc.)
+                            will not be found in the catalog. Item records are added on an ongoing
+                            basis independently of the LDLT, but the preparation of LDLT editions
+                            yields important information for the catalog. If a source is not already
+                            in the DLL's catalog, editors should contact the DLL staff about adding
+                            it.</p>
+                    </div>
+                </div>
+                <!-- End section on other references. -->
+            </div>
+            <!-- End section on linking. -->
 
             <!-- Begin section "Structure of an LDLT Edition." -->
             <div xml:id="LDLT-edition-structure">
@@ -562,11 +907,12 @@
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <listWit>
-                                <witness xml:id="N"><abbr type="siglum">N</abbr> = <name>Codex
-                                        Neapolitanus V A 8</name>, <date>saec. XV</date></witness>
-                                <witness xml:id="G"><abbr type="siglum">G</abbr> = <name>Codex
-                                        Gaddianus pl. 90, 12 inf.</name>, <date>saec.
+                                <witness xml:id="N"><abbr type="siglum">N</abbr>
+                                    <name>Codex Neapolitanus V A 8</name>, <date>saec.
                                     XV</date></witness>
+                                <witness xml:id="G"><abbr type="siglum">G</abbr>
+                                    <name>Codex Gaddianus pl. 90, 12 inf.</name>, <date>saec.
+                                        XV</date></witness>
                             </listWit>
                         </egXML>
 
@@ -661,15 +1007,15 @@
 
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                 <listWit>
-                                    <witness xml:id="ω"><abbr type="siglum">ω</abbr> =
-                                            <name>archetypus codicum αβ</name>
+                                    <witness xml:id="ω"><abbr type="siglum">ω</abbr>
+                                        <name>archetypus codicum αβ</name>
                                         <listWit>
-                                            <witness xml:id="a"><abbr type="siglum">α</abbr> =
-                                                  <name>hyparchetypus codicum α<hi rend="subscript"
+                                            <witness xml:id="a"><abbr type="siglum">α</abbr>
+                                                <name>hyparchetypus codicum α<hi rend="subscript"
                                                   >1</hi> α<hi rend="subscript">2</hi></name>
                                                 <listWit>
                                                   <witness xml:id="α1"><abbr type="siglum">α<hi
-                                                  rend="subscript">1</hi></abbr> =
+                                                  rend="subscript">1</hi></abbr>
                                                   <name>hyparchetypus codicum MG</name>
                                                   <listWit>
                                                   <witness xml:id="M"><abbr type="siglum"
@@ -691,14 +1037,14 @@
 
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                 <listWit>
-                                    <witness xml:id="ω"><abbr type="siglum">ω</abbr> = archetypus
+                                    <witness xml:id="ω"><abbr type="siglum">ω</abbr> archetypus
                                         codicum αβ <listWit>
-                                            <witness xml:id="a"><abbr type="siglum">α</abbr> =
-                                                  <name>hyparchetypus codicum α<hi rend="subscript"
+                                            <witness xml:id="a"><abbr type="siglum">α</abbr>
+                                                <name>hyparchetypus codicum α<hi rend="subscript"
                                                   >1</hi> α<hi rend="subscript">2</hi></name>
                                                 <listWit>
                                                   <witness xml:id="α1"><abbr type="siglum">α<hi
-                                                  rend="subscript">1</hi></abbr> =
+                                                  rend="subscript">1</hi></abbr>
                                                   <name>hyparchetypus codicum MG</name>
                                                   <listWit>
                                                   <witness xml:id="M"><abbr type="siglum"
@@ -741,8 +1087,8 @@
                                 The former renders a simple hyperlink:</p>
 
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                <witness xml:id="ν"><abbr type="siglum">ν</abbr> = Codex
-                                    Laurentianus pl. 37.14, saec. XV (<ptr
+                                <witness xml:id="ν"><abbr type="siglum">ν</abbr> Codex Laurentianus
+                                    pl. 37.14, saec. XV (<ptr
                                         target="http://teca.bmlonline.it/ImageViewer/servlet/ImageViewer?idr=TECA0000622886&amp;keyworks=Calpurnius#page/362/mode/1up"
                                     />, accessed on 2017-12-18)</witness>
                             </egXML>
@@ -751,7 +1097,8 @@
                                 name) to be linked to a URL:</p>
 
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                <witness xml:id="ν"><abbr type="siglum">ν</abbr> = <ref
+                                <witness xml:id="ν"><abbr type="siglum">ν</abbr>
+                                    <ref
                                         target="http://teca.bmlonline.it/ImageViewer/servlet/ImageViewer?idr=TECA0000622886&amp;keyworks=Calpurnius#page/362/mode/1up"
                                         >Codex Laurentianus pl. 37.14</ref> (accessed 2017-12-18),
                                     saec. XV</witness>
@@ -859,9 +1206,15 @@
                         editions.</p>
 
                     <p xml:id="edition-source">Source: An edition may be considered a source if it
-                        is clearly based on a scholarly, systematic approach to the text. An edition
-                        does not have to be based on a specific approach to textual criticism to be
-                        classified as a source.</p>
+                        is based on a scholarly approach to the text. An edition does not have to be
+                        based on a specific approach to textual criticism to be classified as a
+                        source. Indeed, tralatitious editions, variorum editions, and early
+                        commentaries may be classified as sources if it seems appropriate. In the
+                        case of early editions that are not because of their text, but because of
+                        the comments of scholars preserved in their notes, it may be worth recording
+                        the edition in the bibliography and listing the names of those scholars
+                        separately in a "<ref target="#front-matter-bibliography-list-of-scholars"
+                            >List of Scholars</ref>".</p>
 
                     <p>Classification as "witness" or "source" will have consequences for how
                         editions are handled in the front matter and the apparatus criticus (see the
@@ -923,7 +1276,8 @@
                                         printed in the edition, the date should be enclosed in
                                         square brackets.</item>
                                     <item><gi>ptr</gi> (pointer) has <att>target</att> with the URL
-                                        of a digital copy of the edition, if one exists.</item>
+                                        of a digital copy of the edition, if one exists, or the URL
+                                        of the entry for the edition in the DLL's catalog.</item>
                                 </list>
                             </item>
                         </list>
@@ -932,52 +1286,50 @@
                             <listWit xml:id="early-editions">
                                 <head>Editions: Witnesses</head>
                                 <witness xml:id="r">
-                                    <abbr type="siglum">r</abbr> =
-                                                <bibl><editor><name>Anonymous</name></editor>.
-                                            <title>editio Romana</title>.
-                                            <pubPlace>[Romae]</pubPlace>: <publisher>Schweynheim et
-                                            Pannartz</publisher>,
-                                    <date>1471</date></bibl>.</witness>
-                                <witness xml:id="e"><abbr type="siglum">e</abbr> =
-                                                <bibl><editor><name>Anonymous</name>.
-                                            </editor><title>editio Veneta</title>.
-                                            <pubPlace>[Venetiis]</pubPlace>: <publisher>Ausonius et
-                                            Giradinus</publisher>,
-                                    <date>1472</date></bibl>.</witness>
-                                <witness xml:id="u"><abbr type="siglum">u</abbr> =
-                                            <bibl><editor>Anonymous</editor>. <title>editio Ang.
+                                    <abbr type="siglum">r</abbr>
+                                    <bibl><editor><name>Anonymous</name></editor>. <title>editio
+                                            Romana</title>. <pubPlace>[Romae]</pubPlace>:
+                                            <publisher>Schweynheim et Pannartz</publisher>,
+                                            <date>1471</date></bibl>.</witness>
+                                <witness xml:id="e"><abbr type="siglum">e</abbr>
+                                    <bibl><editor><name>Anonymous</name>. </editor><title>editio
+                                            Veneta</title>. <pubPlace>[Venetiis]</pubPlace>:
+                                            <publisher>Ausonius et Giradinus</publisher>,
+                                            <date>1472</date></bibl>.</witness>
+                                <witness xml:id="u"><abbr type="siglum">u</abbr>
+                                    <bibl><editor>Anonymous</editor>. <title>editio Ang.
                                             Ugoleti</title>. <pubPlace>Parmae</pubPlace>:
                                             <publisher>Angelus Ugoletus</publisher>,
                                             <date>1492</date></bibl>.</witness>
-                                <witness xml:id="c"><abbr type="siglum">c</abbr> =
-                                            <bibl><editor>Anonymous</editor>. <title>editio
-                                            Coloniensis (Buccolica canori poetae Titi Calphurnii
-                                            Siculi undecim Aeglogis iucunditer decantata)</title>.
+                                <witness xml:id="c"><abbr type="siglum">c</abbr>
+                                    <bibl><editor>Anonymous</editor>. <title>editio Coloniensis
+                                            (Buccolica canori poetae Titi Calphurnii Siculi undecim
+                                            Aeglogis iucunditer decantata)</title>.
                                             <pubPlace>Coloniae</pubPlace>: <publisher>[Henricus
                                             Quintell]</publisher>, <date>1505(?)</date></bibl>. URL:
                                         <ptr
                                         target="http://digitale.bibliothek.uni-halle.de/vd16/content/titleinfo/1000626"
                                     />.</witness>
-                                <witness xml:id="Nordh."><abbr type="siglum">Nordh.</abbr> =
-                                        <bibl><editor/>. <title>ed. Nordheimensis</title>.
+                                <witness xml:id="Nordh."><abbr type="siglum">Nordh.</abbr>
+                                    <bibl><editor/>. <title>ed. Nordheimensis</title>.
                                             <pubPlace>[Nordheim]</pubPlace>:
                                             <publisher>s.n.</publisher>,
                                     <date>s.d.</date></bibl>.</witness>
-                                <witness xml:id="s"><abbr type="siglum">s</abbr> =
-                                            <bibl><title>editio Ascensiana</title> = <editor>Badius,
-                                            Josse (“Ascensius”)</editor>. <title>Buccolica, cum
+                                <witness xml:id="s"><abbr type="siglum">s</abbr>
+                                    <bibl><title>editio Ascensiana</title> = <editor>Badius, Josse
+                                            (“Ascensius”)</editor>. <title>Buccolica, cum
                                             adnotatione Ascensiana</title>. <pubPlace>Parhisiis, in
                                             vico Maturinorum</pubPlace>: <publisher>a Durando
                                             Gerlerio</publisher>, <date>1503</date></bibl>. URL:
                                         <ptr target="http://gallica.bnf.fr/ark:/12148/bpt6k841539v"
                                     />.</witness>
-                                <witness xml:id="b"><abbr type="siglum">b</abbr> =
-                                            <bibl><title>editio Bononiensis</title> =
-                                            <editor>Guidalottus Bononiensis, Diomedes</editor>.
-                                            <title>Calpurnii et Nemesiani Poetarum Buccolicum
-                                            Carmen</title>. <pubPlace>Bononiae</pubPlace>:
-                                            <publisher>per Caligulam Bazalerium</publisher>,
-                                            <date>1504</date></bibl>. URL: <ptr
+                                <witness xml:id="b"><abbr type="siglum">b</abbr>
+                                    <bibl><title>editio Bononiensis</title> = <editor>Guidalottus
+                                            Bononiensis, Diomedes</editor>. <title>Calpurnii et
+                                            Nemesiani Poetarum Buccolicum Carmen</title>.
+                                            <pubPlace>Bononiae</pubPlace>: <publisher>per Caligulam
+                                            Bazalerium</publisher>, <date>1504</date></bibl>. URL:
+                                        <ptr
                                         target="https://books.google.com/books?id=B1RrV7ciP6gC&amp;pg=PT3#v=onepage&amp;q&amp;f=false"
                                     />.</witness>
                             </listWit>
@@ -1037,119 +1389,117 @@
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <listBibl xml:id="modern-editions">
                                 <head>Modern Editions</head>
-                                <bibl xml:id="n"><abbr type="siglum">n</abbr> = <editor>Brassicanus,
-                                        Johannes Alexander</editor>. <title>editio
+                                <bibl xml:id="n"><abbr type="siglum">n</abbr>
+                                    <editor>Brassicanus, Johannes Alexander</editor>. <title>editio
                                         Brassicani</title>. <pubPlace>Argentorati
                                         (Strasbourg)</pubPlace>: <publisher>Iohannis
                                         Knoblochus</publisher>, <date>1519</date>. URL: <ptr
                                         target="https://books.google.com/books?id=n8JSAAAAcAAJ&amp;pg=PA1#v=onepage&amp;q&amp;f=false"
                                     />.</bibl>
-                                <bibl xml:id="Vienn."><abbr type="siglum">Vienn.</abbr> =
-                                        <editor>Anonymous</editor>. <title>ed. Viennensis</title>.
+                                <bibl xml:id="Vienn."><abbr type="siglum">Vienn.</abbr>
+                                    <editor>Anonymous</editor>. <title>ed. Viennensis</title>.
                                         <pubPlace>s.l.</pubPlace>, <date>s.d.</date></bibl>
-                                <bibl xml:id="g"><abbr type="siglum">g</abbr> = <editor>Logus,
-                                        Georgius</editor>. <title>editio Augustana</title>.
-                                        <pubPlace>Augustae Vindelicorum</pubPlace>: <publisher>in
-                                        officina Henrici Steyner</publisher>), <date>1534</date>.
-                                    URL: <ptr
+                                <bibl xml:id="g"><abbr type="siglum">g</abbr>
+                                    <editor>Logus, Georgius</editor>. <title>editio
+                                        Augustana</title>. <pubPlace>Augustae
+                                        Vindelicorum</pubPlace>: <publisher>in officina Henrici
+                                        Steyner</publisher>), <date>1534</date>. URL: <ptr
                                         target="http://daten.digitale-sammlungen.de/~db/0003/bsb00038602/images/"
                                     /></bibl>
-                                <bibl xml:id="Tig."><abbr type="siglum">Tig.</abbr> =
-                                        <editor>Anonymous</editor>. <title>editio Tigurina</title>
+                                <bibl xml:id="Tig."><abbr type="siglum">Tig.</abbr>
+                                    <editor>Anonymous</editor>. <title>editio Tigurina</title>
                                     <pubPlace>Tiguri</pubPlace>: <pubPlace>apud Christophorum
                                         Froschouerum</pubPlace>, <date>1537</date>. URL: <ptr
                                         target="http://reader.digitale-sammlungen.de/resolve/display/bsb11088503.html"
                                     />.</bibl>
-                                <bibl xml:id="Gryph."><abbr type="siglum">Gryph.</abbr> =
-                                        <editor>Anonymous</editor>. <title>editio Gryph.</title>
+                                <bibl xml:id="Gryph."><abbr type="siglum">Gryph.</abbr>
+                                    <editor>Anonymous</editor>. <title>editio Gryph.</title>
                                     <pubPlace>Lugduni</pubPlace>: <publisher>apud Seb.
                                         Gyrphium</publisher>, <date>1537</date>. URL: <ptr
                                         target="https://books.google.com/books?id=JpJXAAAAcAAJ&amp;pg=PA1#v=onepage&amp;q&amp;f=false"
                                     />.</bibl>
-                                <bibl xml:id="o"><abbr type="siglum">o</abbr> =
-                                        <editor>Anonymous</editor>. <title>ed. Oporiniana</title>
+                                <bibl xml:id="o"><abbr type="siglum">o</abbr>
+                                    <editor>Anonymous</editor>. <title>ed. Oporiniana</title>
                                     <pubPlace>Basileae</pubPlace>: <publisher>Johannes
                                         Oporinus</publisher>, <date>1546</date>.URL: <ptr
                                         target="https://books.google.com/books?id=cKqCwvkRiTgC&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
                                     /></bibl>
-                                <bibl xml:id="p"><abbr type="siglum">p</abbr> = <editor>Pithoeus,
-                                        Petrus</editor>. <title>Epigrammata et poematia
-                                        vetera</title>. <pubPlace>Parisiis</pubPlace>:
+                                <bibl xml:id="p"><abbr type="siglum">p</abbr>
+                                    <editor>Pithoeus, Petrus</editor>. <title>Epigrammata et
+                                        poematia vetera</title>. <pubPlace>Parisiis</pubPlace>:
                                         <publisher>Dionysius Duvallius</publisher>,
                                         <date>1590</date>. URL: <ptr
                                         target="https://books.google.com/books?id=F_E6AAAAcAAJ&amp;pg=PR6#v=onepage&amp;q&amp;f=false"
                                     /></bibl>
-                                <bibl xml:id="edAurel"><abbr type="siglum">Aurel.</abbr> =
-                                        <editor>Anonymous</editor>. <title>Corpus omnium veterum
+                                <bibl xml:id="edAurel"><abbr type="siglum">Aurel.</abbr>
+                                    <editor>Anonymous</editor>. <title>Corpus omnium veterum
                                         poetarum latinorum (Volumen Secundum)</title>.
                                         <pubPlace>Aureliae Allobrogum</pubPlace>: <publisher>Samuel
                                         Crispinus</publisher>, <date>1611</date>. URL: <ptr
                                         target="https://books.google.com/books?id=Q-EPAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
                                     /></bibl>
-                                <bibl xml:id="Barth1613"><abbr type="siglum">Barth 1613</abbr> =
-                                        <editor>Barthius, Casparus</editor>. <title>Venatici et
-                                        Bucolici Poetae Latini: Gratius, Nemesianus,
-                                        Calpurnius</title>. <pubPlace>Hanoviae</pubPlace>:
-                                        <publisher>In Bibliopolio Willieriano</publisher>,
-                                        <date>1613</date>. URL: <ptr
+                                <bibl xml:id="Barth1613"><abbr type="siglum">Barth 1613</abbr>
+                                    <editor>Barthius, Casparus</editor>. <title>Venatici et Bucolici
+                                        Poetae Latini: Gratius, Nemesianus, Calpurnius</title>.
+                                        <pubPlace>Hanoviae</pubPlace>: <publisher>In Bibliopolio
+                                        Willieriano</publisher>, <date>1613</date>. URL: <ptr
                                         target="https://books.google.com/books?id=SEVXAAAAcAAJ&amp;pg=PP7#v=onepage&amp;q&amp;f=false"
                                     /></bibl>
-                                <bibl xml:id="Ulit."><abbr type="siglum">Ulit.</abbr> =
-                                        <editor>Ulitius, Ianus</editor>. <title>Venatio
+                                <bibl xml:id="Ulit."><abbr type="siglum">Ulit.</abbr>
+                                    <editor>Ulitius, Ianus</editor>. <title>Venatio
                                         Novantiqua</title>. <pubPlace>Leidae</pubPlace>:
                                         <publisher>Ex Officina Elzeveriana</publisher>,
                                         <date>1645</date>. URL: <ptr
                                         target="https://books.google.com/books?id=Yb09AAAAcAAJ&amp;pg=PR4#v=onepage&amp;q&amp;f=false"
                                     /></bibl>
-                                <bibl xml:id="h"><abbr type="siglum">h</abbr> =
-                                        <editor>Anonymous</editor>. <title>Poetae Latini Rei
-                                        Venaticae Scriptores et Bucolici Antiqui</title>.
-                                        <pubPlace>Lugduni Batavorum et Hagae Comitum</pubPlace>:
-                                    apud Johannem Arnoldum Langerak, P. Gosse, et J. Neaulme; Rutg.
-                                    Christoph. Alberts, J. Vander Kloot, <date>1728</date>. URL:
-                                        <ptr
+                                <bibl xml:id="h"><abbr type="siglum">h</abbr>
+                                    <editor>Anonymous</editor>. <title>Poetae Latini Rei Venaticae
+                                        Scriptores et Bucolici Antiqui</title>. <pubPlace>Lugduni
+                                        Batavorum et Hagae Comitum</pubPlace>: apud Johannem
+                                    Arnoldum Langerak, P. Gosse, et J. Neaulme; Rutg. Christoph.
+                                    Alberts, J. Vander Kloot, <date>1728</date>. URL: <ptr
                                         target="https://books.google.com/books?id=nJVAAAAAcAAJ&amp;pg=PP9#v=onepage&amp;q&amp;f=false"
                                     /></bibl>
-                                <bibl xml:id="Burm1731"><abbr type="siglum">Burm. 1731</abbr> =
-                                        <editor>Burmannus, Petrus (Pieter Burman)</editor>.
+                                <bibl xml:id="Burm1731"><abbr type="siglum">Burm. 1731</abbr>
+                                    <editor>Burmannus, Petrus (Pieter Burman)</editor>.
                                         <title>Poetae Latini Minores, Tom. I</title>.
                                         <pubPlace>Leidae</pubPlace>: <publisher>apud Conradum
                                         Wishoff et Danielem Goedval</publisher>, <date>1731</date>.
                                     URL: <ptr
                                         target="https://books.google.com/books?id=uKZAAAAAcAAJ&amp;pg=PP9#v=onepage&amp;q&amp;f=false"
                                     /></bibl>
-                                <bibl xml:id="t"><abbr type="siglum">t</abbr> =
-                                        <editor>Anonymous</editor>. <title>M. Aurelii Olympii
-                                        Nemesiani Eclogae IV et T. Calpurnii Siculi Eclogae VII ad
-                                        Nemesianum Carthaginiensem, cum notis selectis Titii,
-                                        Martelli, Ulitii, et Petri Burmanni integris.</title>
+                                <bibl xml:id="t"><abbr type="siglum">t</abbr>
+                                    <editor>Anonymous</editor>. <title>M. Aurelii Olympii Nemesiani
+                                        Eclogae IV et T. Calpurnii Siculi Eclogae VII ad Nemesianum
+                                        Carthaginiensem, cum notis selectis Titii, Martelli, Ulitii,
+                                        et Petri Burmanni integris.</title>
                                     <pubPlace>Mitaviae</pubPlace>: <publisher>apud Jacob. Frider.
                                         Hinzium</publisher>, <date>1774</date>. URL: <ptr
                                         target="https://books.google.com/books?id=eNUpAAAAYAAJ&amp;pg=PP11#v=onepage&amp;q&amp;f=false"
                                     />.</bibl>
-                                <bibl xml:id="Wernsd."><abbr type="siglum">Wernsd.</abbr> =
-                                        <editor>Wernsdorf, Iohannes Christianus.</editor>
+                                <bibl xml:id="Wernsd."><abbr type="siglum">Wernsd.</abbr>
+                                    <editor>Wernsdorf, Iohannes Christianus.</editor>
                                     <title>Poetae Latini Minores, Tomus Primus</title>.
                                         <pubPlace>Altenburgi</pubPlace>: <pubPlace>ex officina
                                         Richteria</pubPlace>, <date>1780</date>. URL: <ptr
                                         target="https://books.google.com/books?id=A8w9AAAAcAAJ&amp;pg=PR1#v=onepage&amp;q&amp;f=false"
                                     /></bibl>
-                                <bibl xml:id="Beck"><abbr type="siglum">Beck</abbr> = <editor>Beck,
-                                        Christian Daniel</editor>. <title>T. Calpurnii Siculi
-                                        Eclogae XI</title>. <pubPlace>Lipsiae</pubPlace>:
+                                <bibl xml:id="Beck"><abbr type="siglum">Beck</abbr>
+                                    <editor>Beck, Christian Daniel</editor>. <title>T. Calpurnii
+                                        Siculi Eclogae XI</title>. <pubPlace>Lipsiae</pubPlace>:
                                         <publisher>in libraria Weidmannia</publisher>,
                                         <date>1803</date>. URL: <ptr
                                         target="https://books.google.com/books?id=w6QBAAAAYAAJ&amp;pg=PR2#v=onepage&amp;q&amp;f=false"
                                     /></bibl>
-                                <bibl xml:id="Glaeser"><abbr type="siglum">Glaeser</abbr> =
-                                        <editor>Glaeser, C. E.</editor>
+                                <bibl xml:id="Glaeser"><abbr type="siglum">Glaeser</abbr>
+                                    <editor>Glaeser, C. E.</editor>
                                     <title>T. Calpurnii Siculi Eclogae</title>.
                                         <pubPlace>Gottingae</pubPlace>: <publisher>sumptibus
                                         Dieterichianis</publisher>, <date>1842</date>. URL: <ptr
                                         target="https://books.google.com/books?id=4sdEAAAAIAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
                                     /></bibl>
-                                <bibl xml:id="Baehr."><abbr type="siglum">Baehr.</abbr> =
-                                        <editor>Baehrens, Aemilius</editor>. <title>Poetae Latini
+                                <bibl xml:id="Baehr."><abbr type="siglum">Baehr.</abbr>
+                                    <editor>Baehrens, Aemilius</editor>. <title>Poetae Latini
                                         Minores, Volumen III</title>. <pubPlace>Lipsiae</pubPlace>:
                                         <publisher>in aedibus B. G. Teubneri</publisher>, 1881. URL:
                                         <ptr
@@ -1158,29 +1508,30 @@
                                 <listBibl xml:id="Schenkl">
                                     <head>utriusque edition. Schenkl. consensus</head>
                                     <bibl xml:id="Schenkl1"><abbr type="siglum">Schenkl<hi
-                                                rend="super">1</hi></abbr> = <editor>Schenkl,
-                                            Henricus</editor>. <title>Calpurnii et Nemesiani
-                                            Bucolica</title>. <pubPlace>Lipsiae</pubPlace>: sumptus
-                                        fecit G. Freytag, <date>1885</date>. URL <ptr
+                                                rend="super">1</hi></abbr>
+                                        <editor>Schenkl, Henricus</editor>. <title>Calpurnii et
+                                            Nemesiani Bucolica</title>.
+                                        <pubPlace>Lipsiae</pubPlace>: sumptus fecit G. Freytag,
+                                            <date>1885</date>. URL <ptr
                                             target="https://books.google.com/books?id=kuVGAQAAIAAJ&amp;pg=PR1#v=onepage&amp;q&amp;f=false"
                                         /></bibl>
                                     <bibl xml:id="Schenkl2"><abbr type="siglum">Schenkl<hi
-                                                rend="super">2</hi></abbr> = <editor>Schenkl,
-                                            Henricus</editor>. <title>T. Calpurni Siculi
-                                            Bucolica</title> in <ref target="Postgate1905">Postgate
-                                            1905</ref>: 197–205. URL: <ptr
+                                                rend="super">2</hi></abbr>
+                                        <editor>Schenkl, Henricus</editor>. <title>T. Calpurni
+                                            Siculi Bucolica</title> in <ref target="Postgate1905"
+                                            >Postgate 1905</ref>: 197–205. URL: <ptr
                                             target="https://books.google.com/books?id=_DMOAAAAYAAJ&amp;pg=RA1-PA194#v=onepage&amp;q&amp;f=false"
                                         /></bibl>
                                 </listBibl>
-                                <bibl xml:id="Keene"><abbr type="siglum">Keene</abbr> =
-                                        <editor>Keene, Charles Haines</editor>. <title>The Eclogues
-                                        of Calpurnius Siculus and M. Aurelius Olympius
+                                <bibl xml:id="Keene"><abbr type="siglum">Keene</abbr>
+                                    <editor>Keene, Charles Haines</editor>. <title>The Eclogues of
+                                        Calpurnius Siculus and M. Aurelius Olympius
                                         Nemesianus</title>. <pubPlace>London</pubPlace>:
                                         <publisher>Bell</publisher>, 1887. URL: <ptr
                                         target="https://archive.org/details/ecloguesofcalpur00calpuoft"
                                     /></bibl>
-                                <bibl xml:id="Giarratano"><abbr type="siglum">Giarratano</abbr> =
-                                        <editor>Giarratano, Caesar</editor>. <title>Calpurnii et
+                                <bibl xml:id="Giarratano"><abbr type="siglum">Giarratano</abbr>
+                                    <editor>Giarratano, Caesar</editor>. <title>Calpurnii et
                                         Nemesiani Bucolica</title>. <pubPlace>Neapoli</pubPlace>:
                                     apud Detken et Rocholl, <date>1910</date>.</bibl>
                             </listBibl>
@@ -1200,25 +1551,26 @@
                                     <head><abbr type="siglum">i</abbr> utriusque ed. Florent.
                                         consensus</head>
                                     <bibl xml:id="i1"><abbr type="siglum">i<hi rend="super"
-                                            >1</hi></abbr> = <editor>Anonymous</editor>.
-                                            <title>editio Florentina prior</title>.
-                                            <pubPlace>Florentiae</pubPlace>: <publisher>Philippi de
-                                            Giunta</publisher>, <date>1504</date>. URL: <ptr
+                                            >1</hi></abbr>
+                                        <editor>Anonymous</editor>. <title>editio Florentina
+                                            prior</title>. <pubPlace>Florentiae</pubPlace>:
+                                            <publisher>Philippi de Giunta</publisher>,
+                                            <date>1504</date>. URL: <ptr
                                             target="https://books.google.com/books?id=LVJmAAAAcAAJ&amp;pg=PP7#v=onepage&amp;q&amp;f=false"
                                         /></bibl>
                                     <bibl xml:id="i2"><abbr type="siglum">i<hi rend="super"
-                                            >2</hi></abbr> = <editor>Anonymous</editor>.
-                                            <title>editio Florentina posterior</title> = Titius,
-                                        Robertus. <title>M. Aurelii Olympii Nemesiani
-                                            Carthaginiensis, T. Calphurnii Siculi Bucolica</title>.
-                                            <pubPlace>Florentiae</pubPlace>: <publisher>apud
-                                            Philippum Iunctam</publisher>, <date>1590</date>. URL:
-                                            <ptr
+                                            >2</hi></abbr>
+                                        <editor>Anonymous</editor>. <title>editio Florentina
+                                            posterior</title> = Titius, Robertus. <title>M. Aurelii
+                                            Olympii Nemesiani Carthaginiensis, T. Calphurnii Siculi
+                                            Bucolica</title>. <pubPlace>Florentiae</pubPlace>:
+                                            <publisher>apud Philippum Iunctam</publisher>,
+                                            <date>1590</date>. URL: <ptr
                                             target="https://books.google.com/books?id=9SEvnoZgKe4C&amp;pg=PR1#v=onepage&amp;q&amp;f=false"
                                         /></bibl>
                                 </listBibl>
                                 <listBibl xml:id="l">
-                                    <head><abbr type="siglum">l</abbr> = utriusque ed. Ald.
+                                    <head><abbr type="siglum">l</abbr> utriusque ed. Ald.
                                         consensus</head>
                                     <bibl xml:id="l1"><abbr type="siglum">l<hi rend="super"
                                             >1</hi></abbr>
@@ -1230,11 +1582,11 @@
                                             target="http://gateway.proquest.com/openurl?url_ver=Z39.88-2004&amp;res_dat=xri:eurobo:&amp;rft_dat=xri:eurobo:rec:ita-bnc-ald-00000030-001"
                                         /></bibl>
                                     <bibl xml:id="l2"><abbr type="siglum">l<hi rend="super"
-                                            >2</hi></abbr> = <editor>Anonymous</editor>.
-                                            <title>editio Aldina posterior</title>.
-                                            <pubPlace>Venetiis</pubPlace>: <publisher>in aedibus
-                                            heredum Aldi Manutii, et Andreae Soceri</publisher>,
-                                            <date>1519</date>. URL: <ptr
+                                            >2</hi></abbr>
+                                        <editor>Anonymous</editor>. <title>editio Aldina
+                                            posterior</title>. <pubPlace>Venetiis</pubPlace>:
+                                            <publisher>in aedibus heredum Aldi Manutii, et Andreae
+                                            Soceri</publisher>, <date>1519</date>. URL: <ptr
                                             target="https://books.google.com/books?id=EYg6AAAAcAAJ&amp;pg=PA1#v=onepage&amp;q&amp;f=false"
                                         /></bibl>
                                 </listBibl>
@@ -1488,148 +1840,6 @@
                 <!-- End of section on bibliography. -->
             </div>
             <!-- End of section on front matter. -->
-
-            <!-- Begin section on linking. -->
-            <div xml:id="linking">
-                <head>Linking</head>
-
-                <p>Editors of digital editions ought to take advantage of the ability to link to
-                    other resources. Accordingly, linking is described in sections throughout these
-                    guidelines, (e.g., <ref target="#front-matter-bibliography">Bibliography</ref>,
-                        <ref target="#front-matter-manuscript-linking">Linking to Digital Records of
-                        Manuscripts</ref>). Since links to primary sources may occur in any section
-                    of an edition, they are treated in their own section (<ref
-                        target="#linking-to-primary-sources">Linking to Primary Sources</ref>)
-                    below.</p>
-
-                <p>In general, linking is accomplished using <att>target</att> with <gi>ptr</gi> or
-                        <gi>ref</gi>.</p>
-
-                <p><gi>ptr</gi> is a "self-closing" tag. Depending on the context, it will display a
-                    truncated form of the URL or the full URL.</p>
-
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <ptr target="http://www.someurl.org/resource"/>
-                </egXML>
-
-                <p><gi>ref</gi> can contain text to be hyperlinked to a resource:</p>
-
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <ref target="http://www.someurl.org/resource">Some linked text</ref>
-                </egXML>
-
-                <!-- Begin section on linking to primary sources. -->
-                <div xml:id="referring-to-primary-sources">
-                    <head>Referring to Primary Sources</head>
-
-                    <p>When it is necessary to refer to or cite a primary source without mentioning
-                        a specific edition, (e.g., Verg., <hi rend="italics">Ecl.</hi> 1.5), editors
-                        have a number of options.</p>
-
-                    <p>References may be made without any semantic markup at all, or with minimal
-                        markup to indicate how the text should be displayed:</p>
-
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <p>This is a reference to Vergil, <hi rend="italics">Eclogues</hi> 1.5.</p>
-                    </egXML>
-
-                    <p>If it is desireable to generate a list of passages cited, using <gi>bibl</gi>
-                        can help with identifying citations:</p>
-
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <p>This is a reference to <bibl><author>Vergil</author>,
-                                    <title>Eclogues</title>
-                                <biblScope>1.5</biblScope></bibl></p>
-                    </egXML>
-
-                    <p>Of course, one of the greatest features of the digital format is that
-                        citations can be hyperlinked to other resources, making it possible for
-                        readers to examine the cited text for themselves. But linking to specific
-                        sites on the internet can have pitfalls. Although many maintainers of online
-                        texts take pains to observe best practices with regard to the stability and
-                        reliability of their sites, many factors beyond their control can render
-                        texts inaccessible on a temporary or permanent basis.</p>
-
-                    <p>One way of mitigating these factors is to refer not to specific instances of
-                        texts, but to a Universal Resource Name (URN). <ref
-                            target="http://cts3.sourceforge.net/">Canonical Text Services</ref>
-                        (CTS) is one such scheme for providing URN's for texts that can be used on
-                        any sites that are configured to resolve them. CTS URN's exist for all of
-                        Classical Latin and much of Medieval Latin; coverage of Neo-Latin texts,
-                        however, is spotty, though progress is being made to improve it, and the
-                        Digital Latin Library is contributing to that effort. However, since the
-                        adoption of CTS URN's varies widely from one scholarly community to another,
-                        what may be second nature to one group may be foreign to another, so these
-                        guidelines suggest an alternative approach for hyperlinking to texts.</p>
-
-                    <p>Editors of texts for the LDLT are encouraged to make use
-                        of the data in the catalog of the Digital Latin
-                        Library (DLL). The DLL's mission is to catalog versions of Latin texts
-                        available on the internet and to provide a Linked Open Data architecture for
-                        referring to authors and works. This Linked Open Data architecture includes
-                        author pages and works pages that feature a range of identifiers, including
-                        not only CTS URN's (where they exist), but also identifiers from the <ref
-                            target="https://viaf.org">Virtual International Authority File</ref>,
-                        the <ref target="https://loc.gov/">Library of Congress</ref>, and individual
-                        collections such as the <ref target="http://latin.packhum.org/">Packard
-                            Humanities Institute's Latin Texts</ref>, among others.</p>
-
-                    <p>All of this means that a link to an author or work page in the DLL catalog
-                        will not be a direct link to a text. Rather, it will be a link to a resource
-                        for finding multiple versions of that text (e.g., digital editions, digital
-                        copies of print editions or incunabula, images of manuscripts, etc.). For
-                        this reason, linking to an entry in the DLL's catalog delivers more than
-                        just ready access to a variety of versions of the text; it sends readers to
-                        a stable resource that is updated and maintained in tandem with the LDLT,
-                        thus providing some protection against dead links in LDLT editions.</p>
-
-                    <div xml:id="referring-to-primary-sources-linking">
-                        <head>Linking to Primary Sources via the Digital Latin Library</head>
-
-                        <p>Looking up DLL pages for all of the citations in a critical edition would
-                            take a great deal of time, once search times and page-load times are
-                            factored into the equation. Therefore, to simplify the process, and to
-                            make it possible to automate the process, the DLL has made the addresses
-                            for these pages easy to generate by following a pattern based on the
-                            author or work's ID number in the DLL's catalog. Those ID numbers are
-                            available online <!-- TODO: Insert link --> or as downloadable CSV files
-                            <!-- TODO: Insert link --> for quick reference.</p>
-
-                        <p>Generating the address for an author or a work is a matter of appending
-                            an ID number to one of the following patterns:</p>
-
-                        <list>
-                            <item>Author page: https://catalog.digitallatin.org/author/[ID]</item>
-                            <item>Work page: https://catalog.digitallatin.org/work/[ID]</item>
-                        </list>
-
-                        <p>In both cases, "[ID]" would be replaced with the real ID number for the
-                            author or work. For example, the pattern for Vergil's <hi rend="italics"
-                                >Eclogues</hi> 1.5 would be
-                            <!-- TODO: Mint the link for Vergil's Eclogues. -->
-                            https://catalog.digitallatin.org/work/?????. The resulting page will
-                            include the authorized form of the author's name, standard and
-                            alternative forms of the title of the work, known identifiers for the
-                            work, and links to versions of the text known to the DLL catalog.</p>
-
-                        <p>In an LDLT edition, an editor referring to Vergil's <hi rend="italics"
-                                >Eclogues</hi> 1.5 could link to the DLL's work page as follows:</p>
-
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples"> Verg., <hi rend="italics"
-                                    ><ref target="https://catalog.digitallatin.org/work/????"
-                                    >Ecl.</ref></hi> 1.5.</egXML>
-
-                        <p>If any necessary information is not yet in the DLL's catalog, editors
-                            should alert DLL staff so that it can be given the highest priority in
-                            the queue for adding entries to the catalog.</p>
-                        
-                        <p>Note that the DLL plans eventually to implement a resolving service for these links, similar to the service provided by the <ref target="http://cwkb.org/">Classical Works Knowledge Base</ref>.</p>
-                    </div>
-                    <!-- End of section on linking to primary sources. -->
-                </div>
-                <!-- End section on referring to primary sources. -->
-            </div>
-            <!-- End section on linking. -->
 
             <!-- Begin section on edition text. -->
             <div xml:id="edition-text">
@@ -2853,17 +3063,22 @@
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <l n="8">quod si, ut suspicor, hoc novum ac repertum</l>
                     <l n="9" xml:id="C14.9">munus data tibi Sulla litterator,</l>
-                    <note type="testium" target="#C14.9"><bibl><author>Martianus Capella</author>
-                            <biblScope>14.9</biblScope></bibl></note>
+                    <note type="testium" target="#C14.9">
+                        <bibl>
+                            <author>Martianus Capella</author>
+                            <biblScope>14.9</biblScope>
+                        </bibl>
+                    </note>
                     <l n="10">non est mi male, sed bene ac beate,</l>
                     <l n="11">quod non dispereunt tui labores.</l>
                     <l n="12">di magni, horribilem et sacrum libellum!</l>
                     <l n="13">quem tu scilicet ad tuum Catullum</l>
                     <l n="14">misti continuo, ut die periret</l>
                     <l n="15" xml:id="C14.15">Saturnalibus optimo dierum!</l>
-                    <note type="testium" target="#C14.15"><bibl><author>Macrobius</author>,
-                                <title>Saturnalia</title>
-                            <biblScope>2.1.8</biblScope>.</bibl></note>
+                    <note type="testium" target="#C14.15">
+                        <bibl><author>Macrobius</author>, <title>Saturnalia</title>
+                            <biblScope>2.1.8</biblScope>.</bibl>
+                    </note>
                 </egXML>
             </div>
             <!-- End section on testimonia. -->
@@ -2965,7 +3180,6 @@
             <div xml:id="apparatus-criticus">
                 <head>Apparatus Criticus</head>
 
-
                 <p>This section provides models for handling the different kinds of entries that
                     occur in an apparatus criticus. It uses the terminology, elements, and
                     attributes of the TEI’s module <ref
@@ -2977,9 +3191,7 @@
                     edition.</p>
 
                 <p>In a digital context, critical editions encoded according to these guidelines
-                    will have certain interactive features:<list>
-                        <item>Readings from manuscripts and other sources can be filtered in or out
-                            of the text.</item>
+                    will have certain interactive features in the LDLT Viewer:<list>
                         <item>Certain types of variant readings (e.g., orthographic variants,
                             conjectures, corrections) can be removed from the apparatus criticus to
                             reduce its size.</item>
@@ -2988,9 +3200,9 @@
                         <item>Line transpositions can be activated and viewed in the text.</item>
                     </list></p>
 
-                <p>In a printed version, critical editions encoded according to these guidelines can
-                    be styled to have an apparatus criticus in a format familiar from standard
-                    critical ediitons.</p>
+                <p>In a printed version of an LDLT edition, critical editions encoded according to
+                    these guidelines can be styled to have an apparatus criticus in a format
+                    familiar from standard critical ediitons.</p>
 
                 <!-- Begin section on concepts and definitions. -->
 
@@ -3465,7 +3677,8 @@
                                             >Sulla</lem><note target="#lem-14.9-sulla">Sylla <hi
                                                 rend="italics">Martianus Capella</hi>
                                             3.229</note><rdg wit="#V">si illa</rdg></app>
-                                    litterator</l></egXML>
+                                    litterator</l>
+                            </egXML>
                         </div>
                         <!-- End subsection on reporting testimonia with <note>. -->
 
@@ -3640,11 +3853,12 @@
                         machine- and human-readable sigla.</p>
 
                     <p>If they are annotated (e.g., edd. ante Glaeser), they must be encoded in
-                            <gi>wit</gi> according to the guidelines below.</p>
+                            <gi>note</gi> according to the guidelines below.</p>
 
                     <list>
-                        <item><gi>wit</gi> contains a catch-all reference to a group of manuscripts,
-                            editions, or other materials.</item>
+                        <item><gi>note</gi> with <att>ref</att> pointing to the <att>xml:id</att> of
+                            the <gi>lem</gi> or <gi>rdg</gi> contains a catch-all reference to a
+                            group of manuscripts, editions, or other materials.</item>
                         <item><gi>ref</gi> contains machine- and human-readable references to an
                             item in the bibliography.</item>
                     </list>
@@ -3655,12 +3869,12 @@
 
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <app>
-                            <lem wit="#N #P">vicit</lem>
-                            <wit><ref target="#Glaeser">Glaeser</ref> sqq.</wit>
+                            <lem wit="#N #P" xml:id="lem-vicit">vicit</lem>
+                            <note target="#lem-vicit"><ref target="#Glaeser">Glaeser</ref> sqq.</note>
                             <rdg wit="#G">vīcit</rdg>
                             <rdg wit="#d">ludit</rdg>
-                            <rdg wit="#V">lusit</rdg>
-                            <wit>edd. ante <ref target="#Glaeser">Glaeser</ref></wit>
+                            <rdg wit="#V" xml:id="lem-lusit">lusit</rdg>
+                            <note target="#lem-lusit">edd. ante <ref target="#Glaeser">Glaeser</ref></note>
                             <rdg wit="#μ">visit</rdg>
                             <rdg wit="#γ"/>
                         </app>
@@ -5572,6 +5786,8 @@
                             target="https://docs.google.com/document/d/15yT6s8hR4JmWcLVjpyJgo75Z2Sh1sJkpOi_Z9kBRrPU/edit#heading=h.cqdtsrwcc56e"
                             >https://docs.google.com/document/d/15yT6s8hR4JmWcLVjpyJgo75Z2Sh1sJkpOi_Z9kBRrPU/edit#heading=h.cqdtsrwcc56e</ref>
                         (2017-11-01).</bibl>
+                    <bibl xml:id="Alpheios">The Alpheios Project, <ref target="http://alpheios.net"
+                            >alpheios.net</ref>.</bibl>
                 </listBibl>
                 <!-- End list of guidelines cited -->
 
