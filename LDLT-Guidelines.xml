@@ -2152,7 +2152,13 @@
                     <!-- Begin section on dialogue. -->
                     <div xml:id="edition-text-speech-dialogue">
                         <head>Dialogue</head>
-
+                        
+                        <list>
+                            <item><gi>label</gi> with <att>type</att>="speaker" may be used as a
+                                simple way of indicating a change of speaker in verse and prose
+                                texts.</item>
+                        </list>
+                        
                         <p>In texts with interlocutors, the label for a speaker is a “paratext,” or
                             aid to the reader; it is not, strictly speaking, part of the text
                             itself. For that reason, these guidelines treat labels for speakers as
@@ -2162,21 +2168,11 @@
                             "Corydon" or "C" is not part of the text of the first line. Otherwise,
                             the line would not scan properly as dactylic hexameter.</p>
 
-                        <p>Texts that feature interlocutors (e.g., drama, dialogue) should use one
-                            of the following methods to indicate a change in speaker.</p>
-
-                        <!-- Begin section on dialogue using <label>. -->
-                        <div xml:id="edition-text-speech-dialogue-label">
-                            <head>Labels</head>
-
-                            <p>Labels are the simplest way of indicating a change of speakers, since
+                        <p>Texts that feature interlocutors (e.g., drama, dialogue) should use
+                                <gi>label</gi> to indicate a change in speaker. Labels are the simplest way of indicating a change of speakers, since
                                 they do not add a new layer of hierachy to the markup.</p>
 
-                            <list>
-                                <item><gi>label</gi> with <att>type</att>="speaker" may be used as a
-                                    simple way of indicating a change of speaker in verse and prose
-                                    texts.</item>
-                            </list>
+                            
 
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                 <p><label type="speaker">Laelius</label>Atqui, Cato, gratissimum
@@ -2201,13 +2197,8 @@
 
                             <p>Since <gi>label</gi> is treated as metadata and thus ignored as part
                                 of the actual text, it will be omitted from searches of the text
-                                itself.</p>
-
-                            <p>Because <gi>label</gi> is less hierarchical than <gi>sp</gi> (below),
-                                it is a good choice if there is dispute in the sources about the
-                                attribution of lines to speakers. If used with <att>exclude</att>,
-                                it can enable the swapping of variants, to allow readers to see the
-                                text with alternate attributions.</p>
+                                itself. However, since labels sometimes are applied differently in different witnesses or sources, those differences can be encoded in the apparatus criticus like any other variation. If used with <att>exclude</att>,
+                                the swapping of variants in the LDLT Viewer can allow readers to see the different ways the labels have been applied.</p>
 
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                 <l n="1"><label type="speaker"><app>
@@ -2251,95 +2242,6 @@
                                 about the contents of the label; in the fourth line, the editor
                                 asserts that a label does not belong on that line, but he also
                                 indicates that a variant reading inserts a label there.</p>
-
-                        </div>
-                        <!-- End section on <label> for speakers. -->
-
-                        <!-- Begin section on semantic markup of speakers using <sp>. -->
-                        <div xml:id="edition-text-speech-dialogue-sp">
-                            <head>Semantic Markup of Speakers</head>
-
-                            <p>If it is desirable to mark the beginning and ending points of a
-                                character's speech, <gi>sp</gi> and <gi>speaker</gi> may be
-                                used.</p>
-
-                            <list>
-                                <item><gi>sp</gi> (speech) groups elements related to a person or
-                                    character's speech.</item>
-                                <item><att>who</att> is used with <gi>sp</gi> to identify the
-                                    speaker.</item>
-                                <item><gi>speaker</gi> contains a human-readable label identifying
-                                    the person or character speaking the text.</item>
-                            </list>
-
-                            <p>These features can be used in verse and prose texts:</p>
-
-                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                <sp who="Corydon">
-                                    <speaker>C.</speaker>
-                                    <l n="1">Nondum Solis equos declinis mitigat aestas,</l>
-                                    <l n="2">quamvis et madidis incumbant prela racemis</l>
-                                    <l n="3">et spument rauco ferventia musta susurro.</l>
-                                    <l n="4">cernis ut ecce pater quas tradidit, Ornyte, vaccae</l>
-                                    <l n="5">molle sub hirsuta latus explicuere genista?</l>
-                                    <l n="6">nos quoque vicinis cur non succedimus umbris?</l>
-                                    <l n="7">torrida cur solo defendimus ora galero?</l>
-                                </sp>
-                            </egXML>
-
-                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                <sp who="Laelius">
-                                    <speaker>Laelius</speaker>
-                                    <p>Atqui, Cato, gratissimum nobis, ut etiam pro Scipione
-                                        pollicear, feceris, si, quoniam speramus, volumus quidem
-                                        certe, senes fieri, multo ante a te didicerimus quibus
-                                        facillime rationibus ingravescentem aetatem ferre
-                                        possimus.</p>
-                                </sp>
-                                <sp who="Cato">
-                                    <speaker>Cato</speaker>
-                                    <p>Faciam vero, Laeli, praesertim si utrique vestrum, ut dicis,
-                                        gratum futurum est.</p>
-                                </sp>
-                            </egXML>
-
-                            <p>The hierarchy involved in this method makes it impossible to enable
-                                the swapping of variant attributions. At most, <gi>app</gi> can be
-                                used to indicate where variant attributions are found.</p>
-
-                            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                                <sp who="Corydon">
-                                    <speaker>
-                                        <app>
-                                            <lem wit="#G #P #A #φ" source="#Ulit. #Wernsd. #Glaeser"
-                                                >C.</lem>
-                                            <rdg wit="#N #π #χ"/>
-                                            <rdg wit="#ε #β #γ #μ #ρ">O.</rdg>
-                                        </app>
-                                    </speaker>
-                                    <l n="1">Nondum Solis equos declinis mitigat aestas,</l>
-                                    <l n="2">quamvis et madidis incumbant prela racemis</l>
-                                    <l n="3">et spument rauco ferventia musta susurro.</l>
-                                    <l n="4"><app>
-                                            <lem/>
-                                            <rdg wit="#V" exclude="#lem1.01-label-C"
-                                                xml:id="rdg1.04-label-C"><label type="speaker"
-                                                  >C.</label></rdg>
-                                        </app>cernis ut ecce pater quas tradidit, Ornyte, vaccae</l>
-                                    <l n="5">molle sub hirsuta latus explicuere genista?</l>
-                                    <l n="6">nos quoque vicinis cur non succedimus umbris?</l>
-                                    <l n="7">torrida cur solo defendimus ora galero?</l>
-                                </sp>
-                            </egXML>
-
-                            <p>In this example, lines 1–7 are attributed to Corydon. An entry in the
-                                critical apparatus for line 1 will indicated that some manuscripts
-                                omit the label, but others attribute the lines to Ornytus. The
-                                critical apparatus for line 4 will show that the manuscripts in the
-                                family known as <hi rend="bold">V</hi> indicate a change in speaker
-                                to Corydon.</p>
-                        </div>
-                        <!-- End section on semantic markup of speakers using <sp>. -->
                     </div>
                     <!-- End section on dialogue. -->
                 </div>
@@ -3870,11 +3772,13 @@
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <app>
                             <lem wit="#N #P" xml:id="lem-vicit">vicit</lem>
-                            <note target="#lem-vicit"><ref target="#Glaeser">Glaeser</ref> sqq.</note>
+                            <note target="#lem-vicit"><ref target="#Glaeser">Glaeser</ref>
+                                sqq.</note>
                             <rdg wit="#G">vīcit</rdg>
                             <rdg wit="#d">ludit</rdg>
                             <rdg wit="#V" xml:id="lem-lusit">lusit</rdg>
-                            <note target="#lem-lusit">edd. ante <ref target="#Glaeser">Glaeser</ref></note>
+                            <note target="#lem-lusit">edd. ante <ref target="#Glaeser"
+                                >Glaeser</ref></note>
                             <rdg wit="#μ">visit</rdg>
                             <rdg wit="#γ"/>
                         </app>
@@ -6146,7 +6050,7 @@
 
                     <elementSpec ident="ex" module="transcr" mode="change">
                         <!-- testing for <ex> outside of <expan> -->
-                        <constraintSpec scheme="isoschematron" ident="ex">
+                        <constraintSpec scheme="schematron" ident="ex">
                             <constraint>
                                 <sch:rule context="tei:ex">
                                     <sch:report test="not(ancestor::tei:expan)">ex should only
@@ -6160,7 +6064,7 @@
 
                     <elementSpec ident="expan" module="transcr" mode="change">
                         <!-- testing for <expan> with no descendant <ex> -->
-                        <constraintSpec scheme="isoschematron" ident="expan">
+                        <constraintSpec scheme="schematron" ident="expan">
                             <constraint>
                                 <sch:rule context="tei:expan">
                                     <sch:report test="not(descendant::tei:ex)">expan should contain
@@ -6172,7 +6076,7 @@
 
                     <elementSpec ident="gap" module="core" mode="change">
                         <!-- testing for <gap> with both quantity/extent, no unit, or contained in supplied -->
-                        <constraintSpec ident="gap" scheme="isoschematron">
+                        <constraintSpec ident="gap" scheme="schematron">
                             <constraint>
                                 <sch:rule context="tei:gap">
                                     <sch:report test="@quantity and @extent">gap may have @quantity
@@ -6315,7 +6219,7 @@
                     </elementSpec>
 
                     <elementSpec ident="l" mode="change" module="core">
-                        <constraintSpec ident="l-app" scheme="isoschematron">
+                        <constraintSpec ident="l-app" scheme="schematron">
                             <constraint>
                                 <sch:rule context="tei:l[tei:app]">
                                     <sch:report
@@ -6447,7 +6351,7 @@
 
                     <elementSpec ident="space" module="transcr" mode="change">
                         <!-- testing for <space> with both quantity/extent or no unit -->
-                        <constraintSpec ident="space" scheme="isoschematron">
+                        <constraintSpec ident="space" scheme="schematron">
                             <constraint>
                                 <sch:rule context="tei:space">
                                     <sch:report test="@quantity and @extent">space may have
@@ -6573,7 +6477,7 @@
                     </classSpec>
 
                     <classSpec ident="att.global.source" type="atts" mode="change">
-                        <constraintSpec ident="crited.sourced" scheme="isoschematron">
+                        <constraintSpec ident="crited.sourced" scheme="schematron">
                             <constraint>
                                 <sch:rule context="tei:*[@source]">
                                     <sch:report
@@ -6587,7 +6491,7 @@
                     </classSpec>
 
                     <classSpec ident="att.witnessed" type="atts" mode="change">
-                        <constraintSpec ident="crited.witnessed" scheme="isoschematron">
+                        <constraintSpec ident="crited.witnessed" scheme="schematron">
                             <constraint>
                                 <sch:rule context="tei:*[@wit]">
                                     <sch:report
