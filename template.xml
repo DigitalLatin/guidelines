@@ -19,9 +19,8 @@
         <distributor>Digital Latin Library</distributor>
         <date>2016</date>
         <availability>
-          <licence target="https://creativecommons.org/licenses/by/4.0/"
-            >Distributed under a Creative Commons Attribution 4.0 International
-            License.</licence>
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Distributed under a
+            Creative Commons Attribution 4.0 International License.</licence>
         </availability>
       </publicationStmt>
       <seriesStmt>
@@ -40,20 +39,18 @@
         <p>General introductory remarks about the edition.</p>
         <div type="section" xml:id="preface-section-1">
           <!--This is a subsection within the preface. Editors should use
-            subsections to organize the content of the edition's preface.-->
+            subsections (with <div>) to organize the content of the edition's 
+            preface. For example, there might be a subsection devoted to 
+            the description of manuscripts.-->
         </div>
       </div>
       <div type="section" xml:id="bibliography">
         <head>Bibliography</head>
         <!--This is where the bibliography for the edition is listed.-->
-        <div type="section" xml:id="bibliography-manuscripts">
-          <head>Manuscripts</head>
-          <!--Descriptions of manuscripts, using <gi>listWit</gi>.-->
-        </div>
         <div type="section" xml:id="bibliography-early-editions">
           <head>Early Editions</head>
           <!--Bibliographical details for early editions or editiones vetustiores, using
-            <gi>listBibl</gi> with <att>type</att>="editions-witnesses".-->
+            <gi>listWit</gi> with <att>type</att>="editions-witnesses".-->
         </div>
         <div type="section" xml:id="bibliography-modern-editions">
           <head>Modern Editions</head>
@@ -79,8 +76,7 @@
       </div>
     </front>
     <body>
-      <div type="edition" xml:id="edition-text"
-        xml:space="preserve">
+      <div type="edition" xml:id="edition-text" xml:space="preserve">
         <div type="textpart" n="1" xml:id="part1">
           <head>Title of First Part</head>
           
