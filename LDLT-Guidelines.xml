@@ -5739,17 +5739,17 @@
                             target="http://www.tei-c.org/Guidelines/P5/"
                             >http://www.tei-c.org/Guidelines/P5/</ref> (2016-09-17).</bibl>
                 </listBibl>
-                
+
                 <listBibl>
                     <head>Other Works Cited</head>
                     <bibl xml:id="Chicago"><author>University of Chicago Press Staff</author>.
-                        <title>The Chicago Manual of Style</title>, 16th ed.
-                        <pubPlace>Chicago</pubPlace>: <publisher>Chicago University
+                            <title>The Chicago Manual of Style</title>, 16th ed.
+                            <pubPlace>Chicago</pubPlace>: <publisher>Chicago University
                             Press</publisher>, <date>2010</date></bibl>
                     <bibl xml:id="West"><author>West, M. L.</author>
                         <title>Textual Criticism and Editorial Technique Applicable to Greek and
                             Latin Texts</title>. <pubPlace>Stuttgart</pubPlace>: <publisher>B. G.
-                                Teubner</publisher>, <date>1973</date>.</bibl>
+                            Teubner</publisher>, <date>1973</date>.</bibl>
                 </listBibl>
 
                 <listBibl>
@@ -5765,7 +5765,7 @@
                 <!-- End list of guidelines cited -->
 
 
-                
+
                 <!-- End list of other works cited -->
             </div>
             <!-- End section works cited -->
