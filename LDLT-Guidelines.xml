@@ -7,27 +7,58 @@
             <titleStmt>
                 <title>Guidelines for Encoding Critical Editions for the Library of Digital Latin
                     Texts</title>
-                <respStmt>
-                    <resp>Developed by</resp>
-                    <name>Samuel J. Huskey</name>
-                    <name>Hugh Cayless</name>
-                </respStmt>
+                <funder>Andrew W. Mellon Foundation</funder>
+                <author xml:id="sjh">Samuel J. Huskey</author>
+                <author xml:id="hc">Hugh Cayless</author>
                 <respStmt>
                     <resp>Proofreading and Consulting</resp>
                     <name>Cynthia Damon</name>
                     <name>Robert Kaster</name>
                 </respStmt>
             </titleStmt>
+            <editionStmt>
+                <edition>Version 1.2.0. Last updated on 2018-02-23.</edition>
+            </editionStmt>
             <publicationStmt>
-                <p>Encoding guidelines for <hi rend="italics">The Library of Digital Latin
-                        Texts</hi>, a series to be published by the Digital Latin Library in
-                    collaboration with the Society for Classical Studies, the Medieval Academy of
-                    America, and the Renaissance Society of America.</p>
+                <publisher>Digital Latin Library</publisher>
+                <address>
+                    <addrLine>The University of Oklahoma</addrLine>
+                    <addrLine>650 Parrington Oval</addrLine>
+                    <addrLine>Carnegie 100</addrLine>
+                    <addrLine>Norman, OK 73019</addrLine>
+                    <addrLine>Email: info@digitallatin.org</addrLine>
+                </address>
+                <date>2018</date>
+                <availability>
+                    <licence target="https://www.gnu.org/licenses/agpl.html">Distributed under a GNU
+                        Affero General Public License.</licence>
+
+                    <p>This program is free software: you can redistribute it and/or modify it under
+                        the terms of the GNU Affero General Public License as published by the Free
+                        Software Foundation, either version 3 of the License, or (at your option)
+                        any later version.</p>
+
+                    <p>This program is distributed in the hope that it will be useful, but WITHOUT
+                        ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+                        FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License
+                        for more details.</p>
+
+                    <p>You should have received a copy of the GNU Affero General Public License
+                        along with this program. If not, see <ptr
+                            target="https://www.gnu.org/licenses/"/>.</p>
+                </availability>
             </publicationStmt>
             <sourceDesc>
                 <p>Born digital</p>
             </sourceDesc>
         </fileDesc>
+        <revisionDesc>
+            <listChange>
+                <change when="2018-02-22" who="#sjh">Adding a <gi>revisionDesc</gi> so that we can
+                    keep an internal record of changes, in addition to the commit messages in
+                    Git.</change>
+            </listChange>
+        </revisionDesc>
     </teiHeader>
     <text>
         <body>
@@ -92,17 +123,20 @@
 
             <div xml:id="Getting-started">
                 <head>Getting Started</head>
-                <p>These Guidelines describe how to create a critical edition for the Digital Latin
-                    Library's <bibl><title>Library of Digital Latin Texts</title></bibl>. The LDLT
-                    uses a customization of the standard established by the <ref target="#TEI">Text
-                        Encoding Initiative (TEI)</ref>. LDLT texts are in a format called XML,
-                    which uses tags wrapped in angle brackets to mark various aspects of the text.
-                    XML is a <soCalled>plain text</soCalled> format, meaning writing programs like
-                    Microsoft Word are not suitable for editing it. We recommend you either purchase
-                    an XML editor, like <ref target="https://www.oxygenxml.com/">oXygen</ref>, or
-                    use a free text editor, ideally with XML support. <ref target="https://atom.io/"
-                        >Atom</ref>, with the <ref
-                        target="https://atom.io/packages/linter-autocomplete-jing"
+                <p>This document contains encoding guidelines for <hi rend="italics">The Library of
+                        Digital Latin Texts</hi> (LDLT), a series to be published by the Digital
+                    Latin Library in collaboration with the Society for Classical Studies, the
+                    Medieval Academy of America, and the Renaissance Society of America.</p>
+
+                <p>The LDLT uses a customization of the standard established by the <ref
+                        target="#TEI">Text Encoding Initiative (TEI)</ref>. LDLT texts are in a
+                    format called XML, which uses tags wrapped in angle brackets to mark various
+                    aspects of the text. XML is a <soCalled>plain text</soCalled> format, meaning
+                    writing programs like Microsoft Word are not suitable for editing it. We
+                    recommend you either purchase an XML editor, like <ref
+                        target="https://www.oxygenxml.com/">oXygen</ref>, or use a free text editor,
+                    ideally with XML support. <ref target="https://atom.io/">Atom</ref>, with the
+                        <ref target="https://atom.io/packages/linter-autocomplete-jing"
                         >linter-autocomplete-jing</ref> plugin is one example. Oxygen comes with a
                     lot of built-in TEI support, so it may give you a better experience. </p>
 
@@ -5705,6 +5739,18 @@
                             target="http://www.tei-c.org/Guidelines/P5/"
                             >http://www.tei-c.org/Guidelines/P5/</ref> (2016-09-17).</bibl>
                 </listBibl>
+                
+                <listBibl>
+                    <head>Other Works Cited</head>
+                    <bibl xml:id="Chicago"><author>University of Chicago Press Staff</author>.
+                        <title>The Chicago Manual of Style</title>, 16th ed.
+                        <pubPlace>Chicago</pubPlace>: <publisher>Chicago University
+                            Press</publisher>, <date>2010</date></bibl>
+                    <bibl xml:id="West"><author>West, M. L.</author>
+                        <title>Textual Criticism and Editorial Technique Applicable to Greek and
+                            Latin Texts</title>. <pubPlace>Stuttgart</pubPlace>: <publisher>B. G.
+                                Teubner</publisher>, <date>1973</date>.</bibl>
+                </listBibl>
 
                 <listBibl>
                     <head>Other References</head>
@@ -5719,17 +5765,7 @@
                 <!-- End list of guidelines cited -->
 
 
-                <listBibl>
-                    <head>Other Works Cited</head>
-                    <bibl xml:id="Chicago"><author>University of Chicago Press Staff</author>.
-                            <title>The Chicago Manual of Style</title>, 16th ed.
-                            <pubPlace>Chicago</pubPlace>: <publisher>Chicago University
-                            Press</publisher>, <date>2010</date></bibl>
-                    <bibl xml:id="West"><author>West, M. L.</author>
-                        <title>Textual Criticism and Editorial Technique Applicable to Greek and
-                            Latin Texts</title>. <pubPlace>Stuttgart</pubPlace>: <publisher>B. G.
-                            Teubner</publisher>, <date>1973</date>.</bibl>
-                </listBibl>
+                
                 <!-- End list of other works cited -->
             </div>
             <!-- End section works cited -->
