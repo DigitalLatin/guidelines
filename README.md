@@ -6,4 +6,4 @@ The canonical document is [LDLT-Guidelines.xml](https://github.com/DigitalLatin/
 
 An HTML version of the LDLT Guidelines is available at [https://digitallatin.github.io/guidelines/LDLT-Guidelines.html](https://digitallatin.github.io/guidelines/LDLT-Guidelines.html).
 
-The guidelines are licensed under the terms of the [GNU Affero General Public License ([https://www.gnu.org/licenses/agpl.html](https://www.gnu.org/licenses/agpl.html)].
+The guidelines are licensed under the terms of the [GNU Affero General Public License](https://www.gnu.org/licenses/agpl.html)].
