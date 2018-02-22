@@ -73,6 +73,16 @@
                 <p>The <ref target="https://mellon.org/">Andrew W. Mellon Foundation</ref> provided
                     funding for the development of these guidelines.</p>
 
+                <p>Donald Mastronarde (University of California, Berkeley, and Richard Tarrant
+                    (Harvard) collaborated to review an earlier version (<ref
+                        target="https://github.com/DigitalLatin/guidelines/blob/3bf9f30333a373e2ea4046683157ffab6e3c4d59/LDLT-Guidelines.xml"
+                        >72479d0</ref>) of these guidelines. Their review was published on December
+                    4, 2017 on the Society for Classical Studies' blog as "<ref
+                        target="https://classicalstudies.org/scs-blog/donald-j-mastronarde/review-guidelines-encoding-critical-editions-library-digital-latin"
+                        >Review: Guidelines for Encoding Critical Editions for the Library of
+                        Digital Latin Texts</ref>." The current version of these guidelines owes
+                    much to their constructive criticism. </p>
+
                 <p>Finally, the many contributors to the standard established and maintained by <ref
                         target="#TEI">Text Encoding Initiative (TEI)</ref> deserve the gratitude of
                     anyone involved in humanities computing. The LDLT guidelines are a customization
