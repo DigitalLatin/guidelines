@@ -17,7 +17,7 @@
                 </respStmt>
             </titleStmt>
             <editionStmt>
-                <edition>Version 1.2.0. Last updated on 2018-02-23.</edition>
+                <edition>Version 1.2.1. Last updated on 2018-03-01.</edition>
             </editionStmt>
             <publicationStmt>
                 <publisher>Digital Latin Library</publisher>
@@ -54,6 +54,8 @@
         </fileDesc>
         <revisionDesc>
             <listChange>
+                <change when="2018-03-01" who="#sjh">Added acknowledgment of Virginia K. Felkner's
+                    contributions.</change>
                 <change when="2018-02-22" who="#sjh">Adding a <gi>revisionDesc</gi> so that we can
                     keep an internal record of changes, in addition to the commit messages in
                     Git.</change>
@@ -100,6 +102,10 @@
                     both co-PI's with Huskey on the Digital Latin Library project, provided
                     important comments and insights from their perspectives in the fields of
                     computer science and library and information studies, respectively.</p>
+
+                <p>Virginia K. Felkner (University of Oklahoma) helped to refine the guidelines in
+                    many places through her work in designing scripts for automating some of the
+                    encoding tasks described here.</p>
 
                 <p>The <ref target="https://mellon.org/">Andrew W. Mellon Foundation</ref> provided
                     funding for the development of these guidelines.</p>
