@@ -2582,32 +2582,32 @@
                         found in <ref target="#apparatus-criticus">subsections of the guidelines for
                             encoding entries in the critical apparatus</ref>. The following list
                         identifies the symbols and points to the guidelines for encoding them:<list>
-                            <item>( ) = <ref target="#edition-text-abbreviation-expansion">expansion
+                            <item>( ) = <ref target="#edition-text-abbreviation-expansion">expansion
                                     of an abbreviation</ref>.</item>
                             <item>a&#x323;b&#x323;c&#x323;d&#x323; = <ref
                                     target="#edition-text-uncertain-characters">text uncertainly
                                     restored</ref>.</item>
-                            <item>&lt; &gt; = <ref
+                            <item>⟨ ⟩ = <ref
                                     target="#apparatus-criticus-conjecture-and-emendation">text
                                     added by conjecture or emendation</ref>.</item>
                             <item>*** = <ref target="#edition-text-lacunae">lacuna in the textual
                                     tradition as a whole.</ref></item>
-                            <item>&lt; *** &gt; = <ref
+                            <item>⟨ *** ⟩ = <ref
                                     target="#apparatus-criticus-conjecture-and-emendation-lacunae"
                                     >conjectured lacuna</ref>.</item>
-                            <item>[ ... ] = <ref
+                            <item>[ ... ] = <ref
                                     target="#apparatus-criticus-omission-known-loss-characters"
                                     >known amount of characters lost</ref>.</item>
                             <item>[---] = <ref
                                     target="#apparatus-criticus-illegible-characters-unknown"
                                     >illegible characters, quantity unknown</ref>.</item>
-                            <item>&#10214; &#10215; = <ref
+                            <item>&#10214; &#10215; = <ref
                                     target="#apparatus-criticus-deletion-witness">deletion by a
                                     scribe in a witness</ref>.</item>
-                            <item>{ } = <ref
+                            <item>{ } = <ref
                                     target="#apparatus-criticus-conjecture-and-emendation-editorial"
                                     >editorial deletion</ref>.</item>
-                            <item>† † = <ref target="#apparatus-criticus-crux">text deemed by the
+                            <item>† † = <ref target="#apparatus-criticus-crux">text deemed by the
                                     editor to be readable but not understandable, with no
                                     satisfactory alternatives</ref>.</item>
                         </list></p>
@@ -5218,7 +5218,7 @@
                                 xml:id="apparatus-criticus-conjecture-and-emendation-editorial-addition">
                                 <head>Editorial Addition</head>
 
-                                <p>&lt; &gt; = Text added or supplied by conjecture where text does
+                                <p>⟨ ⟩ = Text added or supplied by conjecture where text does
                                     not exist in the documentary evidence.</p>
 
                                 <list>
@@ -5232,19 +5232,19 @@
                                                 Civili</title></bibl></ref>: <foreign xml:lang="lat"
                                         >Ipsi Massilienses et celeritate nauium et scientia
                                         gubernatorum confisi nostros eludebant impetusque eorum
-                                        excipiebant &lt;cedendo&gt;.</foreign></p>
+                                        excipiebant ⟨cedendo⟩.</foreign></p>
 
                                 <p>Her apparatus criticus has the following:</p>
 
-                                <p>excipiebant &lt;cedendo&gt; <hi rend="italic">scripsi ex Luc.
-                                        3.55 (cf. Liu. 29.34.13)</hi> : &lt;non&gt; exc- <hi
+                                <p>excipiebant ⟨cedendo⟩ <hi rend="italic">scripsi ex Luc.
+                                        3.55 (cf. Liu. 29.34.13)</hi> : ⟨non⟩ exc- <hi
                                         rend="italic">Kramer</hi> : dec- <hi rend="italic">Nipperdey
                                         (cf. Stat. Theb. 2.304)</hi> : effugiebant <hi rend="italic"
                                         >Terpstra coll. 2.41.6</hi> : <hi rend="italic">nisi mauis
-                                        e.g.</hi> &lt;laxata classe&gt; exc- <hi rend="italic">ex
+                                        e.g.</hi> ⟨laxata classe⟩ exc- <hi rend="italic">ex
                                         Luc. 3.548 (cf. BG 2.25.2)</hi>.</p>
 
-                                <p>Every instance of text enclosed in &lt; &gt; indicates that text
+                                <p>Every instance of text enclosed in ⟨ ⟩ indicates that text
                                     has been added where text does not exist in the documentary
                                     evidence.</p>
 
@@ -5270,13 +5270,13 @@
                                                 xml:id="rdg-1.58.1-effugiebant">effugiebant</rdg>
                                             <note target="#rdg-1.58.1-effugiebant">coll.
                                                 2.41.6</note>
-                                            <note>nisi mauis e.g. &lt;laxata classe&gt; exc- ex
+                                            <note>nisi mauis e.g. ⟨laxata classe⟩ exc- ex
                                                   <bibl><author>Luc.</author> 3.548</bibl> (cf.
                                                   <bibl><title>BG</title> 2.25.2</bibl>)</note>
                                         </app>.</p>
                                 </egXML>
 
-                                <p>The use of <gi>supplied</gi> will cause &lt; and &gt; to be
+                                <p>The use of <gi>supplied</gi> will cause ⟨ and ⟩ to be
                                     inserted on either side of the text added by conjecture. The
                                     rest of the information is handled as a normal entry in the
                                     apparatus criticus.</p>
@@ -5286,7 +5286,7 @@
                                     addition has not been adopted for the main text of the edition,
                                         <gi>supplied</gi> should be used inside of <gi>rdg</gi>. If
                                     the reading is swapped into the main text in the digital
-                                    version, it will appear inside &lt; and &gt;.</p>
+                                    version, it will appear inside ⟨ and ⟩.</p>
                             </div>
                             <!-- End section on letters added by conjecture -->
 
@@ -5376,7 +5376,7 @@
                     <div xml:id="apparatus-criticus-conjecture-and-emendation-lacunae">
                         <head>Conjectured Lacunae</head>
 
-                        <p>&lt;***&gt; = A lacuna has been conjectured on the grounds of style,
+                        <p>⟨***⟩ = A lacuna has been conjectured on the grounds of style,
                             context, or carelessness of a copyist (e.g., <foreign xml:lang="fre"
                                 >saut du même au même</foreign>). No text has been supplied in its
                             place.</p>
@@ -5432,8 +5432,8 @@
                             </app>
                         </egXML>
 
-                        <p>In the <ref target="#ldlt-viewer">LDLT Viewer</ref>, nine lines of &lt;
-                            *** &gt; would be printed at the beginning of the text, and the
+                        <p>In the <ref target="#ldlt-viewer">LDLT Viewer</ref>, nine lines of ⟨ *** ⟩
+                            would be printed at the beginning of the text, and the
                             numbering of the lines that follow would begin with 10. The apparatus
                             criticus would have the entry <quote>u. 1–9 librarii incuria cecidisse
                                 putavit Verdière</quote>.</p>
