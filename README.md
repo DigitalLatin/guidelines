@@ -7,5 +7,3 @@ The canonical document is [LDLT-Guidelines.xml](https://github.com/DigitalLatin/
 An HTML version of the LDLT Guidelines is available at [https://digitallatin.github.io/guidelines/LDLT-Guidelines.html](https://digitallatin.github.io/guidelines/LDLT-Guidelines.html). It contains the full schema for LDLT editions. It was generated using the [DLL Stylesheets](https://github.com/DigitalLatin/DLL-Stylesheets).
 
 The guidelines are licensed under the terms of the [GNU Affero General Public License](https://www.gnu.org/licenses/agpl.html).
-
-[![DOI](https://zenodo.org/badge/64485330.svg)](https://zenodo.org/badge/latestdoi/64485330)
