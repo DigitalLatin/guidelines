@@ -37,8 +37,8 @@ of this software, even if advised of the possibility of such damage.
 
 /* main layout */
 @import url(odd.css);
-@import url(https://fonts.google.com/?query=noto&selection.family=Noto+Sans);
-@import url(https://fonts.google.com/?query=noto&selection.family=Noto+Mono);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://fonts.googleapis.com/css?family=Noto+Mono);
 
 nav.navbar {
 	background-color: #005cb9;
