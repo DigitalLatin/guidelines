@@ -17,7 +17,7 @@
                 </respStmt>
             </titleStmt>
             <editionStmt>
-                <edition>Version 1.2.1. Last updated on 2018-03-01.</edition>
+                <edition>Version 1.2.2. Last updated on 2018-05-14.</edition>
             </editionStmt>
             <publicationStmt>
                 <publisher>Digital Latin Library</publisher>
@@ -54,6 +54,9 @@
         </fileDesc>
         <revisionDesc>
             <listChange>
+                <change when="2018-05-14" who="#sjh">Fixed link from section on editorial symbols to
+                    the section on editorial additions. Added text to indicate that
+                        <att>reason</att>="lost" is required on <gi>supplied</gi>.</change>
                 <change when="2018-03-01" who="#sjh">Added acknowledgment of Virginia K. Felkner's
                     contributions.</change>
                 <change when="2018-02-22" who="#sjh">Adding a <gi>revisionDesc</gi> so that we can
@@ -1775,7 +1778,7 @@
 
                         <p>This will be rendered as follows: <hi rend="bold">Haupt 1854</hi>. =
                             Haupt, Moriz. <hi rend="italic">De Carminibus Bucolicis Calpurnii et
-                                Nemesiani</hi>. Berolini: Typis Academics, 1854. URL: <ref
+                                Nemesiani</hi>. Berolini: Typis Academicis, 1854. URL: <ref
                                 target="https://books.google.com/books?id=8SwUAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false"
                                 >https://books.google.com/books?id=8SwUAAAAQAAJ&amp;pg=PP5#v=onepage&amp;q&amp;f=false</ref>.</p>
                     </div>
@@ -2588,7 +2591,7 @@
                                     target="#edition-text-uncertain-characters">text uncertainly
                                     restored</ref>.</item>
                             <item>⟨ ⟩ = <ref
-                                    target="#apparatus-criticus-conjecture-and-emendation">text
+                                    target="#apparatus-criticus-conjecture-and-emendation-editorial-addition">text
                                     added by conjecture or emendation</ref>.</item>
                             <item>*** = <ref target="#edition-text-lacunae">lacuna in the textual
                                     tradition as a whole.</ref></item>
@@ -5224,7 +5227,7 @@
                                 <list>
                                     <item><gi>supplied</gi> encloses text supplied by someone in the
                                         absence of text in the documentary evidence. It may be used
-                                        in <gi>lem</gi> or <gi>rdg</gi>.</item>
+                                        in <gi>lem</gi> or <gi>rdg</gi>. It must include <att>reason</att>="lost".</item>
                                 </list>
 
                                 <p>For example, Cynthia Damon prints the following in her <ref
