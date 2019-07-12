@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/odd/p5odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/odd/p5odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="https://www.tei-c.org/release/xml/tei/odd/p5odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="https://www.tei-c.org/release/xml/tei/odd/p5odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <teiHeader>
         <fileDesc>
@@ -5783,7 +5783,7 @@
             <div>
                 <head>The DLL Critical Editions Schema</head>
                 <schemaSpec ident="tei-DLL" docLang="en" prefix="tei_" start="TEI" xml:lang="en"
-                    source="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.compiled.xml">
+                    source="tei-epidoc.compiled.xml">
 
                     <!--       MODULES USED BY THE DLL SCHEMA       -->
                     <moduleRef key="core"/>
@@ -5805,9 +5805,9 @@
               langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
 
                     <moduleRef key="textcrit"
-                        source="http://www.tei-c.org/Vault/P5/3.2.0/xml/tei/odd/p5subset.xml"/>
+                        source="https://www.tei-c.org/Vault/P5/3.2.0/xml/tei/odd/p5subset.xml"/>
                     <moduleRef key="figures"
-                        source="http://www.tei-c.org/Vault/P5/3.2.0/xml/tei/odd/p5subset.xml"
+                        source="https://www.tei-c.org/Vault/P5/3.2.0/xml/tei/odd/p5subset.xml"
                         except="formula"/>
                     <moduleRef key="spoken"
                         except="broadcast equipment incident kinesic pause recording recordingStmt
