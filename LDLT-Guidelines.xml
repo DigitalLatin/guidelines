@@ -5802,12 +5802,13 @@
                     <moduleRef key="msdescription"/>
                     <moduleRef key="namesdates"
                         except="affiliation age climate education faith geoFeat langKnowledge
-              langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
-
+                                langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
+                    <moduleRef key="tagdocs" include="code" 
+                        source="https://www.tei-c.org/Vault/P5/3.6.0/xml/tei/odd/p5subset.xml"/>
                     <moduleRef key="textcrit"
-                        source="https://www.tei-c.org/Vault/P5/3.2.0/xml/tei/odd/p5subset.xml"/>
+                        source="https://www.tei-c.org/Vault/P5/3.6.0/xml/tei/odd/p5subset.xml"/>
                     <moduleRef key="figures"
-                        source="https://www.tei-c.org/Vault/P5/3.2.0/xml/tei/odd/p5subset.xml"
+                        source="https://www.tei-c.org/Vault/P5/3.6.0/xml/tei/odd/p5subset.xml"
                         except="formula"/>
                     <moduleRef key="spoken"
                         except="broadcast equipment incident kinesic pause recording recordingStmt
