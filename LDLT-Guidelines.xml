@@ -17,7 +17,7 @@
                 </respStmt>
             </titleStmt>
             <editionStmt>
-                <edition>Version 1.2.3. Last updated on 2019-08-09.</edition>
+                <edition>Version 1.3.0. Last updated on 2020-01-29.</edition>
             </editionStmt>
             <publicationStmt>
                 <publisher>Digital Latin Library</publisher>
@@ -28,7 +28,7 @@
                     <addrLine>Norman, OK 73019</addrLine>
                     <addrLine>Email: info@digitallatin.org</addrLine>
                 </address>
-                <date>2018</date>
+                <date>2020</date>
                 <availability>
                     <licence target="https://www.gnu.org/licenses/agpl.html">Distributed under a GNU
                         Affero General Public License.</licence>
@@ -54,6 +54,18 @@
         </fileDesc>
         <revisionDesc>
             <listChange>
+                <change when="2020-01-28" who="#sjh">Corrected typos in section on linking; added
+                    links to resources in the DLL Catalog for identifying numbers for authors and
+                    works; expanded a note in the section on the structure of an LDLT edition; added
+                    "with <att>type</att>="siglum"" in sections on human- and machine-readable
+                    sigla, listing manuscripts, Combining the Two Forms of Manuscript Description,
+                    and sections on bibliography; added requirement that divisions have unique
+                    xml:id in section on the structure of prose and poetry texts; revised the
+                    section on people to require <gi>persName</gi> inside of <gi>lem</gi> or
+                        <gi>rdg</gi>; revised the section on places to require <gi>placeName</gi>
+                    inside of <gi>lem</gi> or <gi>rdg</gi>; replaced special characters used for
+                    editorial additions with &lt; and &gt; added a section on reporting extraneous
+                    text in a witness.</change>
                 <change when="2019-08-09" who="#sjh">Updating sections on linking, apparatus
                     fontium, and apparatus testium after meeting with Cayless, Witt, and
                     Dunning.</change>
@@ -305,13 +317,13 @@
                     competing standards (e.g., <hi rend="italics">Cat.</hi> and <hi rend="italics"
                         >Catil.</hi> are two standard ways of referring to Cicero's <title>In
                         Catilinam</title>) and competing citation schemes (e.g., the numbering of
-                    chapters in work by Cicero according to the editions of Gruter [1618] or Scot
+                    chapters in works by Cicero according to the editions of Gruter [1618] or Scot
                         [1588]).<anchor xml:id="linking-cicero"/><note target="#linking-cicero">Cf.
                                 <bibl><author>John Glucker</author>, "<title level="a">Chapter and
                                 Verse in Cicero</title>," <title level="j">Grazer Beiträge</title>
                             <biblScope unit="volume">11</biblScope> (<date>1984</date>): <biblScope
                                 unit="page">103–112</biblScope></bibl>.</note> As in all other
-                    matters in editing, with references and citations being accurate and consistent
+                    matters in editing, being accurate and consistent with references and citations
                     is paramount.</p>
 
                 <p>The same is true with digital editions, but there is an additional consideration.
@@ -396,9 +408,7 @@
                                 <cell>Mynors, 1969</cell>
                             </row>
                         </table>
-
                         <!-- In the edition proper. -->
-
                         <p>This is a reference to <bibl corresp="#vergEcl"><author>Verg.</author>,
                                     <title>Ecl.</title>
                                 <citedRange>1.5</citedRange></bibl></p>
@@ -460,9 +470,11 @@
                         factored into the equation. Therefore, to simplify the process, and to make
                         it possible to automate it, the DLL has made the addresses for these pages
                         easy to generate by following a pattern based on the work's ID number in the
-                        DLL's catalog. Those ID numbers <!-- TODO: Make this list available. -->
-                        will be available online or as downloadable CSV files for quick
-                        reference.</p>
+                        DLL's catalog. Those ID numbers are available <ref
+                            target="https://catalog.digitallatin.org/dll-author-and-work-id-numbers"
+                            >online</ref> or as a <ref
+                            target="https://catalog.digitallatin.org/export/export-id-numbers-csv"
+                            >downloadable CSV file</ref> for quick reference.</p>
 
                     <p>Generating the address for a work is a matter of following the pattern
                         https://catalog.digitallatin.org/dll-work/[ID]. For example, the DLL ID for
@@ -589,7 +601,7 @@
                                 >Berl. phil. Woch. V. p. 1071</ref>)</note>
                     </egXML>
 
-                    <p>That link will point the reader to the pdf of that page (column, to be exact)
+                    <p>That link will point the reader to the PDF of that page (column, to be exact)
                         as stored at the <ref target="https://www.hathitrust.org">HathiTrust's
                             digital library</ref>.</p>
                 </div>
@@ -680,7 +692,9 @@
                                 <div type="edition" xml:id="edition-text" xml:space="preserve">
                                     <div type="textpart" n="1" xml:id="part1">
                                         <head>Title of First Part</head>
-                                        <!--Text goes here, according to the conventions laid out elsewhere in these guidelines.-->
+                                        <!--Text goes here, according to the conventions laid out elsewhere in these guidelines. 
+                                            Note that ever section of the text (e.g., book, chapter, poem) should be contained 
+                                            in a <div> with an xml:id. -->
                                     </div>
                                     <div type="textpart" n="2" xml:id="part2">
                                         <head>Title of Second Part</head>
@@ -974,10 +988,10 @@
                     <p>In short, <hi rend="bold">every witness or source in an LDLT edition <hi
                                 rend="bold">must</hi> have both a machine-readable ID (using
                                 <att>xml:id</att>) and a human-readable siglum or abbreviation
-                            (using <gi>abbr</gi>).</hi> Otherwise, the edition will not be able to
-                        make full use of the digital format. Morever, if an entry lacks
-                            <gi>abbr</gi>, it will not be available for a print version of the
-                        edition, should one be required.</p>
+                            (using <gi>abbr</gi> with <att>type</att>="siglum").</hi> Otherwise, the
+                        edition will not be able to make full use of the digital format. Morever, if
+                        an entry lacks <gi>abbr</gi>, it will not be available for a print version
+                        of the edition, should one be required.</p>
                 </div>
                 <!-- End of section on human- and machine-readable sigla. -->
 
@@ -1036,10 +1050,11 @@
                                 be used when referring to the manuscript’s data (e.g., in the
                                     <att>wit</att> of a <gi>rdg</gi> in the apparatus
                                 criticus).</item>
-                            <item><gi>abbr</gi> contains the human-readable siglum that should be
-                                displayed on screen or printed. Any superscript or subscript
-                                characters should be encoded using <gi>hi</gi> with the appropriate
-                                value for <att>rend</att>.</item>
+                            <item><gi>abbr</gi> with <att>type</att>="siglum" contains the
+                                human-readable siglum that should be displayed on screen or printed.
+                                Any superscript or subscript characters should be encoded using
+                                    <gi>hi</gi> with the appropriate value for
+                                <att>rend</att>.</item>
                             <item><gi>name</gi> contains the name of the manuscript as it appears in
                                 its repository's catalog.</item>
                             <item><gi>date</gi> contains a reference to the date when the manuscript
@@ -1323,15 +1338,15 @@
                             <listWit>
                                 <head>First Family</head>
                                 <witness xml:id="A">
-                                    <abbr>A</abbr>
+                                    <abbr type="siglum">A</abbr>
                                     <!--Identifying information for A -->
                                 </witness>
                                 <witness xml:id="B">
-                                    <abbr>B</abbr>
+                                    <abbr type="siglum">B</abbr>
                                     <!-- Identifying information for B -->
                                 </witness>
                                 <witness xml:id="C">
-                                    <abbr>C</abbr>
+                                    <abbr type="siglum">C</abbr>
                                     <!-- Identifying information for C -->
                                 </witness>
                             </listWit>
@@ -1508,9 +1523,10 @@
                                 the <ref target="#front-matter-sigla">machine-readable
                                     abbreviation</ref> for the edition. It contains the following
                                 bibliographical information about the edition: <list>
-                                    <item><gi>abbr</gi> (abbreviation) contains the human-readable
-                                        abbreviation for the record, i.e., how the edition is
-                                        referred to in the apparatus criticus.</item>
+                                    <item><gi>abbr</gi> (abbreviation) with <att>type</att>="siglum"
+                                        contains the human-readable abbreviation for the record,
+                                        i.e., how the edition is referred to in the apparatus
+                                        criticus.</item>
                                     <item><gi>editor</gi> contains the name of the editor in the
                                         form “Last name, First name,” if known. If the name is in
                                         Latin, it should not be translated. If the name is not
@@ -1790,9 +1806,10 @@
                                 the <ref target="#front-matter-sigla">machine-readable
                                     abbreviation</ref> for the book. It contains the following
                                 bibliographical information about the book: <list>
-                                    <item><gi>abbr</gi> (abbreviation) contains the human-readable
-                                        abbreviation for the record, i.e., how the book is referred
-                                        to in the apparatus criticus.</item>
+                                    <item><gi>abbr</gi> (abbreviation) with <att>type</att>="siglum"
+                                        contains the human-readable abbreviation for the record,
+                                        i.e., how the book is referred to in the apparatus
+                                        criticus.</item>
                                     <item><gi>author</gi> contains the name of the author in the
                                         form “Last name, First name,” if known. If the name is in
                                         Latin, it should not be translated. If the name is not
@@ -1868,9 +1885,10 @@
                                 the <ref target="#front-matter-sigla">machine-readable
                                     abbreviation</ref> for the book. It contains the following
                                 bibliographical information about the book: <list>
-                                    <item><gi>abbr</gi> (abbreviation) contains the human-readable
-                                        abbreviation for the record, i.e., how the article is
-                                        referred to in the apparatus criticus.</item>
+                                    <item><gi>abbr</gi> (abbreviation) with <att>type</att>="siglum"
+                                        contains the human-readable abbreviation for the record,
+                                        i.e., how the article is referred to in the apparatus
+                                        criticus.</item>
                                     <item><gi>author</gi> contains the name of the author in the
                                         form “Last name, First name.”</item>
                                     <item><gi>title</gi> with <att>level</att>="a" contains the
@@ -2061,13 +2079,13 @@
 
                         <p>For an LDLT edition of a prose text, the top-level <gi>div</gi> has the
                                 <att>type</att> “edition”; this division contains the entire text of
-                            the edition. The next <gi>div</gi> will normally have the
-                                <att>type</att> “textpart” with <att>subtype</att> “book” and
-                                <att>n</att> to indicate the number of the book.</p>
+                            the edition. The next <gi>div</gi> must have the <att>type</att>
+                            “textpart” with <att>subtype</att> “book”, <att>n</att> to indicate the
+                            number of the book, and a unique <att>xml:id</att>.</p>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <div type="edition">
-                                <div type="textpart" subtype="book" n="1">
+                                <div type="textpart" subtype="book" n="1" xml:id="book-1">
                                     <!-- Text goes here. -->
                                 </div>
                             </div>
@@ -2106,7 +2124,7 @@
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <div type="edition">
-                                <div type="textpart" subtype="book" n="1">
+                                <div type="textpart" subtype="book" n="1" xml:id="book-1">
                                     <p n="1">
                                         <seg n="1">Gallia est omnis divisa in partes tres, quarum
                                             unam incolunt Belgae, aliam Aquitani, tertiam qui
@@ -2194,17 +2212,17 @@
                                 <att>type</att> “edition”; this division contains the entire text of
                             the edition. The next <gi>div</gi> will normally have the
                                 <att>type</att> “textpart” with <att>subtype</att> “book” and
-                                <att>n</att> to indicate the number of the book. <gi>div</gi> with
-                                <att>type</att>="poem" contains the parts of a single poem (e.g.,
-                            stanzas or lines). If there is more than one poem in a book,
-                                <att>n</att> should be used to number the poems. <att>met</att> with
-                            the name of the meter may also be used, if the editor wishes to identify
-                            the meter. If a different division scheme is required, editors should
-                            consult LDLT staff.</p>
+                                <att>n</att> to indicate the number of the book and a unique
+                                <att>xml:id</att>. <gi>div</gi> with <att>type</att>="poem" contains
+                            the parts of a single poem (e.g., stanzas or lines). If there is more
+                            than one poem in a book, <att>n</att> should be used to number the
+                            poems. <att>met</att> with the name of the meter may also be used, if
+                            the editor wishes to identify the meter. If a different division scheme
+                            is required, editors should consult LDLT staff.</p>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <div type="edition">
-                                <div type="textpart" subtype="book">
+                                <div type="textpart" subtype="book" xml:id="book-1">
                                     <div type="poem" n="1" met="First Asclepiadean">
                                         <!-- Text of poem goes here -->
                                     </div>
@@ -2227,7 +2245,7 @@
                         </list>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <div type="book" n="2">
+                            <div type="book" n="2" xml:id="book-2">
                                 <div type="poem" n="1" met="Alcaic Strophe">
                                     <lg type="stanza">
                                         <l n="1">Motum ex Metello consule civicum</l>
@@ -2506,24 +2524,11 @@
                                 >Colchis</persName></l>
                     </egXML>
 
-                    <p>If there are variant readings of a name, <gi>persName</gi> should enclose the
-                            <gi>app</gi> with the lemma and variant reading(s):</p>
-
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <persName ref="#Faunus">
-                            <app>
-                                <lem>Fauni</lem>
-                                <rdg wit="#P">fanni</rdg>
-                            </app>
-                        </persName>
-                    </egXML>
-
-                    <p>This will cause the lemma and the variant(s) to be identified as names.</p>
-
-                    <p>But if it is clear that the nature of the variation is such that the lemma is
-                        a proper name, but the variant is a common noun (or vice versa),
-                            <gi>persName</gi> should enclose only the proper noun inside of
-                            <gi>lem</gi> or <gi>rdg</gi>.</p>
+                    <p>If there are variant readings of a name, <gi>persName</gi> should be used
+                        within <gi>lem</gi> or <gi>rdg</gi> as needed. If the nature of the
+                        variation is such that one form is a proper noun, but the other is a common
+                        noun, <gi>persName</gi> should enclose only the proper noun inside of
+                            <gi>lem</gi> or <gi>rdg</gi>, as the case may be.</p>
 
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <app>
@@ -2624,6 +2629,12 @@
                                 >Sequana</placeName> dividit.</p>
                     </egXML>
 
+                    <p>If there are variant readings of a place name, <gi>placeName</gi> should be
+                        used within <gi>lem</gi> or <gi>rdg</gi> as needed. If the nature of the
+                        variation is such that one form is a proper noun, but the other is a common
+                        noun, <gi>placeName</gi> should enclose only the proper noun inside of
+                            <gi>lem</gi> or <gi>rdg</gi>, as the case may be.</p>
+
                 </div>
                 <!-- End of section on places -->
 
@@ -2652,12 +2663,12 @@
                             <item>a&#x323;b&#x323;c&#x323;d&#x323; = <ref
                                     target="#edition-text-uncertain-characters">text uncertainly
                                     restored</ref>.</item>
-                            <item>⟨ ⟩ = <ref
+                            <item>&lt; &gt; = <ref
                                     target="#apparatus-criticus-conjecture-and-emendation-editorial-addition"
                                     >text added by conjecture or emendation</ref>.</item>
                             <item>*** = <ref target="#edition-text-lacunae">lacuna in the textual
                                     tradition as a whole.</ref></item>
-                            <item>⟨ *** ⟩ = <ref
+                            <item>&lt; *** &gt; = <ref
                                     target="#apparatus-criticus-conjecture-and-emendation-lacunae"
                                     >conjectured lacuna</ref>.</item>
                             <item>[ ... ] = <ref
@@ -2944,7 +2955,6 @@
                                     <bibl>
                                         <author>Plautus</author>
                                         <title>Baccar.</title> 16–20</bibl></cit>.</p>
-
                             <p>et ne vilior sit testis poeta, accipite assertore Cicerone in quo
                                 honore fuerit hic piscis apud P. Scipionem Africanum illum et
                                 Numantinum, haec sunt in dialogo <ref><title>de fato</title> verba
@@ -3930,6 +3940,8 @@
                                 Witnesses</ref></item>
                             <item><ref target="#apparatus-criticus-deletion-witness"
                                 >Deletions</ref></item>
+                            <item><!-- TODO: Insert reference. -->Text found in a witness but not
+                                otherwise in the paradosis.</item>
                         </list></p>
 
                     <!-- Begin section on omission of a letter or letters, words, phrases, or lines. -->
@@ -4145,6 +4157,10 @@
                         see the section "<ref
                             target="#apparatus-criticus-conjecture-and-emendation-editorial"
                             >Editorial Additions and Deletions</ref>.”</p>
+
+                    <p>For additional text in a witness or witnesses that does not correspond to
+                        anything in the edition's text, see the section
+                        <!-- TODO: Insert division title here. --></p>
 
                     <div xml:id="apparatus-criticus-addition-witness-prose">
                         <head>Addition: Prose Description</head>
@@ -5212,8 +5228,8 @@
                                 xml:id="apparatus-criticus-conjecture-and-emendation-editorial-addition">
                                 <head>Editorial Addition</head>
 
-                                <p>⟨ ⟩ = Text added or supplied by conjecture where text does not
-                                    exist in the documentary evidence.</p>
+                                <p>&lt; &gt; = Text added or supplied by conjecture where text does
+                                    not exist in the documentary evidence.</p>
 
                                 <list>
                                     <item><gi>supplied</gi> encloses text supplied by someone in the
@@ -5227,20 +5243,20 @@
                                                 Civili</title></bibl></ref>: <foreign xml:lang="lat"
                                         >Ipsi Massilienses et celeritate nauium et scientia
                                         gubernatorum confisi nostros eludebant impetusque eorum
-                                        excipiebant ⟨cedendo⟩.</foreign></p>
+                                        excipiebant &lt;cedendo&gt;.</foreign></p>
 
                                 <p>Her apparatus criticus has the following:</p>
 
-                                <p>excipiebant ⟨cedendo⟩ <hi rend="italic">scripsi ex Luc. 3.55 (cf.
-                                        Liu. 29.34.13)</hi> : ⟨non⟩ exc- <hi rend="italic"
-                                        >Kramer</hi> : dec- <hi rend="italic">Nipperdey (cf. Stat.
-                                        Theb. 2.304)</hi> : effugiebant <hi rend="italic">Terpstra
-                                        coll. 2.41.6</hi> : <hi rend="italic">nisi mauis e.g.</hi>
-                                    ⟨laxata classe⟩ exc- <hi rend="italic">ex Luc. 3.548 (cf. BG
-                                        2.25.2)</hi>.</p>
+                                <p>excipiebant &lt;cedendo&gt; <hi rend="italic">scripsi ex Luc.
+                                        3.55 (cf. Liu. 29.34.13)</hi> : &lt;non&gt; exc- <hi
+                                        rend="italic">Kramer</hi> : dec- <hi rend="italic">Nipperdey
+                                        (cf. Stat. Theb. 2.304)</hi> : effugiebant <hi rend="italic"
+                                        >Terpstra coll. 2.41.6</hi> : <hi rend="italic">nisi mauis
+                                        e.g.</hi> &lt;laxata classe&gt; exc- <hi rend="italic">ex
+                                        Luc. 3.548 (cf. BG 2.25.2)</hi>.</p>
 
-                                <p>Every instance of text enclosed in ⟨ ⟩ indicates that text has
-                                    been added where text does not exist in the documentary
+                                <p>Every instance of text enclosed in &lt; &gt; indicates that text
+                                    has been added where text does not exist in the documentary
                                     evidence.</p>
 
                                 <p>In an LDLT edition, that would be encoded as follows:</p>
@@ -5265,23 +5281,23 @@
                                                 xml:id="rdg-1.58.1-effugiebant">effugiebant</rdg>
                                             <note target="#rdg-1.58.1-effugiebant">coll.
                                                 2.41.6</note>
-                                            <note>nisi mauis e.g. ⟨laxata classe⟩ exc- ex
+                                            <note>nisi mauis e.g. &lt;laxata classe&gt; exc- ex
                                                   <bibl><author>Luc.</author> 3.548</bibl> (cf.
                                                   <bibl><title>BG</title> 2.25.2</bibl>)</note>
                                         </app>.</p>
                                 </egXML>
 
-                                <p>The use of <gi>supplied</gi> will cause ⟨ and ⟩ to be inserted on
-                                    either side of the text added by conjecture. The rest of the
-                                    information is handled as a normal entry in the apparatus
-                                    criticus.</p>
+                                <p>The use of <gi>supplied</gi> will cause &lt; and &gt; to be
+                                    inserted on either side of the text added by conjecture. The
+                                    rest of the information is handled as a normal entry in the
+                                    apparatus criticus.</p>
 
                                 <p>If it is desirable to indicate in the apparatus criticus that a
                                     previous editor has proposed adding some text, even if the
                                     addition has not been adopted for the main text of the edition,
                                         <gi>supplied</gi> should be used inside of <gi>rdg</gi>. If
                                     the reading is swapped into the main text in the digital
-                                    version, it will appear inside ⟨ and ⟩.</p>
+                                    version, it will appear inside &lt; and &gt;.</p>
                             </div>
                             <!-- End section on letters added by conjecture -->
 
@@ -5371,9 +5387,10 @@
                     <div xml:id="apparatus-criticus-conjecture-and-emendation-lacunae">
                         <head>Conjectured Lacunae</head>
 
-                        <p>⟨***⟩ = A lacuna has been conjectured on the grounds of style, context,
-                            or carelessness of a copyist (e.g., <foreign xml:lang="fre">saut du même
-                                au même</foreign>). No text has been supplied in its place.</p>
+                        <p>&lt;***&gt; = A lacuna has been conjectured on the grounds of style,
+                            context, or carelessness of a copyist (e.g., <foreign xml:lang="fre"
+                                >saut du même au même</foreign>). No text has been supplied in its
+                            place.</p>
 
                         <p>The conjectured lacuna itself should be encoded with <gi>gap</gi> with
                                 <att>reason</att>="lost" as indicated in the section “<ref
@@ -5427,14 +5444,62 @@
                         </egXML>
 
                         <p>In the <ref target="#ldlt-viewer">LDLT Viewer</ref>, nine lines of
-                            ⟨ *** ⟩ would be printed at the beginning of the text, and the numbering
-                            of the lines that follow would begin with 10. The apparatus criticus
-                            would have the entry <quote>u. 1–9 librarii incuria cecidisse putavit
-                                Verdière</quote>.</p>
+                            &lt; *** &gt; would be printed at the beginning of the text, and the
+                            numbering of the lines that follow would begin with 10. The apparatus
+                            criticus would have the entry <quote>u. 1–9 librarii incuria cecidisse
+                                putavit Verdière</quote>.</p>
                     </div>
                     <!-- End section "Conjectured Lacunae" -->
                 </div>
                 <!-- End of section on conjecture and emendation -->
+
+                <div xml:id="apparatus-criticus-additional-variant">
+                    <head>Reporting Extraneous Text in a Witness</head>
+
+                    <p>Text found in a witness that does not correspond to anything in the edition's
+                        text, but that is nevertheless worth reporting, is commonly represented in
+                        printed editions by referring to a word or words that serve as an anchor for
+                        the additional text.</p>
+
+                    <p>For example, the text of Andrew Dunning's edition of the <hi rend="italic"
+                            >Miracula sancte Frideswide</hi> includes the word <foreign
+                            xml:lang="la">archiepiscopus</foreign>, and the critical apparatus has
+                            "<foreign xml:lang="la">cantuariensis</foreign> add. L," indicating that
+                        the manuscript known as L has a word that Dunning considered extraneous, but
+                        worth reporting.</p>
+
+                    <p>This phenomenon <hi rend="italic">could</hi> be encoded using the method
+                        described in the <ref target="#apparatus-criticus-addition-witness">section
+                            on addition</ref> in these guidelines:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                            <lem>archiepiscopus</lem>
+                            <rdg>archiepiscopus <add place="inline">cantuariensis</add></rdg>
+                        </app>
+                    </egXML>
+
+                    <p>That, however, does not accurately describe the situation, which is that the
+                        witness did not <hi rend="italic">add</hi> the text; rather, the text exists
+                        in the witness, but the editor chooses not to include it in the edition's
+                        text. Since there is not, strictly speaking, a lemma for this additional
+                        text, an "empty" lemma must be used:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>archiepiscopus <app>
+                                <lem n="archiepiscopus"/>
+                                <rdg wit="#L">cantuariensis</rdg>
+                            </app></p>
+                    </egXML>
+
+                    <p>Although it is possible to avoid using <att>n</att> in this way by leveraging
+                        computational methods to look up the preceding word or words, these
+                        guidelines opt for simplicity. The empty <gi>lem</gi> signifies that the
+                        edition's text does not have anything where a witness has something, but
+                            <att>n</att> provides context and an anchor for the witness' text. For
+                        the sake of accuracy, the edition's text should be copied and pasted as the
+                        value of <att>n</att>.</p>
+                </div>
 
                 <!-- Begin section on crux. -->
                 <div xml:id="apparatus-criticus-crux"
