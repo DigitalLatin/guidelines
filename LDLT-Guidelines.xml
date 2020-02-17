@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="https://www.tei-c.org/release/xml/tei/odd/p5odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="https://www.tei-c.org/release/xml/tei/odd/p5odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/odd/p5odds.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/odd/p5odds.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <teiHeader>
         <fileDesc>
@@ -17,7 +17,7 @@
                 </respStmt>
             </titleStmt>
             <editionStmt>
-                <edition>Version 1.2.2. Last updated on 2018-05-14.</edition>
+                <edition>Version 1.3.0. Last updated on 2020-01-29.</edition>
             </editionStmt>
             <publicationStmt>
                 <publisher>Digital Latin Library</publisher>
@@ -28,7 +28,7 @@
                     <addrLine>Norman, OK 73019</addrLine>
                     <addrLine>Email: info@digitallatin.org</addrLine>
                 </address>
-                <date>2018</date>
+                <date>2020</date>
                 <availability>
                     <licence target="https://www.gnu.org/licenses/agpl.html">Distributed under a GNU
                         Affero General Public License.</licence>
@@ -54,6 +54,21 @@
         </fileDesc>
         <revisionDesc>
             <listChange>
+                <change when="2020-01-28" who="#sjh">Corrected typos in section on linking; added
+                    links to resources in the DLL Catalog for identifying numbers for authors and
+                    works; expanded a note in the section on the structure of an LDLT edition; added
+                    "with <att>type</att>="siglum"" in sections on human- and machine-readable
+                    sigla, listing manuscripts, Combining the Two Forms of Manuscript Description,
+                    and sections on bibliography; added requirement that divisions have unique
+                    xml:id in section on the structure of prose and poetry texts; revised the
+                    section on people to require <gi>persName</gi> inside of <gi>lem</gi> or
+                        <gi>rdg</gi>; revised the section on places to require <gi>placeName</gi>
+                    inside of <gi>lem</gi> or <gi>rdg</gi>; replaced special characters used for
+                    editorial additions with &lt; and &gt; added a section on reporting extraneous
+                    text in a witness.</change>
+                <change when="2019-08-09" who="#sjh">Updating sections on linking, apparatus
+                    fontium, and apparatus testium after meeting with Cayless, Witt, and
+                    Dunning.</change>
                 <change when="2018-05-14" who="#sjh">Fixed link from section on editorial symbols to
                     the section on editorial additions. Added text to indicate that
                         <att>reason</att>="lost" is required on <gi>supplied</gi>.</change>
@@ -293,49 +308,72 @@
             <div xml:id="linking">
                 <head>Linking</head>
 
-                <p><hi rend="italics">This section refers to the Digital Latin Library's catalog, a
-                        resource not yet available. The DLL's catalog is scheduled to be launched
-                        for public use in the summer of 2018.</hi></p>
+                <p>In a traditional edition in print, citations and references link the edition's
+                    content with its own content (e.g., via cross-references) and content in other
+                    texts (e.g., parallel texts, quotations, etc.) and resources (e.g., scholarly
+                    notes, maps, images, etc.). Over time, scholars have developed standards for
+                    referring to texts with abbreviations (e.g., Verg. <hi rend="italics">Ecl.</hi>)
+                    and citation schemes (e.g. Sent. I, prol., [n. 1]). To be sure, there are
+                    competing standards (e.g., <hi rend="italics">Cat.</hi> and <hi rend="italics"
+                        >Catil.</hi> are two standard ways of referring to Cicero's <title>In
+                        Catilinam</title>) and competing citation schemes (e.g., the numbering of
+                    chapters in works by Cicero according to the editions of Gruter [1618] or Scot
+                        [1588]).<anchor xml:id="linking-cicero"/><note target="#linking-cicero">Cf.
+                                <bibl><author>John Glucker</author>, "<title level="a">Chapter and
+                                Verse in Cicero</title>," <title level="j">Grazer Beiträge</title>
+                            <biblScope unit="volume">11</biblScope> (<date>1984</date>): <biblScope
+                                unit="page">103–112</biblScope></bibl>.</note> As in all other
+                    matters in editing, being accurate and consistent with references and citations
+                    is paramount.</p>
 
-                <p>In general, linking is accomplished using <att>target</att> with <gi>ptr</gi> or
-                        <gi>ref</gi>.</p>
+                <p>The same is true with digital editions, but there is an additional consideration.
+                    The ability to click on a hyperlink in a text and have immediate, unmediated
+                    access to another digital resource is a distinctive characteristic of digital
+                    editions, and it is understandable that editors would want to take advantage of
+                    that functionality. But linking to specific sites on the internet can also have
+                    pitfalls. <ref target="https://en.wikipedia.org/wiki/Link_rot">Link rot</ref>,
+                    for example, is a concern. Links can change or expire, and entire sites can
+                    become defunct. Although many maintainers of online texts take pains to observe
+                    best practices with regard to the stability and reliability of their sites,
+                    several factors beyond their control can render resources inaccessible on a
+                    temporary or permanent basis. Moreover, hypertextuality is still an active area
+                    for research, and best practices have yet to be established.</p>
 
-                <p><gi>ptr</gi> is a "self-closing" or milestone tag. It will simply display the
-                    address for the resource in question (e.g.,
-                    http://www.someurl.org/resource).</p>
+                <p>For these reasons, the implementation of hyperlinks is an important consideration
+                    for an editor of a digital edition. To preserve a high degree of confidence in
+                    an edition's scholarship, these guidelines recommend a conservative approach.
+                    That is not to say that hyperlinks should never be used. Rather, editors should
+                    select the method that makes the best use of resources available. Above all,
+                    they should bear in mind that their first concern in linking, whatever the
+                    method, is to be accurate and consistent.</p>
 
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <ptr target="http://www.someurl.org/resource"/>
-                </egXML>
+                <p>The following sections describe different ways of linking to resources.</p>
 
-                <p><gi>ref</gi> can contain text to be hyperlinked to a resource. In the following
-                    example, the words "Some linked text" would become a clickable hyperlink to the
-                    resource at http://www.someurl.org/resource:</p>
+                <!-- Begin subsection on linking texts. -->
+                <div xml:id="linking-texts">
+                    <head>Linking Texts</head>
 
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <ref target="http://www.someurl.org/resource">Some linked text</ref>
-                </egXML>
+                    <p>At a minimum, editors should use the citation schemes familiar from printed
+                        editions. This establishes a "link" to other texts that does not depend on
+                        any other technology to be meaningful. Moreover, it facilitates the
+                        automatic production of an index of passages cited or other similar
+                        resources.</p>
 
-                <!-- Begin section on linking to passages. -->
-                <div xml:id="linking-referring-to-passages">
-                    <head>Linking to Passages in Texts</head>
+                    <p>Such references should consist of standard conventions for identifying a
+                        text. The basic elements for this kind of reference are:</p>
 
-                    <p>When it is necessary to refer to or cite a primary source without mentioning
-                        a specific edition, (e.g., Verg., <hi rend="italics">Ecl.</hi> 1.5), editors
-                        have a number of options.</p>
+                    <list>
+                        <item><gi>bibl</gi> (bibliographic citation) encloses bibliographic
+                            information about a cited text.</item>
+                        <item><gi>author</gi> encloses the full or abbreviated name of the cited
+                            text's author.</item>
+                        <item><gi>title</gi> encloses the full or abbreviated name of the cited
+                            text.</item>
+                        <item><gi>citedRance</gi> encloses the units of text (paragraphs, pages,
+                            sections, etc.) cited.</item>
+                    </list>
 
-                    <p>References may be made without any semantic markup at all, or with minimal
-                        markup to indicate how the text should be displayed:</p>
-
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <p>This is a reference to Vergil, <title>Eclogues</title> 1.5.</p>
-                    </egXML>
-
-                    <p>If it is desireable to generate a list of passages cited, using <gi>bibl</gi>
-                        and its <ref
-                            target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-bibl.html"
-                            >associated elements and attributes</ref> can help with identifying
-                        citations:</p>
+                    <p>The following is a minimal example of "linking" in this way:</p>
 
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <p>This is a reference to <bibl><author>Vergil</author>,
@@ -343,112 +381,166 @@
                                 <citedRange>1.5</citedRange></bibl></p>
                     </egXML>
 
-                    <p>Of course, one of the distinctive features of the digital format is that
-                        citations can be hyperlinked to other resources, making it possible for
-                        readers to examine the cited text for themselves. But linking to specific
-                        sites on the internet can have pitfalls. Although many maintainers of online
-                        texts take pains to observe best practices with regard to the stability and
-                        reliability of their sites, several factors beyond their control can render
-                        texts inaccessible on a temporary or permanent basis.</p>
+                    <p>Standard abbreviations can be used in place of the full name of the author
+                        and the full title of the work:</p>
 
-                    <p>One way of mitigating these factors is to refer not to specific instances of
-                        texts, but to a Universal Resource Name (URN). <ref
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>This is a reference to <bibl><author>Verg.</author>, <title>Ecl.</title>
+                                <citedRange>1.5</citedRange></bibl></p>
+                    </egXML>
+
+                    <p>It may be useful to include in the edition's front matter a list of
+                        abbreviations for frequently cited works. In that case, abbreviations can be
+                        referenced using <att>corresp</att>:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <!-- In the front matter -->
+                        <table xml:id="citation-author-works">
+                            <head>Citation of Authors and Works</head>
+                            <row>
+                                <cell>Citation Format</cell>
+                                <cell>Author and Work</cell>
+                                <cell>Edition</cell>
+                            </row>
+                            <row xml:id="vergEcl">
+                                <cell>Verg. Ecl.</cell>
+                                <cell>Vergil, Eclogues</cell>
+                                <cell>Mynors, 1969</cell>
+                            </row>
+                        </table>
+                        <!-- In the edition proper. -->
+                        <p>This is a reference to <bibl corresp="#vergEcl"><author>Verg.</author>,
+                                    <title>Ecl.</title>
+                                <citedRange>1.5</citedRange></bibl></p>
+                    </egXML>
+                </div>
+                <!-- End section on linking to texts -->
+
+                <!-- Begin section on using URNs -->
+                <div xml:id="linking-hyperlinking-to-texts">
+                    <head>Hyperlinking to Texts</head>
+
+                    <p>If editors wish to establish hyperlinks to other texts, the best way of
+                        mitigating the risk of link rot is to refer not to specific resources, but
+                        to a Universal Resource Name (URN). <ref
                             target="http://cts3.sourceforge.net/">Canonical Text Services</ref>
-                        (CTS) is one such scheme for providing URN's for texts that can be used on
-                        any sites that are configured to resolve them. CTS URN's exist for all of
-                        Classical Latin and much of Medieval Latin; coverage of Neo-Latin texts,
-                        however, is spotty, though progress is being made to improve it, and the
-                        Digital Latin Library is contributing to that effort. For example, texts
-                        added to the LDLT will be citable with CTS URN's. However, since the
-                        adoption of CTS URN's varies from one scholarly community to another, what
-                        may be second nature to one group may be foreign to another, so these
-                        guidelines suggest an alternative approach for inserting hyperlinks to
-                        texts.</p>
+                        (CTS) is a scheme for providing URNs for texts that can be used on any sites
+                        that are configured to resolve them. For example, the CTS URN for Vergil's
+                            <title>Eclogues</title> is urn:cts:latinLit:phi0690.phi001. A link to
+                        line 1.5 of that poem could be implemented using <att>target</att> on
+                            <gi>citedRange</gi> as follows:</p>
 
-                    <p>Although the use of CTS URN's is supported, editors of texts for the LDLT are
-                        encouraged to make use of the data in the catalog of the Digital Latin
-                        Library (DLL). A mission of the DLL is to catalog versions of Latin texts
-                        available on the internet and to provide a <ref
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>This is a reference to <bibl corresp="#vergEcl"><author>Verg.</author>,
+                                    <title>Ecl.</title>
+                                <citedRange target="urn:cts:latinLit:phi0690.phi001:1.5"
+                                    >1.5</citedRange></bibl></p>
+                    </egXML>
+
+                    <p>In this case, the editor must add a <ref
+                            target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD54"
+                                ><gi>refsDecl</gi></ref> to the edition's TEI header to explain how
+                        the URN should be resolved to point to a particular resource for displaying
+                        the text (e.g, the <ref
+                            target="https://scaife.perseus.org/reader/urn:cts:latinLit:phi0690.phi001:1.5/"
+                            >Scaife Viewer</ref>).</p>
+
+                    <p>CTS URNs exist for all of Classical Latin and much of Medieval Latin;
+                        coverage of Neo-Latin texts, however, is spotty, but progress is being made
+                        to improve it, and the Digital Latin Library is contributing to that effort.
+                        For example, texts added to the LDLT will be citable with CTS URNs. However,
+                        since the adoption of CTS URNs varies from one scholarly community to
+                        another, what may be second nature to one group may be foreign to another,
+                        so these guidelines suggest an alternative approach for inserting hyperlinks
+                        to texts and other resources.</p>
+
+                    <p>A mission of the DLL is to build and maintain a <ref
                             target="http://linkeddata.org">Linked Open Data</ref> architecture for
                         referring to information related to works in Latin. This Linked Open Data
                         architecture includes author pages and works pages that feature a range of
-                        identifiers, including not only CTS URN's (where they exist), but also
+                        identifiers, including not only CTS URNs (where they exist), but also
                         identifiers from the <ref target="https://viaf.org">Virtual International
                             Authority File</ref>, the <ref target="https://loc.gov/">Library of
                             Congress</ref>, and individual collections such as the <ref
                             target="http://latin.packhum.org/">Packard Humanities Institute's Latin
                             Texts</ref>, among others.</p>
 
-                    <p>All of this means that a link to a work page in the DLL catalog will not be a
-                        direct link to a text. Rather, it will be a link to a resource for finding
-                        multiple versions of that text (e.g., digital editions, digital copies of
-                        print editions or incunabula, images of manuscripts, etc.). Linking to an
-                        entry in the DLL's catalog delivers more than just ready access to a variety
-                        of versions of the text; it sends readers to a stable resource that is
-                        updated and maintained in tandem with the LDLT, providing some protection
-                        against dead links in LDLT editions.</p>
+                    <p>Looking up DLL pages for all of the citations in a critical edition would
+                        take a great deal of time, once search times and page-load times are
+                        factored into the equation. Therefore, to simplify the process, and to make
+                        it possible to automate it, the DLL has made the addresses for these pages
+                        easy to generate by following a pattern based on the work's ID number in the
+                        DLL's catalog. Those ID numbers are available <ref
+                            target="https://catalog.digitallatin.org/dll-author-and-work-id-numbers"
+                            >online</ref> or as a <ref
+                            target="https://catalog.digitallatin.org/export/export-id-numbers-csv"
+                            >downloadable CSV file</ref> for quick reference.</p>
 
-                    <div xml:id="linking-referring-to-passages-linking">
-                        <head>Linking to Passages via the Digital Latin Library</head>
+                    <p>Generating the address for a work is a matter of following the pattern
+                        https://catalog.digitallatin.org/dll-work/[ID]. For example, the DLL ID for
+                        Vergil's <title>Eclogues</title> is W3894, so its address is
+                        https://catalog.digitallatin.org/dll-work/W3894. The information at that
+                        address includes the authorized form of the author's name, standard and
+                        alternative forms of the title of the work, known identifiers for the work,
+                        and links to versions of the text known to the DLL catalog.</p>
 
-                        <p><hi rend="italics">This section refers to the Digital Latin Library's
-                                catalog, a resource not yet available. The DLL's catalog is
-                                scheduled to be launched for public use in the summer of
-                            2018.</hi></p>
+                    <p>In an LDLT edition, an editor referring to line 1.5 of Vergil's
+                            <title>Eclogues</title> could link to the DLL's work page as
+                        follows:</p>
 
-                        <p>Looking up DLL pages for all of the citations in a critical edition would
-                            take a great deal of time, once search times and page-load times are
-                            factored into the equation. Therefore, to simplify the process, and to
-                            make it possible to automate it, the DLL has made the addresses for
-                            these pages easy to generate by following a pattern based on the work's
-                            ID number or alias in the DLL's catalog. Those ID numbers and aliases
-                            will be available online or as downloadable CSV files for quick
-                            reference.</p>
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>This is a reference to Vergil's <title ref="dll:W3894"
+                            >Eclogues</title>..</p>
+                    </egXML>
 
-                        <p>Generating the address for a work is a matter of appending an ID number
-                            or alias to the following pattern:</p>
-                        <list>
-                            <item>https://catalog.digitallatin.org/work/[ID]</item>
-                            <item>https://catalog.digitallatin.org/work/[alias]</item>
-                        </list>
-
-                        <p>In both cases, the text inside the square brackets is to be replaced with
-                            the ID number or the alias for the work. For example, the pattern for a
-                            work with ID number 12345 or the alias "Work" would be
-                            https://catalog.digitallatin.org/work/12345 or
-                            https://catalog.digitallatin.org/work/Work. The resulting page will
-                            include the authorized form of the author's name, standard and
-                            alternative forms of the title of the work, known identifiers for the
-                            work, and links to versions of the text known to the DLL catalog.</p>
-
-                        <p>In an LDLT edition, an editor referring to line 12 of that same work
-                            could link to the DLL's work page as follows:</p>
-
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <title><ref target="https://catalog.digitallatin.org/work/12345"
-                                    >Work</ref></title> 12. </egXML>
-
-                        <p>It is also possible to use the following shorthand version of the link,
-                            instead of entering the full base address dozens of times:</p>
-
-                        <egXML xmlns="http://www.tei-c.org/ns/Examples"><title
-                                ref="dll:[ID-or-alias]">Carm.</title> 12. </egXML>
-
-                        <p>In this shorthand version, the prefix "dll" in <att>ref</att> can be
-                            expanded automatically to the string
-                            "https://catalog.digitallatin.org/work/", and the ID or alias after the
-                            colon can be appended to it to create the link to the DLL page for that
-                            work.</p>
-
-                        <p>If any necessary information is not yet in the DLL's catalog, editors
-                            should alert DLL staff so that it can be given the highest priority in
-                            the queue for adding entries to the catalog.</p>
-                    </div>
-                    <!-- End of section on linking to passages. -->
+                    <p>In this shorthand version, the prefix "dll" in <att>ref</att> can be expanded
+                        automatically to the string "https://catalog.digitallatin.org/dll-work/",
+                        and the ID or alias after the colon can be appended to it to create the link
+                        to the DLL page for that work. Although this means that access to the
+                        resource will be mediated (i.e., users will be sent to the DLL's site first,
+                        where they will find a link to the resource), that mediation provides some
+                        protection against link rot. That means that this method does not allow
+                        editors to link to a specific line number, but the resulting page may give
+                        readers access to a variety of options for viewing the text. If any
+                        necessary information is not yet in the DLL's catalog, editors should alert
+                        DLL staff so that it can be given the highest priority in the queue for
+                        adding entries to the catalog.</p>
                 </div>
-                <!-- End section on referring to passages. -->
+                <!-- End section on using URNs -->
 
-                <!-- Begin section on other references. -->
+                <!-- Begin subsection on simple links. -->
+                <div xml:id="linking-simple-hyperlinks">
+                    <head>Simple Hyperlinks</head>
+
+                    <list>
+                        <item><gi>ptr</gi> (pointer) is a "self-closing" or milestone tag that
+                            contains the address for a resource in <att>target</att>.</item>
+                        <item><gi>ref</gi> (reference) contains text to be hyperlinked to the
+                            resource identified in <att>target</att>.</item>
+                    </list>
+
+                    <p>The following example uses <gi>ptr</gi> to produce a hyperlink reading
+                        "http://www.someurl.org/resource/":</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <ptr target="http://www.someurl.org/resource/"/>
+                    </egXML>
+
+                    <p>In the next example, the words "Some linked text" would become a hyperlink to
+                        the resource at http://www.someurl.org/resource/:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <ref target="http://www.someurl.org/resource">Some linked text</ref>
+                    </egXML>
+
+                    <p>Either one of these methods is acceptable for producing a hyperlink. It is up
+                        to the editor to decide which one is most appropriate in each instance. It
+                        is also up to the editor to determine the reliability of a digital resource
+                        and to use good scholarly judgment about linking to it. The following
+                        subsections include guidelines for making those decisions.</p>
+                </div>
+                <!-- End subsection on simple links. -->
+
                 <div xml:id="linking-other-references">
                     <head>Other References</head>
 
@@ -457,17 +549,26 @@
                         how to encode the different types of sources:</p>
 
                     <list>
-                        <item><ref target="#front-matter-description-listWit"
-                            >Manuscripts</ref></item>
-                        <item><ref target="#front-matter-editions">Editions</ref></item>
-                        <item><ref target="#front-matter-bibliography-books">Books (e.g.,
-                                commentaries, monographs, collections, etc.)</ref></item>
-                        <item><ref target="#front-matter-bibliography-articles"
-                            >Articles</ref></item>
-                        <item><ref target="#front-matter-bibliography-articles-reviews"
-                                >Reviews</ref></item>
-                        <item><ref target="#front-matter-bibliography-list-of-scholars">Scholars
-                                referred to by name only</ref></item>
+                        <item>
+                            <ref target="#front-matter-description-listWit">Manuscripts</ref>
+                        </item>
+                        <item>
+                            <ref target="#front-matter-editions">Editions</ref>
+                        </item>
+                        <item>
+                            <ref target="#front-matter-bibliography-books">Books (e.g.,
+                                commentaries, monographs, collections, etc.)</ref>
+                        </item>
+                        <item>
+                            <ref target="#front-matter-bibliography-articles">Articles</ref>
+                        </item>
+                        <item>
+                            <ref target="#front-matter-bibliography-articles-reviews">Reviews</ref>
+                        </item>
+                        <item>
+                            <ref target="#front-matter-bibliography-list-of-scholars">Scholars
+                                referred to by name only</ref>
+                        </item>
                     </list>
 
                     <p>Those sections also include information about encoding hyperlinks to digital
@@ -488,7 +589,7 @@
                             <att>target</att> may be used as described in the section "<ref
                             target="#linking">Linking</ref>".</p>
 
-                    <p>For example, at Calp. 1.73 Giarratano refers once to a conjecture made by
+                    <p>For example, at Calp. 1.73 Giarratano refers once to a made by
                         Müller in his review of Schenkl: <hi rend="italic">asseret</hi> L. Mueller
                         (Berl. phil. Woch. V. p. 1071). Since the fifth volume of <title>Berliner
                             philologische Wochenschrift</title> is openly available, the editor of
@@ -500,42 +601,9 @@
                                 >Berl. phil. Woch. V. p. 1071</ref>)</note>
                     </egXML>
 
-                    <p>That link will point the reader to the pdf of that page (column, to be exact)
+                    <p>That link will point the reader to the PDF of that page (column, to be exact)
                         as stored at the <ref target="https://www.hathitrust.org">HathiTrust's
                             digital library</ref>.</p>
-
-                    <div xml:id="linking-other-references-dll">
-                        <head>Linking Other References via the Digital Latin Library</head>
-
-                        <p><hi rend="italics">This section refers to the Digital Latin Library's
-                                catalog, a resource not yet available. The DLL's catalog is
-                                scheduled to be launched for public use in the summer of
-                            2018.</hi></p>
-
-                        <p>When linking to manuscripts and previous editions or versions of a text,
-                            links can point directly to those resources or they can point to entries
-                            about them in the DLL's catalog. Immediate, unmediated access to the
-                            resource is an obvious benefit to linking directly to a resource. <ref
-                                target="https://en.wikipedia.org/wiki/Link_rot">Link rot</ref>,
-                            however, is a risk when using internet resources. Links can change or
-                            expire, and entire sites can become defunct. One solution is to update
-                            links periodically. Another is to link to the DLL catalog's stable
-                            record for the resource. Although this means that access to the resource
-                            will be mediated (i.e., users will be sent to the DLL's site first,
-                            where they will find a link to the resource), that mediation provides
-                            some protection against link rot. That is, even if the resource is no
-                            longer available, its metadata, or identifying information, will be
-                            preserved in the DLL's catalog.</p>
-
-                        <p>The scope and scale of the DLL's catalog limits its content to manuscript
-                            descriptions, editions, and electronic versions of texts. Secondary
-                            scholarship (e.g., monographs, notes on the text, translations, etc.)
-                            will not be found in the catalog. Item records are added on an ongoing
-                            basis independently of the LDLT, but the preparation of LDLT editions
-                            yields important information for the catalog. If a source is not already
-                            in the DLL's catalog, editors should contact the DLL staff about adding
-                            it.</p>
-                    </div>
                 </div>
                 <!-- End section on other references. -->
             </div>
@@ -624,7 +692,9 @@
                                 <div type="edition" xml:id="edition-text" xml:space="preserve">
                                     <div type="textpart" n="1" xml:id="part1">
                                         <head>Title of First Part</head>
-                                        <!--Text goes here, according to the conventions laid out elsewhere in these guidelines.-->
+                                        <!--Text goes here, according to the conventions laid out elsewhere in these guidelines. 
+                                            Note that ever section of the text (e.g., book, chapter, poem) should be contained 
+                                            in a <div> with an xml:id. -->
                                     </div>
                                     <div type="textpart" n="2" xml:id="part2">
                                         <head>Title of Second Part</head>
@@ -918,10 +988,10 @@
                     <p>In short, <hi rend="bold">every witness or source in an LDLT edition <hi
                                 rend="bold">must</hi> have both a machine-readable ID (using
                                 <att>xml:id</att>) and a human-readable siglum or abbreviation
-                            (using <gi>abbr</gi>).</hi> Otherwise, the edition will not be able to
-                        make full use of the digital format. Morever, if an entry lacks
-                            <gi>abbr</gi>, it will not be available for a print version of the
-                        edition, should one be required.</p>
+                            (using <gi>abbr</gi> with <att>type</att>="siglum").</hi> Otherwise, the
+                        edition will not be able to make full use of the digital format. Morever, if
+                        an entry lacks <gi>abbr</gi>, it will not be available for a print version
+                        of the edition, should one be required.</p>
                 </div>
                 <!-- End of section on human- and machine-readable sigla. -->
 
@@ -980,10 +1050,11 @@
                                 be used when referring to the manuscript’s data (e.g., in the
                                     <att>wit</att> of a <gi>rdg</gi> in the apparatus
                                 criticus).</item>
-                            <item><gi>abbr</gi> contains the human-readable siglum that should be
-                                displayed on screen or printed. Any superscript or subscript
-                                characters should be encoded using <gi>hi</gi> with the appropriate
-                                value for <att>rend</att>.</item>
+                            <item><gi>abbr</gi> with <att>type</att>="siglum" contains the
+                                human-readable siglum that should be displayed on screen or printed.
+                                Any superscript or subscript characters should be encoded using
+                                    <gi>hi</gi> with the appropriate value for
+                                <att>rend</att>.</item>
                             <item><gi>name</gi> contains the name of the manuscript as it appears in
                                 its repository's catalog.</item>
                             <item><gi>date</gi> contains a reference to the date when the manuscript
@@ -1095,22 +1166,28 @@
 
                             <egXML xmlns="http://www.tei-c.org/ns/Examples">
                                 <listWit>
-                                    <witness xml:id="ω"><abbr type="siglum">ω</abbr>
+                                    <witness xml:id="ω">
+                                        <abbr type="siglum">ω</abbr>
                                         <name>archetypus codicum αβ</name>
                                         <listWit>
-                                            <witness xml:id="a"><abbr type="siglum">α</abbr>
+                                            <witness xml:id="a">
+                                                <abbr type="siglum">α</abbr>
                                                 <name>hyparchetypus codicum α<hi rend="subscript"
                                                   >1</hi> α<hi rend="subscript">2</hi></name>
                                                 <listWit>
-                                                  <witness xml:id="α1"><abbr type="siglum">α<hi
-                                                  rend="subscript">1</hi></abbr>
+                                                  <witness xml:id="α1">
+                                                  <abbr type="siglum">α<hi rend="subscript"
+                                                  >1</hi></abbr>
                                                   <name>hyparchetypus codicum MG</name>
                                                   <listWit>
-                                                  <witness xml:id="M"><abbr type="siglum"
-                                                  >M</abbr><!-- Description of witness M -->
+                                                  <witness xml:id="M">
+                                                  <abbr type="siglum">M</abbr>
+                                                  <!-- Description of witness M -->
                                                   </witness>
-                                                  <witness xml:id="G"><abbr type="siglum"
-                                                  >G</abbr><!-- Description of witness G --></witness>
+                                                  <witness xml:id="G">
+                                                  <abbr type="siglum">G</abbr>
+                                                  <!-- Description of witness G -->
+                                                  </witness>
                                                   </listWit>
                                                   </witness>
                                                 </listWit>
@@ -1261,15 +1338,15 @@
                             <listWit>
                                 <head>First Family</head>
                                 <witness xml:id="A">
-                                    <abbr>A</abbr>
+                                    <abbr type="siglum">A</abbr>
                                     <!--Identifying information for A -->
                                 </witness>
                                 <witness xml:id="B">
-                                    <abbr>B</abbr>
+                                    <abbr type="siglum">B</abbr>
                                     <!-- Identifying information for B -->
                                 </witness>
                                 <witness xml:id="C">
-                                    <abbr>C</abbr>
+                                    <abbr type="siglum">C</abbr>
                                     <!-- Identifying information for C -->
                                 </witness>
                             </listWit>
@@ -1446,9 +1523,10 @@
                                 the <ref target="#front-matter-sigla">machine-readable
                                     abbreviation</ref> for the edition. It contains the following
                                 bibliographical information about the edition: <list>
-                                    <item><gi>abbr</gi> (abbreviation) contains the human-readable
-                                        abbreviation for the record, i.e., how the edition is
-                                        referred to in the apparatus criticus.</item>
+                                    <item><gi>abbr</gi> (abbreviation) with <att>type</att>="siglum"
+                                        contains the human-readable abbreviation for the record,
+                                        i.e., how the edition is referred to in the apparatus
+                                        criticus.</item>
                                     <item><gi>editor</gi> contains the name of the editor in the
                                         form “Last name, First name,” if known. If the name is in
                                         Latin, it should not be translated. If the name is not
@@ -1728,9 +1806,10 @@
                                 the <ref target="#front-matter-sigla">machine-readable
                                     abbreviation</ref> for the book. It contains the following
                                 bibliographical information about the book: <list>
-                                    <item><gi>abbr</gi> (abbreviation) contains the human-readable
-                                        abbreviation for the record, i.e., how the book is referred
-                                        to in the apparatus criticus.</item>
+                                    <item><gi>abbr</gi> (abbreviation) with <att>type</att>="siglum"
+                                        contains the human-readable abbreviation for the record,
+                                        i.e., how the book is referred to in the apparatus
+                                        criticus.</item>
                                     <item><gi>author</gi> contains the name of the author in the
                                         form “Last name, First name,” if known. If the name is in
                                         Latin, it should not be translated. If the name is not
@@ -1806,9 +1885,10 @@
                                 the <ref target="#front-matter-sigla">machine-readable
                                     abbreviation</ref> for the book. It contains the following
                                 bibliographical information about the book: <list>
-                                    <item><gi>abbr</gi> (abbreviation) contains the human-readable
-                                        abbreviation for the record, i.e., how the article is
-                                        referred to in the apparatus criticus.</item>
+                                    <item><gi>abbr</gi> (abbreviation) with <att>type</att>="siglum"
+                                        contains the human-readable abbreviation for the record,
+                                        i.e., how the article is referred to in the apparatus
+                                        criticus.</item>
                                     <item><gi>author</gi> contains the name of the author in the
                                         form “Last name, First name.”</item>
                                     <item><gi>title</gi> with <att>level</att>="a" contains the
@@ -1999,13 +2079,13 @@
 
                         <p>For an LDLT edition of a prose text, the top-level <gi>div</gi> has the
                                 <att>type</att> “edition”; this division contains the entire text of
-                            the edition. The next <gi>div</gi> will normally have the
-                                <att>type</att> “textpart” with <att>subtype</att> “book” and
-                                <att>n</att> to indicate the number of the book.</p>
+                            the edition. The next <gi>div</gi> must have the <att>type</att>
+                            “textpart” with <att>subtype</att> “book”, <att>n</att> to indicate the
+                            number of the book, and a unique <att>xml:id</att>.</p>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <div type="edition">
-                                <div type="textpart" subtype="book" n="1">
+                                <div type="textpart" subtype="book" n="1" xml:id="book-1">
                                     <!-- Text goes here. -->
                                 </div>
                             </div>
@@ -2044,7 +2124,7 @@
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <div type="edition">
-                                <div type="textpart" subtype="book" n="1">
+                                <div type="textpart" subtype="book" n="1" xml:id="book-1">
                                     <p n="1">
                                         <seg n="1">Gallia est omnis divisa in partes tres, quarum
                                             unam incolunt Belgae, aliam Aquitani, tertiam qui
@@ -2132,17 +2212,17 @@
                                 <att>type</att> “edition”; this division contains the entire text of
                             the edition. The next <gi>div</gi> will normally have the
                                 <att>type</att> “textpart” with <att>subtype</att> “book” and
-                                <att>n</att> to indicate the number of the book. <gi>div</gi> with
-                                <att>type</att>="poem" contains the parts of a single poem (e.g.,
-                            stanzas or lines). If there is more than one poem in a book,
-                                <att>n</att> should be used to number the poems. <att>met</att> with
-                            the name of the meter may also be used, if the editor wishes to identify
-                            the meter. If a different division scheme is required, editors should
-                            consult LDLT staff.</p>
+                                <att>n</att> to indicate the number of the book and a unique
+                                <att>xml:id</att>. <gi>div</gi> with <att>type</att>="poem" contains
+                            the parts of a single poem (e.g., stanzas or lines). If there is more
+                            than one poem in a book, <att>n</att> should be used to number the
+                            poems. <att>met</att> with the name of the meter may also be used, if
+                            the editor wishes to identify the meter. If a different division scheme
+                            is required, editors should consult LDLT staff.</p>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
                             <div type="edition">
-                                <div type="textpart" subtype="book">
+                                <div type="textpart" subtype="book" xml:id="book-1">
                                     <div type="poem" n="1" met="First Asclepiadean">
                                         <!-- Text of poem goes here -->
                                     </div>
@@ -2165,7 +2245,7 @@
                         </list>
 
                         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                            <div type="book" n="2">
+                            <div type="book" n="2" xml:id="book-2">
                                 <div type="poem" n="1" met="Alcaic Strophe">
                                     <lg type="stanza">
                                         <l n="1">Motum ex Metello consule civicum</l>
@@ -2444,24 +2524,11 @@
                                 >Colchis</persName></l>
                     </egXML>
 
-                    <p>If there are variant readings of a name, <gi>persName</gi> should enclose the
-                            <gi>app</gi> with the lemma and variant reading(s):</p>
-
-                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <persName ref="#Faunus">
-                            <app>
-                                <lem>Fauni</lem>
-                                <rdg wit="#P">fanni</rdg>
-                            </app>
-                        </persName>
-                    </egXML>
-
-                    <p>This will cause the lemma and the variant(s) to be identified as names.</p>
-
-                    <p>But if it is clear that the nature of the variation is such that the lemma is
-                        a proper name, but the variant is a common noun (or vice versa),
-                            <gi>persName</gi> should enclose only the proper noun inside of
-                            <gi>lem</gi> or <gi>rdg</gi>.</p>
+                    <p>If there are variant readings of a name, <gi>persName</gi> should be used
+                        within <gi>lem</gi> or <gi>rdg</gi> as needed. If the nature of the
+                        variation is such that one form is a proper noun, but the other is a common
+                        noun, <gi>persName</gi> should enclose only the proper noun inside of
+                            <gi>lem</gi> or <gi>rdg</gi>, as the case may be.</p>
 
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <app>
@@ -2562,6 +2629,12 @@
                                 >Sequana</placeName> dividit.</p>
                     </egXML>
 
+                    <p>If there are variant readings of a place name, <gi>placeName</gi> should be
+                        used within <gi>lem</gi> or <gi>rdg</gi> as needed. If the nature of the
+                        variation is such that one form is a proper noun, but the other is a common
+                        noun, <gi>placeName</gi> should enclose only the proper noun inside of
+                            <gi>lem</gi> or <gi>rdg</gi>, as the case may be.</p>
+
                 </div>
                 <!-- End of section on places -->
 
@@ -2590,12 +2663,12 @@
                             <item>a&#x323;b&#x323;c&#x323;d&#x323; = <ref
                                     target="#edition-text-uncertain-characters">text uncertainly
                                     restored</ref>.</item>
-                            <item>⟨ ⟩ = <ref
-                                    target="#apparatus-criticus-conjecture-and-emendation-editorial-addition">text
-                                    added by conjecture or emendation</ref>.</item>
+                            <item>&lt; &gt; = <ref
+                                    target="#apparatus-criticus-conjecture-and-emendation-editorial-addition"
+                                    >text added by conjecture or emendation</ref>.</item>
                             <item>*** = <ref target="#edition-text-lacunae">lacuna in the textual
                                     tradition as a whole.</ref></item>
-                            <item>⟨ *** ⟩ = <ref
+                            <item>&lt; *** &gt; = <ref
                                     target="#apparatus-criticus-conjecture-and-emendation-lacunae"
                                     >conjectured lacuna</ref>.</item>
                             <item>[ ... ] = <ref
@@ -2765,20 +2838,7 @@
                     such references so that they will be displayed appropriately in the text and so
                     that bibliographical information about them will appear in the edition.</p>
 
-                <p>The basic form of the encoding for an entry in the apparatus fontium has much in
-                    common with the encoding for entries in the apparatus criticus, so reading the
-                        <ref target="#apparatus-criticus">section on the apparatus criticus</ref> is
-                    recommended.</p>
-
                 <list>
-                    <item><gi>app</gi> (apparatus entry) contains information about a quotation or a
-                        reference made by the author of a text.</item>
-                    <item><gi>lem</gi> (lemma) contains the lemma, or base text, of the
-                        citation.</item>
-                    <item><gi>rdg</gi> (reading) contains a variant form of the citation, if one
-                        exists in another witness or source (see more on witnesses and sources in
-                        the section "<ref target="#apparatus-criticus-concepts-definitions"
-                            >Apparatus Criticus: Concepts and Definitions</ref>").</item>
                     <item><gi>cit</gi> (cited quotation) contains a quotation (in <gi>quote</gi>)
                         from a source external to the text, with accompanying information about that
                         source (in <gi>bibl</gi> or <gi>ref</gi>).</item>
@@ -2788,96 +2848,49 @@
                         information supplied by the author.</item>
                     <item><gi>ref</gi> (reference) with <att>target</att> contains a reference to a
                         bibliographical item defined elsewhere in the edition.</item>
-                    <item><gi>note</gi> (note), with <att>type</att>="fontium" and <att>target</att>
-                        pointing to the <att>xml:id</att> of the <gi>lem</gi>, contains a
-                        standardized form of reference (using <gi>bibl</gi> or <gi>ref</gi>)
-                        provided by the editor. <hi rend="italic">This is the information that will
-                            appear in the apparatus fontium</hi>.</item>
                 </list>
 
                 <p>Any text in <gi>quote</gi> will be displayed or printed in quotation marks on the
-                    same line as the rest of the text. Any text in <gi>quote</gi> with
-                        <att>rend</att>="blockquote" will be or printed on a new line and indented.
-                    In the latter case, prose and verse text within <gi>quote</gi> should be encoded
-                    according to the guidelines in the sections "<ref target="#edition-text-prose"
-                        >Prose</ref>" and "<ref target="#edition-text-verse">Verse</ref>.”</p>
+                    same line as the rest of the text, so there is no need to insert quotation marks
+                    manually. Any text in <gi>quote</gi> with <att>rend</att>="blockquote" will be
+                    or printed on a new line and indented. In the latter case, prose and verse text
+                    within <gi>quote</gi> should be encoded according to the guidelines in the
+                    sections "<ref target="#edition-text-prose">Prose</ref>" and "<ref
+                        target="#edition-text-verse">Verse</ref>.”</p>
 
                 <p>The choice to use <gi>bibl</gi> or <gi>ref</gi> to indicate the source in the
-                        <gi>note</gi> for the apparatus fontium depends on how the bibliography for
-                    the edition has been organized. If the text includes few quotations, the editor
-                    may wish to encode each source in the <gi>note</gi> with <gi>bibl</gi> and its
-                    associated elements (e.g., <gi>author</gi>, <gi>title</gi>).</p>
-
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <note type="fontium" target="#lem-12-boethius">
-                        <bibl>
-                            <author>Boethius</author>
-                            <title>De Trin.</title>
-                            <biblScope unit="part">c. 4</biblScope> (ed. R. Peiper 159; PL 64,
-                            1353C)</bibl>
-                    </note>
-                </egXML>
-
-                <p>If there are multiple quotations or references to specific texts, the editor may
-                    wish to establish a list of sources cited by the author (using
-                    <gi>listBibl</gi>, with a <gi>bibl</gi> and <att>xml:id</att> for each source),
-                    and use <gi>ref</gi> with <att>target</att> pointing to the <att>xml:id</att> of
-                    the source of the quotation.</p>
-
-                <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                    <note type="fontium" target="#lem-12-boethius">
-                        <ref target="#boethius-de-trin">Boethius <hi rend="italic">De Trin.</hi> c.
-                            4 (ed. R. Peiper 159; PL 64, 1353C)</ref>
-                    </note>
-                </egXML>
-
-                <p>Either method accomplishes the same objective, but note that the use of
-                        <gi>ref</gi> requires <gi>hi</gi> with <att>rend</att>="italic" for
-                    displaying or printing the title in italic type. Otherwise, the choice depends
-                    on how often the editor wishes to enter the full bibliographical
-                    information.</p>
-
-                <p>Wherever bibliographical information is encoded, editors are encouraged to encode
-                    a link to a version of the text in a reliable, stable repository such as the
-                    Digital Latin Library. See the section "<ref
-                        target="#linking-referring-to-passages">Linking to Texts</ref>" for more
-                    information.</p>
-
-                <p>As for the source of the quotation, the following two types of encoding for
-                    entries in the apparatus fontium depend on whether or not the author has
-                    identified the source of the quotation in the text.</p>
+                        <gi>note</gi> for the apparatus fontium depends on whether the author is
+                    referring to a work, in which case <gi>ref</gi> should be used, or an editor is
+                    citing a source for the reference, in which case <gi>bibl</gi> should be used.
+                    The following sections illustrate the difference.</p>
 
                 <!-- Begin subsection on sources identified by the author. -->
                 <div xml:id="apparatus-fontium-author-attribution">
                     <head>Source Identified by the Author</head>
 
-                    <p>When the author identifies a source in the text, <gi>bibl</gi> should be used
-                        to the extent that the author has provided bibliographical information. A
-                        standardized form of the bibliographical information should be inserted in a
-                            <gi>note</gi> with <att>type</att>="fontium".</p>
+                    <p>When the author identifies a source in the text, <gi>ref</gi> should be used
+                        to indicate that the author is referring to a work, not a specific material
+                        copy of that work. If it is desirable to cite a specific edition, the editor
+                        should use <gi>bibl</gi> and its associated elements for that purpose.</p>
 
                     <p>In the following example, Duns Scotus has referred to a work by Boethius, but
                         he has not quoted it directly: <foreign xml:lang="lat">Probatio minoris per
                             Boethium De Trinitate: dicit quod septem praedicamenta non dicunt
-                            absolutas res, sed tantum respectus</foreign>. That should be encoded as
-                        follows:</p>
+                            absolutas res, sed tantum respectus</foreign>. The editor wishes to cite
+                        a specific edition. The entire passage should be encoded as follows:</p>
 
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <p>Probatio minoris per <app>
-                                <lem xml:id="lem-12-boethius">
-                                    <bibl>
-                                        <author>Boethium</author>
-                                        <title>De Trinitate</title>
-                                    </bibl>
-                                </lem>
-                                <note type="fontium" target="#lem-12-boethius">
-                                    <bibl>
-                                        <author>Boethius</author>
-                                        <title>De Trin.</title>
-                                        <biblScope unit="part">c. 4</biblScope> (ed. R. Peiper 159;
-                                        PL 64, 1353C)</bibl>
-                                </note>
-                            </app>: dicit quod septem praedicamenta non dicunt absolutas res, sed
+                        <p>Probatio minoris per <cit>
+                                <ref>
+                                    <name>Boethium</name>
+                                    <title>De Trinitate</title>
+                                </ref>
+                                <bibl>
+                                    <author>Boethius</author>
+                                    <title>De Trin.</title>
+                                    <biblScope unit="part">c. 4</biblScope> (ed. R. Peiper 159; PL
+                                    64, 1353C)</bibl>
+                            </cit>: dicit quod septem praedicamenta non dicunt absolutas res, sed
                             tantum respectus.</p>
                     </egXML>
 
@@ -2894,26 +2907,24 @@
                         the <gi>note</gi>:</p>
 
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                        <p>Probatio minoris per <app>
-                                <lem xml:id="lem-12-boethius">
-                                    <bibl>
-                                        <author>Boethium</author>
-                                        <title>De Trinitate</title>
-                                    </bibl>
-                                </lem>
-                                <note type="fontium" target="#lem-12-boethius">
-                                    <bibl>
-                                        <author>Boethius</author>
-                                        <title>De Trin.</title>
-                                        <biblScope unit="part">c. 4</biblScope> (ed. R. Peiper 159;
-                                        PL 64, 1353C)</bibl>
+                        <p>Probatio minoris per <cit>
+                                <ref>
+                                    <name>Boethium</name>
+                                    <title>De Trinitate</title>
+                                </ref>
+                                <bibl>
+                                    <author>Boethius</author>
+                                    <title>De Trin.</title>
+                                    <biblScope unit="part">c. 4</biblScope> (ed. R. Peiper 159; PL
+                                    64, 1353C)</bibl>
+                                <note>
                                     <quote>Iamne patet quae sit differentia praedicationum? Quod
                                         aliae quidem quasi rem monstrant, aliae vero quasi
                                         circumstantias rei; quodque illa quae ita praedicantur, ut
                                         esse aliquid rem ostendant, illa vero ut non esse, sed
                                         potius extrinsecus aliquid quodam modo adfigant?</quote>
                                 </note>
-                            </app>: dicit quod septem praedicamenta non dicunt absolutas res, sed
+                            </cit>: dicit quod septem praedicamenta non dicunt absolutas res, sed
                             tantum respectus.</p>
                     </egXML>
 
@@ -2931,51 +2942,46 @@
                         <said who="#Rufius">
                             <p>Nec acipenser, quem maria prodigis nutriunt, illius saeculi delicias
                                 evasit; et ut liqueat secundo Punico bello celebre nomen huius
-                                piscis fuisse, accipite ut meminerit eius <app>
-                                    <lem xml:id="lem-3.16-plautus"><bibl><author>Plautus</author> in
-                                            fabula quae inscribitur <title>Baccaria</title></bibl>
-                                        ex persona parasiti<cit>
-                                            <quote rend="blockquote"><!-- Verse quotation to be displayed/printed on new line and indented -->
-                                                <l>quis est mortalis tanta fortuna adfectus
-                                                  umquam</l>
-                                                <l>qua ego nunc sum, cuius haec ventri portatur
-                                                  pompa?</l>
-                                                <l>vel nunc, qui mihi in mari acipenser latuit
-                                                  antehac,</l>
-                                                <l>cuius ego latus in latebras reddam meis dentibus
-                                                  et manibus.</l>
-                                            </quote>
-                                        </cit></lem>
-                                    <note type="fontium" target="#lem-3.16-plautus"><bibl>
-                                            <author>Plautus</author>
-                                            <title>Baccar.</title> 16–20</bibl></note></app>.</p>
+                                piscis fuisse, accipite ut meminerit eius <ref><name>Plautus</name>
+                                    in fabula quae inscribitur <title>Baccaria</title></ref> ex
+                                persona parasiti<cit>
+                                    <quote rend="blockquote"><!-- Verse quotation to be displayed/printed on new line and indented -->
+                                        <l>quis est mortalis tanta fortuna adfectus umquam</l>
+                                        <l>qua ego nunc sum, cuius haec ventri portatur pompa?</l>
+                                        <l>vel nunc, qui mihi in mari acipenser latuit antehac,</l>
+                                        <l>cuius ego latus in latebras reddam meis dentibus et
+                                            manibus.</l>
+                                    </quote>
+                                    <bibl>
+                                        <author>Plautus</author>
+                                        <title>Baccar.</title> 16–20</bibl></cit>.</p>
                             <p>et ne vilior sit testis poeta, accipite assertore Cicerone in quo
                                 honore fuerit hic piscis apud P. Scipionem Africanum illum et
-                                Numantinum, haec sunt in dialogo <app><lem xml:id="lem-3.16-Cicero"
-                                            ><bibl>de fato verba <author>Ciceronis</author></bibl><cit>
-                                            <quote rend="blockquote"><!-- Prose quotation to be displayed/printed on new line and indented -->
-                                                <p>nam cum esset apud se ad Lavernium Scipio unaque
-                                                  Pontius adlatus est forte Scipioni acipenser, qui
-                                                  admodum raro capitur, sed est piscis, ut ferunt,
-                                                  in primis nobilis. cum autem Scipio unum et
-                                                  alterum ex his qui eum salutatum venerant
-                                                  invitavisset pluresque etiam invitaturus
-                                                  videretur, in aurem Pontius, <said who="#Pontius"
-                                                  >Scipio,</said> inquit, <said who="#Pontius">vide
-                                                  quid agas, acipenser iste paucorum hominum
-                                                  est.</said></p>
-                                            </quote>
-                                        </cit></lem><note type="fontium" target="#lem-3.16-Cicero"
-                                                ><bibl><author>Cicero</author>
-                                            <title>De Fato</title> fr. 4</bibl></note></app></p>
+                                Numantinum, haec sunt in dialogo <ref><title>de fato</title> verba
+                                        <name>Ciceronis</name></ref>
+                                <cit>
+                                    <quote rend="blockquote"><!-- Prose quotation to be displayed/printed on new line and indented -->
+                                        <p>nam cum esset apud se ad Lavernium Scipio unaque Pontius
+                                            adlatus est forte Scipioni acipenser, qui admodum raro
+                                            capitur, sed est piscis, ut ferunt, in primis nobilis.
+                                            cum autem Scipio unum et alterum ex his qui eum
+                                            salutatum venerant invitavisset pluresque etiam
+                                            invitaturus videretur, in aurem Pontius, <said
+                                                who="#Pontius">Scipio,</said> inquit, <said
+                                                who="#Pontius">vide quid agas, acipenser iste
+                                                paucorum hominum est.</said></p>
+                                    </quote>
+                                    <bibl><author>Cicero</author>
+                                        <title>De Fato</title> fr. 4</bibl>
+                                </cit></p>
                             <p>nec infitias eo temporibus Traiani hunc piscem in magno pretio non
-                                fuisse, teste <bibl><author>Plinio Secundo</author>, qui in
-                                        <title>Naturali historia</title></bibl> cum de hoc pisce
-                                loqueretur sic ait: <app><lem><cit><!-- Prose quotation to be displayed/printed in line -->
-                                            <quote>nullo nunc in honore est, quod equidem miror, cum
-                                                sit rarus inventu.</quote></cit></lem><note
-                                        type="fontium"><bibl><author>Plin.</author>
-                                            <title>HN</title> 9.60</bibl>.</note></app></p>
+                                fuisse, teste <ref><name>Plinio Secundo</name>, qui in
+                                        <title>Naturali historia</title></ref> cum de hoc pisce
+                                loqueretur sic ait: <cit><!-- Prose quotation to be displayed/printed in line -->
+                                    <quote>nullo nunc in honore est, quod equidem miror, cum sit
+                                        rarus inventu.</quote>
+                                    <bibl><author>Plin.</author>
+                                        <title>HN</title> 9.60</bibl></cit>.</p>
                         </said>
                     </egXML>
                 </div>
@@ -3005,22 +3011,16 @@
                     <egXML xmlns="http://www.tei-c.org/ns/Examples">
                         <p>Quid quod sic loqui: nosse, iudicasse vetant, novisse iubent et
                             iudicavisse? Quasi vero nesciamus in hoc genere et plenum verbum recte
-                            dici et imminutum usitate. Itaque utrumque <app><lem
-                                    xml:id="lem-157-terence1"
-                                        ><bibl><author>Terentius</author></bibl>: <cit><quote
-                                            rend="blockquote">eho tu, cognatum tuom non
-                                            noras?</quote></cit></lem><note type="fontium"
-                                    target="#lem-157-terence1"><bibl><author>Ter.</author>
-                                        <title>Ph.</title>
-                                        <biblScope unit="line"
-                            >384</biblScope></bibl></note></app></p>
-                        <p>post idem <app><lem xml:id="lem-157-terence2"><cit><quote
-                                            rend="blockquote">Stilponem, inquam,
-                                        noveras.</quote></cit></lem><note type="fontium"
-                                    target="#lem-157-terence2"><bibl><author>Ter.</author>
-                                        <title>Ph.</title>
-                                        <biblScope unit="line">390</biblScope></bibl></note></app>
-                            Sient plenum est, sint imminutum; licet utare utroque.</p>
+                            dici et imminutum usitate. Itaque utrumque
+                                <ref><name>Terentius</name></ref>: <cit><quote rend="blockquote">eho
+                                    tu, cognatum tuom non noras?</quote><bibl><author>Ter.</author>
+                                    <title>Ph.</title>
+                                    <biblScope unit="line">384</biblScope></bibl></cit></p>
+                        <p>post idem <cit><quote rend="blockquote">Stilponem, inquam,
+                                    noveras.</quote><bibl><author>Ter.</author>
+                                    <title>Ph.</title>
+                                    <biblScope unit="line">390</biblScope></bibl></cit> Sient plenum
+                            est, sint imminutum; licet utare utroque.</p>
                     </egXML>
                 </div>
                 <!-- End subsection on sources supplied by the editor. -->
@@ -3809,7 +3809,8 @@
                             </app>
                         </seg>
                         <seg n="4">
-                            <app xml:id="app-18.4-multi" prev="#app-18.3-enatauerunt"><!-- @prev points to the <app> in the previous segment -->
+                            <app xml:id="app-18.4-multi" prev="#app-18.3-enatauerunt">
+                                <!-- @prev points to the <app> in the previous segment -->
                                 <lem>Multi tamen ex his capti interfectique sunt; sed numerus
                                     captiuorum omnino fuit VI milium.</lem>
                                 <rdg wit="#V" ana="#subtractive"/>
@@ -3939,6 +3940,8 @@
                                 Witnesses</ref></item>
                             <item><ref target="#apparatus-criticus-deletion-witness"
                                 >Deletions</ref></item>
+                            <item><!-- TODO: Insert reference. -->Text found in a witness but not
+                                otherwise in the paradosis.</item>
                         </list></p>
 
                     <!-- Begin section on omission of a letter or letters, words, phrases, or lines. -->
@@ -4154,6 +4157,10 @@
                         see the section "<ref
                             target="#apparatus-criticus-conjecture-and-emendation-editorial"
                             >Editorial Additions and Deletions</ref>.”</p>
+
+                    <p>For additional text in a witness or witnesses that does not correspond to
+                        anything in the edition's text, see the section
+                        <!-- TODO: Insert division title here. --></p>
 
                     <div xml:id="apparatus-criticus-addition-witness-prose">
                         <head>Addition: Prose Description</head>
@@ -5221,13 +5228,14 @@
                                 xml:id="apparatus-criticus-conjecture-and-emendation-editorial-addition">
                                 <head>Editorial Addition</head>
 
-                                <p>⟨ ⟩ = Text added or supplied by conjecture where text does
+                                <p>&lt; &gt; = Text added or supplied by conjecture where text does
                                     not exist in the documentary evidence.</p>
 
                                 <list>
                                     <item><gi>supplied</gi> encloses text supplied by someone in the
                                         absence of text in the documentary evidence. It may be used
-                                        in <gi>lem</gi> or <gi>rdg</gi>. It must include <att>reason</att>="lost".</item>
+                                        in <gi>lem</gi> or <gi>rdg</gi>. It must include
+                                            <att>reason</att>="lost".</item>
                                 </list>
 
                                 <p>For example, Cynthia Damon prints the following in her <ref
@@ -5235,19 +5243,19 @@
                                                 Civili</title></bibl></ref>: <foreign xml:lang="lat"
                                         >Ipsi Massilienses et celeritate nauium et scientia
                                         gubernatorum confisi nostros eludebant impetusque eorum
-                                        excipiebant ⟨cedendo⟩.</foreign></p>
+                                        excipiebant &lt;cedendo&gt;.</foreign></p>
 
                                 <p>Her apparatus criticus has the following:</p>
 
-                                <p>excipiebant ⟨cedendo⟩ <hi rend="italic">scripsi ex Luc.
-                                        3.55 (cf. Liu. 29.34.13)</hi> : ⟨non⟩ exc- <hi
+                                <p>excipiebant &lt;cedendo&gt; <hi rend="italic">scripsi ex Luc.
+                                        3.55 (cf. Liu. 29.34.13)</hi> : &lt;non&gt; exc- <hi
                                         rend="italic">Kramer</hi> : dec- <hi rend="italic">Nipperdey
                                         (cf. Stat. Theb. 2.304)</hi> : effugiebant <hi rend="italic"
                                         >Terpstra coll. 2.41.6</hi> : <hi rend="italic">nisi mauis
-                                        e.g.</hi> ⟨laxata classe⟩ exc- <hi rend="italic">ex
+                                        e.g.</hi> &lt;laxata classe&gt; exc- <hi rend="italic">ex
                                         Luc. 3.548 (cf. BG 2.25.2)</hi>.</p>
 
-                                <p>Every instance of text enclosed in ⟨ ⟩ indicates that text
+                                <p>Every instance of text enclosed in &lt; &gt; indicates that text
                                     has been added where text does not exist in the documentary
                                     evidence.</p>
 
@@ -5273,13 +5281,13 @@
                                                 xml:id="rdg-1.58.1-effugiebant">effugiebant</rdg>
                                             <note target="#rdg-1.58.1-effugiebant">coll.
                                                 2.41.6</note>
-                                            <note>nisi mauis e.g. ⟨laxata classe⟩ exc- ex
+                                            <note>nisi mauis e.g. &lt;laxata classe&gt; exc- ex
                                                   <bibl><author>Luc.</author> 3.548</bibl> (cf.
                                                   <bibl><title>BG</title> 2.25.2</bibl>)</note>
                                         </app>.</p>
                                 </egXML>
 
-                                <p>The use of <gi>supplied</gi> will cause ⟨ and ⟩ to be
+                                <p>The use of <gi>supplied</gi> will cause &lt; and &gt; to be
                                     inserted on either side of the text added by conjecture. The
                                     rest of the information is handled as a normal entry in the
                                     apparatus criticus.</p>
@@ -5289,7 +5297,7 @@
                                     addition has not been adopted for the main text of the edition,
                                         <gi>supplied</gi> should be used inside of <gi>rdg</gi>. If
                                     the reading is swapped into the main text in the digital
-                                    version, it will appear inside ⟨ and ⟩.</p>
+                                    version, it will appear inside &lt; and &gt;.</p>
                             </div>
                             <!-- End section on letters added by conjecture -->
 
@@ -5379,7 +5387,7 @@
                     <div xml:id="apparatus-criticus-conjecture-and-emendation-lacunae">
                         <head>Conjectured Lacunae</head>
 
-                        <p>⟨***⟩ = A lacuna has been conjectured on the grounds of style,
+                        <p>&lt;***&gt; = A lacuna has been conjectured on the grounds of style,
                             context, or carelessness of a copyist (e.g., <foreign xml:lang="fre"
                                 >saut du même au même</foreign>). No text has been supplied in its
                             place.</p>
@@ -5435,8 +5443,8 @@
                             </app>
                         </egXML>
 
-                        <p>In the <ref target="#ldlt-viewer">LDLT Viewer</ref>, nine lines of ⟨ *** ⟩
-                            would be printed at the beginning of the text, and the
+                        <p>In the <ref target="#ldlt-viewer">LDLT Viewer</ref>, nine lines of
+                            &lt; *** &gt; would be printed at the beginning of the text, and the
                             numbering of the lines that follow would begin with 10. The apparatus
                             criticus would have the entry <quote>u. 1–9 librarii incuria cecidisse
                                 putavit Verdière</quote>.</p>
@@ -5444,6 +5452,54 @@
                     <!-- End section "Conjectured Lacunae" -->
                 </div>
                 <!-- End of section on conjecture and emendation -->
+
+                <div xml:id="apparatus-criticus-additional-variant">
+                    <head>Reporting Extraneous Text in a Witness</head>
+
+                    <p>Text found in a witness that does not correspond to anything in the edition's
+                        text, but that is nevertheless worth reporting, is commonly represented in
+                        printed editions by referring to a word or words that serve as an anchor for
+                        the additional text.</p>
+
+                    <p>For example, the text of Andrew Dunning's edition of the <hi rend="italic"
+                            >Miracula sancte Frideswide</hi> includes the word <foreign
+                            xml:lang="la">archiepiscopus</foreign>, and the critical apparatus has
+                            "<foreign xml:lang="la">cantuariensis</foreign> add. L," indicating that
+                        the manuscript known as L has a word that Dunning considered extraneous, but
+                        worth reporting.</p>
+
+                    <p>This phenomenon <hi rend="italic">could</hi> be encoded using the method
+                        described in the <ref target="#apparatus-criticus-addition-witness">section
+                            on addition</ref> in these guidelines:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <app>
+                            <lem>archiepiscopus</lem>
+                            <rdg>archiepiscopus <add place="inline">cantuariensis</add></rdg>
+                        </app>
+                    </egXML>
+
+                    <p>That, however, does not accurately describe the situation, which is that the
+                        witness did not <hi rend="italic">add</hi> the text; rather, the text exists
+                        in the witness, but the editor chooses not to include it in the edition's
+                        text. Since there is not, strictly speaking, a lemma for this additional
+                        text, an "empty" lemma must be used:</p>
+
+                    <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                        <p>archiepiscopus <app>
+                                <lem n="archiepiscopus"/>
+                                <rdg wit="#L">cantuariensis</rdg>
+                            </app></p>
+                    </egXML>
+
+                    <p>Although it is possible to avoid using <att>n</att> in this way by leveraging
+                        computational methods to look up the preceding word or words, these
+                        guidelines opt for simplicity. The empty <gi>lem</gi> signifies that the
+                        edition's text does not have anything where a witness has something, but
+                            <att>n</att> provides context and an anchor for the witness' text. For
+                        the sake of accuracy, the edition's text should be copied and pasted as the
+                        value of <att>n</att>.</p>
+                </div>
 
                 <!-- Begin section on crux. -->
                 <div xml:id="apparatus-criticus-crux"
@@ -5782,17 +5838,16 @@
             <!-- Begin DLL Critical Editions Schema -->
             <div>
                 <head>The DLL Critical Editions Schema</head>
-                <schemaSpec ident="tei-DLL" docLang="en" prefix="tei_" start="TEI" xml:lang="en"
-                    source="tei-epidoc.compiled.xml">
+                <!-- Based on EpiDoc 9.1, which uses TEI 3.6.0 -->
+                <schemaSpec ident="tei-DLL" docLang="en" prefix="tei_" start="TEI" xml:lang="en" source="https://www.stoa.org/epidoc/schema/9.1/tei-epidoc.compiled.xml">
 
                     <!--       MODULES USED BY THE DLL SCHEMA       -->
                     <moduleRef key="core"/>
                     <moduleRef key="tei"/>
                     <moduleRef key="header" except="appInfo"/>
                     <moduleRef key="textstructure"
-                        except="argument byline closer div1 div2 div3 div4 div5 div6 div7 imprimatur
-
-              opener postscript salute signed titlePage titlePart trailer"/>
+                        except="argument byline closer div1 div2 div3 div4 div5 div6 div7 imprimatur 
+                        opener postscript salute signed titlePage titlePart trailer"/>
                     <moduleRef key="transcr" except="damageSpan restore"/>
                     <moduleRef key="verse"/>
                     <moduleRef key="analysis" except="cl span spanGrp"/>
@@ -5801,10 +5856,10 @@
                     <moduleRef key="linking" except="alt altGrp joinGrp timeline when"/>
                     <moduleRef key="msdescription"/>
                     <moduleRef key="namesdates"
-                        except="affiliation age climate education faith geoFeat langKnowledge
-                                langKnown nameLink nationality occupation population relationGrp residence sex socecStatus terrain trait"/>
-                    <moduleRef key="tagdocs" include="code" 
-                        source="https://www.tei-c.org/Vault/P5/3.6.0/xml/tei/odd/p5subset.xml"/>
+                        except="affiliation age climate education faith geoFeat langKnowledge langKnown nameLink nationality occupation population relationGrp residence 
+                        sex socecStatus terrain trait"/>
+                    
+                    <!-- We want all of the textcrit module (unlike EpiDoc) and everything but formula from figures. -->
                     <moduleRef key="textcrit"
                         source="https://www.tei-c.org/Vault/P5/3.6.0/xml/tei/odd/p5subset.xml"/>
                     <moduleRef key="figures"
@@ -5812,11 +5867,10 @@
                         except="formula"/>
                     <moduleRef key="spoken"
                         except="broadcast equipment incident kinesic pause recording recordingStmt
-
-              scriptStmt shift u vocal writing"/>
+                        scriptStmt shift u vocal writing"/>
                     <moduleRef key="corpus"
                         except="activity channel constitution derivation domain factuality interaction locale
-              preparedness purpose setting textDesc"/>
+                        preparedness purpose setting textDesc"/>
 
                     <!-- DATA SPECS -->
                     <dataSpec ident="teidata.fragId">
@@ -5826,192 +5880,7 @@
                     </dataSpec>
 
                     <!-- CHANGED ATTRIBUTE CLASSES -->
-                    <!-- Put "back" att.tableDecoration, because EpiDoc will have stripped it -->
-                    <classSpec module="tei" type="atts" ident="att.tableDecoration" mode="add">
-                        <desc versionDate="2006-04-17" xml:lang="en">provides attributes used to
-                            decorate rows or cells of a table.</desc>
-                        <desc versionDate="2007-12-20" xml:lang="ko">테이블의 행 또는 셀을 장식하는 속성을
-                            제공한다.</desc>
-                        <desc versionDate="2007-05-02" xml:lang="zh-TW">提供屬性，用以裝飾表格內的儲存格或列。</desc>
-                        <desc versionDate="2008-04-05" xml:lang="ja"> 表の行またはセルを修飾する属性を示す． </desc>
-                        <desc versionDate="2009-05-28" xml:lang="fr">fournit des attributs pour
-                            mettre en forme les lignes ou les cellules d’un tableau.</desc>
-                        <desc versionDate="2007-05-04" xml:lang="es">proporciona atributos usados
-                            para decorar filas o celdas de una tabla.</desc>
-                        <desc versionDate="2007-01-21" xml:lang="it">assegna degli attributi
-                            utilizzati per decorare righe e celle di una tabella</desc>
-                        <attList>
-                            <attDef ident="role" usage="opt">
-                                <gloss versionDate="2009-05-28" xml:lang="fr">rôle</gloss>
-                                <desc versionDate="2006-04-17" xml:lang="en">indicates the kind of
-                                    information held in this cell or in each cell of this
-                                    row.</desc>
-                                <desc versionDate="2007-12-20" xml:lang="ko">이 셀에 또는 이 행의 각 셀에 나타난
-                                    정보의 종류를 제시한다.</desc>
-                                <desc versionDate="2007-05-02" xml:lang="zh-TW"
-                                    >指出此儲存格或列當中，各儲存格所包含的資訊類型。</desc>
-                                <desc versionDate="2008-04-05" xml:lang="ja">
-                                    当該セル，または当該行中のセルにある情報の種類を示す． </desc>
-                                <desc versionDate="2007-06-12" xml:lang="fr">indique le type des
-                                    informations contenues dans cette cellule ou dans chaque cellule
-                                    de cette ligne.</desc>
-                                <desc versionDate="2007-05-04" xml:lang="es">especifica el tipo de
-                                    información contenida en la celda en cuestión o en cada una de
-                                    las celdas de la fila.</desc>
-                                <desc versionDate="2007-01-21" xml:lang="it">specifica il tipo di
-                                    informazione contenuta nela cella in questione o in ciascuna
-                                    delle celle della riga presa in esame</desc>
-                                <datatype>
-                                    <dataRef key="teidata.enumerated"/>
-                                </datatype>
-                                <defaultVal>data</defaultVal>
-                                <valList type="semi">
-                                    <valItem ident="label">
-                                        <desc versionDate="2007-06-27" xml:lang="en">labelling or
-                                            descriptive information only.</desc>
-                                        <desc versionDate="2007-12-20" xml:lang="ko">표지 또는 기술적 정보만
-                                            허용</desc>
-                                        <desc versionDate="2007-05-02" xml:lang="zh-TW"
-                                            >僅為標號或描述性資訊。</desc>
-                                        <desc versionDate="2008-04-06" xml:lang="es">etiquetado o
-                                            información descriptiva solamente.</desc>
-                                        <desc versionDate="2008-04-05" xml:lang="ja"> 記述的情報またはラベルのみ． </desc>
-                                        <desc versionDate="2009-05-28" xml:lang="fr">uniquement des
-                                            informations relatives au codage ou à la
-                                            description</desc>
-                                        <desc versionDate="2007-01-21" xml:lang="it">informazione
-                                            esclusivamente descrittiva o del tipo etichetta</desc>
-                                    </valItem>
-                                    <valItem ident="data">
-                                        <desc versionDate="2007-06-27" xml:lang="en">data
-                                            values.</desc>
-                                        <desc versionDate="2007-12-20" xml:lang="ko">데이터 값</desc>
-                                        <desc versionDate="2007-05-02" xml:lang="zh-TW">數據值。</desc>
-                                        <desc versionDate="2008-04-06" xml:lang="es">valores de
-                                            datos.</desc>
-                                        <desc versionDate="2008-04-05" xml:lang="ja"> 日付情報． </desc>
-                                        <desc versionDate="2008-03-30" xml:lang="fr">valeurs de
-                                            données</desc>
-                                        <desc versionDate="2007-01-21" xml:lang="it">valori di
-                                            dati</desc>
-                                    </valItem>
-                                </valList>
-                                <remarks versionDate="2006-04-17" xml:lang="en">
-                                    <p>When this attribute is specified on a row, its value is the
-                                        default for all cells in this row. When specified on a cell,
-                                        its value overrides any default specified by the
-                                            <att>role</att> attribute of the parent <gi>row</gi>
-                                        element.</p>
-                                </remarks>
-                                <remarks xml:lang="fr" versionDate="2007-06-12">
-                                    <p> Quand cet attribut est appliqué à une ligne de tableau, sa
-                                        valeur est transmise comme valeur par défaut à toutes les
-                                        cellules de cette ligne. Quand il est spécifié sur une
-                                        cellule, sa valeur annule et remplace toute valeur spécifiée
-                                        par défaut dans l’attribut <att>role</att> de l’élément
-                                        parent <gi>row</gi>.</p>
-                                </remarks>
-                                <remarks xml:lang="es" versionDate="2008-04-06">
-                                    <p>Cuando este atributo se especifica en una fila, su valor es
-                                        el valor por defecto para todas las celdas de esta fila.
-                                        Cuando está especificado en una celda, su valor reemplaza
-                                        cualquier valor por defecto especificado por el atributo
-                                            <att>role</att> (papel) del elemento padre <gi>row</gi>
-                                        (fila).</p>
-                                </remarks>
-                                <remarks xml:lang="ja" versionDate="2008-04-05">
-                                    <p> 当該属性が行に付与されている場合，当該属性値は当該行中の全セル
-                                        のデフォルト値になる．当該属性がセルに付与されている場合，当該
-                                            属性値は，親要素<gi>row</gi>の属性<att>role</att>にあるデフォ ルト値を上書きする．
-                                    </p>
-                                </remarks>
-                            </attDef>
-                            <attDef ident="rows" usage="opt">
-                                <gloss versionDate="2009-05-28" xml:lang="fr">lignes</gloss>
-                                <desc versionDate="2006-04-17" xml:lang="en">indicates the number of
-                                    rows occupied by this cell or row.</desc>
-                                <desc versionDate="2007-12-20" xml:lang="ko">이 셀 또는 행에 의해 사용된 행의 수를
-                                    나타낸다.</desc>
-                                <desc versionDate="2007-05-02" xml:lang="zh-TW"
-                                    >指出此儲存格或列所占的列數。</desc>
-                                <desc versionDate="2008-04-05" xml:lang="ja"> 当該セルまたは行を含む行の数を示す． </desc>
-                                <desc versionDate="2009-05-28" xml:lang="fr">indique le nombre de
-                                    lignes occupées par la cellule ou la ligne en question.</desc>
-                                <desc versionDate="2007-05-04" xml:lang="es">indica el número de
-                                    filas ocupado por una celda o por la fila en cuestión.</desc>
-                                <desc versionDate="2007-01-21" xml:lang="it">indica il numero di
-                                    righe occupate dalla cella o riga in questione</desc>
-                                <datatype>
-                                    <dataRef key="teidata.count"/>
-                                </datatype>
-                                <defaultVal>1</defaultVal>
-                                <remarks versionDate="2013-12-09" xml:lang="en">
-                                    <p>A value greater than one indicates that this cell
-                                        <!--(or row)--> spans several rows. Where several cells span
-                                        multiple rows, it may be more convenient to use nested
-                                        tables.</p>
-                                </remarks>
-                                <remarks xml:lang="fr" versionDate="2007-06-12">
-                                    <p> Lorsque plusieurs cellules s’étendent sur plusieurs lignes,
-                                        il peut être plus pratique d’employer des tableaux
-                                        inclus.</p>
-                                </remarks>
-                                <remarks xml:lang="es" versionDate="2008-04-06">
-                                    <p>Donde varias celdas atraviesan varias filas, puede ser más
-                                        conveniente utilizar los vectores jerarquizados.</p>
-                                </remarks>
-                                <remarks xml:lang="ja" versionDate="2008-04-05">
-                                    <p> 複数のセルが複数行に渡る場合には，入れ子の表を使った方が便利で ある． </p>
-                                </remarks>
-                            </attDef>
-                            <attDef ident="cols" usage="opt">
-                                <gloss versionDate="2007-07-02" xml:lang="en">columns</gloss>
-                                <gloss versionDate="2007-12-20" xml:lang="ko">열</gloss>
-                                <gloss versionDate="2008-04-06" xml:lang="es">columnas</gloss>
-                                <gloss versionDate="2008-03-30" xml:lang="fr">colonnes</gloss>
-                                <gloss versionDate="2007-11-06" xml:lang="it">colonne</gloss>
-                                <desc versionDate="2006-04-17" xml:lang="en">indicates the number of
-                                    columns occupied by this cell or row.</desc>
-                                <desc versionDate="2007-12-20" xml:lang="ko">이 셀 또는 행에 의해 사용된 열의 수를
-                                    나타낸다.</desc>
-                                <desc versionDate="2007-05-02" xml:lang="zh-TW"
-                                    >指出此儲存格或列所佔的欄位數。</desc>
-                                <desc versionDate="2008-04-05" xml:lang="ja"> 当該セルまたは行を含む列の数を示す． </desc>
-                                <desc versionDate="2007-06-12" xml:lang="fr">indique le nombre de
-                                    colonnes occupées par cette cellule ou cette ligne.</desc>
-                                <desc versionDate="2007-05-04" xml:lang="es">indica el número de
-                                    columnas que abraza una celda o fila.</desc>
-                                <desc versionDate="2007-01-21" xml:lang="it">indica il numero di
-                                    colonne occupate dalla cella o riga</desc>
-                                <datatype>
-                                    <dataRef key="teidata.count"/>
-                                </datatype>
-                                <defaultVal>1</defaultVal>
-                                <remarks versionDate="2013-12-09" xml:lang="en">
-                                    <p>A value greater than one indicates that this cell or row
-                                        spans several columns. Where an initial cell spans an entire
-                                        row, it may be better treated as a heading.</p>
-                                </remarks>
-                                <remarks xml:lang="fr" versionDate="2013-12-09">
-                                    <p>Une valeur plus grande que 1 indique que cette cellule (ou
-                                        cette ligne) occupe plusieurs colonnes. Lorsqu’une première
-                                        cellule s’étend sur une ligne entière, il peut être
-                                        préférable de la considérer comme un titre.</p>
-                                </remarks>
-                                <remarks xml:lang="es" versionDate="2008-04-06">
-                                    <p>Donde una celda inicial atraviesa una fila entera, puede ser
-                                        tratada como título.</p>
-                                </remarks>
-                                <remarks xml:lang="ja" versionDate="2008-04-05">
-                                    <p> 始めのセルが行全体である場合には，見出しとして扱った方がよい． </p>
-                                </remarks>
-                            </attDef>
-                        </attList>
-                        <listRef>
-                            <ptr target="#FT"/>
-                        </listRef>
-                    </classSpec>
-
+ 
                     <!-- CHANGED MODEL CLASSES -->
 
                     <!--        CHANGED ELEMENT SPECS        -->
@@ -6145,36 +6014,32 @@
 
                     <elementSpec ident="gap" module="core" mode="change">
                         <!-- testing for <gap> with both quantity/extent, no unit, or contained in supplied -->
-                        <constraintSpec ident="gap" scheme="schematron">
-                            <constraint>
-                                <sch:rule context="tei:gap">
-                                    <sch:report test="@quantity and @extent">gap may have @quantity
-                                        (a figure) or @extent (a descriptive text value) but not
-                                        both</sch:report>
-                                    <sch:report test="@quantity and not(@unit)">If gap has @quantity
-                                        then @unit is required</sch:report>
-                                    <sch:report
-                                        test="not(@reason='ellipsis') and ancestor::tei:supplied[not(@reason='undefined')]"
-                                        >gap may not appear within supplied text</sch:report>
-                                </sch:rule>
-                            </constraint>
-                        </constraintSpec>
+                      <constraintSpec ident="gap" scheme="schematron" mode="replace">
+                        <constraint>
+                          <sch:rule context="tei:gap">
+                            <sch:report test="@quantity and @extent">gap may have @quantity (a
+                              figure) or @extent (a descriptive text value) but not
+                              both</sch:report>
+                            <sch:report test="@quantity and not(@unit)">If gap has @quantity
+                              then @unit is required</sch:report>
+                          </sch:rule>
+                        </constraint>
+                      </constraintSpec>
                         <!-- constraining values of gap/@reason -->
                         <attList>
                             <attDef ident="reason" mode="replace" usage="req">
                                 <valList type="closed">
                                     <valItem ident="lost">
-                                        <desc versionDate="2015-10-20" xml:lang="en">Text completely
-                                            lost from the surface and unrecoverable</desc>
+                                        <desc versionDate="2020-02-17" xml:lang="en">Text completely
+                                            lost and unrecoverable</desc>
                                     </valItem>
                                     <valItem ident="illegible">
-                                        <desc versionDate="2015-10-20" xml:lang="en">Traces of text
-                                            remain on the surface but cannot be interpreted</desc>
+                                        <desc versionDate="2020-02-17" xml:lang="en">Traces of text
+                                            remain, but cannot be interpreted</desc>
                                     </valItem>
                                     <valItem ident="omitted">
-                                        <desc versionDate="2015-10-20" xml:lang="en">Text
-                                            erroneously omitted from the surface by the
-                                            scribe/cutter</desc>
+                                        <desc versionDate="2020-02-17" xml:lang="en">Text
+                                            erroneously omitted</desc>
                                     </valItem>
                                     <valItem ident="ellipsis">
                                         <desc versionDate="2015-10-20" xml:lang="en">Text omitted
