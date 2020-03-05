@@ -3070,7 +3070,7 @@
 
                 <p>For example, Thomson's edition of Catullus has the following in the apparatus
                     testium for poem 14: "9 <hi rend="italics">Martianus Capella 3.229</hi> 15 <hi
-                        rend="italics">Macrobius, Saturnalia 2.1.8</hi>. In an LDLT edition, the
+                        rend="italics">Macrobius, Saturnalia 2.1.8</hi>." In an LDLT edition, the
                     testimonia are encoded in close proximity to their point of reference:</p>
 
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -3935,7 +3935,7 @@
                             <item><ref target="#edition-text-lacunae">Lacuna</ref></item>
                             <item><ref
                                     target="#apparatus-criticus-conjecture-and-emendation-lacunae"
-                                    >Conjectured Lacuna</ref></item>
+                                    >Conjectured Lacunae</ref></item>
                             <item><ref target="#apparatus-criticus-gaps">Gaps in
                                 Witnesses</ref></item>
                             <item><ref target="#apparatus-criticus-deletion-witness"
