@@ -2942,9 +2942,9 @@
                         <said who="#Rufius">
                             <p>Nec acipenser, quem maria prodigis nutriunt, illius saeculi delicias
                                 evasit; et ut liqueat secundo Punico bello celebre nomen huius
-                                piscis fuisse, accipite ut meminerit eius <ref><name>Plautus</name>
+                                piscis fuisse, accipite ut meminerit eius <cit><ref><name>Plautus</name>
                                     in fabula quae inscribitur <title>Baccaria</title></ref> ex
-                                persona parasiti<cit>
+                                persona parasiti
                                     <quote rend="blockquote"><!-- Verse quotation to be displayed/printed on new line and indented -->
                                         <l>quis est mortalis tanta fortuna adfectus umquam</l>
                                         <l>qua ego nunc sum, cuius haec ventri portatur pompa?</l>
@@ -5861,9 +5861,9 @@
                     
                     <!-- We want all of the textcrit module (unlike EpiDoc) and everything but formula from figures. -->
                     <moduleRef key="textcrit"
-                        source="https://www.tei-c.org/Vault/P5/3.6.0/xml/tei/odd/p5subset.xml"/>
+                        source="https://www.tei-c.org/Vault/P5/4.0.0/xml/tei/odd/p5subset.xml"/>
                     <moduleRef key="figures"
-                        source="https://www.tei-c.org/Vault/P5/3.6.0/xml/tei/odd/p5subset.xml"
+                        source="https://www.tei-c.org/Vault/P5/4.0.0/xml/tei/odd/p5subset.xml"
                         except="formula"/>
                     <moduleRef key="spoken"
                         except="broadcast equipment incident kinesic pause recording recordingStmt
@@ -5871,6 +5871,8 @@
                     <moduleRef key="corpus"
                         except="activity channel constitution derivation domain factuality interaction locale
                         preparedness purpose setting textDesc"/>
+                    <moduleRef key="tagdocs" include="code" 
+                        source="https://www.tei-c.org/Vault/P5/4.0.0/xml/tei/odd/p5subset.xml"/>
 
                     <!-- DATA SPECS -->
                     <dataSpec ident="teidata.fragId">
