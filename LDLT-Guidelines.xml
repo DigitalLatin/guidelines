@@ -2942,9 +2942,9 @@
                         <said who="#Rufius">
                             <p>Nec acipenser, quem maria prodigis nutriunt, illius saeculi delicias
                                 evasit; et ut liqueat secundo Punico bello celebre nomen huius
-                                piscis fuisse, accipite ut meminerit eius <ref><name>Plautus</name>
+                                piscis fuisse, accipite ut meminerit eius <cit><ref><name>Plautus</name>
                                     in fabula quae inscribitur <title>Baccaria</title></ref> ex
-                                persona parasiti<cit>
+                                persona parasiti
                                     <quote rend="blockquote"><!-- Verse quotation to be displayed/printed on new line and indented -->
                                         <l>quis est mortalis tanta fortuna adfectus umquam</l>
                                         <l>qua ego nunc sum, cuius haec ventri portatur pompa?</l>
