@@ -5838,16 +5838,17 @@
             <!-- Begin DLL Critical Editions Schema -->
             <div>
                 <head>The DLL Critical Editions Schema</head>
-                <!-- Based on EpiDoc 9.1, which uses TEI 3.6.0 -->
-                <schemaSpec ident="tei-DLL" docLang="en" prefix="tei_" start="TEI" xml:lang="en" source="https://www.stoa.org/epidoc/schema/9.1/tei-epidoc.compiled.xml">
+                <!-- Based on EpiDoc 9.4, which uses TEI 4.4.0 -->
+                <schemaSpec ident="tei-DLL" docLang="en" prefix="tei_" start="TEI" xml:lang="en" source="https://epidoc.stoa.org/schema/9.4/tei-epidoc.compiled.xml">
 
                     <!--       MODULES USED BY THE DLL SCHEMA       -->
                     <moduleRef key="core"/>
                     <moduleRef key="tei"/>
                     <moduleRef key="header" except="appInfo"/>
                     <moduleRef key="textstructure"
-                        except="argument byline closer div1 div2 div3 div4 div5 div6 div7 imprimatur 
-                        opener postscript salute signed titlePage titlePart trailer"/>
+                        source="https://www.tei-c.org/Vault/P5/4.4.0/xml/tei/odd/p5subset.xml"
+                        except="argument closer div1 div2 div3 div4 div5 div6 div7 imprimatur 
+                        opener postscript salute signed trailer"/>
                     <moduleRef key="transcr" except="damageSpan restore"/>
                     <moduleRef key="verse"/>
                     <moduleRef key="analysis" except="cl span spanGrp"/>
@@ -5861,9 +5862,9 @@
                     
                     <!-- We want all of the textcrit module (unlike EpiDoc) and everything but formula from figures. -->
                     <moduleRef key="textcrit"
-                        source="https://www.tei-c.org/Vault/P5/4.0.0/xml/tei/odd/p5subset.xml"/>
+                        source="https://www.tei-c.org/Vault/P5/4.4.0/xml/tei/odd/p5subset.xml"/>
                     <moduleRef key="figures"
-                        source="https://www.tei-c.org/Vault/P5/4.0.0/xml/tei/odd/p5subset.xml"
+                        source="https://www.tei-c.org/Vault/P5/4.4.0/xml/tei/odd/p5subset.xml"
                         except="formula"/>
                     <moduleRef key="spoken"
                         except="broadcast equipment incident kinesic pause recording recordingStmt
@@ -5872,7 +5873,7 @@
                         except="activity channel constitution derivation domain factuality interaction locale
                         preparedness purpose setting textDesc"/>
                     <moduleRef key="tagdocs" include="code" 
-                        source="https://www.tei-c.org/Vault/P5/4.0.0/xml/tei/odd/p5subset.xml"/>
+                        source="https://www.tei-c.org/Vault/P5/4.4.0/xml/tei/odd/p5subset.xml"/>
 
                     <!-- DATA SPECS -->
                     <dataSpec ident="teidata.fragId">
